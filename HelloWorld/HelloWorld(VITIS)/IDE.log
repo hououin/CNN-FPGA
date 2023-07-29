@@ -1,0 +1,148 @@
+21:54:09 INFO  : Platform repository initialization has completed.
+21:54:09 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\chenq\MAG\code\vitis\HelloWorld\temp_xsdb_launch_script.tcl
+21:54:09 INFO  : Registering command handlers for Vitis TCF services
+21:54:11 INFO  : XSCT server has started successfully.
+21:54:11 INFO  : Successfully done setting XSCT server connection channel  
+21:54:11 INFO  : plnx-install-location is set to ''
+21:54:11 INFO  : Successfully done query RDI_DATADIR 
+21:54:11 INFO  : Successfully done setting workspace for the tool. 
+21:55:00 INFO  : Result from executing command 'getProjects': hello_world_platform
+21:55:00 INFO  : Result from executing command 'getPlatforms': 
+21:55:17 INFO  : Result from executing command 'getProjects': hello_world_platform
+21:55:17 INFO  : Result from executing command 'getPlatforms': hello_world_platform|C:/Users/chenq/MAG/code/vitis/HelloWorld/hello_world_platform/export/hello_world_platform/hello_world_platform.xpfm
+21:56:04 INFO  : Checking for BSP changes to sync application flags for project 'hello_world'...
+21:56:36 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:56:37 INFO  : Jtag cable 'Digilent Zybo 210279654463A' is selected.
+21:56:37 INFO  : 'jtag frequency' command is executed.
+21:56:37 INFO  : Context for 'APU' is selected.
+21:56:37 INFO  : System reset is completed.
+21:56:40 INFO  : 'after 3000' command is executed.
+21:56:40 INFO  : Context for 'APU' is selected.
+21:56:40 INFO  : Hardware design and registers information is loaded from 'C:/Users/chenq/MAG/code/vitis/HelloWorld/hello_world_platform/export/hello_world_platform/hw/design_1_wrapper.xsa'.
+21:56:40 INFO  : 'configparams force-mem-access 1' command is executed.
+21:56:40 INFO  : Context for 'APU' is selected.
+21:56:40 INFO  : Sourcing of 'C:/Users/chenq/MAG/code/vitis/HelloWorld/hello_world/_ide/psinit/ps7_init.tcl' is done.
+21:56:40 INFO  : 'ps7_init' command is executed.
+21:56:40 INFO  : 'ps7_post_config' command is executed.
+21:56:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:56:40 INFO  : The application 'C:/Users/chenq/MAG/code/vitis/HelloWorld/hello_world/Debug/hello_world.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:56:40 INFO  : 'configparams force-mem-access 0' command is executed.
+21:56:40 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/chenq/MAG/code/vitis/HelloWorld/hello_world_platform/export/hello_world_platform/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/chenq/MAG/code/vitis/HelloWorld/hello_world/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/chenq/MAG/code/vitis/HelloWorld/hello_world/Debug/hello_world.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:56:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:56:40 INFO  : 'con' command is executed.
+21:56:40 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:56:40 INFO  : Launch script is exported to file 'C:\Users\chenq\MAG\code\vitis\HelloWorld\hello_world_system\_ide\scripts\systemdebugger_hello_world_system_standalone.tcl'
+21:57:52 INFO  : Disconnected from the channel tcfchan#3.
+21:57:52 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:57:52 INFO  : Jtag cable 'Digilent Zybo 210279654463A' is selected.
+21:57:52 INFO  : 'jtag frequency' command is executed.
+21:57:52 INFO  : Context for 'APU' is selected.
+21:57:52 INFO  : System reset is completed.
+21:57:55 INFO  : 'after 3000' command is executed.
+21:57:55 INFO  : Context for 'APU' is selected.
+21:57:55 INFO  : Hardware design and registers information is loaded from 'C:/Users/chenq/MAG/code/vitis/HelloWorld/hello_world_platform/export/hello_world_platform/hw/design_1_wrapper.xsa'.
+21:57:55 INFO  : 'configparams force-mem-access 1' command is executed.
+21:57:55 INFO  : Context for 'APU' is selected.
+21:57:55 INFO  : Sourcing of 'C:/Users/chenq/MAG/code/vitis/HelloWorld/hello_world/_ide/psinit/ps7_init.tcl' is done.
+21:57:55 INFO  : 'ps7_init' command is executed.
+21:57:55 INFO  : 'ps7_post_config' command is executed.
+21:57:55 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:57:56 INFO  : The application 'C:/Users/chenq/MAG/code/vitis/HelloWorld/hello_world/Debug/hello_world.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:57:56 INFO  : 'configparams force-mem-access 0' command is executed.
+21:57:56 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/chenq/MAG/code/vitis/HelloWorld/hello_world_platform/export/hello_world_platform/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/chenq/MAG/code/vitis/HelloWorld/hello_world/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/chenq/MAG/code/vitis/HelloWorld/hello_world/Debug/hello_world.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:57:56 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:57:56 INFO  : 'con' command is executed.
+21:57:56 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:57:56 INFO  : Launch script is exported to file 'C:\Users\chenq\MAG\code\vitis\HelloWorld\hello_world_system\_ide\scripts\systemdebugger_hello_world_system_standalone.tcl'
+21:58:19 INFO  : Disconnected from the channel tcfchan#4.
+21:58:19 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:58:19 INFO  : Jtag cable 'Digilent Zybo 210279654463A' is selected.
+21:58:19 INFO  : 'jtag frequency' command is executed.
+21:58:19 INFO  : Context for 'APU' is selected.
+21:58:19 INFO  : System reset is completed.
+21:58:22 INFO  : 'after 3000' command is executed.
+21:58:22 INFO  : Context for 'APU' is selected.
+21:58:22 INFO  : Hardware design and registers information is loaded from 'C:/Users/chenq/MAG/code/vitis/HelloWorld/hello_world_platform/export/hello_world_platform/hw/design_1_wrapper.xsa'.
+21:58:22 INFO  : 'configparams force-mem-access 1' command is executed.
+21:58:22 INFO  : Context for 'APU' is selected.
+21:58:22 INFO  : Sourcing of 'C:/Users/chenq/MAG/code/vitis/HelloWorld/hello_world/_ide/psinit/ps7_init.tcl' is done.
+21:58:22 INFO  : 'ps7_init' command is executed.
+21:58:22 INFO  : 'ps7_post_config' command is executed.
+21:58:22 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:58:22 INFO  : The application 'C:/Users/chenq/MAG/code/vitis/HelloWorld/hello_world/Debug/hello_world.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:58:22 INFO  : 'configparams force-mem-access 0' command is executed.
+21:58:22 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/chenq/MAG/code/vitis/HelloWorld/hello_world_platform/export/hello_world_platform/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/chenq/MAG/code/vitis/HelloWorld/hello_world/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/chenq/MAG/code/vitis/HelloWorld/hello_world/Debug/hello_world.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:58:22 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:58:22 INFO  : 'con' command is executed.
+21:58:22 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:58:22 INFO  : Launch script is exported to file 'C:\Users\chenq\MAG\code\vitis\HelloWorld\hello_world_system\_ide\scripts\systemdebugger_hello_world_system_standalone.tcl'
+21:58:38 INFO  : Disconnected from the channel tcfchan#5.
+18:51:32 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\chenq\MAG\code\vitis\HelloWorld\temp_xsdb_launch_script.tcl
+18:51:35 INFO  : XSCT server has started successfully.
+18:51:35 INFO  : Platform repository initialization has completed.
+18:51:36 INFO  : Registering command handlers for Vitis TCF services
+18:51:38 INFO  : plnx-install-location is set to ''
+18:51:38 INFO  : Successfully done setting XSCT server connection channel  
+18:51:38 INFO  : Successfully done query RDI_DATADIR 
+18:51:38 INFO  : Successfully done setting workspace for the tool. 
+18:53:05 INFO  : No changes in MSS file content so sources will not be generated.
