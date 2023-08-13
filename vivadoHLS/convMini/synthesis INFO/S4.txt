@@ -1,0 +1,76 @@
+
+Starting C synthesis ...
+C:/Xilinx2020/Vivado/2020.1/bin/vivado_hls.bat C:/Users/chenq/MAG/code/CNN-FPGA/vivadoHLS/convMini/conv/solution4/csynth.tcl
+INFO: Applying HLS Y2K22 patch v1.2 for IP revision
+INFO: [HLS 200-10] Running 'C:/Xilinx2020/Vivado/2020.1/bin/unwrapped/win64.o/vivado_hls.exe'
+INFO: [HLS 200-10] For user 'chenq' on host 'desktop-pi9akpv' (Windows NT_amd64 version 6.2) on Thu Aug 03 11:10:07 +0200 2023
+INFO: [HLS 200-10] In directory 'C:/Users/chenq/MAG/code/CNN-FPGA/vivadoHLS/convMini'
+Sourcing Tcl script 'C:/Users/chenq/MAG/code/CNN-FPGA/vivadoHLS/convMini/conv/solution4/csynth.tcl'
+INFO: [HLS 200-10] Opening project 'C:/Users/chenq/MAG/code/CNN-FPGA/vivadoHLS/convMini/conv'.
+INFO: [HLS 200-10] Adding design file 'weights.h' to the project
+INFO: [HLS 200-10] Adding design file 'parameters.h' to the project
+INFO: [HLS 200-10] Adding design file 'conv.h' to the project
+INFO: [HLS 200-10] Adding design file 'conv.cpp' to the project
+INFO: [HLS 200-10] Adding test bench file 'main.cpp' to the project
+INFO: [HLS 200-10] Opening solution 'C:/Users/chenq/MAG/code/CNN-FPGA/vivadoHLS/convMini/conv/solution4'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 40ns.
+WARNING: [HLS 200-40] Cannot find library 'C:/Xilinx2020/Vivado/2020.1/common/technology/xilinx/Virtex-7/Virtex-7.lib'.
+WARNING: [HLS 200-40] Cannot find library 'xilinx/Virtex-7/Virtex-7'.
+WARNING: [HLS 200-40] Cannot find library 'C:/Xilinx2020/Vivado/2020.1/common/technology/xilinx/Virtex-7/Virtex-7_fpv7.lib'.
+WARNING: [HLS 200-40] Cannot find library 'xilinx/Virtex-7/Virtex-7_fpv7'.
+INFO: [HLS 200-10] Setting target device to 'xc7vx485t-ffg1157-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'conv.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 955.578 ; gain = 861.148
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 955.578 ; gain = 861.148
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 955.578 ; gain = 861.148
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 955.578 ; gain = 861.148
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Col_Loop' (conv.cpp:12) in function 'conv_1' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'Filter1_Loop' (conv.cpp:15) in function 'conv_1' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'W_Row_Loop' (conv.cpp:19) in function 'conv_1' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'W_Col_Loop' (conv.cpp:22) in function 'conv_1' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Chan_Loop' (conv.cpp:25) in function 'conv_1' completely with a factor of 2.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 955.578 ; gain = 861.148
+INFO: [XFORM 203-541] Flattening a loop nest 'Row_Loop' (conv.cpp:9:6) in function 'conv_1'.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 955.578 ; gain = 861.148
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'conv_1' ...
+WARNING: [SYN 201-107] Renaming port name 'conv_1/input' to 'conv_1/input_r' to avoid the conflict with HDL keywords or other object names.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'conv_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Row_Loop_Col_Loop'.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('input_load_2', conv.cpp:26) on array 'input_r' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'input_r'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 9, Depth = 24.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 8.546 seconds; current allocated memory: 106.257 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.199 seconds; current allocated memory: 107.273 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'conv_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'conv_1/input_r' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'conv_1/conv_out' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'conv_1' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'conv_1_fadd_32ns_32ns_32_2_full_dsp_1' to 'conv_1_fadd_32ns_bkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_1_fmul_32ns_32ns_32_2_max_dsp_1' to 'conv_1_fmul_32ns_cud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_1_fcmp_32ns_32ns_1_1_1' to 'conv_1_fcmp_32ns_dEe' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'conv_1_fadd_32ns_bkb': 7 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'conv_1_fcmp_32ns_dEe': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'conv_1_fmul_32ns_cud': 6 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'conv_1'.
+INFO: [HLS 200-111]  Elapsed time: 0.333 seconds; current allocated memory: 109.011 MB.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 29.59 MHz
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:03 ; elapsed = 00:00:11 . Memory (MB): peak = 955.578 ; gain = 861.148
+INFO: [VHDL 208-304] Generating VHDL RTL for conv_1.
+INFO: [VLOG 209-307] Generating Verilog RTL for conv_1.
+INFO: [HLS 200-112] Total elapsed time: 11.037 seconds; peak allocated memory: 109.011 MB.
+Finished C synthesis.

@@ -1,0 +1,1 @@
+set_directive_unroll "max_pool_1/Pool_Row_Loop"

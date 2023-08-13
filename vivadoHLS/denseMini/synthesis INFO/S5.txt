@@ -1,0 +1,112 @@
+Starting C synthesis ...
+C:/Xilinx2020/Vivado/2020.1/bin/vivado_hls.bat C:/Users/chenq/MAG/code/CNN-FPGA/vivadoHLS/denseMini/dense/S5/csynth.tcl
+INFO: Applying HLS Y2K22 patch v1.2 for IP revision
+INFO: [HLS 200-10] Running 'C:/Xilinx2020/Vivado/2020.1/bin/unwrapped/win64.o/vivado_hls.exe'
+INFO: [HLS 200-10] For user 'chenq' on host 'desktop-pi9akpv' (Windows NT_amd64 version 6.2) on Sun Aug 13 15:35:53 +0200 2023
+INFO: [HLS 200-10] In directory 'C:/Users/chenq/MAG/code/CNN-FPGA/vivadoHLS/denseMini'
+Sourcing Tcl script 'C:/Users/chenq/MAG/code/CNN-FPGA/vivadoHLS/denseMini/dense/S5/csynth.tcl'
+INFO: [HLS 200-10] Opening project 'C:/Users/chenq/MAG/code/CNN-FPGA/vivadoHLS/denseMini/dense'.
+INFO: [HLS 200-10] Adding design file 'dense.cpp' to the project
+INFO: [HLS 200-10] Adding design file 'dense.h' to the project
+INFO: [HLS 200-10] Adding design file 'parameters.h' to the project
+INFO: [HLS 200-10] Adding design file 'weights.h' to the project
+INFO: [HLS 200-10] Adding test bench file 'main.cpp' to the project
+INFO: [HLS 200-10] Opening solution 'C:/Users/chenq/MAG/code/CNN-FPGA/vivadoHLS/denseMini/dense/S5'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 40ns.
+WARNING: [HLS 200-40] Cannot find library 'C:/Xilinx2020/Vivado/2020.1/common/technology/xilinx/Virtex-7/Virtex-7.lib'.
+WARNING: [HLS 200-40] Cannot find library 'xilinx/Virtex-7/Virtex-7'.
+WARNING: [HLS 200-40] Cannot find library 'C:/Xilinx2020/Vivado/2020.1/common/technology/xilinx/Virtex-7/Virtex-7_fpv7.lib'.
+WARNING: [HLS 200-40] Cannot find library 'xilinx/Virtex-7/Virtex-7_fpv7'.
+INFO: [HLS 200-10] Setting target device to 'xc7vx485t-ffg1157-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'dense.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 935.199 ; gain = 841.570
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 935.199 ; gain = 841.570
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [XFORM 203-603] Inlining function 'soft_max' into 'dense' (dense.cpp:42).
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 935.199 ; gain = 841.570
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 935.199 ; gain = 841.570
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Dense_Loop' (dense.cpp:30) in function 'dense' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'Flat_Loop' (dense.cpp:35) in function 'dense' completely with a factor of 8.
+INFO: [XFORM 203-102] Partitioning array 'dense_weights' in dimension 1 automatically.
+INFO: [XFORM 203-102] Automatically partitioning small array 'dense_weights.0' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'dense_weights.1' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'dense_weights.2' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'dense_weights.3' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'dense_weights.4' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'dense_weights.5' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'dense_weights.6' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'dense_weights.7' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'dense_array' (dense.cpp:26) completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'flat_array' (dense.cpp:23) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'prediction' (dense.cpp:23) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'dense_weights.0' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'dense_weights.1' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'dense_weights.2' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'dense_weights.3' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'dense_weights.4' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'dense_weights.5' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'dense_weights.6' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'dense_weights.7' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'dense_array' (dense.cpp:26) in dimension 1 completely.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (dense.cpp:26:33) to (dense.cpp:26:33) in function 'dense'... converting 5 basic blocks.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 935.199 ; gain = 841.570
+INTERNAL-INFO: never seen llvm instruction 'fexp'(507)
+INTERNAL-INFO: never seen llvm instruction 'fexp'(507)
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 935.199 ; gain = 841.570
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'dense' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dense' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Dense_Loop'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 10.
+INFO: [SCHED 204-61] Pipelining loop 'Sum_Loop'.
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 1)
+   between 'fadd' operation ('sum', dense.cpp:12->dense.cpp:42) and 'fadd' operation ('sum', dense.cpp:12->dense.cpp:42).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 2, Depth = 5.
+INFO: [SCHED 204-61] Pipelining loop 'Prediction_Loop'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 8.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 8.11 seconds; current allocated memory: 104.420 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.105 seconds; current allocated memory: 104.932 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dense' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'dense/flat_array_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'dense/flat_array_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'dense/flat_array_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'dense/flat_array_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'dense/flat_array_4' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'dense/flat_array_5' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'dense/flat_array_6' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'dense/flat_array_7' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'dense/prediction_0' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'dense/prediction_1' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'dense/prediction_2' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'dense' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'dense_fadd_32ns_32ns_32_2_full_dsp_1' to 'dense_fadd_32ns_3bkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'dense_fmul_32ns_32ns_32_2_max_dsp_1' to 'dense_fmul_32ns_3cud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'dense_fdiv_32ns_32ns_32_5_1' to 'dense_fdiv_32ns_3dEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'dense_fexp_32ns_32ns_32_3_full_dsp_1' to 'dense_fexp_32ns_3eOg' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'dense_fadd_32ns_3bkb': 8 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dense_fdiv_32ns_3dEe': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dense_fexp_32ns_3eOg': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dense_fmul_32ns_3cud': 8 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dense_mux_32_32_1_1': 8 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dense'.
+INFO: [HLS 200-111]  Elapsed time: 0.29 seconds; current allocated memory: 106.226 MB.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 31.29 MHz
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:04 ; elapsed = 00:00:10 . Memory (MB): peak = 935.199 ; gain = 841.570
+INFO: [VHDL 208-304] Generating VHDL RTL for dense.
+INFO: [VLOG 209-307] Generating Verilog RTL for dense.
+INFO: [HLS 200-112] Total elapsed time: 10.365 seconds; peak allocated memory: 106.226 MB.
+Finished C synthesis.
