@@ -1,0 +1,188 @@
+
+
+================================================================
+== Vitis HLS Report for 'crazyFunction'
+================================================================
+* Date:           Mon Sep 11 15:06:25 2023
+
+* Version:        2021.1 (Build 3247384 on Thu Jun 10 19:36:33 MDT 2021)
+* Project:        AxiBram
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.256 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |      108|      108|  1.080 us|  1.080 us|  109|  109|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                  |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |     Loop Name    |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_9_1  |      106|      106|         8|          1|          1|   100|       yes|
+        +------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|     28|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        0|    2|     241|    430|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       -|     45|    -|
+|Register         |        -|    -|     157|     32|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|    2|     398|    535|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|   ~0|      ~0|      1|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +-----------------------------------+--------------------------------+---------+----+-----+-----+-----+
+    |              Instance             |             Module             | BRAM_18K| DSP|  FF | LUT | URAM|
+    +-----------------------------------+--------------------------------+---------+----+-----+-----+-----+
+    |CRTL_BUS_s_axi_U                   |CRTL_BUS_s_axi                  |        0|   0|   36|   40|    0|
+    |fadd_32ns_32ns_32_5_full_dsp_1_U1  |fadd_32ns_32ns_32_5_full_dsp_1  |        0|   2|  205|  390|    0|
+    +-----------------------------------+--------------------------------+---------+----+-----+-----+-----+
+    |Total                              |                                |        0|   2|  241|  430|    0|
+    +-----------------------------------+--------------------------------+---------+----+-----+-----+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-------------------+----------+----+---+----+------------+------------+
+    |   Variable Name   | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-------------------+----------+----+---+----+------------+------------+
+    |add_ln9_fu_97_p2   |         +|   0|  0|  14|           7|           1|
+    |ap_condition_177   |       and|   0|  0|   2|           1|           1|
+    |icmp_ln9_fu_91_p2  |      icmp|   0|  0|  10|           7|           6|
+    |ap_enable_pp0      |       xor|   0|  0|   2|           1|           2|
+    +-------------------+----------+----+---+----+------------+------------+
+    |Total              |          |   0|  0|  28|          16|          10|
+    +-------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-------------------------+----+-----------+-----+-----------+
+    |           Name          | LUT| Input Size| Bits| Total Bits|
+    +-------------------------+----+-----------+-----+-----------+
+    |ap_done_int              |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter1  |   9|          2|    1|          2|
+    |ap_sig_allocacmp_idx_1   |   9|          2|    7|         14|
+    |idx_fu_48                |   9|          2|    7|         14|
+    |res_WEN_A                |   9|          2|    4|          8|
+    +-------------------------+----+-----------+-----+-----------+
+    |Total                    |  45|         10|   20|         40|
+    +-------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------------------------+----+----+-----+-----------+
+    |               Name               | FF | LUT| Bits| Const Bits|
+    +----------------------------------+----+----+-----+-----------+
+    |add_reg_152                       |  32|   0|   32|          0|
+    |ap_CS_fsm                         |   1|   0|    1|          0|
+    |ap_done_reg                       |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1           |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter2           |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter3           |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter4           |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter5           |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter6           |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter7           |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter1_reg  |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter2_reg  |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter3_reg  |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter4_reg  |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter5_reg  |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter6_reg  |   1|   0|    1|          0|
+    |idx_cast_reg_132                  |   7|   0|   64|         57|
+    |idx_fu_48                         |   7|   0|    7|          0|
+    |x_load_reg_142                    |  32|   0|   32|          0|
+    |idx_cast_reg_132                  |  64|  32|   64|         57|
+    +----------------------------------+----+----+-----+-----------+
+    |Total                             | 157|  32|  214|        114|
+    +----------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++------------------------+-----+-----+------------+---------------+--------------+
+|        RTL Ports       | Dir | Bits|  Protocol  | Source Object |    C Type    |
++------------------------+-----+-----+------------+---------------+--------------+
+|s_axi_CRTL_BUS_AWVALID  |   in|    1|       s_axi|       CRTL_BUS|   return void|
+|s_axi_CRTL_BUS_AWREADY  |  out|    1|       s_axi|       CRTL_BUS|   return void|
+|s_axi_CRTL_BUS_AWADDR   |   in|    4|       s_axi|       CRTL_BUS|   return void|
+|s_axi_CRTL_BUS_WVALID   |   in|    1|       s_axi|       CRTL_BUS|   return void|
+|s_axi_CRTL_BUS_WREADY   |  out|    1|       s_axi|       CRTL_BUS|   return void|
+|s_axi_CRTL_BUS_WDATA    |   in|   32|       s_axi|       CRTL_BUS|   return void|
+|s_axi_CRTL_BUS_WSTRB    |   in|    4|       s_axi|       CRTL_BUS|   return void|
+|s_axi_CRTL_BUS_ARVALID  |   in|    1|       s_axi|       CRTL_BUS|   return void|
+|s_axi_CRTL_BUS_ARREADY  |  out|    1|       s_axi|       CRTL_BUS|   return void|
+|s_axi_CRTL_BUS_ARADDR   |   in|    4|       s_axi|       CRTL_BUS|   return void|
+|s_axi_CRTL_BUS_RVALID   |  out|    1|       s_axi|       CRTL_BUS|   return void|
+|s_axi_CRTL_BUS_RREADY   |   in|    1|       s_axi|       CRTL_BUS|   return void|
+|s_axi_CRTL_BUS_RDATA    |  out|   32|       s_axi|       CRTL_BUS|   return void|
+|s_axi_CRTL_BUS_RRESP    |  out|    2|       s_axi|       CRTL_BUS|   return void|
+|s_axi_CRTL_BUS_BVALID   |  out|    1|       s_axi|       CRTL_BUS|   return void|
+|s_axi_CRTL_BUS_BREADY   |   in|    1|       s_axi|       CRTL_BUS|   return void|
+|s_axi_CRTL_BUS_BRESP    |  out|    2|       s_axi|       CRTL_BUS|   return void|
+|ap_clk                  |   in|    1|  ap_ctrl_hs|  crazyFunction|  return value|
+|ap_rst_n                |   in|    1|  ap_ctrl_hs|  crazyFunction|  return value|
+|interrupt               |  out|    1|  ap_ctrl_hs|  crazyFunction|  return value|
+|x_Addr_A                |  out|   32|        bram|              x|         array|
+|x_EN_A                  |  out|    1|        bram|              x|         array|
+|x_WEN_A                 |  out|    4|        bram|              x|         array|
+|x_Din_A                 |  out|   32|        bram|              x|         array|
+|x_Dout_A                |   in|   32|        bram|              x|         array|
+|x_Clk_A                 |  out|    1|        bram|              x|         array|
+|x_Rst_A                 |  out|    1|        bram|              x|         array|
+|res_Addr_A              |  out|   32|        bram|            res|         array|
+|res_EN_A                |  out|    1|        bram|            res|         array|
+|res_WEN_A               |  out|    4|        bram|            res|         array|
+|res_Din_A               |  out|   32|        bram|            res|         array|
+|res_Dout_A              |   in|   32|        bram|            res|         array|
+|res_Clk_A               |  out|    1|        bram|            res|         array|
+|res_Rst_A               |  out|    1|        bram|            res|         array|
++------------------------+-----+-----+------------+---------------+--------------+
+
