@@ -48,8 +48,8 @@ int compare_to_golden_results(float prediction[DIGITS], float golden_result[DIGI
 {
     for (int i = 0; i < DIGITS; ++i)
     {
-    	printf("%f %f ?", prediction[i], golden_result[i]);
-    	printf("%f ", prediction[i] - golden_result[i]);
+    	//printf("%f %f ?", prediction[i], golden_result[i]);
+    	//printf("%f ", prediction[i] - golden_result[i]);
         if ((prediction[i] - golden_result[i] > 0.01) || (golden_result[i] - prediction[i] > 0.01))
             return 1;
     }
