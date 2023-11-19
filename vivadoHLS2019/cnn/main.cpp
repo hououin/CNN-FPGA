@@ -4,6 +4,7 @@
 #include <iostream>
 #include <iomanip>
 #include <cmath>
+#include <stdlib.h>
 
 #define N 20
 
@@ -59,6 +60,7 @@ int compare_to_golden_results(float prediction[DIGITS], float golden_result[DIGI
 
 int main()
 {
+	printf("test 2\n");
 
     float images[N][INPUT_ROWS][INPUT_COLS][1];
     if (0 != read_images("inputs.dat", images))
@@ -81,6 +83,18 @@ int main()
 
     for (int i = 0; i < N; ++i)
     {
+
+    	/*for (int ix = 0; ix < INPUT_ROWS; ix++)
+		{
+			for(int jx = 0; jx < INPUT_COLS; jx++)
+			{
+				for(int kx = 0; kx < CHANNELS; kx++)
+				{
+					printf("%f",images[i][ix][jx][kx]);
+				}
+			}
+			printf("\n");
+		}*/
 
     	float cnn_input[INPUT_ROWS*INPUT_COLS];
 

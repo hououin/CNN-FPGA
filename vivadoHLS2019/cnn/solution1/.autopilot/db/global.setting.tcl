@@ -42,13 +42,13 @@ set SCTraceOption all
 set TargetInfo xc7z020:-clg400:-1
 set SourceFiles {sc {} c {../max_pool_2.cpp ../max_pool_1.cpp ../flat.cpp ../dense.cpp ../conv_2.cpp ../conv_1.cpp ../cnn.cpp}}
 set SourceFlags {sc {} c {{} {} {} {} {} {} {}}}
-set DirectiveFile C:/Users/chenq/MAG/code/vivadoHLS2019/cnn/solution1/solution1.directive
-set TBFiles {verilog {../out.gold.dat ../main.cpp} bc {../out.gold.dat ../main.cpp} sc {../out.gold.dat ../main.cpp} vhdl {../out.gold.dat ../main.cpp} c {} cas {../out.gold.dat ../main.cpp}}
+set DirectiveFile C:/Users/chenq/MAG/code/CNN-FPGA/vivadoHLS2019/cnn/solution1/solution1.directive
+set TBFiles {verilog {../inputs.dat ../main.cpp ../out.gold.dat} bc {../inputs.dat ../main.cpp ../out.gold.dat} vhdl {../inputs.dat ../main.cpp ../out.gold.dat} sc {../inputs.dat ../main.cpp ../out.gold.dat} cas {../inputs.dat ../main.cpp ../out.gold.dat} c {}}
 set SpecLanguage C
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
 set TVOutFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
-set TBTops {verilog {} bc {} sc {} vhdl {} c {} cas {}}
-set TBInstNames {verilog {} bc {} sc {} vhdl {} c {} cas {}}
+set TBTops {verilog {} bc {} vhdl {} sc {} cas {} c {}}
+set TBInstNames {verilog {} bc {} vhdl {} sc {} cas {} c {}}
 set XDCFiles {}
 set ExtraGlobalOptions {"area_timing" 1 "clock_gate" 1 "impl_flow" map "power_gate" 0}
 set TBTVFileNotFound {}

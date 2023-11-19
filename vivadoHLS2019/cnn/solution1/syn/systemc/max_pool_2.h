@@ -23,13 +23,13 @@ struct max_pool_2 : public sc_module {
     sc_out< sc_logic > ap_done;
     sc_out< sc_logic > ap_idle;
     sc_out< sc_logic > ap_ready;
-    sc_out< sc_lv<13> > conv_out_address0;
-    sc_out< sc_logic > conv_out_ce0;
-    sc_in< sc_lv<32> > conv_out_q0;
     sc_out< sc_lv<11> > max_pool_out_address0;
     sc_out< sc_logic > max_pool_out_ce0;
     sc_out< sc_logic > max_pool_out_we0;
     sc_out< sc_lv<32> > max_pool_out_d0;
+    sc_out< sc_lv<13> > conv_2_out_address0;
+    sc_out< sc_logic > conv_2_out_ce0;
+    sc_in< sc_lv<32> > conv_2_out_q0;
     sc_signal< sc_logic > ap_var_for_const0;
     sc_signal< sc_lv<5> > ap_var_for_const1;
 
@@ -205,8 +205,8 @@ struct max_pool_2 : public sc_module {
     void thread_bitcast_ln32_1_fu_418_p1();
     void thread_bitcast_ln32_fu_401_p1();
     void thread_c_fu_240_p2();
-    void thread_conv_out_address0();
-    void thread_conv_out_ce0();
+    void thread_conv_2_out_address0();
+    void thread_conv_2_out_ce0();
     void thread_f_fu_178_p2();
     void thread_grp_fu_162_p1();
     void thread_i_fu_301_p2();

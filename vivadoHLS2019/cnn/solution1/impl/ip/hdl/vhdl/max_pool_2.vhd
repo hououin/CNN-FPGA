@@ -17,13 +17,13 @@ port (
     ap_done : OUT STD_LOGIC;
     ap_idle : OUT STD_LOGIC;
     ap_ready : OUT STD_LOGIC;
-    conv_out_address0 : OUT STD_LOGIC_VECTOR (12 downto 0);
-    conv_out_ce0 : OUT STD_LOGIC;
-    conv_out_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
     max_pool_out_address0 : OUT STD_LOGIC_VECTOR (10 downto 0);
     max_pool_out_ce0 : OUT STD_LOGIC;
     max_pool_out_we0 : OUT STD_LOGIC;
-    max_pool_out_d0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
+    max_pool_out_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
+    conv_2_out_address0 : OUT STD_LOGIC_VECTOR (12 downto 0);
+    conv_2_out_ce0 : OUT STD_LOGIC;
+    conv_2_out_q0 : IN STD_LOGIC_VECTOR (31 downto 0) );
 end;
 
 
@@ -206,7 +206,7 @@ begin
     port map (
         clk => ap_clk,
         reset => ap_rst,
-        din0 => conv_out_q0,
+        din0 => conv_2_out_q0,
         din1 => grp_fu_162_p1,
         ce => ap_const_logic_1,
         opcode => ap_const_lv5_2,
@@ -356,7 +356,7 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if ((ap_const_logic_1 = ap_CS_fsm_state7)) then
-                max_reg_606 <= conv_out_q0;
+                max_reg_606 <= conv_2_out_q0;
                 select_ln24_reg_599 <= select_ln24_fu_392_p3;
             end if;
         end if;
@@ -500,14 +500,14 @@ begin
     bitcast_ln32_1_fu_418_p1 <= select_ln24_reg_599;
     bitcast_ln32_fu_401_p1 <= max_reg_606;
     c_fu_240_p2 <= std_logic_vector(unsigned(c_0_reg_129) + unsigned(ap_const_lv3_1));
-    conv_out_address0 <= zext_ln32_2_fu_369_p1(13 - 1 downto 0);
+    conv_2_out_address0 <= zext_ln32_2_fu_369_p1(13 - 1 downto 0);
 
-    conv_out_ce0_assign_proc : process(ap_CS_fsm_state6)
+    conv_2_out_ce0_assign_proc : process(ap_CS_fsm_state6)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state6)) then 
-            conv_out_ce0 <= ap_const_logic_1;
+            conv_2_out_ce0 <= ap_const_logic_1;
         else 
-            conv_out_ce0 <= ap_const_logic_0;
+            conv_2_out_ce0 <= ap_const_logic_0;
         end if; 
     end process;
 

@@ -23,10 +23,11 @@ add_files cnn/max_pool_1.h
 add_files cnn/max_pool_2.cpp
 add_files cnn/max_pool_2.h
 add_files cnn/parameters.h
-add_files -tb cnn/main.cpp
-add_files -tb cnn/out.gold.dat
+add_files -tb cnn/out.gold.dat -cflags "-Wno-unknown-pragmas" -csimflags "-Wno-unknown-pragmas"
+add_files -tb cnn/main.cpp -cflags "-Wno-unknown-pragmas" -csimflags "-Wno-unknown-pragmas"
+add_files -tb cnn/inputs.dat -cflags "-Wno-unknown-pragmas" -csimflags "-Wno-unknown-pragmas"
 open_solution "solution1"
-set_part {xc7z020clg400-1} -tool vivado
+set_part {xc7z020-clg400-1} -tool vivado
 create_clock -period 10 -name default
 config_export -format ip_catalog -rtl verilog
 source "./cnn/solution1/directives.tcl"

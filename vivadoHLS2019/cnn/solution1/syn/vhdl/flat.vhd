@@ -17,13 +17,13 @@ port (
     ap_done : OUT STD_LOGIC;
     ap_idle : OUT STD_LOGIC;
     ap_ready : OUT STD_LOGIC;
-    max_pool_out_address0 : OUT STD_LOGIC_VECTOR (10 downto 0);
-    max_pool_out_ce0 : OUT STD_LOGIC;
-    max_pool_out_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
     flat_array_address0 : OUT STD_LOGIC_VECTOR (10 downto 0);
     flat_array_ce0 : OUT STD_LOGIC;
     flat_array_we0 : OUT STD_LOGIC;
-    flat_array_d0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
+    flat_array_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
+    max_pool_2_out_address0 : OUT STD_LOGIC_VECTOR (10 downto 0);
+    max_pool_2_out_ce0 : OUT STD_LOGIC;
+    max_pool_2_out_q0 : IN STD_LOGIC_VECTOR (31 downto 0) );
 end;
 
 
@@ -317,7 +317,7 @@ begin
         end if; 
     end process;
 
-    flat_array_d0 <= max_pool_out_q0;
+    flat_array_d0 <= max_pool_2_out_q0;
 
     flat_array_we0_assign_proc : process(ap_CS_fsm_state5)
     begin
@@ -332,14 +332,14 @@ begin
     icmp_ln12_fu_221_p2 <= "1" when (f_0_reg_135 = ap_const_lv7_40) else "0";
     icmp_ln6_fu_146_p2 <= "1" when (r_0_reg_79 = ap_const_lv3_5) else "0";
     icmp_ln9_fu_186_p2 <= "1" when (c_0_reg_113 = ap_const_lv3_5) else "0";
-    max_pool_out_address0 <= zext_ln14_5_fu_242_p1(11 - 1 downto 0);
+    max_pool_2_out_address0 <= zext_ln14_5_fu_242_p1(11 - 1 downto 0);
 
-    max_pool_out_ce0_assign_proc : process(ap_CS_fsm_state4)
+    max_pool_2_out_ce0_assign_proc : process(ap_CS_fsm_state4)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state4)) then 
-            max_pool_out_ce0 <= ap_const_logic_1;
+            max_pool_2_out_ce0 <= ap_const_logic_1;
         else 
-            max_pool_out_ce0 <= ap_const_logic_0;
+            max_pool_2_out_ce0 <= ap_const_logic_0;
         end if; 
     end process;
 

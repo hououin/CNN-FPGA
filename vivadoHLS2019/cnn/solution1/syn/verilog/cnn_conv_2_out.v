@@ -18,6 +18,9 @@ input clk;
 
 (* ram_style = "block" *)reg [DWIDTH-1:0] ram[0:MEM_SIZE-1];
 
+initial begin
+    $readmemh("./cnn_conv_2_out_ram.dat", ram);
+end
 
 
 

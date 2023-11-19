@@ -77,10 +77,6 @@ int main()
 	}
 
 
-/*	XCrazyfunction_Start(&doCrazyFunction);
-	while(!XCrazyfunction_IsDone(&doCrazyFunction));
-	printf("HW test finished\n");*/
-
 	XCnn_Start(&doConv1);
 	while(!XCnn_IsDone(&doConv1));
 	printf("HW finished\n");

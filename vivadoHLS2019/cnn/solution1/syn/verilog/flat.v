@@ -14,13 +14,13 @@ module flat (
         ap_done,
         ap_idle,
         ap_ready,
-        max_pool_out_address0,
-        max_pool_out_ce0,
-        max_pool_out_q0,
         flat_array_address0,
         flat_array_ce0,
         flat_array_we0,
-        flat_array_d0
+        flat_array_d0,
+        max_pool_2_out_address0,
+        max_pool_2_out_ce0,
+        max_pool_2_out_q0
 );
 
 parameter    ap_ST_fsm_state1 = 5'd1;
@@ -35,20 +35,20 @@ input   ap_start;
 output   ap_done;
 output   ap_idle;
 output   ap_ready;
-output  [10:0] max_pool_out_address0;
-output   max_pool_out_ce0;
-input  [31:0] max_pool_out_q0;
 output  [10:0] flat_array_address0;
 output   flat_array_ce0;
 output   flat_array_we0;
 output  [31:0] flat_array_d0;
+output  [10:0] max_pool_2_out_address0;
+output   max_pool_2_out_ce0;
+input  [31:0] max_pool_2_out_q0;
 
 reg ap_done;
 reg ap_idle;
 reg ap_ready;
-reg max_pool_out_ce0;
 reg flat_array_ce0;
 reg flat_array_we0;
+reg max_pool_2_out_ce0;
 
 (* fsm_encoding = "none" *) reg   [4:0] ap_CS_fsm;
 wire    ap_CS_fsm_state1;
@@ -226,9 +226,9 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state4)) begin
-        max_pool_out_ce0 = 1'b1;
+        max_pool_2_out_ce0 = 1'b1;
     end else begin
-        max_pool_out_ce0 = 1'b0;
+        max_pool_2_out_ce0 = 1'b0;
     end
 end
 
@@ -297,7 +297,7 @@ assign f_fu_227_p2 = (f_0_reg_135 + 7'd1);
 
 assign flat_array_address0 = zext_ln14_3_fu_247_p1;
 
-assign flat_array_d0 = max_pool_out_q0;
+assign flat_array_d0 = max_pool_2_out_q0;
 
 assign i_fu_158_p2 = (i_0_reg_90 + 11'd320);
 
@@ -307,7 +307,7 @@ assign icmp_ln6_fu_146_p2 = ((r_0_reg_79 == 3'd5) ? 1'b1 : 1'b0);
 
 assign icmp_ln9_fu_186_p2 = ((c_0_reg_113 == 3'd5) ? 1'b1 : 1'b0);
 
-assign max_pool_out_address0 = zext_ln14_5_fu_242_p1;
+assign max_pool_2_out_address0 = zext_ln14_5_fu_242_p1;
 
 assign r_fu_152_p2 = (r_0_reg_79 + 3'd1);
 

@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'dense'
 ================================================================
-* Date:           Thu Sep 21 12:39:08 2023
+* Date:           Sun Nov 19 15:16:00 2023
 
 * Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
 * Project:        cnn
@@ -254,7 +254,7 @@ ST_2 : Operation 32 [2/2] (0.00ns)   --->   "call fastcc void @soft_max([10 x fl
 State 3 <SV = 2> <Delay = 7.12>
 ST_3 : Operation 33 [1/1] (0.00ns)   --->   "%f_0 = phi i11 [ 0, %Dense_Loop_begin ], [ %f, %._crit_edge ]"   --->   Operation 33 'phi' 'f_0' <Predicate = true> <Delay = 0.00>
 ST_3 : Operation 34 [1/1] (1.88ns)   --->   "%icmp_ln33 = icmp eq i11 %f_0, -448" [cnn/dense.cpp:33]   --->   Operation 34 'icmp' 'icmp_ln33' <Predicate = true> <Delay = 1.88> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_3 : Operation 35 [1/1] (0.00ns)   --->   "%empty_28 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1600, i64 1600, i64 1600)"   --->   Operation 35 'speclooptripcount' 'empty_28' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 35 [1/1] (0.00ns)   --->   "%empty_26 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1600, i64 1600, i64 1600)"   --->   Operation 35 'speclooptripcount' 'empty_26' <Predicate = true> <Delay = 0.00>
 ST_3 : Operation 36 [1/1] (1.63ns)   --->   "%f = add i11 %f_0, 1" [cnn/dense.cpp:33]   --->   Operation 36 'add' 'f' <Predicate = true> <Delay = 1.63> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.63> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
 ST_3 : Operation 37 [1/1] (0.00ns)   --->   "br i1 %icmp_ln33, label %Dense_Loop_end, label %3" [cnn/dense.cpp:33]   --->   Operation 37 'br' <Predicate = true> <Delay = 0.00>
 ST_3 : Operation 38 [1/1] (1.88ns)   --->   "%icmp_ln35 = icmp eq i11 %f_0, 0" [cnn/dense.cpp:35]   --->   Operation 38 'icmp' 'icmp_ln35' <Predicate = (!icmp_ln33)> <Delay = 1.88> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
@@ -271,7 +271,7 @@ ST_3 : Operation 48 [2/2] (3.25ns)   --->   "%dense_weights_load = load float* %
 ST_3 : Operation 49 [1/1] (0.00ns)   --->   "%flat_array_addr = getelementptr [1600 x float]* @flat_array, i64 0, i64 %zext_ln39_3" [cnn/dense.cpp:39]   --->   Operation 49 'getelementptr' 'flat_array_addr' <Predicate = (!icmp_ln33)> <Delay = 0.00>
 ST_3 : Operation 50 [2/2] (3.25ns)   --->   "%flat_array_load = load float* %flat_array_addr, align 4" [cnn/dense.cpp:39]   --->   Operation 50 'load' 'flat_array_load' <Predicate = (!icmp_ln33)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
 ST_3 : Operation 51 [1/1] (1.88ns)   --->   "%icmp_ln41 = icmp eq i11 %f_0, -449" [cnn/dense.cpp:41]   --->   Operation 51 'icmp' 'icmp_ln41' <Predicate = (!icmp_ln33)> <Delay = 1.88> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_3 : Operation 52 [1/1] (0.00ns)   --->   "%empty_29 = call i32 (...)* @_ssdm_op_SpecRegionEnd([11 x i8]* @p_str215, i32 %tmp_s)" [cnn/dense.cpp:48]   --->   Operation 52 'specregionend' 'empty_29' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_3 : Operation 52 [1/1] (0.00ns)   --->   "%empty_27 = call i32 (...)* @_ssdm_op_SpecRegionEnd([11 x i8]* @p_str215, i32 %tmp_s)" [cnn/dense.cpp:48]   --->   Operation 52 'specregionend' 'empty_27' <Predicate = (icmp_ln33)> <Delay = 0.00>
 ST_3 : Operation 53 [1/1] (0.00ns)   --->   "br label %1" [cnn/dense.cpp:29]   --->   Operation 53 'br' <Predicate = (icmp_ln33)> <Delay = 0.00>
 
 State 4 <SV = 3> <Delay = 3.25>
@@ -358,7 +358,7 @@ dense_array_addr   (getelementptr    ) [ 0001111111111110]
 br_ln33            (br               ) [ 0011111111111110]
 f_0                (phi              ) [ 0001000000000000]
 icmp_ln33          (icmp             ) [ 0011111111111110]
-empty_28           (speclooptripcount) [ 0000000000000000]
+empty_26           (speclooptripcount) [ 0000000000000000]
 f                  (add              ) [ 0011111111111110]
 br_ln33            (br               ) [ 0000000000000000]
 icmp_ln35          (icmp             ) [ 0000111111000000]
@@ -373,7 +373,7 @@ zext_ln39_8        (zext             ) [ 0000000000000000]
 dense_weights_addr (getelementptr    ) [ 0000100000000000]
 flat_array_addr    (getelementptr    ) [ 0000100000000000]
 icmp_ln41          (icmp             ) [ 0000111111111110]
-empty_29           (specregionend    ) [ 0000000000000000]
+empty_27           (specregionend    ) [ 0000000000000000]
 br_ln29            (br               ) [ 0111111111111110]
 dense_weights_load (load             ) [ 0000011110000000]
 flat_array_load    (load             ) [ 0000011110000000]

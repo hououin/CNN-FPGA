@@ -57,7 +57,7 @@ max_pool_2::max_pool_2(sc_module_name name) : sc_module(name), mVcdFile(0) {
     cnn_fcmp_32ns_32neOg_U21 = new cnn_fcmp_32ns_32neOg<1,2,32,32,1>("cnn_fcmp_32ns_32neOg_U21");
     cnn_fcmp_32ns_32neOg_U21->clk(ap_clk);
     cnn_fcmp_32ns_32neOg_U21->reset(ap_rst);
-    cnn_fcmp_32ns_32neOg_U21->din0(conv_out_q0);
+    cnn_fcmp_32ns_32neOg_U21->din0(conv_2_out_q0);
     cnn_fcmp_32ns_32neOg_U21->din1(grp_fu_162_p1);
     cnn_fcmp_32ns_32neOg_U21->ce(ap_var_for_const0);
     cnn_fcmp_32ns_32neOg_U21->opcode(ap_var_for_const1);
@@ -149,11 +149,11 @@ max_pool_2::max_pool_2(sc_module_name name) : sc_module(name), mVcdFile(0) {
     SC_METHOD(thread_c_fu_240_p2);
     sensitive << ( c_0_reg_129 );
 
-    SC_METHOD(thread_conv_out_address0);
+    SC_METHOD(thread_conv_2_out_address0);
     sensitive << ( ap_CS_fsm_state6 );
     sensitive << ( zext_ln32_2_fu_369_p1 );
 
-    SC_METHOD(thread_conv_out_ce0);
+    SC_METHOD(thread_conv_2_out_ce0);
     sensitive << ( ap_CS_fsm_state6 );
 
     SC_METHOD(thread_f_fu_178_p2);
@@ -370,13 +370,13 @@ max_pool_2::max_pool_2(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sc_trace(mVcdFile, ap_done, "(port)ap_done");
     sc_trace(mVcdFile, ap_idle, "(port)ap_idle");
     sc_trace(mVcdFile, ap_ready, "(port)ap_ready");
-    sc_trace(mVcdFile, conv_out_address0, "(port)conv_out_address0");
-    sc_trace(mVcdFile, conv_out_ce0, "(port)conv_out_ce0");
-    sc_trace(mVcdFile, conv_out_q0, "(port)conv_out_q0");
     sc_trace(mVcdFile, max_pool_out_address0, "(port)max_pool_out_address0");
     sc_trace(mVcdFile, max_pool_out_ce0, "(port)max_pool_out_ce0");
     sc_trace(mVcdFile, max_pool_out_we0, "(port)max_pool_out_we0");
     sc_trace(mVcdFile, max_pool_out_d0, "(port)max_pool_out_d0");
+    sc_trace(mVcdFile, conv_2_out_address0, "(port)conv_2_out_address0");
+    sc_trace(mVcdFile, conv_2_out_ce0, "(port)conv_2_out_ce0");
+    sc_trace(mVcdFile, conv_2_out_q0, "(port)conv_2_out_q0");
 #endif
 #ifdef __HLS_TRACE_LEVEL_INT__
     sc_trace(mVcdFile, ap_CS_fsm, "ap_CS_fsm");
@@ -565,7 +565,7 @@ void max_pool_2::thread_ap_clk_no_reset_() {
         shl_ln1_reg_544 = shl_ln1_fu_246_p3.read();
     }
     if (esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state7.read())) {
-        max_reg_606 = conv_out_q0.read();
+        max_reg_606 = conv_2_out_q0.read();
         select_ln24_reg_599 = select_ln24_fu_392_p3.read();
     }
     if (esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state6.read())) {
@@ -694,15 +694,15 @@ void max_pool_2::thread_c_fu_240_p2() {
     c_fu_240_p2 = (!c_0_reg_129.read().is_01() || !ap_const_lv3_1.is_01())? sc_lv<3>(): (sc_biguint<3>(c_0_reg_129.read()) + sc_biguint<3>(ap_const_lv3_1));
 }
 
-void max_pool_2::thread_conv_out_address0() {
-    conv_out_address0 =  (sc_lv<13>) (zext_ln32_2_fu_369_p1.read());
+void max_pool_2::thread_conv_2_out_address0() {
+    conv_2_out_address0 =  (sc_lv<13>) (zext_ln32_2_fu_369_p1.read());
 }
 
-void max_pool_2::thread_conv_out_ce0() {
+void max_pool_2::thread_conv_2_out_ce0() {
     if (esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state6.read())) {
-        conv_out_ce0 = ap_const_logic_1;
+        conv_2_out_ce0 = ap_const_logic_1;
     } else {
-        conv_out_ce0 = ap_const_logic_0;
+        conv_2_out_ce0 = ap_const_logic_0;
     }
 }
 

@@ -7,7 +7,6 @@
 #include "dense.h"
 #include "parameters.h"
 
-
 void cnn(float cnn_input[INPUT_ROWS*INPUT_COLS*CHANNELS], float prediction[DIGITS])
 {
 
@@ -27,19 +26,26 @@ void cnn(float cnn_input[INPUT_ROWS*INPUT_COLS*CHANNELS], float prediction[DIGIT
 		}
 	}
 
-	float conv_1_out[CONV_1_ROWS][CONV_1_COLS][FILTERS_1];
+	float conv_1_out[CONV_1_ROWS][CONV_1_COLS][FILTERS_1] = { 0 };
 	conv_1(conv_1_input, conv_1_out);
+	//conv_1(cnn_input, conv_1_out);
 
-	float max_pool_1_out[POOL_1_OUT_ROWS][POOL_1_OUT_COLS][FILTERS_1];
+	//write_to_file(conv_1_out);
+
+	float max_pool_1_out[POOL_1_OUT_ROWS][POOL_1_OUT_COLS][FILTERS_1] = { 0 };
 	max_pool_1(conv_1_out, max_pool_1_out);
 
-	float conv_2_out[CONV_2_ROWS][CONV_2_COLS][FILTERS_2];
+	//write_to_file(max_pool_1_out);
+
+	float conv_2_out[CONV_2_ROWS][CONV_2_COLS][FILTERS_2] = { 0 };
 	conv_2(max_pool_1_out, conv_2_out);
 
-	float max_pool_2_out[POOL_2_OUT_ROWS][POOL_2_OUT_COLS][FILTERS_2];
+	//write_to_file(conv_2_out);
+
+	float max_pool_2_out[POOL_2_OUT_ROWS][POOL_2_OUT_COLS][FILTERS_2] = { 0 };
 	max_pool_2(conv_2_out, max_pool_2_out);
 
-	float flat_array[FLAT_SIZE]= { 0 };
+	float flat_array[FLAT_SIZE] = { 0 };
 	flat(max_pool_2_out, flat_array);
 
 	dense(flat_array, prediction);

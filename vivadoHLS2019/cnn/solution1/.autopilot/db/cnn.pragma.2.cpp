@@ -158,8 +158,9 @@ extern "C" {
 
 void cnn
 (
-  float input [28*28*1],
-  float pred [10]
+  float cnn_input [28*28*1],
+
+  float prediction[10]
 );
 # 2 "cnn/cnn.cpp" 2
 # 1 "cnn/conv_1.h" 1
@@ -224,17 +225,16 @@ void dense
 # 8 "cnn/cnn.cpp" 2
 
 
-
 void cnn(float cnn_input[28*28*1], float prediction[10])
 {_ssdm_SpecArrayDimSize(cnn_input, 784);_ssdm_SpecArrayDimSize(prediction, 10);
 _ssdm_op_SpecInterface(cnn_input, "bram", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
-# 12 "cnn/cnn.cpp"
+# 11 "cnn/cnn.cpp"
 
 _ssdm_op_SpecInterface(prediction, "bram", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
-# 12 "cnn/cnn.cpp"
+# 11 "cnn/cnn.cpp"
 
 _ssdm_op_SpecInterface(0, "s_axilite", 0, 0, "", 0, 0, "CRTL_BUS", "", "", 0, 0, 0, 0, "", "");
-# 12 "cnn/cnn.cpp"
+# 11 "cnn/cnn.cpp"
 
 
  float conv_1_input[28][28][1];
@@ -253,19 +253,26 @@ _ssdm_op_SpecInterface(0, "s_axilite", 0, 0, "", 0, 0, "CRTL_BUS", "", "", 0, 0,
   }
  }
 
- float conv_1_out[26][26][32];
+ float conv_1_out[26][26][32] = { 0 };
  conv_1(conv_1_input, conv_1_out);
 
- float max_pool_1_out[(26 / 2)][(26 / 2)][32];
+
+
+
+ float max_pool_1_out[(26 / 2)][(26 / 2)][32] = { 0 };
  max_pool_1(conv_1_out, max_pool_1_out);
 
- float conv_2_out[11][11][64];
+
+
+ float conv_2_out[11][11][64] = { 0 };
  conv_2(max_pool_1_out, conv_2_out);
 
- float max_pool_2_out[(11 / 2)][(11 / 2)][64];
+
+
+ float max_pool_2_out[(11 / 2)][(11 / 2)][64] = { 0 };
  max_pool_2(conv_2_out, max_pool_2_out);
 
- float flat_array[(64 * (11 / 2) * (11 / 2))]= { 0 };
+ float flat_array[(64 * (11 / 2) * (11 / 2))] = { 0 };
  flat(max_pool_2_out, flat_array);
 
  dense(flat_array, prediction);

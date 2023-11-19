@@ -1,0 +1,306 @@
+
+
+================================================================
+== Vivado HLS Report for 'soft_max'
+================================================================
+* Date:           Sun Nov 19 15:08:47 2023
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        cnn
+* Solution:       solution2
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  40.00|    25.938|        5.00|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |  182|  182|  182|  182|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------+-----+-----+----------+-----------+-----------+------+----------+
+        |                   |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |     Loop Name     | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Sum_Loop         |   70|   70|         7|          -|          -|    10|    no    |
+        |- Prediction_Loop  |  110|  110|        11|          -|          -|    10|    no    |
+        +-------------------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 19
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 9 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 2 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 19 
+19 --> 9 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.76>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface([10 x float]* %prediction, [5 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind"   --->   Operation 20 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (1.76ns)   --->   "br label %1" [cnn/dense.cpp:10]   --->   Operation 21 'br' <Predicate = true> <Delay = 1.76>
+
+State 2 <SV = 1> <Delay = 2.32>
+ST_2 : Operation 22 [1/1] (0.00ns)   --->   "%sum_0 = phi float [ 0.000000e+00, %0 ], [ %sum, %2 ]"   --->   Operation 22 'phi' 'sum_0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 23 [1/1] (0.00ns)   --->   "%i_0 = phi i4 [ 0, %0 ], [ %i, %2 ]"   --->   Operation 23 'phi' 'i_0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 24 [1/1] (1.30ns)   --->   "%icmp_ln10 = icmp eq i4 %i_0, -6" [cnn/dense.cpp:10]   --->   Operation 24 'icmp' 'icmp_ln10' <Predicate = true> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 25 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 10, i64 10, i64 10)"   --->   Operation 25 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 26 [1/1] (1.73ns)   --->   "%i = add i4 %i_0, 1" [cnn/dense.cpp:10]   --->   Operation 26 'add' 'i' <Predicate = true> <Delay = 1.73> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 27 [1/1] (0.00ns)   --->   "br i1 %icmp_ln10, label %.preheader.preheader, label %2" [cnn/dense.cpp:10]   --->   Operation 27 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 28 [1/1] (0.00ns)   --->   "%zext_ln12 = zext i4 %i_0 to i64" [cnn/dense.cpp:12]   --->   Operation 28 'zext' 'zext_ln12' <Predicate = (!icmp_ln10)> <Delay = 0.00>
+ST_2 : Operation 29 [1/1] (0.00ns)   --->   "%dense_array_addr = getelementptr [10 x float]* %dense_array, i64 0, i64 %zext_ln12" [cnn/dense.cpp:12]   --->   Operation 29 'getelementptr' 'dense_array_addr' <Predicate = (!icmp_ln10)> <Delay = 0.00>
+ST_2 : Operation 30 [2/2] (2.32ns)   --->   "%dense_array_load = load float* %dense_array_addr, align 4" [cnn/dense.cpp:12]   --->   Operation 30 'load' 'dense_array_load' <Predicate = (!icmp_ln10)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_2 : Operation 31 [1/1] (1.76ns)   --->   "br label %.preheader" [cnn/dense.cpp:16]   --->   Operation 31 'br' <Predicate = (icmp_ln10)> <Delay = 1.76>
+
+State 3 <SV = 2> <Delay = 23.2>
+ST_3 : Operation 32 [1/2] (2.32ns)   --->   "%dense_array_load = load float* %dense_array_addr, align 4" [cnn/dense.cpp:12]   --->   Operation 32 'load' 'dense_array_load' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_3 : Operation 33 [4/4] (20.8ns)   --->   "%tmp = call float @llvm.exp.f32(float %dense_array_load)" [cnn/dense.cpp:12]   --->   Operation 33 'fexp' 'tmp' <Predicate = true> <Delay = 20.8> <Core = "FExp">   --->   Core 127 'FExp' <Latency = 3> <II = 1> <Delay = 20.8> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 4 <SV = 3> <Delay = 20.8>
+ST_4 : Operation 34 [3/4] (20.8ns)   --->   "%tmp = call float @llvm.exp.f32(float %dense_array_load)" [cnn/dense.cpp:12]   --->   Operation 34 'fexp' 'tmp' <Predicate = true> <Delay = 20.8> <Core = "FExp">   --->   Core 127 'FExp' <Latency = 3> <II = 1> <Delay = 20.8> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 5 <SV = 4> <Delay = 20.8>
+ST_5 : Operation 35 [2/4] (20.8ns)   --->   "%tmp = call float @llvm.exp.f32(float %dense_array_load)" [cnn/dense.cpp:12]   --->   Operation 35 'fexp' 'tmp' <Predicate = true> <Delay = 20.8> <Core = "FExp">   --->   Core 127 'FExp' <Latency = 3> <II = 1> <Delay = 20.8> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 6 <SV = 5> <Delay = 20.8>
+ST_6 : Operation 36 [1/4] (20.8ns)   --->   "%tmp = call float @llvm.exp.f32(float %dense_array_load)" [cnn/dense.cpp:12]   --->   Operation 36 'fexp' 'tmp' <Predicate = true> <Delay = 20.8> <Core = "FExp">   --->   Core 127 'FExp' <Latency = 3> <II = 1> <Delay = 20.8> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 7 <SV = 6> <Delay = 22.5>
+ST_7 : Operation 37 [2/2] (22.5ns)   --->   "%sum = fadd float %sum_0, %tmp" [cnn/dense.cpp:12]   --->   Operation 37 'fadd' 'sum' <Predicate = true> <Delay = 22.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 1> <II = 1> <Delay = 22.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 8 <SV = 7> <Delay = 22.5>
+ST_8 : Operation 38 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([9 x i8]* @p_str19) nounwind" [cnn/dense.cpp:11]   --->   Operation 38 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 39 [1/2] (22.5ns)   --->   "%sum = fadd float %sum_0, %tmp" [cnn/dense.cpp:12]   --->   Operation 39 'fadd' 'sum' <Predicate = true> <Delay = 22.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 1> <II = 1> <Delay = 22.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 40 [1/1] (0.00ns)   --->   "br label %1" [cnn/dense.cpp:10]   --->   Operation 40 'br' <Predicate = true> <Delay = 0.00>
+
+State 9 <SV = 2> <Delay = 2.32>
+ST_9 : Operation 41 [1/1] (0.00ns)   --->   "%j_0 = phi i4 [ %j, %3 ], [ 0, %.preheader.preheader ]"   --->   Operation 41 'phi' 'j_0' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 42 [1/1] (1.30ns)   --->   "%icmp_ln16 = icmp eq i4 %j_0, -6" [cnn/dense.cpp:16]   --->   Operation 42 'icmp' 'icmp_ln16' <Predicate = true> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 43 [1/1] (0.00ns)   --->   "%empty_5 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 10, i64 10, i64 10)"   --->   Operation 43 'speclooptripcount' 'empty_5' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 44 [1/1] (1.73ns)   --->   "%j = add i4 %j_0, 1" [cnn/dense.cpp:16]   --->   Operation 44 'add' 'j' <Predicate = true> <Delay = 1.73> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 45 [1/1] (0.00ns)   --->   "br i1 %icmp_ln16, label %4, label %3" [cnn/dense.cpp:16]   --->   Operation 45 'br' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 46 [1/1] (0.00ns)   --->   "%zext_ln18 = zext i4 %j_0 to i64" [cnn/dense.cpp:18]   --->   Operation 46 'zext' 'zext_ln18' <Predicate = (!icmp_ln16)> <Delay = 0.00>
+ST_9 : Operation 47 [1/1] (0.00ns)   --->   "%dense_array_addr_1 = getelementptr [10 x float]* %dense_array, i64 0, i64 %zext_ln18" [cnn/dense.cpp:18]   --->   Operation 47 'getelementptr' 'dense_array_addr_1' <Predicate = (!icmp_ln16)> <Delay = 0.00>
+ST_9 : Operation 48 [2/2] (2.32ns)   --->   "%dense_array_load_1 = load float* %dense_array_addr_1, align 4" [cnn/dense.cpp:18]   --->   Operation 48 'load' 'dense_array_load_1' <Predicate = (!icmp_ln16)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_9 : Operation 49 [1/1] (0.00ns)   --->   "ret void" [cnn/dense.cpp:21]   --->   Operation 49 'ret' <Predicate = (icmp_ln16)> <Delay = 0.00>
+
+State 10 <SV = 3> <Delay = 23.2>
+ST_10 : Operation 50 [1/2] (2.32ns)   --->   "%dense_array_load_1 = load float* %dense_array_addr_1, align 4" [cnn/dense.cpp:18]   --->   Operation 50 'load' 'dense_array_load_1' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_10 : Operation 51 [4/4] (20.8ns)   --->   "%tmp_2 = call float @llvm.exp.f32(float %dense_array_load_1)" [cnn/dense.cpp:18]   --->   Operation 51 'fexp' 'tmp_2' <Predicate = true> <Delay = 20.8> <Core = "FExp">   --->   Core 127 'FExp' <Latency = 3> <II = 1> <Delay = 20.8> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 11 <SV = 4> <Delay = 20.8>
+ST_11 : Operation 52 [3/4] (20.8ns)   --->   "%tmp_2 = call float @llvm.exp.f32(float %dense_array_load_1)" [cnn/dense.cpp:18]   --->   Operation 52 'fexp' 'tmp_2' <Predicate = true> <Delay = 20.8> <Core = "FExp">   --->   Core 127 'FExp' <Latency = 3> <II = 1> <Delay = 20.8> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 12 <SV = 5> <Delay = 20.8>
+ST_12 : Operation 53 [2/4] (20.8ns)   --->   "%tmp_2 = call float @llvm.exp.f32(float %dense_array_load_1)" [cnn/dense.cpp:18]   --->   Operation 53 'fexp' 'tmp_2' <Predicate = true> <Delay = 20.8> <Core = "FExp">   --->   Core 127 'FExp' <Latency = 3> <II = 1> <Delay = 20.8> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 13 <SV = 6> <Delay = 20.8>
+ST_13 : Operation 54 [1/4] (20.8ns)   --->   "%tmp_2 = call float @llvm.exp.f32(float %dense_array_load_1)" [cnn/dense.cpp:18]   --->   Operation 54 'fexp' 'tmp_2' <Predicate = true> <Delay = 20.8> <Core = "FExp">   --->   Core 127 'FExp' <Latency = 3> <II = 1> <Delay = 20.8> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 14 <SV = 7> <Delay = 23.6>
+ST_14 : Operation 55 [6/6] (23.6ns)   --->   "%tmp_3 = fdiv float %tmp_2, %sum_0" [cnn/dense.cpp:18]   --->   Operation 55 'fdiv' 'tmp_3' <Predicate = true> <Delay = 23.6> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 5> <II = 1> <Delay = 23.6> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 15 <SV = 8> <Delay = 23.6>
+ST_15 : Operation 56 [5/6] (23.6ns)   --->   "%tmp_3 = fdiv float %tmp_2, %sum_0" [cnn/dense.cpp:18]   --->   Operation 56 'fdiv' 'tmp_3' <Predicate = true> <Delay = 23.6> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 5> <II = 1> <Delay = 23.6> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 16 <SV = 9> <Delay = 23.6>
+ST_16 : Operation 57 [4/6] (23.6ns)   --->   "%tmp_3 = fdiv float %tmp_2, %sum_0" [cnn/dense.cpp:18]   --->   Operation 57 'fdiv' 'tmp_3' <Predicate = true> <Delay = 23.6> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 5> <II = 1> <Delay = 23.6> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 17 <SV = 10> <Delay = 23.6>
+ST_17 : Operation 58 [3/6] (23.6ns)   --->   "%tmp_3 = fdiv float %tmp_2, %sum_0" [cnn/dense.cpp:18]   --->   Operation 58 'fdiv' 'tmp_3' <Predicate = true> <Delay = 23.6> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 5> <II = 1> <Delay = 23.6> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 18 <SV = 11> <Delay = 23.6>
+ST_18 : Operation 59 [2/6] (23.6ns)   --->   "%tmp_3 = fdiv float %tmp_2, %sum_0" [cnn/dense.cpp:18]   --->   Operation 59 'fdiv' 'tmp_3' <Predicate = true> <Delay = 23.6> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 5> <II = 1> <Delay = 23.6> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 19 <SV = 12> <Delay = 25.9>
+ST_19 : Operation 60 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([16 x i8]* @p_str120) nounwind" [cnn/dense.cpp:17]   --->   Operation 60 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 61 [1/6] (23.6ns)   --->   "%tmp_3 = fdiv float %tmp_2, %sum_0" [cnn/dense.cpp:18]   --->   Operation 61 'fdiv' 'tmp_3' <Predicate = true> <Delay = 23.6> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 5> <II = 1> <Delay = 23.6> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 62 [1/1] (0.00ns)   --->   "%prediction_addr = getelementptr [10 x float]* %prediction, i64 0, i64 %zext_ln18" [cnn/dense.cpp:18]   --->   Operation 62 'getelementptr' 'prediction_addr' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 63 [1/1] (2.32ns)   --->   "store float %tmp_3, float* %prediction_addr, align 4" [cnn/dense.cpp:18]   --->   Operation 63 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_19 : Operation 64 [1/1] (0.00ns)   --->   "br label %.preheader" [cnn/dense.cpp:16]   --->   Operation 64 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 40ns, clock uncertainty: 5ns.
+
+ <State 1>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('sum') with incoming values : ('sum', cnn/dense.cpp:12) [6]  (1.77 ns)
+
+ <State 2>: 2.32ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', cnn/dense.cpp:10) [7]  (0 ns)
+	'getelementptr' operation ('dense_array_addr', cnn/dense.cpp:12) [15]  (0 ns)
+	'load' operation ('dense_array_load', cnn/dense.cpp:12) on array 'dense_array' [16]  (2.32 ns)
+
+ <State 3>: 23.2ns
+The critical path consists of the following:
+	'load' operation ('dense_array_load', cnn/dense.cpp:12) on array 'dense_array' [16]  (2.32 ns)
+	'fexp' operation ('tmp', cnn/dense.cpp:12) [17]  (20.9 ns)
+
+ <State 4>: 20.9ns
+The critical path consists of the following:
+	'fexp' operation ('tmp', cnn/dense.cpp:12) [17]  (20.9 ns)
+
+ <State 5>: 20.9ns
+The critical path consists of the following:
+	'fexp' operation ('tmp', cnn/dense.cpp:12) [17]  (20.9 ns)
+
+ <State 6>: 20.9ns
+The critical path consists of the following:
+	'fexp' operation ('tmp', cnn/dense.cpp:12) [17]  (20.9 ns)
+
+ <State 7>: 22.6ns
+The critical path consists of the following:
+	'fadd' operation ('sum', cnn/dense.cpp:12) [18]  (22.6 ns)
+
+ <State 8>: 22.6ns
+The critical path consists of the following:
+	'fadd' operation ('sum', cnn/dense.cpp:12) [18]  (22.6 ns)
+
+ <State 9>: 2.32ns
+The critical path consists of the following:
+	'phi' operation ('j') with incoming values : ('j', cnn/dense.cpp:16) [23]  (0 ns)
+	'getelementptr' operation ('dense_array_addr_1', cnn/dense.cpp:18) [31]  (0 ns)
+	'load' operation ('dense_array_load_1', cnn/dense.cpp:18) on array 'dense_array' [32]  (2.32 ns)
+
+ <State 10>: 23.2ns
+The critical path consists of the following:
+	'load' operation ('dense_array_load_1', cnn/dense.cpp:18) on array 'dense_array' [32]  (2.32 ns)
+	'fexp' operation ('tmp_2', cnn/dense.cpp:18) [33]  (20.9 ns)
+
+ <State 11>: 20.9ns
+The critical path consists of the following:
+	'fexp' operation ('tmp_2', cnn/dense.cpp:18) [33]  (20.9 ns)
+
+ <State 12>: 20.9ns
+The critical path consists of the following:
+	'fexp' operation ('tmp_2', cnn/dense.cpp:18) [33]  (20.9 ns)
+
+ <State 13>: 20.9ns
+The critical path consists of the following:
+	'fexp' operation ('tmp_2', cnn/dense.cpp:18) [33]  (20.9 ns)
+
+ <State 14>: 23.6ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_3', cnn/dense.cpp:18) [34]  (23.6 ns)
+
+ <State 15>: 23.6ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_3', cnn/dense.cpp:18) [34]  (23.6 ns)
+
+ <State 16>: 23.6ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_3', cnn/dense.cpp:18) [34]  (23.6 ns)
+
+ <State 17>: 23.6ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_3', cnn/dense.cpp:18) [34]  (23.6 ns)
+
+ <State 18>: 23.6ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_3', cnn/dense.cpp:18) [34]  (23.6 ns)
+
+ <State 19>: 25.9ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_3', cnn/dense.cpp:18) [34]  (23.6 ns)
+	'store' operation ('store_ln18', cnn/dense.cpp:18) of variable 'tmp_3', cnn/dense.cpp:18 on array 'prediction' [36]  (2.32 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

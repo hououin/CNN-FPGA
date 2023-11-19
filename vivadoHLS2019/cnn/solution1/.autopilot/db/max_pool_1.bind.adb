@@ -111,14 +111,14 @@
 						<id>4</id>
 						<name>max_3_write_ln9</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>9</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item class_id="11" tracking_level="0" version="0">
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second class_id="12" tracking_level="0" version="0">
 									<count>1</count>
 									<item_version>0</item_version>
@@ -160,14 +160,14 @@
 						<id>5</id>
 						<name>_ln9</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>9</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -245,14 +245,14 @@
 						<id>8</id>
 						<name>icmp_ln9</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>9</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -294,14 +294,14 @@
 						<id>10</id>
 						<name>f</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>9</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -343,14 +343,14 @@
 						<id>11</id>
 						<name>_ln9</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>9</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -393,14 +393,14 @@
 						<id>15</id>
 						<name>zext_ln12</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>12</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -441,14 +441,14 @@
 						<id>16</id>
 						<name>zext_ln12_2</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>12</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -489,14 +489,14 @@
 						<id>17</id>
 						<name>_ln12</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>12</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -574,14 +574,14 @@
 						<id>20</id>
 						<name>phi_mul</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>12</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -625,14 +625,14 @@
 						<id>21</id>
 						<name>add_ln12</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>12</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -674,14 +674,14 @@
 						<id>22</id>
 						<name>icmp_ln12</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>12</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -723,14 +723,14 @@
 						<id>24</id>
 						<name>r</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>12</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -772,14 +772,14 @@
 						<id>25</id>
 						<name>_ln12</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>12</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -822,14 +822,14 @@
 						<id>29</id>
 						<name>shl_ln</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>29</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -872,14 +872,14 @@
 						<id>30</id>
 						<name>_ln15</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>15</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -957,14 +957,14 @@
 						<id>33</id>
 						<name>icmp_ln15</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>15</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1006,14 +1006,14 @@
 						<id>35</id>
 						<name>c</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>15</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1055,14 +1055,14 @@
 						<id>36</id>
 						<name>_ln15</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>15</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1105,14 +1105,14 @@
 						<id>40</id>
 						<name>shl_ln2</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>30</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1155,14 +1155,14 @@
 						<id>41</id>
 						<name>zext_ln39</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>39</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1203,14 +1203,14 @@
 						<id>42</id>
 						<name>add_ln39</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>39</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1252,14 +1252,14 @@
 						<id>43</id>
 						<name>tmp_1</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>39</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1302,14 +1302,14 @@
 						<id>44</id>
 						<name>zext_ln39_4</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>39</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1350,14 +1350,14 @@
 						<id>45</id>
 						<name>add_ln39_3</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>39</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1399,14 +1399,14 @@
 						<id>46</id>
 						<name>zext_ln39_5</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>39</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1447,14 +1447,14 @@
 						<id>47</id>
 						<name>max_pool_out_addr</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>39</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1497,14 +1497,14 @@
 						<id>48</id>
 						<name>_ln19</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>19</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1582,14 +1582,14 @@
 						<id>51</id>
 						<name>trunc_ln19</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>19</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1630,14 +1630,14 @@
 						<id>52</id>
 						<name>zext_ln19</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>19</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1678,14 +1678,14 @@
 						<id>53</id>
 						<name>icmp_ln19</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>19</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1727,14 +1727,14 @@
 						<id>55</id>
 						<name>mpr</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>19</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1776,14 +1776,14 @@
 						<id>56</id>
 						<name>_ln19</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>19</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1826,14 +1826,14 @@
 						<id>60</id>
 						<name>i</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>29</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1875,14 +1875,14 @@
 						<id>61</id>
 						<name>zext_ln32</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>32</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1923,14 +1923,14 @@
 						<id>62</id>
 						<name>mul_ln32</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>32</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1972,14 +1972,14 @@
 						<id>63</id>
 						<name>icmp_ln37</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>37</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -2021,14 +2021,14 @@
 						<id>64</id>
 						<name>_ln22</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>22</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -2106,14 +2106,14 @@
 						<id>67</id>
 						<name>zext_ln22</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>22</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -2154,14 +2154,14 @@
 						<id>68</id>
 						<name>trunc_ln22</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>22</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -2202,14 +2202,14 @@
 						<id>69</id>
 						<name>icmp_ln22</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>22</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -2251,14 +2251,14 @@
 						<id>71</id>
 						<name>mpc</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>22</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -2300,14 +2300,14 @@
 						<id>72</id>
 						<name>_ln22</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>22</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -2350,14 +2350,14 @@
 						<id>74</id>
 						<name>max_3_load</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>24</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -2399,14 +2399,14 @@
 						<id>76</id>
 						<name>or_ln24</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>24</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -2448,14 +2448,14 @@
 						<id>77</id>
 						<name>select_ln24</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>24</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -2498,14 +2498,14 @@
 						<id>78</id>
 						<name>j</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>30</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -2547,14 +2547,14 @@
 						<id>79</id>
 						<name>zext_ln32_3</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>32</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -2595,14 +2595,14 @@
 						<id>80</id>
 						<name>add_ln32</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>32</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -2644,14 +2644,14 @@
 						<id>81</id>
 						<name>tmp_2</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>32</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -2694,14 +2694,14 @@
 						<id>82</id>
 						<name>zext_ln32_4</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>32</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -2742,14 +2742,14 @@
 						<id>83</id>
 						<name>add_ln32_2</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>32</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -2791,14 +2791,14 @@
 						<id>84</id>
 						<name>zext_ln32_5</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>32</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -2839,14 +2839,14 @@
 						<id>85</id>
 						<name>conv_out_addr</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>32</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -2889,14 +2889,14 @@
 						<id>86</id>
 						<name>max</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>32</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -2937,14 +2937,14 @@
 						<id>87</id>
 						<name>bitcast_ln32</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>32</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -2985,14 +2985,14 @@
 						<id>88</id>
 						<name>tmp</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>32</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -3036,14 +3036,14 @@
 						<id>89</id>
 						<name>trunc_ln32</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>32</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -3084,14 +3084,14 @@
 						<id>90</id>
 						<name>bitcast_ln32_2</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>32</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -3132,14 +3132,14 @@
 						<id>91</id>
 						<name>tmp_9</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>32</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -3183,14 +3183,14 @@
 						<id>92</id>
 						<name>trunc_ln32_2</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>32</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -3231,14 +3231,14 @@
 						<id>93</id>
 						<name>icmp_ln32</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>32</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -3280,14 +3280,14 @@
 						<id>94</id>
 						<name>icmp_ln32_4</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>32</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -3329,14 +3329,14 @@
 						<id>95</id>
 						<name>or_ln32</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>32</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -3378,14 +3378,14 @@
 						<id>96</id>
 						<name>icmp_ln32_5</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>32</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -3427,14 +3427,14 @@
 						<id>97</id>
 						<name>icmp_ln32_6</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>32</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -3476,14 +3476,14 @@
 						<id>98</id>
 						<name>or_ln32_2</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>32</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -3525,14 +3525,14 @@
 						<id>99</id>
 						<name>and_ln32</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>32</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -3574,14 +3574,14 @@
 						<id>100</id>
 						<name>tmp_s</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>32</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -3623,14 +3623,14 @@
 						<id>101</id>
 						<name>and_ln32_2</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>32</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -3672,14 +3672,14 @@
 						<id>102</id>
 						<name>max_4</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>32</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -3722,14 +3722,14 @@
 						<id>103</id>
 						<name>icmp_ln37_2</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>37</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -3771,14 +3771,14 @@
 						<id>104</id>
 						<name>and_ln37</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>37</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -3820,14 +3820,14 @@
 						<id>105</id>
 						<name>_ln37</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>37</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -3870,14 +3870,14 @@
 						<id>107</id>
 						<name>max_pool_out_addr_write_ln39</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>39</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -3919,14 +3919,14 @@
 						<id>108</id>
 						<name>_ln40</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>40</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -3967,14 +3967,14 @@
 						<id>110</id>
 						<name>max_3_write_ln22</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>22</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -4018,14 +4018,14 @@
 						<id>111</id>
 						<name>_ln22</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>22</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -4066,14 +4066,14 @@
 						<id>114</id>
 						<name>_ln19</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>19</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -4114,14 +4114,14 @@
 						<id>117</id>
 						<name>_ln15</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>15</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -4162,14 +4162,14 @@
 						<id>120</id>
 						<name>_ln12</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>12</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -4210,14 +4210,14 @@
 						<id>123</id>
 						<name>_ln9</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>9</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -4258,14 +4258,14 @@
 						<id>125</id>
 						<name>_ln48</name>
 						<fileName>cnn/max_pool_1.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>48</lineNumber>
 						<contextFuncName>max_pool_1</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>

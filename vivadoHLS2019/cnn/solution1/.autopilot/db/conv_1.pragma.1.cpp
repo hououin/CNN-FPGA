@@ -210,7 +210,6 @@ float conv_1_bias[32] = { -0.043020874 ,-0.03239056 ,-0.18487151 ,0.06864944 ,-0
 
 void conv_1(float input[28][28][1], float conv_out[26][26][32]) {_ssdm_SpecArrayDimSize(input, 28);_ssdm_SpecArrayDimSize(conv_out, 26);
 
- float w_sum = 0.0;
  Row_Loop:
     for (int r = 0; r < 26; ++r)
     {
@@ -220,7 +219,7 @@ void conv_1(float input[28][28][1], float conv_out[26][26][32]) {_ssdm_SpecArray
          Filter1_Loop:
             for (int f = 0; f < 32; ++f)
             {
-
+             float w_sum = 0.0;
                 W_Row_Loop:
                 for (int wr = 0; wr < 3; ++wr)
                 {
@@ -230,25 +229,18 @@ void conv_1(float input[28][28][1], float conv_out[26][26][32]) {_ssdm_SpecArray
                      Chan_Loop:
                         for (int ch = 0; ch < 1; ++ch)
                         {
-                         if(wr == 0 && wc == 0 && ch == 0)
-                         {
-                          w_sum = 0.0;
-                         }
                             w_sum += conv_1_weights[wr][wc][ch][f] * input[r + wr][c + wc][ch];
 
-                            if(wr + 1 == 3 && wc + 1 == 3 && ch + 1 == 1)
-                            {
-                              w_sum += conv_1_bias[f];
-
-
-                                 if (w_sum > 0.0)
-                                     conv_out[r][c][f] = w_sum;
-                                 else
-                                     conv_out[r][c][f] = 0;
-                            }
                         }
                     }
                 }
+                w_sum += conv_1_bias[f];
+
+
+    if (w_sum > 0.0)
+     conv_out[r][c][f] = w_sum;
+    else
+     conv_out[r][c][f] = 0;
 
             }
         }

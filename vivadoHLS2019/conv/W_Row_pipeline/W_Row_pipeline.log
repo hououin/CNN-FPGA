@@ -1,0 +1,79 @@
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 40ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'conv/conv_1.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 185.047 ; gain = 93.586
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 185.047 ; gain = 93.586
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 185.047 ; gain = 93.586
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 185.047 ; gain = 93.586
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'W_Row_Loop' (conv/conv_1.cpp:19) in function 'conv_1' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'W_Col_Loop' (conv/conv_1.cpp:22) in function 'conv_1' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Chan_Loop' (conv/conv_1.cpp:25) in function 'conv_1' completely with a factor of 1.
+INFO: [XFORM 203-102] Partitioning array 'conv_1_weights' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_1_weights.0' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_1_weights.1' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_1_weights.2' in dimension 2 automatically.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 185.047 ; gain = 93.586
+INFO: [XFORM 203-541] Flattening a loop nest 'Filter1_Loop' (conv/conv_1.cpp:15:14) in function 'conv_1'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Col_Loop' (conv/conv_1.cpp:12:10) in function 'conv_1'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Row_Loop' (conv/conv_1.cpp:9:6) in function 'conv_1'.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 185.047 ; gain = 93.586
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'conv_1' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'conv_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Row_Loop_Filter1_Loop_W_Row_Loop'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: Row_Loop_Filter1_Loop_W_Row_Loop): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: Row_Loop_Filter1_Loop_W_Row_Loop): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: Row_Loop_Filter1_Loop_W_Row_Loop): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: Row_Loop_Filter1_Loop_W_Row_Loop): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: Row_Loop_Filter1_Loop_W_Row_Loop): Unable to enforce a carried dependence constraint (II = 5, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3', conv/conv_1.cpp:26).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 6, Depth = 11.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 7.125 seconds; current allocated memory: 101.898 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.086 seconds; current allocated memory: 102.426 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'conv_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'conv_1/conv_input' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'conv_1/conv_out' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'conv_1' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'conv_1_conv_1_weights_0_0' to 'conv_1_conv_1_weibkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_1_conv_1_weights_1_0' to 'conv_1_conv_1_weicud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_1_conv_1_weights_2_0' to 'conv_1_conv_1_weidEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_1_fadd_32ns_32ns_32_2_full_dsp_1' to 'conv_1_fadd_32ns_eOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_1_fmul_32ns_32ns_32_2_max_dsp_1' to 'conv_1_fmul_32ns_fYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_1_fcmp_32ns_32ns_1_1_1' to 'conv_1_fcmp_32ns_g8j' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_1_mac_muladd_5ns_6ns_5ns_10_1_1' to 'conv_1_mac_muladdhbi' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'conv_1_fadd_32ns_eOg': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'conv_1_fcmp_32ns_g8j': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'conv_1_fmul_32ns_fYi': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'conv_1_mac_muladdhbi': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'conv_1'.
+INFO: [HLS 200-111]  Elapsed time: 0.205 seconds; current allocated memory: 103.500 MB.
+INFO: [RTMG 210-279] Implementing memory 'conv_1_conv_1_bias_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_1_conv_1_weibkb_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_1_conv_1_weicud_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_1_conv_1_weidEe_rom' using auto ROMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 185.047 ; gain = 93.586
+INFO: [VHDL 208-304] Generating VHDL RTL for conv_1.
+INFO: [VLOG 209-307] Generating Verilog RTL for conv_1.
+INFO: [HLS 200-112] Total elapsed time: 9.088 seconds; peak allocated memory: 103.500 MB.

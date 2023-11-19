@@ -4,7 +4,6 @@
 
 void conv_1(float input[INPUT_ROWS][INPUT_COLS][CHANNELS], float conv_out[CONV_1_ROWS][CONV_1_COLS][FILTERS_1]) {
 
-	float w_sum = 0.0;
 	Row_Loop:
     for (int r = 0; r < CONV_1_ROWS; ++r)
     {
@@ -14,7 +13,7 @@ void conv_1(float input[INPUT_ROWS][INPUT_COLS][CHANNELS], float conv_out[CONV_1
         	Filter1_Loop:
             for (int f = 0; f < FILTERS_1; ++f)
             {
-
+            	float w_sum = 0.0;
                 W_Row_Loop:
                 for (int wr = 0; wr < WEIGHT_ROWS; ++wr)
                 {
@@ -24,25 +23,18 @@ void conv_1(float input[INPUT_ROWS][INPUT_COLS][CHANNELS], float conv_out[CONV_1
                     	Chan_Loop:
                         for (int ch = 0; ch < CHANNELS; ++ch)
                         {
-                        	if(wr == 0 && wc == 0 && ch == 0)
-                        	{
-                        		w_sum = 0.0;
-                        	}
                             w_sum += conv_1_weights[wr][wc][ch][f] * input[r + wr][c + wc][ch];
 
-                            if(wr + 1 == WEIGHT_ROWS && wc + 1 == WEIGHT_COLS && ch + 1 == CHANNELS)
-                            {
-                            	 w_sum += conv_1_bias[f];
-
-                                 //reLu
-                                 if (w_sum > 0.0)
-                                     conv_out[r][c][f] = w_sum;
-                                 else
-                                     conv_out[r][c][f] = 0;
-                            }
                         }
                     }
                 }
+                w_sum += conv_1_bias[f];
+
+				//reLu
+				if (w_sum > 0.0)
+					conv_out[r][c][f] = w_sum;
+				else
+					conv_out[r][c][f] = 0;
 
             }
         }

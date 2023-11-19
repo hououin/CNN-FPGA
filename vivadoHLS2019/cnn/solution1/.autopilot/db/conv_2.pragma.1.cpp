@@ -486,7 +486,6 @@ float conv_2_bias[64] = { -0.03668432 ,0.02249027 ,0.03502329 ,-0.08957461 ,0.05
 # 4 "cnn/conv_2.cpp" 2
 
 void conv_2(float input[(26 / 2)][(26 / 2)][32], float conv_out[11][11][64]) {_ssdm_SpecArrayDimSize(input, 13);_ssdm_SpecArrayDimSize(conv_out, 11);
- float w_sum = 0.0;
 
  Row_Loop:
     for (int r = 0; r < 11; ++r)
@@ -497,7 +496,7 @@ void conv_2(float input[(26 / 2)][(26 / 2)][32], float conv_out[11][11][64]) {_s
          Filter2_Loop:
             for (int f = 0; f < 64; ++f)
             {
-
+             float w_sum = 0.0;
                 W_Row_Loop:
                 for (int wr = 0; wr < 3; ++wr)
                 {
@@ -507,26 +506,18 @@ void conv_2(float input[(26 / 2)][(26 / 2)][32], float conv_out[11][11][64]) {_s
                      Filter1_Loop:
                         for (int ch = 0; ch < 32; ++ch)
                         {
-                         if(wr == 0 && wc == 0 && ch == 0)
-                         {
-                          w_sum = 0.0;
-                         }
                             w_sum += conv_2_weights[wr][wc][ch][f] * input[r + wr][c + wc][ch];
-
-                            if(wr + 1 == 3 && wc + 1 == 3 && ch + 1 == 32)
-                            {
-                                w_sum += conv_2_bias[f];
-
-
-                                if (w_sum > 0.0)
-                                    conv_out[r][c][f] = w_sum;
-                                else
-                                    conv_out[r][c][f] = 0;
-
-                            }
                         }
                     }
                 }
+
+                w_sum += conv_2_bias[f];
+
+
+                if (w_sum > 0.0)
+                    conv_out[r][c][f] = w_sum;
+                else
+                    conv_out[r][c][f] = 0;
             }
         }
     }

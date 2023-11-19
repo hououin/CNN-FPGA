@@ -1,0 +1,67 @@
+Starting C synthesis ...
+C:/Xilinx2019/Vivado/2019.1/bin/vivado_hls.bat C:/Users/chenq/MAG/code/CNN-FPGA/vivadoHLS2019/conv/noDirective/csynth.tcl
+INFO: Applying HLS Y2K22 patch v1.2 for IP revision
+INFO: [HLS 200-10] Running 'C:/Xilinx2019/Vivado/2019.1/bin/unwrapped/win64.o/vivado_hls.exe'
+INFO: [HLS 200-10] For user 'chenq' on host 'desktop-pi9akpv' (Windows NT_amd64 version 6.2) on Tue Oct 03 13:39:00 +0200 2023
+INFO: [HLS 200-10] In directory 'C:/Users/chenq/MAG/code/CNN-FPGA/vivadoHLS2019'
+Sourcing Tcl script 'C:/Users/chenq/MAG/code/CNN-FPGA/vivadoHLS2019/conv/noDirective/csynth.tcl'
+INFO: [HLS 200-10] Opening project 'C:/Users/chenq/MAG/code/CNN-FPGA/vivadoHLS2019/conv'.
+INFO: [HLS 200-10] Adding design file 'conv/conv_1.cpp' to the project
+INFO: [HLS 200-10] Adding design file 'conv/conv_1.h' to the project
+INFO: [HLS 200-10] Adding design file 'conv/conv_1_weights.h' to the project
+INFO: [HLS 200-10] Adding design file 'conv/parameters.h' to the project
+INFO: [HLS 200-10] Adding test bench file 'conv/image.txt' to the project
+INFO: [HLS 200-10] Adding test bench file 'conv/main.cpp' to the project
+INFO: [HLS 200-10] Opening solution 'C:/Users/chenq/MAG/code/CNN-FPGA/vivadoHLS2019/conv/noDirective'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 40ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'conv/conv_1.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 184.168 ; gain = 92.613
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 184.168 ; gain = 92.613
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 184.168 ; gain = 92.613
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 184.168 ; gain = 92.613
+INFO: [XFORM 203-502] Unrolling small iteration loop 'Chan_Loop' (conv/conv_1.cpp:25) in function 'conv_1' automatically.
+INFO: [HLS 200-489] Unrolling loop 'Chan_Loop' (conv/conv_1.cpp:25) in function 'conv_1' completely with a factor of 1.
+INFO: [XFORM 203-102] Partitioning array 'conv_1_weights' in dimension 3 automatically.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 184.168 ; gain = 92.613
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 184.168 ; gain = 92.613
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'conv_1' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'conv_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 6.91 seconds; current allocated memory: 101.406 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 5 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.072 seconds; current allocated memory: 101.751 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'conv_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'conv_1/conv_input' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'conv_1/conv_out' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'conv_1' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'conv_1_conv_1_weights_0' to 'conv_1_conv_1_weibkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_1_fadd_32ns_32ns_32_2_full_dsp_1' to 'conv_1_fadd_32ns_cud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_1_fmul_32ns_32ns_32_2_max_dsp_1' to 'conv_1_fmul_32ns_dEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_1_fcmp_32ns_32ns_1_1_1' to 'conv_1_fcmp_32ns_eOg' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'conv_1_fadd_32ns_cud': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'conv_1_fcmp_32ns_eOg': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'conv_1_fmul_32ns_dEe': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'conv_1'.
+INFO: [HLS 200-111]  Elapsed time: 0.149 seconds; current allocated memory: 102.375 MB.
+INFO: [RTMG 210-279] Implementing memory 'conv_1_conv_1_weibkb_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_1_conv_1_bias_rom' using auto ROMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 184.168 ; gain = 92.613
+INFO: [VHDL 208-304] Generating VHDL RTL for conv_1.
+INFO: [VLOG 209-307] Generating Verilog RTL for conv_1.
+INFO: [HLS 200-112] Total elapsed time: 8.524 seconds; peak allocated memory: 102.375 MB.
+Finished C synthesis.

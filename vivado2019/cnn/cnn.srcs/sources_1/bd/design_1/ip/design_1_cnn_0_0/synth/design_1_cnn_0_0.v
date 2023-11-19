@@ -48,11 +48,11 @@
 
 
 // IP VLNV: xilinx.com:hls:cnn:1.0
-// IP Revision: 2113217379
+// IP Revision: 2113302556
 
 (* X_CORE_INFO = "cnn,Vivado 2019.1" *)
 (* CHECK_LICENSE_TYPE = "design_1_cnn_0_0,cnn,{}" *)
-(* CORE_GENERATION_INFO = "design_1_cnn_0_0,cnn,{x_ipProduct=Vivado 2019.1,x_ipVendor=xilinx.com,x_ipLibrary=hls,x_ipName=cnn,x_ipVersion=1.0,x_ipCoreRevision=2113217379,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S_AXI_CRTL_BUS_ADDR_WIDTH=4,C_S_AXI_CRTL_BUS_DATA_WIDTH=32}" *)
+(* CORE_GENERATION_INFO = "design_1_cnn_0_0,cnn,{x_ipProduct=Vivado 2019.1,x_ipVendor=xilinx.com,x_ipLibrary=hls,x_ipName=cnn,x_ipVersion=1.0,x_ipCoreRevision=2113302556,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S_AXI_CRTL_BUS_ADDR_WIDTH=4,C_S_AXI_CRTL_BUS_DATA_WIDTH=32}" *)
 (* IP_DEFINITION_SOURCE = "HLS" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module design_1_cnn_0_0 (

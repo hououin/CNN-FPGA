@@ -1,12 +1,13 @@
-<project xmlns="com.autoesl.autopilot.project" top="cnn" name="cnn">
+<project xmlns="com.autoesl.autopilot.project" name="cnn" top="cnn">
     <includePaths/>
     <libraryPaths/>
     <Simulation>
         <SimFlow name="csim" csimMode="0" lastCsimMode="0"/>
     </Simulation>
     <files xmlns="">
-        <file name="../out.gold.dat" sc="0" tb="1" cflags=" -Wno-unknown-pragmas" csimflags=" -Wno-unknown-pragmas" blackbox="false"/>
+        <file name="../inputs.dat" sc="0" tb="1" cflags=" -Wno-unknown-pragmas" csimflags=" -Wno-unknown-pragmas" blackbox="false"/>
         <file name="../main.cpp" sc="0" tb="1" cflags=" -Wno-unknown-pragmas" csimflags=" -Wno-unknown-pragmas" blackbox="false"/>
+        <file name="../out.gold.dat" sc="0" tb="1" cflags=" -Wno-unknown-pragmas" csimflags=" -Wno-unknown-pragmas" blackbox="false"/>
         <file name="cnn/parameters.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
         <file name="cnn/max_pool_2.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
         <file name="cnn/max_pool_2.cpp" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
@@ -28,6 +29,7 @@
     </files>
     <solutions xmlns="">
         <solution name="solution1" status="active"/>
+        <solution name="solution2" status="inactive"/>
     </solutions>
 </project>
 

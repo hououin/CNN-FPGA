@@ -14,13 +14,13 @@ module max_pool_2 (
         ap_done,
         ap_idle,
         ap_ready,
-        conv_out_address0,
-        conv_out_ce0,
-        conv_out_q0,
         max_pool_out_address0,
         max_pool_out_ce0,
         max_pool_out_we0,
-        max_pool_out_d0
+        max_pool_out_d0,
+        conv_2_out_address0,
+        conv_2_out_ce0,
+        conv_2_out_q0
 );
 
 parameter    ap_ST_fsm_state1 = 9'd1;
@@ -39,20 +39,20 @@ input   ap_start;
 output   ap_done;
 output   ap_idle;
 output   ap_ready;
-output  [12:0] conv_out_address0;
-output   conv_out_ce0;
-input  [31:0] conv_out_q0;
 output  [10:0] max_pool_out_address0;
 output   max_pool_out_ce0;
 output   max_pool_out_we0;
 output  [31:0] max_pool_out_d0;
+output  [12:0] conv_2_out_address0;
+output   conv_2_out_ce0;
+input  [31:0] conv_2_out_q0;
 
 reg ap_done;
 reg ap_idle;
 reg ap_ready;
-reg conv_out_ce0;
 reg max_pool_out_ce0;
 reg max_pool_out_we0;
+reg conv_2_out_ce0;
 
 (* fsm_encoding = "none" *) reg   [8:0] ap_CS_fsm;
 wire    ap_CS_fsm_state1;
@@ -164,7 +164,7 @@ cnn_fcmp_32ns_32neOg #(
 cnn_fcmp_32ns_32neOg_U21(
     .clk(ap_clk),
     .reset(ap_rst),
-    .din0(conv_out_q0),
+    .din0(conv_2_out_q0),
     .din1(grp_fu_162_p1),
     .ce(1'b1),
     .opcode(5'd2),
@@ -274,7 +274,7 @@ end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state7)) begin
-        max_reg_606 <= conv_out_q0;
+        max_reg_606 <= conv_2_out_q0;
         select_ln24_reg_599 <= select_ln24_fu_392_p3;
     end
 end
@@ -332,9 +332,9 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state6)) begin
-        conv_out_ce0 = 1'b1;
+        conv_2_out_ce0 = 1'b1;
     end else begin
-        conv_out_ce0 = 1'b0;
+        conv_2_out_ce0 = 1'b0;
     end
 end
 
@@ -453,7 +453,7 @@ assign bitcast_ln32_fu_401_p1 = max_reg_606;
 
 assign c_fu_240_p2 = (c_0_reg_129 + 3'd1);
 
-assign conv_out_address0 = zext_ln32_2_fu_369_p1;
+assign conv_2_out_address0 = zext_ln32_2_fu_369_p1;
 
 assign f_fu_178_p2 = (f_0_reg_107 + 7'd1);
 

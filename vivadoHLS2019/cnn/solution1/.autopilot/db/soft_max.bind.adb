@@ -77,14 +77,14 @@
 						<id>4</id>
 						<name>_ln10</name>
 						<fileName>cnn/dense.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>10</lineNumber>
 						<contextFuncName>soft_max</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item class_id="10" tracking_level="0" version="0">
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second class_id="11" tracking_level="0" version="0">
 									<count>1</count>
 									<item_version>0</item_version>
@@ -199,14 +199,14 @@
 						<id>8</id>
 						<name>icmp_ln10</name>
 						<fileName>cnn/dense.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>10</lineNumber>
 						<contextFuncName>soft_max</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -248,14 +248,14 @@
 						<id>10</id>
 						<name>i</name>
 						<fileName>cnn/dense.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>10</lineNumber>
 						<contextFuncName>soft_max</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -297,14 +297,14 @@
 						<id>11</id>
 						<name>_ln10</name>
 						<fileName>cnn/dense.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>10</lineNumber>
 						<contextFuncName>soft_max</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -347,14 +347,14 @@
 						<id>14</id>
 						<name>zext_ln12</name>
 						<fileName>cnn/dense.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>12</lineNumber>
 						<contextFuncName>soft_max</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -395,14 +395,14 @@
 						<id>15</id>
 						<name>dense_array_addr</name>
 						<fileName>cnn/dense.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>12</lineNumber>
 						<contextFuncName>soft_max</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -445,14 +445,14 @@
 						<id>16</id>
 						<name>dense_array_load</name>
 						<fileName>cnn/dense.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>12</lineNumber>
 						<contextFuncName>soft_max</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -493,14 +493,14 @@
 						<id>17</id>
 						<name>tmp</name>
 						<fileName>cnn/dense.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>12</lineNumber>
 						<contextFuncName>soft_max</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -542,14 +542,14 @@
 						<id>18</id>
 						<name>sum</name>
 						<fileName>cnn/dense.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>12</lineNumber>
 						<contextFuncName>soft_max</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -591,14 +591,14 @@
 						<id>19</id>
 						<name>_ln10</name>
 						<fileName>cnn/dense.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>10</lineNumber>
 						<contextFuncName>soft_max</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -639,14 +639,14 @@
 						<id>21</id>
 						<name>_ln16</name>
 						<fileName>cnn/dense.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>16</lineNumber>
 						<contextFuncName>soft_max</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -724,14 +724,14 @@
 						<id>24</id>
 						<name>icmp_ln16</name>
 						<fileName>cnn/dense.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>16</lineNumber>
 						<contextFuncName>soft_max</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -773,14 +773,14 @@
 						<id>26</id>
 						<name>j</name>
 						<fileName>cnn/dense.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>16</lineNumber>
 						<contextFuncName>soft_max</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -822,14 +822,14 @@
 						<id>27</id>
 						<name>_ln16</name>
 						<fileName>cnn/dense.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>16</lineNumber>
 						<contextFuncName>soft_max</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -872,14 +872,14 @@
 						<id>30</id>
 						<name>zext_ln18</name>
 						<fileName>cnn/dense.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>18</lineNumber>
 						<contextFuncName>soft_max</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -920,14 +920,14 @@
 						<id>31</id>
 						<name>dense_array_addr_1</name>
 						<fileName>cnn/dense.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>18</lineNumber>
 						<contextFuncName>soft_max</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -970,14 +970,14 @@
 						<id>32</id>
 						<name>dense_array_load_1</name>
 						<fileName>cnn/dense.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>18</lineNumber>
 						<contextFuncName>soft_max</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1018,14 +1018,14 @@
 						<id>33</id>
 						<name>tmp_2</name>
 						<fileName>cnn/dense.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>18</lineNumber>
 						<contextFuncName>soft_max</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1067,14 +1067,14 @@
 						<id>34</id>
 						<name>tmp_3</name>
 						<fileName>cnn/dense.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>18</lineNumber>
 						<contextFuncName>soft_max</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1116,14 +1116,14 @@
 						<id>35</id>
 						<name>prediction_addr</name>
 						<fileName>cnn/dense.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>18</lineNumber>
 						<contextFuncName>soft_max</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1166,14 +1166,14 @@
 						<id>36</id>
 						<name>prediction_addr_write_ln18</name>
 						<fileName>cnn/dense.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>18</lineNumber>
 						<contextFuncName>soft_max</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1215,14 +1215,14 @@
 						<id>37</id>
 						<name>_ln16</name>
 						<fileName>cnn/dense.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>16</lineNumber>
 						<contextFuncName>soft_max</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1263,14 +1263,14 @@
 						<id>39</id>
 						<name>_ln21</name>
 						<fileName>cnn/dense.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>21</lineNumber>
 						<contextFuncName>soft_max</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>

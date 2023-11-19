@@ -15,40 +15,12 @@
             <Obj class_id="5" tracking_level="0" version="0">
               <type>1</type>
               <id>1</id>
-              <name>conv_out</name>
-              <fileName/>
-              <fileDirectory/>
-              <lineNumber>0</lineNumber>
-              <contextFuncName/>
-              <inlineStackInfo class_id="6" tracking_level="0" version="0">
-                <count>0</count>
-                <item_version>0</item_version>
-              </inlineStackInfo>
-              <originalName>conv_out</originalName>
-              <rtlName/>
-              <coreName>RAM</coreName>
-            </Obj>
-            <bitwidth>32</bitwidth>
-          </Value>
-          <direction>0</direction>
-          <if_type>1</if_type>
-          <array_size>7744</array_size>
-          <bit_vecs class_id="7" tracking_level="0" version="0">
-            <count>0</count>
-            <item_version>0</item_version>
-          </bit_vecs>
-        </item>
-        <item class_id_reference="3" object_id="_2">
-          <Value>
-            <Obj>
-              <type>1</type>
-              <id>2</id>
               <name>max_pool_out</name>
               <fileName/>
               <fileDirectory/>
               <lineNumber>0</lineNumber>
               <contextFuncName/>
-              <inlineStackInfo>
+              <inlineStackInfo class_id="6" tracking_level="0" version="0">
                 <count>0</count>
                 <item_version>0</item_version>
               </inlineStackInfo>
@@ -61,6 +33,34 @@
           <direction>1</direction>
           <if_type>1</if_type>
           <array_size>1600</array_size>
+          <bit_vecs class_id="7" tracking_level="0" version="0">
+            <count>0</count>
+            <item_version>0</item_version>
+          </bit_vecs>
+        </item>
+        <item class_id_reference="3" object_id="_2">
+          <Value>
+            <Obj>
+              <type>1</type>
+              <id>2</id>
+              <name>conv_2_out</name>
+              <fileName/>
+              <fileDirectory/>
+              <lineNumber>0</lineNumber>
+              <contextFuncName/>
+              <inlineStackInfo>
+                <count>0</count>
+                <item_version>0</item_version>
+              </inlineStackInfo>
+              <originalName/>
+              <rtlName/>
+              <coreName>RAM</coreName>
+            </Obj>
+            <bitwidth>32</bitwidth>
+          </Value>
+          <direction>0</direction>
+          <if_type>1</if_type>
+          <array_size>7744</array_size>
           <bit_vecs>
             <count>0</count>
             <item_version>0</item_version>
@@ -118,7 +118,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item class_id="11" tracking_level="0" version="0">
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second class_id="12" tracking_level="0" version="0">
                     <count>1</count>
                     <item_version>0</item_version>
@@ -167,7 +167,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -252,7 +252,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -301,7 +301,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -350,7 +350,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -400,7 +400,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -448,7 +448,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -496,7 +496,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -581,7 +581,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -630,7 +630,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -679,7 +679,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -729,7 +729,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -779,7 +779,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -827,7 +827,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -877,7 +877,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -925,7 +925,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -974,7 +974,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1059,7 +1059,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1108,7 +1108,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1157,7 +1157,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1207,7 +1207,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1257,7 +1257,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1305,7 +1305,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1354,7 +1354,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1404,7 +1404,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1453,7 +1453,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1501,7 +1501,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1551,7 +1551,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1636,7 +1636,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1684,7 +1684,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1732,7 +1732,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1781,7 +1781,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1830,7 +1830,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1880,7 +1880,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1929,7 +1929,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1977,7 +1977,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2026,7 +2026,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2075,7 +2075,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2160,7 +2160,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2208,7 +2208,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2256,7 +2256,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2305,7 +2305,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2354,7 +2354,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2404,7 +2404,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2453,7 +2453,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2502,7 +2502,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2552,7 +2552,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2601,7 +2601,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2649,7 +2649,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2698,7 +2698,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2748,7 +2748,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2797,7 +2797,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2836,7 +2836,7 @@
             <Obj>
               <type>0</type>
               <id>85</id>
-              <name>conv_out_addr</name>
+              <name>conv_2_out_addr</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
               <lineNumber>32</lineNumber>
@@ -2845,7 +2845,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2895,7 +2895,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2943,7 +2943,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2991,7 +2991,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -3042,7 +3042,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -3090,7 +3090,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -3138,7 +3138,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -3189,7 +3189,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -3237,7 +3237,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -3286,7 +3286,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -3335,7 +3335,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -3384,7 +3384,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -3433,7 +3433,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -3482,7 +3482,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -3531,7 +3531,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -3580,7 +3580,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -3629,7 +3629,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -3678,7 +3678,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -3728,7 +3728,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -3777,7 +3777,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -3826,7 +3826,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -3876,7 +3876,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -3925,7 +3925,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -3973,7 +3973,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -4024,7 +4024,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -4072,7 +4072,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -4120,7 +4120,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -4168,7 +4168,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -4216,7 +4216,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -4264,7 +4264,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -5669,7 +5669,7 @@
         <item class_id_reference="20" object_id="_188">
           <id>204</id>
           <edge_type>1</edge_type>
-          <source_obj>2</source_obj>
+          <source_obj>1</source_obj>
           <sink_obj>48</sink_obj>
           <is_back_edge>0</is_back_edge>
         </item>
@@ -6047,7 +6047,7 @@
         <item class_id_reference="20" object_id="_242">
           <id>265</id>
           <edge_type>1</edge_type>
-          <source_obj>1</source_obj>
+          <source_obj>2</source_obj>
           <sink_obj>85</sink_obj>
           <is_back_edge>0</is_back_edge>
         </item>
@@ -10995,7 +10995,7 @@
         </second>
       </item>
       <item>
-        <first>conv_out_addr_gep_fu_89</first>
+        <first>conv_2_out_addr_gep_fu_89</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -11461,7 +11461,7 @@
       <item_version>0</item_version>
       <item class_id="56" tracking_level="0" version="0">
         <first class_id="57" tracking_level="0" version="0">
-          <first>conv_out</first>
+          <first>conv_2_out</first>
           <second>0</second>
         </first>
         <second>
@@ -11731,7 +11731,7 @@
         </second>
       </item>
       <item>
-        <first>conv_out_addr_reg_590</first>
+        <first>conv_2_out_addr_reg_590</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -11999,7 +11999,7 @@
       <count>2</count>
       <item_version>0</item_version>
       <item class_id="59" tracking_level="0" version="0">
-        <first>conv_out(p0)</first>
+        <first>conv_2_out(p0)</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>

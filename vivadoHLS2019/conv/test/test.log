@@ -1,0 +1,837 @@
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 40ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'conv/conv_1.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 185.254 ; gain = 118.023
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 185.254 ; gain = 118.023
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 185.254 ; gain = 118.023
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 185.254 ; gain = 118.023
+INFO: [XFORM 203-502] Unrolling small iteration loop 'Chan_Loop' (conv/conv_1.cpp:25) in function 'conv_1' automatically.
+INFO: [HLS 200-489] Unrolling loop 'W_Col_Loop' (conv/conv_1.cpp:22) in function 'conv_1' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Chan_Loop' (conv/conv_1.cpp:25) in function 'conv_1' completely with a factor of 1.
+INFO: [XFORM 203-102] Partitioning array 'conv_1_weights' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_1_weights.0' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_1_weights.1' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_1_weights.2' in dimension 2 automatically.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 185.254 ; gain = 118.023
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Col_Loop' (conv/conv_1.cpp:12:10) in function 'conv_1' : 
+
+the outer loop is not a perfect loop.
+INFO: [XFORM 203-541] Flattening a loop nest 'Row_Loop' (conv/conv_1.cpp:9:6) in function 'conv_1'.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 185.254 ; gain = 118.023
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'conv_1' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'conv_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 10.177 seconds; current allocated memory: 101.684 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 3 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.093 seconds; current allocated memory: 102.058 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'conv_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'conv_1/conv_input' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'conv_1/conv_out' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'conv_1' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'conv_1_conv_1_weights_0_0' to 'conv_1_conv_1_weibkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_1_conv_1_weights_1_0' to 'conv_1_conv_1_weicud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_1_conv_1_weights_2_0' to 'conv_1_conv_1_weidEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_1_fadd_32ns_32ns_32_2_full_dsp_1' to 'conv_1_fadd_32ns_eOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_1_fmul_32ns_32ns_32_2_max_dsp_1' to 'conv_1_fmul_32ns_fYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_1_fcmp_32ns_32ns_1_1_1' to 'conv_1_fcmp_32ns_g8j' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_1_mac_muladd_5ns_6ns_5ns_10_1_1' to 'conv_1_mac_muladdhbi' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'conv_1_fadd_32ns_eOg': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'conv_1_fcmp_32ns_g8j': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'conv_1_fmul_32ns_fYi': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'conv_1_mac_muladdhbi': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'conv_1'.
+INFO: [HLS 200-111]  Elapsed time: 0.211 seconds; current allocated memory: 102.827 MB.
+INFO: [RTMG 210-279] Implementing memory 'conv_1_conv_1_weibkb_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_1_conv_1_weicud_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_1_conv_1_weidEe_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_1_conv_1_bias_rom' using auto ROMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:01 ; elapsed = 00:00:12 . Memory (MB): peak = 185.254 ; gain = 118.023
+INFO: [VHDL 208-304] Generating VHDL RTL for conv_1.
+INFO: [VLOG 209-307] Generating Verilog RTL for conv_1.
+INFO: [HLS 200-112] Total elapsed time: 12.159 seconds; peak allocated memory: 102.827 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 40ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'conv/conv_1.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 184.848 ; gain = 93.309
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 184.848 ; gain = 93.309
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 184.848 ; gain = 93.309
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 184.848 ; gain = 93.309
+INFO: [XFORM 203-502] Unrolling small iteration loop 'Chan_Loop' (conv/conv_1.cpp:25) in function 'conv_1' automatically.
+INFO: [HLS 200-489] Unrolling loop 'Chan_Loop' (conv/conv_1.cpp:25) in function 'conv_1' completely with a factor of 1.
+INFO: [XFORM 203-102] Partitioning array 'conv_1_weights' in dimension 3 automatically.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 184.848 ; gain = 93.309
+INFO: [XFORM 203-541] Flattening a loop nest 'W_Row_Loop' (conv/conv_1.cpp:19:18) in function 'conv_1'.
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Filter1_Loop' (conv/conv_1.cpp:15:14) in function 'conv_1' : 
+
+the outer loop is not a perfect loop because there is nontrivial logic in the loop latch.
+INFO: [XFORM 203-541] Flattening a loop nest 'Col_Loop' (conv/conv_1.cpp:12:10) in function 'conv_1'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Row_Loop' (conv/conv_1.cpp:9:6) in function 'conv_1'.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 184.848 ; gain = 93.309
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'conv_1' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'conv_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 7.093 seconds; current allocated memory: 101.650 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 2 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.093 seconds; current allocated memory: 102.018 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'conv_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'conv_1/conv_input' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'conv_1/conv_out' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'conv_1' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'conv_1_conv_1_weights_0' to 'conv_1_conv_1_weibkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_1_fadd_32ns_32ns_32_2_full_dsp_1' to 'conv_1_fadd_32ns_cud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_1_fmul_32ns_32ns_32_2_max_dsp_1' to 'conv_1_fmul_32ns_dEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_1_fcmp_32ns_32ns_1_1_1' to 'conv_1_fcmp_32ns_eOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_1_mac_muladd_5ns_6ns_5ns_10_1_1' to 'conv_1_mac_muladdfYi' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'conv_1_fadd_32ns_cud': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'conv_1_fcmp_32ns_eOg': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'conv_1_fmul_32ns_dEe': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'conv_1_mac_muladdfYi': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'conv_1'.
+INFO: [HLS 200-111]  Elapsed time: 0.189 seconds; current allocated memory: 102.763 MB.
+INFO: [RTMG 210-279] Implementing memory 'conv_1_conv_1_weibkb_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_1_conv_1_bias_rom' using auto ROMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 184.848 ; gain = 93.309
+INFO: [VHDL 208-304] Generating VHDL RTL for conv_1.
+INFO: [VLOG 209-307] Generating Verilog RTL for conv_1.
+INFO: [HLS 200-112] Total elapsed time: 8.867 seconds; peak allocated memory: 102.763 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 40ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'conv/conv_1.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 184.750 ; gain = 93.309
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 184.750 ; gain = 93.309
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 184.750 ; gain = 93.309
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 184.750 ; gain = 93.309
+INFO: [XFORM 203-502] Unrolling small iteration loop 'Chan_Loop' (conv/conv_1.cpp:25) in function 'conv_1' automatically.
+INFO: [HLS 200-489] Unrolling loop 'Chan_Loop' (conv/conv_1.cpp:25) in function 'conv_1' completely with a factor of 1.
+INFO: [XFORM 203-102] Partitioning array 'conv_1_weights' in dimension 3 automatically.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 184.750 ; gain = 93.309
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Col_Loop' (conv/conv_1.cpp:12:10) in function 'conv_1' : 
+
+the outer loop is not a perfect loop.
+INFO: [XFORM 203-541] Flattening a loop nest 'Row_Loop' (conv/conv_1.cpp:9:6) in function 'conv_1'.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 184.750 ; gain = 93.309
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'conv_1' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'conv_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 7.016 seconds; current allocated memory: 101.639 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 4 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.077 seconds; current allocated memory: 101.987 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'conv_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'conv_1/conv_input' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'conv_1/conv_out' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'conv_1' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'conv_1_conv_1_weights_0' to 'conv_1_conv_1_weibkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_1_fadd_32ns_32ns_32_2_full_dsp_1' to 'conv_1_fadd_32ns_cud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_1_fmul_32ns_32ns_32_2_max_dsp_1' to 'conv_1_fmul_32ns_dEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_1_fcmp_32ns_32ns_1_1_1' to 'conv_1_fcmp_32ns_eOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_1_mac_muladd_5ns_6ns_5ns_10_1_1' to 'conv_1_mac_muladdfYi' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'conv_1_fadd_32ns_cud': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'conv_1_fcmp_32ns_eOg': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'conv_1_fmul_32ns_dEe': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'conv_1_mac_muladdfYi': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'conv_1'.
+INFO: [HLS 200-111]  Elapsed time: 0.18 seconds; current allocated memory: 102.690 MB.
+INFO: [RTMG 210-279] Implementing memory 'conv_1_conv_1_weibkb_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_1_conv_1_bias_rom' using auto ROMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 184.750 ; gain = 93.309
+INFO: [VHDL 208-304] Generating VHDL RTL for conv_1.
+INFO: [VLOG 209-307] Generating Verilog RTL for conv_1.
+INFO: [HLS 200-112] Total elapsed time: 8.742 seconds; peak allocated memory: 102.690 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 40ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'conv/conv_1.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 185.219 ; gain = 93.770
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 185.219 ; gain = 93.770
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 185.219 ; gain = 93.770
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 185.219 ; gain = 93.770
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'W_Row_Loop' (conv/conv_1.cpp:19) in function 'conv_1' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'Filter1_Loop' (conv/conv_1.cpp:15) in function 'conv_1' completely with a factor of 32.
+INFO: [HLS 200-489] Unrolling loop 'W_Col_Loop' (conv/conv_1.cpp:22) in function 'conv_1' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Chan_Loop' (conv/conv_1.cpp:25) in function 'conv_1' completely with a factor of 1.
+INFO: [XFORM 203-102] Partitioning array 'conv_1_weights' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_1_weights.0' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_1_weights.0.0' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_1_weights.1' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_1_weights.1.0' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_1_weights.2' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_1_weights.2.0' in dimension 2 automatically.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.0.0.0' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.0.0.1' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.0.0.2' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.0.0.3' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.0.0.4' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.0.0.5' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.0.0.6' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.0.0.7' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.0.0.8' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.0.0.9' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.0.0.10' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.0.0.11' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.0.0.12' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.0.0.13' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.0.0.14' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.0.0.15' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.0.0.16' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.0.0.17' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.0.0.18' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.0.0.19' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.0.0.20' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.0.0.21' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.0.0.22' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.0.0.23' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.0.0.24' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.0.0.25' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.0.0.26' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.0.0.27' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.0.0.28' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.0.0.29' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.0.0.30' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.0.0.31' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.1.0.0' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.1.0.1' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.1.0.2' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.1.0.3' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.1.0.4' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.1.0.5' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.1.0.6' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.1.0.7' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.1.0.8' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.1.0.9' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.1.0.10' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.1.0.11' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.1.0.12' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.1.0.13' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.1.0.14' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.1.0.15' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.1.0.16' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.1.0.17' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.1.0.18' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.1.0.19' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.1.0.20' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.1.0.21' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.1.0.22' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.1.0.23' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.1.0.24' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.1.0.25' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.1.0.26' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.1.0.27' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.1.0.28' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.1.0.29' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.1.0.30' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.1.0.31' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.2.0.0' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.2.0.1' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.2.0.2' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.2.0.3' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.2.0.4' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.2.0.5' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.2.0.6' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.2.0.7' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.2.0.8' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.2.0.9' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.2.0.10' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.2.0.11' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.2.0.12' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.2.0.13' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.2.0.14' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.2.0.15' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.2.0.16' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.2.0.17' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.2.0.18' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.2.0.19' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.2.0.20' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.2.0.21' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.2.0.22' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.2.0.23' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.2.0.24' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.2.0.25' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.2.0.26' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.2.0.27' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.2.0.28' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.2.0.29' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.2.0.30' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_weights.2.0.31' completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.0.0.0' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.0.0.1' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.0.0.2' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.0.0.3' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.0.0.4' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.0.0.5' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.0.0.6' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.0.0.7' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.0.0.8' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.0.0.9' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.0.0.10' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.0.0.11' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.0.0.12' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.0.0.13' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.0.0.14' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.0.0.15' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.0.0.16' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.0.0.17' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.0.0.18' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.0.0.19' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.0.0.20' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.0.0.21' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.0.0.22' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.0.0.23' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.0.0.24' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.0.0.25' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.0.0.26' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.0.0.27' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.0.0.28' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.0.0.29' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.0.0.30' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.0.0.31' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.1.0.0' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.1.0.1' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.1.0.2' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.1.0.3' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.1.0.4' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.1.0.5' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.1.0.6' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.1.0.7' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.1.0.8' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.1.0.9' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.1.0.10' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.1.0.11' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.1.0.12' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.1.0.13' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.1.0.14' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.1.0.15' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.1.0.16' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.1.0.17' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.1.0.18' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.1.0.19' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.1.0.20' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.1.0.21' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.1.0.22' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.1.0.23' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.1.0.24' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.1.0.25' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.1.0.26' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.1.0.27' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.1.0.28' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.1.0.29' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.1.0.30' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.1.0.31' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.2.0.0' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.2.0.1' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.2.0.2' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.2.0.3' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.2.0.4' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.2.0.5' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.2.0.6' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.2.0.7' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.2.0.8' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.2.0.9' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.2.0.10' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.2.0.11' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.2.0.12' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.2.0.13' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.2.0.14' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.2.0.15' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.2.0.16' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.2.0.17' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.2.0.18' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.2.0.19' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.2.0.20' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.2.0.21' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.2.0.22' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.2.0.23' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.2.0.24' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.2.0.25' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.2.0.26' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.2.0.27' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.2.0.28' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.2.0.29' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.2.0.30' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_weights.2.0.31' in dimension 1 completely.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 185.219 ; gain = 93.770
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Col_Loop' (conv/conv_1.cpp:12:10) in function 'conv_1' : 
+
+more than one sub loop.
+INFO: [XFORM 203-541] Flattening a loop nest 'Row_Loop' (conv/conv_1.cpp:9:6) in function 'conv_1'.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:03 ; elapsed = 00:00:11 . Memory (MB): peak = 185.219 ; gain = 93.770
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'conv_1' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'conv_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'W_Row_Loop'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_0_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_32', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_0_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_32', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_0_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_32', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_0_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_32', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 5, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_0_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_32', conv/conv_1.cpp:26).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 6, Depth = 8.
+INFO: [SCHED 204-61] Pipelining loop 'W_Row_Loop'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_1_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_1', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_1_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_1', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_1_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_1', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_1_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_1', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 5, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_1_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_1', conv/conv_1.cpp:26).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 6, Depth = 8.
+INFO: [SCHED 204-61] Pipelining loop 'W_Row_Loop'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_2_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_2', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_2_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_2', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_2_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_2', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_2_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_2', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 5, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_2_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_2', conv/conv_1.cpp:26).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 6, Depth = 8.
+INFO: [SCHED 204-61] Pipelining loop 'W_Row_Loop'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_3_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_3', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_3_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_3', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_3_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_3', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_3_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_3', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 5, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_3_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_3', conv/conv_1.cpp:26).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 6, Depth = 8.
+INFO: [SCHED 204-61] Pipelining loop 'W_Row_Loop'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_4_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_4', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_4_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_4', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_4_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_4', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_4_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_4', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 5, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_4_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_4', conv/conv_1.cpp:26).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 6, Depth = 8.
+INFO: [SCHED 204-61] Pipelining loop 'W_Row_Loop'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_5_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_5', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_5_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_5', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_5_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_5', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_5_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_5', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 5, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_5_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_5', conv/conv_1.cpp:26).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 6, Depth = 8.
+INFO: [SCHED 204-61] Pipelining loop 'W_Row_Loop'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_6_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_6', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_6_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_6', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_6_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_6', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_6_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_6', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 5, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_6_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_6', conv/conv_1.cpp:26).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 6, Depth = 8.
+INFO: [SCHED 204-61] Pipelining loop 'W_Row_Loop'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_7_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_7', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_7_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_7', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_7_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_7', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_7_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_7', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 5, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_7_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_7', conv/conv_1.cpp:26).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 6, Depth = 8.
+INFO: [SCHED 204-61] Pipelining loop 'W_Row_Loop'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_8_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_8', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_8_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_8', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_8_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_8', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_8_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_8', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 5, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_8_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_8', conv/conv_1.cpp:26).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 6, Depth = 8.
+INFO: [SCHED 204-61] Pipelining loop 'W_Row_Loop'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_9_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_9', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_9_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_9', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_9_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_9', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_9_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_9', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 5, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_9_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_9', conv/conv_1.cpp:26).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 6, Depth = 8.
+INFO: [SCHED 204-61] Pipelining loop 'W_Row_Loop'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_10_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_s', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_10_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_s', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_10_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_s', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_10_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_s', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 5, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_10_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_s', conv/conv_1.cpp:26).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 6, Depth = 8.
+INFO: [SCHED 204-61] Pipelining loop 'W_Row_Loop'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_11_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_10', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_11_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_10', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_11_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_10', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_11_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_10', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 5, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_11_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_10', conv/conv_1.cpp:26).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 6, Depth = 8.
+INFO: [SCHED 204-61] Pipelining loop 'W_Row_Loop'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_12_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_11', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_12_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_11', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_12_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_11', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_12_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_11', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 5, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_12_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_11', conv/conv_1.cpp:26).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 6, Depth = 8.
+INFO: [SCHED 204-61] Pipelining loop 'W_Row_Loop'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_13_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_12', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_13_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_12', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_13_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_12', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_13_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_12', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 5, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_13_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_12', conv/conv_1.cpp:26).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 6, Depth = 8.
+INFO: [SCHED 204-61] Pipelining loop 'W_Row_Loop'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_14_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_13', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_14_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_13', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_14_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_13', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_14_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_13', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 5, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_14_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_13', conv/conv_1.cpp:26).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 6, Depth = 8.
+INFO: [SCHED 204-61] Pipelining loop 'W_Row_Loop'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_15_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_14', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_15_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_14', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_15_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_14', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_15_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_14', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 5, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_15_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_14', conv/conv_1.cpp:26).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 6, Depth = 8.
+INFO: [SCHED 204-61] Pipelining loop 'W_Row_Loop'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_16_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_15', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_16_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_15', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_16_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_15', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_16_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_15', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 5, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_16_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_15', conv/conv_1.cpp:26).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 6, Depth = 8.
+INFO: [SCHED 204-61] Pipelining loop 'W_Row_Loop'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_17_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_16', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_17_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_16', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_17_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_16', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_17_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_16', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 5, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_17_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_16', conv/conv_1.cpp:26).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 6, Depth = 8.
+INFO: [SCHED 204-61] Pipelining loop 'W_Row_Loop'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_18_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_17', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_18_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_17', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_18_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_17', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_18_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_17', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 5, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_18_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_17', conv/conv_1.cpp:26).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 6, Depth = 8.
+INFO: [SCHED 204-61] Pipelining loop 'W_Row_Loop'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_19_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_18', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_19_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_18', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_19_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_18', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_19_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_18', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 5, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_19_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_18', conv/conv_1.cpp:26).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 6, Depth = 8.
+INFO: [SCHED 204-61] Pipelining loop 'W_Row_Loop'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_20_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_19', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_20_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_19', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_20_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_19', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_20_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_19', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 5, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_20_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_19', conv/conv_1.cpp:26).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 6, Depth = 8.
+INFO: [SCHED 204-61] Pipelining loop 'W_Row_Loop'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_21_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_20', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_21_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_20', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_21_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_20', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_21_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_20', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 5, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_21_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_20', conv/conv_1.cpp:26).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 6, Depth = 8.
+INFO: [SCHED 204-61] Pipelining loop 'W_Row_Loop'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_22_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_21', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_22_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_21', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_22_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_21', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_22_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_21', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 5, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_22_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_21', conv/conv_1.cpp:26).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 6, Depth = 8.
+INFO: [SCHED 204-61] Pipelining loop 'W_Row_Loop'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_23_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_22', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_23_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_22', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_23_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_22', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_23_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_22', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 5, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_23_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_22', conv/conv_1.cpp:26).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 6, Depth = 8.
+INFO: [SCHED 204-61] Pipelining loop 'W_Row_Loop'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_24_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_23', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_24_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_23', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_24_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_23', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_24_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_23', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 5, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_24_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_23', conv/conv_1.cpp:26).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 6, Depth = 8.
+INFO: [SCHED 204-61] Pipelining loop 'W_Row_Loop'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_25_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_24', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_25_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_24', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_25_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_24', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_25_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_24', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 5, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_25_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_24', conv/conv_1.cpp:26).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 6, Depth = 8.
+INFO: [SCHED 204-61] Pipelining loop 'W_Row_Loop'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_26_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_25', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_26_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_25', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_26_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_25', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_26_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_25', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 5, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_26_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_25', conv/conv_1.cpp:26).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 6, Depth = 8.
+INFO: [SCHED 204-61] Pipelining loop 'W_Row_Loop'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_27_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_26', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_27_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_26', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_27_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_26', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_27_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_26', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 5, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_27_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_26', conv/conv_1.cpp:26).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 6, Depth = 8.
+INFO: [SCHED 204-61] Pipelining loop 'W_Row_Loop'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_28_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_27', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_28_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_27', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_28_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_27', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_28_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_27', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 5, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_28_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_27', conv/conv_1.cpp:26).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 6, Depth = 8.
+INFO: [SCHED 204-61] Pipelining loop 'W_Row_Loop'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_29_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_28', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_29_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_28', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_29_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_28', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_29_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_28', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 5, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_29_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_28', conv/conv_1.cpp:26).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 6, Depth = 8.
+INFO: [SCHED 204-61] Pipelining loop 'W_Row_Loop'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_30_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_29', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_30_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_29', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_30_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_29', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_30_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_29', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 5, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_30_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_29', conv/conv_1.cpp:26).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 6, Depth = 8.
+INFO: [SCHED 204-61] Pipelining loop 'W_Row_Loop'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_31_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_30', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_31_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_30', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_31_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_30', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_31_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_30', conv/conv_1.cpp:26).
+WARNING: [SCHED 204-68] The II Violation in module 'conv_1' (Loop: W_Row_Loop): Unable to enforce a carried dependence constraint (II = 5, distance = 1, offset = 1)
+   between 'fadd' operation ('w_sum_3_31_2', conv/conv_1.cpp:26) and 'fadd' operation ('w_sum_3_30', conv/conv_1.cpp:26).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 6, Depth = 8.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 14.815 seconds; current allocated memory: 118.832 MB.
+INFO: [HLS 200-434] Only 32 loops out of a total 33 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 1.231 seconds; current allocated memory: 125.254 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'conv_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'conv_1/conv_input' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'conv_1/conv_out' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'conv_1' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'conv_1_fadd_32ns_32ns_32_2_full_dsp_1' to 'conv_1_fadd_32ns_bkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_1_fmul_32ns_32ns_32_2_max_dsp_1' to 'conv_1_fmul_32ns_cud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_1_fcmp_32ns_32ns_1_1_1' to 'conv_1_fcmp_32ns_dEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_1_mux_32_32_1_1' to 'conv_1_mux_32_32_eOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_1_mac_muladd_5ns_6ns_5ns_10_1_1' to 'conv_1_mac_muladdfYi' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'conv_1_fadd_32ns_bkb': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'conv_1_fcmp_32ns_dEe': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'conv_1_fmul_32ns_cud': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'conv_1_mac_muladdfYi': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'conv_1_mux_32_32_eOg': 96 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'conv_1'.
+INFO: [HLS 200-111]  Elapsed time: 1.863 seconds; current allocated memory: 139.982 MB.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:08 ; elapsed = 00:00:24 . Memory (MB): peak = 236.473 ; gain = 145.023
+INFO: [VHDL 208-304] Generating VHDL RTL for conv_1.
+INFO: [VLOG 209-307] Generating Verilog RTL for conv_1.
+INFO: [HLS 200-112] Total elapsed time: 23.773 seconds; peak allocated memory: 139.982 MB.

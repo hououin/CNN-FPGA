@@ -56,39 +56,38 @@
   "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/83a3/hdl/floating_point_v7_1_vh_rfs.vhd" \
 -endlib
 -makelib ies_lib/xil_defaultlib \
-  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/30d4/hdl/verilog/cnn_conv_1_input_0.v" \
-  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/30d4/hdl/verilog/cnn_conv_1_out.v" \
-  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/30d4/hdl/verilog/cnn_conv_2_out.v" \
-  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/30d4/hdl/verilog/cnn_CRTL_BUS_s_axi.v" \
-  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/30d4/hdl/verilog/cnn_fadd_32ns_32ncud.v" \
-  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/30d4/hdl/verilog/cnn_fcmp_32ns_32neOg.v" \
-  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/30d4/hdl/verilog/cnn_fdiv_32ns_32ng8j.v" \
-  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/30d4/hdl/verilog/cnn_fexp_32ns_32nhbi.v" \
-  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/30d4/hdl/verilog/cnn_flat_array.v" \
-  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/30d4/hdl/verilog/cnn_fmul_32ns_32ndEe.v" \
-  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/30d4/hdl/verilog/cnn_max_pool_1_out.v" \
-  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/30d4/hdl/verilog/cnn_max_pool_2_out.v" \
-  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/30d4/hdl/verilog/conv_1.v" \
-  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/30d4/hdl/verilog/conv_1_conv_1_bias.v" \
-  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/30d4/hdl/verilog/conv_1_conv_1_weibkb.v" \
-  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/30d4/hdl/verilog/conv_2.v" \
-  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/30d4/hdl/verilog/conv_2_conv_2_bias.v" \
-  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/30d4/hdl/verilog/conv_2_conv_2_weifYi.v" \
-  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/30d4/hdl/verilog/dense.v" \
-  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/30d4/hdl/verilog/dense_dense_array.v" \
-  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/30d4/hdl/verilog/dense_dense_weights.v" \
-  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/30d4/hdl/verilog/flat.v" \
-  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/30d4/hdl/verilog/max_pool_1.v" \
-  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/30d4/hdl/verilog/max_pool_2.v" \
-  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/30d4/hdl/verilog/soft_max.v" \
-  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/30d4/hdl/verilog/cnn.v" \
+  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/f663/hdl/verilog/cnn_conv_1_input_0.v" \
+  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/f663/hdl/verilog/cnn_conv_1_out.v" \
+  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/f663/hdl/verilog/cnn_conv_2_out.v" \
+  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/f663/hdl/verilog/cnn_CRTL_BUS_s_axi.v" \
+  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/f663/hdl/verilog/cnn_fadd_32ns_32ncud.v" \
+  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/f663/hdl/verilog/cnn_fcmp_32ns_32neOg.v" \
+  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/f663/hdl/verilog/cnn_fdiv_32ns_32ng8j.v" \
+  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/f663/hdl/verilog/cnn_fexp_32ns_32nhbi.v" \
+  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/f663/hdl/verilog/cnn_fmul_32ns_32ndEe.v" \
+  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/f663/hdl/verilog/cnn_max_pool_1_out.v" \
+  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/f663/hdl/verilog/cnn_max_pool_2_out.v" \
+  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/f663/hdl/verilog/conv_1.v" \
+  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/f663/hdl/verilog/conv_1_conv_1_bias.v" \
+  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/f663/hdl/verilog/conv_1_conv_1_weibkb.v" \
+  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/f663/hdl/verilog/conv_2.v" \
+  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/f663/hdl/verilog/conv_2_conv_2_bias.v" \
+  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/f663/hdl/verilog/conv_2_conv_2_weifYi.v" \
+  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/f663/hdl/verilog/dense.v" \
+  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/f663/hdl/verilog/dense_dense_array.v" \
+  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/f663/hdl/verilog/dense_dense_weights.v" \
+  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/f663/hdl/verilog/flat.v" \
+  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/f663/hdl/verilog/max_pool_1.v" \
+  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/f663/hdl/verilog/max_pool_2.v" \
+  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/f663/hdl/verilog/soft_max.v" \
+  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/f663/hdl/verilog/cnn.v" \
 -endlib
 -makelib ies_lib/xil_defaultlib \
-  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/30d4/hdl/ip/cnn_ap_fadd_3_full_dsp_32.vhd" \
-  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/30d4/hdl/ip/cnn_ap_fcmp_0_no_dsp_32.vhd" \
-  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/30d4/hdl/ip/cnn_ap_fdiv_14_no_dsp_32.vhd" \
-  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/30d4/hdl/ip/cnn_ap_fexp_7_full_dsp_32.vhd" \
-  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/30d4/hdl/ip/cnn_ap_fmul_2_max_dsp_32.vhd" \
+  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/f663/hdl/ip/cnn_ap_fadd_3_full_dsp_32.vhd" \
+  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/f663/hdl/ip/cnn_ap_fcmp_0_no_dsp_32.vhd" \
+  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/f663/hdl/ip/cnn_ap_fdiv_14_no_dsp_32.vhd" \
+  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/f663/hdl/ip/cnn_ap_fexp_7_full_dsp_32.vhd" \
+  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/f663/hdl/ip/cnn_ap_fmul_2_max_dsp_32.vhd" \
   "../../../bd/design_1/ip/design_1_cnn_0_0/sim/design_1_cnn_0_0.vhd" \
 -endlib
 -makelib ies_lib/generic_baseblocks_v2_1_0 \
@@ -114,13 +113,6 @@
 -endlib
 -makelib ies_lib/xil_defaultlib \
   "../../../bd/design_1/ip/design_1_xbar_0/sim/design_1_xbar_0.v" \
--endlib
--makelib ies_lib/axi_protocol_converter_v2_1_19 \
-  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \
--endlib
--makelib ies_lib/xil_defaultlib \
-  "../../../bd/design_1/ip/design_1_auto_pc_1/sim/design_1_auto_pc_1.v" \
-  "../../../bd/design_1/ip/design_1_auto_pc_0/sim/design_1_auto_pc_0.v" \
 -endlib
 -makelib ies_lib/lib_cdc_v1_0_2 \
   "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd" \
@@ -149,7 +141,12 @@
 -makelib ies_lib/xil_defaultlib \
   "../../../bd/design_1/ip/design_1_axi_bram_ctrl_1_0/sim/design_1_axi_bram_ctrl_1_0.vhd" \
 -endlib
+-makelib ies_lib/axi_protocol_converter_v2_1_19 \
+  "../../../../cnn.srcs/sources_1/bd/design_1/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \
+-endlib
 -makelib ies_lib/xil_defaultlib \
+  "../../../bd/design_1/ip/design_1_auto_pc_1/sim/design_1_auto_pc_1.v" \
+  "../../../bd/design_1/ip/design_1_auto_pc_0/sim/design_1_auto_pc_0.v" \
   "../../../bd/design_1/sim/design_1.v" \
 -endlib
 -makelib ies_lib/xil_defaultlib \

@@ -1,0 +1,64 @@
+Starting C synthesis ...
+C:/Xilinx2019/Vivado/2019.1/bin/vivado_hls.bat C:/Users/chenq/MAG/code/CNN-FPGA/vivadoHLS2019/pool/Filter_pipeline/csynth.tcl
+INFO: Applying HLS Y2K22 patch v1.2 for IP revision
+INFO: [HLS 200-10] Running 'C:/Xilinx2019/Vivado/2019.1/bin/unwrapped/win64.o/vivado_hls.exe'
+INFO: [HLS 200-10] For user 'chenq' on host 'desktop-pi9akpv' (Windows NT_amd64 version 6.2) on Wed Oct 04 15:08:55 +0200 2023
+INFO: [HLS 200-10] In directory 'C:/Users/chenq/MAG/code/CNN-FPGA/vivadoHLS2019'
+Sourcing Tcl script 'C:/Users/chenq/MAG/code/CNN-FPGA/vivadoHLS2019/pool/Filter_pipeline/csynth.tcl'
+INFO: [HLS 200-10] Opening project 'C:/Users/chenq/MAG/code/CNN-FPGA/vivadoHLS2019/pool'.
+INFO: [HLS 200-10] Adding design file 'pool/parameters.h' to the project
+INFO: [HLS 200-10] Adding design file 'pool/pooling.cpp' to the project
+INFO: [HLS 200-10] Adding design file 'pool/pooling.h' to the project
+INFO: [HLS 200-10] Adding test bench file 'pool/conv_1_out.txt' to the project
+INFO: [HLS 200-10] Adding test bench file 'pool/main.cpp' to the project
+INFO: [HLS 200-10] Opening solution 'C:/Users/chenq/MAG/code/CNN-FPGA/vivadoHLS2019/pool/Filter_pipeline'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 40ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'pool/pooling.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 183.793 ; gain = 92.289
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 183.793 ; gain = 92.289
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 183.793 ; gain = 92.289
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 183.793 ; gain = 92.289
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Filter_Loop' (pool/pooling.cpp:11) in function 'max_pool_1' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'Row_Loop' (pool/pooling.cpp:14) in function 'max_pool_1' completely with a factor of 13.
+INFO: [HLS 200-489] Unrolling loop 'Col_Loop' (pool/pooling.cpp:17) in function 'max_pool_1' completely with a factor of 13.
+INFO: [HLS 200-489] Unrolling loop 'Pool_Row_Loop' (pool/pooling.cpp:21) in function 'max_pool_1' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'Pool_Col_Loop' (pool/pooling.cpp:24) in function 'max_pool_1' completely with a factor of 2.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:05 ; elapsed = 00:00:13 . Memory (MB): peak = 183.793 ; gain = 92.289
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:34 ; elapsed = 00:00:51 . Memory (MB): peak = 251.480 ; gain = 159.977
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'max_pool_1' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'max_pool_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Filter_Loop'.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('conv_1_out_load_8', pool/pooling.cpp:28) on array 'conv_1_out' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'conv_1_out'.
+INFO: [SCHED 204-61] Unable to satisfy pipeline directive: Unable to pipeline the region.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 75.972 seconds; current allocated memory: 211.795 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 1 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 17.972 seconds; current allocated memory: 248.818 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'max_pool_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool_1/conv_1_out' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool_1/max_pool_1_out' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'max_pool_1' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'max_pool_1_fcmp_32ns_32ns_1_1_1' to 'max_pool_1_fcmp_3bkb' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'max_pool_1_fcmp_3bkb': 3 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'max_pool_1'.
+INFO: [HLS 200-111]  Elapsed time: 13.706 seconds; current allocated memory: 323.864 MB.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:31 ; elapsed = 00:02:32 . Memory (MB): peak = 664.715 ; gain = 573.211
+INFO: [VHDL 208-304] Generating VHDL RTL for max_pool_1.
+INFO: [VLOG 209-307] Generating Verilog RTL for max_pool_1.
+INFO: [HLS 200-112] Total elapsed time: 152.711 seconds; peak allocated memory: 323.864 MB.
+Finished C synthesis.
