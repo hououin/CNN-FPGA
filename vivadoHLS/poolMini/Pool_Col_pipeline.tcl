@@ -1,1 +1,0 @@
-set_directive_pipeline "max_pool_1/Pool_Col_Loop"
