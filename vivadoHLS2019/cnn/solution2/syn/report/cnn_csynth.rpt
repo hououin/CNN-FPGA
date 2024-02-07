@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'cnn'
 ================================================================
-* Date:           Sun Nov 19 15:08:50 2023
+* Date:           Thu Jan 18 21:39:36 2024
 
 * Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
 * Project:        cnn
@@ -29,7 +29,7 @@
     |       Latency       |       Interval      | Pipeline|
     |    min   |    max   |    min   |    max   |   Type  |
     +----------+----------+----------+----------+---------+
-    |  10325876|  10325876|  10325876|  10325876|   none  |
+    |  10325875|  10325875|  10325875|  10325875|   none  |
     +----------+----------+----------+----------+---------+
 
     + Detail: 
@@ -38,7 +38,7 @@
         |                       |            |      Latency      |      Interval     | Pipeline|
         |        Instance       |   Module   |   min   |   max   |   min   |   max   |   Type  |
         +-----------------------+------------+---------+---------+---------+---------+---------+
-        |grp_dense_fu_234       |dense       |    64204|    64204|    64204|    64204|   none  |
+        |grp_dense_fu_234       |dense       |    64203|    64203|    64203|    64203|   none  |
         |grp_conv_2_fu_244      |conv_2      |  9138185|  9138185|  9138185|  9138185|   none  |
         |grp_conv_1_fu_256      |conv_1      |   996477|   996477|   996477|   996477|   none  |
         |grp_max_pool_1_fu_266  |max_pool_1  |    76609|    76609|    76609|    76609|   none  |
@@ -70,33 +70,33 @@
 |DSP              |        -|      -|       -|      -|    -|
 |Expression       |        -|      -|       0|    212|    -|
 |FIFO             |        -|      -|       -|      -|    -|
-|Instance         |       99|     24|    2827|   8015|    0|
+|Instance         |       99|     22|    2677|   7462|    0|
 |Memory           |      106|      -|       0|      0|    0|
 |Multiplexer      |        -|      -|       -|    427|    -|
 |Register         |        -|      -|     160|      -|    -|
 +-----------------+---------+-------+--------+-------+-----+
-|Total            |      205|     24|    2987|   8654|    0|
+|Total            |      205|     22|    2837|   8101|    0|
 +-----------------+---------+-------+--------+-------+-----+
 |Available        |      280|    220|  106400|  53200|    0|
 +-----------------+---------+-------+--------+-------+-----+
-|Utilization (%)  |       73|     10|       2|     16|    0|
+|Utilization (%)  |       73|     10|       2|     15|    0|
 +-----------------+---------+-------+--------+-------+-----+
 
 + Detail: 
     * Instance: 
-    +-----------------------+--------------------+---------+-------+------+------+-----+
-    |        Instance       |       Module       | BRAM_18K| DSP48E|  FF  |  LUT | URAM|
-    +-----------------------+--------------------+---------+-------+------+------+-----+
-    |cnn_CRTL_BUS_s_axi_U   |cnn_CRTL_BUS_s_axi  |        0|      0|    36|    40|    0|
-    |grp_conv_1_fu_256      |conv_1              |        2|      5|   557|  1429|    0|
-    |grp_conv_2_fu_244      |conv_2              |       65|      5|   604|  1506|    0|
-    |grp_dense_fu_234       |dense               |       32|     14|  1141|  3365|    0|
-    |grp_flat_fu_281        |flat                |        0|      0|    98|   236|    0|
-    |grp_max_pool_1_fu_266  |max_pool_1          |        0|      0|   203|   734|    0|
-    |grp_max_pool_2_fu_273  |max_pool_2          |        0|      0|   188|   705|    0|
-    +-----------------------+--------------------+---------+-------+------+------+-----+
-    |Total                  |                    |       99|     24|  2827|  8015|    0|
-    +-----------------------+--------------------+---------+-------+------+------+-----+
+    +-----------------------+--------------------+---------+-------+-----+------+-----+
+    |        Instance       |       Module       | BRAM_18K| DSP48E|  FF |  LUT | URAM|
+    +-----------------------+--------------------+---------+-------+-----+------+-----+
+    |cnn_CRTL_BUS_s_axi_U   |cnn_CRTL_BUS_s_axi  |        0|      0|   36|    40|    0|
+    |grp_conv_1_fu_256      |conv_1              |        2|      5|  557|  1429|    0|
+    |grp_conv_2_fu_244      |conv_2              |       65|      5|  604|  1506|    0|
+    |grp_dense_fu_234       |dense               |       32|     12|  959|  2898|    0|
+    |grp_flat_fu_281        |flat                |        0|      0|   98|   236|    0|
+    |grp_max_pool_1_fu_266  |max_pool_1          |        0|      0|  218|   691|    0|
+    |grp_max_pool_2_fu_273  |max_pool_2          |        0|      0|  205|   662|    0|
+    +-----------------------+--------------------+---------+-------+-----+------+-----+
+    |Total                  |                    |       99|     22| 2677|  7462|    0|
+    +-----------------------+--------------------+---------+-------+-----+------+-----+
 
     * DSP48E: 
     N/A
@@ -246,12 +246,9 @@
 |cnn_input_Dout_A        |  in |   32|    bram    |   cnn_input  |     array    |
 |cnn_input_Clk_A         | out |    1|    bram    |   cnn_input  |     array    |
 |cnn_input_Rst_A         | out |    1|    bram    |   cnn_input  |     array    |
-|prediction_Addr_A       | out |   32|    bram    |  prediction  |     array    |
-|prediction_EN_A         | out |    1|    bram    |  prediction  |     array    |
-|prediction_WEN_A        | out |    4|    bram    |  prediction  |     array    |
-|prediction_Din_A        | out |   32|    bram    |  prediction  |     array    |
-|prediction_Dout_A       |  in |   32|    bram    |  prediction  |     array    |
-|prediction_Clk_A        | out |    1|    bram    |  prediction  |     array    |
-|prediction_Rst_A        | out |    1|    bram    |  prediction  |     array    |
+|prediction_address0     | out |    4|  ap_memory |  prediction  |     array    |
+|prediction_ce0          | out |    1|  ap_memory |  prediction  |     array    |
+|prediction_we0          | out |    1|  ap_memory |  prediction  |     array    |
+|prediction_d0           | out |   32|  ap_memory |  prediction  |     array    |
 +------------------------+-----+-----+------------+--------------+--------------+
 

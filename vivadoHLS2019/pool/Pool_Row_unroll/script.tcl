@@ -8,10 +8,10 @@ set_top max_pool_1
 add_files pool/parameters.h
 add_files pool/pooling.cpp
 add_files pool/pooling.h
-add_files -tb pool/conv_1_out.txt
-add_files -tb pool/main.cpp
+add_files -tb pool/conv_1_out.txt -cflags "-Wno-unknown-pragmas" -csimflags "-Wno-unknown-pragmas"
+add_files -tb pool/main.cpp -cflags "-Wno-unknown-pragmas" -csimflags "-Wno-unknown-pragmas"
 open_solution "Pool_Row_unroll"
-set_part {xc7z020clg400-1}
+set_part {xc7z020-clg400-1}
 create_clock -period 40 -name default
 source "./pool/Pool_Row_unroll/directives.tcl"
 csim_design

@@ -7,7 +7,7 @@ use ieee.std_logic_1164.all;
 
 entity cnn_fdiv_32ns_32ng8j is
     generic (
-        ID         : integer := 27;
+        ID         : integer := 28;
         NUM_STAGE  : integer := 6;
         din0_WIDTH : integer := 32;
         din1_WIDTH : integer := 32;

@@ -1,7 +1,7 @@
 # This script segment is generated automatically by AutoPilot
 
 # Memory (RAM/ROM)  definition:
-set ID 37
+set ID 36
 set hasByteEnable 0
 set MemName cnn_max_pool_1_out
 set CoreName ap_simcore_mem
@@ -87,7 +87,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 38
+set ID 37
 set hasByteEnable 0
 set MemName cnn_conv_2_out
 set CoreName ap_simcore_mem
@@ -173,7 +173,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 39
+set ID 38
 set hasByteEnable 0
 set MemName cnn_max_pool_2_out
 set CoreName ap_simcore_mem
@@ -259,7 +259,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 40
+set ID 39
 set hasByteEnable 0
 set MemName cnn_conv_1_input_0
 set CoreName ap_simcore_mem
@@ -344,7 +344,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 41
+set ID 40
 set hasByteEnable 0
 set MemName cnn_conv_1_out
 set CoreName ap_simcore_mem
@@ -449,7 +449,7 @@ dict set axilite_register_dict CRTL_BUS $port_CRTL_BUS
 if {${::AESL::PGuard_simmodel_gen}} {
 	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
 		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
-			id 42 \
+			id 41 \
 			corename cnn_CRTL_BUS_axilite \
 			name cnn_CRTL_BUS_s_axi \
 			ports {$port_CRTL_BUS} \
@@ -464,6 +464,25 @@ if {${::AESL::PGuard_simmodel_gen}} {
 if {${::AESL::PGuard_rtl_comp_handler}} {
 	::AP::rtl_comp_handler cnn_CRTL_BUS_s_axi
 }
+
+# XIL_BRAM:
+if {${::AESL::PGuard_autoexp_gen}} {
+if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
+eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
+    id 42 \
+    name prediction \
+    reset_level 0 \
+    sync_rst true \
+    dir O \
+    corename prediction \
+    op interface \
+    ports { prediction_address0 { O 4 vector } prediction_ce0 { O 1 bit } prediction_we0 { O 1 bit } prediction_d0 { O 32 vector } } \
+} "
+} else {
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'prediction'"
+}
+}
+
 
 
 # Adapter definition:

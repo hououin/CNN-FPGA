@@ -29,7 +29,7 @@ set_property parent.project_path C:/Users/chenq/MAG/code/CNN-FPGA/vivado2019/cnn
 set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_repo_paths c:/Users/chenq/MAG/code/CNN-FPGA/vivadoHLS2019/cnn/solution1 [current_project]
+set_property ip_repo_paths c:/Users/chenq/MAG/code/CNN-FPGA/vivadoHLS2019/cnn/solution3 [current_project]
 update_ip_catalog
 set_property ip_output_repo c:/Users/chenq/MAG/code/CNN-FPGA/vivado2019/cnn/cnn.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]

@@ -43,7 +43,7 @@ set TargetInfo xc7z020:-clg400:-1
 set SourceFiles {sc {} c ../pooling.cpp}
 set SourceFlags {sc {} c {{}}}
 set DirectiveFile C:/Users/chenq/MAG/code/CNN-FPGA/vivadoHLS2019/pool/Row_pipeline/Row_pipeline.directive
-set TBFiles {verilog {../main.cpp ../conv_1_out.txt} bc {../main.cpp ../conv_1_out.txt} sc {../main.cpp ../conv_1_out.txt} vhdl {../main.cpp ../conv_1_out.txt} c {} cas {../main.cpp ../conv_1_out.txt}}
+set TBFiles {verilog {../conv_1_out.txt ../main.cpp} bc {../conv_1_out.txt ../main.cpp} sc {../conv_1_out.txt ../main.cpp} vhdl {../conv_1_out.txt ../main.cpp} c {} cas {../conv_1_out.txt ../main.cpp}}
 set SpecLanguage C
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
 set TVOutFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}

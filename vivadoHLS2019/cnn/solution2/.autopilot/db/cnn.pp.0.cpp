@@ -230,9 +230,6 @@ void cnn(float cnn_input[28*28*1], float prediction[10])
 #pragma HLS INTERFACE bram port=&cnn_input
 # 11 "cnn/cnn.cpp"
 
-#pragma HLS INTERFACE bram port=&prediction
-# 11 "cnn/cnn.cpp"
-
 #pragma HLS INTERFACE s_axilite port=return bundle=CRTL_BUS
 # 11 "cnn/cnn.cpp"
 

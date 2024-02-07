@@ -23,13 +23,10 @@ port (
     cnn_input_Dout_A : IN STD_LOGIC_VECTOR (31 downto 0);
     cnn_input_Clk_A : OUT STD_LOGIC;
     cnn_input_Rst_A : OUT STD_LOGIC;
-    prediction_Addr_A : OUT STD_LOGIC_VECTOR (31 downto 0);
-    prediction_EN_A : OUT STD_LOGIC;
-    prediction_WEN_A : OUT STD_LOGIC_VECTOR (3 downto 0);
-    prediction_Din_A : OUT STD_LOGIC_VECTOR (31 downto 0);
-    prediction_Dout_A : IN STD_LOGIC_VECTOR (31 downto 0);
-    prediction_Clk_A : OUT STD_LOGIC;
-    prediction_Rst_A : OUT STD_LOGIC;
+    prediction_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
+    prediction_ce0 : OUT STD_LOGIC;
+    prediction_we0 : OUT STD_LOGIC;
+    prediction_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
     s_axi_CRTL_BUS_AWVALID : IN STD_LOGIC;
     s_axi_CRTL_BUS_AWREADY : OUT STD_LOGIC;
     s_axi_CRTL_BUS_AWADDR : IN STD_LOGIC_VECTOR (C_S_AXI_CRTL_BUS_ADDR_WIDTH-1 downto 0);
@@ -54,7 +51,7 @@ end;
 architecture behav of cnn is 
     attribute CORE_GENERATION_INFO : STRING;
     attribute CORE_GENERATION_INFO of behav : architecture is
-    "cnn,hls_ip_2019_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=1,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg400-1,HLS_INPUT_CLOCK=40.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=34.960800,HLS_SYN_LAT=10325876,HLS_SYN_TPT=none,HLS_SYN_MEM=205,HLS_SYN_DSP=24,HLS_SYN_FF=2987,HLS_SYN_LUT=8654,HLS_VERSION=2019_1}";
+    "cnn,hls_ip_2019_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=1,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg400-1,HLS_INPUT_CLOCK=40.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=34.960800,HLS_SYN_LAT=10325875,HLS_SYN_TPT=none,HLS_SYN_MEM=205,HLS_SYN_DSP=22,HLS_SYN_FF=2837,HLS_SYN_LUT=8101,HLS_VERSION=2019_1}";
     constant ap_const_logic_1 : STD_LOGIC := '1';
     constant ap_const_logic_0 : STD_LOGIC := '0';
     constant ap_ST_fsm_state1 : STD_LOGIC_VECTOR (18 downto 0) := "0000000000000000001";
@@ -183,10 +180,10 @@ architecture behav of cnn is
     signal grp_dense_fu_234_ap_done : STD_LOGIC;
     signal grp_dense_fu_234_ap_idle : STD_LOGIC;
     signal grp_dense_fu_234_ap_ready : STD_LOGIC;
-    signal grp_dense_fu_234_prediction_Addr_A : STD_LOGIC_VECTOR (31 downto 0);
-    signal grp_dense_fu_234_prediction_EN_A : STD_LOGIC;
-    signal grp_dense_fu_234_prediction_WEN_A : STD_LOGIC_VECTOR (3 downto 0);
-    signal grp_dense_fu_234_prediction_Din_A : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_dense_fu_234_prediction_address0 : STD_LOGIC_VECTOR (3 downto 0);
+    signal grp_dense_fu_234_prediction_ce0 : STD_LOGIC;
+    signal grp_dense_fu_234_prediction_we0 : STD_LOGIC;
+    signal grp_dense_fu_234_prediction_d0 : STD_LOGIC_VECTOR (31 downto 0);
     signal grp_dense_fu_234_flat_array_address0 : STD_LOGIC_VECTOR (10 downto 0);
     signal grp_dense_fu_234_flat_array_ce0 : STD_LOGIC;
     signal grp_conv_2_fu_244_ap_start : STD_LOGIC;
@@ -303,11 +300,10 @@ architecture behav of cnn is
         ap_done : OUT STD_LOGIC;
         ap_idle : OUT STD_LOGIC;
         ap_ready : OUT STD_LOGIC;
-        prediction_Addr_A : OUT STD_LOGIC_VECTOR (31 downto 0);
-        prediction_EN_A : OUT STD_LOGIC;
-        prediction_WEN_A : OUT STD_LOGIC_VECTOR (3 downto 0);
-        prediction_Din_A : OUT STD_LOGIC_VECTOR (31 downto 0);
-        prediction_Dout_A : IN STD_LOGIC_VECTOR (31 downto 0);
+        prediction_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
+        prediction_ce0 : OUT STD_LOGIC;
+        prediction_we0 : OUT STD_LOGIC;
+        prediction_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
         flat_array_address0 : OUT STD_LOGIC_VECTOR (10 downto 0);
         flat_array_ce0 : OUT STD_LOGIC;
         flat_array_q0 : IN STD_LOGIC_VECTOR (31 downto 0) );
@@ -642,11 +638,10 @@ begin
         ap_done => grp_dense_fu_234_ap_done,
         ap_idle => grp_dense_fu_234_ap_idle,
         ap_ready => grp_dense_fu_234_ap_ready,
-        prediction_Addr_A => grp_dense_fu_234_prediction_Addr_A,
-        prediction_EN_A => grp_dense_fu_234_prediction_EN_A,
-        prediction_WEN_A => grp_dense_fu_234_prediction_WEN_A,
-        prediction_Din_A => grp_dense_fu_234_prediction_Din_A,
-        prediction_Dout_A => ap_const_lv32_0,
+        prediction_address0 => grp_dense_fu_234_prediction_address0,
+        prediction_ce0 => grp_dense_fu_234_prediction_ce0,
+        prediction_we0 => grp_dense_fu_234_prediction_we0,
+        prediction_d0 => grp_dense_fu_234_prediction_d0,
         flat_array_address0 => grp_dense_fu_234_flat_array_address0,
         flat_array_ce0 => grp_dense_fu_234_flat_array_ce0,
         flat_array_q0 => flat_array_q0);
@@ -1149,7 +1144,12 @@ begin
         end if; 
     end process;
 
-    cnn_input_Rst_A <= ap_rst_n_inv;
+
+    cnn_input_Rst_A_assign_proc : process(ap_rst_n)
+    begin
+                cnn_input_Rst_A <= not(ap_rst_n);
+    end process;
+
     cnn_input_WEN_A <= ap_const_lv4_0;
 
     conv_1_input_0_address0_assign_proc : process(grp_conv_1_fu_256_input_0_address0, ap_CS_fsm_state4, ap_CS_fsm_state9, sext_ln23_fu_369_p1)
@@ -1387,12 +1387,10 @@ begin
         end if; 
     end process;
 
-    prediction_Addr_A <= grp_dense_fu_234_prediction_Addr_A;
-    prediction_Clk_A <= ap_clk;
-    prediction_Din_A <= grp_dense_fu_234_prediction_Din_A;
-    prediction_EN_A <= grp_dense_fu_234_prediction_EN_A;
-    prediction_Rst_A <= ap_rst_n_inv;
-    prediction_WEN_A <= grp_dense_fu_234_prediction_WEN_A;
+    prediction_address0 <= grp_dense_fu_234_prediction_address0;
+    prediction_ce0 <= grp_dense_fu_234_prediction_ce0;
+    prediction_d0 <= grp_dense_fu_234_prediction_d0;
+    prediction_we0 <= grp_dense_fu_234_prediction_we0;
         sext_ln23_fu_369_p1 <= std_logic_vector(IEEE.numeric_std.resize(signed(add_ln23_reg_468),64));
 
     sub_ln23_fu_331_p2 <= std_logic_vector(unsigned(zext_ln23_fu_315_p1) - unsigned(zext_ln23_1_fu_327_p1));

@@ -1117,7 +1117,7 @@
             <Obj>
               <type>0</type>
               <id>42</id>
-              <name>zext_ln35_1</name>
+              <name>zext_ln35_9</name>
               <fileName>cnn/conv_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
               <lineNumber>35</lineNumber>
@@ -1141,7 +1141,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>zext_ln35_1_fu_345_p1</rtlName>
+              <rtlName>zext_ln35_9_fu_345_p1</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>16</bitwidth>
@@ -1165,7 +1165,7 @@
             <Obj>
               <type>0</type>
               <id>43</id>
-              <name>zext_ln35_2</name>
+              <name>zext_ln35_10</name>
               <fileName>cnn/conv_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
               <lineNumber>35</lineNumber>
@@ -1189,7 +1189,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>zext_ln35_2_fu_349_p1</rtlName>
+              <rtlName>zext_ln35_10_fu_349_p1</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>14</bitwidth>
@@ -1213,7 +1213,7 @@
             <Obj>
               <type>0</type>
               <id>44</id>
-              <name>add_ln35_1</name>
+              <name>add_ln35_5</name>
               <fileName>cnn/conv_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
               <lineNumber>35</lineNumber>
@@ -1237,7 +1237,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>add_ln35_1_fu_353_p2</rtlName>
+              <rtlName>add_ln35_5_fu_353_p2</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>14</bitwidth>
@@ -1262,7 +1262,7 @@
             <Obj>
               <type>0</type>
               <id>45</id>
-              <name>zext_ln35_3</name>
+              <name>zext_ln35_11</name>
               <fileName>cnn/conv_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
               <lineNumber>35</lineNumber>
@@ -1286,7 +1286,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>zext_ln35_3_fu_358_p1</rtlName>
+              <rtlName>zext_ln35_11_fu_358_p1</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>64</bitwidth>
@@ -9000,7 +9000,7 @@
           </second>
         </item>
         <item>
-          <first>add_ln35_1_fu_353_p2 ( + ) </first>
+          <first>add_ln35_5_fu_353_p2 ( + ) </first>
           <second>
             <count>4</count>
             <item_version>0</item_version>
@@ -10374,7 +10374,7 @@
           </second>
         </item>
         <item>
-          <first>zext_ln35_1_reg_628</first>
+          <first>zext_ln35_9_reg_628</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -10507,7 +10507,7 @@
           </second>
         </item>
         <item>
-          <first>add_ln35_1_fu_353_p2 ( + ) </first>
+          <first>add_ln35_5_fu_353_p2 ( + ) </first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -12234,7 +12234,7 @@
         </second>
       </item>
       <item>
-        <first>add_ln35_1_fu_353</first>
+        <first>add_ln35_5_fu_353</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -12722,15 +12722,7 @@
         </second>
       </item>
       <item>
-        <first>zext_ln35_1_fu_345</first>
-        <second>
-          <count>1</count>
-          <item_version>0</item_version>
-          <item>42</item>
-        </second>
-      </item>
-      <item>
-        <first>zext_ln35_2_fu_349</first>
+        <first>zext_ln35_10_fu_349</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -12738,11 +12730,19 @@
         </second>
       </item>
       <item>
-        <first>zext_ln35_3_fu_358</first>
+        <first>zext_ln35_11_fu_358</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
           <item>45</item>
+        </second>
+      </item>
+      <item>
+        <first>zext_ln35_9_fu_345</first>
+        <second>
+          <count>1</count>
+          <item_version>0</item_version>
+          <item>42</item>
         </second>
       </item>
       <item>
@@ -13365,7 +13365,7 @@
         </second>
       </item>
       <item>
-        <first>zext_ln35_1_reg_628</first>
+        <first>zext_ln35_9_reg_628</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>

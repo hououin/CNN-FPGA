@@ -1,6 +1,7 @@
 #include <xcnn.h>
 #include <xparameters.h>
 #include <stdio.h>
+#include <xtime_l.h>
 
 #define INPUT_ROWS 28
 #define INPUT_COLS 28
@@ -68,7 +69,8 @@ int main()
 	printf("initialized\n");
 
 
-
+	XTime start,end;
+	XTime_GetTime(&start);
 	for(int idxX = 0; idxX < INPUT_ROWS*INPUT_COLS; idxX++)
 	{
 		XVecHW[idxX] = images[idxX];
@@ -77,9 +79,18 @@ int main()
 	}
 
 
+
+
 	XCnn_Start(&doConv1);
+
 	while(!XCnn_IsDone(&doConv1));
+	XTime_GetTime(&end);
 	printf("HW finished\n");
+
+	printf("time %f us\n\r", 1.0 * (end-start)/(COUNTS_PER_SECOND/1000000));
+	printf("COUNTS_PER_SECOND %lu\n\r", (unsigned long)COUNTS_PER_SECOND);
+	printf("time %llu\n\r", (end-start));
+	printf("-----------\n");
 
 	for(int j = 0; j < DIGITS; j++)
 	{

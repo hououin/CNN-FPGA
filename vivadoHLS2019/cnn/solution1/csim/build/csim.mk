@@ -18,7 +18,7 @@ __SIM_DDS__ = 1
 
 ObjDir = obj
 
-HLS_SOURCES = ../../../main.cpp ../../../cnn.cpp ../../../conv_1.cpp ../../../conv_2.cpp ../../../dense.cpp ../../../flat.cpp ../../../max_pool_1.cpp ../../../max_pool_2.cpp
+HLS_SOURCES = ../../../main.cpp ../../../max_pool_2.cpp ../../../max_pool_1.cpp ../../../flat.cpp ../../../dense.cpp ../../../conv_2.cpp ../../../conv_1.cpp ../../../cnn.cpp
 
 TARGET := csim.exe
 
@@ -77,35 +77,11 @@ $(ObjDir)/main.o: ../../../main.cpp $(ObjDir)/.dir
 
 -include $(ObjDir)/main.d
 
-$(ObjDir)/cnn.o: ../../../cnn.cpp $(ObjDir)/.dir
-	$(Echo) "   Compiling ../../../cnn.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
+$(ObjDir)/max_pool_2.o: ../../../max_pool_2.cpp $(ObjDir)/.dir
+	$(Echo) "   Compiling ../../../max_pool_2.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
 	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
 
--include $(ObjDir)/cnn.d
-
-$(ObjDir)/conv_1.o: ../../../conv_1.cpp $(ObjDir)/.dir
-	$(Echo) "   Compiling ../../../conv_1.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
-
--include $(ObjDir)/conv_1.d
-
-$(ObjDir)/conv_2.o: ../../../conv_2.cpp $(ObjDir)/.dir
-	$(Echo) "   Compiling ../../../conv_2.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
-
--include $(ObjDir)/conv_2.d
-
-$(ObjDir)/dense.o: ../../../dense.cpp $(ObjDir)/.dir
-	$(Echo) "   Compiling ../../../dense.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
-
--include $(ObjDir)/dense.d
-
-$(ObjDir)/flat.o: ../../../flat.cpp $(ObjDir)/.dir
-	$(Echo) "   Compiling ../../../flat.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
-
--include $(ObjDir)/flat.d
+-include $(ObjDir)/max_pool_2.d
 
 $(ObjDir)/max_pool_1.o: ../../../max_pool_1.cpp $(ObjDir)/.dir
 	$(Echo) "   Compiling ../../../max_pool_1.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
@@ -113,8 +89,32 @@ $(ObjDir)/max_pool_1.o: ../../../max_pool_1.cpp $(ObjDir)/.dir
 
 -include $(ObjDir)/max_pool_1.d
 
-$(ObjDir)/max_pool_2.o: ../../../max_pool_2.cpp $(ObjDir)/.dir
-	$(Echo) "   Compiling ../../../max_pool_2.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
+$(ObjDir)/flat.o: ../../../flat.cpp $(ObjDir)/.dir
+	$(Echo) "   Compiling ../../../flat.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
 	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
 
--include $(ObjDir)/max_pool_2.d
+-include $(ObjDir)/flat.d
+
+$(ObjDir)/dense.o: ../../../dense.cpp $(ObjDir)/.dir
+	$(Echo) "   Compiling ../../../dense.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
+	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
+
+-include $(ObjDir)/dense.d
+
+$(ObjDir)/conv_2.o: ../../../conv_2.cpp $(ObjDir)/.dir
+	$(Echo) "   Compiling ../../../conv_2.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
+	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
+
+-include $(ObjDir)/conv_2.d
+
+$(ObjDir)/conv_1.o: ../../../conv_1.cpp $(ObjDir)/.dir
+	$(Echo) "   Compiling ../../../conv_1.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
+	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
+
+-include $(ObjDir)/conv_1.d
+
+$(ObjDir)/cnn.o: ../../../cnn.cpp $(ObjDir)/.dir
+	$(Echo) "   Compiling ../../../cnn.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
+	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
+
+-include $(ObjDir)/cnn.d

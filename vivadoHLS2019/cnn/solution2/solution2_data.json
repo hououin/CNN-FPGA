@@ -19,12 +19,10 @@
     ],
     "DirectiveTcl": [
       "set_directive_interface cnn ",
-      "set_directive_interface cnn ",
       "set_directive_interface cnn "
     ],
     "DirectiveInfo": [
       "interface cnn {{bram positionBoolean0mode} {port positionBooleanTextRequiredcnn_input}} {}",
-      "interface cnn {{bram positionBoolean0mode} {port positionBooleanTextRequiredprediction}} {}",
       "interface cnn {{s_axilite positionBoolean0mode} {port positionBooleanTextRequiredreturn} {bundle CRTL_BUS}} {}"
     ]
   },
@@ -46,7 +44,10 @@
         "dataType": "float",
         "dataWidth": "32",
         "arraySizes": ["10"],
-        "interfaceRef": "prediction"
+        "multiInterfaceRef": [
+          "prediction_address0",
+          "prediction_d0"
+        ]
       }
     }
   },
@@ -58,7 +59,7 @@
     "ClockPeriod": "40",
     "IsCombLogic": "0",
     "II": "x",
-    "Latency": "10325876",
+    "Latency": "10325875",
     "Uncertainty": "5"
   },
   "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 40.000 [get_ports ap_clk]"]},
@@ -107,7 +108,6 @@
       "impl\/vhdl\/flat.vhd",
       "impl\/vhdl\/max_pool_1.vhd",
       "impl\/vhdl\/max_pool_2.vhd",
-      "impl\/vhdl\/soft_max.vhd",
       "impl\/vhdl\/cnn.vhd"
     ],
     "Verilog": [
@@ -142,7 +142,6 @@
       "impl\/verilog\/flat.v",
       "impl\/verilog\/max_pool_1.v",
       "impl\/verilog\/max_pool_2.v",
-      "impl\/verilog\/soft_max.v",
       "impl\/verilog\/cnn.v"
     ],
     "SwDriver": [
@@ -253,38 +252,27 @@
       "bundle_name": "CRTL_BUS",
       "bundle_role": "interrupt"
     },
-    "prediction": {
-      "type": "native_bram",
-      "is_adaptor": "true",
-      "mode": "master",
-      "port_prefix": "prediction",
-      "mem_width": "32",
-      "mem_depth": "1",
-      "mem_ports": "a",
-      "addr_width": "32",
-      "we_width": "4",
-      "master_type": "BRAM_CTRL",
-      "ctype": {
-        "EN": {"Type": "bool"},
-        "CLK": {"Type": "bool"},
-        "RST": {"Type": "bool"},
-        "ADDR": {
-          "Type": "integer unsigned",
-          "Width": "32"
-        },
-        "WE": {
-          "Type": "integer unsigned",
+    "prediction_address0": {
+      "type": "data",
+      "dir": "out",
+      "width": "4",
+      "ctype": {"DATA": {
+          "Type": "null",
           "Width": "4"
-        },
-        "DIN": {
+        }},
+      "bundle_name": "prediction",
+      "bundle_role": "address0"
+    },
+    "prediction_d0": {
+      "type": "data",
+      "dir": "out",
+      "width": "32",
+      "ctype": {"DATA": {
           "Type": "real float",
           "Width": "32"
-        },
-        "DOUT": {
-          "Type": "real float",
-          "Width": "32"
-        }
-      }
+        }},
+      "bundle_name": "prediction",
+      "bundle_role": "d0"
     },
     "s_axi_CRTL_BUS": {
       "type": "axi4lite",
@@ -611,33 +599,21 @@
       "dir": "out",
       "width": "1"
     },
-    "prediction_Addr_A": {
-      "dir": "out",
-      "width": "32"
-    },
-    "prediction_EN_A": {
-      "dir": "out",
-      "width": "1"
-    },
-    "prediction_WEN_A": {
+    "prediction_address0": {
       "dir": "out",
       "width": "4"
     },
-    "prediction_Din_A": {
-      "dir": "out",
-      "width": "32"
-    },
-    "prediction_Dout_A": {
-      "dir": "in",
-      "width": "32"
-    },
-    "prediction_Clk_A": {
+    "prediction_ce0": {
       "dir": "out",
       "width": "1"
     },
-    "prediction_Rst_A": {
+    "prediction_we0": {
       "dir": "out",
       "width": "1"
+    },
+    "prediction_d0": {
+      "dir": "out",
+      "width": "32"
     }
   },
   "ModuleInfo": {
@@ -646,11 +622,7 @@
       "Instances": [
         {
           "ModuleName": "dense",
-          "InstanceName": "grp_dense_fu_234",
-          "Instances": [{
-              "ModuleName": "soft_max",
-              "InstanceName": "grp_soft_max_fu_129"
-            }]
+          "InstanceName": "grp_dense_fu_234"
         },
         {
           "ModuleName": "conv_2",
@@ -704,13 +676,6 @@
         "isOneStateSeq": "0"
       },
       "flat": {
-        "FunctionProtocol": "ap_ctrl_hs",
-        "isTaskLevelControl": "1",
-        "isPipelined": "0",
-        "isCombinational": "0",
-        "isOneStateSeq": "0"
-      },
-      "soft_max": {
         "FunctionProtocol": "ap_ctrl_hs",
         "isTaskLevelControl": "1",
         "isPipelined": "0",
@@ -802,7 +767,7 @@
         "Timing": {
           "Target": "40.00",
           "Uncertainty": "5.00",
-          "Estimate": "14.973"
+          "Estimate": "11.719"
         },
         "Loops": [{
             "Name": "Filter_Loop",
@@ -841,8 +806,8 @@
           }],
         "Area": {
           "DSP48E": "0",
-          "FF": "203",
-          "LUT": "734",
+          "FF": "218",
+          "LUT": "691",
           "BRAM_18K": "0",
           "URAM": "0"
         }
@@ -923,7 +888,7 @@
         "Timing": {
           "Target": "40.00",
           "Uncertainty": "5.00",
-          "Estimate": "14.973"
+          "Estimate": "11.719"
         },
         "Loops": [{
             "Name": "Filter_Loop",
@@ -962,8 +927,8 @@
           }],
         "Area": {
           "DSP48E": "0",
-          "FF": "188",
-          "LUT": "705",
+          "FF": "205",
+          "LUT": "662",
           "BRAM_18K": "0",
           "URAM": "0"
         }
@@ -1011,21 +976,35 @@
           "URAM": "0"
         }
       },
-      "soft_max": {
+      "dense": {
         "Latency": {
-          "LatencyBest": "182",
-          "LatencyAvg": "182",
-          "LatencyWorst": "182",
-          "PipelineII": "182",
+          "LatencyBest": "64203",
+          "LatencyAvg": "64203",
+          "LatencyWorst": "64203",
+          "PipelineII": "64203",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
         "Timing": {
           "Target": "40.00",
           "Uncertainty": "5.00",
-          "Estimate": "25.938"
+          "Estimate": "34.961"
         },
         "Loops": [
+          {
+            "Name": "Dense_Loop",
+            "TripCount": "10",
+            "Latency": "64020",
+            "PipelineII": "",
+            "PipelineDepth": "6402",
+            "Loops": [{
+                "Name": "Flat_Loop",
+                "TripCount": "1600",
+                "Latency": "6400",
+                "PipelineII": "",
+                "PipelineDepth": "4"
+              }]
+          },
           {
             "Name": "Sum_Loop",
             "TripCount": "10",
@@ -1042,55 +1021,19 @@
           }
         ],
         "Area": {
-          "DSP48E": "9",
-          "FF": "692",
-          "LUT": "2421",
-          "BRAM_18K": "0",
-          "URAM": "0"
-        }
-      },
-      "dense": {
-        "Latency": {
-          "LatencyBest": "64204",
-          "LatencyAvg": "64204",
-          "LatencyWorst": "64204",
-          "PipelineII": "64204",
-          "PipelineDepth": "",
-          "PipelineType": "none"
-        },
-        "Timing": {
-          "Target": "40.00",
-          "Uncertainty": "5.00",
-          "Estimate": "34.961"
-        },
-        "Loops": [{
-            "Name": "Dense_Loop",
-            "TripCount": "10",
-            "Latency": "64020",
-            "PipelineII": "",
-            "PipelineDepth": "6402",
-            "Loops": [{
-                "Name": "Flat_Loop",
-                "TripCount": "1600",
-                "Latency": "6400",
-                "PipelineII": "",
-                "PipelineDepth": "4"
-              }]
-          }],
-        "Area": {
           "BRAM_18K": "32",
-          "DSP48E": "14",
-          "FF": "1141",
-          "LUT": "3365",
+          "DSP48E": "12",
+          "FF": "959",
+          "LUT": "2898",
           "URAM": "0"
         }
       },
       "cnn": {
         "Latency": {
-          "LatencyBest": "10325876",
-          "LatencyAvg": "10325876",
-          "LatencyWorst": "10325876",
-          "PipelineII": "10325877",
+          "LatencyBest": "10325875",
+          "LatencyAvg": "10325875",
+          "LatencyWorst": "10325875",
+          "PipelineII": "10325876",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
@@ -1138,9 +1081,9 @@
         ],
         "Area": {
           "BRAM_18K": "205",
-          "DSP48E": "24",
-          "FF": "2987",
-          "LUT": "8654",
+          "DSP48E": "22",
+          "FF": "2837",
+          "LUT": "8101",
           "URAM": "0"
         }
       }
@@ -1156,7 +1099,7 @@
   },
   "GenData": {
     "DataVersion": "0.2",
-    "Time": "2023-11-19 15:08:55 +0100",
+    "Time": "2024-01-18 21:39:40 +0100",
     "ToolName": "vivado_hls",
     "ToolVersion": "2019.1"
   }

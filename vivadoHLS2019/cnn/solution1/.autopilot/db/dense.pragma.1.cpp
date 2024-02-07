@@ -2733,23 +2733,14 @@ void dense(float flat_array[(64 * (11 / 2) * (11 / 2))], float prediction[10])
     Dense_Loop:
     for (int d = 0; d < 10; ++d)
     {
-
+     w_sum = 0.0;
         Flat_Loop:
         for (int f = 0; f < (64 * (11 / 2) * (11 / 2)); ++f)
         {
-         if(f == 0)
-         {
-          w_sum = 0.0;
-         }
             w_sum += dense_weights[f][d] * flat_array[f];
 
-            if(f + 1 == (64 * (11 / 2) * (11 / 2)))
-            {
-             dense_array[d] = w_sum;
-            }
         }
-
-
+        dense_array[d] = w_sum;
     }
 
     soft_max(dense_array, prediction);

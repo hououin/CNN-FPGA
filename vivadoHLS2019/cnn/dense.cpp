@@ -28,23 +28,14 @@ void dense(float flat_array[FLAT_SIZE], float prediction[DENSE_SIZE])
     Dense_Loop:
     for (int d = 0; d < DENSE_SIZE; ++d)
     {
-
+    	w_sum = 0.0;
         Flat_Loop:
         for (int f = 0; f < FLAT_SIZE; ++f)
         {
-        	if(f == 0)
-        	{
-        		w_sum = 0.0;
-        	}
             w_sum += dense_weights[f][d] * flat_array[f];
 
-            if(f + 1 == FLAT_SIZE)
-            {
-            	dense_array[d] = w_sum;
-            }
         }
-
-
+        dense_array[d] = w_sum;
     }
 
     soft_max(dense_array, prediction);

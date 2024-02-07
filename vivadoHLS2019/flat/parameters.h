@@ -10,7 +10,8 @@
 #define WEIGHT_COLS 3
 #define CONV_1_ROWS 26
 #define CONV_1_COLS 26
-#define FILTERS_1	32
+//#define FILTERS_1	32
+#define FILTERS_1	8
 
 // max_pool_1
 #define MAX_POOL_ROWS 2
@@ -29,7 +30,8 @@
 #define POOL_2_OUT_COLS (CONV_2_COLS / MAX_POOL_COLS)
 
 // flat
-#define FLAT_SIZE (FILTERS_2 * POOL_2_OUT_ROWS * POOL_2_OUT_COLS)
+//#define FLAT_SIZE (FILTERS_2 * POOL_2_OUT_ROWS * POOL_2_OUT_COLS)
+#define FLAT_SIZE (FILTERS_1 * POOL_1_OUT_ROWS * POOL_1_OUT_COLS)
 
 // dense
 #define DENSE_SIZE 10

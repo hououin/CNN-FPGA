@@ -75,7 +75,7 @@ set RtlHierarchyInfo {[
 set ArgLastReadFirstWriteLatency {
 	max_pool_1 {
 		conv_out {Type I LastRead 5 FirstWrite -1}
-		max_pool_out {Type O LastRead -1 FirstWrite 6}}}
+		max_pool_out {Type O LastRead -1 FirstWrite 4}}}
 
 set hasDtUnsupportedChannel 0
 

@@ -7,7 +7,7 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="cnn,hls_ip_2019_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=1,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg400-1,HLS_INPUT_CLOCK=40.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=34.960800,HLS_SYN_LAT=10325876,HLS_SYN_TPT=none,HLS_SYN_MEM=205,HLS_SYN_DSP=24,HLS_SYN_FF=2987,HLS_SYN_LUT=8654,HLS_VERSION=2019_1}" *)
+(* CORE_GENERATION_INFO="cnn,hls_ip_2019_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=1,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg400-1,HLS_INPUT_CLOCK=40.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=34.960800,HLS_SYN_LAT=10325875,HLS_SYN_TPT=none,HLS_SYN_MEM=205,HLS_SYN_DSP=22,HLS_SYN_FF=2837,HLS_SYN_LUT=8101,HLS_VERSION=2019_1}" *)
 
 module cnn (
         ap_clk,
@@ -19,13 +19,10 @@ module cnn (
         cnn_input_Dout_A,
         cnn_input_Clk_A,
         cnn_input_Rst_A,
-        prediction_Addr_A,
-        prediction_EN_A,
-        prediction_WEN_A,
-        prediction_Din_A,
-        prediction_Dout_A,
-        prediction_Clk_A,
-        prediction_Rst_A,
+        prediction_address0,
+        prediction_ce0,
+        prediction_we0,
+        prediction_d0,
         s_axi_CRTL_BUS_AWVALID,
         s_axi_CRTL_BUS_AWREADY,
         s_axi_CRTL_BUS_AWADDR,
@@ -81,13 +78,10 @@ output  [31:0] cnn_input_Din_A;
 input  [31:0] cnn_input_Dout_A;
 output   cnn_input_Clk_A;
 output   cnn_input_Rst_A;
-output  [31:0] prediction_Addr_A;
-output   prediction_EN_A;
-output  [3:0] prediction_WEN_A;
-output  [31:0] prediction_Din_A;
-input  [31:0] prediction_Dout_A;
-output   prediction_Clk_A;
-output   prediction_Rst_A;
+output  [3:0] prediction_address0;
+output   prediction_ce0;
+output   prediction_we0;
+output  [31:0] prediction_d0;
 input   s_axi_CRTL_BUS_AWVALID;
 output   s_axi_CRTL_BUS_AWREADY;
 input  [C_S_AXI_CRTL_BUS_ADDR_WIDTH - 1:0] s_axi_CRTL_BUS_AWADDR;
@@ -108,6 +102,7 @@ output  [1:0] s_axi_CRTL_BUS_BRESP;
 output   interrupt;
 
 reg cnn_input_EN_A;
+reg cnn_input_Rst_A;
 
  reg    ap_rst_n_inv;
 wire    ap_start;
@@ -173,10 +168,10 @@ wire    grp_dense_fu_234_ap_start;
 wire    grp_dense_fu_234_ap_done;
 wire    grp_dense_fu_234_ap_idle;
 wire    grp_dense_fu_234_ap_ready;
-wire   [31:0] grp_dense_fu_234_prediction_Addr_A;
-wire    grp_dense_fu_234_prediction_EN_A;
-wire   [3:0] grp_dense_fu_234_prediction_WEN_A;
-wire   [31:0] grp_dense_fu_234_prediction_Din_A;
+wire   [3:0] grp_dense_fu_234_prediction_address0;
+wire    grp_dense_fu_234_prediction_ce0;
+wire    grp_dense_fu_234_prediction_we0;
+wire   [31:0] grp_dense_fu_234_prediction_d0;
 wire   [10:0] grp_dense_fu_234_flat_array_address0;
 wire    grp_dense_fu_234_flat_array_ce0;
 wire    grp_conv_2_fu_244_ap_start;
@@ -405,11 +400,10 @@ dense grp_dense_fu_234(
     .ap_done(grp_dense_fu_234_ap_done),
     .ap_idle(grp_dense_fu_234_ap_idle),
     .ap_ready(grp_dense_fu_234_ap_ready),
-    .prediction_Addr_A(grp_dense_fu_234_prediction_Addr_A),
-    .prediction_EN_A(grp_dense_fu_234_prediction_EN_A),
-    .prediction_WEN_A(grp_dense_fu_234_prediction_WEN_A),
-    .prediction_Din_A(grp_dense_fu_234_prediction_Din_A),
-    .prediction_Dout_A(32'd0),
+    .prediction_address0(grp_dense_fu_234_prediction_address0),
+    .prediction_ce0(grp_dense_fu_234_prediction_ce0),
+    .prediction_we0(grp_dense_fu_234_prediction_we0),
+    .prediction_d0(grp_dense_fu_234_prediction_d0),
     .flat_array_address0(grp_dense_fu_234_flat_array_address0),
     .flat_array_ce0(grp_dense_fu_234_flat_array_ce0),
     .flat_array_q0(flat_array_q0)
@@ -1068,7 +1062,9 @@ assign cnn_input_Clk_A = ap_clk;
 
 assign cnn_input_Din_A = 32'd0;
 
-assign cnn_input_Rst_A = ap_rst_n_inv;
+always @ (*) begin
+    cnn_input_Rst_A = ~ap_rst_n;
+end
 
 assign cnn_input_WEN_A = 4'd0;
 
@@ -1100,17 +1096,13 @@ assign ix_in_fu_301_p2 = (ix_in_0_reg_154 + 10'd28);
 
 assign j_fu_343_p2 = (j_0_reg_176 + 5'd1);
 
-assign prediction_Addr_A = grp_dense_fu_234_prediction_Addr_A;
+assign prediction_address0 = grp_dense_fu_234_prediction_address0;
 
-assign prediction_Clk_A = ap_clk;
+assign prediction_ce0 = grp_dense_fu_234_prediction_ce0;
 
-assign prediction_Din_A = grp_dense_fu_234_prediction_Din_A;
+assign prediction_d0 = grp_dense_fu_234_prediction_d0;
 
-assign prediction_EN_A = grp_dense_fu_234_prediction_EN_A;
-
-assign prediction_Rst_A = ap_rst_n_inv;
-
-assign prediction_WEN_A = grp_dense_fu_234_prediction_WEN_A;
+assign prediction_we0 = grp_dense_fu_234_prediction_we0;
 
 assign sext_ln23_fu_369_p1 = $signed(add_ln23_reg_468);
 

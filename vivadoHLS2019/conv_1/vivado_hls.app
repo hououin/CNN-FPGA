@@ -20,8 +20,8 @@
     <solution name="Filter_pipeline" status="inactive"/>
     <solution name="W_Row_pipeline" status="inactive"/>
     <solution name="W_Col_pipeline" status="inactive"/>
-    <solution name="Chan_pipeline" status="inactive"/>
-    <solution name="Chan_unroll" status="active"/>
+    <solution name="Chan_pipeline" status="active"/>
+    <solution name="Chan_unroll" status="inactive"/>
     <solution name="W_Col_unroll" status="inactive"/>
     <solution name="W_Row_unroll" status="inactive"/>
     <solution name="Filter_unroll" status="inactive"/>
@@ -33,6 +33,7 @@
     <solution name="W_Col_f_u" status="inactive"/>
     <solution name="W_Row_p_f" status="inactive"/>
     <solution name="test" status="inactive"/>
+    <solution name="solution1" status="inactive"/>
   </solutions>
   <includePaths/>
   <libraryPaths/>

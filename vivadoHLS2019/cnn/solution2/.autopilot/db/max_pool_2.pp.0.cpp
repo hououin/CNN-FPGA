@@ -358,17 +358,13 @@ void max_pool_2(float conv_out[11][11][64], float max_pool_out[(11 / 2)][(11 / 2
          Col_Loop:
             for (int c = 0; c < (11 / 2); ++c)
             {
-
+             max = 1.17549435e-38F;
                 Pool_Row_Loop:
                 for (int mpr = 0; mpr < 2; ++mpr)
                 {
                  Pool_Col_Loop:
                     for (int mpc = 0; mpc < 2; ++mpc)
                     {
-                     if(mpr == 0 && mpc == 0)
-                     {
-                            max = 1.17549435e-38F;
-                     }
 
                         int i = r * 2 + mpr;
                         int j = c * 2 + mpc;
@@ -377,13 +373,10 @@ void max_pool_2(float conv_out[11][11][64], float max_pool_out[(11 / 2)][(11 / 2
                         {
                             max = conv_out[i][j][f];
                         }
-
-                        if(mpr + 1 == 2 && mpc + 1 == 2)
-                        {
-                         max_pool_out[r][c][f] = max;
-                        }
                     }
                 }
+
+                max_pool_out[r][c][f] = max;
             }
         }
     }

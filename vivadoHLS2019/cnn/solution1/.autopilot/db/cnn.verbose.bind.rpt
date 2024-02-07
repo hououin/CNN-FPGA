@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'cnn'
 ================================================================
-* Date:           Sun Nov 19 15:15:58 2023
+* Date:           Thu Jan 18 19:24:46 2024
 
 * Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
 * Project:        cnn
@@ -29,7 +29,7 @@
     |       Latency       |       Interval      | Pipeline|
     |    min   |    max   |    min   |    max   |   Type  |
     +----------+----------+----------+----------+---------+
-    |  27690542|  27690542|  27690542|  27690542|   none  |
+    |  27646510|  27646510|  27646510|  27646510|   none  |
     +----------+----------+----------+----------+---------+
 
     + Detail: 
@@ -38,11 +38,11 @@
         |                       |            |       Latency       |       Interval      | Pipeline|
         |        Instance       |   Module   |    min   |    max   |    min   |    max   |   Type  |
         +-----------------------+------------+----------+----------+----------+----------+---------+
-        |grp_dense_fu_234       |dense       |    192454|    192454|    192454|    192454|   none  |
+        |grp_dense_fu_234       |dense       |    176454|    176454|    176454|    176454|   none  |
         |grp_conv_2_fu_244      |conv_2      |  24804297|  24804297|  24804297|  24804297|   none  |
         |grp_conv_1_fu_256      |conv_1      |   2510717|   2510717|   2510717|   2510717|   none  |
-        |grp_max_pool_1_fu_266  |max_pool_1  |    119873|    119873|    119873|    119873|   none  |
-        |grp_max_pool_2_fu_273  |max_pool_2  |     35969|     35969|     35969|     35969|   none  |
+        |grp_max_pool_1_fu_266  |max_pool_1  |     98241|     98241|     98241|     98241|   none  |
+        |grp_max_pool_2_fu_273  |max_pool_2  |     29569|     29569|     29569|     29569|   none  |
         |grp_flat_fu_281        |flat        |      3261|      3261|      3261|      3261|   none  |
         +-----------------------+------------+----------+----------+----------+----------+---------+
 
@@ -117,9 +117,9 @@ ST_1 : Operation 21 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBits
 ST_1 : Operation 22 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([4 x i8]* @cnn_str) nounwind"   --->   Operation 22 'spectopmodule' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 23 [1/1] (3.25ns)   --->   "%conv_1_input_0 = alloca [784 x float], align 4" [cnn/cnn.cpp:13]   --->   Operation 23 'alloca' 'conv_1_input_0' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 1600> <RAM>
 ST_1 : Operation 24 [1/1] (3.25ns)   --->   "%conv_1_out = alloca [21632 x float], align 4" [cnn/cnn.cpp:29]   --->   Operation 24 'alloca' 'conv_1_out' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 1600> <RAM>
-ST_1 : Operation 25 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface([784 x float]* %cnn_input, [5 x i8]* @p_str29, i32 0, i32 0, [1 x i8]* @p_str130, i32 0, i32 0, [1 x i8]* @p_str130, [1 x i8]* @p_str130, [1 x i8]* @p_str130, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str130, [1 x i8]* @p_str130) nounwind" [cnn/cnn.cpp:12]   --->   Operation 25 'specinterface' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 26 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface([10 x float]* %prediction, [5 x i8]* @p_str29, i32 0, i32 0, [1 x i8]* @p_str130, i32 0, i32 0, [1 x i8]* @p_str130, [1 x i8]* @p_str130, [1 x i8]* @p_str130, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str130, [1 x i8]* @p_str130) nounwind" [cnn/cnn.cpp:12]   --->   Operation 26 'specinterface' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 27 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str231, i32 0, i32 0, [1 x i8]* @p_str130, i32 0, i32 0, [9 x i8]* @p_str332, [1 x i8]* @p_str130, [1 x i8]* @p_str130, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str130, [1 x i8]* @p_str130) nounwind" [cnn/cnn.cpp:12]   --->   Operation 27 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface([784 x float]* %cnn_input, [5 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [cnn/cnn.cpp:12]   --->   Operation 25 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface([10 x float]* %prediction, [5 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [cnn/cnn.cpp:12]   --->   Operation 26 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str2, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [9 x i8]* @p_str3, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [cnn/cnn.cpp:12]   --->   Operation 27 'specinterface' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 28 [1/1] (1.76ns)   --->   "br label %.loopexit" [cnn/cnn.cpp:17]   --->   Operation 28 'br' <Predicate = true> <Delay = 1.76>
 
 State 2 <SV = 1> <Delay = 1.78>
@@ -500,7 +500,7 @@ ret_ln52            (ret              ) [ 00000000000000000000]
 <pin id="33" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="p_str29"/></StgValue>
+<StgValue><ssdm name="p_str"/></StgValue>
 </bind>
 </comp>
 
@@ -518,7 +518,7 @@ ret_ln52            (ret              ) [ 00000000000000000000]
 <pin id="37" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="p_str130"/></StgValue>
+<StgValue><ssdm name="p_str1"/></StgValue>
 </bind>
 </comp>
 
@@ -527,7 +527,7 @@ ret_ln52            (ret              ) [ 00000000000000000000]
 <pin id="39" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="p_str231"/></StgValue>
+<StgValue><ssdm name="p_str2"/></StgValue>
 </bind>
 </comp>
 
@@ -536,7 +536,7 @@ ret_ln52            (ret              ) [ 00000000000000000000]
 <pin id="41" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="p_str332"/></StgValue>
+<StgValue><ssdm name="p_str3"/></StgValue>
 </bind>
 </comp>
 
@@ -1920,11 +1920,11 @@ ret_ln52            (ret              ) [ 00000000000000000000]
 |----------|-----------------------|---------|---------|---------|---------|---------|---------|
 | Operation|    Functional Unit    |   BRAM  |  DSP48E |  Delay  |    FF   |   LUT   |   URAM  |
 |----------|-----------------------|---------|---------|---------|---------|---------|---------|
-|          |    grp_dense_fu_234   |    0    |    14   |  8.9365 |   2139  |   3261  |    0    |
+|          |    grp_dense_fu_234   |    0    |    14   |  8.9365 |   2165  |   3203  |    0    |
 |          |   grp_conv_2_fu_244   |    0    |    5    |  15.921 |   977   |   1415  |    0    |
 |   call   |   grp_conv_1_fu_256   |    0    |    5    |  15.921 |   907   |   1358  |    0    |
-|          | grp_max_pool_1_fu_266 |    0    |    0    |  7.076  |   328   |   669   |    0    |
-|          | grp_max_pool_2_fu_273 |    0    |    0    |  5.307  |   304   |   639   |    0    |
+|          | grp_max_pool_1_fu_266 |    0    |    0    |  8.845  |   311   |   626   |    0    |
+|          | grp_max_pool_2_fu_273 |    0    |    0    |  7.076  |   289   |   596   |    0    |
 |          |    grp_flat_fu_281    |    0    |    0    |  3.538  |   121   |   167   |    0    |
 |----------|-----------------------|---------|---------|---------|---------|---------|---------|
 |          |        i_fu_295       |    0    |    0    |    0    |    0    |    15   |    0    |
@@ -1959,7 +1959,7 @@ ret_ln52            (ret              ) [ 00000000000000000000]
 |----------|-----------------------|---------|---------|---------|---------|---------|---------|
 |   sext   |    sext_ln23_fu_369   |    0    |    0    |    0    |    0    |    0    |    0    |
 |----------|-----------------------|---------|---------|---------|---------|---------|---------|
-|   Total  |                       |    0    |    24   | 56.6995 |   4776  |   7722  |    0    |
+|   Total  |                       |    0    |    24   | 60.2375 |   4770  |   7578  |    0    |
 |----------|-----------------------|---------|---------|---------|---------|---------|---------|
 
 Memories:
@@ -2028,10 +2028,10 @@ Memories:
 +-----------+--------+--------+--------+--------+--------+--------+
 |           |  BRAM  | DSP48E |  Delay |   FF   |   LUT  |  URAM  |
 +-----------+--------+--------+--------+--------+--------+--------+
-|  Function |    0   |   24   |   56   |  4776  |  7722  |    0   |
+|  Function |    0   |   24   |   60   |  4770  |  7578  |    0   |
 |   Memory  |   205  |    -   |    -   |    0   |    0   |    0   |
 |Multiplexer|    -   |    -   |    8   |    -   |   45   |    -   |
 |  Register |    -   |    -   |    -   |   152  |    -   |    -   |
 +-----------+--------+--------+--------+--------+--------+--------+
-|   Total   |   205  |   24   |   65   |  4928  |  7767  |    0   |
+|   Total   |   205  |   24   |   69   |  4922  |  7623  |    0   |
 +-----------+--------+--------+--------+--------+--------+--------+

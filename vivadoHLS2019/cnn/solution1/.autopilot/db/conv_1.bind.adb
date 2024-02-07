@@ -1117,7 +1117,7 @@
 					<Obj>
 						<type>0</type>
 						<id>42</id>
-						<name>zext_ln35_4</name>
+						<name>zext_ln35_12</name>
 						<fileName>cnn/conv_1.cpp</fileName>
 						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>35</lineNumber>
@@ -1165,7 +1165,7 @@
 					<Obj>
 						<type>0</type>
 						<id>43</id>
-						<name>zext_ln35_5</name>
+						<name>zext_ln35_13</name>
 						<fileName>cnn/conv_1.cpp</fileName>
 						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>35</lineNumber>
@@ -1213,7 +1213,7 @@
 					<Obj>
 						<type>0</type>
 						<id>44</id>
-						<name>add_ln35_2</name>
+						<name>add_ln35_6</name>
 						<fileName>cnn/conv_1.cpp</fileName>
 						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>35</lineNumber>
@@ -1262,7 +1262,7 @@
 					<Obj>
 						<type>0</type>
 						<id>45</id>
-						<name>zext_ln35_6</name>
+						<name>zext_ln35_14</name>
 						<fileName>cnn/conv_1.cpp</fileName>
 						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
 						<lineNumber>35</lineNumber>
@@ -9191,7 +9191,7 @@
 			</second>
 		</item>
 		<item>
-			<first>add_ln35_2_fu_311</first>
+			<first>add_ln35_6_fu_311</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9599,7 +9599,7 @@
 			</second>
 		</item>
 		<item>
-			<first>zext_ln35_4_fu_303</first>
+			<first>zext_ln35_12_fu_303</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9607,7 +9607,7 @@
 			</second>
 		</item>
 		<item>
-			<first>zext_ln35_5_fu_307</first>
+			<first>zext_ln35_13_fu_307</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9615,7 +9615,7 @@
 			</second>
 		</item>
 		<item>
-			<first>zext_ln35_6_fu_316</first>
+			<first>zext_ln35_14_fu_316</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -10211,7 +10211,7 @@
 			</second>
 		</item>
 		<item>
-			<first>zext_ln35_4_reg_541</first>
+			<first>zext_ln35_12_reg_541</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>

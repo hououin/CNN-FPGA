@@ -150,11 +150,10 @@ cnn::cnn(sc_module_name name) : sc_module(name), mVcdFile(0) {
     grp_dense_fu_234->ap_done(grp_dense_fu_234_ap_done);
     grp_dense_fu_234->ap_idle(grp_dense_fu_234_ap_idle);
     grp_dense_fu_234->ap_ready(grp_dense_fu_234_ap_ready);
-    grp_dense_fu_234->prediction_Addr_A(grp_dense_fu_234_prediction_Addr_A);
-    grp_dense_fu_234->prediction_EN_A(grp_dense_fu_234_prediction_EN_A);
-    grp_dense_fu_234->prediction_WEN_A(grp_dense_fu_234_prediction_WEN_A);
-    grp_dense_fu_234->prediction_Din_A(grp_dense_fu_234_prediction_Din_A);
-    grp_dense_fu_234->prediction_Dout_A(ap_var_for_const1);
+    grp_dense_fu_234->prediction_address0(grp_dense_fu_234_prediction_address0);
+    grp_dense_fu_234->prediction_ce0(grp_dense_fu_234_prediction_ce0);
+    grp_dense_fu_234->prediction_we0(grp_dense_fu_234_prediction_we0);
+    grp_dense_fu_234->prediction_d0(grp_dense_fu_234_prediction_d0);
     grp_dense_fu_234->flat_array_address0(grp_dense_fu_234_flat_array_address0);
     grp_dense_fu_234->flat_array_ce0(grp_dense_fu_234_flat_array_ce0);
     grp_dense_fu_234->flat_array_q0(flat_array_q0);
@@ -344,7 +343,7 @@ cnn::cnn(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sensitive << ( ap_CS_fsm_state3 );
 
     SC_METHOD(thread_cnn_input_Rst_A);
-    sensitive << ( ap_rst_n_inv );
+    sensitive << ( ap_rst_n );
 
     SC_METHOD(thread_cnn_input_WEN_A);
 
@@ -501,26 +500,20 @@ cnn::cnn(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sensitive << ( grp_max_pool_2_fu_273_max_pool_out_we0 );
     sensitive << ( ap_CS_fsm_state15 );
 
-    SC_METHOD(thread_prediction_Addr_A);
-    sensitive << ( grp_dense_fu_234_prediction_Addr_A );
+    SC_METHOD(thread_prediction_address0);
+    sensitive << ( grp_dense_fu_234_prediction_address0 );
     sensitive << ( ap_CS_fsm_state19 );
 
-    SC_METHOD(thread_prediction_Clk_A);
-    sensitive << ( ap_clk );
-
-    SC_METHOD(thread_prediction_Din_A);
-    sensitive << ( grp_dense_fu_234_prediction_Din_A );
+    SC_METHOD(thread_prediction_ce0);
+    sensitive << ( grp_dense_fu_234_prediction_ce0 );
     sensitive << ( ap_CS_fsm_state19 );
 
-    SC_METHOD(thread_prediction_EN_A);
-    sensitive << ( grp_dense_fu_234_prediction_EN_A );
+    SC_METHOD(thread_prediction_d0);
+    sensitive << ( grp_dense_fu_234_prediction_d0 );
     sensitive << ( ap_CS_fsm_state19 );
 
-    SC_METHOD(thread_prediction_Rst_A);
-    sensitive << ( ap_rst_n_inv );
-
-    SC_METHOD(thread_prediction_WEN_A);
-    sensitive << ( grp_dense_fu_234_prediction_WEN_A );
+    SC_METHOD(thread_prediction_we0);
+    sensitive << ( grp_dense_fu_234_prediction_we0 );
     sensitive << ( ap_CS_fsm_state19 );
 
     SC_METHOD(thread_sext_ln23_fu_369_p1);
@@ -588,8 +581,6 @@ cnn::cnn(sc_module_name name) : sc_module(name), mVcdFile(0) {
 
     SC_THREAD(thread_ap_var_for_const0);
 
-    SC_THREAD(thread_ap_var_for_const1);
-
     ap_CS_fsm = "0000000000000000001";
     grp_dense_fu_234_ap_start_reg = SC_LOGIC_0;
     grp_conv_2_fu_244_ap_start_reg = SC_LOGIC_0;
@@ -614,13 +605,10 @@ cnn::cnn(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sc_trace(mVcdFile, cnn_input_Dout_A, "(port)cnn_input_Dout_A");
     sc_trace(mVcdFile, cnn_input_Clk_A, "(port)cnn_input_Clk_A");
     sc_trace(mVcdFile, cnn_input_Rst_A, "(port)cnn_input_Rst_A");
-    sc_trace(mVcdFile, prediction_Addr_A, "(port)prediction_Addr_A");
-    sc_trace(mVcdFile, prediction_EN_A, "(port)prediction_EN_A");
-    sc_trace(mVcdFile, prediction_WEN_A, "(port)prediction_WEN_A");
-    sc_trace(mVcdFile, prediction_Din_A, "(port)prediction_Din_A");
-    sc_trace(mVcdFile, prediction_Dout_A, "(port)prediction_Dout_A");
-    sc_trace(mVcdFile, prediction_Clk_A, "(port)prediction_Clk_A");
-    sc_trace(mVcdFile, prediction_Rst_A, "(port)prediction_Rst_A");
+    sc_trace(mVcdFile, prediction_address0, "(port)prediction_address0");
+    sc_trace(mVcdFile, prediction_ce0, "(port)prediction_ce0");
+    sc_trace(mVcdFile, prediction_we0, "(port)prediction_we0");
+    sc_trace(mVcdFile, prediction_d0, "(port)prediction_d0");
     sc_trace(mVcdFile, s_axi_CRTL_BUS_AWVALID, "(port)s_axi_CRTL_BUS_AWVALID");
     sc_trace(mVcdFile, s_axi_CRTL_BUS_AWREADY, "(port)s_axi_CRTL_BUS_AWREADY");
     sc_trace(mVcdFile, s_axi_CRTL_BUS_AWADDR, "(port)s_axi_CRTL_BUS_AWADDR");
@@ -705,10 +693,10 @@ cnn::cnn(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sc_trace(mVcdFile, grp_dense_fu_234_ap_done, "grp_dense_fu_234_ap_done");
     sc_trace(mVcdFile, grp_dense_fu_234_ap_idle, "grp_dense_fu_234_ap_idle");
     sc_trace(mVcdFile, grp_dense_fu_234_ap_ready, "grp_dense_fu_234_ap_ready");
-    sc_trace(mVcdFile, grp_dense_fu_234_prediction_Addr_A, "grp_dense_fu_234_prediction_Addr_A");
-    sc_trace(mVcdFile, grp_dense_fu_234_prediction_EN_A, "grp_dense_fu_234_prediction_EN_A");
-    sc_trace(mVcdFile, grp_dense_fu_234_prediction_WEN_A, "grp_dense_fu_234_prediction_WEN_A");
-    sc_trace(mVcdFile, grp_dense_fu_234_prediction_Din_A, "grp_dense_fu_234_prediction_Din_A");
+    sc_trace(mVcdFile, grp_dense_fu_234_prediction_address0, "grp_dense_fu_234_prediction_address0");
+    sc_trace(mVcdFile, grp_dense_fu_234_prediction_ce0, "grp_dense_fu_234_prediction_ce0");
+    sc_trace(mVcdFile, grp_dense_fu_234_prediction_we0, "grp_dense_fu_234_prediction_we0");
+    sc_trace(mVcdFile, grp_dense_fu_234_prediction_d0, "grp_dense_fu_234_prediction_d0");
     sc_trace(mVcdFile, grp_dense_fu_234_flat_array_address0, "grp_dense_fu_234_flat_array_address0");
     sc_trace(mVcdFile, grp_dense_fu_234_flat_array_ce0, "grp_dense_fu_234_flat_array_ce0");
     sc_trace(mVcdFile, grp_conv_2_fu_244_ap_start, "grp_conv_2_fu_244_ap_start");
@@ -835,10 +823,6 @@ cnn::~cnn() {
 
 void cnn::thread_ap_var_for_const0() {
     ap_var_for_const0 = ap_const_logic_1;
-}
-
-void cnn::thread_ap_var_for_const1() {
-    ap_var_for_const1 = ap_const_lv32_0;
 }
 
 void cnn::thread_ap_clk_no_reset_() {
@@ -1142,7 +1126,7 @@ void cnn::thread_cnn_input_EN_A() {
 }
 
 void cnn::thread_cnn_input_Rst_A() {
-    cnn_input_Rst_A = ap_rst_n_inv.read();
+    cnn_input_Rst_A =  (sc_logic) (~ap_rst_n.read());
 }
 
 void cnn::thread_cnn_input_WEN_A() {
@@ -1389,28 +1373,20 @@ void cnn::thread_max_pool_2_out_we0() {
     }
 }
 
-void cnn::thread_prediction_Addr_A() {
-    prediction_Addr_A = grp_dense_fu_234_prediction_Addr_A.read();
+void cnn::thread_prediction_address0() {
+    prediction_address0 = grp_dense_fu_234_prediction_address0.read();
 }
 
-void cnn::thread_prediction_Clk_A() {
-    prediction_Clk_A = ap_clk.read()? SC_LOGIC_1 : SC_LOGIC_0;
+void cnn::thread_prediction_ce0() {
+    prediction_ce0 = grp_dense_fu_234_prediction_ce0.read();
 }
 
-void cnn::thread_prediction_Din_A() {
-    prediction_Din_A = grp_dense_fu_234_prediction_Din_A.read();
+void cnn::thread_prediction_d0() {
+    prediction_d0 = grp_dense_fu_234_prediction_d0.read();
 }
 
-void cnn::thread_prediction_EN_A() {
-    prediction_EN_A = grp_dense_fu_234_prediction_EN_A.read();
-}
-
-void cnn::thread_prediction_Rst_A() {
-    prediction_Rst_A = ap_rst_n_inv.read();
-}
-
-void cnn::thread_prediction_WEN_A() {
-    prediction_WEN_A = grp_dense_fu_234_prediction_WEN_A.read();
+void cnn::thread_prediction_we0() {
+    prediction_we0 = grp_dense_fu_234_prediction_we0.read();
 }
 
 void cnn::thread_sext_ln23_fu_369_p1() {
@@ -1586,13 +1562,10 @@ void cnn::thread_hdltv_gen() {
         mHdltvinHandle << " , " <<  " \"cnn_input_Dout_A\" :  \"" << cnn_input_Dout_A.read() << "\" ";
         mHdltvoutHandle << " , " <<  " \"cnn_input_Clk_A\" :  \"" << cnn_input_Clk_A.read() << "\" ";
         mHdltvoutHandle << " , " <<  " \"cnn_input_Rst_A\" :  \"" << cnn_input_Rst_A.read() << "\" ";
-        mHdltvoutHandle << " , " <<  " \"prediction_Addr_A\" :  \"" << prediction_Addr_A.read() << "\" ";
-        mHdltvoutHandle << " , " <<  " \"prediction_EN_A\" :  \"" << prediction_EN_A.read() << "\" ";
-        mHdltvoutHandle << " , " <<  " \"prediction_WEN_A\" :  \"" << prediction_WEN_A.read() << "\" ";
-        mHdltvoutHandle << " , " <<  " \"prediction_Din_A\" :  \"" << prediction_Din_A.read() << "\" ";
-        mHdltvinHandle << " , " <<  " \"prediction_Dout_A\" :  \"" << prediction_Dout_A.read() << "\" ";
-        mHdltvoutHandle << " , " <<  " \"prediction_Clk_A\" :  \"" << prediction_Clk_A.read() << "\" ";
-        mHdltvoutHandle << " , " <<  " \"prediction_Rst_A\" :  \"" << prediction_Rst_A.read() << "\" ";
+        mHdltvoutHandle << " , " <<  " \"prediction_address0\" :  \"" << prediction_address0.read() << "\" ";
+        mHdltvoutHandle << " , " <<  " \"prediction_ce0\" :  \"" << prediction_ce0.read() << "\" ";
+        mHdltvoutHandle << " , " <<  " \"prediction_we0\" :  \"" << prediction_we0.read() << "\" ";
+        mHdltvoutHandle << " , " <<  " \"prediction_d0\" :  \"" << prediction_d0.read() << "\" ";
         mHdltvinHandle << " , " <<  " \"s_axi_CRTL_BUS_AWVALID\" :  \"" << s_axi_CRTL_BUS_AWVALID.read() << "\" ";
         mHdltvoutHandle << " , " <<  " \"s_axi_CRTL_BUS_AWREADY\" :  \"" << s_axi_CRTL_BUS_AWREADY.read() << "\" ";
         mHdltvinHandle << " , " <<  " \"s_axi_CRTL_BUS_AWADDR\" :  \"" << s_axi_CRTL_BUS_AWADDR.read() << "\" ";

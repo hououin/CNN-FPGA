@@ -5,27 +5,27 @@
 ############################################################
 open_project cnn
 set_top cnn
-add_files cnn/cnn.cpp
-add_files cnn/cnn.h
-add_files cnn/conv_1.cpp
-add_files cnn/conv_1.h
-add_files cnn/conv_1_weights.h
-add_files cnn/conv_2.cpp
-add_files cnn/conv_2.h
-add_files cnn/conv_2_weights.h
-add_files cnn/dense.cpp
-add_files cnn/dense.h
-add_files cnn/dense_weights.h
-add_files cnn/flat.cpp
-add_files cnn/flat.h
-add_files cnn/max_pool_1.cpp
-add_files cnn/max_pool_1.h
-add_files cnn/max_pool_2.cpp
-add_files cnn/max_pool_2.h
 add_files cnn/parameters.h
-add_files -tb cnn/out.gold.dat -cflags "-Wno-unknown-pragmas" -csimflags "-Wno-unknown-pragmas"
-add_files -tb cnn/main.cpp -cflags "-Wno-unknown-pragmas" -csimflags "-Wno-unknown-pragmas"
+add_files cnn/max_pool_2.h
+add_files cnn/max_pool_2.cpp
+add_files cnn/max_pool_1.h
+add_files cnn/max_pool_1.cpp
+add_files cnn/flat.h
+add_files cnn/flat.cpp
+add_files cnn/dense_weights.h
+add_files cnn/dense.h
+add_files cnn/dense.cpp
+add_files cnn/conv_2_weights.h
+add_files cnn/conv_2.h
+add_files cnn/conv_2.cpp
+add_files cnn/conv_1_weights.h
+add_files cnn/conv_1.h
+add_files cnn/conv_1.cpp
+add_files cnn/cnn.h
+add_files cnn/cnn.cpp
 add_files -tb cnn/inputs.dat -cflags "-Wno-unknown-pragmas" -csimflags "-Wno-unknown-pragmas"
+add_files -tb cnn/main.cpp -cflags "-Wno-unknown-pragmas" -csimflags "-Wno-unknown-pragmas"
+add_files -tb cnn/out.gold.dat -cflags "-Wno-unknown-pragmas" -csimflags "-Wno-unknown-pragmas"
 open_solution "solution1"
 set_part {xc7z020-clg400-1} -tool vivado
 create_clock -period 10 -name default

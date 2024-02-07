@@ -7,7 +7,7 @@
 
 module cnn_fdiv_32ns_32ng8j
 #(parameter
-    ID         = 27,
+    ID         = 28,
     NUM_STAGE  = 6,
     din0_WIDTH = 32,
     din1_WIDTH = 32,

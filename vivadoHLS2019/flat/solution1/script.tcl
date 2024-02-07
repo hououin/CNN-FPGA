@@ -9,6 +9,7 @@ add_files flat/flat.h
 add_files flat/parameters.h
 add_files -tb flat/main.cpp
 add_files -tb flat/max_pool_2_out.txt
+add_files -tb flat/max_pool_out.txt
 open_solution "solution1"
 set_part {xc7z020-clg400-1} -tool vivado
 create_clock -period 40 -name default

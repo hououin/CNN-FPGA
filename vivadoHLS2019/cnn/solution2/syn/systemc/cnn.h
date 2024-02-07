@@ -29,7 +29,7 @@ namespace ap_rtl {
 template<unsigned int C_S_AXI_CRTL_BUS_ADDR_WIDTH = 4,
          unsigned int C_S_AXI_CRTL_BUS_DATA_WIDTH = 32>
 struct cnn : public sc_module {
-    // Port declarations 34
+    // Port declarations 31
     sc_in_clk ap_clk;
     sc_in< sc_logic > ap_rst_n;
     sc_out< sc_lv<32> > cnn_input_Addr_A;
@@ -39,13 +39,10 @@ struct cnn : public sc_module {
     sc_in< sc_lv<32> > cnn_input_Dout_A;
     sc_out< sc_logic > cnn_input_Clk_A;
     sc_out< sc_logic > cnn_input_Rst_A;
-    sc_out< sc_lv<32> > prediction_Addr_A;
-    sc_out< sc_logic > prediction_EN_A;
-    sc_out< sc_lv<4> > prediction_WEN_A;
-    sc_out< sc_lv<32> > prediction_Din_A;
-    sc_in< sc_lv<32> > prediction_Dout_A;
-    sc_out< sc_logic > prediction_Clk_A;
-    sc_out< sc_logic > prediction_Rst_A;
+    sc_out< sc_lv<4> > prediction_address0;
+    sc_out< sc_logic > prediction_ce0;
+    sc_out< sc_logic > prediction_we0;
+    sc_out< sc_lv<32> > prediction_d0;
     sc_in< sc_logic > s_axi_CRTL_BUS_AWVALID;
     sc_out< sc_logic > s_axi_CRTL_BUS_AWREADY;
     sc_in< sc_uint<C_S_AXI_CRTL_BUS_ADDR_WIDTH> > s_axi_CRTL_BUS_AWADDR;
@@ -65,7 +62,6 @@ struct cnn : public sc_module {
     sc_out< sc_lv<2> > s_axi_CRTL_BUS_BRESP;
     sc_out< sc_logic > interrupt;
     sc_signal< sc_logic > ap_var_for_const0;
-    sc_signal< sc_lv<32> > ap_var_for_const1;
 
 
     // Module declarations
@@ -155,10 +151,10 @@ struct cnn : public sc_module {
     sc_signal< sc_logic > grp_dense_fu_234_ap_done;
     sc_signal< sc_logic > grp_dense_fu_234_ap_idle;
     sc_signal< sc_logic > grp_dense_fu_234_ap_ready;
-    sc_signal< sc_lv<32> > grp_dense_fu_234_prediction_Addr_A;
-    sc_signal< sc_logic > grp_dense_fu_234_prediction_EN_A;
-    sc_signal< sc_lv<4> > grp_dense_fu_234_prediction_WEN_A;
-    sc_signal< sc_lv<32> > grp_dense_fu_234_prediction_Din_A;
+    sc_signal< sc_lv<4> > grp_dense_fu_234_prediction_address0;
+    sc_signal< sc_logic > grp_dense_fu_234_prediction_ce0;
+    sc_signal< sc_logic > grp_dense_fu_234_prediction_we0;
+    sc_signal< sc_lv<32> > grp_dense_fu_234_prediction_d0;
     sc_signal< sc_lv<11> > grp_dense_fu_234_flat_array_address0;
     sc_signal< sc_logic > grp_dense_fu_234_flat_array_ce0;
     sc_signal< sc_logic > grp_conv_2_fu_244_ap_start;
@@ -310,7 +306,6 @@ struct cnn : public sc_module {
     static const bool ap_const_boolean_1;
     // Thread declarations
     void thread_ap_var_for_const0();
-    void thread_ap_var_for_const1();
     void thread_ap_clk_no_reset_();
     void thread_add_ln23_fu_359_p2();
     void thread_add_ln24_fu_349_p2();
@@ -382,12 +377,10 @@ struct cnn : public sc_module {
     void thread_max_pool_2_out_address0();
     void thread_max_pool_2_out_ce0();
     void thread_max_pool_2_out_we0();
-    void thread_prediction_Addr_A();
-    void thread_prediction_Clk_A();
-    void thread_prediction_Din_A();
-    void thread_prediction_EN_A();
-    void thread_prediction_Rst_A();
-    void thread_prediction_WEN_A();
+    void thread_prediction_address0();
+    void thread_prediction_ce0();
+    void thread_prediction_d0();
+    void thread_prediction_we0();
     void thread_sext_ln23_fu_369_p1();
     void thread_sub_ln23_fu_331_p2();
     void thread_tmp_12_fu_407_p3();

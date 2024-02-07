@@ -61,7 +61,7 @@ set RtlHierarchyInfo {[
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "192454", "EstimateLatencyMax" : "192454",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "176454", "EstimateLatencyMax" : "176454",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -69,16 +69,16 @@ set RtlHierarchyInfo {[
 		"InDataflowNetwork" : "0",
 		"HasNonBlockingOperation" : "0",
 		"WaitState" : [
-			{"State" : "ap_ST_fsm_state15", "FSM" : "ap_CS_fsm", "SubInstance" : "grp_soft_max_fu_129"}],
+			{"State" : "ap_ST_fsm_state14", "FSM" : "ap_CS_fsm", "SubInstance" : "grp_soft_max_fu_135"}],
 		"Port" : [
 			{"Name" : "prediction", "Type" : "Bram", "Direction" : "O",
 				"SubConnect" : [
-					{"ID" : "3", "SubInstance" : "grp_soft_max_fu_129", "Port" : "prediction"}]},
+					{"ID" : "3", "SubInstance" : "grp_soft_max_fu_135", "Port" : "prediction"}]},
 			{"Name" : "dense_weights", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "flat_array", "Type" : "Memory", "Direction" : "I"}]},
 	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.dense_weights_U", "Parent" : "0"},
 	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.dense_array_U", "Parent" : "0"},
-	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_soft_max_fu_129", "Parent" : "0", "Child" : ["4", "5", "6"],
+	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_soft_max_fu_135", "Parent" : "0", "Child" : ["4", "5", "6"],
 		"CDFG" : "soft_max",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1",
@@ -94,9 +94,9 @@ set RtlHierarchyInfo {[
 		"Port" : [
 			{"Name" : "dense_array", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "prediction", "Type" : "Bram", "Direction" : "O"}]},
-	{"ID" : "4", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_soft_max_fu_129.cnn_fadd_32ns_32ncud_U26", "Parent" : "3"},
-	{"ID" : "5", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_soft_max_fu_129.cnn_fdiv_32ns_32ng8j_U27", "Parent" : "3"},
-	{"ID" : "6", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_soft_max_fu_129.cnn_fexp_32ns_32nhbi_U28", "Parent" : "3"},
+	{"ID" : "4", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_soft_max_fu_135.cnn_fadd_32ns_32ncud_U26", "Parent" : "3"},
+	{"ID" : "5", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_soft_max_fu_135.cnn_fdiv_32ns_32ng8j_U27", "Parent" : "3"},
+	{"ID" : "6", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_soft_max_fu_135.cnn_fexp_32ns_32nhbi_U28", "Parent" : "3"},
 	{"ID" : "7", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.cnn_fadd_32ns_32ncud_U32", "Parent" : "0"},
 	{"ID" : "8", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.cnn_fmul_32ns_32ndEe_U33", "Parent" : "0"}]}
 
@@ -113,8 +113,8 @@ set ArgLastReadFirstWriteLatency {
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "192454", "Max" : "192454"}
-	, {"Name" : "Interval", "Min" : "192454", "Max" : "192454"}
+	{"Name" : "Latency", "Min" : "176454", "Max" : "176454"}
+	, {"Name" : "Interval", "Min" : "176454", "Max" : "176454"}
 ]}
 
 set PipelineEnableSignalInfo {[

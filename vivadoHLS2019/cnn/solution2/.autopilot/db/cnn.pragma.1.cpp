@@ -230,9 +230,6 @@ void cnn(float cnn_input[28*28*1], float prediction[10])
 _ssdm_op_SpecInterface(cnn_input, "bram", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 # 11 "cnn/cnn.cpp"
 
-_ssdm_op_SpecInterface(prediction, "bram", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
-# 11 "cnn/cnn.cpp"
-
 _ssdm_op_SpecInterface(0, "s_axilite", 0, 0, "", 0, 0, "CRTL_BUS", "", "", 0, 0, 0, 0, "", "");
 # 11 "cnn/cnn.cpp"
 

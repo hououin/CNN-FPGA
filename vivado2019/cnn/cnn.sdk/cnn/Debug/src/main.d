@@ -12,7 +12,8 @@ src/main.o src/main.o: ../src/main.cc \
  ../../cnn_bsp/ps7_cortexa9_0/include/xreg_cortexa9.h \
  ../../cnn_bsp/ps7_cortexa9_0/include/xpseudo_asm_gcc.h \
  ../../cnn_bsp/ps7_cortexa9_0/include/xcnn_hw.h \
- ../../cnn_bsp/ps7_cortexa9_0/include/xparameters.h
+ ../../cnn_bsp/ps7_cortexa9_0/include/xparameters.h \
+ ../../cnn_bsp/ps7_cortexa9_0/include/xtime_l.h
 
 ../../cnn_bsp/ps7_cortexa9_0/include/xcnn.h:
 
@@ -41,3 +42,5 @@ src/main.o src/main.o: ../src/main.cc \
 ../../cnn_bsp/ps7_cortexa9_0/include/xcnn_hw.h:
 
 ../../cnn_bsp/ps7_cortexa9_0/include/xparameters.h:
+
+../../cnn_bsp/ps7_cortexa9_0/include/xtime_l.h:

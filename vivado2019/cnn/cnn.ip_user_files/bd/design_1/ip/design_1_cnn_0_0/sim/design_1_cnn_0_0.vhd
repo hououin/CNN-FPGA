@@ -1,4 +1,4 @@
--- (c) Copyright 1995-2023 Xilinx, Inc. All rights reserved.
+-- (c) Copyright 1995-2024 Xilinx, Inc. All rights reserved.
 -- 
 -- This file contains confidential and proprietary information
 -- of Xilinx, Inc. and is protected under U.S. and
@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:hls:cnn:1.0
--- IP Revision: 2113302556
+-- IP Revision: 2113399074
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;

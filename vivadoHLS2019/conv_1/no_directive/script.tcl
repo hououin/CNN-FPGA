@@ -12,9 +12,9 @@ add_files conv_1/parameters.h
 add_files -tb conv_1/image.txt
 add_files -tb conv_1/main.cpp
 open_solution "no_directive"
-set_part {xc7z020clg400-1} -tool vivado
+set_part {xc7z020-clg400-1} -tool vivado
 create_clock -period 40 -name default
-#source "./conv_1/no_directive/directives.tcl"
+source "./conv_1/no_directive/directives.tcl"
 csim_design
 csynth_design
 cosim_design

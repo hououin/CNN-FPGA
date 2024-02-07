@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/chenq/MAG/code/vivado2019/cnn/cnn.runs/impl_1'
+HD_PWD='C:/Users/chenq/MAG/code/CNN-FPGA/vivado2019/cnn/cnn.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

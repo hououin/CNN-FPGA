@@ -2,7 +2,7 @@
 #include "flat.h"
 #include <iostream>
 
-int read_conv_out(const char* file, float max_pool_2_out[POOL_2_OUT_ROWS][POOL_2_OUT_COLS][FILTERS_2])
+int read_conv_out(const char* file, float max_pool_1_out[POOL_1_OUT_ROWS][POOL_1_OUT_COLS][FILTERS_1])
 {
     FILE* fp;
 
@@ -12,10 +12,10 @@ int read_conv_out(const char* file, float max_pool_2_out[POOL_2_OUT_ROWS][POOL_2
         return -1;
 
 
-    for (int x = 0; x < POOL_2_OUT_ROWS; ++x)
-        for (int y = 0; y < POOL_2_OUT_COLS; ++y)
-            for (int k = 0; k < FILTERS_2; ++k)
-                if (fscanf(fp, "%f", &max_pool_2_out[x][y][k]) != 1)
+    for (int x = 0; x < POOL_1_OUT_ROWS; ++x)
+        for (int y = 0; y < POOL_1_OUT_COLS; ++y)
+            for (int k = 0; k < FILTERS_1; ++k)
+                if (fscanf(fp, "%f", &max_pool_1_out[x][y][k]) != 1)
                     return 1; // Error.
 
     return fclose(fp);
@@ -38,13 +38,13 @@ void write_to_file(float flat_array[FLAT_SIZE])
 
 int main() {
 
-    float max_pool_2_out[POOL_2_OUT_ROWS][POOL_2_OUT_COLS][FILTERS_2];
+    float max_pool_1_out[POOL_1_OUT_ROWS][POOL_1_OUT_COLS][FILTERS_1];
 
-    read_conv_out("max_pool_2_out.txt", max_pool_2_out);
+    read_conv_out("max_pool_out.txt", max_pool_1_out);
 
     float flat_array[FLAT_SIZE];
 
-	flat(max_pool_2_out, flat_array);
+    flat(max_pool_1_out, flat_array);
 
 	write_to_file(flat_array);
 	

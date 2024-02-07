@@ -20,9 +20,11 @@ void conv_1(float conv_input[INPUT_ROWS][INPUT_COLS][CHANNELS], float conv_out[C
                 	W_Col_Loop:
                     for (int wc = 0; wc < WEIGHT_COLS; ++wc)
                     {
+
                     	Chan_Loop:
                         for (int ch = 0; ch < CHANNELS; ++ch)
                         {
+
                             w_sum += conv_1_weights[wr][wc][ch][f] * conv_input[r + wr][c + wc][ch];
 
                         }
