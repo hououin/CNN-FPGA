@@ -19,8 +19,8 @@ using namespace sc_dt;
 struct cnn_conv_1_out_ram : public sc_core::sc_module {
 
   static const unsigned DataWidth = 32;
-  static const unsigned AddressRange = 21632;
-  static const unsigned AddressWidth = 15;
+  static const unsigned AddressRange = 4056;
+  static const unsigned AddressWidth = 12;
 
 //latency = 1
 //input_reg = 1
@@ -38,6 +38,9 @@ sc_lv<DataWidth> ram[AddressRange];
 
 
    SC_CTOR(cnn_conv_1_out_ram) {
+        for (unsigned i = 0; i < 4056; i = i + 1) {
+            ram[i] = 0;
+        }
 
 
 SC_METHOD(prc_write_0);
@@ -76,8 +79,8 @@ SC_MODULE(cnn_conv_1_out) {
 
 
 static const unsigned DataWidth = 32;
-static const unsigned AddressRange = 21632;
-static const unsigned AddressWidth = 15;
+static const unsigned AddressRange = 4056;
+static const unsigned AddressWidth = 12;
 
 sc_core::sc_in <sc_lv<AddressWidth> > address0;
 sc_core::sc_in<sc_logic> ce0;

@@ -1,0 +1,234 @@
+
+
+================================================================
+== Vivado HLS Report for 'dense'
+================================================================
+* Date:           Mon Mar 11 15:44:47 2024
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        dense_out
+* Solution:       S4
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  20.00|    17.393|        2.50|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +------+------+------+------+---------+
+    |   Latency   |   Interval  | Pipeline|
+    |  min |  max |  min |  max |   Type  |
+    +------+------+------+------+---------+
+    |  1349|  1349|  1349|  1349|   none  |
+    +------+------+------+------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +--------------+------+------+----------+-----------+-----------+------+----------+
+        |              |   Latency   | Iteration|  Initiation Interval  | Trip |          |
+        |   Loop Name  |  min |  max |  Latency |  achieved |   target  | Count| Pipelined|
+        +--------------+------+------+----------+-----------+-----------+------+----------+
+        |- Dense_Loop  |  1290|  1290|       129|          -|          -|    10|    no    |
+        | + Flat_Loop  |   122|   122|         7|          4|          1|    30|    yes   |
+        +--------------+------+------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  | URAM|
++-----------------+---------+-------+--------+-------+-----+
+|DSP              |        -|      -|       -|      -|    -|
+|Expression       |        -|      -|       0|     68|    -|
+|FIFO             |        -|      -|       -|      -|    -|
+|Instance         |        -|     68|    5830|  18611|    -|
+|Memory           |        1|      -|      96|     10|    0|
+|Multiplexer      |        -|      -|       -|    612|    -|
+|Register         |        -|      -|    1123|      -|    -|
++-----------------+---------+-------+--------+-------+-----+
+|Total            |        1|     68|    7049|  19301|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Available        |      280|    220|  106400|  53200|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Utilization (%)  |    ~0   |     30|       6|     36|    0|
++-----------------+---------+-------+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +--------------------------+----------------------+---------+-------+-----+-----+-----+
+    |         Instance         |        Module        | BRAM_18K| DSP48E|  FF | LUT | URAM|
+    +--------------------------+----------------------+---------+-------+-----+-----+-----+
+    |dense_fadd_32ns_3dEe_U1   |dense_fadd_32ns_3dEe  |        0|      2|  227|  403|    0|
+    |dense_fdiv_32ns_3fYi_U3   |dense_fdiv_32ns_3fYi  |        0|      0|  363|  986|    0|
+    |dense_fdiv_32ns_3fYi_U4   |dense_fdiv_32ns_3fYi  |        0|      0|  363|  986|    0|
+    |dense_fdiv_32ns_3fYi_U5   |dense_fdiv_32ns_3fYi  |        0|      0|  363|  986|    0|
+    |dense_fdiv_32ns_3fYi_U6   |dense_fdiv_32ns_3fYi  |        0|      0|  363|  986|    0|
+    |dense_fdiv_32ns_3fYi_U7   |dense_fdiv_32ns_3fYi  |        0|      0|  363|  986|    0|
+    |dense_fdiv_32ns_3fYi_U8   |dense_fdiv_32ns_3fYi  |        0|      0|  363|  986|    0|
+    |dense_fdiv_32ns_3fYi_U9   |dense_fdiv_32ns_3fYi  |        0|      0|  363|  986|    0|
+    |dense_fdiv_32ns_3fYi_U10  |dense_fdiv_32ns_3fYi  |        0|      0|  363|  986|    0|
+    |dense_fdiv_32ns_3fYi_U11  |dense_fdiv_32ns_3fYi  |        0|      0|  363|  986|    0|
+    |dense_fdiv_32ns_3fYi_U12  |dense_fdiv_32ns_3fYi  |        0|      0|  363|  986|    0|
+    |dense_fexp_32ns_3g8j_U13  |dense_fexp_32ns_3g8j  |        0|      7|  205|  892|    0|
+    |dense_fexp_32ns_3g8j_U14  |dense_fexp_32ns_3g8j  |        0|      7|  205|  892|    0|
+    |dense_fexp_32ns_3g8j_U15  |dense_fexp_32ns_3g8j  |        0|      7|  205|  892|    0|
+    |dense_fexp_32ns_3g8j_U16  |dense_fexp_32ns_3g8j  |        0|      7|  205|  892|    0|
+    |dense_fexp_32ns_3g8j_U17  |dense_fexp_32ns_3g8j  |        0|      7|  205|  892|    0|
+    |dense_fexp_32ns_3g8j_U18  |dense_fexp_32ns_3g8j  |        0|      7|  205|  892|    0|
+    |dense_fexp_32ns_3g8j_U19  |dense_fexp_32ns_3g8j  |        0|      7|  205|  892|    0|
+    |dense_fexp_32ns_3g8j_U20  |dense_fexp_32ns_3g8j  |        0|      7|  205|  892|    0|
+    |dense_fexp_32ns_3g8j_U21  |dense_fexp_32ns_3g8j  |        0|      7|  205|  892|    0|
+    |dense_fmul_32ns_3eOg_U2   |dense_fmul_32ns_3eOg  |        0|      3|  128|  320|    0|
+    +--------------------------+----------------------+---------+-------+-----+-----+-----+
+    |Total                     |                      |        0|     68| 5830|18611|    0|
+    +--------------------------+----------------------+---------+-------+-----+-----+-----+
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    +---------------------+----------------------+---------+----+----+-----+------+-----+------+-------------+
+    |        Memory       |        Module        | BRAM_18K| FF | LUT| URAM| Words| Bits| Banks| W*Bits*Banks|
+    +---------------------+----------------------+---------+----+----+-----+------+-----+------+-------------+
+    |dense_array_U        |dense_dense_array     |        0|  64|   5|    0|    10|   32|     1|          320|
+    |dense_out_bias_U     |dense_dense_out_bcud  |        0|  32|   5|    0|    10|   32|     1|          320|
+    |dense_out_weights_U  |dense_dense_out_wbkb  |        1|   0|   0|    0|   300|   32|     1|         9600|
+    +---------------------+----------------------+---------+----+----+-----+------+-----+------+-------------+
+    |Total                |                      |        1|  96|  10|    0|   320|   96|     3|        10240|
+    +---------------------+----------------------+---------+----+----+-----+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------+----------+-------+---+----+------------+------------+
+    |     Variable Name    | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------+----------+-------+---+----+------------+------------+
+    |add_ln23_1_fu_546_p2  |     +    |      0|  0|   9|           9|           9|
+    |add_ln23_fu_540_p2    |     +    |      0|  0|   9|           9|           9|
+    |d_fu_485_p2           |     +    |      0|  0|  13|           4|           1|
+    |f_fu_505_p2           |     +    |      0|  0|  15|           5|           1|
+    |icmp_ln16_fu_479_p2   |   icmp   |      0|  0|   9|           4|           4|
+    |icmp_ln21_fu_499_p2   |   icmp   |      0|  0|  11|           5|           3|
+    |ap_enable_pp0         |    xor   |      0|  0|   2|           1|           2|
+    +----------------------+----------+-------+---+----+------------+------------+
+    |Total                 |          |      0|  0|  68|          37|          29|
+    +----------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +------------------------------+-----+-----------+-----+-----------+
+    |             Name             | LUT | Input Size| Bits| Total Bits|
+    +------------------------------+-----+-----------+-----+-----------+
+    |ap_NS_fsm                     |  313|         70|    1|         70|
+    |ap_enable_reg_pp0_iter1       |    9|          2|    1|          2|
+    |ap_phi_mux_f_0_phi_fu_333_p4  |    9|          2|    5|         10|
+    |d_0_reg_318                   |    9|          2|    4|          8|
+    |dense_array_address0          |   53|         12|    4|         48|
+    |f_0_reg_329                   |    9|          2|    5|         10|
+    |grp_fu_352_p0                 |   27|          5|   32|        160|
+    |grp_fu_352_p1                 |   27|          5|   32|        160|
+    |grp_fu_406_p1                 |   15|          3|   32|         96|
+    |prediction_address0           |   33|          6|    4|         24|
+    |prediction_address1           |   33|          6|    4|         24|
+    |prediction_d0                 |   33|          6|   32|        192|
+    |prediction_d1                 |   33|          6|   32|        192|
+    |w_sum_0_reg_340               |    9|          2|   32|         64|
+    +------------------------------+-----+-----------+-----+-----------+
+    |Total                         |  612|        129|  220|       1060|
+    +------------------------------+-----+-----------+-----+-----------+
+
+    * Register: 
+    +---------------------------------+----+----+-----+-----------+
+    |               Name              | FF | LUT| Bits| Const Bits|
+    +---------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                        |  69|   0|   69|          0|
+    |ap_enable_reg_pp0_iter0          |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1          |   1|   0|    1|          0|
+    |d_0_reg_318                      |   4|   0|    4|          0|
+    |d_reg_560                        |   4|   0|    4|          0|
+    |dense_array_load_2_reg_641       |  32|   0|   32|          0|
+    |dense_array_load_3_reg_652       |  32|   0|   32|          0|
+    |dense_array_load_4_reg_663       |  32|   0|   32|          0|
+    |dense_array_load_5_reg_674       |  32|   0|   32|          0|
+    |dense_array_load_6_reg_685       |  32|   0|   32|          0|
+    |dense_array_load_7_reg_696       |  32|   0|   32|          0|
+    |dense_array_load_8_reg_707       |  32|   0|   32|          0|
+    |dense_array_load_9_reg_718       |  32|   0|   32|          0|
+    |f_0_reg_329                      |   5|   0|    5|          0|
+    |f_reg_585                        |   5|   0|    5|          0|
+    |icmp_ln21_reg_581                |   1|   0|    1|          0|
+    |icmp_ln21_reg_581_pp0_iter1_reg  |   1|   0|    1|          0|
+    |reg_452                          |  32|   0|   32|          0|
+    |reg_468                          |  32|   0|   32|          0|
+    |reg_473                          |  32|   0|   32|          0|
+    |tmp_13_reg_764                   |  32|   0|   32|          0|
+    |tmp_3_reg_610                    |  32|   0|   32|          0|
+    |tmp_5_2_reg_724                  |  32|   0|   32|          0|
+    |tmp_5_3_reg_729                  |  32|   0|   32|          0|
+    |tmp_5_4_reg_734                  |  32|   0|   32|          0|
+    |tmp_5_5_reg_739                  |  32|   0|   32|          0|
+    |tmp_5_6_reg_744                  |  32|   0|   32|          0|
+    |tmp_5_7_reg_749                  |  32|   0|   32|          0|
+    |tmp_5_8_reg_754                  |  32|   0|   32|          0|
+    |tmp_5_9_reg_759                  |  32|   0|   32|          0|
+    |tmp_6_1_reg_769                  |  32|   0|   32|          0|
+    |tmp_6_2_reg_774                  |  32|   0|   32|          0|
+    |tmp_6_3_reg_779                  |  32|   0|   32|          0|
+    |tmp_6_4_reg_784                  |  32|   0|   32|          0|
+    |tmp_6_5_reg_789                  |  32|   0|   32|          0|
+    |tmp_6_6_reg_794                  |  32|   0|   32|          0|
+    |tmp_6_7_reg_799                  |  32|   0|   32|          0|
+    |tmp_6_8_reg_804                  |  32|   0|   32|          0|
+    |tmp_6_9_reg_809                  |  32|   0|   32|          0|
+    |tmp_reg_630                      |  32|   0|   32|          0|
+    |w_sum_0_reg_340                  |  32|   0|   32|          0|
+    |zext_ln21_reg_571                |   4|   0|    9|          5|
+    |zext_ln23_reg_565                |   4|   0|   64|         60|
+    +---------------------------------+----+----+-----+-----------+
+    |Total                            |1123|   0| 1188|         65|
+    +---------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++--------------------------+-----+-----+------------+-----------------+--------------+
+|         RTL Ports        | Dir | Bits|  Protocol  |  Source Object  |    C Type    |
++--------------------------+-----+-----+------------+-----------------+--------------+
+|ap_clk                    |  in |    1| ap_ctrl_hs |      dense      | return value |
+|ap_rst                    |  in |    1| ap_ctrl_hs |      dense      | return value |
+|ap_start                  |  in |    1| ap_ctrl_hs |      dense      | return value |
+|ap_done                   | out |    1| ap_ctrl_hs |      dense      | return value |
+|ap_idle                   | out |    1| ap_ctrl_hs |      dense      | return value |
+|ap_ready                  | out |    1| ap_ctrl_hs |      dense      | return value |
+|fully_connected_address0  | out |    5|  ap_memory | fully_connected |     array    |
+|fully_connected_ce0       | out |    1|  ap_memory | fully_connected |     array    |
+|fully_connected_q0        |  in |   32|  ap_memory | fully_connected |     array    |
+|prediction_address0       | out |    4|  ap_memory |    prediction   |     array    |
+|prediction_ce0            | out |    1|  ap_memory |    prediction   |     array    |
+|prediction_we0            | out |    1|  ap_memory |    prediction   |     array    |
+|prediction_d0             | out |   32|  ap_memory |    prediction   |     array    |
+|prediction_address1       | out |    4|  ap_memory |    prediction   |     array    |
+|prediction_ce1            | out |    1|  ap_memory |    prediction   |     array    |
+|prediction_we1            | out |    1|  ap_memory |    prediction   |     array    |
+|prediction_d1             | out |   32|  ap_memory |    prediction   |     array    |
++--------------------------+-----+-----+------------+-----------------+--------------+
+

@@ -75,25 +75,25 @@
 					<Obj>
 						<type>0</type>
 						<id>4</id>
-						<name>_ln10</name>
-						<fileName>cnn/dense.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
-						<lineNumber>10</lineNumber>
+						<name>_ln11</name>
+						<fileName>cnn/dense_out.cpp</fileName>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
+						<lineNumber>11</lineNumber>
 						<contextFuncName>soft_max</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item class_id="10" tracking_level="0" version="0">
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second class_id="11" tracking_level="0" version="0">
 									<count>1</count>
 									<item_version>0</item_version>
 									<item class_id="12" tracking_level="0" version="0">
 										<first class_id="13" tracking_level="0" version="0">
-											<first>cnn/dense.cpp</first>
+											<first>cnn/dense_out.cpp</first>
 											<second>soft_max</second>
 										</first>
-										<second>10</second>
+										<second>11</second>
 									</item>
 								</second>
 							</item>
@@ -197,25 +197,25 @@
 					<Obj>
 						<type>0</type>
 						<id>8</id>
-						<name>icmp_ln10</name>
-						<fileName>cnn/dense.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
-						<lineNumber>10</lineNumber>
+						<name>icmp_ln11</name>
+						<fileName>cnn/dense_out.cpp</fileName>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
+						<lineNumber>11</lineNumber>
 						<contextFuncName>soft_max</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
 									<item>
 										<first>
-											<first>cnn/dense.cpp</first>
+											<first>cnn/dense_out.cpp</first>
 											<second>soft_max</second>
 										</first>
-										<second>10</second>
+										<second>11</second>
 									</item>
 								</second>
 							</item>
@@ -247,24 +247,24 @@
 						<type>0</type>
 						<id>10</id>
 						<name>i</name>
-						<fileName>cnn/dense.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
-						<lineNumber>10</lineNumber>
+						<fileName>cnn/dense_out.cpp</fileName>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
+						<lineNumber>11</lineNumber>
 						<contextFuncName>soft_max</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
 									<item>
 										<first>
-											<first>cnn/dense.cpp</first>
+											<first>cnn/dense_out.cpp</first>
 											<second>soft_max</second>
 										</first>
-										<second>10</second>
+										<second>11</second>
 									</item>
 								</second>
 							</item>
@@ -295,25 +295,25 @@
 					<Obj>
 						<type>0</type>
 						<id>11</id>
-						<name>_ln10</name>
-						<fileName>cnn/dense.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
-						<lineNumber>10</lineNumber>
+						<name>_ln11</name>
+						<fileName>cnn/dense_out.cpp</fileName>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
+						<lineNumber>11</lineNumber>
 						<contextFuncName>soft_max</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
 									<item>
 										<first>
-											<first>cnn/dense.cpp</first>
+											<first>cnn/dense_out.cpp</first>
 											<second>soft_max</second>
 										</first>
-										<second>10</second>
+										<second>11</second>
 									</item>
 								</second>
 							</item>
@@ -345,25 +345,25 @@
 					<Obj>
 						<type>0</type>
 						<id>14</id>
-						<name>zext_ln12</name>
-						<fileName>cnn/dense.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
-						<lineNumber>12</lineNumber>
+						<name>zext_ln13</name>
+						<fileName>cnn/dense_out.cpp</fileName>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
+						<lineNumber>13</lineNumber>
 						<contextFuncName>soft_max</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
 									<item>
 										<first>
-											<first>cnn/dense.cpp</first>
+											<first>cnn/dense_out.cpp</first>
 											<second>soft_max</second>
 										</first>
-										<second>12</second>
+										<second>13</second>
 									</item>
 								</second>
 							</item>
@@ -394,24 +394,24 @@
 						<type>0</type>
 						<id>15</id>
 						<name>dense_array_addr</name>
-						<fileName>cnn/dense.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
-						<lineNumber>12</lineNumber>
+						<fileName>cnn/dense_out.cpp</fileName>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
+						<lineNumber>13</lineNumber>
 						<contextFuncName>soft_max</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
 									<item>
 										<first>
-											<first>cnn/dense.cpp</first>
+											<first>cnn/dense_out.cpp</first>
 											<second>soft_max</second>
 										</first>
-										<second>12</second>
+										<second>13</second>
 									</item>
 								</second>
 							</item>
@@ -444,24 +444,24 @@
 						<type>0</type>
 						<id>16</id>
 						<name>dense_array_load</name>
-						<fileName>cnn/dense.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
-						<lineNumber>12</lineNumber>
+						<fileName>cnn/dense_out.cpp</fileName>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
+						<lineNumber>13</lineNumber>
 						<contextFuncName>soft_max</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
 									<item>
 										<first>
-											<first>cnn/dense.cpp</first>
+											<first>cnn/dense_out.cpp</first>
 											<second>soft_max</second>
 										</first>
-										<second>12</second>
+										<second>13</second>
 									</item>
 								</second>
 							</item>
@@ -492,24 +492,24 @@
 						<type>0</type>
 						<id>17</id>
 						<name>tmp</name>
-						<fileName>cnn/dense.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
-						<lineNumber>12</lineNumber>
+						<fileName>cnn/dense_out.cpp</fileName>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
+						<lineNumber>13</lineNumber>
 						<contextFuncName>soft_max</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
 									<item>
 										<first>
-											<first>cnn/dense.cpp</first>
+											<first>cnn/dense_out.cpp</first>
 											<second>soft_max</second>
 										</first>
-										<second>12</second>
+										<second>13</second>
 									</item>
 								</second>
 							</item>
@@ -531,7 +531,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>7.68</m_delay>
+				<m_delay>15.0</m_delay>
 				<m_topoIndex>11</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -541,24 +541,24 @@
 						<type>0</type>
 						<id>18</id>
 						<name>sum</name>
-						<fileName>cnn/dense.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
-						<lineNumber>12</lineNumber>
+						<fileName>cnn/dense_out.cpp</fileName>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
+						<lineNumber>13</lineNumber>
 						<contextFuncName>soft_max</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
 									<item>
 										<first>
-											<first>cnn/dense.cpp</first>
+											<first>cnn/dense_out.cpp</first>
 											<second>soft_max</second>
 										</first>
-										<second>12</second>
+										<second>13</second>
 									</item>
 								</second>
 							</item>
@@ -580,7 +580,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>7.25</m_delay>
+				<m_delay>10.5</m_delay>
 				<m_topoIndex>12</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -589,25 +589,25 @@
 					<Obj>
 						<type>0</type>
 						<id>19</id>
-						<name>_ln10</name>
-						<fileName>cnn/dense.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
-						<lineNumber>10</lineNumber>
+						<name>_ln11</name>
+						<fileName>cnn/dense_out.cpp</fileName>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
+						<lineNumber>11</lineNumber>
 						<contextFuncName>soft_max</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
 									<item>
 										<first>
-											<first>cnn/dense.cpp</first>
+											<first>cnn/dense_out.cpp</first>
 											<second>soft_max</second>
 										</first>
-										<second>10</second>
+										<second>11</second>
 									</item>
 								</second>
 							</item>
@@ -637,25 +637,25 @@
 					<Obj>
 						<type>0</type>
 						<id>21</id>
-						<name>_ln16</name>
-						<fileName>cnn/dense.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
-						<lineNumber>16</lineNumber>
+						<name>_ln17</name>
+						<fileName>cnn/dense_out.cpp</fileName>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
+						<lineNumber>17</lineNumber>
 						<contextFuncName>soft_max</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
 									<item>
 										<first>
-											<first>cnn/dense.cpp</first>
+											<first>cnn/dense_out.cpp</first>
 											<second>soft_max</second>
 										</first>
-										<second>16</second>
+										<second>17</second>
 									</item>
 								</second>
 							</item>
@@ -722,25 +722,25 @@
 					<Obj>
 						<type>0</type>
 						<id>24</id>
-						<name>icmp_ln16</name>
-						<fileName>cnn/dense.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
-						<lineNumber>16</lineNumber>
+						<name>icmp_ln17</name>
+						<fileName>cnn/dense_out.cpp</fileName>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
+						<lineNumber>17</lineNumber>
 						<contextFuncName>soft_max</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
 									<item>
 										<first>
-											<first>cnn/dense.cpp</first>
+											<first>cnn/dense_out.cpp</first>
 											<second>soft_max</second>
 										</first>
-										<second>16</second>
+										<second>17</second>
 									</item>
 								</second>
 							</item>
@@ -772,24 +772,24 @@
 						<type>0</type>
 						<id>26</id>
 						<name>j</name>
-						<fileName>cnn/dense.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
-						<lineNumber>16</lineNumber>
+						<fileName>cnn/dense_out.cpp</fileName>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
+						<lineNumber>17</lineNumber>
 						<contextFuncName>soft_max</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
 									<item>
 										<first>
-											<first>cnn/dense.cpp</first>
+											<first>cnn/dense_out.cpp</first>
 											<second>soft_max</second>
 										</first>
-										<second>16</second>
+										<second>17</second>
 									</item>
 								</second>
 							</item>
@@ -820,25 +820,25 @@
 					<Obj>
 						<type>0</type>
 						<id>27</id>
-						<name>_ln16</name>
-						<fileName>cnn/dense.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
-						<lineNumber>16</lineNumber>
+						<name>_ln17</name>
+						<fileName>cnn/dense_out.cpp</fileName>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
+						<lineNumber>17</lineNumber>
 						<contextFuncName>soft_max</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
 									<item>
 										<first>
-											<first>cnn/dense.cpp</first>
+											<first>cnn/dense_out.cpp</first>
 											<second>soft_max</second>
 										</first>
-										<second>16</second>
+										<second>17</second>
 									</item>
 								</second>
 							</item>
@@ -870,25 +870,25 @@
 					<Obj>
 						<type>0</type>
 						<id>30</id>
-						<name>zext_ln18</name>
-						<fileName>cnn/dense.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
-						<lineNumber>18</lineNumber>
+						<name>zext_ln19</name>
+						<fileName>cnn/dense_out.cpp</fileName>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
+						<lineNumber>19</lineNumber>
 						<contextFuncName>soft_max</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
 									<item>
 										<first>
-											<first>cnn/dense.cpp</first>
+											<first>cnn/dense_out.cpp</first>
 											<second>soft_max</second>
 										</first>
-										<second>18</second>
+										<second>19</second>
 									</item>
 								</second>
 							</item>
@@ -919,24 +919,24 @@
 						<type>0</type>
 						<id>31</id>
 						<name>dense_array_addr_1</name>
-						<fileName>cnn/dense.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
-						<lineNumber>18</lineNumber>
+						<fileName>cnn/dense_out.cpp</fileName>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
+						<lineNumber>19</lineNumber>
 						<contextFuncName>soft_max</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
 									<item>
 										<first>
-											<first>cnn/dense.cpp</first>
+											<first>cnn/dense_out.cpp</first>
 											<second>soft_max</second>
 										</first>
-										<second>18</second>
+										<second>19</second>
 									</item>
 								</second>
 							</item>
@@ -969,24 +969,24 @@
 						<type>0</type>
 						<id>32</id>
 						<name>dense_array_load_1</name>
-						<fileName>cnn/dense.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
-						<lineNumber>18</lineNumber>
+						<fileName>cnn/dense_out.cpp</fileName>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
+						<lineNumber>19</lineNumber>
 						<contextFuncName>soft_max</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
 									<item>
 										<first>
-											<first>cnn/dense.cpp</first>
+											<first>cnn/dense_out.cpp</first>
 											<second>soft_max</second>
 										</first>
-										<second>18</second>
+										<second>19</second>
 									</item>
 								</second>
 							</item>
@@ -1017,24 +1017,24 @@
 						<type>0</type>
 						<id>33</id>
 						<name>tmp_2</name>
-						<fileName>cnn/dense.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
-						<lineNumber>18</lineNumber>
+						<fileName>cnn/dense_out.cpp</fileName>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
+						<lineNumber>19</lineNumber>
 						<contextFuncName>soft_max</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
 									<item>
 										<first>
-											<first>cnn/dense.cpp</first>
+											<first>cnn/dense_out.cpp</first>
 											<second>soft_max</second>
 										</first>
-										<second>18</second>
+										<second>19</second>
 									</item>
 								</second>
 							</item>
@@ -1056,7 +1056,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>7.68</m_delay>
+				<m_delay>15.0</m_delay>
 				<m_topoIndex>22</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -1066,24 +1066,24 @@
 						<type>0</type>
 						<id>34</id>
 						<name>tmp_3</name>
-						<fileName>cnn/dense.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
-						<lineNumber>18</lineNumber>
+						<fileName>cnn/dense_out.cpp</fileName>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
+						<lineNumber>19</lineNumber>
 						<contextFuncName>soft_max</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
 									<item>
 										<first>
-											<first>cnn/dense.cpp</first>
+											<first>cnn/dense_out.cpp</first>
 											<second>soft_max</second>
 										</first>
-										<second>18</second>
+										<second>19</second>
 									</item>
 								</second>
 							</item>
@@ -1105,7 +1105,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>6.07</m_delay>
+				<m_delay>16.6</m_delay>
 				<m_topoIndex>23</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -1115,24 +1115,24 @@
 						<type>0</type>
 						<id>35</id>
 						<name>prediction_addr</name>
-						<fileName>cnn/dense.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
-						<lineNumber>18</lineNumber>
+						<fileName>cnn/dense_out.cpp</fileName>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
+						<lineNumber>19</lineNumber>
 						<contextFuncName>soft_max</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
 									<item>
 										<first>
-											<first>cnn/dense.cpp</first>
+											<first>cnn/dense_out.cpp</first>
 											<second>soft_max</second>
 										</first>
-										<second>18</second>
+										<second>19</second>
 									</item>
 								</second>
 							</item>
@@ -1164,25 +1164,25 @@
 					<Obj>
 						<type>0</type>
 						<id>36</id>
-						<name>prediction_addr_write_ln18</name>
-						<fileName>cnn/dense.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
-						<lineNumber>18</lineNumber>
+						<name>prediction_addr_write_ln19</name>
+						<fileName>cnn/dense_out.cpp</fileName>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
+						<lineNumber>19</lineNumber>
 						<contextFuncName>soft_max</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
 									<item>
 										<first>
-											<first>cnn/dense.cpp</first>
+											<first>cnn/dense_out.cpp</first>
 											<second>soft_max</second>
 										</first>
-										<second>18</second>
+										<second>19</second>
 									</item>
 								</second>
 							</item>
@@ -1213,25 +1213,25 @@
 					<Obj>
 						<type>0</type>
 						<id>37</id>
-						<name>_ln16</name>
-						<fileName>cnn/dense.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
-						<lineNumber>16</lineNumber>
+						<name>_ln17</name>
+						<fileName>cnn/dense_out.cpp</fileName>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
+						<lineNumber>17</lineNumber>
 						<contextFuncName>soft_max</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
 									<item>
 										<first>
-											<first>cnn/dense.cpp</first>
+											<first>cnn/dense_out.cpp</first>
 											<second>soft_max</second>
 										</first>
-										<second>16</second>
+										<second>17</second>
 									</item>
 								</second>
 							</item>
@@ -1261,25 +1261,25 @@
 					<Obj>
 						<type>0</type>
 						<id>39</id>
-						<name>_ln21</name>
-						<fileName>cnn/dense.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
-						<lineNumber>21</lineNumber>
+						<name>_ln22</name>
+						<fileName>cnn/dense_out.cpp</fileName>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
+						<lineNumber>22</lineNumber>
 						<contextFuncName>soft_max</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
 									<item>
 										<first>
-											<first>cnn/dense.cpp</first>
+											<first>cnn/dense_out.cpp</first>
 											<second>soft_max</second>
 										</first>
-										<second>21</second>
+										<second>22</second>
 									</item>
 								</second>
 							</item>
@@ -2049,8 +2049,8 @@
 			<mDepth>-1</mDepth>
 			<mMinTripCount>-1</mMinTripCount>
 			<mMaxTripCount>-1</mMaxTripCount>
-			<mMinLatency>432</mMinLatency>
-			<mMaxLatency>432</mMaxLatency>
+			<mMinLatency>252</mMinLatency>
+			<mMaxLatency>252</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
 		</item>
@@ -2094,8 +2094,8 @@
 			<mDepth>-1</mDepth>
 			<mMinTripCount>10</mMinTripCount>
 			<mMaxTripCount>10</mMaxTripCount>
-			<mMinLatency>160</mMinLatency>
-			<mMaxLatency>160</mMaxLatency>
+			<mMinLatency>100</mMinLatency>
+			<mMaxLatency>100</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
 		</item>
@@ -2139,8 +2139,8 @@
 			<mDepth>-1</mDepth>
 			<mMinTripCount>10</mMinTripCount>
 			<mMaxTripCount>10</mMaxTripCount>
-			<mMinLatency>270</mMinLatency>
-			<mMaxLatency>270</mMaxLatency>
+			<mMinLatency>150</mMinLatency>
+			<mMaxLatency>150</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
 		</item>
@@ -2238,21 +2238,21 @@
 		<item>
 			<first>17</first>
 			<second>
-				<first>3</first>
-				<second>8</second>
+				<first>2</first>
+				<second>4</second>
 			</second>
 		</item>
 		<item>
 			<first>18</first>
 			<second>
-				<first>12</first>
-				<second>4</second>
+				<first>7</first>
+				<second>3</second>
 			</second>
 		</item>
 		<item>
 			<first>19</first>
 			<second>
-				<first>16</first>
+				<first>10</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -2266,91 +2266,91 @@
 		<item>
 			<first>23</first>
 			<second>
-				<first>17</first>
+				<first>11</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>24</first>
 			<second>
-				<first>17</first>
+				<first>11</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>26</first>
 			<second>
-				<first>17</first>
+				<first>11</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>27</first>
 			<second>
-				<first>17</first>
+				<first>11</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>30</first>
 			<second>
-				<first>17</first>
+				<first>11</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>31</first>
 			<second>
-				<first>17</first>
+				<first>11</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>32</first>
 			<second>
-				<first>17</first>
+				<first>11</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>33</first>
 			<second>
-				<first>19</first>
-				<second>8</second>
+				<first>12</first>
+				<second>4</second>
 			</second>
 		</item>
 		<item>
 			<first>34</first>
 			<second>
-				<first>28</first>
-				<second>15</second>
+				<first>17</first>
+				<second>7</second>
 			</second>
 		</item>
 		<item>
 			<first>35</first>
 			<second>
-				<first>43</first>
+				<first>25</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>36</first>
 			<second>
-				<first>43</first>
+				<first>25</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>37</first>
 			<second>
-				<first>43</first>
+				<first>25</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>39</first>
 			<second>
-				<first>17</first>
+				<first>11</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -2376,7 +2376,7 @@
 			<first>20</first>
 			<second>
 				<first>1</first>
-				<second>16</second>
+				<second>10</second>
 			</second>
 		</item>
 		<item>
@@ -2397,7 +2397,7 @@
 			<first>38</first>
 			<second>
 				<first>2</first>
-				<second>28</second>
+				<second>16</second>
 			</second>
 		</item>
 		<item>

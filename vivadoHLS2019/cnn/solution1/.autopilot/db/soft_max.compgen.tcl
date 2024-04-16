@@ -4,7 +4,7 @@ set id 27
 set name cnn_fdiv_32ns_32ng8j
 set corename simcore_fdiv
 set op fdiv
-set stage_num 16
+set stage_num 8
 set max_latency -1
 set registered_input 1
 set Futype4reduceCEFanout 1
@@ -92,7 +92,7 @@ set id 28
 set name cnn_fexp_32ns_32nhbi
 set corename simcore_fexp
 set op fexp
-set stage_num 9
+set stage_num 5
 set max_latency -1
 set registered_input 1
 set impl_style full_dsp

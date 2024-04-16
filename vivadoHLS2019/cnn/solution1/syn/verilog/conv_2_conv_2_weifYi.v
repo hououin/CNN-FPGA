@@ -7,8 +7,8 @@ module conv_2_conv_2_weifYi_rom (
 addr0, ce0, q0, clk);
 
 parameter DWIDTH = 32;
-parameter AWIDTH = 15;
-parameter MEM_SIZE = 18432;
+parameter AWIDTH = 10;
+parameter MEM_SIZE = 864;
 
 input[AWIDTH-1:0] addr0;
 input ce0;
@@ -44,8 +44,8 @@ module conv_2_conv_2_weifYi(
     q0);
 
 parameter DataWidth = 32'd32;
-parameter AddressRange = 32'd18432;
-parameter AddressWidth = 32'd15;
+parameter AddressRange = 32'd864;
+parameter AddressWidth = 32'd10;
 input reset;
 input clk;
 input[AddressWidth - 1:0] address0;

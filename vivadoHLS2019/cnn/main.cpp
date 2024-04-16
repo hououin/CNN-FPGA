@@ -8,7 +8,7 @@
 
 #define N 20
 
-int read_images(const char* file, float images[N][INPUT_ROWS][INPUT_COLS][1])
+int read_images(const char* file, float images[N][INPUT_ROWS][INPUT_COLS])
 {
     FILE* fp;
 
@@ -20,7 +20,7 @@ int read_images(const char* file, float images[N][INPUT_ROWS][INPUT_COLS][1])
     for (int i = 0; i < N; ++i)
         for (int x = 0; x < INPUT_ROWS; ++x)
             for (int y = 0; y < INPUT_COLS; ++y)
-                if (fscanf(fp, "%f", &images[i][x][y][0]) != 1)
+                if (fscanf(fp, "%f", &images[i][x][y]) != 1)
                     return 1; // Error.
 
     return fclose(fp);
@@ -60,9 +60,9 @@ int compare_to_golden_results(float prediction[DIGITS], float golden_result[DIGI
 
 int main()
 {
-	printf("test 2\n");
+	printf("test\n");
 
-    float images[N][INPUT_ROWS][INPUT_COLS][1];
+    float images[N][INPUT_ROWS][INPUT_COLS];
     if (0 != read_images("inputs.dat", images))
     {
         printf("Read Images Error\n");
@@ -71,7 +71,7 @@ int main()
 
 
     float python_predictions[N][DIGITS];
-    if (0 != read_golden_results("out.gold.dat", python_predictions))
+    if (0 != read_golden_results("golden.dat", python_predictions))
     {
         printf("Read Golden results Error\n");
         return 1;
@@ -84,18 +84,6 @@ int main()
     for (int i = 0; i < N; ++i)
     {
 
-    	/*for (int ix = 0; ix < INPUT_ROWS; ix++)
-		{
-			for(int jx = 0; jx < INPUT_COLS; jx++)
-			{
-				for(int kx = 0; kx < CHANNELS; kx++)
-				{
-					printf("%f",images[i][ix][jx][kx]);
-				}
-			}
-			printf("\n");
-		}*/
-
     	float cnn_input[INPUT_ROWS*INPUT_COLS];
 
     	int ix_img = 0;
@@ -104,17 +92,16 @@ int main()
     	{
     		for(int jx = 0; jx < INPUT_COLS; jx++)
     		{
-    			for(int kx = 0; kx < CHANNELS; kx++)
-    			{
-    				cnn_input[ix_img] = images[i][ix][jx][kx];
-    				ix_img++;
-    			}
+
+    			cnn_input[ix_img] = images[i][ix][jx];
+    			ix_img++;
+
     		}
     	}
 
 
         cnn(cnn_input, prediction);
-        
+
         if (compare_to_golden_results(prediction, python_predictions[i]) == 1)
         {
             for (int j = 0; j < DIGITS; ++j)
@@ -125,6 +112,10 @@ int main()
         }
         else
         {
+        	for (int j = 0; j < DIGITS; ++j)
+        	   printf("%f ", prediction[j]);
+
+        	printf("\n------\n");
             printf("%d is correct\n", i);
         }
 

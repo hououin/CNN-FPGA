@@ -18,7 +18,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename flat_array \
     op interface \
-    ports { flat_array_address0 { O 11 vector } flat_array_ce0 { O 1 bit } flat_array_we0 { O 1 bit } flat_array_d0 { O 32 vector } } \
+    ports { flat_array_address0 { O 9 vector } flat_array_ce0 { O 1 bit } flat_array_we0 { O 1 bit } flat_array_d0 { O 32 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'flat_array'"
@@ -37,7 +37,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir I \
     corename max_pool_2_out \
     op interface \
-    ports { max_pool_2_out_address0 { O 11 vector } max_pool_2_out_ce0 { O 1 bit } max_pool_2_out_q0 { I 32 vector } } \
+    ports { max_pool_2_out_address0 { O 9 vector } max_pool_2_out_ce0 { O 1 bit } max_pool_2_out_q0 { I 32 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'max_pool_2_out'"

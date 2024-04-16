@@ -6,8 +6,8 @@
 module cnn_conv_2_out_ram (addr0, ce0, d0, we0, q0,  clk);
 
 parameter DWIDTH = 32;
-parameter AWIDTH = 13;
-parameter MEM_SIZE = 7744;
+parameter AWIDTH = 11;
+parameter MEM_SIZE = 1936;
 
 input[AWIDTH-1:0] addr0;
 input ce0;
@@ -18,6 +18,9 @@ input clk;
 
 (* ram_style = "block" *)reg [DWIDTH-1:0] ram[0:MEM_SIZE-1];
 
+initial begin
+    $readmemh("./cnn_conv_2_out_ram.dat", ram);
+end
 
 
 
@@ -47,8 +50,8 @@ module cnn_conv_2_out(
     q0);
 
 parameter DataWidth = 32'd32;
-parameter AddressRange = 32'd7744;
-parameter AddressWidth = 32'd13;
+parameter AddressRange = 32'd1936;
+parameter AddressWidth = 32'd11;
 input reset;
 input clk;
 input[AddressWidth - 1:0] address0;

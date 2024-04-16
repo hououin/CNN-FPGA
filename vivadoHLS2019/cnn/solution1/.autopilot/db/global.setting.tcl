@@ -1,6 +1,6 @@
 
 set TopModule "cnn"
-set ClockPeriod 10
+set ClockPeriod 20
 set ClockList ap_clk
 set HasVivadoClockPeriod 0
 set CombLogicFlag 0
@@ -40,10 +40,10 @@ set SCTraceFileName mytrace
 set SCTraceFileFormat vcd
 set SCTraceOption all
 set TargetInfo xc7z020:-clg400:-1
-set SourceFiles {sc {} c {../cnn.cpp ../conv_1.cpp ../conv_2.cpp ../dense.cpp ../flat.cpp ../max_pool_1.cpp ../max_pool_2.cpp}}
-set SourceFlags {sc {} c {{} {} {} {} {} {} {}}}
-set DirectiveFile C:/Users/chenq/MAG/code/CNN-FPGA/vivadoHLS2019/cnn/solution1/solution1.directive
-set TBFiles {verilog {../out.gold.dat ../main.cpp ../inputs.dat} bc {../out.gold.dat ../main.cpp ../inputs.dat} vhdl {../out.gold.dat ../main.cpp ../inputs.dat} sc {../out.gold.dat ../main.cpp ../inputs.dat} cas {../out.gold.dat ../main.cpp ../inputs.dat} c {}}
+set SourceFiles {sc {} c {../max_pool_2.cpp ../max_pool_1.cpp ../flat.cpp ../dense_out.cpp ../dense_2.cpp ../dense_1.cpp ../conv_2.cpp ../conv_1.cpp ../cnn.cpp}}
+set SourceFlags {sc {} c {{} {} {} {} {} {} {} {} {}}}
+set DirectiveFile C:/Users/chenq/MAG/code/FFF/HLS2019/cnn/solution1/solution1.directive
+set TBFiles {verilog {../main.cpp ../inputs.dat ../golden.dat} bc {../main.cpp ../inputs.dat ../golden.dat} vhdl {../main.cpp ../inputs.dat ../golden.dat} sc {../main.cpp ../inputs.dat ../golden.dat} cas {../main.cpp ../inputs.dat ../golden.dat} c {}}
 set SpecLanguage C
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
 set TVOutFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}

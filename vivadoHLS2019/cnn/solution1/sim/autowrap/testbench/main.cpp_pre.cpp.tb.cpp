@@ -2,24 +2,24 @@
 // Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // ==============================================================
-# 1 "C:/Users/chenq/MAG/code/CNN-FPGA/vivadoHLS2019/cnn/main.cpp"
+# 1 "C:/Users/chenq/MAG/code/FFF/HLS2019/cnn/main.cpp"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "C:/Users/chenq/MAG/code/CNN-FPGA/vivadoHLS2019/cnn/main.cpp"
+# 1 "C:/Users/chenq/MAG/code/FFF/HLS2019/cnn/main.cpp"
 
-# 1 "C:/Users/chenq/MAG/code/CNN-FPGA/vivadoHLS2019/cnn/parameters.h" 1
+# 1 "C:/Users/chenq/MAG/code/FFF/HLS2019/cnn/parameters.h" 1
        
-# 3 "C:/Users/chenq/MAG/code/CNN-FPGA/vivadoHLS2019/cnn/main.cpp" 2
-# 1 "C:/Users/chenq/MAG/code/CNN-FPGA/vivadoHLS2019/cnn/cnn.h" 1
+# 3 "C:/Users/chenq/MAG/code/FFF/HLS2019/cnn/main.cpp" 2
+# 1 "C:/Users/chenq/MAG/code/FFF/HLS2019/cnn/cnn.h" 1
        
 
 
 void cnn
 (
-  float input [28*28*1],
-  float pred [10]
+  float cnn_input [28*28],
+  float prediction[10]
 );
-# 4 "C:/Users/chenq/MAG/code/CNN-FPGA/vivadoHLS2019/cnn/main.cpp" 2
+# 4 "C:/Users/chenq/MAG/code/FFF/HLS2019/cnn/main.cpp" 2
 # 1 "C:/Xilinx2019/Vivado/2019.1/msys64/mingw64/include/c++/6.2.0/iostream" 1 3
 # 36 "C:/Xilinx2019/Vivado/2019.1/msys64/mingw64/include/c++/6.2.0/iostream" 3
        
@@ -25519,7 +25519,7 @@ namespace std
 
 
 }
-# 5 "C:/Users/chenq/MAG/code/CNN-FPGA/vivadoHLS2019/cnn/main.cpp" 2
+# 5 "C:/Users/chenq/MAG/code/FFF/HLS2019/cnn/main.cpp" 2
 # 1 "C:/Xilinx2019/Vivado/2019.1/msys64/mingw64/include/c++/6.2.0/iomanip" 1 3
 # 36 "C:/Xilinx2019/Vivado/2019.1/msys64/mingw64/include/c++/6.2.0/iomanip" 3
        
@@ -33555,7 +33555,7 @@ namespace std
 
 
 }
-# 6 "C:/Users/chenq/MAG/code/CNN-FPGA/vivadoHLS2019/cnn/main.cpp" 2
+# 6 "C:/Users/chenq/MAG/code/FFF/HLS2019/cnn/main.cpp" 2
 # 1 "C:/Xilinx2019/Vivado/2019.1/msys64/mingw64/include/c++/6.2.0/cmath" 1 3
 # 39 "C:/Xilinx2019/Vivado/2019.1/msys64/mingw64/include/c++/6.2.0/cmath" 3
        
@@ -35503,29 +35503,73 @@ namespace std
 }
 # 1797 "C:/Xilinx2019/Vivado/2019.1/msys64/mingw64/include/c++/6.2.0/cmath" 3
 }
-# 7 "C:/Users/chenq/MAG/code/CNN-FPGA/vivadoHLS2019/cnn/main.cpp" 2
+# 7 "C:/Users/chenq/MAG/code/FFF/HLS2019/cnn/main.cpp" 2
+# 1 "C:/Xilinx2019/Vivado/2019.1/msys64/mingw64/include/c++/6.2.0/stdlib.h" 1 3
+# 36 "C:/Xilinx2019/Vivado/2019.1/msys64/mingw64/include/c++/6.2.0/stdlib.h" 3
+# 1 "C:/Xilinx2019/Vivado/2019.1/msys64/mingw64/include/c++/6.2.0/cstdlib" 1 3
+# 39 "C:/Xilinx2019/Vivado/2019.1/msys64/mingw64/include/c++/6.2.0/cstdlib" 3
+       
+# 40 "C:/Xilinx2019/Vivado/2019.1/msys64/mingw64/include/c++/6.2.0/cstdlib" 3
+# 37 "C:/Xilinx2019/Vivado/2019.1/msys64/mingw64/include/c++/6.2.0/stdlib.h" 2 3
+
+using std::abort;
+using std::atexit;
+using std::exit;
+# 51 "C:/Xilinx2019/Vivado/2019.1/msys64/mingw64/include/c++/6.2.0/stdlib.h" 3
+using std::div_t;
+using std::ldiv_t;
+
+using std::abs;
+using std::atof;
+using std::atoi;
+using std::atol;
+using std::bsearch;
+using std::calloc;
+using std::div;
+using std::free;
+using std::getenv;
+using std::labs;
+using std::ldiv;
+using std::malloc;
+
+using std::mblen;
+using std::mbstowcs;
+using std::mbtowc;
+
+using std::qsort;
+using std::rand;
+using std::realloc;
+using std::srand;
+using std::strtod;
+using std::strtol;
+using std::strtoul;
+using std::system;
+
+using std::wcstombs;
+using std::wctomb;
+# 8 "C:/Users/chenq/MAG/code/FFF/HLS2019/cnn/main.cpp" 2
 
 
 
 
-# 10 "C:/Users/chenq/MAG/code/CNN-FPGA/vivadoHLS2019/cnn/main.cpp"
-int read_images(const char* file, float images[20][28][28][1])
+# 11 "C:/Users/chenq/MAG/code/FFF/HLS2019/cnn/main.cpp"
+int read_images(const char* file, float images[20][28][28])
 {
     FILE* fp;
 
     fp = fopen(file, "r");
 
     if (fp == 
-# 16 "C:/Users/chenq/MAG/code/CNN-FPGA/vivadoHLS2019/cnn/main.cpp" 3 4
+# 17 "C:/Users/chenq/MAG/code/FFF/HLS2019/cnn/main.cpp" 3 4
              __null
-# 16 "C:/Users/chenq/MAG/code/CNN-FPGA/vivadoHLS2019/cnn/main.cpp"
+# 17 "C:/Users/chenq/MAG/code/FFF/HLS2019/cnn/main.cpp"
                  )
         return -1;
 
     for (int i = 0; i < 20; ++i)
         for (int x = 0; x < 28; ++x)
             for (int y = 0; y < 28; ++y)
-                if (fscanf(fp, "%f", &images[i][x][y][0]) != 1)
+                if (fscanf(fp, "%f", &images[i][x][y]) != 1)
                     return 1;
 
     return fclose(fp);
@@ -35539,9 +35583,9 @@ int read_golden_results(const char* file, float python_predictions[20][10])
     fp = fopen(file, "r");
 
     if (fp == 
-# 35 "C:/Users/chenq/MAG/code/CNN-FPGA/vivadoHLS2019/cnn/main.cpp" 3 4
+# 36 "C:/Users/chenq/MAG/code/FFF/HLS2019/cnn/main.cpp" 3 4
              __null
-# 35 "C:/Users/chenq/MAG/code/CNN-FPGA/vivadoHLS2019/cnn/main.cpp"
+# 36 "C:/Users/chenq/MAG/code/FFF/HLS2019/cnn/main.cpp"
                  )
         return -1;
 
@@ -35571,11 +35615,12 @@ int compare_to_golden_results(float prediction[10], float golden_result[10])
 #ifndef HLS_FASTSIM
 #include "apatb_cnn.h"
 #endif
-# 60 "C:/Users/chenq/MAG/code/CNN-FPGA/vivadoHLS2019/cnn/main.cpp"
+# 61 "C:/Users/chenq/MAG/code/FFF/HLS2019/cnn/main.cpp"
 int main()
 {
+ printf("test 2\n");
 
-    float images[20][28][28][1];
+    float images[20][28][28];
     if (0 != read_images("inputs.dat", images))
     {
         printf("Read Images Error\n");
@@ -35584,7 +35629,7 @@ int main()
 
 
     float python_predictions[20][10];
-    if (0 != read_golden_results("out.gold.dat", python_predictions))
+    if (0 != read_golden_results("golden.dat", python_predictions))
     {
         printf("Read Golden results Error\n");
         return 1;
@@ -35596,7 +35641,7 @@ int main()
 
     for (int i = 0; i < 20; ++i)
     {
-
+# 97 "C:/Users/chenq/MAG/code/FFF/HLS2019/cnn/main.cpp"
      float cnn_input[28*28];
 
      int ix_img = 0;
@@ -35605,11 +35650,10 @@ int main()
      {
       for(int jx = 0; jx < 28; jx++)
       {
-       for(int kx = 0; kx < 1; kx++)
-       {
-        cnn_input[ix_img] = images[i][ix][jx][kx];
-        ix_img++;
-       }
+
+       cnn_input[ix_img] = images[i][ix][jx];
+       ix_img++;
+
       }
      }
 
@@ -35618,10 +35662,10 @@ int main()
 #ifndef HLS_FASTSIM
 #define cnn AESL_WRAP_cnn
 #endif
-# 102 "C:/Users/chenq/MAG/code/CNN-FPGA/vivadoHLS2019/cnn/main.cpp"
+# 113 "C:/Users/chenq/MAG/code/FFF/HLS2019/cnn/main.cpp"
 cnn(cnn_input, prediction);
 #undef cnn
-# 102 "C:/Users/chenq/MAG/code/CNN-FPGA/vivadoHLS2019/cnn/main.cpp"
+# 113 "C:/Users/chenq/MAG/code/FFF/HLS2019/cnn/main.cpp"
 
 
         if (compare_to_golden_results(prediction, python_predictions[i]) == 1)
@@ -35630,10 +35674,14 @@ cnn(cnn_input, prediction);
                 printf("%f ", prediction[j]);
 
             printf("\n------\n");
-
+            return 1;
         }
         else
         {
+         for (int j = 0; j < 10; ++j)
+            printf("%f ", prediction[j]);
+
+         printf("\n------\n");
             printf("%d is correct\n", i);
         }
 
@@ -35642,5 +35690,5 @@ cnn(cnn_input, prediction);
     return 0;
 }
 #endif
-# 120 "C:/Users/chenq/MAG/code/CNN-FPGA/vivadoHLS2019/cnn/main.cpp"
+# 135 "C:/Users/chenq/MAG/code/FFF/HLS2019/cnn/main.cpp"
 

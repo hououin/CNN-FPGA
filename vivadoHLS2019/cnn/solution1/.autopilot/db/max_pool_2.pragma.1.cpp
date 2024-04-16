@@ -154,15 +154,15 @@ extern "C" {
 # 1 "cnn/max_pool_2.h" 1
 
 # 1 "cnn/parameters.h" 1
-# 2 "cnn/max_pool_2.h" 2
-
+# 3 "cnn/max_pool_2.h" 2
 
 void max_pool_2
 (
- float conv_out[11][11][64],
- float max_pool_out[(11 / 2)][(11 / 2)][64]
+ float conv_out[11][11][16],
+ float max_pool_out[(11 / 2)][(11 / 2)][16]
 );
 # 2 "cnn/max_pool_2.cpp" 2
+
 # 1 "C:/Xilinx2019/Vivado/2019.1/win64/tools/clang/bin/../lib/clang/3.1/include\\float.h" 1 3 4
 # 33 "C:/Xilinx2019/Vivado/2019.1/win64/tools/clang/bin/../lib/clang/3.1/include\\float.h" 3 4
 # 1 "C:/Xilinx2019/Vivado/2019.1/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\\float.h" 1 3 4
@@ -343,14 +343,14 @@ extern long double _chgsignl (long double);
 
 }
 # 33 "C:/Xilinx2019/Vivado/2019.1/win64/tools/clang/bin/../lib/clang/3.1/include\\float.h" 2 3 4
-# 3 "cnn/max_pool_2.cpp" 2
+# 4 "cnn/max_pool_2.cpp" 2
 
 
-void max_pool_2(float conv_out[11][11][64], float max_pool_out[(11 / 2)][(11 / 2)][64])
+void max_pool_2(float conv_out[11][11][16], float max_pool_out[(11 / 2)][(11 / 2)][16])
 {_ssdm_SpecArrayDimSize(conv_out, 11);_ssdm_SpecArrayDimSize(max_pool_out, 5);
     float max = 0.0;
     Filter_Loop:
-    for (int f = 0; f < 64; ++f)
+    for (int f = 0; f < 16; ++f)
     {
      Row_Loop:
         for (int r = 0; r < (11 / 2); ++r)

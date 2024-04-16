@@ -3,6 +3,6 @@
 
 void conv_1
 (
-	float input[INPUT_ROWS][INPUT_COLS][CHANNELS],
+	float input[INPUT_ROWS][INPUT_COLS],
 	float conv_out[CONV_1_ROWS][CONV_1_COLS][FILTERS_1]
 );

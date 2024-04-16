@@ -1,0 +1,60 @@
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'conv/conv.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 184.863 ; gain = 94.895
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 184.863 ; gain = 94.895
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 184.863 ; gain = 94.895
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 184.863 ; gain = 94.895
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Col_Loop' (conv/conv.cpp:12) in function 'conv' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'Filter2_Loop' (conv/conv.cpp:15) in function 'conv' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'W_Row_Loop' (conv/conv.cpp:19) in function 'conv' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'W_Col_Loop' (conv/conv.cpp:22) in function 'conv' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Filter1_Loop' (conv/conv.cpp:25) in function 'conv' completely with a factor of 6.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 184.863 ; gain = 94.895
+INFO: [XFORM 203-541] Flattening a loop nest 'Row_Loop' (conv/conv.cpp:9:6) in function 'conv'.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 184.863 ; gain = 94.895
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'conv' ...
+WARNING: [SYN 201-107] Renaming port name 'conv/input' to 'conv/input_r' to avoid the conflict with HDL keywords or other object names.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'conv' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Row_Loop_Col_Loop'.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('input_load_1', conv/conv.cpp:26) on array 'input_r' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'input_r'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 52, Depth = 266.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 14.116 seconds; current allocated memory: 123.096 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 2.621 seconds; current allocated memory: 136.080 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'conv' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'conv/input_r' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'conv/conv_out' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'conv' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'conv_fadd_32ns_32ns_32_4_full_dsp_1' to 'conv_fadd_32ns_32bkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_fmul_32ns_32ns_32_2_max_dsp_1' to 'conv_fmul_32ns_32cud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_fcmp_32ns_32ns_1_2_1' to 'conv_fcmp_32ns_32dEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_mac_muladd_5ns_4ns_4ns_8_1_1' to 'conv_mac_muladd_5eOg' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'conv_fadd_32ns_32bkb': 17 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'conv_fcmp_32ns_32dEe': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'conv_fmul_32ns_32cud': 17 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'conv_mac_muladd_5eOg': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'conv'.
+INFO: [HLS 200-111]  Elapsed time: 3.214 seconds; current allocated memory: 148.060 MB.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:16 ; elapsed = 00:00:28 . Memory (MB): peak = 268.477 ; gain = 178.508
+INFO: [VHDL 208-304] Generating VHDL RTL for conv.
+INFO: [VLOG 209-307] Generating Verilog RTL for conv.
+INFO: [HLS 200-112] Total elapsed time: 28.255 seconds; peak allocated memory: 148.060 MB.

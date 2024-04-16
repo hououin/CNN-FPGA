@@ -8,7 +8,7 @@
 module cnn_fdiv_32ns_32ng8j
 #(parameter
     ID         = 27,
-    NUM_STAGE  = 16,
+    NUM_STAGE  = 8,
     din0_WIDTH = 32,
     din1_WIDTH = 32,
     dout_WIDTH = 32
@@ -35,7 +35,7 @@ reg                   ce_r;
 wire [dout_WIDTH-1:0] dout_i;
 reg  [dout_WIDTH-1:0] dout_r;
 //------------------------Instantiation------------------
-cnn_ap_fdiv_14_no_dsp_32 cnn_ap_fdiv_14_no_dsp_32_u (
+cnn_ap_fdiv_6_no_dsp_32 cnn_ap_fdiv_6_no_dsp_32_u (
     .aclk                 ( aclk ),
     .aclken               ( aclken ),
     .s_axis_a_tvalid      ( a_tvalid ),

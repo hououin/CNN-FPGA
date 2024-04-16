@@ -1,4 +1,5 @@
 #include "max_pool_1.h"
+#include "parameters.h"
 #include <float.h>
 
 

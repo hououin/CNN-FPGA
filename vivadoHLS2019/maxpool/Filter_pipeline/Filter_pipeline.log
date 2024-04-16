@@ -1,0 +1,53 @@
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'maxpool/max_pool.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 184.078 ; gain = 92.609
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 184.078 ; gain = 92.609
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 184.078 ; gain = 92.609
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 184.078 ; gain = 92.609
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Filter_Loop' (maxpool/max_pool.cpp:11) in function 'max_pool' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'Row_Loop' (maxpool/max_pool.cpp:14) in function 'max_pool' completely with a factor of 13.
+INFO: [HLS 200-489] Unrolling loop 'Col_Loop' (maxpool/max_pool.cpp:17) in function 'max_pool' completely with a factor of 13.
+INFO: [HLS 200-489] Unrolling loop 'Pool_Row_Loop' (maxpool/max_pool.cpp:21) in function 'max_pool' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'Pool_Col_Loop' (maxpool/max_pool.cpp:24) in function 'max_pool' completely with a factor of 2.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:06 ; elapsed = 00:00:12 . Memory (MB): peak = 184.078 ; gain = 92.609
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:37 ; elapsed = 00:00:44 . Memory (MB): peak = 253.723 ; gain = 162.254
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'max_pool' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'max_pool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Filter_Loop'.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('conv_out_load_8', maxpool/max_pool.cpp:29) on array 'conv_out' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'conv_out'.
+INFO: [SCHED 204-61] Unable to satisfy pipeline directive: Unable to pipeline the region.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 69.054 seconds; current allocated memory: 214.657 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 1 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 18.637 seconds; current allocated memory: 254.335 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'max_pool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'max_pool' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'max_pool_fcmp_32ns_32ns_1_2_1' to 'max_pool_fcmp_32nbkb' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'max_pool_fcmp_32nbkb': 4 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'max_pool'.
+INFO: [HLS 200-111]  Elapsed time: 14.496 seconds; current allocated memory: 335.960 MB.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:02:00 ; elapsed = 00:02:27 . Memory (MB): peak = 684.840 ; gain = 593.371
+INFO: [VHDL 208-304] Generating VHDL RTL for max_pool.
+INFO: [VLOG 209-307] Generating Verilog RTL for max_pool.
+INFO: [HLS 200-112] Total elapsed time: 147.611 seconds; peak allocated memory: 335.960 MB.

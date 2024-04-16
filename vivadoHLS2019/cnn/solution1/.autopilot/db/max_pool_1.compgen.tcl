@@ -12,16 +12,16 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     id 12 \
-    name conv_out \
+    name max_pool_out \
     reset_level 1 \
     sync_rst true \
-    dir I \
-    corename conv_out \
+    dir O \
+    corename max_pool_out \
     op interface \
-    ports { conv_out_address0 { O 15 vector } conv_out_ce0 { O 1 bit } conv_out_q0 { I 32 vector } } \
+    ports { max_pool_out_address0 { O 10 vector } max_pool_out_ce0 { O 1 bit } max_pool_out_we0 { O 1 bit } max_pool_out_d0 { O 32 vector } } \
 } "
 } else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'conv_out'"
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'max_pool_out'"
 }
 }
 
@@ -31,16 +31,16 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     id 13 \
-    name max_pool_out \
+    name conv_1_out \
     reset_level 1 \
     sync_rst true \
-    dir O \
-    corename max_pool_out \
+    dir I \
+    corename conv_1_out \
     op interface \
-    ports { max_pool_out_address0 { O 13 vector } max_pool_out_ce0 { O 1 bit } max_pool_out_we0 { O 1 bit } max_pool_out_d0 { O 32 vector } } \
+    ports { conv_1_out_address0 { O 12 vector } conv_1_out_ce0 { O 1 bit } conv_1_out_q0 { I 32 vector } } \
 } "
 } else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'max_pool_out'"
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'conv_1_out'"
 }
 }
 

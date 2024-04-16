@@ -1,0 +1,380 @@
+
+
+================================================================
+== Vivado HLS Report for 'flat'
+================================================================
+* Date:           Thu Mar  7 11:05:00 2024
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        flat
+* Solution:       solution5
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  20.00|     6.508|        2.50|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |  236|  236|  236|  236|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-----------+-----+-----+----------+-----------+-----------+------+----------+
+        |           |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +-----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- LOOP_1   |  235|  235|        47|          -|          -|     5|    no    |
+        | + LOOP_2  |   45|   45|         9|          -|          -|     5|    no    |
+        +-----------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 11
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 2 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 3 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.76>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([400 x float]* %max_pool_out) nounwind, !map !7"   --->   Operation 12 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([400 x float]* %flat_array) nounwind, !map !14"   --->   Operation 13 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([5 x i8]* @flat_str) nounwind"   --->   Operation 14 'spectopmodule' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (1.76ns)   --->   "br label %1" [flat/flat.cpp:6]   --->   Operation 15 'br' <Predicate = true> <Delay = 1.76>
+
+State 2 <SV = 1> <Delay = 1.82>
+ST_2 : Operation 16 [1/1] (0.00ns)   --->   "%r_0 = phi i3 [ 0, %0 ], [ %r, %LOOP_1_end ]"   --->   Operation 16 'phi' 'r_0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%i_0 = phi i9 [ 0, %0 ], [ %i, %LOOP_1_end ]"   --->   Operation 17 'phi' 'i_0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 18 [1/1] (1.13ns)   --->   "%icmp_ln6 = icmp eq i3 %r_0, -3" [flat/flat.cpp:6]   --->   Operation 18 'icmp' 'icmp_ln6' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 5, i64 5, i64 5) nounwind"   --->   Operation 19 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 20 [1/1] (1.65ns)   --->   "%r = add i3 %r_0, 1" [flat/flat.cpp:6]   --->   Operation 20 'add' 'r' <Predicate = true> <Delay = 1.65> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 21 [1/1] (0.00ns)   --->   "br i1 %icmp_ln6, label %4, label %LOOP_1_begin" [flat/flat.cpp:6]   --->   Operation 21 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 22 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([7 x i8]* @p_str) nounwind" [flat/flat.cpp:7]   --->   Operation 22 'specloopname' <Predicate = (!icmp_ln6)> <Delay = 0.00>
+ST_2 : Operation 23 [1/1] (0.00ns)   --->   "%tmp = call i32 (...)* @_ssdm_op_SpecRegionBegin([7 x i8]* @p_str) nounwind" [flat/flat.cpp:7]   --->   Operation 23 'specregionbegin' 'tmp' <Predicate = (!icmp_ln6)> <Delay = 0.00>
+ST_2 : Operation 24 [1/1] (1.82ns)   --->   "%i = add i9 %i_0, 80" [flat/flat.cpp:15]   --->   Operation 24 'add' 'i' <Predicate = (!icmp_ln6)> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 25 [1/1] (0.00ns)   --->   "%zext_ln14 = zext i3 %r_0 to i6" [flat/flat.cpp:14]   --->   Operation 25 'zext' 'zext_ln14' <Predicate = (!icmp_ln6)> <Delay = 0.00>
+ST_2 : Operation 26 [1/1] (0.00ns)   --->   "%tmp_1 = call i5 @_ssdm_op_BitConcatenate.i5.i3.i2(i3 %r_0, i2 0)" [flat/flat.cpp:14]   --->   Operation 26 'bitconcatenate' 'tmp_1' <Predicate = (!icmp_ln6)> <Delay = 0.00>
+ST_2 : Operation 27 [1/1] (0.00ns)   --->   "%zext_ln14_1 = zext i5 %tmp_1 to i6" [flat/flat.cpp:14]   --->   Operation 27 'zext' 'zext_ln14_1' <Predicate = (!icmp_ln6)> <Delay = 0.00>
+ST_2 : Operation 28 [1/1] (1.78ns)   --->   "%add_ln14 = add i6 %zext_ln14, %zext_ln14_1" [flat/flat.cpp:14]   --->   Operation 28 'add' 'add_ln14' <Predicate = (!icmp_ln6)> <Delay = 1.78> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 29 [1/1] (1.76ns)   --->   "br label %2" [flat/flat.cpp:9]   --->   Operation 29 'br' <Predicate = (!icmp_ln6)> <Delay = 1.76>
+ST_2 : Operation 30 [1/1] (0.00ns)   --->   "ret void" [flat/flat.cpp:19]   --->   Operation 30 'ret' <Predicate = (icmp_ln6)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 5.07>
+ST_3 : Operation 31 [1/1] (0.00ns)   --->   "%i_1 = phi i9 [ %i_0, %LOOP_1_begin ], [ %add_ln15, %3 ]" [flat/flat.cpp:15]   --->   Operation 31 'phi' 'i_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 32 [1/1] (0.00ns)   --->   "%c_0 = phi i3 [ 0, %LOOP_1_begin ], [ %c, %3 ]"   --->   Operation 32 'phi' 'c_0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 33 [1/1] (1.13ns)   --->   "%icmp_ln9 = icmp eq i3 %c_0, -3" [flat/flat.cpp:9]   --->   Operation 33 'icmp' 'icmp_ln9' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 34 [1/1] (0.00ns)   --->   "%empty_2 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 5, i64 5, i64 5) nounwind"   --->   Operation 34 'speclooptripcount' 'empty_2' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 35 [1/1] (1.65ns)   --->   "%c = add i3 %c_0, 1" [flat/flat.cpp:9]   --->   Operation 35 'add' 'c' <Predicate = true> <Delay = 1.65> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 36 [1/1] (0.00ns)   --->   "br i1 %icmp_ln9, label %LOOP_1_end, label %3" [flat/flat.cpp:9]   --->   Operation 36 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 37 [1/1] (0.00ns)   --->   "%zext_ln14_18 = zext i3 %c_0 to i6" [flat/flat.cpp:14]   --->   Operation 37 'zext' 'zext_ln14_18' <Predicate = (!icmp_ln9)> <Delay = 0.00>
+ST_3 : Operation 38 [1/1] (1.82ns)   --->   "%add_ln14_1 = add i6 %zext_ln14_18, %add_ln14" [flat/flat.cpp:14]   --->   Operation 38 'add' 'add_ln14_1' <Predicate = (!icmp_ln9)> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 39 [1/1] (0.00ns)   --->   "%tmp_2 = call i10 @_ssdm_op_BitConcatenate.i10.i6.i4(i6 %add_ln14_1, i4 0)" [flat/flat.cpp:14]   --->   Operation 39 'bitconcatenate' 'tmp_2' <Predicate = (!icmp_ln9)> <Delay = 0.00>
+ST_3 : Operation 40 [1/1] (0.00ns)   --->   "%zext_ln14_19 = zext i10 %tmp_2 to i64" [flat/flat.cpp:14]   --->   Operation 40 'zext' 'zext_ln14_19' <Predicate = (!icmp_ln9)> <Delay = 0.00>
+ST_3 : Operation 41 [1/1] (0.00ns)   --->   "%max_pool_out_addr = getelementptr [400 x float]* %max_pool_out, i64 0, i64 %zext_ln14_19" [flat/flat.cpp:14]   --->   Operation 41 'getelementptr' 'max_pool_out_addr' <Predicate = (!icmp_ln9)> <Delay = 0.00>
+ST_3 : Operation 42 [1/1] (0.00ns)   --->   "%or_ln14 = or i10 %tmp_2, 1" [flat/flat.cpp:14]   --->   Operation 42 'or' 'or_ln14' <Predicate = (!icmp_ln9)> <Delay = 0.00>
+ST_3 : Operation 43 [1/1] (0.00ns)   --->   "%zext_ln14_20 = zext i10 %or_ln14 to i64" [flat/flat.cpp:14]   --->   Operation 43 'zext' 'zext_ln14_20' <Predicate = (!icmp_ln9)> <Delay = 0.00>
+ST_3 : Operation 44 [1/1] (0.00ns)   --->   "%max_pool_out_addr_1 = getelementptr [400 x float]* %max_pool_out, i64 0, i64 %zext_ln14_20" [flat/flat.cpp:14]   --->   Operation 44 'getelementptr' 'max_pool_out_addr_1' <Predicate = (!icmp_ln9)> <Delay = 0.00>
+ST_3 : Operation 45 [2/2] (3.25ns)   --->   "%max_pool_out_load = load float* %max_pool_out_addr, align 4" [flat/flat.cpp:14]   --->   Operation 45 'load' 'max_pool_out_load' <Predicate = (!icmp_ln9)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 400> <RAM>
+ST_3 : Operation 46 [2/2] (3.25ns)   --->   "%max_pool_out_load_1 = load float* %max_pool_out_addr_1, align 4" [flat/flat.cpp:14]   --->   Operation 46 'load' 'max_pool_out_load_1' <Predicate = (!icmp_ln9)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 400> <RAM>
+ST_3 : Operation 47 [1/1] (0.00ns)   --->   "%empty_3 = call i32 (...)* @_ssdm_op_SpecRegionEnd([7 x i8]* @p_str, i32 %tmp) nounwind" [flat/flat.cpp:18]   --->   Operation 47 'specregionend' 'empty_3' <Predicate = (icmp_ln9)> <Delay = 0.00>
+ST_3 : Operation 48 [1/1] (0.00ns)   --->   "br label %1" [flat/flat.cpp:6]   --->   Operation 48 'br' <Predicate = (icmp_ln9)> <Delay = 0.00>
+
+State 4 <SV = 3> <Delay = 6.50>
+ST_4 : Operation 49 [1/1] (0.00ns)   --->   "%or_ln14_1 = or i10 %tmp_2, 2" [flat/flat.cpp:14]   --->   Operation 49 'or' 'or_ln14_1' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 50 [1/1] (0.00ns)   --->   "%zext_ln14_21 = zext i10 %or_ln14_1 to i64" [flat/flat.cpp:14]   --->   Operation 50 'zext' 'zext_ln14_21' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 51 [1/1] (0.00ns)   --->   "%max_pool_out_addr_2 = getelementptr [400 x float]* %max_pool_out, i64 0, i64 %zext_ln14_21" [flat/flat.cpp:14]   --->   Operation 51 'getelementptr' 'max_pool_out_addr_2' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 52 [1/1] (0.00ns)   --->   "%or_ln14_2 = or i10 %tmp_2, 3" [flat/flat.cpp:14]   --->   Operation 52 'or' 'or_ln14_2' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 53 [1/1] (0.00ns)   --->   "%zext_ln14_22 = zext i10 %or_ln14_2 to i64" [flat/flat.cpp:14]   --->   Operation 53 'zext' 'zext_ln14_22' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 54 [1/1] (0.00ns)   --->   "%max_pool_out_addr_3 = getelementptr [400 x float]* %max_pool_out, i64 0, i64 %zext_ln14_22" [flat/flat.cpp:14]   --->   Operation 54 'getelementptr' 'max_pool_out_addr_3' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 55 [1/2] (3.25ns)   --->   "%max_pool_out_load = load float* %max_pool_out_addr, align 4" [flat/flat.cpp:14]   --->   Operation 55 'load' 'max_pool_out_load' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 400> <RAM>
+ST_4 : Operation 56 [1/1] (0.00ns)   --->   "%zext_ln14_2 = zext i9 %i_1 to i64" [flat/flat.cpp:14]   --->   Operation 56 'zext' 'zext_ln14_2' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 57 [1/1] (0.00ns)   --->   "%flat_array_addr = getelementptr [400 x float]* %flat_array, i64 0, i64 %zext_ln14_2" [flat/flat.cpp:14]   --->   Operation 57 'getelementptr' 'flat_array_addr' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 58 [1/1] (3.25ns)   --->   "store float %max_pool_out_load, float* %flat_array_addr, align 4" [flat/flat.cpp:14]   --->   Operation 58 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 400> <RAM>
+ST_4 : Operation 59 [1/1] (0.00ns)   --->   "%or_ln15 = or i9 %i_1, 1" [flat/flat.cpp:15]   --->   Operation 59 'or' 'or_ln15' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 60 [1/2] (3.25ns)   --->   "%max_pool_out_load_1 = load float* %max_pool_out_addr_1, align 4" [flat/flat.cpp:14]   --->   Operation 60 'load' 'max_pool_out_load_1' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 400> <RAM>
+ST_4 : Operation 61 [1/1] (0.00ns)   --->   "%zext_ln14_3 = zext i9 %or_ln15 to i64" [flat/flat.cpp:14]   --->   Operation 61 'zext' 'zext_ln14_3' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 62 [1/1] (0.00ns)   --->   "%flat_array_addr_1 = getelementptr [400 x float]* %flat_array, i64 0, i64 %zext_ln14_3" [flat/flat.cpp:14]   --->   Operation 62 'getelementptr' 'flat_array_addr_1' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 63 [1/1] (3.25ns)   --->   "store float %max_pool_out_load_1, float* %flat_array_addr_1, align 4" [flat/flat.cpp:14]   --->   Operation 63 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 400> <RAM>
+ST_4 : Operation 64 [2/2] (3.25ns)   --->   "%max_pool_out_load_2 = load float* %max_pool_out_addr_2, align 4" [flat/flat.cpp:14]   --->   Operation 64 'load' 'max_pool_out_load_2' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 400> <RAM>
+ST_4 : Operation 65 [2/2] (3.25ns)   --->   "%max_pool_out_load_3 = load float* %max_pool_out_addr_3, align 4" [flat/flat.cpp:14]   --->   Operation 65 'load' 'max_pool_out_load_3' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 400> <RAM>
+
+State 5 <SV = 4> <Delay = 6.50>
+ST_5 : Operation 66 [1/1] (0.00ns)   --->   "%or_ln14_3 = or i10 %tmp_2, 4" [flat/flat.cpp:14]   --->   Operation 66 'or' 'or_ln14_3' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 67 [1/1] (0.00ns)   --->   "%zext_ln14_23 = zext i10 %or_ln14_3 to i64" [flat/flat.cpp:14]   --->   Operation 67 'zext' 'zext_ln14_23' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 68 [1/1] (0.00ns)   --->   "%max_pool_out_addr_4 = getelementptr [400 x float]* %max_pool_out, i64 0, i64 %zext_ln14_23" [flat/flat.cpp:14]   --->   Operation 68 'getelementptr' 'max_pool_out_addr_4' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 69 [1/1] (0.00ns)   --->   "%or_ln14_4 = or i10 %tmp_2, 5" [flat/flat.cpp:14]   --->   Operation 69 'or' 'or_ln14_4' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 70 [1/1] (0.00ns)   --->   "%zext_ln14_24 = zext i10 %or_ln14_4 to i64" [flat/flat.cpp:14]   --->   Operation 70 'zext' 'zext_ln14_24' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 71 [1/1] (0.00ns)   --->   "%max_pool_out_addr_5 = getelementptr [400 x float]* %max_pool_out, i64 0, i64 %zext_ln14_24" [flat/flat.cpp:14]   --->   Operation 71 'getelementptr' 'max_pool_out_addr_5' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 72 [1/1] (0.00ns)   --->   "%zext_ln15 = zext i9 %or_ln15 to i10" [flat/flat.cpp:15]   --->   Operation 72 'zext' 'zext_ln15' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 73 [1/1] (1.82ns)   --->   "%add_ln15_2 = add i10 %zext_ln15, 1" [flat/flat.cpp:15]   --->   Operation 73 'add' 'add_ln15_2' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 74 [1/2] (3.25ns)   --->   "%max_pool_out_load_2 = load float* %max_pool_out_addr_2, align 4" [flat/flat.cpp:14]   --->   Operation 74 'load' 'max_pool_out_load_2' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 400> <RAM>
+ST_5 : Operation 75 [1/1] (0.00ns)   --->   "%zext_ln14_4 = zext i10 %add_ln15_2 to i64" [flat/flat.cpp:14]   --->   Operation 75 'zext' 'zext_ln14_4' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 76 [1/1] (0.00ns)   --->   "%flat_array_addr_2 = getelementptr [400 x float]* %flat_array, i64 0, i64 %zext_ln14_4" [flat/flat.cpp:14]   --->   Operation 76 'getelementptr' 'flat_array_addr_2' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 77 [1/1] (3.25ns)   --->   "store float %max_pool_out_load_2, float* %flat_array_addr_2, align 4" [flat/flat.cpp:14]   --->   Operation 77 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 400> <RAM>
+ST_5 : Operation 78 [1/1] (0.00ns)   --->   "%or_ln15_1 = or i9 %i_1, 3" [flat/flat.cpp:15]   --->   Operation 78 'or' 'or_ln15_1' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 79 [1/2] (3.25ns)   --->   "%max_pool_out_load_3 = load float* %max_pool_out_addr_3, align 4" [flat/flat.cpp:14]   --->   Operation 79 'load' 'max_pool_out_load_3' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 400> <RAM>
+ST_5 : Operation 80 [1/1] (0.00ns)   --->   "%zext_ln14_5 = zext i9 %or_ln15_1 to i64" [flat/flat.cpp:14]   --->   Operation 80 'zext' 'zext_ln14_5' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 81 [1/1] (0.00ns)   --->   "%flat_array_addr_3 = getelementptr [400 x float]* %flat_array, i64 0, i64 %zext_ln14_5" [flat/flat.cpp:14]   --->   Operation 81 'getelementptr' 'flat_array_addr_3' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 82 [1/1] (3.25ns)   --->   "store float %max_pool_out_load_3, float* %flat_array_addr_3, align 4" [flat/flat.cpp:14]   --->   Operation 82 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 400> <RAM>
+ST_5 : Operation 83 [2/2] (3.25ns)   --->   "%max_pool_out_load_4 = load float* %max_pool_out_addr_4, align 4" [flat/flat.cpp:14]   --->   Operation 83 'load' 'max_pool_out_load_4' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 400> <RAM>
+ST_5 : Operation 84 [2/2] (3.25ns)   --->   "%max_pool_out_load_5 = load float* %max_pool_out_addr_5, align 4" [flat/flat.cpp:14]   --->   Operation 84 'load' 'max_pool_out_load_5' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 400> <RAM>
+
+State 6 <SV = 5> <Delay = 6.50>
+ST_6 : Operation 85 [1/1] (0.00ns)   --->   "%or_ln14_5 = or i10 %tmp_2, 6" [flat/flat.cpp:14]   --->   Operation 85 'or' 'or_ln14_5' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 86 [1/1] (0.00ns)   --->   "%zext_ln14_25 = zext i10 %or_ln14_5 to i64" [flat/flat.cpp:14]   --->   Operation 86 'zext' 'zext_ln14_25' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 87 [1/1] (0.00ns)   --->   "%max_pool_out_addr_6 = getelementptr [400 x float]* %max_pool_out, i64 0, i64 %zext_ln14_25" [flat/flat.cpp:14]   --->   Operation 87 'getelementptr' 'max_pool_out_addr_6' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 88 [1/1] (0.00ns)   --->   "%or_ln14_6 = or i10 %tmp_2, 7" [flat/flat.cpp:14]   --->   Operation 88 'or' 'or_ln14_6' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 89 [1/1] (0.00ns)   --->   "%zext_ln14_26 = zext i10 %or_ln14_6 to i64" [flat/flat.cpp:14]   --->   Operation 89 'zext' 'zext_ln14_26' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 90 [1/1] (0.00ns)   --->   "%max_pool_out_addr_7 = getelementptr [400 x float]* %max_pool_out, i64 0, i64 %zext_ln14_26" [flat/flat.cpp:14]   --->   Operation 90 'getelementptr' 'max_pool_out_addr_7' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 91 [1/1] (0.00ns)   --->   "%zext_ln15_1 = zext i9 %or_ln15_1 to i10" [flat/flat.cpp:15]   --->   Operation 91 'zext' 'zext_ln15_1' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 92 [1/1] (1.82ns)   --->   "%add_ln15_3 = add i10 %zext_ln15_1, 1" [flat/flat.cpp:15]   --->   Operation 92 'add' 'add_ln15_3' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 93 [1/2] (3.25ns)   --->   "%max_pool_out_load_4 = load float* %max_pool_out_addr_4, align 4" [flat/flat.cpp:14]   --->   Operation 93 'load' 'max_pool_out_load_4' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 400> <RAM>
+ST_6 : Operation 94 [1/1] (0.00ns)   --->   "%zext_ln14_6 = zext i10 %add_ln15_3 to i64" [flat/flat.cpp:14]   --->   Operation 94 'zext' 'zext_ln14_6' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 95 [1/1] (0.00ns)   --->   "%flat_array_addr_4 = getelementptr [400 x float]* %flat_array, i64 0, i64 %zext_ln14_6" [flat/flat.cpp:14]   --->   Operation 95 'getelementptr' 'flat_array_addr_4' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 96 [1/1] (3.25ns)   --->   "store float %max_pool_out_load_4, float* %flat_array_addr_4, align 4" [flat/flat.cpp:14]   --->   Operation 96 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 400> <RAM>
+ST_6 : Operation 97 [1/1] (1.82ns)   --->   "%add_ln15_4 = add i10 %zext_ln15_1, 2" [flat/flat.cpp:15]   --->   Operation 97 'add' 'add_ln15_4' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 98 [1/2] (3.25ns)   --->   "%max_pool_out_load_5 = load float* %max_pool_out_addr_5, align 4" [flat/flat.cpp:14]   --->   Operation 98 'load' 'max_pool_out_load_5' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 400> <RAM>
+ST_6 : Operation 99 [1/1] (0.00ns)   --->   "%zext_ln14_7 = zext i10 %add_ln15_4 to i64" [flat/flat.cpp:14]   --->   Operation 99 'zext' 'zext_ln14_7' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 100 [1/1] (0.00ns)   --->   "%flat_array_addr_5 = getelementptr [400 x float]* %flat_array, i64 0, i64 %zext_ln14_7" [flat/flat.cpp:14]   --->   Operation 100 'getelementptr' 'flat_array_addr_5' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 101 [1/1] (3.25ns)   --->   "store float %max_pool_out_load_5, float* %flat_array_addr_5, align 4" [flat/flat.cpp:14]   --->   Operation 101 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 400> <RAM>
+ST_6 : Operation 102 [2/2] (3.25ns)   --->   "%max_pool_out_load_6 = load float* %max_pool_out_addr_6, align 4" [flat/flat.cpp:14]   --->   Operation 102 'load' 'max_pool_out_load_6' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 400> <RAM>
+ST_6 : Operation 103 [2/2] (3.25ns)   --->   "%max_pool_out_load_7 = load float* %max_pool_out_addr_7, align 4" [flat/flat.cpp:14]   --->   Operation 103 'load' 'max_pool_out_load_7' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 400> <RAM>
+
+State 7 <SV = 6> <Delay = 6.50>
+ST_7 : Operation 104 [1/1] (0.00ns)   --->   "%or_ln14_7 = or i10 %tmp_2, 8" [flat/flat.cpp:14]   --->   Operation 104 'or' 'or_ln14_7' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 105 [1/1] (0.00ns)   --->   "%zext_ln14_27 = zext i10 %or_ln14_7 to i64" [flat/flat.cpp:14]   --->   Operation 105 'zext' 'zext_ln14_27' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 106 [1/1] (0.00ns)   --->   "%max_pool_out_addr_8 = getelementptr [400 x float]* %max_pool_out, i64 0, i64 %zext_ln14_27" [flat/flat.cpp:14]   --->   Operation 106 'getelementptr' 'max_pool_out_addr_8' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 107 [1/1] (0.00ns)   --->   "%or_ln14_8 = or i10 %tmp_2, 9" [flat/flat.cpp:14]   --->   Operation 107 'or' 'or_ln14_8' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 108 [1/1] (0.00ns)   --->   "%zext_ln14_28 = zext i10 %or_ln14_8 to i64" [flat/flat.cpp:14]   --->   Operation 108 'zext' 'zext_ln14_28' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 109 [1/1] (0.00ns)   --->   "%max_pool_out_addr_9 = getelementptr [400 x float]* %max_pool_out, i64 0, i64 %zext_ln14_28" [flat/flat.cpp:14]   --->   Operation 109 'getelementptr' 'max_pool_out_addr_9' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 110 [1/1] (1.82ns)   --->   "%add_ln15_5 = add i10 %zext_ln15_1, 3" [flat/flat.cpp:15]   --->   Operation 110 'add' 'add_ln15_5' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 111 [1/2] (3.25ns)   --->   "%max_pool_out_load_6 = load float* %max_pool_out_addr_6, align 4" [flat/flat.cpp:14]   --->   Operation 111 'load' 'max_pool_out_load_6' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 400> <RAM>
+ST_7 : Operation 112 [1/1] (0.00ns)   --->   "%zext_ln14_8 = zext i10 %add_ln15_5 to i64" [flat/flat.cpp:14]   --->   Operation 112 'zext' 'zext_ln14_8' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 113 [1/1] (0.00ns)   --->   "%flat_array_addr_6 = getelementptr [400 x float]* %flat_array, i64 0, i64 %zext_ln14_8" [flat/flat.cpp:14]   --->   Operation 113 'getelementptr' 'flat_array_addr_6' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 114 [1/1] (3.25ns)   --->   "store float %max_pool_out_load_6, float* %flat_array_addr_6, align 4" [flat/flat.cpp:14]   --->   Operation 114 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 400> <RAM>
+ST_7 : Operation 115 [1/1] (0.00ns)   --->   "%or_ln15_2 = or i9 %i_1, 7" [flat/flat.cpp:15]   --->   Operation 115 'or' 'or_ln15_2' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 116 [1/2] (3.25ns)   --->   "%max_pool_out_load_7 = load float* %max_pool_out_addr_7, align 4" [flat/flat.cpp:14]   --->   Operation 116 'load' 'max_pool_out_load_7' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 400> <RAM>
+ST_7 : Operation 117 [1/1] (0.00ns)   --->   "%zext_ln14_9 = zext i9 %or_ln15_2 to i64" [flat/flat.cpp:14]   --->   Operation 117 'zext' 'zext_ln14_9' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 118 [1/1] (0.00ns)   --->   "%flat_array_addr_7 = getelementptr [400 x float]* %flat_array, i64 0, i64 %zext_ln14_9" [flat/flat.cpp:14]   --->   Operation 118 'getelementptr' 'flat_array_addr_7' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 119 [1/1] (3.25ns)   --->   "store float %max_pool_out_load_7, float* %flat_array_addr_7, align 4" [flat/flat.cpp:14]   --->   Operation 119 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 400> <RAM>
+ST_7 : Operation 120 [2/2] (3.25ns)   --->   "%max_pool_out_load_8 = load float* %max_pool_out_addr_8, align 4" [flat/flat.cpp:14]   --->   Operation 120 'load' 'max_pool_out_load_8' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 400> <RAM>
+ST_7 : Operation 121 [2/2] (3.25ns)   --->   "%max_pool_out_load_9 = load float* %max_pool_out_addr_9, align 4" [flat/flat.cpp:14]   --->   Operation 121 'load' 'max_pool_out_load_9' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 400> <RAM>
+
+State 8 <SV = 7> <Delay = 6.50>
+ST_8 : Operation 122 [1/1] (0.00ns)   --->   "%or_ln14_9 = or i10 %tmp_2, 10" [flat/flat.cpp:14]   --->   Operation 122 'or' 'or_ln14_9' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 123 [1/1] (0.00ns)   --->   "%zext_ln14_29 = zext i10 %or_ln14_9 to i64" [flat/flat.cpp:14]   --->   Operation 123 'zext' 'zext_ln14_29' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 124 [1/1] (0.00ns)   --->   "%max_pool_out_addr_10 = getelementptr [400 x float]* %max_pool_out, i64 0, i64 %zext_ln14_29" [flat/flat.cpp:14]   --->   Operation 124 'getelementptr' 'max_pool_out_addr_10' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 125 [1/1] (0.00ns)   --->   "%or_ln14_10 = or i10 %tmp_2, 11" [flat/flat.cpp:14]   --->   Operation 125 'or' 'or_ln14_10' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 126 [1/1] (0.00ns)   --->   "%zext_ln14_30 = zext i10 %or_ln14_10 to i64" [flat/flat.cpp:14]   --->   Operation 126 'zext' 'zext_ln14_30' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 127 [1/1] (0.00ns)   --->   "%max_pool_out_addr_11 = getelementptr [400 x float]* %max_pool_out, i64 0, i64 %zext_ln14_30" [flat/flat.cpp:14]   --->   Operation 127 'getelementptr' 'max_pool_out_addr_11' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 128 [1/1] (0.00ns)   --->   "%zext_ln15_2 = zext i9 %or_ln15_2 to i10" [flat/flat.cpp:15]   --->   Operation 128 'zext' 'zext_ln15_2' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 129 [1/1] (1.82ns)   --->   "%add_ln15_6 = add i10 %zext_ln15_2, 1" [flat/flat.cpp:15]   --->   Operation 129 'add' 'add_ln15_6' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 130 [1/2] (3.25ns)   --->   "%max_pool_out_load_8 = load float* %max_pool_out_addr_8, align 4" [flat/flat.cpp:14]   --->   Operation 130 'load' 'max_pool_out_load_8' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 400> <RAM>
+ST_8 : Operation 131 [1/1] (0.00ns)   --->   "%zext_ln14_10 = zext i10 %add_ln15_6 to i64" [flat/flat.cpp:14]   --->   Operation 131 'zext' 'zext_ln14_10' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 132 [1/1] (0.00ns)   --->   "%flat_array_addr_8 = getelementptr [400 x float]* %flat_array, i64 0, i64 %zext_ln14_10" [flat/flat.cpp:14]   --->   Operation 132 'getelementptr' 'flat_array_addr_8' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 133 [1/1] (3.25ns)   --->   "store float %max_pool_out_load_8, float* %flat_array_addr_8, align 4" [flat/flat.cpp:14]   --->   Operation 133 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 400> <RAM>
+ST_8 : Operation 134 [1/1] (1.82ns)   --->   "%add_ln15_7 = add i10 %zext_ln15_2, 2" [flat/flat.cpp:15]   --->   Operation 134 'add' 'add_ln15_7' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 135 [1/2] (3.25ns)   --->   "%max_pool_out_load_9 = load float* %max_pool_out_addr_9, align 4" [flat/flat.cpp:14]   --->   Operation 135 'load' 'max_pool_out_load_9' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 400> <RAM>
+ST_8 : Operation 136 [1/1] (0.00ns)   --->   "%zext_ln14_11 = zext i10 %add_ln15_7 to i64" [flat/flat.cpp:14]   --->   Operation 136 'zext' 'zext_ln14_11' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 137 [1/1] (0.00ns)   --->   "%flat_array_addr_9 = getelementptr [400 x float]* %flat_array, i64 0, i64 %zext_ln14_11" [flat/flat.cpp:14]   --->   Operation 137 'getelementptr' 'flat_array_addr_9' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 138 [1/1] (3.25ns)   --->   "store float %max_pool_out_load_9, float* %flat_array_addr_9, align 4" [flat/flat.cpp:14]   --->   Operation 138 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 400> <RAM>
+ST_8 : Operation 139 [2/2] (3.25ns)   --->   "%max_pool_out_load_10 = load float* %max_pool_out_addr_10, align 4" [flat/flat.cpp:14]   --->   Operation 139 'load' 'max_pool_out_load_10' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 400> <RAM>
+ST_8 : Operation 140 [2/2] (3.25ns)   --->   "%max_pool_out_load_11 = load float* %max_pool_out_addr_11, align 4" [flat/flat.cpp:14]   --->   Operation 140 'load' 'max_pool_out_load_11' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 400> <RAM>
+
+State 9 <SV = 8> <Delay = 6.50>
+ST_9 : Operation 141 [1/1] (0.00ns)   --->   "%or_ln14_11 = or i10 %tmp_2, 12" [flat/flat.cpp:14]   --->   Operation 141 'or' 'or_ln14_11' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 142 [1/1] (0.00ns)   --->   "%zext_ln14_31 = zext i10 %or_ln14_11 to i64" [flat/flat.cpp:14]   --->   Operation 142 'zext' 'zext_ln14_31' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 143 [1/1] (0.00ns)   --->   "%max_pool_out_addr_12 = getelementptr [400 x float]* %max_pool_out, i64 0, i64 %zext_ln14_31" [flat/flat.cpp:14]   --->   Operation 143 'getelementptr' 'max_pool_out_addr_12' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 144 [1/1] (0.00ns)   --->   "%or_ln14_12 = or i10 %tmp_2, 13" [flat/flat.cpp:14]   --->   Operation 144 'or' 'or_ln14_12' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 145 [1/1] (0.00ns)   --->   "%zext_ln14_32 = zext i10 %or_ln14_12 to i64" [flat/flat.cpp:14]   --->   Operation 145 'zext' 'zext_ln14_32' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 146 [1/1] (0.00ns)   --->   "%max_pool_out_addr_13 = getelementptr [400 x float]* %max_pool_out, i64 0, i64 %zext_ln14_32" [flat/flat.cpp:14]   --->   Operation 146 'getelementptr' 'max_pool_out_addr_13' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 147 [1/1] (1.82ns)   --->   "%add_ln15_8 = add i10 %zext_ln15_2, 3" [flat/flat.cpp:15]   --->   Operation 147 'add' 'add_ln15_8' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 148 [1/2] (3.25ns)   --->   "%max_pool_out_load_10 = load float* %max_pool_out_addr_10, align 4" [flat/flat.cpp:14]   --->   Operation 148 'load' 'max_pool_out_load_10' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 400> <RAM>
+ST_9 : Operation 149 [1/1] (0.00ns)   --->   "%zext_ln14_12 = zext i10 %add_ln15_8 to i64" [flat/flat.cpp:14]   --->   Operation 149 'zext' 'zext_ln14_12' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 150 [1/1] (0.00ns)   --->   "%flat_array_addr_10 = getelementptr [400 x float]* %flat_array, i64 0, i64 %zext_ln14_12" [flat/flat.cpp:14]   --->   Operation 150 'getelementptr' 'flat_array_addr_10' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 151 [1/1] (3.25ns)   --->   "store float %max_pool_out_load_10, float* %flat_array_addr_10, align 4" [flat/flat.cpp:14]   --->   Operation 151 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 400> <RAM>
+ST_9 : Operation 152 [1/1] (1.82ns)   --->   "%add_ln15_9 = add i10 %zext_ln15_2, 4" [flat/flat.cpp:15]   --->   Operation 152 'add' 'add_ln15_9' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 153 [1/2] (3.25ns)   --->   "%max_pool_out_load_11 = load float* %max_pool_out_addr_11, align 4" [flat/flat.cpp:14]   --->   Operation 153 'load' 'max_pool_out_load_11' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 400> <RAM>
+ST_9 : Operation 154 [1/1] (0.00ns)   --->   "%zext_ln14_13 = zext i10 %add_ln15_9 to i64" [flat/flat.cpp:14]   --->   Operation 154 'zext' 'zext_ln14_13' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 155 [1/1] (0.00ns)   --->   "%flat_array_addr_11 = getelementptr [400 x float]* %flat_array, i64 0, i64 %zext_ln14_13" [flat/flat.cpp:14]   --->   Operation 155 'getelementptr' 'flat_array_addr_11' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 156 [1/1] (3.25ns)   --->   "store float %max_pool_out_load_11, float* %flat_array_addr_11, align 4" [flat/flat.cpp:14]   --->   Operation 156 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 400> <RAM>
+ST_9 : Operation 157 [2/2] (3.25ns)   --->   "%max_pool_out_load_12 = load float* %max_pool_out_addr_12, align 4" [flat/flat.cpp:14]   --->   Operation 157 'load' 'max_pool_out_load_12' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 400> <RAM>
+ST_9 : Operation 158 [2/2] (3.25ns)   --->   "%max_pool_out_load_13 = load float* %max_pool_out_addr_13, align 4" [flat/flat.cpp:14]   --->   Operation 158 'load' 'max_pool_out_load_13' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 400> <RAM>
+
+State 10 <SV = 9> <Delay = 6.50>
+ST_10 : Operation 159 [1/1] (0.00ns)   --->   "%or_ln14_13 = or i10 %tmp_2, 14" [flat/flat.cpp:14]   --->   Operation 159 'or' 'or_ln14_13' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 160 [1/1] (0.00ns)   --->   "%zext_ln14_33 = zext i10 %or_ln14_13 to i64" [flat/flat.cpp:14]   --->   Operation 160 'zext' 'zext_ln14_33' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 161 [1/1] (0.00ns)   --->   "%max_pool_out_addr_14 = getelementptr [400 x float]* %max_pool_out, i64 0, i64 %zext_ln14_33" [flat/flat.cpp:14]   --->   Operation 161 'getelementptr' 'max_pool_out_addr_14' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 162 [1/1] (0.00ns)   --->   "%or_ln14_14 = or i10 %tmp_2, 15" [flat/flat.cpp:14]   --->   Operation 162 'or' 'or_ln14_14' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 163 [1/1] (0.00ns)   --->   "%zext_ln14_34 = zext i10 %or_ln14_14 to i64" [flat/flat.cpp:14]   --->   Operation 163 'zext' 'zext_ln14_34' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 164 [1/1] (0.00ns)   --->   "%max_pool_out_addr_15 = getelementptr [400 x float]* %max_pool_out, i64 0, i64 %zext_ln14_34" [flat/flat.cpp:14]   --->   Operation 164 'getelementptr' 'max_pool_out_addr_15' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 165 [1/1] (1.82ns)   --->   "%add_ln15_10 = add i10 %zext_ln15_2, 5" [flat/flat.cpp:15]   --->   Operation 165 'add' 'add_ln15_10' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 166 [1/2] (3.25ns)   --->   "%max_pool_out_load_12 = load float* %max_pool_out_addr_12, align 4" [flat/flat.cpp:14]   --->   Operation 166 'load' 'max_pool_out_load_12' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 400> <RAM>
+ST_10 : Operation 167 [1/1] (0.00ns)   --->   "%zext_ln14_14 = zext i10 %add_ln15_10 to i64" [flat/flat.cpp:14]   --->   Operation 167 'zext' 'zext_ln14_14' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 168 [1/1] (0.00ns)   --->   "%flat_array_addr_12 = getelementptr [400 x float]* %flat_array, i64 0, i64 %zext_ln14_14" [flat/flat.cpp:14]   --->   Operation 168 'getelementptr' 'flat_array_addr_12' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 169 [1/1] (3.25ns)   --->   "store float %max_pool_out_load_12, float* %flat_array_addr_12, align 4" [flat/flat.cpp:14]   --->   Operation 169 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 400> <RAM>
+ST_10 : Operation 170 [1/1] (1.82ns)   --->   "%add_ln15_11 = add i10 %zext_ln15_2, 6" [flat/flat.cpp:15]   --->   Operation 170 'add' 'add_ln15_11' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 171 [1/2] (3.25ns)   --->   "%max_pool_out_load_13 = load float* %max_pool_out_addr_13, align 4" [flat/flat.cpp:14]   --->   Operation 171 'load' 'max_pool_out_load_13' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 400> <RAM>
+ST_10 : Operation 172 [1/1] (0.00ns)   --->   "%zext_ln14_15 = zext i10 %add_ln15_11 to i64" [flat/flat.cpp:14]   --->   Operation 172 'zext' 'zext_ln14_15' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 173 [1/1] (0.00ns)   --->   "%flat_array_addr_13 = getelementptr [400 x float]* %flat_array, i64 0, i64 %zext_ln14_15" [flat/flat.cpp:14]   --->   Operation 173 'getelementptr' 'flat_array_addr_13' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 174 [1/1] (3.25ns)   --->   "store float %max_pool_out_load_13, float* %flat_array_addr_13, align 4" [flat/flat.cpp:14]   --->   Operation 174 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 400> <RAM>
+ST_10 : Operation 175 [2/2] (3.25ns)   --->   "%max_pool_out_load_14 = load float* %max_pool_out_addr_14, align 4" [flat/flat.cpp:14]   --->   Operation 175 'load' 'max_pool_out_load_14' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 400> <RAM>
+ST_10 : Operation 176 [2/2] (3.25ns)   --->   "%max_pool_out_load_15 = load float* %max_pool_out_addr_15, align 4" [flat/flat.cpp:14]   --->   Operation 176 'load' 'max_pool_out_load_15' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 400> <RAM>
+
+State 11 <SV = 10> <Delay = 6.50>
+ST_11 : Operation 177 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([7 x i8]* @p_str1) nounwind" [flat/flat.cpp:10]   --->   Operation 177 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 178 [1/1] (1.82ns)   --->   "%add_ln15 = add i9 %i_1, 16" [flat/flat.cpp:15]   --->   Operation 178 'add' 'add_ln15' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 179 [1/1] (1.82ns)   --->   "%add_ln15_12 = add i10 %zext_ln15_2, 7" [flat/flat.cpp:15]   --->   Operation 179 'add' 'add_ln15_12' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 180 [1/2] (3.25ns)   --->   "%max_pool_out_load_14 = load float* %max_pool_out_addr_14, align 4" [flat/flat.cpp:14]   --->   Operation 180 'load' 'max_pool_out_load_14' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 400> <RAM>
+ST_11 : Operation 181 [1/1] (0.00ns)   --->   "%zext_ln14_16 = zext i10 %add_ln15_12 to i64" [flat/flat.cpp:14]   --->   Operation 181 'zext' 'zext_ln14_16' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 182 [1/1] (0.00ns)   --->   "%flat_array_addr_14 = getelementptr [400 x float]* %flat_array, i64 0, i64 %zext_ln14_16" [flat/flat.cpp:14]   --->   Operation 182 'getelementptr' 'flat_array_addr_14' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 183 [1/1] (3.25ns)   --->   "store float %max_pool_out_load_14, float* %flat_array_addr_14, align 4" [flat/flat.cpp:14]   --->   Operation 183 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 400> <RAM>
+ST_11 : Operation 184 [1/1] (0.00ns)   --->   "%or_ln15_3 = or i9 %i_1, 15" [flat/flat.cpp:15]   --->   Operation 184 'or' 'or_ln15_3' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 185 [1/2] (3.25ns)   --->   "%max_pool_out_load_15 = load float* %max_pool_out_addr_15, align 4" [flat/flat.cpp:14]   --->   Operation 185 'load' 'max_pool_out_load_15' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 400> <RAM>
+ST_11 : Operation 186 [1/1] (0.00ns)   --->   "%zext_ln14_17 = zext i9 %or_ln15_3 to i64" [flat/flat.cpp:14]   --->   Operation 186 'zext' 'zext_ln14_17' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 187 [1/1] (0.00ns)   --->   "%flat_array_addr_15 = getelementptr [400 x float]* %flat_array, i64 0, i64 %zext_ln14_17" [flat/flat.cpp:14]   --->   Operation 187 'getelementptr' 'flat_array_addr_15' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 188 [1/1] (3.25ns)   --->   "store float %max_pool_out_load_15, float* %flat_array_addr_15, align 4" [flat/flat.cpp:14]   --->   Operation 188 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 400> <RAM>
+ST_11 : Operation 189 [1/1] (0.00ns)   --->   "br label %2" [flat/flat.cpp:9]   --->   Operation 189 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 20ns, clock uncertainty: 2.5ns.
+
+ <State 1>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('r') with incoming values : ('r', flat/flat.cpp:6) [8]  (1.77 ns)
+
+ <State 2>: 1.82ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', flat/flat.cpp:15) [9]  (0 ns)
+	'add' operation ('i', flat/flat.cpp:15) [17]  (1.82 ns)
+
+ <State 3>: 5.08ns
+The critical path consists of the following:
+	'phi' operation ('c') with incoming values : ('c', flat/flat.cpp:9) [25]  (0 ns)
+	'add' operation ('add_ln14_1', flat/flat.cpp:14) [34]  (1.83 ns)
+	'getelementptr' operation ('max_pool_out_addr', flat/flat.cpp:14) [37]  (0 ns)
+	'load' operation ('max_pool_out_load', flat/flat.cpp:14) on array 'max_pool_out' [83]  (3.25 ns)
+
+ <State 4>: 6.51ns
+The critical path consists of the following:
+	'load' operation ('max_pool_out_load', flat/flat.cpp:14) on array 'max_pool_out' [83]  (3.25 ns)
+	'store' operation ('store_ln14', flat/flat.cpp:14) of variable 'max_pool_out_load', flat/flat.cpp:14 on array 'flat_array' [86]  (3.25 ns)
+
+ <State 5>: 6.51ns
+The critical path consists of the following:
+	'load' operation ('max_pool_out_load_2', flat/flat.cpp:14) on array 'max_pool_out' [94]  (3.25 ns)
+	'store' operation ('store_ln14', flat/flat.cpp:14) of variable 'max_pool_out_load_2', flat/flat.cpp:14 on array 'flat_array' [97]  (3.25 ns)
+
+ <State 6>: 6.51ns
+The critical path consists of the following:
+	'load' operation ('max_pool_out_load_4', flat/flat.cpp:14) on array 'max_pool_out' [105]  (3.25 ns)
+	'store' operation ('store_ln14', flat/flat.cpp:14) of variable 'max_pool_out_load_4', flat/flat.cpp:14 on array 'flat_array' [108]  (3.25 ns)
+
+ <State 7>: 6.51ns
+The critical path consists of the following:
+	'load' operation ('max_pool_out_load_6', flat/flat.cpp:14) on array 'max_pool_out' [115]  (3.25 ns)
+	'store' operation ('store_ln14', flat/flat.cpp:14) of variable 'max_pool_out_load_6', flat/flat.cpp:14 on array 'flat_array' [118]  (3.25 ns)
+
+ <State 8>: 6.51ns
+The critical path consists of the following:
+	'load' operation ('max_pool_out_load_8', flat/flat.cpp:14) on array 'max_pool_out' [126]  (3.25 ns)
+	'store' operation ('store_ln14', flat/flat.cpp:14) of variable 'max_pool_out_load_8', flat/flat.cpp:14 on array 'flat_array' [129]  (3.25 ns)
+
+ <State 9>: 6.51ns
+The critical path consists of the following:
+	'load' operation ('max_pool_out_load_10', flat/flat.cpp:14) on array 'max_pool_out' [136]  (3.25 ns)
+	'store' operation ('store_ln14', flat/flat.cpp:14) of variable 'max_pool_out_load_10', flat/flat.cpp:14 on array 'flat_array' [139]  (3.25 ns)
+
+ <State 10>: 6.51ns
+The critical path consists of the following:
+	'load' operation ('max_pool_out_load_12', flat/flat.cpp:14) on array 'max_pool_out' [146]  (3.25 ns)
+	'store' operation ('store_ln14', flat/flat.cpp:14) of variable 'max_pool_out_load_12', flat/flat.cpp:14 on array 'flat_array' [149]  (3.25 ns)
+
+ <State 11>: 6.51ns
+The critical path consists of the following:
+	'load' operation ('max_pool_out_load_14', flat/flat.cpp:14) on array 'max_pool_out' [156]  (3.25 ns)
+	'store' operation ('store_ln14', flat/flat.cpp:14) of variable 'max_pool_out_load_14', flat/flat.cpp:14 on array 'flat_array' [159]  (3.25 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

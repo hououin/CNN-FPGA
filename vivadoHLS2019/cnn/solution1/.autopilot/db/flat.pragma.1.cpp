@@ -154,17 +154,16 @@ extern "C" {
 # 1 "cnn/flat.h" 1
 
 # 1 "cnn/parameters.h" 1
-# 2 "cnn/flat.h" 2
-
+# 3 "cnn/flat.h" 2
 
 void flat
 (
- float max_pool_out[(11 / 2)][(11 / 2)][64],
- float flat_array[(64 * (11 / 2) * (11 / 2))]
+ float max_pool_out[(11 / 2)][(11 / 2)][16],
+ float flat_array[(16 * (11 / 2) * (11 / 2))]
 );
 # 2 "cnn/flat.cpp" 2
 
-void flat(float max_pool_out[(11 / 2)][(11 / 2)][64], float flat_array[(64 * (11 / 2) * (11 / 2))]) {_ssdm_SpecArrayDimSize(max_pool_out, 5);_ssdm_SpecArrayDimSize(flat_array, 1600);
+void flat(float max_pool_out[(11 / 2)][(11 / 2)][16], float flat_array[(16 * (11 / 2) * (11 / 2))]) {_ssdm_SpecArrayDimSize(max_pool_out, 5);_ssdm_SpecArrayDimSize(flat_array, 400);
     int i = 0;
     Row_Loop:
     for (int r = 0; r < (11 / 2); ++r)
@@ -173,7 +172,7 @@ void flat(float max_pool_out[(11 / 2)][(11 / 2)][64], float flat_array[(64 * (11
         for (int c = 0; c < (11 / 2); ++c)
         {
          Filter_Loop:
-            for (int f = 0; f < 64; ++f)
+            for (int f = 0; f < 16; ++f)
             {
                 flat_array[i] = max_pool_out[r][c][f];
                 ++i;

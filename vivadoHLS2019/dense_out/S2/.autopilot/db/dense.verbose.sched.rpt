@@ -1,0 +1,1921 @@
+
+
+================================================================
+== Vivado HLS Report for 'dense'
+================================================================
+* Date:           Tue Apr 16 02:41:19 2024
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        dense_out
+* Solution:       S2
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  20.00|    17.393|        2.50|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +------+------+------+------+---------+
+    |   Latency   |   Interval  | Pipeline|
+    |  min |  max |  min |  max |   Type  |
+    +------+------+------+------+---------+
+    |  1538|  1538|  1538|  1538|   none  |
+    +------+------+------+------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------+------+------+----------+-----------+-----------+------+----------+
+        |                   |   Latency   | Iteration|  Initiation Interval  | Trip |          |
+        |     Loop Name     |  min |  max |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------------+------+------+----------+-----------+-----------+------+----------+
+        |- Dense_Loop       |  1270|  1270|       127|          -|          -|    10|    no    |
+        |- Sum_Loop         |   100|   100|        10|          -|          -|    10|    no    |
+        |- Prediction_Loop  |   150|   150|        15|          -|          -|    10|    no    |
+        +-------------------+------+------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 168
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 144 
+18 --> 19 
+19 --> 20 
+20 --> 21 
+21 --> 22 
+22 --> 23 
+23 --> 24 
+24 --> 25 
+25 --> 26 
+26 --> 27 
+27 --> 28 
+28 --> 29 
+29 --> 30 
+30 --> 31 
+31 --> 32 
+32 --> 33 
+33 --> 34 
+34 --> 35 
+35 --> 36 
+36 --> 37 
+37 --> 38 
+38 --> 39 
+39 --> 40 
+40 --> 41 
+41 --> 42 
+42 --> 43 
+43 --> 44 
+44 --> 45 
+45 --> 46 
+46 --> 47 
+47 --> 48 
+48 --> 49 
+49 --> 50 
+50 --> 51 
+51 --> 52 
+52 --> 53 
+53 --> 54 
+54 --> 55 
+55 --> 56 
+56 --> 57 
+57 --> 58 
+58 --> 59 
+59 --> 60 
+60 --> 61 
+61 --> 62 
+62 --> 63 
+63 --> 64 
+64 --> 65 
+65 --> 66 
+66 --> 67 
+67 --> 68 
+68 --> 69 
+69 --> 70 
+70 --> 71 
+71 --> 72 
+72 --> 73 
+73 --> 74 
+74 --> 75 
+75 --> 76 
+76 --> 77 
+77 --> 78 
+78 --> 79 
+79 --> 80 
+80 --> 81 
+81 --> 82 
+82 --> 83 
+83 --> 84 
+84 --> 85 
+85 --> 86 
+86 --> 87 
+87 --> 88 
+88 --> 89 
+89 --> 90 
+90 --> 91 
+91 --> 92 
+92 --> 93 
+93 --> 94 
+94 --> 95 
+95 --> 96 
+96 --> 97 
+97 --> 98 
+98 --> 99 
+99 --> 100 
+100 --> 101 
+101 --> 102 
+102 --> 103 
+103 --> 104 
+104 --> 105 
+105 --> 106 
+106 --> 107 
+107 --> 108 
+108 --> 109 
+109 --> 110 
+110 --> 111 
+111 --> 112 
+112 --> 113 
+113 --> 114 
+114 --> 115 
+115 --> 116 
+116 --> 117 
+117 --> 118 
+118 --> 119 
+119 --> 120 
+120 --> 121 
+121 --> 122 
+122 --> 123 
+123 --> 124 
+124 --> 125 
+125 --> 126 
+126 --> 127 
+127 --> 128 
+128 --> 129 
+129 --> 130 
+130 --> 131 
+131 --> 132 
+132 --> 133 
+133 --> 134 
+134 --> 135 
+135 --> 136 
+136 --> 137 
+137 --> 138 
+138 --> 139 
+139 --> 140 
+140 --> 141 
+141 --> 142 
+142 --> 143 
+143 --> 17 
+144 --> 145 154 
+145 --> 146 
+146 --> 147 
+147 --> 148 
+148 --> 149 
+149 --> 150 
+150 --> 151 
+151 --> 152 
+152 --> 153 
+153 --> 144 
+154 --> 155 
+155 --> 156 
+156 --> 157 
+157 --> 158 
+158 --> 159 
+159 --> 160 
+160 --> 161 
+161 --> 162 
+162 --> 163 
+163 --> 164 
+164 --> 165 
+165 --> 166 
+166 --> 167 
+167 --> 168 
+168 --> 154 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.32>
+ST_1 : Operation 169 [1/1] (0.00ns)   --->   "%dense_array = alloca [10 x float], align 16" [dense_out/dense_out.cpp:13]   --->   Operation 169 'alloca' 'dense_array' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_1 : Operation 170 [1/1] (0.00ns)   --->   "%fully_connected_addr = getelementptr [30 x float]* %fully_connected, i64 0, i64 0" [dense_out/dense_out.cpp:23]   --->   Operation 170 'getelementptr' 'fully_connected_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 171 [2/2] (2.32ns)   --->   "%fully_connected_load = load float* %fully_connected_addr, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 171 'load' 'fully_connected_load' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_1 : Operation 172 [1/1] (0.00ns)   --->   "%fully_connected_addr_1 = getelementptr [30 x float]* %fully_connected, i64 0, i64 1" [dense_out/dense_out.cpp:23]   --->   Operation 172 'getelementptr' 'fully_connected_addr_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 173 [2/2] (2.32ns)   --->   "%fully_connected_load_1 = load float* %fully_connected_addr_1, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 173 'load' 'fully_connected_load_1' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+
+State 2 <SV = 1> <Delay = 2.32>
+ST_2 : Operation 174 [1/2] (2.32ns)   --->   "%fully_connected_load = load float* %fully_connected_addr, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 174 'load' 'fully_connected_load' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_2 : Operation 175 [1/2] (2.32ns)   --->   "%fully_connected_load_1 = load float* %fully_connected_addr_1, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 175 'load' 'fully_connected_load_1' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_2 : Operation 176 [1/1] (0.00ns)   --->   "%fully_connected_addr_2 = getelementptr [30 x float]* %fully_connected, i64 0, i64 2" [dense_out/dense_out.cpp:23]   --->   Operation 176 'getelementptr' 'fully_connected_addr_2' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 177 [2/2] (2.32ns)   --->   "%fully_connected_load_2 = load float* %fully_connected_addr_2, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 177 'load' 'fully_connected_load_2' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_2 : Operation 178 [1/1] (0.00ns)   --->   "%fully_connected_addr_3 = getelementptr [30 x float]* %fully_connected, i64 0, i64 3" [dense_out/dense_out.cpp:23]   --->   Operation 178 'getelementptr' 'fully_connected_addr_3' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 179 [2/2] (2.32ns)   --->   "%fully_connected_load_3 = load float* %fully_connected_addr_3, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 179 'load' 'fully_connected_load_3' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+
+State 3 <SV = 2> <Delay = 2.32>
+ST_3 : Operation 180 [1/2] (2.32ns)   --->   "%fully_connected_load_2 = load float* %fully_connected_addr_2, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 180 'load' 'fully_connected_load_2' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_3 : Operation 181 [1/2] (2.32ns)   --->   "%fully_connected_load_3 = load float* %fully_connected_addr_3, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 181 'load' 'fully_connected_load_3' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_3 : Operation 182 [1/1] (0.00ns)   --->   "%fully_connected_addr_4 = getelementptr [30 x float]* %fully_connected, i64 0, i64 4" [dense_out/dense_out.cpp:23]   --->   Operation 182 'getelementptr' 'fully_connected_addr_4' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 183 [2/2] (2.32ns)   --->   "%fully_connected_load_4 = load float* %fully_connected_addr_4, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 183 'load' 'fully_connected_load_4' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_3 : Operation 184 [1/1] (0.00ns)   --->   "%fully_connected_addr_5 = getelementptr [30 x float]* %fully_connected, i64 0, i64 5" [dense_out/dense_out.cpp:23]   --->   Operation 184 'getelementptr' 'fully_connected_addr_5' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 185 [2/2] (2.32ns)   --->   "%fully_connected_load_5 = load float* %fully_connected_addr_5, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 185 'load' 'fully_connected_load_5' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+
+State 4 <SV = 3> <Delay = 2.32>
+ST_4 : Operation 186 [1/2] (2.32ns)   --->   "%fully_connected_load_4 = load float* %fully_connected_addr_4, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 186 'load' 'fully_connected_load_4' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_4 : Operation 187 [1/2] (2.32ns)   --->   "%fully_connected_load_5 = load float* %fully_connected_addr_5, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 187 'load' 'fully_connected_load_5' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_4 : Operation 188 [1/1] (0.00ns)   --->   "%fully_connected_addr_6 = getelementptr [30 x float]* %fully_connected, i64 0, i64 6" [dense_out/dense_out.cpp:23]   --->   Operation 188 'getelementptr' 'fully_connected_addr_6' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 189 [2/2] (2.32ns)   --->   "%fully_connected_load_6 = load float* %fully_connected_addr_6, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 189 'load' 'fully_connected_load_6' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_4 : Operation 190 [1/1] (0.00ns)   --->   "%fully_connected_addr_7 = getelementptr [30 x float]* %fully_connected, i64 0, i64 7" [dense_out/dense_out.cpp:23]   --->   Operation 190 'getelementptr' 'fully_connected_addr_7' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 191 [2/2] (2.32ns)   --->   "%fully_connected_load_7 = load float* %fully_connected_addr_7, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 191 'load' 'fully_connected_load_7' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+
+State 5 <SV = 4> <Delay = 2.32>
+ST_5 : Operation 192 [1/2] (2.32ns)   --->   "%fully_connected_load_6 = load float* %fully_connected_addr_6, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 192 'load' 'fully_connected_load_6' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_5 : Operation 193 [1/2] (2.32ns)   --->   "%fully_connected_load_7 = load float* %fully_connected_addr_7, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 193 'load' 'fully_connected_load_7' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_5 : Operation 194 [1/1] (0.00ns)   --->   "%fully_connected_addr_8 = getelementptr [30 x float]* %fully_connected, i64 0, i64 8" [dense_out/dense_out.cpp:23]   --->   Operation 194 'getelementptr' 'fully_connected_addr_8' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 195 [2/2] (2.32ns)   --->   "%fully_connected_load_8 = load float* %fully_connected_addr_8, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 195 'load' 'fully_connected_load_8' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_5 : Operation 196 [1/1] (0.00ns)   --->   "%fully_connected_addr_9 = getelementptr [30 x float]* %fully_connected, i64 0, i64 9" [dense_out/dense_out.cpp:23]   --->   Operation 196 'getelementptr' 'fully_connected_addr_9' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 197 [2/2] (2.32ns)   --->   "%fully_connected_load_9 = load float* %fully_connected_addr_9, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 197 'load' 'fully_connected_load_9' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+
+State 6 <SV = 5> <Delay = 2.32>
+ST_6 : Operation 198 [1/2] (2.32ns)   --->   "%fully_connected_load_8 = load float* %fully_connected_addr_8, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 198 'load' 'fully_connected_load_8' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_6 : Operation 199 [1/2] (2.32ns)   --->   "%fully_connected_load_9 = load float* %fully_connected_addr_9, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 199 'load' 'fully_connected_load_9' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_6 : Operation 200 [1/1] (0.00ns)   --->   "%fully_connected_addr_10 = getelementptr [30 x float]* %fully_connected, i64 0, i64 10" [dense_out/dense_out.cpp:23]   --->   Operation 200 'getelementptr' 'fully_connected_addr_10' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 201 [2/2] (2.32ns)   --->   "%fully_connected_load_10 = load float* %fully_connected_addr_10, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 201 'load' 'fully_connected_load_10' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_6 : Operation 202 [1/1] (0.00ns)   --->   "%fully_connected_addr_11 = getelementptr [30 x float]* %fully_connected, i64 0, i64 11" [dense_out/dense_out.cpp:23]   --->   Operation 202 'getelementptr' 'fully_connected_addr_11' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 203 [2/2] (2.32ns)   --->   "%fully_connected_load_11 = load float* %fully_connected_addr_11, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 203 'load' 'fully_connected_load_11' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+
+State 7 <SV = 6> <Delay = 2.32>
+ST_7 : Operation 204 [1/2] (2.32ns)   --->   "%fully_connected_load_10 = load float* %fully_connected_addr_10, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 204 'load' 'fully_connected_load_10' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_7 : Operation 205 [1/2] (2.32ns)   --->   "%fully_connected_load_11 = load float* %fully_connected_addr_11, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 205 'load' 'fully_connected_load_11' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_7 : Operation 206 [1/1] (0.00ns)   --->   "%fully_connected_addr_12 = getelementptr [30 x float]* %fully_connected, i64 0, i64 12" [dense_out/dense_out.cpp:23]   --->   Operation 206 'getelementptr' 'fully_connected_addr_12' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 207 [2/2] (2.32ns)   --->   "%fully_connected_load_12 = load float* %fully_connected_addr_12, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 207 'load' 'fully_connected_load_12' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_7 : Operation 208 [1/1] (0.00ns)   --->   "%fully_connected_addr_13 = getelementptr [30 x float]* %fully_connected, i64 0, i64 13" [dense_out/dense_out.cpp:23]   --->   Operation 208 'getelementptr' 'fully_connected_addr_13' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 209 [2/2] (2.32ns)   --->   "%fully_connected_load_13 = load float* %fully_connected_addr_13, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 209 'load' 'fully_connected_load_13' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+
+State 8 <SV = 7> <Delay = 2.32>
+ST_8 : Operation 210 [1/2] (2.32ns)   --->   "%fully_connected_load_12 = load float* %fully_connected_addr_12, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 210 'load' 'fully_connected_load_12' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_8 : Operation 211 [1/2] (2.32ns)   --->   "%fully_connected_load_13 = load float* %fully_connected_addr_13, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 211 'load' 'fully_connected_load_13' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_8 : Operation 212 [1/1] (0.00ns)   --->   "%fully_connected_addr_14 = getelementptr [30 x float]* %fully_connected, i64 0, i64 14" [dense_out/dense_out.cpp:23]   --->   Operation 212 'getelementptr' 'fully_connected_addr_14' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 213 [2/2] (2.32ns)   --->   "%fully_connected_load_14 = load float* %fully_connected_addr_14, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 213 'load' 'fully_connected_load_14' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_8 : Operation 214 [1/1] (0.00ns)   --->   "%fully_connected_addr_15 = getelementptr [30 x float]* %fully_connected, i64 0, i64 15" [dense_out/dense_out.cpp:23]   --->   Operation 214 'getelementptr' 'fully_connected_addr_15' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 215 [2/2] (2.32ns)   --->   "%fully_connected_load_15 = load float* %fully_connected_addr_15, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 215 'load' 'fully_connected_load_15' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+
+State 9 <SV = 8> <Delay = 2.32>
+ST_9 : Operation 216 [1/2] (2.32ns)   --->   "%fully_connected_load_14 = load float* %fully_connected_addr_14, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 216 'load' 'fully_connected_load_14' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_9 : Operation 217 [1/2] (2.32ns)   --->   "%fully_connected_load_15 = load float* %fully_connected_addr_15, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 217 'load' 'fully_connected_load_15' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_9 : Operation 218 [1/1] (0.00ns)   --->   "%fully_connected_addr_16 = getelementptr [30 x float]* %fully_connected, i64 0, i64 16" [dense_out/dense_out.cpp:23]   --->   Operation 218 'getelementptr' 'fully_connected_addr_16' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 219 [2/2] (2.32ns)   --->   "%fully_connected_load_16 = load float* %fully_connected_addr_16, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 219 'load' 'fully_connected_load_16' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_9 : Operation 220 [1/1] (0.00ns)   --->   "%fully_connected_addr_17 = getelementptr [30 x float]* %fully_connected, i64 0, i64 17" [dense_out/dense_out.cpp:23]   --->   Operation 220 'getelementptr' 'fully_connected_addr_17' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 221 [2/2] (2.32ns)   --->   "%fully_connected_load_17 = load float* %fully_connected_addr_17, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 221 'load' 'fully_connected_load_17' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+
+State 10 <SV = 9> <Delay = 2.32>
+ST_10 : Operation 222 [1/2] (2.32ns)   --->   "%fully_connected_load_16 = load float* %fully_connected_addr_16, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 222 'load' 'fully_connected_load_16' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_10 : Operation 223 [1/2] (2.32ns)   --->   "%fully_connected_load_17 = load float* %fully_connected_addr_17, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 223 'load' 'fully_connected_load_17' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_10 : Operation 224 [1/1] (0.00ns)   --->   "%fully_connected_addr_18 = getelementptr [30 x float]* %fully_connected, i64 0, i64 18" [dense_out/dense_out.cpp:23]   --->   Operation 224 'getelementptr' 'fully_connected_addr_18' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 225 [2/2] (2.32ns)   --->   "%fully_connected_load_18 = load float* %fully_connected_addr_18, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 225 'load' 'fully_connected_load_18' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_10 : Operation 226 [1/1] (0.00ns)   --->   "%fully_connected_addr_19 = getelementptr [30 x float]* %fully_connected, i64 0, i64 19" [dense_out/dense_out.cpp:23]   --->   Operation 226 'getelementptr' 'fully_connected_addr_19' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 227 [2/2] (2.32ns)   --->   "%fully_connected_load_19 = load float* %fully_connected_addr_19, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 227 'load' 'fully_connected_load_19' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+
+State 11 <SV = 10> <Delay = 2.32>
+ST_11 : Operation 228 [1/2] (2.32ns)   --->   "%fully_connected_load_18 = load float* %fully_connected_addr_18, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 228 'load' 'fully_connected_load_18' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_11 : Operation 229 [1/2] (2.32ns)   --->   "%fully_connected_load_19 = load float* %fully_connected_addr_19, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 229 'load' 'fully_connected_load_19' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_11 : Operation 230 [1/1] (0.00ns)   --->   "%fully_connected_addr_20 = getelementptr [30 x float]* %fully_connected, i64 0, i64 20" [dense_out/dense_out.cpp:23]   --->   Operation 230 'getelementptr' 'fully_connected_addr_20' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 231 [2/2] (2.32ns)   --->   "%fully_connected_load_20 = load float* %fully_connected_addr_20, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 231 'load' 'fully_connected_load_20' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_11 : Operation 232 [1/1] (0.00ns)   --->   "%fully_connected_addr_21 = getelementptr [30 x float]* %fully_connected, i64 0, i64 21" [dense_out/dense_out.cpp:23]   --->   Operation 232 'getelementptr' 'fully_connected_addr_21' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 233 [2/2] (2.32ns)   --->   "%fully_connected_load_21 = load float* %fully_connected_addr_21, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 233 'load' 'fully_connected_load_21' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+
+State 12 <SV = 11> <Delay = 2.32>
+ST_12 : Operation 234 [1/2] (2.32ns)   --->   "%fully_connected_load_20 = load float* %fully_connected_addr_20, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 234 'load' 'fully_connected_load_20' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_12 : Operation 235 [1/2] (2.32ns)   --->   "%fully_connected_load_21 = load float* %fully_connected_addr_21, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 235 'load' 'fully_connected_load_21' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_12 : Operation 236 [1/1] (0.00ns)   --->   "%fully_connected_addr_22 = getelementptr [30 x float]* %fully_connected, i64 0, i64 22" [dense_out/dense_out.cpp:23]   --->   Operation 236 'getelementptr' 'fully_connected_addr_22' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 237 [2/2] (2.32ns)   --->   "%fully_connected_load_22 = load float* %fully_connected_addr_22, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 237 'load' 'fully_connected_load_22' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_12 : Operation 238 [1/1] (0.00ns)   --->   "%fully_connected_addr_23 = getelementptr [30 x float]* %fully_connected, i64 0, i64 23" [dense_out/dense_out.cpp:23]   --->   Operation 238 'getelementptr' 'fully_connected_addr_23' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 239 [2/2] (2.32ns)   --->   "%fully_connected_load_23 = load float* %fully_connected_addr_23, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 239 'load' 'fully_connected_load_23' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+
+State 13 <SV = 12> <Delay = 2.32>
+ST_13 : Operation 240 [1/2] (2.32ns)   --->   "%fully_connected_load_22 = load float* %fully_connected_addr_22, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 240 'load' 'fully_connected_load_22' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_13 : Operation 241 [1/2] (2.32ns)   --->   "%fully_connected_load_23 = load float* %fully_connected_addr_23, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 241 'load' 'fully_connected_load_23' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_13 : Operation 242 [1/1] (0.00ns)   --->   "%fully_connected_addr_24 = getelementptr [30 x float]* %fully_connected, i64 0, i64 24" [dense_out/dense_out.cpp:23]   --->   Operation 242 'getelementptr' 'fully_connected_addr_24' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 243 [2/2] (2.32ns)   --->   "%fully_connected_load_24 = load float* %fully_connected_addr_24, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 243 'load' 'fully_connected_load_24' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_13 : Operation 244 [1/1] (0.00ns)   --->   "%fully_connected_addr_25 = getelementptr [30 x float]* %fully_connected, i64 0, i64 25" [dense_out/dense_out.cpp:23]   --->   Operation 244 'getelementptr' 'fully_connected_addr_25' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 245 [2/2] (2.32ns)   --->   "%fully_connected_load_25 = load float* %fully_connected_addr_25, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 245 'load' 'fully_connected_load_25' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+
+State 14 <SV = 13> <Delay = 2.32>
+ST_14 : Operation 246 [1/2] (2.32ns)   --->   "%fully_connected_load_24 = load float* %fully_connected_addr_24, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 246 'load' 'fully_connected_load_24' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_14 : Operation 247 [1/2] (2.32ns)   --->   "%fully_connected_load_25 = load float* %fully_connected_addr_25, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 247 'load' 'fully_connected_load_25' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_14 : Operation 248 [1/1] (0.00ns)   --->   "%fully_connected_addr_26 = getelementptr [30 x float]* %fully_connected, i64 0, i64 26" [dense_out/dense_out.cpp:23]   --->   Operation 248 'getelementptr' 'fully_connected_addr_26' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 249 [2/2] (2.32ns)   --->   "%fully_connected_load_26 = load float* %fully_connected_addr_26, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 249 'load' 'fully_connected_load_26' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_14 : Operation 250 [1/1] (0.00ns)   --->   "%fully_connected_addr_27 = getelementptr [30 x float]* %fully_connected, i64 0, i64 27" [dense_out/dense_out.cpp:23]   --->   Operation 250 'getelementptr' 'fully_connected_addr_27' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 251 [2/2] (2.32ns)   --->   "%fully_connected_load_27 = load float* %fully_connected_addr_27, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 251 'load' 'fully_connected_load_27' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+
+State 15 <SV = 14> <Delay = 2.32>
+ST_15 : Operation 252 [1/2] (2.32ns)   --->   "%fully_connected_load_26 = load float* %fully_connected_addr_26, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 252 'load' 'fully_connected_load_26' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_15 : Operation 253 [1/2] (2.32ns)   --->   "%fully_connected_load_27 = load float* %fully_connected_addr_27, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 253 'load' 'fully_connected_load_27' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_15 : Operation 254 [1/1] (0.00ns)   --->   "%fully_connected_addr_28 = getelementptr [30 x float]* %fully_connected, i64 0, i64 28" [dense_out/dense_out.cpp:23]   --->   Operation 254 'getelementptr' 'fully_connected_addr_28' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 255 [2/2] (2.32ns)   --->   "%fully_connected_load_28 = load float* %fully_connected_addr_28, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 255 'load' 'fully_connected_load_28' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_15 : Operation 256 [1/1] (0.00ns)   --->   "%fully_connected_addr_29 = getelementptr [30 x float]* %fully_connected, i64 0, i64 29" [dense_out/dense_out.cpp:23]   --->   Operation 256 'getelementptr' 'fully_connected_addr_29' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 257 [2/2] (2.32ns)   --->   "%fully_connected_load_29 = load float* %fully_connected_addr_29, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 257 'load' 'fully_connected_load_29' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+
+State 16 <SV = 15> <Delay = 2.32>
+ST_16 : Operation 258 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([30 x float]* %fully_connected) nounwind, !map !7"   --->   Operation 258 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 259 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([10 x float]* %prediction) nounwind, !map !13"   --->   Operation 259 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 260 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([6 x i8]* @dense_str) nounwind"   --->   Operation 260 'spectopmodule' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 261 [1/2] (2.32ns)   --->   "%fully_connected_load_28 = load float* %fully_connected_addr_28, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 261 'load' 'fully_connected_load_28' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_16 : Operation 262 [1/2] (2.32ns)   --->   "%fully_connected_load_29 = load float* %fully_connected_addr_29, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 262 'load' 'fully_connected_load_29' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_16 : Operation 263 [1/1] (1.76ns)   --->   "br label %1" [dense_out/dense_out.cpp:16]   --->   Operation 263 'br' <Predicate = true> <Delay = 1.76>
+
+State 17 <SV = 16> <Delay = 3.25>
+ST_17 : Operation 264 [1/1] (0.00ns)   --->   "%d_0 = phi i4 [ 0, %0 ], [ %d, %2 ]"   --->   Operation 264 'phi' 'd_0' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 265 [1/1] (1.30ns)   --->   "%icmp_ln16 = icmp eq i4 %d_0, -6" [dense_out/dense_out.cpp:16]   --->   Operation 265 'icmp' 'icmp_ln16' <Predicate = true> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 266 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 10, i64 10, i64 10) nounwind"   --->   Operation 266 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 267 [1/1] (1.73ns)   --->   "%d = add i4 %d_0, 1" [dense_out/dense_out.cpp:16]   --->   Operation 267 'add' 'd' <Predicate = true> <Delay = 1.73> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 268 [1/1] (0.00ns)   --->   "br i1 %icmp_ln16, label %.preheader1.preheader, label %2" [dense_out/dense_out.cpp:16]   --->   Operation 268 'br' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 269 [1/1] (0.00ns)   --->   "%zext_ln23 = zext i4 %d_0 to i64" [dense_out/dense_out.cpp:23]   --->   Operation 269 'zext' 'zext_ln23' <Predicate = (!icmp_ln16)> <Delay = 0.00>
+ST_17 : Operation 270 [1/1] (0.00ns)   --->   "%dense_out_weights_0_s = getelementptr [10 x float]* @dense_out_weights_0, i64 0, i64 %zext_ln23" [dense_out/dense_out.cpp:23]   --->   Operation 270 'getelementptr' 'dense_out_weights_0_s' <Predicate = (!icmp_ln16)> <Delay = 0.00>
+ST_17 : Operation 271 [2/2] (3.25ns)   --->   "%dense_out_weights_0_1 = load float* %dense_out_weights_0_s, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 271 'load' 'dense_out_weights_0_1' <Predicate = (!icmp_ln16)> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+ST_17 : Operation 272 [1/1] (1.76ns)   --->   "br label %.preheader1" [dense_out/dense_out.cpp:31]   --->   Operation 272 'br' <Predicate = (icmp_ln16)> <Delay = 1.76>
+
+State 18 <SV = 17> <Delay = 15.6>
+ST_18 : Operation 273 [1/2] (3.25ns)   --->   "%dense_out_weights_0_1 = load float* %dense_out_weights_0_s, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 273 'load' 'dense_out_weights_0_1' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+ST_18 : Operation 274 [2/2] (12.3ns)   --->   "%tmp_3 = fmul float %dense_out_weights_0_1, %fully_connected_load" [dense_out/dense_out.cpp:23]   --->   Operation 274 'fmul' 'tmp_3' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 19 <SV = 18> <Delay = 12.3>
+ST_19 : Operation 275 [1/2] (12.3ns)   --->   "%tmp_3 = fmul float %dense_out_weights_0_1, %fully_connected_load" [dense_out/dense_out.cpp:23]   --->   Operation 275 'fmul' 'tmp_3' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 20 <SV = 19> <Delay = 10.5>
+ST_20 : Operation 276 [4/4] (10.5ns)   --->   "%w_sum_s = fadd float %tmp_3, 0.000000e+00" [dense_out/dense_out.cpp:23]   --->   Operation 276 'fadd' 'w_sum_s' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 21 <SV = 20> <Delay = 10.5>
+ST_21 : Operation 277 [3/4] (10.5ns)   --->   "%w_sum_s = fadd float %tmp_3, 0.000000e+00" [dense_out/dense_out.cpp:23]   --->   Operation 277 'fadd' 'w_sum_s' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_21 : Operation 278 [1/1] (0.00ns)   --->   "%dense_out_weights_1_s = getelementptr [10 x float]* @dense_out_weights_1, i64 0, i64 %zext_ln23" [dense_out/dense_out.cpp:23]   --->   Operation 278 'getelementptr' 'dense_out_weights_1_s' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 279 [2/2] (3.25ns)   --->   "%dense_out_weights_1_1 = load float* %dense_out_weights_1_s, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 279 'load' 'dense_out_weights_1_1' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+
+State 22 <SV = 21> <Delay = 15.6>
+ST_22 : Operation 280 [2/4] (10.5ns)   --->   "%w_sum_s = fadd float %tmp_3, 0.000000e+00" [dense_out/dense_out.cpp:23]   --->   Operation 280 'fadd' 'w_sum_s' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 281 [1/2] (3.25ns)   --->   "%dense_out_weights_1_1 = load float* %dense_out_weights_1_s, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 281 'load' 'dense_out_weights_1_1' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+ST_22 : Operation 282 [2/2] (12.3ns)   --->   "%tmp_3_1 = fmul float %dense_out_weights_1_1, %fully_connected_load_1" [dense_out/dense_out.cpp:23]   --->   Operation 282 'fmul' 'tmp_3_1' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 23 <SV = 22> <Delay = 12.3>
+ST_23 : Operation 283 [1/4] (10.5ns)   --->   "%w_sum_s = fadd float %tmp_3, 0.000000e+00" [dense_out/dense_out.cpp:23]   --->   Operation 283 'fadd' 'w_sum_s' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_23 : Operation 284 [1/2] (12.3ns)   --->   "%tmp_3_1 = fmul float %dense_out_weights_1_1, %fully_connected_load_1" [dense_out/dense_out.cpp:23]   --->   Operation 284 'fmul' 'tmp_3_1' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 24 <SV = 23> <Delay = 10.5>
+ST_24 : Operation 285 [4/4] (10.5ns)   --->   "%w_sum_1 = fadd float %w_sum_s, %tmp_3_1" [dense_out/dense_out.cpp:23]   --->   Operation 285 'fadd' 'w_sum_1' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 25 <SV = 24> <Delay = 10.5>
+ST_25 : Operation 286 [3/4] (10.5ns)   --->   "%w_sum_1 = fadd float %w_sum_s, %tmp_3_1" [dense_out/dense_out.cpp:23]   --->   Operation 286 'fadd' 'w_sum_1' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_25 : Operation 287 [1/1] (0.00ns)   --->   "%dense_out_weights_2_s = getelementptr [10 x float]* @dense_out_weights_2, i64 0, i64 %zext_ln23" [dense_out/dense_out.cpp:23]   --->   Operation 287 'getelementptr' 'dense_out_weights_2_s' <Predicate = true> <Delay = 0.00>
+ST_25 : Operation 288 [2/2] (3.25ns)   --->   "%dense_out_weights_2_1 = load float* %dense_out_weights_2_s, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 288 'load' 'dense_out_weights_2_1' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+
+State 26 <SV = 25> <Delay = 15.6>
+ST_26 : Operation 289 [2/4] (10.5ns)   --->   "%w_sum_1 = fadd float %w_sum_s, %tmp_3_1" [dense_out/dense_out.cpp:23]   --->   Operation 289 'fadd' 'w_sum_1' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 290 [1/2] (3.25ns)   --->   "%dense_out_weights_2_1 = load float* %dense_out_weights_2_s, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 290 'load' 'dense_out_weights_2_1' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+ST_26 : Operation 291 [2/2] (12.3ns)   --->   "%tmp_3_2 = fmul float %dense_out_weights_2_1, %fully_connected_load_2" [dense_out/dense_out.cpp:23]   --->   Operation 291 'fmul' 'tmp_3_2' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 27 <SV = 26> <Delay = 12.3>
+ST_27 : Operation 292 [1/4] (10.5ns)   --->   "%w_sum_1 = fadd float %w_sum_s, %tmp_3_1" [dense_out/dense_out.cpp:23]   --->   Operation 292 'fadd' 'w_sum_1' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_27 : Operation 293 [1/2] (12.3ns)   --->   "%tmp_3_2 = fmul float %dense_out_weights_2_1, %fully_connected_load_2" [dense_out/dense_out.cpp:23]   --->   Operation 293 'fmul' 'tmp_3_2' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 28 <SV = 27> <Delay = 10.5>
+ST_28 : Operation 294 [4/4] (10.5ns)   --->   "%w_sum_2 = fadd float %w_sum_1, %tmp_3_2" [dense_out/dense_out.cpp:23]   --->   Operation 294 'fadd' 'w_sum_2' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 29 <SV = 28> <Delay = 10.5>
+ST_29 : Operation 295 [3/4] (10.5ns)   --->   "%w_sum_2 = fadd float %w_sum_1, %tmp_3_2" [dense_out/dense_out.cpp:23]   --->   Operation 295 'fadd' 'w_sum_2' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_29 : Operation 296 [1/1] (0.00ns)   --->   "%dense_out_weights_3_s = getelementptr [10 x float]* @dense_out_weights_3, i64 0, i64 %zext_ln23" [dense_out/dense_out.cpp:23]   --->   Operation 296 'getelementptr' 'dense_out_weights_3_s' <Predicate = true> <Delay = 0.00>
+ST_29 : Operation 297 [2/2] (3.25ns)   --->   "%dense_out_weights_3_1 = load float* %dense_out_weights_3_s, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 297 'load' 'dense_out_weights_3_1' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+
+State 30 <SV = 29> <Delay = 15.6>
+ST_30 : Operation 298 [2/4] (10.5ns)   --->   "%w_sum_2 = fadd float %w_sum_1, %tmp_3_2" [dense_out/dense_out.cpp:23]   --->   Operation 298 'fadd' 'w_sum_2' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 299 [1/2] (3.25ns)   --->   "%dense_out_weights_3_1 = load float* %dense_out_weights_3_s, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 299 'load' 'dense_out_weights_3_1' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+ST_30 : Operation 300 [2/2] (12.3ns)   --->   "%tmp_3_3 = fmul float %dense_out_weights_3_1, %fully_connected_load_3" [dense_out/dense_out.cpp:23]   --->   Operation 300 'fmul' 'tmp_3_3' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 31 <SV = 30> <Delay = 12.3>
+ST_31 : Operation 301 [1/4] (10.5ns)   --->   "%w_sum_2 = fadd float %w_sum_1, %tmp_3_2" [dense_out/dense_out.cpp:23]   --->   Operation 301 'fadd' 'w_sum_2' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 302 [1/2] (12.3ns)   --->   "%tmp_3_3 = fmul float %dense_out_weights_3_1, %fully_connected_load_3" [dense_out/dense_out.cpp:23]   --->   Operation 302 'fmul' 'tmp_3_3' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 32 <SV = 31> <Delay = 10.5>
+ST_32 : Operation 303 [4/4] (10.5ns)   --->   "%w_sum_3 = fadd float %w_sum_2, %tmp_3_3" [dense_out/dense_out.cpp:23]   --->   Operation 303 'fadd' 'w_sum_3' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 33 <SV = 32> <Delay = 10.5>
+ST_33 : Operation 304 [3/4] (10.5ns)   --->   "%w_sum_3 = fadd float %w_sum_2, %tmp_3_3" [dense_out/dense_out.cpp:23]   --->   Operation 304 'fadd' 'w_sum_3' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_33 : Operation 305 [1/1] (0.00ns)   --->   "%dense_out_weights_4_s = getelementptr [10 x float]* @dense_out_weights_4, i64 0, i64 %zext_ln23" [dense_out/dense_out.cpp:23]   --->   Operation 305 'getelementptr' 'dense_out_weights_4_s' <Predicate = true> <Delay = 0.00>
+ST_33 : Operation 306 [2/2] (3.25ns)   --->   "%dense_out_weights_4_1 = load float* %dense_out_weights_4_s, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 306 'load' 'dense_out_weights_4_1' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+
+State 34 <SV = 33> <Delay = 15.6>
+ST_34 : Operation 307 [2/4] (10.5ns)   --->   "%w_sum_3 = fadd float %w_sum_2, %tmp_3_3" [dense_out/dense_out.cpp:23]   --->   Operation 307 'fadd' 'w_sum_3' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_34 : Operation 308 [1/2] (3.25ns)   --->   "%dense_out_weights_4_1 = load float* %dense_out_weights_4_s, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 308 'load' 'dense_out_weights_4_1' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+ST_34 : Operation 309 [2/2] (12.3ns)   --->   "%tmp_3_4 = fmul float %dense_out_weights_4_1, %fully_connected_load_4" [dense_out/dense_out.cpp:23]   --->   Operation 309 'fmul' 'tmp_3_4' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 35 <SV = 34> <Delay = 12.3>
+ST_35 : Operation 310 [1/4] (10.5ns)   --->   "%w_sum_3 = fadd float %w_sum_2, %tmp_3_3" [dense_out/dense_out.cpp:23]   --->   Operation 310 'fadd' 'w_sum_3' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_35 : Operation 311 [1/2] (12.3ns)   --->   "%tmp_3_4 = fmul float %dense_out_weights_4_1, %fully_connected_load_4" [dense_out/dense_out.cpp:23]   --->   Operation 311 'fmul' 'tmp_3_4' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 36 <SV = 35> <Delay = 10.5>
+ST_36 : Operation 312 [4/4] (10.5ns)   --->   "%w_sum_4 = fadd float %w_sum_3, %tmp_3_4" [dense_out/dense_out.cpp:23]   --->   Operation 312 'fadd' 'w_sum_4' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 37 <SV = 36> <Delay = 10.5>
+ST_37 : Operation 313 [3/4] (10.5ns)   --->   "%w_sum_4 = fadd float %w_sum_3, %tmp_3_4" [dense_out/dense_out.cpp:23]   --->   Operation 313 'fadd' 'w_sum_4' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_37 : Operation 314 [1/1] (0.00ns)   --->   "%dense_out_weights_5_s = getelementptr [10 x float]* @dense_out_weights_5, i64 0, i64 %zext_ln23" [dense_out/dense_out.cpp:23]   --->   Operation 314 'getelementptr' 'dense_out_weights_5_s' <Predicate = true> <Delay = 0.00>
+ST_37 : Operation 315 [2/2] (3.25ns)   --->   "%dense_out_weights_5_1 = load float* %dense_out_weights_5_s, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 315 'load' 'dense_out_weights_5_1' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+
+State 38 <SV = 37> <Delay = 15.6>
+ST_38 : Operation 316 [2/4] (10.5ns)   --->   "%w_sum_4 = fadd float %w_sum_3, %tmp_3_4" [dense_out/dense_out.cpp:23]   --->   Operation 316 'fadd' 'w_sum_4' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_38 : Operation 317 [1/2] (3.25ns)   --->   "%dense_out_weights_5_1 = load float* %dense_out_weights_5_s, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 317 'load' 'dense_out_weights_5_1' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+ST_38 : Operation 318 [2/2] (12.3ns)   --->   "%tmp_3_5 = fmul float %dense_out_weights_5_1, %fully_connected_load_5" [dense_out/dense_out.cpp:23]   --->   Operation 318 'fmul' 'tmp_3_5' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 39 <SV = 38> <Delay = 12.3>
+ST_39 : Operation 319 [1/4] (10.5ns)   --->   "%w_sum_4 = fadd float %w_sum_3, %tmp_3_4" [dense_out/dense_out.cpp:23]   --->   Operation 319 'fadd' 'w_sum_4' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_39 : Operation 320 [1/2] (12.3ns)   --->   "%tmp_3_5 = fmul float %dense_out_weights_5_1, %fully_connected_load_5" [dense_out/dense_out.cpp:23]   --->   Operation 320 'fmul' 'tmp_3_5' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 40 <SV = 39> <Delay = 10.5>
+ST_40 : Operation 321 [4/4] (10.5ns)   --->   "%w_sum_5 = fadd float %w_sum_4, %tmp_3_5" [dense_out/dense_out.cpp:23]   --->   Operation 321 'fadd' 'w_sum_5' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 41 <SV = 40> <Delay = 10.5>
+ST_41 : Operation 322 [3/4] (10.5ns)   --->   "%w_sum_5 = fadd float %w_sum_4, %tmp_3_5" [dense_out/dense_out.cpp:23]   --->   Operation 322 'fadd' 'w_sum_5' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_41 : Operation 323 [1/1] (0.00ns)   --->   "%dense_out_weights_6_s = getelementptr [10 x float]* @dense_out_weights_6, i64 0, i64 %zext_ln23" [dense_out/dense_out.cpp:23]   --->   Operation 323 'getelementptr' 'dense_out_weights_6_s' <Predicate = true> <Delay = 0.00>
+ST_41 : Operation 324 [2/2] (3.25ns)   --->   "%dense_out_weights_6_1 = load float* %dense_out_weights_6_s, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 324 'load' 'dense_out_weights_6_1' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+
+State 42 <SV = 41> <Delay = 15.6>
+ST_42 : Operation 325 [2/4] (10.5ns)   --->   "%w_sum_5 = fadd float %w_sum_4, %tmp_3_5" [dense_out/dense_out.cpp:23]   --->   Operation 325 'fadd' 'w_sum_5' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_42 : Operation 326 [1/2] (3.25ns)   --->   "%dense_out_weights_6_1 = load float* %dense_out_weights_6_s, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 326 'load' 'dense_out_weights_6_1' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+ST_42 : Operation 327 [2/2] (12.3ns)   --->   "%tmp_3_6 = fmul float %dense_out_weights_6_1, %fully_connected_load_6" [dense_out/dense_out.cpp:23]   --->   Operation 327 'fmul' 'tmp_3_6' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 43 <SV = 42> <Delay = 12.3>
+ST_43 : Operation 328 [1/4] (10.5ns)   --->   "%w_sum_5 = fadd float %w_sum_4, %tmp_3_5" [dense_out/dense_out.cpp:23]   --->   Operation 328 'fadd' 'w_sum_5' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_43 : Operation 329 [1/2] (12.3ns)   --->   "%tmp_3_6 = fmul float %dense_out_weights_6_1, %fully_connected_load_6" [dense_out/dense_out.cpp:23]   --->   Operation 329 'fmul' 'tmp_3_6' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 44 <SV = 43> <Delay = 10.5>
+ST_44 : Operation 330 [4/4] (10.5ns)   --->   "%w_sum_6 = fadd float %w_sum_5, %tmp_3_6" [dense_out/dense_out.cpp:23]   --->   Operation 330 'fadd' 'w_sum_6' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 45 <SV = 44> <Delay = 10.5>
+ST_45 : Operation 331 [3/4] (10.5ns)   --->   "%w_sum_6 = fadd float %w_sum_5, %tmp_3_6" [dense_out/dense_out.cpp:23]   --->   Operation 331 'fadd' 'w_sum_6' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_45 : Operation 332 [1/1] (0.00ns)   --->   "%dense_out_weights_7_s = getelementptr [10 x float]* @dense_out_weights_7, i64 0, i64 %zext_ln23" [dense_out/dense_out.cpp:23]   --->   Operation 332 'getelementptr' 'dense_out_weights_7_s' <Predicate = true> <Delay = 0.00>
+ST_45 : Operation 333 [2/2] (3.25ns)   --->   "%dense_out_weights_7_1 = load float* %dense_out_weights_7_s, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 333 'load' 'dense_out_weights_7_1' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+
+State 46 <SV = 45> <Delay = 15.6>
+ST_46 : Operation 334 [2/4] (10.5ns)   --->   "%w_sum_6 = fadd float %w_sum_5, %tmp_3_6" [dense_out/dense_out.cpp:23]   --->   Operation 334 'fadd' 'w_sum_6' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_46 : Operation 335 [1/2] (3.25ns)   --->   "%dense_out_weights_7_1 = load float* %dense_out_weights_7_s, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 335 'load' 'dense_out_weights_7_1' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+ST_46 : Operation 336 [2/2] (12.3ns)   --->   "%tmp_3_7 = fmul float %dense_out_weights_7_1, %fully_connected_load_7" [dense_out/dense_out.cpp:23]   --->   Operation 336 'fmul' 'tmp_3_7' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 47 <SV = 46> <Delay = 12.3>
+ST_47 : Operation 337 [1/4] (10.5ns)   --->   "%w_sum_6 = fadd float %w_sum_5, %tmp_3_6" [dense_out/dense_out.cpp:23]   --->   Operation 337 'fadd' 'w_sum_6' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_47 : Operation 338 [1/2] (12.3ns)   --->   "%tmp_3_7 = fmul float %dense_out_weights_7_1, %fully_connected_load_7" [dense_out/dense_out.cpp:23]   --->   Operation 338 'fmul' 'tmp_3_7' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 48 <SV = 47> <Delay = 10.5>
+ST_48 : Operation 339 [4/4] (10.5ns)   --->   "%w_sum_7 = fadd float %w_sum_6, %tmp_3_7" [dense_out/dense_out.cpp:23]   --->   Operation 339 'fadd' 'w_sum_7' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 49 <SV = 48> <Delay = 10.5>
+ST_49 : Operation 340 [3/4] (10.5ns)   --->   "%w_sum_7 = fadd float %w_sum_6, %tmp_3_7" [dense_out/dense_out.cpp:23]   --->   Operation 340 'fadd' 'w_sum_7' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_49 : Operation 341 [1/1] (0.00ns)   --->   "%dense_out_weights_8_s = getelementptr [10 x float]* @dense_out_weights_8, i64 0, i64 %zext_ln23" [dense_out/dense_out.cpp:23]   --->   Operation 341 'getelementptr' 'dense_out_weights_8_s' <Predicate = true> <Delay = 0.00>
+ST_49 : Operation 342 [2/2] (3.25ns)   --->   "%dense_out_weights_8_1 = load float* %dense_out_weights_8_s, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 342 'load' 'dense_out_weights_8_1' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+
+State 50 <SV = 49> <Delay = 15.6>
+ST_50 : Operation 343 [2/4] (10.5ns)   --->   "%w_sum_7 = fadd float %w_sum_6, %tmp_3_7" [dense_out/dense_out.cpp:23]   --->   Operation 343 'fadd' 'w_sum_7' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_50 : Operation 344 [1/2] (3.25ns)   --->   "%dense_out_weights_8_1 = load float* %dense_out_weights_8_s, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 344 'load' 'dense_out_weights_8_1' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+ST_50 : Operation 345 [2/2] (12.3ns)   --->   "%tmp_3_8 = fmul float %dense_out_weights_8_1, %fully_connected_load_8" [dense_out/dense_out.cpp:23]   --->   Operation 345 'fmul' 'tmp_3_8' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 51 <SV = 50> <Delay = 12.3>
+ST_51 : Operation 346 [1/4] (10.5ns)   --->   "%w_sum_7 = fadd float %w_sum_6, %tmp_3_7" [dense_out/dense_out.cpp:23]   --->   Operation 346 'fadd' 'w_sum_7' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_51 : Operation 347 [1/2] (12.3ns)   --->   "%tmp_3_8 = fmul float %dense_out_weights_8_1, %fully_connected_load_8" [dense_out/dense_out.cpp:23]   --->   Operation 347 'fmul' 'tmp_3_8' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 52 <SV = 51> <Delay = 10.5>
+ST_52 : Operation 348 [4/4] (10.5ns)   --->   "%w_sum_8 = fadd float %w_sum_7, %tmp_3_8" [dense_out/dense_out.cpp:23]   --->   Operation 348 'fadd' 'w_sum_8' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 53 <SV = 52> <Delay = 10.5>
+ST_53 : Operation 349 [3/4] (10.5ns)   --->   "%w_sum_8 = fadd float %w_sum_7, %tmp_3_8" [dense_out/dense_out.cpp:23]   --->   Operation 349 'fadd' 'w_sum_8' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_53 : Operation 350 [1/1] (0.00ns)   --->   "%dense_out_weights_9_s = getelementptr [10 x float]* @dense_out_weights_9, i64 0, i64 %zext_ln23" [dense_out/dense_out.cpp:23]   --->   Operation 350 'getelementptr' 'dense_out_weights_9_s' <Predicate = true> <Delay = 0.00>
+ST_53 : Operation 351 [2/2] (3.25ns)   --->   "%dense_out_weights_9_1 = load float* %dense_out_weights_9_s, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 351 'load' 'dense_out_weights_9_1' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+
+State 54 <SV = 53> <Delay = 15.6>
+ST_54 : Operation 352 [2/4] (10.5ns)   --->   "%w_sum_8 = fadd float %w_sum_7, %tmp_3_8" [dense_out/dense_out.cpp:23]   --->   Operation 352 'fadd' 'w_sum_8' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_54 : Operation 353 [1/2] (3.25ns)   --->   "%dense_out_weights_9_1 = load float* %dense_out_weights_9_s, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 353 'load' 'dense_out_weights_9_1' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+ST_54 : Operation 354 [2/2] (12.3ns)   --->   "%tmp_3_9 = fmul float %dense_out_weights_9_1, %fully_connected_load_9" [dense_out/dense_out.cpp:23]   --->   Operation 354 'fmul' 'tmp_3_9' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 55 <SV = 54> <Delay = 12.3>
+ST_55 : Operation 355 [1/4] (10.5ns)   --->   "%w_sum_8 = fadd float %w_sum_7, %tmp_3_8" [dense_out/dense_out.cpp:23]   --->   Operation 355 'fadd' 'w_sum_8' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 356 [1/2] (12.3ns)   --->   "%tmp_3_9 = fmul float %dense_out_weights_9_1, %fully_connected_load_9" [dense_out/dense_out.cpp:23]   --->   Operation 356 'fmul' 'tmp_3_9' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 56 <SV = 55> <Delay = 10.5>
+ST_56 : Operation 357 [4/4] (10.5ns)   --->   "%w_sum_9 = fadd float %w_sum_8, %tmp_3_9" [dense_out/dense_out.cpp:23]   --->   Operation 357 'fadd' 'w_sum_9' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 57 <SV = 56> <Delay = 10.5>
+ST_57 : Operation 358 [3/4] (10.5ns)   --->   "%w_sum_9 = fadd float %w_sum_8, %tmp_3_9" [dense_out/dense_out.cpp:23]   --->   Operation 358 'fadd' 'w_sum_9' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_57 : Operation 359 [1/1] (0.00ns)   --->   "%dense_out_weights_10_1 = getelementptr [10 x float]* @dense_out_weights_10, i64 0, i64 %zext_ln23" [dense_out/dense_out.cpp:23]   --->   Operation 359 'getelementptr' 'dense_out_weights_10_1' <Predicate = true> <Delay = 0.00>
+ST_57 : Operation 360 [2/2] (3.25ns)   --->   "%dense_out_weights_10_2 = load float* %dense_out_weights_10_1, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 360 'load' 'dense_out_weights_10_2' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+
+State 58 <SV = 57> <Delay = 15.6>
+ST_58 : Operation 361 [2/4] (10.5ns)   --->   "%w_sum_9 = fadd float %w_sum_8, %tmp_3_9" [dense_out/dense_out.cpp:23]   --->   Operation 361 'fadd' 'w_sum_9' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_58 : Operation 362 [1/2] (3.25ns)   --->   "%dense_out_weights_10_2 = load float* %dense_out_weights_10_1, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 362 'load' 'dense_out_weights_10_2' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+ST_58 : Operation 363 [2/2] (12.3ns)   --->   "%tmp_3_s = fmul float %dense_out_weights_10_2, %fully_connected_load_10" [dense_out/dense_out.cpp:23]   --->   Operation 363 'fmul' 'tmp_3_s' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 59 <SV = 58> <Delay = 12.3>
+ST_59 : Operation 364 [1/4] (10.5ns)   --->   "%w_sum_9 = fadd float %w_sum_8, %tmp_3_9" [dense_out/dense_out.cpp:23]   --->   Operation 364 'fadd' 'w_sum_9' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_59 : Operation 365 [1/2] (12.3ns)   --->   "%tmp_3_s = fmul float %dense_out_weights_10_2, %fully_connected_load_10" [dense_out/dense_out.cpp:23]   --->   Operation 365 'fmul' 'tmp_3_s' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 60 <SV = 59> <Delay = 10.5>
+ST_60 : Operation 366 [4/4] (10.5ns)   --->   "%w_sum_10 = fadd float %w_sum_9, %tmp_3_s" [dense_out/dense_out.cpp:23]   --->   Operation 366 'fadd' 'w_sum_10' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 61 <SV = 60> <Delay = 10.5>
+ST_61 : Operation 367 [3/4] (10.5ns)   --->   "%w_sum_10 = fadd float %w_sum_9, %tmp_3_s" [dense_out/dense_out.cpp:23]   --->   Operation 367 'fadd' 'w_sum_10' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_61 : Operation 368 [1/1] (0.00ns)   --->   "%dense_out_weights_11_1 = getelementptr [10 x float]* @dense_out_weights_11, i64 0, i64 %zext_ln23" [dense_out/dense_out.cpp:23]   --->   Operation 368 'getelementptr' 'dense_out_weights_11_1' <Predicate = true> <Delay = 0.00>
+ST_61 : Operation 369 [2/2] (3.25ns)   --->   "%dense_out_weights_11_2 = load float* %dense_out_weights_11_1, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 369 'load' 'dense_out_weights_11_2' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+
+State 62 <SV = 61> <Delay = 15.6>
+ST_62 : Operation 370 [2/4] (10.5ns)   --->   "%w_sum_10 = fadd float %w_sum_9, %tmp_3_s" [dense_out/dense_out.cpp:23]   --->   Operation 370 'fadd' 'w_sum_10' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_62 : Operation 371 [1/2] (3.25ns)   --->   "%dense_out_weights_11_2 = load float* %dense_out_weights_11_1, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 371 'load' 'dense_out_weights_11_2' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+ST_62 : Operation 372 [2/2] (12.3ns)   --->   "%tmp_3_10 = fmul float %dense_out_weights_11_2, %fully_connected_load_11" [dense_out/dense_out.cpp:23]   --->   Operation 372 'fmul' 'tmp_3_10' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 63 <SV = 62> <Delay = 12.3>
+ST_63 : Operation 373 [1/4] (10.5ns)   --->   "%w_sum_10 = fadd float %w_sum_9, %tmp_3_s" [dense_out/dense_out.cpp:23]   --->   Operation 373 'fadd' 'w_sum_10' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_63 : Operation 374 [1/2] (12.3ns)   --->   "%tmp_3_10 = fmul float %dense_out_weights_11_2, %fully_connected_load_11" [dense_out/dense_out.cpp:23]   --->   Operation 374 'fmul' 'tmp_3_10' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 64 <SV = 63> <Delay = 10.5>
+ST_64 : Operation 375 [4/4] (10.5ns)   --->   "%w_sum_11 = fadd float %w_sum_10, %tmp_3_10" [dense_out/dense_out.cpp:23]   --->   Operation 375 'fadd' 'w_sum_11' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 65 <SV = 64> <Delay = 10.5>
+ST_65 : Operation 376 [3/4] (10.5ns)   --->   "%w_sum_11 = fadd float %w_sum_10, %tmp_3_10" [dense_out/dense_out.cpp:23]   --->   Operation 376 'fadd' 'w_sum_11' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_65 : Operation 377 [1/1] (0.00ns)   --->   "%dense_out_weights_12_1 = getelementptr [10 x float]* @dense_out_weights_12, i64 0, i64 %zext_ln23" [dense_out/dense_out.cpp:23]   --->   Operation 377 'getelementptr' 'dense_out_weights_12_1' <Predicate = true> <Delay = 0.00>
+ST_65 : Operation 378 [2/2] (3.25ns)   --->   "%dense_out_weights_12_2 = load float* %dense_out_weights_12_1, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 378 'load' 'dense_out_weights_12_2' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+
+State 66 <SV = 65> <Delay = 15.6>
+ST_66 : Operation 379 [2/4] (10.5ns)   --->   "%w_sum_11 = fadd float %w_sum_10, %tmp_3_10" [dense_out/dense_out.cpp:23]   --->   Operation 379 'fadd' 'w_sum_11' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_66 : Operation 380 [1/2] (3.25ns)   --->   "%dense_out_weights_12_2 = load float* %dense_out_weights_12_1, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 380 'load' 'dense_out_weights_12_2' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+ST_66 : Operation 381 [2/2] (12.3ns)   --->   "%tmp_3_11 = fmul float %dense_out_weights_12_2, %fully_connected_load_12" [dense_out/dense_out.cpp:23]   --->   Operation 381 'fmul' 'tmp_3_11' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 67 <SV = 66> <Delay = 12.3>
+ST_67 : Operation 382 [1/4] (10.5ns)   --->   "%w_sum_11 = fadd float %w_sum_10, %tmp_3_10" [dense_out/dense_out.cpp:23]   --->   Operation 382 'fadd' 'w_sum_11' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_67 : Operation 383 [1/2] (12.3ns)   --->   "%tmp_3_11 = fmul float %dense_out_weights_12_2, %fully_connected_load_12" [dense_out/dense_out.cpp:23]   --->   Operation 383 'fmul' 'tmp_3_11' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 68 <SV = 67> <Delay = 10.5>
+ST_68 : Operation 384 [4/4] (10.5ns)   --->   "%w_sum_12 = fadd float %w_sum_11, %tmp_3_11" [dense_out/dense_out.cpp:23]   --->   Operation 384 'fadd' 'w_sum_12' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 69 <SV = 68> <Delay = 10.5>
+ST_69 : Operation 385 [3/4] (10.5ns)   --->   "%w_sum_12 = fadd float %w_sum_11, %tmp_3_11" [dense_out/dense_out.cpp:23]   --->   Operation 385 'fadd' 'w_sum_12' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_69 : Operation 386 [1/1] (0.00ns)   --->   "%dense_out_weights_13_1 = getelementptr [10 x float]* @dense_out_weights_13, i64 0, i64 %zext_ln23" [dense_out/dense_out.cpp:23]   --->   Operation 386 'getelementptr' 'dense_out_weights_13_1' <Predicate = true> <Delay = 0.00>
+ST_69 : Operation 387 [2/2] (3.25ns)   --->   "%dense_out_weights_13_2 = load float* %dense_out_weights_13_1, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 387 'load' 'dense_out_weights_13_2' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+
+State 70 <SV = 69> <Delay = 15.6>
+ST_70 : Operation 388 [2/4] (10.5ns)   --->   "%w_sum_12 = fadd float %w_sum_11, %tmp_3_11" [dense_out/dense_out.cpp:23]   --->   Operation 388 'fadd' 'w_sum_12' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_70 : Operation 389 [1/2] (3.25ns)   --->   "%dense_out_weights_13_2 = load float* %dense_out_weights_13_1, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 389 'load' 'dense_out_weights_13_2' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+ST_70 : Operation 390 [2/2] (12.3ns)   --->   "%tmp_3_12 = fmul float %dense_out_weights_13_2, %fully_connected_load_13" [dense_out/dense_out.cpp:23]   --->   Operation 390 'fmul' 'tmp_3_12' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 71 <SV = 70> <Delay = 12.3>
+ST_71 : Operation 391 [1/4] (10.5ns)   --->   "%w_sum_12 = fadd float %w_sum_11, %tmp_3_11" [dense_out/dense_out.cpp:23]   --->   Operation 391 'fadd' 'w_sum_12' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_71 : Operation 392 [1/2] (12.3ns)   --->   "%tmp_3_12 = fmul float %dense_out_weights_13_2, %fully_connected_load_13" [dense_out/dense_out.cpp:23]   --->   Operation 392 'fmul' 'tmp_3_12' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 72 <SV = 71> <Delay = 10.5>
+ST_72 : Operation 393 [4/4] (10.5ns)   --->   "%w_sum_13 = fadd float %w_sum_12, %tmp_3_12" [dense_out/dense_out.cpp:23]   --->   Operation 393 'fadd' 'w_sum_13' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 73 <SV = 72> <Delay = 10.5>
+ST_73 : Operation 394 [3/4] (10.5ns)   --->   "%w_sum_13 = fadd float %w_sum_12, %tmp_3_12" [dense_out/dense_out.cpp:23]   --->   Operation 394 'fadd' 'w_sum_13' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_73 : Operation 395 [1/1] (0.00ns)   --->   "%dense_out_weights_14_1 = getelementptr [10 x float]* @dense_out_weights_14, i64 0, i64 %zext_ln23" [dense_out/dense_out.cpp:23]   --->   Operation 395 'getelementptr' 'dense_out_weights_14_1' <Predicate = true> <Delay = 0.00>
+ST_73 : Operation 396 [2/2] (3.25ns)   --->   "%dense_out_weights_14_2 = load float* %dense_out_weights_14_1, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 396 'load' 'dense_out_weights_14_2' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+
+State 74 <SV = 73> <Delay = 15.6>
+ST_74 : Operation 397 [2/4] (10.5ns)   --->   "%w_sum_13 = fadd float %w_sum_12, %tmp_3_12" [dense_out/dense_out.cpp:23]   --->   Operation 397 'fadd' 'w_sum_13' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_74 : Operation 398 [1/2] (3.25ns)   --->   "%dense_out_weights_14_2 = load float* %dense_out_weights_14_1, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 398 'load' 'dense_out_weights_14_2' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+ST_74 : Operation 399 [2/2] (12.3ns)   --->   "%tmp_3_13 = fmul float %dense_out_weights_14_2, %fully_connected_load_14" [dense_out/dense_out.cpp:23]   --->   Operation 399 'fmul' 'tmp_3_13' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 75 <SV = 74> <Delay = 12.3>
+ST_75 : Operation 400 [1/4] (10.5ns)   --->   "%w_sum_13 = fadd float %w_sum_12, %tmp_3_12" [dense_out/dense_out.cpp:23]   --->   Operation 400 'fadd' 'w_sum_13' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_75 : Operation 401 [1/2] (12.3ns)   --->   "%tmp_3_13 = fmul float %dense_out_weights_14_2, %fully_connected_load_14" [dense_out/dense_out.cpp:23]   --->   Operation 401 'fmul' 'tmp_3_13' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 76 <SV = 75> <Delay = 10.5>
+ST_76 : Operation 402 [4/4] (10.5ns)   --->   "%w_sum_14 = fadd float %w_sum_13, %tmp_3_13" [dense_out/dense_out.cpp:23]   --->   Operation 402 'fadd' 'w_sum_14' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 77 <SV = 76> <Delay = 10.5>
+ST_77 : Operation 403 [3/4] (10.5ns)   --->   "%w_sum_14 = fadd float %w_sum_13, %tmp_3_13" [dense_out/dense_out.cpp:23]   --->   Operation 403 'fadd' 'w_sum_14' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_77 : Operation 404 [1/1] (0.00ns)   --->   "%dense_out_weights_15_1 = getelementptr [10 x float]* @dense_out_weights_15, i64 0, i64 %zext_ln23" [dense_out/dense_out.cpp:23]   --->   Operation 404 'getelementptr' 'dense_out_weights_15_1' <Predicate = true> <Delay = 0.00>
+ST_77 : Operation 405 [2/2] (3.25ns)   --->   "%dense_out_weights_15_2 = load float* %dense_out_weights_15_1, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 405 'load' 'dense_out_weights_15_2' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+
+State 78 <SV = 77> <Delay = 15.6>
+ST_78 : Operation 406 [2/4] (10.5ns)   --->   "%w_sum_14 = fadd float %w_sum_13, %tmp_3_13" [dense_out/dense_out.cpp:23]   --->   Operation 406 'fadd' 'w_sum_14' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_78 : Operation 407 [1/2] (3.25ns)   --->   "%dense_out_weights_15_2 = load float* %dense_out_weights_15_1, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 407 'load' 'dense_out_weights_15_2' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+ST_78 : Operation 408 [2/2] (12.3ns)   --->   "%tmp_3_14 = fmul float %dense_out_weights_15_2, %fully_connected_load_15" [dense_out/dense_out.cpp:23]   --->   Operation 408 'fmul' 'tmp_3_14' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 79 <SV = 78> <Delay = 12.3>
+ST_79 : Operation 409 [1/4] (10.5ns)   --->   "%w_sum_14 = fadd float %w_sum_13, %tmp_3_13" [dense_out/dense_out.cpp:23]   --->   Operation 409 'fadd' 'w_sum_14' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_79 : Operation 410 [1/2] (12.3ns)   --->   "%tmp_3_14 = fmul float %dense_out_weights_15_2, %fully_connected_load_15" [dense_out/dense_out.cpp:23]   --->   Operation 410 'fmul' 'tmp_3_14' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 80 <SV = 79> <Delay = 10.5>
+ST_80 : Operation 411 [4/4] (10.5ns)   --->   "%w_sum_15 = fadd float %w_sum_14, %tmp_3_14" [dense_out/dense_out.cpp:23]   --->   Operation 411 'fadd' 'w_sum_15' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 81 <SV = 80> <Delay = 10.5>
+ST_81 : Operation 412 [3/4] (10.5ns)   --->   "%w_sum_15 = fadd float %w_sum_14, %tmp_3_14" [dense_out/dense_out.cpp:23]   --->   Operation 412 'fadd' 'w_sum_15' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_81 : Operation 413 [1/1] (0.00ns)   --->   "%dense_out_weights_16_1 = getelementptr [10 x float]* @dense_out_weights_16, i64 0, i64 %zext_ln23" [dense_out/dense_out.cpp:23]   --->   Operation 413 'getelementptr' 'dense_out_weights_16_1' <Predicate = true> <Delay = 0.00>
+ST_81 : Operation 414 [2/2] (3.25ns)   --->   "%dense_out_weights_16_2 = load float* %dense_out_weights_16_1, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 414 'load' 'dense_out_weights_16_2' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+
+State 82 <SV = 81> <Delay = 15.6>
+ST_82 : Operation 415 [2/4] (10.5ns)   --->   "%w_sum_15 = fadd float %w_sum_14, %tmp_3_14" [dense_out/dense_out.cpp:23]   --->   Operation 415 'fadd' 'w_sum_15' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_82 : Operation 416 [1/2] (3.25ns)   --->   "%dense_out_weights_16_2 = load float* %dense_out_weights_16_1, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 416 'load' 'dense_out_weights_16_2' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+ST_82 : Operation 417 [2/2] (12.3ns)   --->   "%tmp_3_15 = fmul float %dense_out_weights_16_2, %fully_connected_load_16" [dense_out/dense_out.cpp:23]   --->   Operation 417 'fmul' 'tmp_3_15' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 83 <SV = 82> <Delay = 12.3>
+ST_83 : Operation 418 [1/4] (10.5ns)   --->   "%w_sum_15 = fadd float %w_sum_14, %tmp_3_14" [dense_out/dense_out.cpp:23]   --->   Operation 418 'fadd' 'w_sum_15' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_83 : Operation 419 [1/2] (12.3ns)   --->   "%tmp_3_15 = fmul float %dense_out_weights_16_2, %fully_connected_load_16" [dense_out/dense_out.cpp:23]   --->   Operation 419 'fmul' 'tmp_3_15' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 84 <SV = 83> <Delay = 10.5>
+ST_84 : Operation 420 [4/4] (10.5ns)   --->   "%w_sum_16 = fadd float %w_sum_15, %tmp_3_15" [dense_out/dense_out.cpp:23]   --->   Operation 420 'fadd' 'w_sum_16' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 85 <SV = 84> <Delay = 10.5>
+ST_85 : Operation 421 [3/4] (10.5ns)   --->   "%w_sum_16 = fadd float %w_sum_15, %tmp_3_15" [dense_out/dense_out.cpp:23]   --->   Operation 421 'fadd' 'w_sum_16' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_85 : Operation 422 [1/1] (0.00ns)   --->   "%dense_out_weights_17_1 = getelementptr [10 x float]* @dense_out_weights_17, i64 0, i64 %zext_ln23" [dense_out/dense_out.cpp:23]   --->   Operation 422 'getelementptr' 'dense_out_weights_17_1' <Predicate = true> <Delay = 0.00>
+ST_85 : Operation 423 [2/2] (3.25ns)   --->   "%dense_out_weights_17_2 = load float* %dense_out_weights_17_1, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 423 'load' 'dense_out_weights_17_2' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+
+State 86 <SV = 85> <Delay = 15.6>
+ST_86 : Operation 424 [2/4] (10.5ns)   --->   "%w_sum_16 = fadd float %w_sum_15, %tmp_3_15" [dense_out/dense_out.cpp:23]   --->   Operation 424 'fadd' 'w_sum_16' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_86 : Operation 425 [1/2] (3.25ns)   --->   "%dense_out_weights_17_2 = load float* %dense_out_weights_17_1, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 425 'load' 'dense_out_weights_17_2' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+ST_86 : Operation 426 [2/2] (12.3ns)   --->   "%tmp_3_16 = fmul float %dense_out_weights_17_2, %fully_connected_load_17" [dense_out/dense_out.cpp:23]   --->   Operation 426 'fmul' 'tmp_3_16' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 87 <SV = 86> <Delay = 12.3>
+ST_87 : Operation 427 [1/4] (10.5ns)   --->   "%w_sum_16 = fadd float %w_sum_15, %tmp_3_15" [dense_out/dense_out.cpp:23]   --->   Operation 427 'fadd' 'w_sum_16' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_87 : Operation 428 [1/2] (12.3ns)   --->   "%tmp_3_16 = fmul float %dense_out_weights_17_2, %fully_connected_load_17" [dense_out/dense_out.cpp:23]   --->   Operation 428 'fmul' 'tmp_3_16' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 88 <SV = 87> <Delay = 10.5>
+ST_88 : Operation 429 [4/4] (10.5ns)   --->   "%w_sum_17 = fadd float %w_sum_16, %tmp_3_16" [dense_out/dense_out.cpp:23]   --->   Operation 429 'fadd' 'w_sum_17' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 89 <SV = 88> <Delay = 10.5>
+ST_89 : Operation 430 [3/4] (10.5ns)   --->   "%w_sum_17 = fadd float %w_sum_16, %tmp_3_16" [dense_out/dense_out.cpp:23]   --->   Operation 430 'fadd' 'w_sum_17' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_89 : Operation 431 [1/1] (0.00ns)   --->   "%dense_out_weights_18_1 = getelementptr [10 x float]* @dense_out_weights_18, i64 0, i64 %zext_ln23" [dense_out/dense_out.cpp:23]   --->   Operation 431 'getelementptr' 'dense_out_weights_18_1' <Predicate = true> <Delay = 0.00>
+ST_89 : Operation 432 [2/2] (3.25ns)   --->   "%dense_out_weights_18_2 = load float* %dense_out_weights_18_1, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 432 'load' 'dense_out_weights_18_2' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+
+State 90 <SV = 89> <Delay = 15.6>
+ST_90 : Operation 433 [2/4] (10.5ns)   --->   "%w_sum_17 = fadd float %w_sum_16, %tmp_3_16" [dense_out/dense_out.cpp:23]   --->   Operation 433 'fadd' 'w_sum_17' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_90 : Operation 434 [1/2] (3.25ns)   --->   "%dense_out_weights_18_2 = load float* %dense_out_weights_18_1, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 434 'load' 'dense_out_weights_18_2' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+ST_90 : Operation 435 [2/2] (12.3ns)   --->   "%tmp_3_17 = fmul float %dense_out_weights_18_2, %fully_connected_load_18" [dense_out/dense_out.cpp:23]   --->   Operation 435 'fmul' 'tmp_3_17' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 91 <SV = 90> <Delay = 12.3>
+ST_91 : Operation 436 [1/4] (10.5ns)   --->   "%w_sum_17 = fadd float %w_sum_16, %tmp_3_16" [dense_out/dense_out.cpp:23]   --->   Operation 436 'fadd' 'w_sum_17' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_91 : Operation 437 [1/2] (12.3ns)   --->   "%tmp_3_17 = fmul float %dense_out_weights_18_2, %fully_connected_load_18" [dense_out/dense_out.cpp:23]   --->   Operation 437 'fmul' 'tmp_3_17' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 92 <SV = 91> <Delay = 10.5>
+ST_92 : Operation 438 [4/4] (10.5ns)   --->   "%w_sum_18 = fadd float %w_sum_17, %tmp_3_17" [dense_out/dense_out.cpp:23]   --->   Operation 438 'fadd' 'w_sum_18' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 93 <SV = 92> <Delay = 10.5>
+ST_93 : Operation 439 [3/4] (10.5ns)   --->   "%w_sum_18 = fadd float %w_sum_17, %tmp_3_17" [dense_out/dense_out.cpp:23]   --->   Operation 439 'fadd' 'w_sum_18' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_93 : Operation 440 [1/1] (0.00ns)   --->   "%dense_out_weights_19_1 = getelementptr [10 x float]* @dense_out_weights_19, i64 0, i64 %zext_ln23" [dense_out/dense_out.cpp:23]   --->   Operation 440 'getelementptr' 'dense_out_weights_19_1' <Predicate = true> <Delay = 0.00>
+ST_93 : Operation 441 [2/2] (3.25ns)   --->   "%dense_out_weights_19_2 = load float* %dense_out_weights_19_1, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 441 'load' 'dense_out_weights_19_2' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+
+State 94 <SV = 93> <Delay = 15.6>
+ST_94 : Operation 442 [2/4] (10.5ns)   --->   "%w_sum_18 = fadd float %w_sum_17, %tmp_3_17" [dense_out/dense_out.cpp:23]   --->   Operation 442 'fadd' 'w_sum_18' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_94 : Operation 443 [1/2] (3.25ns)   --->   "%dense_out_weights_19_2 = load float* %dense_out_weights_19_1, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 443 'load' 'dense_out_weights_19_2' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+ST_94 : Operation 444 [2/2] (12.3ns)   --->   "%tmp_3_18 = fmul float %dense_out_weights_19_2, %fully_connected_load_19" [dense_out/dense_out.cpp:23]   --->   Operation 444 'fmul' 'tmp_3_18' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 95 <SV = 94> <Delay = 12.3>
+ST_95 : Operation 445 [1/4] (10.5ns)   --->   "%w_sum_18 = fadd float %w_sum_17, %tmp_3_17" [dense_out/dense_out.cpp:23]   --->   Operation 445 'fadd' 'w_sum_18' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_95 : Operation 446 [1/2] (12.3ns)   --->   "%tmp_3_18 = fmul float %dense_out_weights_19_2, %fully_connected_load_19" [dense_out/dense_out.cpp:23]   --->   Operation 446 'fmul' 'tmp_3_18' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 96 <SV = 95> <Delay = 10.5>
+ST_96 : Operation 447 [4/4] (10.5ns)   --->   "%w_sum_19 = fadd float %w_sum_18, %tmp_3_18" [dense_out/dense_out.cpp:23]   --->   Operation 447 'fadd' 'w_sum_19' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 97 <SV = 96> <Delay = 10.5>
+ST_97 : Operation 448 [3/4] (10.5ns)   --->   "%w_sum_19 = fadd float %w_sum_18, %tmp_3_18" [dense_out/dense_out.cpp:23]   --->   Operation 448 'fadd' 'w_sum_19' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_97 : Operation 449 [1/1] (0.00ns)   --->   "%dense_out_weights_20_1 = getelementptr [10 x float]* @dense_out_weights_20, i64 0, i64 %zext_ln23" [dense_out/dense_out.cpp:23]   --->   Operation 449 'getelementptr' 'dense_out_weights_20_1' <Predicate = true> <Delay = 0.00>
+ST_97 : Operation 450 [2/2] (3.25ns)   --->   "%dense_out_weights_20_2 = load float* %dense_out_weights_20_1, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 450 'load' 'dense_out_weights_20_2' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+
+State 98 <SV = 97> <Delay = 15.6>
+ST_98 : Operation 451 [2/4] (10.5ns)   --->   "%w_sum_19 = fadd float %w_sum_18, %tmp_3_18" [dense_out/dense_out.cpp:23]   --->   Operation 451 'fadd' 'w_sum_19' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_98 : Operation 452 [1/2] (3.25ns)   --->   "%dense_out_weights_20_2 = load float* %dense_out_weights_20_1, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 452 'load' 'dense_out_weights_20_2' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+ST_98 : Operation 453 [2/2] (12.3ns)   --->   "%tmp_3_19 = fmul float %dense_out_weights_20_2, %fully_connected_load_20" [dense_out/dense_out.cpp:23]   --->   Operation 453 'fmul' 'tmp_3_19' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 99 <SV = 98> <Delay = 12.3>
+ST_99 : Operation 454 [1/4] (10.5ns)   --->   "%w_sum_19 = fadd float %w_sum_18, %tmp_3_18" [dense_out/dense_out.cpp:23]   --->   Operation 454 'fadd' 'w_sum_19' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_99 : Operation 455 [1/2] (12.3ns)   --->   "%tmp_3_19 = fmul float %dense_out_weights_20_2, %fully_connected_load_20" [dense_out/dense_out.cpp:23]   --->   Operation 455 'fmul' 'tmp_3_19' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 100 <SV = 99> <Delay = 10.5>
+ST_100 : Operation 456 [4/4] (10.5ns)   --->   "%w_sum_20 = fadd float %w_sum_19, %tmp_3_19" [dense_out/dense_out.cpp:23]   --->   Operation 456 'fadd' 'w_sum_20' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 101 <SV = 100> <Delay = 10.5>
+ST_101 : Operation 457 [3/4] (10.5ns)   --->   "%w_sum_20 = fadd float %w_sum_19, %tmp_3_19" [dense_out/dense_out.cpp:23]   --->   Operation 457 'fadd' 'w_sum_20' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_101 : Operation 458 [1/1] (0.00ns)   --->   "%dense_out_weights_21_1 = getelementptr [10 x float]* @dense_out_weights_21, i64 0, i64 %zext_ln23" [dense_out/dense_out.cpp:23]   --->   Operation 458 'getelementptr' 'dense_out_weights_21_1' <Predicate = true> <Delay = 0.00>
+ST_101 : Operation 459 [2/2] (3.25ns)   --->   "%dense_out_weights_21_2 = load float* %dense_out_weights_21_1, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 459 'load' 'dense_out_weights_21_2' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+
+State 102 <SV = 101> <Delay = 15.6>
+ST_102 : Operation 460 [2/4] (10.5ns)   --->   "%w_sum_20 = fadd float %w_sum_19, %tmp_3_19" [dense_out/dense_out.cpp:23]   --->   Operation 460 'fadd' 'w_sum_20' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_102 : Operation 461 [1/2] (3.25ns)   --->   "%dense_out_weights_21_2 = load float* %dense_out_weights_21_1, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 461 'load' 'dense_out_weights_21_2' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+ST_102 : Operation 462 [2/2] (12.3ns)   --->   "%tmp_3_20 = fmul float %dense_out_weights_21_2, %fully_connected_load_21" [dense_out/dense_out.cpp:23]   --->   Operation 462 'fmul' 'tmp_3_20' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 103 <SV = 102> <Delay = 12.3>
+ST_103 : Operation 463 [1/4] (10.5ns)   --->   "%w_sum_20 = fadd float %w_sum_19, %tmp_3_19" [dense_out/dense_out.cpp:23]   --->   Operation 463 'fadd' 'w_sum_20' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_103 : Operation 464 [1/2] (12.3ns)   --->   "%tmp_3_20 = fmul float %dense_out_weights_21_2, %fully_connected_load_21" [dense_out/dense_out.cpp:23]   --->   Operation 464 'fmul' 'tmp_3_20' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 104 <SV = 103> <Delay = 10.5>
+ST_104 : Operation 465 [4/4] (10.5ns)   --->   "%w_sum_21 = fadd float %w_sum_20, %tmp_3_20" [dense_out/dense_out.cpp:23]   --->   Operation 465 'fadd' 'w_sum_21' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 105 <SV = 104> <Delay = 10.5>
+ST_105 : Operation 466 [3/4] (10.5ns)   --->   "%w_sum_21 = fadd float %w_sum_20, %tmp_3_20" [dense_out/dense_out.cpp:23]   --->   Operation 466 'fadd' 'w_sum_21' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_105 : Operation 467 [1/1] (0.00ns)   --->   "%dense_out_weights_22_1 = getelementptr [10 x float]* @dense_out_weights_22, i64 0, i64 %zext_ln23" [dense_out/dense_out.cpp:23]   --->   Operation 467 'getelementptr' 'dense_out_weights_22_1' <Predicate = true> <Delay = 0.00>
+ST_105 : Operation 468 [2/2] (3.25ns)   --->   "%dense_out_weights_22_2 = load float* %dense_out_weights_22_1, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 468 'load' 'dense_out_weights_22_2' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+
+State 106 <SV = 105> <Delay = 15.6>
+ST_106 : Operation 469 [2/4] (10.5ns)   --->   "%w_sum_21 = fadd float %w_sum_20, %tmp_3_20" [dense_out/dense_out.cpp:23]   --->   Operation 469 'fadd' 'w_sum_21' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_106 : Operation 470 [1/2] (3.25ns)   --->   "%dense_out_weights_22_2 = load float* %dense_out_weights_22_1, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 470 'load' 'dense_out_weights_22_2' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+ST_106 : Operation 471 [2/2] (12.3ns)   --->   "%tmp_3_21 = fmul float %dense_out_weights_22_2, %fully_connected_load_22" [dense_out/dense_out.cpp:23]   --->   Operation 471 'fmul' 'tmp_3_21' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 107 <SV = 106> <Delay = 12.3>
+ST_107 : Operation 472 [1/4] (10.5ns)   --->   "%w_sum_21 = fadd float %w_sum_20, %tmp_3_20" [dense_out/dense_out.cpp:23]   --->   Operation 472 'fadd' 'w_sum_21' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_107 : Operation 473 [1/2] (12.3ns)   --->   "%tmp_3_21 = fmul float %dense_out_weights_22_2, %fully_connected_load_22" [dense_out/dense_out.cpp:23]   --->   Operation 473 'fmul' 'tmp_3_21' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 108 <SV = 107> <Delay = 10.5>
+ST_108 : Operation 474 [4/4] (10.5ns)   --->   "%w_sum_22 = fadd float %w_sum_21, %tmp_3_21" [dense_out/dense_out.cpp:23]   --->   Operation 474 'fadd' 'w_sum_22' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 109 <SV = 108> <Delay = 10.5>
+ST_109 : Operation 475 [3/4] (10.5ns)   --->   "%w_sum_22 = fadd float %w_sum_21, %tmp_3_21" [dense_out/dense_out.cpp:23]   --->   Operation 475 'fadd' 'w_sum_22' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_109 : Operation 476 [1/1] (0.00ns)   --->   "%dense_out_weights_23_1 = getelementptr [10 x float]* @dense_out_weights_23, i64 0, i64 %zext_ln23" [dense_out/dense_out.cpp:23]   --->   Operation 476 'getelementptr' 'dense_out_weights_23_1' <Predicate = true> <Delay = 0.00>
+ST_109 : Operation 477 [2/2] (3.25ns)   --->   "%dense_out_weights_23_2 = load float* %dense_out_weights_23_1, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 477 'load' 'dense_out_weights_23_2' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+
+State 110 <SV = 109> <Delay = 15.6>
+ST_110 : Operation 478 [2/4] (10.5ns)   --->   "%w_sum_22 = fadd float %w_sum_21, %tmp_3_21" [dense_out/dense_out.cpp:23]   --->   Operation 478 'fadd' 'w_sum_22' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_110 : Operation 479 [1/2] (3.25ns)   --->   "%dense_out_weights_23_2 = load float* %dense_out_weights_23_1, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 479 'load' 'dense_out_weights_23_2' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+ST_110 : Operation 480 [2/2] (12.3ns)   --->   "%tmp_3_22 = fmul float %dense_out_weights_23_2, %fully_connected_load_23" [dense_out/dense_out.cpp:23]   --->   Operation 480 'fmul' 'tmp_3_22' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 111 <SV = 110> <Delay = 12.3>
+ST_111 : Operation 481 [1/4] (10.5ns)   --->   "%w_sum_22 = fadd float %w_sum_21, %tmp_3_21" [dense_out/dense_out.cpp:23]   --->   Operation 481 'fadd' 'w_sum_22' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_111 : Operation 482 [1/2] (12.3ns)   --->   "%tmp_3_22 = fmul float %dense_out_weights_23_2, %fully_connected_load_23" [dense_out/dense_out.cpp:23]   --->   Operation 482 'fmul' 'tmp_3_22' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 112 <SV = 111> <Delay = 10.5>
+ST_112 : Operation 483 [4/4] (10.5ns)   --->   "%w_sum_23 = fadd float %w_sum_22, %tmp_3_22" [dense_out/dense_out.cpp:23]   --->   Operation 483 'fadd' 'w_sum_23' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 113 <SV = 112> <Delay = 10.5>
+ST_113 : Operation 484 [3/4] (10.5ns)   --->   "%w_sum_23 = fadd float %w_sum_22, %tmp_3_22" [dense_out/dense_out.cpp:23]   --->   Operation 484 'fadd' 'w_sum_23' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_113 : Operation 485 [1/1] (0.00ns)   --->   "%dense_out_weights_24_1 = getelementptr [10 x float]* @dense_out_weights_24, i64 0, i64 %zext_ln23" [dense_out/dense_out.cpp:23]   --->   Operation 485 'getelementptr' 'dense_out_weights_24_1' <Predicate = true> <Delay = 0.00>
+ST_113 : Operation 486 [2/2] (3.25ns)   --->   "%dense_out_weights_24_2 = load float* %dense_out_weights_24_1, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 486 'load' 'dense_out_weights_24_2' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+
+State 114 <SV = 113> <Delay = 15.6>
+ST_114 : Operation 487 [2/4] (10.5ns)   --->   "%w_sum_23 = fadd float %w_sum_22, %tmp_3_22" [dense_out/dense_out.cpp:23]   --->   Operation 487 'fadd' 'w_sum_23' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_114 : Operation 488 [1/2] (3.25ns)   --->   "%dense_out_weights_24_2 = load float* %dense_out_weights_24_1, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 488 'load' 'dense_out_weights_24_2' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+ST_114 : Operation 489 [2/2] (12.3ns)   --->   "%tmp_3_23 = fmul float %dense_out_weights_24_2, %fully_connected_load_24" [dense_out/dense_out.cpp:23]   --->   Operation 489 'fmul' 'tmp_3_23' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 115 <SV = 114> <Delay = 12.3>
+ST_115 : Operation 490 [1/4] (10.5ns)   --->   "%w_sum_23 = fadd float %w_sum_22, %tmp_3_22" [dense_out/dense_out.cpp:23]   --->   Operation 490 'fadd' 'w_sum_23' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_115 : Operation 491 [1/2] (12.3ns)   --->   "%tmp_3_23 = fmul float %dense_out_weights_24_2, %fully_connected_load_24" [dense_out/dense_out.cpp:23]   --->   Operation 491 'fmul' 'tmp_3_23' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 116 <SV = 115> <Delay = 10.5>
+ST_116 : Operation 492 [4/4] (10.5ns)   --->   "%w_sum_24 = fadd float %w_sum_23, %tmp_3_23" [dense_out/dense_out.cpp:23]   --->   Operation 492 'fadd' 'w_sum_24' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 117 <SV = 116> <Delay = 10.5>
+ST_117 : Operation 493 [3/4] (10.5ns)   --->   "%w_sum_24 = fadd float %w_sum_23, %tmp_3_23" [dense_out/dense_out.cpp:23]   --->   Operation 493 'fadd' 'w_sum_24' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_117 : Operation 494 [1/1] (0.00ns)   --->   "%dense_out_weights_25_1 = getelementptr [10 x float]* @dense_out_weights_25, i64 0, i64 %zext_ln23" [dense_out/dense_out.cpp:23]   --->   Operation 494 'getelementptr' 'dense_out_weights_25_1' <Predicate = true> <Delay = 0.00>
+ST_117 : Operation 495 [2/2] (3.25ns)   --->   "%dense_out_weights_25_2 = load float* %dense_out_weights_25_1, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 495 'load' 'dense_out_weights_25_2' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+
+State 118 <SV = 117> <Delay = 15.6>
+ST_118 : Operation 496 [2/4] (10.5ns)   --->   "%w_sum_24 = fadd float %w_sum_23, %tmp_3_23" [dense_out/dense_out.cpp:23]   --->   Operation 496 'fadd' 'w_sum_24' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_118 : Operation 497 [1/2] (3.25ns)   --->   "%dense_out_weights_25_2 = load float* %dense_out_weights_25_1, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 497 'load' 'dense_out_weights_25_2' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+ST_118 : Operation 498 [2/2] (12.3ns)   --->   "%tmp_3_24 = fmul float %dense_out_weights_25_2, %fully_connected_load_25" [dense_out/dense_out.cpp:23]   --->   Operation 498 'fmul' 'tmp_3_24' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 119 <SV = 118> <Delay = 12.3>
+ST_119 : Operation 499 [1/4] (10.5ns)   --->   "%w_sum_24 = fadd float %w_sum_23, %tmp_3_23" [dense_out/dense_out.cpp:23]   --->   Operation 499 'fadd' 'w_sum_24' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_119 : Operation 500 [1/2] (12.3ns)   --->   "%tmp_3_24 = fmul float %dense_out_weights_25_2, %fully_connected_load_25" [dense_out/dense_out.cpp:23]   --->   Operation 500 'fmul' 'tmp_3_24' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 120 <SV = 119> <Delay = 10.5>
+ST_120 : Operation 501 [4/4] (10.5ns)   --->   "%w_sum_25 = fadd float %w_sum_24, %tmp_3_24" [dense_out/dense_out.cpp:23]   --->   Operation 501 'fadd' 'w_sum_25' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 121 <SV = 120> <Delay = 10.5>
+ST_121 : Operation 502 [3/4] (10.5ns)   --->   "%w_sum_25 = fadd float %w_sum_24, %tmp_3_24" [dense_out/dense_out.cpp:23]   --->   Operation 502 'fadd' 'w_sum_25' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_121 : Operation 503 [1/1] (0.00ns)   --->   "%dense_out_weights_26_1 = getelementptr [10 x float]* @dense_out_weights_26, i64 0, i64 %zext_ln23" [dense_out/dense_out.cpp:23]   --->   Operation 503 'getelementptr' 'dense_out_weights_26_1' <Predicate = true> <Delay = 0.00>
+ST_121 : Operation 504 [2/2] (3.25ns)   --->   "%dense_out_weights_26_2 = load float* %dense_out_weights_26_1, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 504 'load' 'dense_out_weights_26_2' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+
+State 122 <SV = 121> <Delay = 15.6>
+ST_122 : Operation 505 [2/4] (10.5ns)   --->   "%w_sum_25 = fadd float %w_sum_24, %tmp_3_24" [dense_out/dense_out.cpp:23]   --->   Operation 505 'fadd' 'w_sum_25' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_122 : Operation 506 [1/2] (3.25ns)   --->   "%dense_out_weights_26_2 = load float* %dense_out_weights_26_1, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 506 'load' 'dense_out_weights_26_2' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+ST_122 : Operation 507 [2/2] (12.3ns)   --->   "%tmp_3_25 = fmul float %dense_out_weights_26_2, %fully_connected_load_26" [dense_out/dense_out.cpp:23]   --->   Operation 507 'fmul' 'tmp_3_25' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 123 <SV = 122> <Delay = 12.3>
+ST_123 : Operation 508 [1/4] (10.5ns)   --->   "%w_sum_25 = fadd float %w_sum_24, %tmp_3_24" [dense_out/dense_out.cpp:23]   --->   Operation 508 'fadd' 'w_sum_25' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_123 : Operation 509 [1/2] (12.3ns)   --->   "%tmp_3_25 = fmul float %dense_out_weights_26_2, %fully_connected_load_26" [dense_out/dense_out.cpp:23]   --->   Operation 509 'fmul' 'tmp_3_25' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 124 <SV = 123> <Delay = 10.5>
+ST_124 : Operation 510 [4/4] (10.5ns)   --->   "%w_sum_26 = fadd float %w_sum_25, %tmp_3_25" [dense_out/dense_out.cpp:23]   --->   Operation 510 'fadd' 'w_sum_26' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 125 <SV = 124> <Delay = 10.5>
+ST_125 : Operation 511 [3/4] (10.5ns)   --->   "%w_sum_26 = fadd float %w_sum_25, %tmp_3_25" [dense_out/dense_out.cpp:23]   --->   Operation 511 'fadd' 'w_sum_26' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_125 : Operation 512 [1/1] (0.00ns)   --->   "%dense_out_weights_27_1 = getelementptr [10 x float]* @dense_out_weights_27, i64 0, i64 %zext_ln23" [dense_out/dense_out.cpp:23]   --->   Operation 512 'getelementptr' 'dense_out_weights_27_1' <Predicate = true> <Delay = 0.00>
+ST_125 : Operation 513 [2/2] (3.25ns)   --->   "%dense_out_weights_27_2 = load float* %dense_out_weights_27_1, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 513 'load' 'dense_out_weights_27_2' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+
+State 126 <SV = 125> <Delay = 15.6>
+ST_126 : Operation 514 [2/4] (10.5ns)   --->   "%w_sum_26 = fadd float %w_sum_25, %tmp_3_25" [dense_out/dense_out.cpp:23]   --->   Operation 514 'fadd' 'w_sum_26' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_126 : Operation 515 [1/2] (3.25ns)   --->   "%dense_out_weights_27_2 = load float* %dense_out_weights_27_1, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 515 'load' 'dense_out_weights_27_2' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+ST_126 : Operation 516 [2/2] (12.3ns)   --->   "%tmp_3_26 = fmul float %dense_out_weights_27_2, %fully_connected_load_27" [dense_out/dense_out.cpp:23]   --->   Operation 516 'fmul' 'tmp_3_26' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 127 <SV = 126> <Delay = 12.3>
+ST_127 : Operation 517 [1/4] (10.5ns)   --->   "%w_sum_26 = fadd float %w_sum_25, %tmp_3_25" [dense_out/dense_out.cpp:23]   --->   Operation 517 'fadd' 'w_sum_26' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_127 : Operation 518 [1/2] (12.3ns)   --->   "%tmp_3_26 = fmul float %dense_out_weights_27_2, %fully_connected_load_27" [dense_out/dense_out.cpp:23]   --->   Operation 518 'fmul' 'tmp_3_26' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 128 <SV = 127> <Delay = 10.5>
+ST_128 : Operation 519 [4/4] (10.5ns)   --->   "%w_sum_27 = fadd float %w_sum_26, %tmp_3_26" [dense_out/dense_out.cpp:23]   --->   Operation 519 'fadd' 'w_sum_27' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 129 <SV = 128> <Delay = 10.5>
+ST_129 : Operation 520 [3/4] (10.5ns)   --->   "%w_sum_27 = fadd float %w_sum_26, %tmp_3_26" [dense_out/dense_out.cpp:23]   --->   Operation 520 'fadd' 'w_sum_27' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_129 : Operation 521 [1/1] (0.00ns)   --->   "%dense_out_weights_28_1 = getelementptr [10 x float]* @dense_out_weights_28, i64 0, i64 %zext_ln23" [dense_out/dense_out.cpp:23]   --->   Operation 521 'getelementptr' 'dense_out_weights_28_1' <Predicate = true> <Delay = 0.00>
+ST_129 : Operation 522 [2/2] (3.25ns)   --->   "%dense_out_weights_28_2 = load float* %dense_out_weights_28_1, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 522 'load' 'dense_out_weights_28_2' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+
+State 130 <SV = 129> <Delay = 15.6>
+ST_130 : Operation 523 [2/4] (10.5ns)   --->   "%w_sum_27 = fadd float %w_sum_26, %tmp_3_26" [dense_out/dense_out.cpp:23]   --->   Operation 523 'fadd' 'w_sum_27' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_130 : Operation 524 [1/2] (3.25ns)   --->   "%dense_out_weights_28_2 = load float* %dense_out_weights_28_1, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 524 'load' 'dense_out_weights_28_2' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+ST_130 : Operation 525 [2/2] (12.3ns)   --->   "%tmp_3_27 = fmul float %dense_out_weights_28_2, %fully_connected_load_28" [dense_out/dense_out.cpp:23]   --->   Operation 525 'fmul' 'tmp_3_27' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 131 <SV = 130> <Delay = 12.3>
+ST_131 : Operation 526 [1/4] (10.5ns)   --->   "%w_sum_27 = fadd float %w_sum_26, %tmp_3_26" [dense_out/dense_out.cpp:23]   --->   Operation 526 'fadd' 'w_sum_27' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_131 : Operation 527 [1/2] (12.3ns)   --->   "%tmp_3_27 = fmul float %dense_out_weights_28_2, %fully_connected_load_28" [dense_out/dense_out.cpp:23]   --->   Operation 527 'fmul' 'tmp_3_27' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 132 <SV = 131> <Delay = 10.5>
+ST_132 : Operation 528 [4/4] (10.5ns)   --->   "%w_sum_28 = fadd float %w_sum_27, %tmp_3_27" [dense_out/dense_out.cpp:23]   --->   Operation 528 'fadd' 'w_sum_28' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 133 <SV = 132> <Delay = 10.5>
+ST_133 : Operation 529 [3/4] (10.5ns)   --->   "%w_sum_28 = fadd float %w_sum_27, %tmp_3_27" [dense_out/dense_out.cpp:23]   --->   Operation 529 'fadd' 'w_sum_28' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_133 : Operation 530 [1/1] (0.00ns)   --->   "%dense_out_weights_29_1 = getelementptr [10 x float]* @dense_out_weights_29, i64 0, i64 %zext_ln23" [dense_out/dense_out.cpp:23]   --->   Operation 530 'getelementptr' 'dense_out_weights_29_1' <Predicate = true> <Delay = 0.00>
+ST_133 : Operation 531 [2/2] (3.25ns)   --->   "%dense_out_weights_29_2 = load float* %dense_out_weights_29_1, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 531 'load' 'dense_out_weights_29_2' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+
+State 134 <SV = 133> <Delay = 15.6>
+ST_134 : Operation 532 [2/4] (10.5ns)   --->   "%w_sum_28 = fadd float %w_sum_27, %tmp_3_27" [dense_out/dense_out.cpp:23]   --->   Operation 532 'fadd' 'w_sum_28' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_134 : Operation 533 [1/2] (3.25ns)   --->   "%dense_out_weights_29_2 = load float* %dense_out_weights_29_1, align 4" [dense_out/dense_out.cpp:23]   --->   Operation 533 'load' 'dense_out_weights_29_2' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+ST_134 : Operation 534 [2/2] (12.3ns)   --->   "%tmp_3_28 = fmul float %dense_out_weights_29_2, %fully_connected_load_29" [dense_out/dense_out.cpp:23]   --->   Operation 534 'fmul' 'tmp_3_28' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 135 <SV = 134> <Delay = 12.3>
+ST_135 : Operation 535 [1/4] (10.5ns)   --->   "%w_sum_28 = fadd float %w_sum_27, %tmp_3_27" [dense_out/dense_out.cpp:23]   --->   Operation 535 'fadd' 'w_sum_28' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_135 : Operation 536 [1/2] (12.3ns)   --->   "%tmp_3_28 = fmul float %dense_out_weights_29_2, %fully_connected_load_29" [dense_out/dense_out.cpp:23]   --->   Operation 536 'fmul' 'tmp_3_28' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 136 <SV = 135> <Delay = 10.5>
+ST_136 : Operation 537 [4/4] (10.5ns)   --->   "%w_sum_29 = fadd float %w_sum_28, %tmp_3_28" [dense_out/dense_out.cpp:23]   --->   Operation 537 'fadd' 'w_sum_29' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 137 <SV = 136> <Delay = 10.5>
+ST_137 : Operation 538 [3/4] (10.5ns)   --->   "%w_sum_29 = fadd float %w_sum_28, %tmp_3_28" [dense_out/dense_out.cpp:23]   --->   Operation 538 'fadd' 'w_sum_29' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 138 <SV = 137> <Delay = 10.5>
+ST_138 : Operation 539 [2/4] (10.5ns)   --->   "%w_sum_29 = fadd float %w_sum_28, %tmp_3_28" [dense_out/dense_out.cpp:23]   --->   Operation 539 'fadd' 'w_sum_29' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 139 <SV = 138> <Delay = 10.5>
+ST_139 : Operation 540 [1/4] (10.5ns)   --->   "%w_sum_29 = fadd float %w_sum_28, %tmp_3_28" [dense_out/dense_out.cpp:23]   --->   Operation 540 'fadd' 'w_sum_29' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_139 : Operation 541 [1/1] (0.00ns)   --->   "%dense_out_bias_addr = getelementptr inbounds [10 x float]* @dense_out_bias, i64 0, i64 %zext_ln23" [dense_out/dense_out.cpp:26]   --->   Operation 541 'getelementptr' 'dense_out_bias_addr' <Predicate = true> <Delay = 0.00>
+ST_139 : Operation 542 [2/2] (3.25ns)   --->   "%dense_out_bias_load = load float* %dense_out_bias_addr, align 4" [dense_out/dense_out.cpp:26]   --->   Operation 542 'load' 'dense_out_bias_load' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+
+State 140 <SV = 139> <Delay = 13.7>
+ST_140 : Operation 543 [1/2] (3.25ns)   --->   "%dense_out_bias_load = load float* %dense_out_bias_addr, align 4" [dense_out/dense_out.cpp:26]   --->   Operation 543 'load' 'dense_out_bias_load' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+ST_140 : Operation 544 [4/4] (10.5ns)   --->   "%tmp_2 = fadd float %w_sum_29, %dense_out_bias_load" [dense_out/dense_out.cpp:26]   --->   Operation 544 'fadd' 'tmp_2' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 141 <SV = 140> <Delay = 10.5>
+ST_141 : Operation 545 [3/4] (10.5ns)   --->   "%tmp_2 = fadd float %w_sum_29, %dense_out_bias_load" [dense_out/dense_out.cpp:26]   --->   Operation 545 'fadd' 'tmp_2' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 142 <SV = 141> <Delay = 10.5>
+ST_142 : Operation 546 [2/4] (10.5ns)   --->   "%tmp_2 = fadd float %w_sum_29, %dense_out_bias_load" [dense_out/dense_out.cpp:26]   --->   Operation 546 'fadd' 'tmp_2' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 143 <SV = 142> <Delay = 12.8>
+ST_143 : Operation 547 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([11 x i8]* @p_str) nounwind" [dense_out/dense_out.cpp:17]   --->   Operation 547 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_143 : Operation 548 [1/4] (10.5ns)   --->   "%tmp_2 = fadd float %w_sum_29, %dense_out_bias_load" [dense_out/dense_out.cpp:26]   --->   Operation 548 'fadd' 'tmp_2' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_143 : Operation 549 [1/1] (0.00ns)   --->   "%dense_array_addr_1 = getelementptr inbounds [10 x float]* %dense_array, i64 0, i64 %zext_ln23" [dense_out/dense_out.cpp:26]   --->   Operation 549 'getelementptr' 'dense_array_addr_1' <Predicate = true> <Delay = 0.00>
+ST_143 : Operation 550 [1/1] (2.32ns)   --->   "store float %tmp_2, float* %dense_array_addr_1, align 4" [dense_out/dense_out.cpp:26]   --->   Operation 550 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_143 : Operation 551 [1/1] (0.00ns)   --->   "br label %1" [dense_out/dense_out.cpp:16]   --->   Operation 551 'br' <Predicate = true> <Delay = 0.00>
+
+State 144 <SV = 17> <Delay = 2.32>
+ST_144 : Operation 552 [1/1] (0.00ns)   --->   "%sum_0 = phi float [ %sum, %3 ], [ 0.000000e+00, %.preheader1.preheader ]"   --->   Operation 552 'phi' 'sum_0' <Predicate = true> <Delay = 0.00>
+ST_144 : Operation 553 [1/1] (0.00ns)   --->   "%i_0 = phi i4 [ %i, %3 ], [ 0, %.preheader1.preheader ]"   --->   Operation 553 'phi' 'i_0' <Predicate = true> <Delay = 0.00>
+ST_144 : Operation 554 [1/1] (1.30ns)   --->   "%icmp_ln31 = icmp eq i4 %i_0, -6" [dense_out/dense_out.cpp:31]   --->   Operation 554 'icmp' 'icmp_ln31' <Predicate = true> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_144 : Operation 555 [1/1] (0.00ns)   --->   "%empty_3 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 10, i64 10, i64 10) nounwind"   --->   Operation 555 'speclooptripcount' 'empty_3' <Predicate = true> <Delay = 0.00>
+ST_144 : Operation 556 [1/1] (1.73ns)   --->   "%i = add i4 %i_0, 1" [dense_out/dense_out.cpp:31]   --->   Operation 556 'add' 'i' <Predicate = true> <Delay = 1.73> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_144 : Operation 557 [1/1] (0.00ns)   --->   "br i1 %icmp_ln31, label %.preheader.preheader, label %3" [dense_out/dense_out.cpp:31]   --->   Operation 557 'br' <Predicate = true> <Delay = 0.00>
+ST_144 : Operation 558 [1/1] (0.00ns)   --->   "%zext_ln33 = zext i4 %i_0 to i64" [dense_out/dense_out.cpp:33]   --->   Operation 558 'zext' 'zext_ln33' <Predicate = (!icmp_ln31)> <Delay = 0.00>
+ST_144 : Operation 559 [1/1] (0.00ns)   --->   "%dense_array_addr = getelementptr inbounds [10 x float]* %dense_array, i64 0, i64 %zext_ln33" [dense_out/dense_out.cpp:33]   --->   Operation 559 'getelementptr' 'dense_array_addr' <Predicate = (!icmp_ln31)> <Delay = 0.00>
+ST_144 : Operation 560 [2/2] (2.32ns)   --->   "%dense_array_load = load float* %dense_array_addr, align 4" [dense_out/dense_out.cpp:33]   --->   Operation 560 'load' 'dense_array_load' <Predicate = (!icmp_ln31)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_144 : Operation 561 [1/1] (1.76ns)   --->   "br label %.preheader" [dense_out/dense_out.cpp:37]   --->   Operation 561 'br' <Predicate = (icmp_ln31)> <Delay = 1.76>
+
+State 145 <SV = 18> <Delay = 17.3>
+ST_145 : Operation 562 [1/2] (2.32ns)   --->   "%dense_array_load = load float* %dense_array_addr, align 4" [dense_out/dense_out.cpp:33]   --->   Operation 562 'load' 'dense_array_load' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_145 : Operation 563 [5/5] (15.0ns)   --->   "%tmp = call float @llvm.exp.f32(float %dense_array_load)" [dense_out/dense_out.cpp:33]   --->   Operation 563 'fexp' 'tmp' <Predicate = true> <Delay = 15.0> <Core = "FExp">   --->   Core 127 'FExp' <Latency = 4> <II = 1> <Delay = 15.0> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 146 <SV = 19> <Delay = 15.0>
+ST_146 : Operation 564 [4/5] (15.0ns)   --->   "%tmp = call float @llvm.exp.f32(float %dense_array_load)" [dense_out/dense_out.cpp:33]   --->   Operation 564 'fexp' 'tmp' <Predicate = true> <Delay = 15.0> <Core = "FExp">   --->   Core 127 'FExp' <Latency = 4> <II = 1> <Delay = 15.0> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 147 <SV = 20> <Delay = 15.0>
+ST_147 : Operation 565 [3/5] (15.0ns)   --->   "%tmp = call float @llvm.exp.f32(float %dense_array_load)" [dense_out/dense_out.cpp:33]   --->   Operation 565 'fexp' 'tmp' <Predicate = true> <Delay = 15.0> <Core = "FExp">   --->   Core 127 'FExp' <Latency = 4> <II = 1> <Delay = 15.0> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 148 <SV = 21> <Delay = 15.0>
+ST_148 : Operation 566 [2/5] (15.0ns)   --->   "%tmp = call float @llvm.exp.f32(float %dense_array_load)" [dense_out/dense_out.cpp:33]   --->   Operation 566 'fexp' 'tmp' <Predicate = true> <Delay = 15.0> <Core = "FExp">   --->   Core 127 'FExp' <Latency = 4> <II = 1> <Delay = 15.0> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 149 <SV = 22> <Delay = 15.0>
+ST_149 : Operation 567 [1/5] (15.0ns)   --->   "%tmp = call float @llvm.exp.f32(float %dense_array_load)" [dense_out/dense_out.cpp:33]   --->   Operation 567 'fexp' 'tmp' <Predicate = true> <Delay = 15.0> <Core = "FExp">   --->   Core 127 'FExp' <Latency = 4> <II = 1> <Delay = 15.0> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 150 <SV = 23> <Delay = 10.5>
+ST_150 : Operation 568 [4/4] (10.5ns)   --->   "%sum = fadd float %sum_0, %tmp" [dense_out/dense_out.cpp:33]   --->   Operation 568 'fadd' 'sum' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 151 <SV = 24> <Delay = 10.5>
+ST_151 : Operation 569 [3/4] (10.5ns)   --->   "%sum = fadd float %sum_0, %tmp" [dense_out/dense_out.cpp:33]   --->   Operation 569 'fadd' 'sum' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 152 <SV = 25> <Delay = 10.5>
+ST_152 : Operation 570 [2/4] (10.5ns)   --->   "%sum = fadd float %sum_0, %tmp" [dense_out/dense_out.cpp:33]   --->   Operation 570 'fadd' 'sum' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 153 <SV = 26> <Delay = 10.5>
+ST_153 : Operation 571 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([9 x i8]* @p_str3) nounwind" [dense_out/dense_out.cpp:32]   --->   Operation 571 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_153 : Operation 572 [1/4] (10.5ns)   --->   "%sum = fadd float %sum_0, %tmp" [dense_out/dense_out.cpp:33]   --->   Operation 572 'fadd' 'sum' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_153 : Operation 573 [1/1] (0.00ns)   --->   "br label %.preheader1" [dense_out/dense_out.cpp:31]   --->   Operation 573 'br' <Predicate = true> <Delay = 0.00>
+
+State 154 <SV = 18> <Delay = 2.32>
+ST_154 : Operation 574 [1/1] (0.00ns)   --->   "%j_0 = phi i4 [ %j, %4 ], [ 0, %.preheader.preheader ]"   --->   Operation 574 'phi' 'j_0' <Predicate = true> <Delay = 0.00>
+ST_154 : Operation 575 [1/1] (1.30ns)   --->   "%icmp_ln37 = icmp eq i4 %j_0, -6" [dense_out/dense_out.cpp:37]   --->   Operation 575 'icmp' 'icmp_ln37' <Predicate = true> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_154 : Operation 576 [1/1] (0.00ns)   --->   "%empty_4 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 10, i64 10, i64 10) nounwind"   --->   Operation 576 'speclooptripcount' 'empty_4' <Predicate = true> <Delay = 0.00>
+ST_154 : Operation 577 [1/1] (1.73ns)   --->   "%j = add i4 %j_0, 1" [dense_out/dense_out.cpp:37]   --->   Operation 577 'add' 'j' <Predicate = true> <Delay = 1.73> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_154 : Operation 578 [1/1] (0.00ns)   --->   "br i1 %icmp_ln37, label %5, label %4" [dense_out/dense_out.cpp:37]   --->   Operation 578 'br' <Predicate = true> <Delay = 0.00>
+ST_154 : Operation 579 [1/1] (0.00ns)   --->   "%zext_ln39 = zext i4 %j_0 to i64" [dense_out/dense_out.cpp:39]   --->   Operation 579 'zext' 'zext_ln39' <Predicate = (!icmp_ln37)> <Delay = 0.00>
+ST_154 : Operation 580 [1/1] (0.00ns)   --->   "%dense_array_addr_2 = getelementptr inbounds [10 x float]* %dense_array, i64 0, i64 %zext_ln39" [dense_out/dense_out.cpp:39]   --->   Operation 580 'getelementptr' 'dense_array_addr_2' <Predicate = (!icmp_ln37)> <Delay = 0.00>
+ST_154 : Operation 581 [2/2] (2.32ns)   --->   "%dense_array_load_1 = load float* %dense_array_addr_2, align 4" [dense_out/dense_out.cpp:39]   --->   Operation 581 'load' 'dense_array_load_1' <Predicate = (!icmp_ln37)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_154 : Operation 582 [1/1] (0.00ns)   --->   "ret void" [dense_out/dense_out.cpp:41]   --->   Operation 582 'ret' <Predicate = (icmp_ln37)> <Delay = 0.00>
+
+State 155 <SV = 19> <Delay = 17.3>
+ST_155 : Operation 583 [1/2] (2.32ns)   --->   "%dense_array_load_1 = load float* %dense_array_addr_2, align 4" [dense_out/dense_out.cpp:39]   --->   Operation 583 'load' 'dense_array_load_1' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_155 : Operation 584 [5/5] (15.0ns)   --->   "%tmp_5 = call float @llvm.exp.f32(float %dense_array_load_1)" [dense_out/dense_out.cpp:39]   --->   Operation 584 'fexp' 'tmp_5' <Predicate = true> <Delay = 15.0> <Core = "FExp">   --->   Core 127 'FExp' <Latency = 4> <II = 1> <Delay = 15.0> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 156 <SV = 20> <Delay = 15.0>
+ST_156 : Operation 585 [4/5] (15.0ns)   --->   "%tmp_5 = call float @llvm.exp.f32(float %dense_array_load_1)" [dense_out/dense_out.cpp:39]   --->   Operation 585 'fexp' 'tmp_5' <Predicate = true> <Delay = 15.0> <Core = "FExp">   --->   Core 127 'FExp' <Latency = 4> <II = 1> <Delay = 15.0> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 157 <SV = 21> <Delay = 15.0>
+ST_157 : Operation 586 [3/5] (15.0ns)   --->   "%tmp_5 = call float @llvm.exp.f32(float %dense_array_load_1)" [dense_out/dense_out.cpp:39]   --->   Operation 586 'fexp' 'tmp_5' <Predicate = true> <Delay = 15.0> <Core = "FExp">   --->   Core 127 'FExp' <Latency = 4> <II = 1> <Delay = 15.0> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 158 <SV = 22> <Delay = 15.0>
+ST_158 : Operation 587 [2/5] (15.0ns)   --->   "%tmp_5 = call float @llvm.exp.f32(float %dense_array_load_1)" [dense_out/dense_out.cpp:39]   --->   Operation 587 'fexp' 'tmp_5' <Predicate = true> <Delay = 15.0> <Core = "FExp">   --->   Core 127 'FExp' <Latency = 4> <II = 1> <Delay = 15.0> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 159 <SV = 23> <Delay = 15.0>
+ST_159 : Operation 588 [1/5] (15.0ns)   --->   "%tmp_5 = call float @llvm.exp.f32(float %dense_array_load_1)" [dense_out/dense_out.cpp:39]   --->   Operation 588 'fexp' 'tmp_5' <Predicate = true> <Delay = 15.0> <Core = "FExp">   --->   Core 127 'FExp' <Latency = 4> <II = 1> <Delay = 15.0> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 160 <SV = 24> <Delay = 16.6>
+ST_160 : Operation 589 [8/8] (16.6ns)   --->   "%tmp_6 = fdiv float %tmp_5, %sum_0" [dense_out/dense_out.cpp:39]   --->   Operation 589 'fdiv' 'tmp_6' <Predicate = true> <Delay = 16.6> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 7> <II = 1> <Delay = 16.6> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 161 <SV = 25> <Delay = 16.6>
+ST_161 : Operation 590 [7/8] (16.6ns)   --->   "%tmp_6 = fdiv float %tmp_5, %sum_0" [dense_out/dense_out.cpp:39]   --->   Operation 590 'fdiv' 'tmp_6' <Predicate = true> <Delay = 16.6> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 7> <II = 1> <Delay = 16.6> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 162 <SV = 26> <Delay = 16.6>
+ST_162 : Operation 591 [6/8] (16.6ns)   --->   "%tmp_6 = fdiv float %tmp_5, %sum_0" [dense_out/dense_out.cpp:39]   --->   Operation 591 'fdiv' 'tmp_6' <Predicate = true> <Delay = 16.6> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 7> <II = 1> <Delay = 16.6> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 163 <SV = 27> <Delay = 16.6>
+ST_163 : Operation 592 [5/8] (16.6ns)   --->   "%tmp_6 = fdiv float %tmp_5, %sum_0" [dense_out/dense_out.cpp:39]   --->   Operation 592 'fdiv' 'tmp_6' <Predicate = true> <Delay = 16.6> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 7> <II = 1> <Delay = 16.6> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 164 <SV = 28> <Delay = 16.6>
+ST_164 : Operation 593 [4/8] (16.6ns)   --->   "%tmp_6 = fdiv float %tmp_5, %sum_0" [dense_out/dense_out.cpp:39]   --->   Operation 593 'fdiv' 'tmp_6' <Predicate = true> <Delay = 16.6> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 7> <II = 1> <Delay = 16.6> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 165 <SV = 29> <Delay = 16.6>
+ST_165 : Operation 594 [3/8] (16.6ns)   --->   "%tmp_6 = fdiv float %tmp_5, %sum_0" [dense_out/dense_out.cpp:39]   --->   Operation 594 'fdiv' 'tmp_6' <Predicate = true> <Delay = 16.6> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 7> <II = 1> <Delay = 16.6> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 166 <SV = 30> <Delay = 16.6>
+ST_166 : Operation 595 [2/8] (16.6ns)   --->   "%tmp_6 = fdiv float %tmp_5, %sum_0" [dense_out/dense_out.cpp:39]   --->   Operation 595 'fdiv' 'tmp_6' <Predicate = true> <Delay = 16.6> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 7> <II = 1> <Delay = 16.6> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 167 <SV = 31> <Delay = 16.6>
+ST_167 : Operation 596 [1/8] (16.6ns)   --->   "%tmp_6 = fdiv float %tmp_5, %sum_0" [dense_out/dense_out.cpp:39]   --->   Operation 596 'fdiv' 'tmp_6' <Predicate = true> <Delay = 16.6> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 7> <II = 1> <Delay = 16.6> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 168 <SV = 32> <Delay = 2.32>
+ST_168 : Operation 597 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([16 x i8]* @p_str4) nounwind" [dense_out/dense_out.cpp:38]   --->   Operation 597 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_168 : Operation 598 [1/1] (0.00ns)   --->   "%prediction_addr = getelementptr [10 x float]* %prediction, i64 0, i64 %zext_ln39" [dense_out/dense_out.cpp:39]   --->   Operation 598 'getelementptr' 'prediction_addr' <Predicate = true> <Delay = 0.00>
+ST_168 : Operation 599 [1/1] (2.32ns)   --->   "store float %tmp_6, float* %prediction_addr, align 4" [dense_out/dense_out.cpp:39]   --->   Operation 599 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_168 : Operation 600 [1/1] (0.00ns)   --->   "br label %.preheader" [dense_out/dense_out.cpp:37]   --->   Operation 600 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 20ns, clock uncertainty: 2.5ns.
+
+ <State 1>: 2.32ns
+The critical path consists of the following:
+	'getelementptr' operation ('fully_connected_addr', dense_out/dense_out.cpp:23) [38]  (0 ns)
+	'load' operation ('fully_connected_load', dense_out/dense_out.cpp:23) on array 'fully_connected' [39]  (2.32 ns)
+
+ <State 2>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('fully_connected_load', dense_out/dense_out.cpp:23) on array 'fully_connected' [39]  (2.32 ns)
+
+ <State 3>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('fully_connected_load_2', dense_out/dense_out.cpp:23) on array 'fully_connected' [43]  (2.32 ns)
+
+ <State 4>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('fully_connected_load_4', dense_out/dense_out.cpp:23) on array 'fully_connected' [47]  (2.32 ns)
+
+ <State 5>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('fully_connected_load_6', dense_out/dense_out.cpp:23) on array 'fully_connected' [51]  (2.32 ns)
+
+ <State 6>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('fully_connected_load_8', dense_out/dense_out.cpp:23) on array 'fully_connected' [55]  (2.32 ns)
+
+ <State 7>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('fully_connected_load_10', dense_out/dense_out.cpp:23) on array 'fully_connected' [59]  (2.32 ns)
+
+ <State 8>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('fully_connected_load_12', dense_out/dense_out.cpp:23) on array 'fully_connected' [63]  (2.32 ns)
+
+ <State 9>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('fully_connected_load_14', dense_out/dense_out.cpp:23) on array 'fully_connected' [67]  (2.32 ns)
+
+ <State 10>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('fully_connected_load_16', dense_out/dense_out.cpp:23) on array 'fully_connected' [71]  (2.32 ns)
+
+ <State 11>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('fully_connected_load_18', dense_out/dense_out.cpp:23) on array 'fully_connected' [75]  (2.32 ns)
+
+ <State 12>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('fully_connected_load_20', dense_out/dense_out.cpp:23) on array 'fully_connected' [79]  (2.32 ns)
+
+ <State 13>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('fully_connected_load_22', dense_out/dense_out.cpp:23) on array 'fully_connected' [83]  (2.32 ns)
+
+ <State 14>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('fully_connected_load_24', dense_out/dense_out.cpp:23) on array 'fully_connected' [87]  (2.32 ns)
+
+ <State 15>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('fully_connected_load_26', dense_out/dense_out.cpp:23) on array 'fully_connected' [91]  (2.32 ns)
+
+ <State 16>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('fully_connected_load_28', dense_out/dense_out.cpp:23) on array 'fully_connected' [95]  (2.32 ns)
+
+ <State 17>: 3.25ns
+The critical path consists of the following:
+	'phi' operation ('d') with incoming values : ('d', dense_out/dense_out.cpp:16) [100]  (0 ns)
+	'getelementptr' operation ('dense_out_weights_0_s', dense_out/dense_out.cpp:23) [108]  (0 ns)
+	'load' operation ('dense_out_weights_0_1', dense_out/dense_out.cpp:23) on array 'dense_out_weights_0' [109]  (3.25 ns)
+
+ <State 18>: 15.6ns
+The critical path consists of the following:
+	'load' operation ('dense_out_weights_0_1', dense_out/dense_out.cpp:23) on array 'dense_out_weights_0' [109]  (3.25 ns)
+	'fmul' operation ('tmp_3', dense_out/dense_out.cpp:23) [110]  (12.4 ns)
+
+ <State 19>: 12.4ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_3', dense_out/dense_out.cpp:23) [110]  (12.4 ns)
+
+ <State 20>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_s', dense_out/dense_out.cpp:23) [111]  (10.5 ns)
+
+ <State 21>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_s', dense_out/dense_out.cpp:23) [111]  (10.5 ns)
+
+ <State 22>: 15.6ns
+The critical path consists of the following:
+	'load' operation ('dense_out_weights_1_1', dense_out/dense_out.cpp:23) on array 'dense_out_weights_1' [113]  (3.25 ns)
+	'fmul' operation ('tmp_3_1', dense_out/dense_out.cpp:23) [114]  (12.4 ns)
+
+ <State 23>: 12.4ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_3_1', dense_out/dense_out.cpp:23) [114]  (12.4 ns)
+
+ <State 24>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_1', dense_out/dense_out.cpp:23) [115]  (10.5 ns)
+
+ <State 25>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_1', dense_out/dense_out.cpp:23) [115]  (10.5 ns)
+
+ <State 26>: 15.6ns
+The critical path consists of the following:
+	'load' operation ('dense_out_weights_2_1', dense_out/dense_out.cpp:23) on array 'dense_out_weights_2' [117]  (3.25 ns)
+	'fmul' operation ('tmp_3_2', dense_out/dense_out.cpp:23) [118]  (12.4 ns)
+
+ <State 27>: 12.4ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_3_2', dense_out/dense_out.cpp:23) [118]  (12.4 ns)
+
+ <State 28>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_2', dense_out/dense_out.cpp:23) [119]  (10.5 ns)
+
+ <State 29>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_2', dense_out/dense_out.cpp:23) [119]  (10.5 ns)
+
+ <State 30>: 15.6ns
+The critical path consists of the following:
+	'load' operation ('dense_out_weights_3_1', dense_out/dense_out.cpp:23) on array 'dense_out_weights_3' [121]  (3.25 ns)
+	'fmul' operation ('tmp_3_3', dense_out/dense_out.cpp:23) [122]  (12.4 ns)
+
+ <State 31>: 12.4ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_3_3', dense_out/dense_out.cpp:23) [122]  (12.4 ns)
+
+ <State 32>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_3', dense_out/dense_out.cpp:23) [123]  (10.5 ns)
+
+ <State 33>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_3', dense_out/dense_out.cpp:23) [123]  (10.5 ns)
+
+ <State 34>: 15.6ns
+The critical path consists of the following:
+	'load' operation ('dense_out_weights_4_1', dense_out/dense_out.cpp:23) on array 'dense_out_weights_4' [125]  (3.25 ns)
+	'fmul' operation ('tmp_3_4', dense_out/dense_out.cpp:23) [126]  (12.4 ns)
+
+ <State 35>: 12.4ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_3_4', dense_out/dense_out.cpp:23) [126]  (12.4 ns)
+
+ <State 36>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_4', dense_out/dense_out.cpp:23) [127]  (10.5 ns)
+
+ <State 37>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_4', dense_out/dense_out.cpp:23) [127]  (10.5 ns)
+
+ <State 38>: 15.6ns
+The critical path consists of the following:
+	'load' operation ('dense_out_weights_5_1', dense_out/dense_out.cpp:23) on array 'dense_out_weights_5' [129]  (3.25 ns)
+	'fmul' operation ('tmp_3_5', dense_out/dense_out.cpp:23) [130]  (12.4 ns)
+
+ <State 39>: 12.4ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_3_5', dense_out/dense_out.cpp:23) [130]  (12.4 ns)
+
+ <State 40>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_5', dense_out/dense_out.cpp:23) [131]  (10.5 ns)
+
+ <State 41>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_5', dense_out/dense_out.cpp:23) [131]  (10.5 ns)
+
+ <State 42>: 15.6ns
+The critical path consists of the following:
+	'load' operation ('dense_out_weights_6_1', dense_out/dense_out.cpp:23) on array 'dense_out_weights_6' [133]  (3.25 ns)
+	'fmul' operation ('tmp_3_6', dense_out/dense_out.cpp:23) [134]  (12.4 ns)
+
+ <State 43>: 12.4ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_3_6', dense_out/dense_out.cpp:23) [134]  (12.4 ns)
+
+ <State 44>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_6', dense_out/dense_out.cpp:23) [135]  (10.5 ns)
+
+ <State 45>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_6', dense_out/dense_out.cpp:23) [135]  (10.5 ns)
+
+ <State 46>: 15.6ns
+The critical path consists of the following:
+	'load' operation ('dense_out_weights_7_1', dense_out/dense_out.cpp:23) on array 'dense_out_weights_7' [137]  (3.25 ns)
+	'fmul' operation ('tmp_3_7', dense_out/dense_out.cpp:23) [138]  (12.4 ns)
+
+ <State 47>: 12.4ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_3_7', dense_out/dense_out.cpp:23) [138]  (12.4 ns)
+
+ <State 48>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_7', dense_out/dense_out.cpp:23) [139]  (10.5 ns)
+
+ <State 49>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_7', dense_out/dense_out.cpp:23) [139]  (10.5 ns)
+
+ <State 50>: 15.6ns
+The critical path consists of the following:
+	'load' operation ('dense_out_weights_8_1', dense_out/dense_out.cpp:23) on array 'dense_out_weights_8' [141]  (3.25 ns)
+	'fmul' operation ('tmp_3_8', dense_out/dense_out.cpp:23) [142]  (12.4 ns)
+
+ <State 51>: 12.4ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_3_8', dense_out/dense_out.cpp:23) [142]  (12.4 ns)
+
+ <State 52>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_8', dense_out/dense_out.cpp:23) [143]  (10.5 ns)
+
+ <State 53>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_8', dense_out/dense_out.cpp:23) [143]  (10.5 ns)
+
+ <State 54>: 15.6ns
+The critical path consists of the following:
+	'load' operation ('dense_out_weights_9_1', dense_out/dense_out.cpp:23) on array 'dense_out_weights_9' [145]  (3.25 ns)
+	'fmul' operation ('tmp_3_9', dense_out/dense_out.cpp:23) [146]  (12.4 ns)
+
+ <State 55>: 12.4ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_3_9', dense_out/dense_out.cpp:23) [146]  (12.4 ns)
+
+ <State 56>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_9', dense_out/dense_out.cpp:23) [147]  (10.5 ns)
+
+ <State 57>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_9', dense_out/dense_out.cpp:23) [147]  (10.5 ns)
+
+ <State 58>: 15.6ns
+The critical path consists of the following:
+	'load' operation ('dense_out_weights_10_2', dense_out/dense_out.cpp:23) on array 'dense_out_weights_10' [149]  (3.25 ns)
+	'fmul' operation ('tmp_3_s', dense_out/dense_out.cpp:23) [150]  (12.4 ns)
+
+ <State 59>: 12.4ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_3_s', dense_out/dense_out.cpp:23) [150]  (12.4 ns)
+
+ <State 60>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_10', dense_out/dense_out.cpp:23) [151]  (10.5 ns)
+
+ <State 61>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_10', dense_out/dense_out.cpp:23) [151]  (10.5 ns)
+
+ <State 62>: 15.6ns
+The critical path consists of the following:
+	'load' operation ('dense_out_weights_11_2', dense_out/dense_out.cpp:23) on array 'dense_out_weights_11' [153]  (3.25 ns)
+	'fmul' operation ('tmp_3_10', dense_out/dense_out.cpp:23) [154]  (12.4 ns)
+
+ <State 63>: 12.4ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_3_10', dense_out/dense_out.cpp:23) [154]  (12.4 ns)
+
+ <State 64>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_11', dense_out/dense_out.cpp:23) [155]  (10.5 ns)
+
+ <State 65>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_11', dense_out/dense_out.cpp:23) [155]  (10.5 ns)
+
+ <State 66>: 15.6ns
+The critical path consists of the following:
+	'load' operation ('dense_out_weights_12_2', dense_out/dense_out.cpp:23) on array 'dense_out_weights_12' [157]  (3.25 ns)
+	'fmul' operation ('tmp_3_11', dense_out/dense_out.cpp:23) [158]  (12.4 ns)
+
+ <State 67>: 12.4ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_3_11', dense_out/dense_out.cpp:23) [158]  (12.4 ns)
+
+ <State 68>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_12', dense_out/dense_out.cpp:23) [159]  (10.5 ns)
+
+ <State 69>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_12', dense_out/dense_out.cpp:23) [159]  (10.5 ns)
+
+ <State 70>: 15.6ns
+The critical path consists of the following:
+	'load' operation ('dense_out_weights_13_2', dense_out/dense_out.cpp:23) on array 'dense_out_weights_13' [161]  (3.25 ns)
+	'fmul' operation ('tmp_3_12', dense_out/dense_out.cpp:23) [162]  (12.4 ns)
+
+ <State 71>: 12.4ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_3_12', dense_out/dense_out.cpp:23) [162]  (12.4 ns)
+
+ <State 72>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_13', dense_out/dense_out.cpp:23) [163]  (10.5 ns)
+
+ <State 73>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_13', dense_out/dense_out.cpp:23) [163]  (10.5 ns)
+
+ <State 74>: 15.6ns
+The critical path consists of the following:
+	'load' operation ('dense_out_weights_14_2', dense_out/dense_out.cpp:23) on array 'dense_out_weights_14' [165]  (3.25 ns)
+	'fmul' operation ('tmp_3_13', dense_out/dense_out.cpp:23) [166]  (12.4 ns)
+
+ <State 75>: 12.4ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_3_13', dense_out/dense_out.cpp:23) [166]  (12.4 ns)
+
+ <State 76>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_14', dense_out/dense_out.cpp:23) [167]  (10.5 ns)
+
+ <State 77>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_14', dense_out/dense_out.cpp:23) [167]  (10.5 ns)
+
+ <State 78>: 15.6ns
+The critical path consists of the following:
+	'load' operation ('dense_out_weights_15_2', dense_out/dense_out.cpp:23) on array 'dense_out_weights_15' [169]  (3.25 ns)
+	'fmul' operation ('tmp_3_14', dense_out/dense_out.cpp:23) [170]  (12.4 ns)
+
+ <State 79>: 12.4ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_3_14', dense_out/dense_out.cpp:23) [170]  (12.4 ns)
+
+ <State 80>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_15', dense_out/dense_out.cpp:23) [171]  (10.5 ns)
+
+ <State 81>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_15', dense_out/dense_out.cpp:23) [171]  (10.5 ns)
+
+ <State 82>: 15.6ns
+The critical path consists of the following:
+	'load' operation ('dense_out_weights_16_2', dense_out/dense_out.cpp:23) on array 'dense_out_weights_16' [173]  (3.25 ns)
+	'fmul' operation ('tmp_3_15', dense_out/dense_out.cpp:23) [174]  (12.4 ns)
+
+ <State 83>: 12.4ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_3_15', dense_out/dense_out.cpp:23) [174]  (12.4 ns)
+
+ <State 84>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_16', dense_out/dense_out.cpp:23) [175]  (10.5 ns)
+
+ <State 85>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_16', dense_out/dense_out.cpp:23) [175]  (10.5 ns)
+
+ <State 86>: 15.6ns
+The critical path consists of the following:
+	'load' operation ('dense_out_weights_17_2', dense_out/dense_out.cpp:23) on array 'dense_out_weights_17' [177]  (3.25 ns)
+	'fmul' operation ('tmp_3_16', dense_out/dense_out.cpp:23) [178]  (12.4 ns)
+
+ <State 87>: 12.4ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_3_16', dense_out/dense_out.cpp:23) [178]  (12.4 ns)
+
+ <State 88>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_17', dense_out/dense_out.cpp:23) [179]  (10.5 ns)
+
+ <State 89>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_17', dense_out/dense_out.cpp:23) [179]  (10.5 ns)
+
+ <State 90>: 15.6ns
+The critical path consists of the following:
+	'load' operation ('dense_out_weights_18_2', dense_out/dense_out.cpp:23) on array 'dense_out_weights_18' [181]  (3.25 ns)
+	'fmul' operation ('tmp_3_17', dense_out/dense_out.cpp:23) [182]  (12.4 ns)
+
+ <State 91>: 12.4ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_3_17', dense_out/dense_out.cpp:23) [182]  (12.4 ns)
+
+ <State 92>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_18', dense_out/dense_out.cpp:23) [183]  (10.5 ns)
+
+ <State 93>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_18', dense_out/dense_out.cpp:23) [183]  (10.5 ns)
+
+ <State 94>: 15.6ns
+The critical path consists of the following:
+	'load' operation ('dense_out_weights_19_2', dense_out/dense_out.cpp:23) on array 'dense_out_weights_19' [185]  (3.25 ns)
+	'fmul' operation ('tmp_3_18', dense_out/dense_out.cpp:23) [186]  (12.4 ns)
+
+ <State 95>: 12.4ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_3_18', dense_out/dense_out.cpp:23) [186]  (12.4 ns)
+
+ <State 96>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_19', dense_out/dense_out.cpp:23) [187]  (10.5 ns)
+
+ <State 97>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_19', dense_out/dense_out.cpp:23) [187]  (10.5 ns)
+
+ <State 98>: 15.6ns
+The critical path consists of the following:
+	'load' operation ('dense_out_weights_20_2', dense_out/dense_out.cpp:23) on array 'dense_out_weights_20' [189]  (3.25 ns)
+	'fmul' operation ('tmp_3_19', dense_out/dense_out.cpp:23) [190]  (12.4 ns)
+
+ <State 99>: 12.4ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_3_19', dense_out/dense_out.cpp:23) [190]  (12.4 ns)
+
+ <State 100>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_20', dense_out/dense_out.cpp:23) [191]  (10.5 ns)
+
+ <State 101>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_20', dense_out/dense_out.cpp:23) [191]  (10.5 ns)
+
+ <State 102>: 15.6ns
+The critical path consists of the following:
+	'load' operation ('dense_out_weights_21_2', dense_out/dense_out.cpp:23) on array 'dense_out_weights_21' [193]  (3.25 ns)
+	'fmul' operation ('tmp_3_20', dense_out/dense_out.cpp:23) [194]  (12.4 ns)
+
+ <State 103>: 12.4ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_3_20', dense_out/dense_out.cpp:23) [194]  (12.4 ns)
+
+ <State 104>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_21', dense_out/dense_out.cpp:23) [195]  (10.5 ns)
+
+ <State 105>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_21', dense_out/dense_out.cpp:23) [195]  (10.5 ns)
+
+ <State 106>: 15.6ns
+The critical path consists of the following:
+	'load' operation ('dense_out_weights_22_2', dense_out/dense_out.cpp:23) on array 'dense_out_weights_22' [197]  (3.25 ns)
+	'fmul' operation ('tmp_3_21', dense_out/dense_out.cpp:23) [198]  (12.4 ns)
+
+ <State 107>: 12.4ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_3_21', dense_out/dense_out.cpp:23) [198]  (12.4 ns)
+
+ <State 108>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_22', dense_out/dense_out.cpp:23) [199]  (10.5 ns)
+
+ <State 109>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_22', dense_out/dense_out.cpp:23) [199]  (10.5 ns)
+
+ <State 110>: 15.6ns
+The critical path consists of the following:
+	'load' operation ('dense_out_weights_23_2', dense_out/dense_out.cpp:23) on array 'dense_out_weights_23' [201]  (3.25 ns)
+	'fmul' operation ('tmp_3_22', dense_out/dense_out.cpp:23) [202]  (12.4 ns)
+
+ <State 111>: 12.4ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_3_22', dense_out/dense_out.cpp:23) [202]  (12.4 ns)
+
+ <State 112>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_23', dense_out/dense_out.cpp:23) [203]  (10.5 ns)
+
+ <State 113>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_23', dense_out/dense_out.cpp:23) [203]  (10.5 ns)
+
+ <State 114>: 15.6ns
+The critical path consists of the following:
+	'load' operation ('dense_out_weights_24_2', dense_out/dense_out.cpp:23) on array 'dense_out_weights_24' [205]  (3.25 ns)
+	'fmul' operation ('tmp_3_23', dense_out/dense_out.cpp:23) [206]  (12.4 ns)
+
+ <State 115>: 12.4ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_3_23', dense_out/dense_out.cpp:23) [206]  (12.4 ns)
+
+ <State 116>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_24', dense_out/dense_out.cpp:23) [207]  (10.5 ns)
+
+ <State 117>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_24', dense_out/dense_out.cpp:23) [207]  (10.5 ns)
+
+ <State 118>: 15.6ns
+The critical path consists of the following:
+	'load' operation ('dense_out_weights_25_2', dense_out/dense_out.cpp:23) on array 'dense_out_weights_25' [209]  (3.25 ns)
+	'fmul' operation ('tmp_3_24', dense_out/dense_out.cpp:23) [210]  (12.4 ns)
+
+ <State 119>: 12.4ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_3_24', dense_out/dense_out.cpp:23) [210]  (12.4 ns)
+
+ <State 120>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_25', dense_out/dense_out.cpp:23) [211]  (10.5 ns)
+
+ <State 121>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_25', dense_out/dense_out.cpp:23) [211]  (10.5 ns)
+
+ <State 122>: 15.6ns
+The critical path consists of the following:
+	'load' operation ('dense_out_weights_26_2', dense_out/dense_out.cpp:23) on array 'dense_out_weights_26' [213]  (3.25 ns)
+	'fmul' operation ('tmp_3_25', dense_out/dense_out.cpp:23) [214]  (12.4 ns)
+
+ <State 123>: 12.4ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_3_25', dense_out/dense_out.cpp:23) [214]  (12.4 ns)
+
+ <State 124>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_26', dense_out/dense_out.cpp:23) [215]  (10.5 ns)
+
+ <State 125>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_26', dense_out/dense_out.cpp:23) [215]  (10.5 ns)
+
+ <State 126>: 15.6ns
+The critical path consists of the following:
+	'load' operation ('dense_out_weights_27_2', dense_out/dense_out.cpp:23) on array 'dense_out_weights_27' [217]  (3.25 ns)
+	'fmul' operation ('tmp_3_26', dense_out/dense_out.cpp:23) [218]  (12.4 ns)
+
+ <State 127>: 12.4ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_3_26', dense_out/dense_out.cpp:23) [218]  (12.4 ns)
+
+ <State 128>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_27', dense_out/dense_out.cpp:23) [219]  (10.5 ns)
+
+ <State 129>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_27', dense_out/dense_out.cpp:23) [219]  (10.5 ns)
+
+ <State 130>: 15.6ns
+The critical path consists of the following:
+	'load' operation ('dense_out_weights_28_2', dense_out/dense_out.cpp:23) on array 'dense_out_weights_28' [221]  (3.25 ns)
+	'fmul' operation ('tmp_3_27', dense_out/dense_out.cpp:23) [222]  (12.4 ns)
+
+ <State 131>: 12.4ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_3_27', dense_out/dense_out.cpp:23) [222]  (12.4 ns)
+
+ <State 132>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_28', dense_out/dense_out.cpp:23) [223]  (10.5 ns)
+
+ <State 133>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_28', dense_out/dense_out.cpp:23) [223]  (10.5 ns)
+
+ <State 134>: 15.6ns
+The critical path consists of the following:
+	'load' operation ('dense_out_weights_29_2', dense_out/dense_out.cpp:23) on array 'dense_out_weights_29' [225]  (3.25 ns)
+	'fmul' operation ('tmp_3_28', dense_out/dense_out.cpp:23) [226]  (12.4 ns)
+
+ <State 135>: 12.4ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_3_28', dense_out/dense_out.cpp:23) [226]  (12.4 ns)
+
+ <State 136>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_29', dense_out/dense_out.cpp:23) [227]  (10.5 ns)
+
+ <State 137>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_29', dense_out/dense_out.cpp:23) [227]  (10.5 ns)
+
+ <State 138>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_29', dense_out/dense_out.cpp:23) [227]  (10.5 ns)
+
+ <State 139>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('w_sum_29', dense_out/dense_out.cpp:23) [227]  (10.5 ns)
+
+ <State 140>: 13.8ns
+The critical path consists of the following:
+	'load' operation ('dense_out_bias_load', dense_out/dense_out.cpp:26) on array 'dense_out_bias' [229]  (3.25 ns)
+	'fadd' operation ('tmp_2', dense_out/dense_out.cpp:26) [230]  (10.5 ns)
+
+ <State 141>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_2', dense_out/dense_out.cpp:26) [230]  (10.5 ns)
+
+ <State 142>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_2', dense_out/dense_out.cpp:26) [230]  (10.5 ns)
+
+ <State 143>: 12.9ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_2', dense_out/dense_out.cpp:26) [230]  (10.5 ns)
+	'store' operation ('store_ln26', dense_out/dense_out.cpp:26) of variable 'tmp_2', dense_out/dense_out.cpp:26 on array 'dense_array', dense_out/dense_out.cpp:13 [232]  (2.32 ns)
+
+ <State 144>: 2.32ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', dense_out/dense_out.cpp:31) [238]  (0 ns)
+	'getelementptr' operation ('dense_array_addr', dense_out/dense_out.cpp:33) [246]  (0 ns)
+	'load' operation ('dense_array_load', dense_out/dense_out.cpp:33) on array 'dense_array', dense_out/dense_out.cpp:13 [247]  (2.32 ns)
+
+ <State 145>: 17.4ns
+The critical path consists of the following:
+	'load' operation ('dense_array_load', dense_out/dense_out.cpp:33) on array 'dense_array', dense_out/dense_out.cpp:13 [247]  (2.32 ns)
+	'fexp' operation ('tmp', dense_out/dense_out.cpp:33) [248]  (15.1 ns)
+
+ <State 146>: 15.1ns
+The critical path consists of the following:
+	'fexp' operation ('tmp', dense_out/dense_out.cpp:33) [248]  (15.1 ns)
+
+ <State 147>: 15.1ns
+The critical path consists of the following:
+	'fexp' operation ('tmp', dense_out/dense_out.cpp:33) [248]  (15.1 ns)
+
+ <State 148>: 15.1ns
+The critical path consists of the following:
+	'fexp' operation ('tmp', dense_out/dense_out.cpp:33) [248]  (15.1 ns)
+
+ <State 149>: 15.1ns
+The critical path consists of the following:
+	'fexp' operation ('tmp', dense_out/dense_out.cpp:33) [248]  (15.1 ns)
+
+ <State 150>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('sum', dense_out/dense_out.cpp:33) [249]  (10.5 ns)
+
+ <State 151>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('sum', dense_out/dense_out.cpp:33) [249]  (10.5 ns)
+
+ <State 152>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('sum', dense_out/dense_out.cpp:33) [249]  (10.5 ns)
+
+ <State 153>: 10.5ns
+The critical path consists of the following:
+	'fadd' operation ('sum', dense_out/dense_out.cpp:33) [249]  (10.5 ns)
+
+ <State 154>: 2.32ns
+The critical path consists of the following:
+	'phi' operation ('j') with incoming values : ('j', dense_out/dense_out.cpp:37) [254]  (0 ns)
+	'getelementptr' operation ('dense_array_addr_2', dense_out/dense_out.cpp:39) [262]  (0 ns)
+	'load' operation ('dense_array_load_1', dense_out/dense_out.cpp:39) on array 'dense_array', dense_out/dense_out.cpp:13 [263]  (2.32 ns)
+
+ <State 155>: 17.4ns
+The critical path consists of the following:
+	'load' operation ('dense_array_load_1', dense_out/dense_out.cpp:39) on array 'dense_array', dense_out/dense_out.cpp:13 [263]  (2.32 ns)
+	'fexp' operation ('tmp_5', dense_out/dense_out.cpp:39) [264]  (15.1 ns)
+
+ <State 156>: 15.1ns
+The critical path consists of the following:
+	'fexp' operation ('tmp_5', dense_out/dense_out.cpp:39) [264]  (15.1 ns)
+
+ <State 157>: 15.1ns
+The critical path consists of the following:
+	'fexp' operation ('tmp_5', dense_out/dense_out.cpp:39) [264]  (15.1 ns)
+
+ <State 158>: 15.1ns
+The critical path consists of the following:
+	'fexp' operation ('tmp_5', dense_out/dense_out.cpp:39) [264]  (15.1 ns)
+
+ <State 159>: 15.1ns
+The critical path consists of the following:
+	'fexp' operation ('tmp_5', dense_out/dense_out.cpp:39) [264]  (15.1 ns)
+
+ <State 160>: 16.6ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_6', dense_out/dense_out.cpp:39) [265]  (16.6 ns)
+
+ <State 161>: 16.6ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_6', dense_out/dense_out.cpp:39) [265]  (16.6 ns)
+
+ <State 162>: 16.6ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_6', dense_out/dense_out.cpp:39) [265]  (16.6 ns)
+
+ <State 163>: 16.6ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_6', dense_out/dense_out.cpp:39) [265]  (16.6 ns)
+
+ <State 164>: 16.6ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_6', dense_out/dense_out.cpp:39) [265]  (16.6 ns)
+
+ <State 165>: 16.6ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_6', dense_out/dense_out.cpp:39) [265]  (16.6 ns)
+
+ <State 166>: 16.6ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_6', dense_out/dense_out.cpp:39) [265]  (16.6 ns)
+
+ <State 167>: 16.6ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_6', dense_out/dense_out.cpp:39) [265]  (16.6 ns)
+
+ <State 168>: 2.32ns
+The critical path consists of the following:
+	'getelementptr' operation ('prediction_addr', dense_out/dense_out.cpp:39) [266]  (0 ns)
+	'store' operation ('store_ln39', dense_out/dense_out.cpp:39) of variable 'tmp_6', dense_out/dense_out.cpp:39 on array 'prediction' [267]  (2.32 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+	State 42
+	State 43
+	State 44
+	State 45
+	State 46
+	State 47
+	State 48
+	State 49
+	State 50
+	State 51
+	State 52
+	State 53
+	State 54
+	State 55
+	State 56
+	State 57
+	State 58
+	State 59
+	State 60
+	State 61
+	State 62
+	State 63
+	State 64
+	State 65
+	State 66
+	State 67
+	State 68
+	State 69
+	State 70
+	State 71
+	State 72
+	State 73
+	State 74
+	State 75
+	State 76
+	State 77
+	State 78
+	State 79
+	State 80
+	State 81
+	State 82
+	State 83
+	State 84
+	State 85
+	State 86
+	State 87
+	State 88
+	State 89
+	State 90
+	State 91
+	State 92
+	State 93
+	State 94
+	State 95
+	State 96
+	State 97
+	State 98
+	State 99
+	State 100
+	State 101
+	State 102
+	State 103
+	State 104
+	State 105
+	State 106
+	State 107
+	State 108
+	State 109
+	State 110
+	State 111
+	State 112
+	State 113
+	State 114
+	State 115
+	State 116
+	State 117
+	State 118
+	State 119
+	State 120
+	State 121
+	State 122
+	State 123
+	State 124
+	State 125
+	State 126
+	State 127
+	State 128
+	State 129
+	State 130
+	State 131
+	State 132
+	State 133
+	State 134
+	State 135
+	State 136
+	State 137
+	State 138
+	State 139
+	State 140
+	State 141
+	State 142
+	State 143
+	State 144
+	State 145
+	State 146
+	State 147
+	State 148
+	State 149
+	State 150
+	State 151
+	State 152
+	State 153
+	State 154
+	State 155
+	State 156
+	State 157
+	State 158
+	State 159
+	State 160
+	State 161
+	State 162
+	State 163
+	State 164
+	State 165
+	State 166
+	State 167
+	State 168
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

@@ -2,7 +2,7 @@
 #include "parameters.h"
 #include "conv_1_weights.h"
 
-void conv_1(float input[INPUT_ROWS][INPUT_COLS][CHANNELS], float conv_out[CONV_1_ROWS][CONV_1_COLS][FILTERS_1]) {
+void conv_1(float input[INPUT_ROWS][INPUT_COLS], float conv_out[CONV_1_ROWS][CONV_1_COLS][FILTERS_1]) {
 
 	Row_Loop:
     for (int r = 0; r < CONV_1_ROWS; ++r)
@@ -20,12 +20,7 @@ void conv_1(float input[INPUT_ROWS][INPUT_COLS][CHANNELS], float conv_out[CONV_1
                 	W_Col_Loop:
                     for (int wc = 0; wc < WEIGHT_COLS; ++wc)
                     {
-                    	Chan_Loop:
-                        for (int ch = 0; ch < CHANNELS; ++ch)
-                        {
-                            w_sum += conv_1_weights[wr][wc][ch][f] * input[r + wr][c + wc][ch];
-
-                        }
+                       w_sum += conv_1_weights[wr][wc][f] * input[r + wr][c + wc];
                     }
                 }
                 w_sum += conv_1_bias[f];

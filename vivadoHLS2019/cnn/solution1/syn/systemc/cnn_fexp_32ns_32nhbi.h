@@ -23,7 +23,7 @@ SC_MODULE(cnn_fexp_32ns_32nhbi) {
 
 
 
-    ACMP_fexp<ID, 9, din0_WIDTH, din1_WIDTH, dout_WIDTH> ACMP_fexp_U;
+    ACMP_fexp<ID, 5, din0_WIDTH, din1_WIDTH, dout_WIDTH> ACMP_fexp_U;
 
     SC_CTOR(cnn_fexp_32ns_32nhbi):  ACMP_fexp_U ("ACMP_fexp_U") {
         ACMP_fexp_U.clk(clk);

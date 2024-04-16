@@ -8,7 +8,7 @@
 module cnn_fexp_32ns_32nhbi
 #(parameter
     ID         = 28,
-    NUM_STAGE  = 9,
+    NUM_STAGE  = 5,
     din0_WIDTH = 32,
     din1_WIDTH = 32,
     dout_WIDTH = 32
@@ -32,7 +32,7 @@ reg                   ce_r;
 wire [dout_WIDTH-1:0] dout_i;
 reg  [dout_WIDTH-1:0] dout_r;
 //------------------------Instantiation------------------
-cnn_ap_fexp_7_full_dsp_32 cnn_ap_fexp_7_full_dsp_32_u (
+cnn_ap_fexp_3_full_dsp_32 cnn_ap_fexp_3_full_dsp_32_u (
     .aclk                 ( aclk ),
     .aclken               ( aclken ),
     .s_axis_a_tvalid      ( a_tvalid ),

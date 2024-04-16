@@ -14,8 +14,8 @@ set isEnableWaveformDebug 1
 set C_modelName {flat}
 set C_modelType { void 0 }
 set C_modelArgList {
-	{ flat_array float 32 regular {array 1600 { 0 3 } 0 1 }  }
-	{ max_pool_2_out float 32 regular {array 1600 { 1 3 } 1 1 } {global 0}  }
+	{ flat_array float 32 regular {array 400 { 0 3 } 0 1 }  }
+	{ max_pool_2_out float 32 regular {array 400 { 1 3 } 1 1 } {global 0}  }
 }
 set C_modelArgMapList {[ 
 	{ "Name" : "flat_array", "interface" : "memory", "bitwidth" : 32, "direction" : "WRITEONLY"} , 
@@ -29,11 +29,11 @@ set portList {
 	{ ap_done sc_out sc_logic 1 predone -1 } 
 	{ ap_idle sc_out sc_logic 1 done -1 } 
 	{ ap_ready sc_out sc_logic 1 ready -1 } 
-	{ flat_array_address0 sc_out sc_lv 11 signal 0 } 
+	{ flat_array_address0 sc_out sc_lv 9 signal 0 } 
 	{ flat_array_ce0 sc_out sc_logic 1 signal 0 } 
 	{ flat_array_we0 sc_out sc_logic 1 signal 0 } 
 	{ flat_array_d0 sc_out sc_lv 32 signal 0 } 
-	{ max_pool_2_out_address0 sc_out sc_lv 11 signal 1 } 
+	{ max_pool_2_out_address0 sc_out sc_lv 9 signal 1 } 
 	{ max_pool_2_out_ce0 sc_out sc_logic 1 signal 1 } 
 	{ max_pool_2_out_q0 sc_in sc_lv 32 signal 1 } 
 }
@@ -44,11 +44,11 @@ set NewPortList {[
  	{ "name": "ap_done", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "predone", "bundle":{"name": "ap_done", "role": "default" }} , 
  	{ "name": "ap_idle", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "done", "bundle":{"name": "ap_idle", "role": "default" }} , 
  	{ "name": "ap_ready", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "ready", "bundle":{"name": "ap_ready", "role": "default" }} , 
- 	{ "name": "flat_array_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "flat_array", "role": "address0" }} , 
+ 	{ "name": "flat_array_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":9, "type": "signal", "bundle":{"name": "flat_array", "role": "address0" }} , 
  	{ "name": "flat_array_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "flat_array", "role": "ce0" }} , 
  	{ "name": "flat_array_we0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "flat_array", "role": "we0" }} , 
  	{ "name": "flat_array_d0", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "flat_array", "role": "d0" }} , 
- 	{ "name": "max_pool_2_out_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "max_pool_2_out", "role": "address0" }} , 
+ 	{ "name": "max_pool_2_out_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":9, "type": "signal", "bundle":{"name": "max_pool_2_out", "role": "address0" }} , 
  	{ "name": "max_pool_2_out_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "max_pool_2_out", "role": "ce0" }} , 
  	{ "name": "max_pool_2_out_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "max_pool_2_out", "role": "q0" }}  ]}
 
@@ -59,7 +59,7 @@ set RtlHierarchyInfo {[
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "3261", "EstimateLatencyMax" : "3261",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "861", "EstimateLatencyMax" : "861",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -79,14 +79,14 @@ set ArgLastReadFirstWriteLatency {
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "3261", "Max" : "3261"}
-	, {"Name" : "Interval", "Min" : "3261", "Max" : "3261"}
+	{"Name" : "Latency", "Min" : "861", "Max" : "861"}
+	, {"Name" : "Interval", "Min" : "861", "Max" : "861"}
 ]}
 
 set PipelineEnableSignalInfo {[
 ]}
 
 set Spec2ImplPortList { 
-	flat_array { ap_memory {  { flat_array_address0 mem_address 1 11 }  { flat_array_ce0 mem_ce 1 1 }  { flat_array_we0 mem_we 1 1 }  { flat_array_d0 mem_din 1 32 } } }
-	max_pool_2_out { ap_memory {  { max_pool_2_out_address0 mem_address 1 11 }  { max_pool_2_out_ce0 mem_ce 1 1 }  { max_pool_2_out_q0 mem_dout 0 32 } } }
+	flat_array { ap_memory {  { flat_array_address0 mem_address 1 9 }  { flat_array_ce0 mem_ce 1 1 }  { flat_array_we0 mem_we 1 1 }  { flat_array_d0 mem_din 1 32 } } }
+	max_pool_2_out { ap_memory {  { max_pool_2_out_address0 mem_address 1 9 }  { max_pool_2_out_ce0 mem_ce 1 1 }  { max_pool_2_out_q0 mem_dout 0 32 } } }
 }

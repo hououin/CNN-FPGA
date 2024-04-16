@@ -8,7 +8,7 @@ use ieee.std_logic_1164.all;
 entity cnn_fexp_32ns_32nhbi is
     generic (
         ID         : integer := 28;
-        NUM_STAGE  : integer := 9;
+        NUM_STAGE  : integer := 5;
         din0_WIDTH : integer := 32;
         din1_WIDTH : integer := 32;
         dout_WIDTH : integer := 32
@@ -25,7 +25,7 @@ end entity;
 
 architecture arch of cnn_fexp_32ns_32nhbi is
     --------------------- Component ---------------------
-    component cnn_ap_fexp_7_full_dsp_32 is
+    component cnn_ap_fexp_3_full_dsp_32 is
         port (
             aclk                 : in  std_logic;
             aclken               : in  std_logic;
@@ -48,7 +48,7 @@ architecture arch of cnn_fexp_32ns_32nhbi is
     signal dout_r    : std_logic_vector(dout_WIDTH-1 downto 0);
 begin
     --------------------- Instantiation -----------------
-    cnn_ap_fexp_7_full_dsp_32_u : component cnn_ap_fexp_7_full_dsp_32
+    cnn_ap_fexp_3_full_dsp_32_u : component cnn_ap_fexp_3_full_dsp_32
     port map (
         aclk                 => aclk,
         aclken               => aclken,

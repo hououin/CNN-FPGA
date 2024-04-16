@@ -23,7 +23,7 @@ SC_MODULE(cnn_fmul_32ns_32ndEe) {
 
 
 
-    ACMP_fmul<ID, 4, din0_WIDTH, din1_WIDTH, dout_WIDTH> ACMP_fmul_U;
+    ACMP_fmul<ID, 2, din0_WIDTH, din1_WIDTH, dout_WIDTH> ACMP_fmul_U;
 
     SC_CTOR(cnn_fmul_32ns_32ndEe):  ACMP_fmul_U ("ACMP_fmul_U") {
         ACMP_fmul_U.clk(clk);

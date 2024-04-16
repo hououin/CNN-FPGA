@@ -1,19 +1,20 @@
-# 1 "C:/Users/chenq/MAG/code/CNN-FPGA/vivadoHLS2019/cnn/max_pool_2.cpp"
+# 1 "C:/Users/chenq/MAG/code/FFF/HLS2019/cnn/max_pool_2.cpp"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "C:/Users/chenq/MAG/code/CNN-FPGA/vivadoHLS2019/cnn/max_pool_2.cpp"
-# 1 "C:/Users/chenq/MAG/code/CNN-FPGA/vivadoHLS2019/cnn/max_pool_2.h" 1
+# 1 "C:/Users/chenq/MAG/code/FFF/HLS2019/cnn/max_pool_2.cpp"
+# 1 "C:/Users/chenq/MAG/code/FFF/HLS2019/cnn/max_pool_2.h" 1
        
-# 1 "C:/Users/chenq/MAG/code/CNN-FPGA/vivadoHLS2019/cnn/parameters.h" 1
+# 1 "C:/Users/chenq/MAG/code/FFF/HLS2019/cnn/parameters.h" 1
        
-# 3 "C:/Users/chenq/MAG/code/CNN-FPGA/vivadoHLS2019/cnn/max_pool_2.h" 2
+# 3 "C:/Users/chenq/MAG/code/FFF/HLS2019/cnn/max_pool_2.h" 2
 
 void max_pool_2
 (
- float conv_out[11][11][64],
- float max_pool_out[(11 / 2)][(11 / 2)][64]
+ float conv_out[11][11][16],
+ float max_pool_out[(11 / 2)][(11 / 2)][16]
 );
-# 2 "C:/Users/chenq/MAG/code/CNN-FPGA/vivadoHLS2019/cnn/max_pool_2.cpp" 2
+# 2 "C:/Users/chenq/MAG/code/FFF/HLS2019/cnn/max_pool_2.cpp" 2
+
 # 1 "C:/Xilinx2019/Vivado/2019.1/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/6.2.0/include/float.h" 1 3 4
 # 267 "C:/Xilinx2019/Vivado/2019.1/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/6.2.0/include/float.h" 3 4
 # 1 "C:/Xilinx2019/Vivado/2019.1/msys64/mingw64/x86_64-w64-mingw32/include/float.h" 1 3 4
@@ -238,16 +239,16 @@ extern long double __attribute__((__cdecl__)) _chgsignl (long double);
 
 }
 # 267 "C:/Xilinx2019/Vivado/2019.1/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/6.2.0/include/float.h" 2 3 4
-# 3 "C:/Users/chenq/MAG/code/CNN-FPGA/vivadoHLS2019/cnn/max_pool_2.cpp" 2
+# 4 "C:/Users/chenq/MAG/code/FFF/HLS2019/cnn/max_pool_2.cpp" 2
 
 
 
-# 5 "C:/Users/chenq/MAG/code/CNN-FPGA/vivadoHLS2019/cnn/max_pool_2.cpp"
-void max_pool_2(float conv_out[11][11][64], float max_pool_out[(11 / 2)][(11 / 2)][64])
+# 6 "C:/Users/chenq/MAG/code/FFF/HLS2019/cnn/max_pool_2.cpp"
+void max_pool_2(float conv_out[11][11][16], float max_pool_out[(11 / 2)][(11 / 2)][16])
 {
     float max = 0.0;
     Filter_Loop:
-    for (int f = 0; f < 64; ++f)
+    for (int f = 0; f < 16; ++f)
     {
      Row_Loop:
         for (int r = 0; r < (11 / 2); ++r)
@@ -255,17 +256,13 @@ void max_pool_2(float conv_out[11][11][64], float max_pool_out[(11 / 2)][(11 / 2
          Col_Loop:
             for (int c = 0; c < (11 / 2); ++c)
             {
-
+             max = 1.17549435082228750797e-38F;
                 Pool_Row_Loop:
                 for (int mpr = 0; mpr < 2; ++mpr)
                 {
                  Pool_Col_Loop:
                     for (int mpc = 0; mpc < 2; ++mpc)
                     {
-                     if(mpr == 0 && mpc == 0)
-                     {
-                            max = 1.17549435082228750797e-38F;
-                     }
 
                         int i = r * 2 + mpr;
                         int j = c * 2 + mpc;
@@ -274,13 +271,10 @@ void max_pool_2(float conv_out[11][11][64], float max_pool_out[(11 / 2)][(11 / 2
                         {
                             max = conv_out[i][j][f];
                         }
-
-                        if(mpr + 1 == 2 && mpc + 1 == 2)
-                        {
-                         max_pool_out[r][c][f] = max;
-                        }
                     }
                 }
+
+                max_pool_out[r][c][f] = max;
             }
         }
     }

@@ -32,7 +32,7 @@
           </Value>
           <direction>1</direction>
           <if_type>1</if_type>
-          <array_size>1600</array_size>
+          <array_size>400</array_size>
           <bit_vecs class_id="7" tracking_level="0" version="0">
             <count>0</count>
             <item_version>0</item_version>
@@ -60,7 +60,7 @@
           </Value>
           <direction>0</direction>
           <if_type>1</if_type>
-          <array_size>1600</array_size>
+          <array_size>400</array_size>
           <bit_vecs>
             <count>0</count>
             <item_version>0</item_version>
@@ -84,7 +84,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item class_id="10" tracking_level="0" version="0">
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second class_id="11" tracking_level="0" version="0">
                     <count>1</count>
                     <item_version>0</item_version>
@@ -173,7 +173,7 @@
               <rtlName/>
               <coreName/>
             </Obj>
-            <bitwidth>11</bitwidth>
+            <bitwidth>9</bitwidth>
           </Value>
           <oprand_edges>
             <count>4</count>
@@ -206,7 +206,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -255,7 +255,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -304,7 +304,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -354,7 +354,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -372,7 +372,7 @@
               <rtlName>i_fu_158_p2</rtlName>
               <coreName/>
             </Obj>
-            <bitwidth>11</bitwidth>
+            <bitwidth>9</bitwidth>
           </Value>
           <oprand_edges>
             <count>2</count>
@@ -385,7 +385,7 @@
           <m_isOnCriticalPath>0</m_isOnCriticalPath>
           <m_isLCDNode>0</m_isLCDNode>
           <m_isStartOfPath>0</m_isStartOfPath>
-          <m_delay>1.63</m_delay>
+          <m_delay>1.82</m_delay>
           <m_topoIndex>7</m_topoIndex>
           <m_clusterGroupNumber>-1</m_clusterGroupNumber>
         </item>
@@ -403,7 +403,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -451,7 +451,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -501,7 +501,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -549,7 +549,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -598,7 +598,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -646,7 +646,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -664,7 +664,7 @@
               <rtlName/>
               <coreName/>
             </Obj>
-            <bitwidth>11</bitwidth>
+            <bitwidth>9</bitwidth>
           </Value>
           <oprand_edges>
             <count>4</count>
@@ -734,7 +734,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -783,7 +783,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -832,7 +832,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -882,7 +882,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -900,7 +900,7 @@
               <rtlName>add_ln15_fu_198_p2</rtlName>
               <coreName/>
             </Obj>
-            <bitwidth>11</bitwidth>
+            <bitwidth>9</bitwidth>
           </Value>
           <oprand_edges>
             <count>2</count>
@@ -913,7 +913,7 @@
           <m_isOnCriticalPath>0</m_isOnCriticalPath>
           <m_isLCDNode>0</m_isLCDNode>
           <m_isStartOfPath>0</m_isStartOfPath>
-          <m_delay>1.63</m_delay>
+          <m_delay>1.82</m_delay>
           <m_topoIndex>19</m_topoIndex>
           <m_clusterGroupNumber>-1</m_clusterGroupNumber>
         </item>
@@ -931,7 +931,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -979,7 +979,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1028,7 +1028,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1046,7 +1046,7 @@
               <rtlName>tmp_18_cast_fu_213_p3</rtlName>
               <coreName/>
             </Obj>
-            <bitwidth>12</bitwidth>
+            <bitwidth>10</bitwidth>
           </Value>
           <oprand_edges>
             <count>3</count>
@@ -1078,7 +1078,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1126,7 +1126,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1144,7 +1144,7 @@
               <rtlName/>
               <coreName/>
             </Obj>
-            <bitwidth>11</bitwidth>
+            <bitwidth>9</bitwidth>
           </Value>
           <oprand_edges>
             <count>4</count>
@@ -1181,7 +1181,7 @@
               <rtlName/>
               <coreName/>
             </Obj>
-            <bitwidth>7</bitwidth>
+            <bitwidth>5</bitwidth>
           </Value>
           <oprand_edges>
             <count>4</count>
@@ -1214,7 +1214,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1245,7 +1245,7 @@
           <m_isOnCriticalPath>0</m_isOnCriticalPath>
           <m_isLCDNode>0</m_isLCDNode>
           <m_isStartOfPath>0</m_isStartOfPath>
-          <m_delay>1.48</m_delay>
+          <m_delay>1.36</m_delay>
           <m_topoIndex>27</m_topoIndex>
           <m_clusterGroupNumber>-1</m_clusterGroupNumber>
         </item>
@@ -1263,7 +1263,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1281,7 +1281,7 @@
               <rtlName>f_fu_227_p2</rtlName>
               <coreName/>
             </Obj>
-            <bitwidth>7</bitwidth>
+            <bitwidth>5</bitwidth>
           </Value>
           <oprand_edges>
             <count>2</count>
@@ -1294,7 +1294,7 @@
           <m_isOnCriticalPath>0</m_isOnCriticalPath>
           <m_isLCDNode>0</m_isLCDNode>
           <m_isStartOfPath>0</m_isStartOfPath>
-          <m_delay>1.87</m_delay>
+          <m_delay>1.78</m_delay>
           <m_topoIndex>28</m_topoIndex>
           <m_clusterGroupNumber>-1</m_clusterGroupNumber>
         </item>
@@ -1312,7 +1312,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1362,7 +1362,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1380,7 +1380,7 @@
               <rtlName>zext_ln14_4_fu_233_p1</rtlName>
               <coreName/>
             </Obj>
-            <bitwidth>12</bitwidth>
+            <bitwidth>10</bitwidth>
           </Value>
           <oprand_edges>
             <count>1</count>
@@ -1410,7 +1410,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1428,7 +1428,7 @@
               <rtlName>add_ln14_2_fu_237_p2</rtlName>
               <coreName/>
             </Obj>
-            <bitwidth>12</bitwidth>
+            <bitwidth>10</bitwidth>
           </Value>
           <oprand_edges>
             <count>2</count>
@@ -1441,7 +1441,7 @@
           <m_isOnCriticalPath>0</m_isOnCriticalPath>
           <m_isLCDNode>0</m_isLCDNode>
           <m_isStartOfPath>0</m_isStartOfPath>
-          <m_delay>1.54</m_delay>
+          <m_delay>1.73</m_delay>
           <m_topoIndex>31</m_topoIndex>
           <m_clusterGroupNumber>-1</m_clusterGroupNumber>
         </item>
@@ -1459,7 +1459,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1507,7 +1507,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1525,7 +1525,7 @@
               <rtlName/>
               <coreName/>
             </Obj>
-            <bitwidth>11</bitwidth>
+            <bitwidth>9</bitwidth>
           </Value>
           <oprand_edges>
             <count>3</count>
@@ -1557,7 +1557,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1605,7 +1605,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1653,7 +1653,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1671,7 +1671,7 @@
               <rtlName/>
               <coreName/>
             </Obj>
-            <bitwidth>11</bitwidth>
+            <bitwidth>9</bitwidth>
           </Value>
           <oprand_edges>
             <count>3</count>
@@ -1703,7 +1703,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1752,7 +1752,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1770,7 +1770,7 @@
               <rtlName>add_ln15_1_fu_252_p2</rtlName>
               <coreName/>
             </Obj>
-            <bitwidth>11</bitwidth>
+            <bitwidth>9</bitwidth>
           </Value>
           <oprand_edges>
             <count>2</count>
@@ -1783,7 +1783,7 @@
           <m_isOnCriticalPath>0</m_isOnCriticalPath>
           <m_isLCDNode>0</m_isLCDNode>
           <m_isStartOfPath>0</m_isStartOfPath>
-          <m_delay>1.63</m_delay>
+          <m_delay>1.82</m_delay>
           <m_topoIndex>39</m_topoIndex>
           <m_clusterGroupNumber>-1</m_clusterGroupNumber>
         </item>
@@ -1801,7 +1801,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1849,7 +1849,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1897,7 +1897,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1945,7 +1945,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2023,7 +2023,7 @@
               <rtlName/>
               <coreName/>
             </Obj>
-            <bitwidth>11</bitwidth>
+            <bitwidth>9</bitwidth>
           </Value>
           <const_type>0</const_type>
           <content>0</content>
@@ -2092,10 +2092,10 @@
               <rtlName/>
               <coreName/>
             </Obj>
-            <bitwidth>11</bitwidth>
+            <bitwidth>9</bitwidth>
           </Value>
           <const_type>0</const_type>
-          <content>320</content>
+          <content>80</content>
         </item>
         <item class_id_reference="16" object_id="_48">
           <Value>
@@ -2138,10 +2138,10 @@
               <rtlName/>
               <coreName/>
             </Obj>
-            <bitwidth>11</bitwidth>
+            <bitwidth>9</bitwidth>
           </Value>
           <const_type>0</const_type>
-          <content>64</content>
+          <content>16</content>
         </item>
         <item class_id_reference="16" object_id="_50">
           <Value>
@@ -2161,7 +2161,7 @@
               <rtlName/>
               <coreName/>
             </Obj>
-            <bitwidth>6</bitwidth>
+            <bitwidth>4</bitwidth>
           </Value>
           <const_type>0</const_type>
           <content>0</content>
@@ -2184,7 +2184,7 @@
               <rtlName/>
               <coreName/>
             </Obj>
-            <bitwidth>7</bitwidth>
+            <bitwidth>5</bitwidth>
           </Value>
           <const_type>0</const_type>
           <content>0</content>
@@ -2207,10 +2207,10 @@
               <rtlName/>
               <coreName/>
             </Obj>
-            <bitwidth>7</bitwidth>
+            <bitwidth>5</bitwidth>
           </Value>
           <const_type>0</const_type>
-          <content>64</content>
+          <content>16</content>
         </item>
         <item class_id_reference="16" object_id="_53">
           <Value>
@@ -2230,7 +2230,7 @@
               <rtlName/>
               <coreName/>
             </Obj>
-            <bitwidth>7</bitwidth>
+            <bitwidth>5</bitwidth>
           </Value>
           <const_type>0</const_type>
           <content>1</content>
@@ -2276,7 +2276,7 @@
               <rtlName/>
               <coreName/>
             </Obj>
-            <bitwidth>11</bitwidth>
+            <bitwidth>9</bitwidth>
           </Value>
           <const_type>0</const_type>
           <content>1</content>
@@ -3231,8 +3231,8 @@
         <mDepth>-1</mDepth>
         <mMinTripCount>-1</mMinTripCount>
         <mMaxTripCount>-1</mMaxTripCount>
-        <mMinLatency>3261</mMinLatency>
-        <mMaxLatency>3261</mMaxLatency>
+        <mMinLatency>861</mMinLatency>
+        <mMaxLatency>861</mMaxLatency>
         <mIsDfPipe>0</mIsDfPipe>
         <mDfPipe class_id="-1"/>
       </item>
@@ -3277,8 +3277,8 @@
         <mDepth>-1</mDepth>
         <mMinTripCount>5</mMinTripCount>
         <mMaxTripCount>5</mMaxTripCount>
-        <mMinLatency>3260</mMinLatency>
-        <mMaxLatency>3260</mMaxLatency>
+        <mMinLatency>860</mMinLatency>
+        <mMaxLatency>860</mMaxLatency>
         <mIsDfPipe>0</mIsDfPipe>
         <mDfPipe class_id="-1"/>
       </item>
@@ -3324,8 +3324,8 @@
         <mDepth>-1</mDepth>
         <mMinTripCount>5</mMinTripCount>
         <mMaxTripCount>5</mMaxTripCount>
-        <mMinLatency>650</mMinLatency>
-        <mMaxLatency>650</mMaxLatency>
+        <mMinLatency>170</mMinLatency>
+        <mMaxLatency>170</mMaxLatency>
         <mIsDfPipe>0</mIsDfPipe>
         <mDfPipe class_id="-1"/>
       </item>
@@ -3368,10 +3368,10 @@
         </basic_blocks>
         <mII>-1</mII>
         <mDepth>-1</mDepth>
-        <mMinTripCount>64</mMinTripCount>
-        <mMaxTripCount>64</mMaxTripCount>
-        <mMinLatency>128</mMinLatency>
-        <mMaxLatency>128</mMaxLatency>
+        <mMinTripCount>16</mMinTripCount>
+        <mMaxTripCount>16</mMaxTripCount>
+        <mMinLatency>32</mMinLatency>
+        <mMaxLatency>32</mMaxLatency>
         <mIsDfPipe>0</mIsDfPipe>
         <mDfPipe class_id="-1"/>
       </item>
@@ -3920,11 +3920,11 @@
             <item_version>0</item_version>
             <item>
               <first>(0P0)</first>
-              <second>12</second>
+              <second>10</second>
             </item>
             <item>
               <first>(1P1)</first>
-              <second>12</second>
+              <second>10</second>
             </item>
             <item>
               <first>FF</first>
@@ -3932,7 +3932,7 @@
             </item>
             <item>
               <first>LUT</first>
-              <second>12</second>
+              <second>14</second>
             </item>
           </second>
         </item>
@@ -3966,7 +3966,7 @@
             <item_version>0</item_version>
             <item>
               <first>(0P0)</first>
-              <second>11</second>
+              <second>9</second>
             </item>
             <item>
               <first>(1P1)</first>
@@ -3978,7 +3978,7 @@
             </item>
             <item>
               <first>LUT</first>
-              <second>13</second>
+              <second>15</second>
             </item>
           </second>
         </item>
@@ -3989,11 +3989,11 @@
             <item_version>0</item_version>
             <item>
               <first>(0P0)</first>
-              <second>11</second>
+              <second>9</second>
             </item>
             <item>
               <first>(1P1)</first>
-              <second>7</second>
+              <second>5</second>
             </item>
             <item>
               <first>FF</first>
@@ -4001,7 +4001,7 @@
             </item>
             <item>
               <first>LUT</first>
-              <second>13</second>
+              <second>15</second>
             </item>
           </second>
         </item>
@@ -4035,7 +4035,7 @@
             <item_version>0</item_version>
             <item>
               <first>(0P0)</first>
-              <second>7</second>
+              <second>5</second>
             </item>
             <item>
               <first>(1P1)</first>
@@ -4058,11 +4058,11 @@
             <item_version>0</item_version>
             <item>
               <first>(0P0)</first>
-              <second>11</second>
+              <second>9</second>
             </item>
             <item>
               <first>(1P1)</first>
-              <second>9</second>
+              <second>7</second>
             </item>
             <item>
               <first>FF</first>
@@ -4070,7 +4070,7 @@
             </item>
             <item>
               <first>LUT</first>
-              <second>13</second>
+              <second>15</second>
             </item>
           </second>
         </item>
@@ -4081,11 +4081,11 @@
             <item_version>0</item_version>
             <item>
               <first>(0P0)</first>
-              <second>7</second>
+              <second>5</second>
             </item>
             <item>
               <first>(1P1)</first>
-              <second>8</second>
+              <second>6</second>
             </item>
             <item>
               <first>FF</first>
@@ -4235,11 +4235,11 @@
             </item>
             <item>
               <first>(1Bits)</first>
-              <second>7</second>
+              <second>5</second>
             </item>
             <item>
               <first>(2Count)</first>
-              <second>14</second>
+              <second>10</second>
             </item>
             <item>
               <first>LUT</first>
@@ -4258,11 +4258,11 @@
             </item>
             <item>
               <first>(1Bits)</first>
-              <second>11</second>
+              <second>9</second>
             </item>
             <item>
               <first>(2Count)</first>
-              <second>22</second>
+              <second>18</second>
             </item>
             <item>
               <first>LUT</first>
@@ -4281,11 +4281,11 @@
             </item>
             <item>
               <first>(1Bits)</first>
-              <second>11</second>
+              <second>9</second>
             </item>
             <item>
               <first>(2Count)</first>
-              <second>22</second>
+              <second>18</second>
             </item>
             <item>
               <first>LUT</first>
@@ -4304,11 +4304,11 @@
             </item>
             <item>
               <first>(1Bits)</first>
-              <second>11</second>
+              <second>9</second>
             </item>
             <item>
               <first>(2Count)</first>
-              <second>22</second>
+              <second>18</second>
             </item>
             <item>
               <first>LUT</first>
@@ -4369,7 +4369,7 @@
             <item_version>0</item_version>
             <item>
               <first>(Bits)</first>
-              <second>11</second>
+              <second>9</second>
             </item>
             <item>
               <first>(Consts)</first>
@@ -4377,7 +4377,7 @@
             </item>
             <item>
               <first>FF</first>
-              <second>11</second>
+              <second>9</second>
             </item>
           </second>
         </item>
@@ -4445,7 +4445,7 @@
             <item_version>0</item_version>
             <item>
               <first>(Bits)</first>
-              <second>7</second>
+              <second>5</second>
             </item>
             <item>
               <first>(Consts)</first>
@@ -4453,7 +4453,7 @@
             </item>
             <item>
               <first>FF</first>
-              <second>7</second>
+              <second>5</second>
             </item>
           </second>
         </item>
@@ -4464,7 +4464,7 @@
             <item_version>0</item_version>
             <item>
               <first>(Bits)</first>
-              <second>7</second>
+              <second>5</second>
             </item>
             <item>
               <first>(Consts)</first>
@@ -4472,7 +4472,7 @@
             </item>
             <item>
               <first>FF</first>
-              <second>7</second>
+              <second>5</second>
             </item>
           </second>
         </item>
@@ -4483,7 +4483,7 @@
             <item_version>0</item_version>
             <item>
               <first>(Bits)</first>
-              <second>11</second>
+              <second>9</second>
             </item>
             <item>
               <first>(Consts)</first>
@@ -4491,7 +4491,7 @@
             </item>
             <item>
               <first>FF</first>
-              <second>11</second>
+              <second>9</second>
             </item>
           </second>
         </item>
@@ -4502,7 +4502,7 @@
             <item_version>0</item_version>
             <item>
               <first>(Bits)</first>
-              <second>11</second>
+              <second>9</second>
             </item>
             <item>
               <first>(Consts)</first>
@@ -4510,7 +4510,7 @@
             </item>
             <item>
               <first>FF</first>
-              <second>11</second>
+              <second>9</second>
             </item>
           </second>
         </item>
@@ -4521,7 +4521,7 @@
             <item_version>0</item_version>
             <item>
               <first>(Bits)</first>
-              <second>11</second>
+              <second>9</second>
             </item>
             <item>
               <first>(Consts)</first>
@@ -4529,7 +4529,7 @@
             </item>
             <item>
               <first>FF</first>
-              <second>11</second>
+              <second>9</second>
             </item>
           </second>
         </item>
@@ -4540,7 +4540,7 @@
             <item_version>0</item_version>
             <item>
               <first>(Bits)</first>
-              <second>11</second>
+              <second>9</second>
             </item>
             <item>
               <first>(Consts)</first>
@@ -4548,7 +4548,7 @@
             </item>
             <item>
               <first>FF</first>
-              <second>11</second>
+              <second>9</second>
             </item>
           </second>
         </item>
@@ -4597,11 +4597,11 @@
             <item_version>0</item_version>
             <item>
               <first>(Bits)</first>
-              <second>12</second>
+              <second>10</second>
             </item>
             <item>
               <first>(Consts)</first>
-              <second>6</second>
+              <second>4</second>
             </item>
             <item>
               <first>FF</first>

@@ -23,9 +23,9 @@
       "set_directive_interface cnn "
     ],
     "DirectiveInfo": [
+      "interface cnn {{s_axilite positionBoolean0mode} {port positionBooleanTextRequiredreturn} {bundle CRTL_BUS}} {}",
       "interface cnn {{bram positionBoolean0mode} {port positionBooleanTextRequiredcnn_input}} {}",
-      "interface cnn {{bram positionBoolean0mode} {port positionBooleanTextRequiredprediction}} {}",
-      "interface cnn {{s_axilite positionBoolean0mode} {port positionBooleanTextRequiredreturn} {bundle CRTL_BUS}} {}"
+      "interface cnn {{bram positionBoolean0mode} {port positionBooleanTextRequiredprediction}} {}"
     ]
   },
   "Args": {
@@ -55,13 +55,13 @@
   },
   "ClockInfo": {
     "ClockName": "ap_clk",
-    "ClockPeriod": "10",
+    "ClockPeriod": "20",
     "IsCombLogic": "0",
     "II": "x",
-    "Latency": "27646510",
-    "Uncertainty": "1.25"
+    "Latency": "1283536",
+    "Uncertainty": "2.5"
   },
-  "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 10.000 [get_ports ap_clk]"]},
+  "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 20.000 [get_ports ap_clk]"]},
   "Ipx": {
     "Vendor": "xilinx.com",
     "Library": "hls",
@@ -75,19 +75,27 @@
   },
   "Files": {
     "CSource": [
-      "..\/cnn.cpp",
-      "..\/conv_1.cpp",
-      "..\/conv_2.cpp",
-      "..\/dense.cpp",
-      "..\/flat.cpp",
+      "..\/max_pool_2.cpp",
       "..\/max_pool_1.cpp",
-      "..\/max_pool_2.cpp"
+      "..\/flat.cpp",
+      "..\/dense_out.cpp",
+      "..\/dense_2.cpp",
+      "..\/dense_1.cpp",
+      "..\/conv_2.cpp",
+      "..\/conv_1.cpp",
+      "..\/cnn.cpp"
     ],
     "Vhdl": [
-      "impl\/vhdl\/cnn_conv_1_input_0.vhd",
+      "impl\/vhdl\/cnn_conv_1_input.vhd",
       "impl\/vhdl\/cnn_conv_1_out.vhd",
       "impl\/vhdl\/cnn_conv_2_out.vhd",
       "impl\/vhdl\/cnn_CRTL_BUS_s_axi.vhd",
+      "impl\/vhdl\/cnn_dense_1_bias.vhd",
+      "impl\/vhdl\/cnn_dense_1_out.vhd",
+      "impl\/vhdl\/cnn_dense_1_weights.vhd",
+      "impl\/vhdl\/cnn_dense_2_bias.vhd",
+      "impl\/vhdl\/cnn_dense_2_out.vhd",
+      "impl\/vhdl\/cnn_dense_2_weights.vhd",
       "impl\/vhdl\/cnn_fadd_32ns_32ncud.vhd",
       "impl\/vhdl\/cnn_fcmp_32ns_32neOg.vhd",
       "impl\/vhdl\/cnn_fdiv_32ns_32ng8j.vhd",
@@ -101,9 +109,10 @@
       "impl\/vhdl\/conv_2.vhd",
       "impl\/vhdl\/conv_2_conv_2_bias.vhd",
       "impl\/vhdl\/conv_2_conv_2_weifYi.vhd",
-      "impl\/vhdl\/dense.vhd",
-      "impl\/vhdl\/dense_dense_array.vhd",
-      "impl\/vhdl\/dense_dense_weights.vhd",
+      "impl\/vhdl\/dense_out.vhd",
+      "impl\/vhdl\/dense_out_dense_akbM.vhd",
+      "impl\/vhdl\/dense_out_dense_oibs.vhd",
+      "impl\/vhdl\/dense_out_dense_ojbC.vhd",
       "impl\/vhdl\/flat.vhd",
       "impl\/vhdl\/max_pool_1.vhd",
       "impl\/vhdl\/max_pool_2.vhd",
@@ -111,11 +120,24 @@
       "impl\/vhdl\/cnn.vhd"
     ],
     "Verilog": [
-      "impl\/verilog\/cnn_conv_1_input_0.v",
+      "impl\/verilog\/cnn_conv_1_input.v",
       "impl\/verilog\/cnn_conv_1_out.v",
+      "impl\/verilog\/cnn_conv_1_out_ram.dat",
       "impl\/verilog\/cnn_conv_2_out.v",
       "impl\/verilog\/cnn_conv_2_out_ram.dat",
       "impl\/verilog\/cnn_CRTL_BUS_s_axi.v",
+      "impl\/verilog\/cnn_dense_1_bias.v",
+      "impl\/verilog\/cnn_dense_1_bias_rom.dat",
+      "impl\/verilog\/cnn_dense_1_out.v",
+      "impl\/verilog\/cnn_dense_1_out_ram.dat",
+      "impl\/verilog\/cnn_dense_1_weights.v",
+      "impl\/verilog\/cnn_dense_1_weights_rom.dat",
+      "impl\/verilog\/cnn_dense_2_bias.v",
+      "impl\/verilog\/cnn_dense_2_bias_rom.dat",
+      "impl\/verilog\/cnn_dense_2_out.v",
+      "impl\/verilog\/cnn_dense_2_out_ram.dat",
+      "impl\/verilog\/cnn_dense_2_weights.v",
+      "impl\/verilog\/cnn_dense_2_weights_rom.dat",
       "impl\/verilog\/cnn_fadd_32ns_32ncud.v",
       "impl\/verilog\/cnn_fcmp_32ns_32neOg.v",
       "impl\/verilog\/cnn_fdiv_32ns_32ng8j.v",
@@ -135,10 +157,12 @@
       "impl\/verilog\/conv_2_conv_2_bias_rom.dat",
       "impl\/verilog\/conv_2_conv_2_weifYi.v",
       "impl\/verilog\/conv_2_conv_2_weifYi_rom.dat",
-      "impl\/verilog\/dense.v",
-      "impl\/verilog\/dense_dense_array.v",
-      "impl\/verilog\/dense_dense_weights.v",
-      "impl\/verilog\/dense_dense_weights_rom.dat",
+      "impl\/verilog\/dense_out.v",
+      "impl\/verilog\/dense_out_dense_akbM.v",
+      "impl\/verilog\/dense_out_dense_oibs.v",
+      "impl\/verilog\/dense_out_dense_oibs_rom.dat",
+      "impl\/verilog\/dense_out_dense_ojbC.v",
+      "impl\/verilog\/dense_out_dense_ojbC_rom.dat",
       "impl\/verilog\/flat.v",
       "impl\/verilog\/max_pool_1.v",
       "impl\/verilog\/max_pool_2.v",
@@ -157,24 +181,24 @@
     ],
     "Misc": ["impl\/misc\/logo.png"],
     "Subcore": [
-      "impl\/misc\/cnn_ap_fadd_3_full_dsp_32_ip.tcl",
+      "impl\/misc\/cnn_ap_fadd_2_full_dsp_32_ip.tcl",
       "impl\/misc\/cnn_ap_fcmp_0_no_dsp_32_ip.tcl",
-      "impl\/misc\/cnn_ap_fdiv_14_no_dsp_32_ip.tcl",
-      "impl\/misc\/cnn_ap_fexp_7_full_dsp_32_ip.tcl",
-      "impl\/misc\/cnn_ap_fmul_2_max_dsp_32_ip.tcl"
+      "impl\/misc\/cnn_ap_fdiv_6_no_dsp_32_ip.tcl",
+      "impl\/misc\/cnn_ap_fexp_3_full_dsp_32_ip.tcl",
+      "impl\/misc\/cnn_ap_fmul_0_max_dsp_32_ip.tcl"
     ],
-    "DesignXml": "C:\/Users\/chenq\/MAG\/code\/CNN-FPGA\/vivadoHLS2019\/cnn\/solution1\/.autopilot\/db\/cnn.design.xml",
-    "DebugDir": "C:\/Users\/chenq\/MAG\/code\/CNN-FPGA\/vivadoHLS2019\/cnn\/solution1\/.debug",
-    "ProtoInst": ["C:\/Users\/chenq\/MAG\/code\/CNN-FPGA\/vivadoHLS2019\/cnn\/solution1\/.debug\/cnn.protoinst"]
+    "DesignXml": "C:\/Users\/chenq\/MAG\/code\/FFF\/HLS2019\/cnn\/solution1\/.autopilot\/db\/cnn.design.xml",
+    "DebugDir": "C:\/Users\/chenq\/MAG\/code\/FFF\/HLS2019\/cnn\/solution1\/.debug",
+    "ProtoInst": ["C:\/Users\/chenq\/MAG\/code\/FFF\/HLS2019\/cnn\/solution1\/.debug\/cnn.protoinst"]
   },
   "SubcoreInfo": {
     "HasXpmMemory": false,
     "HasClockedDsp": false,
     "IP": [
       {
-        "name": "cnn_ap_fadd_3_full_dsp_32",
+        "name": "cnn_ap_fadd_2_full_dsp_32",
         "vlnv": "xilinx.com:ip:floating_point:7.1",
-        "params": "CONFIG.a_precision_type Single CONFIG.a_tuser_width 1 CONFIG.add_sub_value Add CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 8 CONFIG.c_a_fraction_width 24 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 3 CONFIG.c_mult_usage Full_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 8 CONFIG.c_result_fraction_width 24 CONFIG.component_name cnn_ap_fadd_3_full_dsp_32 CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken true CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Add_Subtract CONFIG.result_precision_type Single CONFIG.result_tlast_behv Null"
+        "params": "CONFIG.a_precision_type Single CONFIG.a_tuser_width 1 CONFIG.add_sub_value Add CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 8 CONFIG.c_a_fraction_width 24 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 2 CONFIG.c_mult_usage Full_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 8 CONFIG.c_result_fraction_width 24 CONFIG.component_name cnn_ap_fadd_2_full_dsp_32 CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken true CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Add_Subtract CONFIG.result_precision_type Single CONFIG.result_tlast_behv Null"
       },
       {
         "name": "cnn_ap_fcmp_0_no_dsp_32",
@@ -182,19 +206,19 @@
         "params": "CONFIG.a_precision_type Single CONFIG.a_tuser_width 1 CONFIG.add_sub_value Both CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 8 CONFIG.c_a_fraction_width 24 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 0 CONFIG.c_mult_usage No_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 1 CONFIG.c_result_fraction_width 0 CONFIG.component_name cnn_ap_fcmp_0_no_dsp_32 CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken false CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Compare CONFIG.result_precision_type Custom CONFIG.result_tlast_behv Null"
       },
       {
-        "name": "cnn_ap_fdiv_14_no_dsp_32",
+        "name": "cnn_ap_fdiv_6_no_dsp_32",
         "vlnv": "xilinx.com:ip:floating_point:7.1",
-        "params": "CONFIG.a_precision_type Single CONFIG.a_tuser_width 1 CONFIG.add_sub_value Both CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 8 CONFIG.c_a_fraction_width 24 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 14 CONFIG.c_mult_usage No_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 8 CONFIG.c_result_fraction_width 24 CONFIG.component_name cnn_ap_fdiv_14_no_dsp_32 CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken true CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Divide CONFIG.result_precision_type Single CONFIG.result_tlast_behv Null"
+        "params": "CONFIG.a_precision_type Single CONFIG.a_tuser_width 1 CONFIG.add_sub_value Both CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 8 CONFIG.c_a_fraction_width 24 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 6 CONFIG.c_mult_usage No_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 8 CONFIG.c_result_fraction_width 24 CONFIG.component_name cnn_ap_fdiv_6_no_dsp_32 CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken true CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Divide CONFIG.result_precision_type Single CONFIG.result_tlast_behv Null"
       },
       {
-        "name": "cnn_ap_fexp_7_full_dsp_32",
+        "name": "cnn_ap_fexp_3_full_dsp_32",
         "vlnv": "xilinx.com:ip:floating_point:7.1",
-        "params": "CONFIG.a_precision_type Single CONFIG.a_tuser_width 1 CONFIG.add_sub_value Both CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 8 CONFIG.c_a_fraction_width 24 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 7 CONFIG.c_mult_usage Full_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 8 CONFIG.c_result_fraction_width 24 CONFIG.component_name cnn_ap_fexp_7_full_dsp_32 CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken true CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Exponential CONFIG.result_precision_type Single CONFIG.result_tlast_behv Null"
+        "params": "CONFIG.a_precision_type Single CONFIG.a_tuser_width 1 CONFIG.add_sub_value Both CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 8 CONFIG.c_a_fraction_width 24 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 3 CONFIG.c_mult_usage Full_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 8 CONFIG.c_result_fraction_width 24 CONFIG.component_name cnn_ap_fexp_3_full_dsp_32 CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken true CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Exponential CONFIG.result_precision_type Single CONFIG.result_tlast_behv Null"
       },
       {
-        "name": "cnn_ap_fmul_2_max_dsp_32",
+        "name": "cnn_ap_fmul_0_max_dsp_32",
         "vlnv": "xilinx.com:ip:floating_point:7.1",
-        "params": "CONFIG.a_precision_type Single CONFIG.a_tuser_width 1 CONFIG.add_sub_value Both CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 8 CONFIG.c_a_fraction_width 24 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 2 CONFIG.c_mult_usage Max_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 8 CONFIG.c_result_fraction_width 24 CONFIG.component_name cnn_ap_fmul_2_max_dsp_32 CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken true CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Multiply CONFIG.result_precision_type Single CONFIG.result_tlast_behv Null"
+        "params": "CONFIG.a_precision_type Single CONFIG.a_tuser_width 1 CONFIG.add_sub_value Both CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 8 CONFIG.c_a_fraction_width 24 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 0 CONFIG.c_mult_usage Max_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 8 CONFIG.c_result_fraction_width 24 CONFIG.component_name cnn_ap_fmul_0_max_dsp_32 CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken false CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Multiply CONFIG.result_precision_type Single CONFIG.result_tlast_behv Null"
       }
     ]
   },
@@ -645,32 +669,32 @@
       "ModuleName": "cnn",
       "Instances": [
         {
-          "ModuleName": "dense",
-          "InstanceName": "grp_dense_fu_234",
+          "ModuleName": "dense_out",
+          "InstanceName": "grp_dense_out_fu_388",
           "Instances": [{
               "ModuleName": "soft_max",
-              "InstanceName": "grp_soft_max_fu_135"
+              "InstanceName": "grp_soft_max_fu_149"
             }]
         },
         {
           "ModuleName": "conv_2",
-          "InstanceName": "grp_conv_2_fu_244"
+          "InstanceName": "grp_conv_2_fu_400"
         },
         {
           "ModuleName": "conv_1",
-          "InstanceName": "grp_conv_1_fu_256"
+          "InstanceName": "grp_conv_1_fu_412"
         },
         {
           "ModuleName": "max_pool_1",
-          "InstanceName": "grp_max_pool_1_fu_266"
+          "InstanceName": "grp_max_pool_1_fu_423"
         },
         {
           "ModuleName": "max_pool_2",
-          "InstanceName": "grp_max_pool_2_fu_273"
+          "InstanceName": "grp_max_pool_2_fu_431"
         },
         {
           "ModuleName": "flat",
-          "InstanceName": "grp_flat_fu_281"
+          "InstanceName": "grp_flat_fu_439"
         }
       ]
     },
@@ -717,7 +741,7 @@
         "isCombinational": "0",
         "isOneStateSeq": "0"
       },
-      "dense": {
+      "dense_out": {
         "FunctionProtocol": "ap_ctrl_hs",
         "isTaskLevelControl": "1",
         "isPipelined": "0",
@@ -735,79 +759,79 @@
     "Metrics": {
       "conv_1": {
         "Latency": {
-          "LatencyBest": "2510717",
-          "LatencyAvg": "2510717",
-          "LatencyWorst": "2510717",
-          "PipelineII": "2510717",
+          "LatencyBest": "309661",
+          "LatencyAvg": "309661",
+          "LatencyWorst": "309661",
+          "PipelineII": "309661",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
         "Timing": {
-          "Target": "10.00",
-          "Uncertainty": "1.25",
-          "Estimate": "7.256"
+          "Target": "20.00",
+          "Uncertainty": "2.50",
+          "Estimate": "15.964"
         },
         "Loops": [{
             "Name": "Row_Loop",
             "TripCount": "26",
-            "Latency": "2510716",
+            "Latency": "309660",
             "PipelineII": "",
-            "PipelineDepth": "96566",
+            "PipelineDepth": "11910",
             "Loops": [{
                 "Name": "Col_Loop",
                 "TripCount": "26",
-                "Latency": "96564",
+                "Latency": "11908",
                 "PipelineII": "",
-                "PipelineDepth": "3714",
+                "PipelineDepth": "458",
                 "Loops": [{
                     "Name": "Filter1_Loop",
-                    "TripCount": "32",
-                    "Latency": "3712",
+                    "TripCount": "6",
+                    "Latency": "456",
                     "PipelineII": "",
-                    "PipelineDepth": "116",
+                    "PipelineDepth": "76",
                     "Loops": [{
                         "Name": "W_Row_Loop",
                         "TripCount": "3",
-                        "Latency": "105",
+                        "Latency": "69",
                         "PipelineII": "",
-                        "PipelineDepth": "35",
+                        "PipelineDepth": "23",
                         "Loops": [{
                             "Name": "W_Col_Loop",
                             "TripCount": "3",
-                            "Latency": "33",
+                            "Latency": "21",
                             "PipelineII": "",
-                            "PipelineDepth": "11"
+                            "PipelineDepth": "7"
                           }]
                       }]
                   }]
               }]
           }],
         "Area": {
-          "BRAM_18K": "2",
+          "BRAM_18K": "1",
           "DSP48E": "5",
-          "FF": "806",
-          "LUT": "1503",
+          "FF": "697",
+          "LUT": "1502",
           "URAM": "0"
         }
       },
       "max_pool_1": {
         "Latency": {
-          "LatencyBest": "98241",
-          "LatencyAvg": "98241",
-          "LatencyWorst": "98241",
-          "PipelineII": "98241",
+          "LatencyBest": "18421",
+          "LatencyAvg": "18421",
+          "LatencyWorst": "18421",
+          "PipelineII": "18421",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
         "Timing": {
-          "Target": "10.00",
-          "Uncertainty": "1.25",
-          "Estimate": "8.710"
+          "Target": "20.00",
+          "Uncertainty": "2.50",
+          "Estimate": "10.580"
         },
         "Loops": [{
             "Name": "Filter_Loop",
-            "TripCount": "32",
-            "Latency": "98240",
+            "TripCount": "6",
+            "Latency": "18420",
             "PipelineII": "",
             "PipelineDepth": "3070",
             "Loops": [{
@@ -841,62 +865,62 @@
           }],
         "Area": {
           "DSP48E": "0",
-          "FF": "251",
-          "LUT": "694",
+          "FF": "239",
+          "LUT": "695",
           "BRAM_18K": "0",
           "URAM": "0"
         }
       },
       "conv_2": {
         "Latency": {
-          "LatencyBest": "24804297",
-          "LatencyAvg": "24804297",
-          "LatencyWorst": "24804297",
-          "PipelineII": "24804297",
+          "LatencyBest": "792089",
+          "LatencyAvg": "792089",
+          "LatencyWorst": "792089",
+          "PipelineII": "792089",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
         "Timing": {
-          "Target": "10.00",
-          "Uncertainty": "1.25",
-          "Estimate": "7.256"
+          "Target": "20.00",
+          "Uncertainty": "2.50",
+          "Estimate": "15.964"
         },
         "Loops": [{
             "Name": "Row_Loop",
             "TripCount": "11",
-            "Latency": "24804296",
+            "Latency": "792088",
             "PipelineII": "",
-            "PipelineDepth": "2254936",
+            "PipelineDepth": "72008",
             "Loops": [{
                 "Name": "Col_Loop",
                 "TripCount": "11",
-                "Latency": "2254934",
+                "Latency": "72006",
                 "PipelineII": "",
-                "PipelineDepth": "204994",
+                "PipelineDepth": "6546",
                 "Loops": [{
                     "Name": "Filter2_Loop",
-                    "TripCount": "64",
-                    "Latency": "204992",
+                    "TripCount": "16",
+                    "Latency": "6544",
                     "PipelineII": "",
-                    "PipelineDepth": "3203",
+                    "PipelineDepth": "409",
                     "Loops": [{
                         "Name": "W_Row_Loop",
                         "TripCount": "3",
-                        "Latency": "3192",
+                        "Latency": "402",
                         "PipelineII": "",
-                        "PipelineDepth": "1064",
+                        "PipelineDepth": "134",
                         "Loops": [{
                             "Name": "W_Col_Loop",
                             "TripCount": "3",
-                            "Latency": "1062",
+                            "Latency": "132",
                             "PipelineII": "",
-                            "PipelineDepth": "354",
+                            "PipelineDepth": "44",
                             "Loops": [{
                                 "Name": "Filter1_Loop",
-                                "TripCount": "32",
-                                "Latency": "352",
+                                "TripCount": "6",
+                                "Latency": "42",
                                 "PipelineII": "",
-                                "PipelineDepth": "11"
+                                "PipelineDepth": "7"
                               }]
                           }]
                       }]
@@ -904,31 +928,31 @@
               }]
           }],
         "Area": {
-          "BRAM_18K": "65",
+          "BRAM_18K": "2",
           "DSP48E": "5",
-          "FF": "853",
-          "LUT": "1581",
+          "FF": "743",
+          "LUT": "1570",
           "URAM": "0"
         }
       },
       "max_pool_2": {
         "Latency": {
-          "LatencyBest": "29569",
-          "LatencyAvg": "29569",
-          "LatencyWorst": "29569",
-          "PipelineII": "29569",
+          "LatencyBest": "7393",
+          "LatencyAvg": "7393",
+          "LatencyWorst": "7393",
+          "PipelineII": "7393",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
         "Timing": {
-          "Target": "10.00",
-          "Uncertainty": "1.25",
-          "Estimate": "8.716"
+          "Target": "20.00",
+          "Uncertainty": "2.50",
+          "Estimate": "8.685"
         },
         "Loops": [{
             "Name": "Filter_Loop",
-            "TripCount": "64",
-            "Latency": "29568",
+            "TripCount": "16",
+            "Latency": "7392",
             "PipelineII": "",
             "PipelineDepth": "462",
             "Loops": [{
@@ -962,50 +986,50 @@
           }],
         "Area": {
           "DSP48E": "0",
-          "FF": "238",
-          "LUT": "665",
+          "FF": "230",
+          "LUT": "660",
           "BRAM_18K": "0",
           "URAM": "0"
         }
       },
       "flat": {
         "Latency": {
-          "LatencyBest": "3261",
-          "LatencyAvg": "3261",
-          "LatencyWorst": "3261",
-          "PipelineII": "3261",
+          "LatencyBest": "861",
+          "LatencyAvg": "861",
+          "LatencyWorst": "861",
+          "PipelineII": "861",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
         "Timing": {
-          "Target": "10.00",
-          "Uncertainty": "1.25",
+          "Target": "20.00",
+          "Uncertainty": "2.50",
           "Estimate": "6.508"
         },
         "Loops": [{
             "Name": "Row_Loop",
             "TripCount": "5",
-            "Latency": "3260",
+            "Latency": "860",
             "PipelineII": "",
-            "PipelineDepth": "652",
+            "PipelineDepth": "172",
             "Loops": [{
                 "Name": "Col_Loop",
                 "TripCount": "5",
-                "Latency": "650",
+                "Latency": "170",
                 "PipelineII": "",
-                "PipelineDepth": "130",
+                "PipelineDepth": "34",
                 "Loops": [{
                     "Name": "Filter_Loop",
-                    "TripCount": "64",
-                    "Latency": "128",
+                    "TripCount": "16",
+                    "Latency": "32",
                     "PipelineII": "",
                     "PipelineDepth": "2"
                   }]
               }]
           }],
         "Area": {
-          "FF": "98",
-          "LUT": "236",
+          "FF": "84",
+          "LUT": "244",
           "BRAM_18K": "0",
           "DSP48E": "0",
           "URAM": "0"
@@ -1013,91 +1037,91 @@
       },
       "soft_max": {
         "Latency": {
-          "LatencyBest": "432",
-          "LatencyAvg": "432",
-          "LatencyWorst": "432",
-          "PipelineII": "432",
+          "LatencyBest": "252",
+          "LatencyAvg": "252",
+          "LatencyWorst": "252",
+          "PipelineII": "252",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
         "Timing": {
-          "Target": "10.00",
-          "Uncertainty": "1.25",
-          "Estimate": "8.397"
+          "Target": "20.00",
+          "Uncertainty": "2.50",
+          "Estimate": "17.393"
         },
         "Loops": [
           {
             "Name": "Sum_Loop",
             "TripCount": "10",
-            "Latency": "160",
+            "Latency": "100",
             "PipelineII": "",
-            "PipelineDepth": "16"
+            "PipelineDepth": "10"
           },
           {
             "Name": "Prediction_Loop",
             "TripCount": "10",
-            "Latency": "270",
+            "Latency": "150",
             "PipelineII": "",
-            "PipelineDepth": "27"
+            "PipelineDepth": "15"
           }
         ],
         "Area": {
           "DSP48E": "9",
-          "FF": "1403",
-          "LUT": "2600",
+          "FF": "937",
+          "LUT": "2501",
           "BRAM_18K": "0",
           "URAM": "0"
         }
       },
-      "dense": {
+      "dense_out": {
         "Latency": {
-          "LatencyBest": "176454",
-          "LatencyAvg": "176454",
-          "LatencyWorst": "176454",
-          "PipelineII": "176454",
+          "LatencyBest": "2414",
+          "LatencyAvg": "2414",
+          "LatencyWorst": "2414",
+          "PipelineII": "2414",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
         "Timing": {
-          "Target": "10.00",
-          "Uncertainty": "1.25",
-          "Estimate": "8.397"
+          "Target": "20.00",
+          "Uncertainty": "2.50",
+          "Estimate": "17.393"
         },
         "Loops": [{
             "Name": "Dense_Loop",
             "TripCount": "10",
-            "Latency": "176020",
+            "Latency": "2160",
             "PipelineII": "",
-            "PipelineDepth": "17602",
+            "PipelineDepth": "216",
             "Loops": [{
                 "Name": "Flat_Loop",
-                "TripCount": "1600",
-                "Latency": "17600",
+                "TripCount": "30",
+                "Latency": "210",
                 "PipelineII": "",
-                "PipelineDepth": "11"
+                "PipelineDepth": "7"
               }]
           }],
         "Area": {
-          "BRAM_18K": "32",
+          "BRAM_18K": "1",
           "DSP48E": "14",
-          "FF": "1996",
-          "LUT": "3513",
+          "FF": "1493",
+          "LUT": "3440",
           "URAM": "0"
         }
       },
       "cnn": {
         "Latency": {
-          "LatencyBest": "27646510",
-          "LatencyAvg": "27646510",
-          "LatencyWorst": "27646510",
-          "PipelineII": "27646511",
+          "LatencyBest": "1283536",
+          "LatencyAvg": "1283536",
+          "LatencyWorst": "1283536",
+          "PipelineII": "1283537",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
         "Timing": {
-          "Target": "10.00",
-          "Uncertainty": "1.25",
-          "Estimate": "8.716"
+          "Target": "20.00",
+          "Uncertainty": "2.50",
+          "Estimate": "17.393"
         },
         "Loops": [
           {
@@ -1115,32 +1139,39 @@
               }]
           },
           {
-            "Name": "memset_conv_1_out",
-            "TripCount": "26",
-            "Latency": "22333",
+            "Name": "Loop 2",
+            "TripCount": "50",
+            "Latency": "140350",
             "PipelineII": "",
-            "PipelineDepth": "859",
+            "PipelineDepth": "2807",
             "Loops": [{
-                "Name": "memset_conv_1_out",
-                "TripCount": "26",
-                "Latency": "857",
+                "Name": "Loop 2.1",
+                "TripCount": "400",
+                "Latency": "2800",
                 "PipelineII": "",
-                "PipelineDepth": "33",
-                "Loops": [{
-                    "Name": "memset_conv_1_out",
-                    "TripCount": "32",
-                    "Latency": "31",
-                    "PipelineII": "",
-                    "PipelineDepth": "1"
-                  }]
+                "PipelineDepth": "7"
+              }]
+          },
+          {
+            "Name": "Loop 3",
+            "TripCount": "30",
+            "Latency": "10710",
+            "PipelineII": "",
+            "PipelineDepth": "357",
+            "Loops": [{
+                "Name": "Loop 3.1",
+                "TripCount": "50",
+                "Latency": "350",
+                "PipelineII": "",
+                "PipelineDepth": "7"
               }]
           }
         ],
         "Area": {
-          "BRAM_18K": "205",
-          "DSP48E": "24",
-          "FF": "4438",
-          "LUT": "8871",
+          "BRAM_18K": "92",
+          "DSP48E": "29",
+          "FF": "4397",
+          "LUT": "10167",
           "URAM": "0"
         }
       }
@@ -1156,7 +1187,7 @@
   },
   "GenData": {
     "DataVersion": "0.2",
-    "Time": "2024-01-18 19:24:53 +0100",
+    "Time": "2024-03-13 20:39:56 +0100",
     "ToolName": "vivado_hls",
     "ToolVersion": "2019.1"
   }

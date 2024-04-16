@@ -7,8 +7,8 @@ module dense_dense_weights_rom (
 addr0, ce0, q0, clk);
 
 parameter DWIDTH = 32;
-parameter AWIDTH = 14;
-parameter MEM_SIZE = 16000;
+parameter AWIDTH = 10;
+parameter MEM_SIZE = 600;
 
 input[AWIDTH-1:0] addr0;
 input ce0;
@@ -44,8 +44,8 @@ module dense_dense_weights(
     q0);
 
 parameter DataWidth = 32'd32;
-parameter AddressRange = 32'd16000;
-parameter AddressWidth = 32'd14;
+parameter AddressRange = 32'd600;
+parameter AddressWidth = 32'd10;
 input reset;
 input clk;
 input[AddressWidth - 1:0] address0;

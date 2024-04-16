@@ -1,0 +1,48 @@
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'flat/flat.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 184.043 ; gain = 92.555
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 184.043 ; gain = 92.555
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 184.043 ; gain = 92.555
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 184.043 ; gain = 92.555
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'LOOP_1' (flat/flat.cpp:7) in function 'flat' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'LOOP_2' (flat/flat.cpp:10) in function 'flat' completely with a factor of 5.
+INFO: [HLS 200-489] Unrolling loop 'LOOP_3' (flat/flat.cpp:13) in function 'flat' completely with a factor of 16.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 184.043 ; gain = 92.555
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 184.043 ; gain = 92.555
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'flat' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'flat' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'LOOP_1'.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('max_pool_out_load_2', flat/flat.cpp:14) on array 'max_pool_out' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'max_pool_out'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 40, Depth = 41.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 7.049 seconds; current allocated memory: 106.314 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.298 seconds; current allocated memory: 108.105 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'flat' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'flat/max_pool_out' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'flat/flat_array' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'flat' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'flat'.
+INFO: [HLS 200-111]  Elapsed time: 0.466 seconds; current allocated memory: 111.770 MB.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:03 ; elapsed = 00:00:10 . Memory (MB): peak = 184.043 ; gain = 92.555
+INFO: [VHDL 208-304] Generating VHDL RTL for flat.
+INFO: [VLOG 209-307] Generating Verilog RTL for flat.
+INFO: [HLS 200-112] Total elapsed time: 10.001 seconds; peak allocated memory: 111.770 MB.

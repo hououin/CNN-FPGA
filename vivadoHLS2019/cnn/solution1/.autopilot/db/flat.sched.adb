@@ -32,7 +32,7 @@
 				</Value>
 				<direction>1</direction>
 				<if_type>1</if_type>
-				<array_size>1600</array_size>
+				<array_size>400</array_size>
 				<bit_vecs class_id="7" tracking_level="0" version="0">
 					<count>0</count>
 					<item_version>0</item_version>
@@ -60,7 +60,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>1600</array_size>
+				<array_size>400</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -77,14 +77,14 @@
 						<id>3</id>
 						<name>_ln6</name>
 						<fileName>cnn/flat.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
 						<lineNumber>6</lineNumber>
 						<contextFuncName>flat</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item class_id="10" tracking_level="0" version="0">
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second class_id="11" tracking_level="0" version="0">
 									<count>1</count>
 									<item_version>0</item_version>
@@ -173,7 +173,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>11</bitwidth>
+					<bitwidth>9</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>4</count>
@@ -199,14 +199,14 @@
 						<id>7</id>
 						<name>icmp_ln6</name>
 						<fileName>cnn/flat.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
 						<lineNumber>6</lineNumber>
 						<contextFuncName>flat</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -248,14 +248,14 @@
 						<id>9</id>
 						<name>r</name>
 						<fileName>cnn/flat.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
 						<lineNumber>6</lineNumber>
 						<contextFuncName>flat</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -297,14 +297,14 @@
 						<id>10</id>
 						<name>_ln6</name>
 						<fileName>cnn/flat.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
 						<lineNumber>6</lineNumber>
 						<contextFuncName>flat</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -347,14 +347,14 @@
 						<id>14</id>
 						<name>i</name>
 						<fileName>cnn/flat.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
 						<lineNumber>15</lineNumber>
 						<contextFuncName>flat</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -372,7 +372,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>11</bitwidth>
+					<bitwidth>9</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
@@ -385,7 +385,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.63</m_delay>
+				<m_delay>1.82</m_delay>
 				<m_topoIndex>7</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -396,14 +396,14 @@
 						<id>15</id>
 						<name>zext_ln14</name>
 						<fileName>cnn/flat.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
 						<lineNumber>14</lineNumber>
 						<contextFuncName>flat</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -444,14 +444,14 @@
 						<id>16</id>
 						<name>tmp_s</name>
 						<fileName>cnn/flat.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
 						<lineNumber>14</lineNumber>
 						<contextFuncName>flat</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -494,14 +494,14 @@
 						<id>17</id>
 						<name>zext_ln14_1</name>
 						<fileName>cnn/flat.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
 						<lineNumber>14</lineNumber>
 						<contextFuncName>flat</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -542,14 +542,14 @@
 						<id>18</id>
 						<name>add_ln14</name>
 						<fileName>cnn/flat.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
 						<lineNumber>14</lineNumber>
 						<contextFuncName>flat</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -591,14 +591,14 @@
 						<id>19</id>
 						<name>_ln9</name>
 						<fileName>cnn/flat.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
 						<lineNumber>9</lineNumber>
 						<contextFuncName>flat</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -639,14 +639,14 @@
 						<id>21</id>
 						<name>i_1</name>
 						<fileName>cnn/flat.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
 						<lineNumber>15</lineNumber>
 						<contextFuncName>flat</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -664,7 +664,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>11</bitwidth>
+					<bitwidth>9</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>4</count>
@@ -727,14 +727,14 @@
 						<id>23</id>
 						<name>icmp_ln9</name>
 						<fileName>cnn/flat.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
 						<lineNumber>9</lineNumber>
 						<contextFuncName>flat</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -776,14 +776,14 @@
 						<id>25</id>
 						<name>c</name>
 						<fileName>cnn/flat.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
 						<lineNumber>9</lineNumber>
 						<contextFuncName>flat</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -825,14 +825,14 @@
 						<id>26</id>
 						<name>_ln9</name>
 						<fileName>cnn/flat.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
 						<lineNumber>9</lineNumber>
 						<contextFuncName>flat</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -875,14 +875,14 @@
 						<id>30</id>
 						<name>add_ln15</name>
 						<fileName>cnn/flat.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
 						<lineNumber>15</lineNumber>
 						<contextFuncName>flat</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -900,7 +900,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>11</bitwidth>
+					<bitwidth>9</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
@@ -913,7 +913,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.63</m_delay>
+				<m_delay>1.82</m_delay>
 				<m_topoIndex>19</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -924,14 +924,14 @@
 						<id>31</id>
 						<name>zext_ln14_2</name>
 						<fileName>cnn/flat.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
 						<lineNumber>14</lineNumber>
 						<contextFuncName>flat</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -972,14 +972,14 @@
 						<id>32</id>
 						<name>add_ln14_1</name>
 						<fileName>cnn/flat.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
 						<lineNumber>14</lineNumber>
 						<contextFuncName>flat</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1021,14 +1021,14 @@
 						<id>33</id>
 						<name>tmp_18_cast</name>
 						<fileName>cnn/flat.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
 						<lineNumber>12</lineNumber>
 						<contextFuncName>flat</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1046,7 +1046,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>12</bitwidth>
+					<bitwidth>10</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>3</count>
@@ -1071,14 +1071,14 @@
 						<id>34</id>
 						<name>_ln12</name>
 						<fileName>cnn/flat.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
 						<lineNumber>12</lineNumber>
 						<contextFuncName>flat</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1119,14 +1119,14 @@
 						<id>36</id>
 						<name>i_2</name>
 						<fileName>cnn/flat.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
 						<lineNumber>15</lineNumber>
 						<contextFuncName>flat</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1144,7 +1144,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>11</bitwidth>
+					<bitwidth>9</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>4</count>
@@ -1181,7 +1181,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>7</bitwidth>
+					<bitwidth>5</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>4</count>
@@ -1207,14 +1207,14 @@
 						<id>38</id>
 						<name>icmp_ln12</name>
 						<fileName>cnn/flat.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
 						<lineNumber>12</lineNumber>
 						<contextFuncName>flat</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1245,7 +1245,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.48</m_delay>
+				<m_delay>1.36</m_delay>
 				<m_topoIndex>27</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -1256,14 +1256,14 @@
 						<id>40</id>
 						<name>f</name>
 						<fileName>cnn/flat.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
 						<lineNumber>12</lineNumber>
 						<contextFuncName>flat</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1281,7 +1281,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>7</bitwidth>
+					<bitwidth>5</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
@@ -1294,7 +1294,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.87</m_delay>
+				<m_delay>1.78</m_delay>
 				<m_topoIndex>28</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -1305,14 +1305,14 @@
 						<id>41</id>
 						<name>_ln12</name>
 						<fileName>cnn/flat.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
 						<lineNumber>12</lineNumber>
 						<contextFuncName>flat</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1355,14 +1355,14 @@
 						<id>44</id>
 						<name>zext_ln14_4</name>
 						<fileName>cnn/flat.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
 						<lineNumber>14</lineNumber>
 						<contextFuncName>flat</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1380,7 +1380,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>12</bitwidth>
+					<bitwidth>10</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>1</count>
@@ -1403,14 +1403,14 @@
 						<id>45</id>
 						<name>add_ln14_2</name>
 						<fileName>cnn/flat.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
 						<lineNumber>14</lineNumber>
 						<contextFuncName>flat</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1428,7 +1428,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>12</bitwidth>
+					<bitwidth>10</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
@@ -1441,7 +1441,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.54</m_delay>
+				<m_delay>1.73</m_delay>
 				<m_topoIndex>31</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -1452,14 +1452,14 @@
 						<id>46</id>
 						<name>zext_ln14_5</name>
 						<fileName>cnn/flat.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
 						<lineNumber>14</lineNumber>
 						<contextFuncName>flat</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1500,14 +1500,14 @@
 						<id>47</id>
 						<name>max_pool_2_out_addr</name>
 						<fileName>cnn/flat.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
 						<lineNumber>14</lineNumber>
 						<contextFuncName>flat</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1525,7 +1525,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>11</bitwidth>
+					<bitwidth>9</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>3</count>
@@ -1550,14 +1550,14 @@
 						<id>48</id>
 						<name>max_pool_2_out_load</name>
 						<fileName>cnn/flat.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
 						<lineNumber>14</lineNumber>
 						<contextFuncName>flat</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1598,14 +1598,14 @@
 						<id>49</id>
 						<name>zext_ln14_3</name>
 						<fileName>cnn/flat.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
 						<lineNumber>14</lineNumber>
 						<contextFuncName>flat</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1646,14 +1646,14 @@
 						<id>50</id>
 						<name>flat_array_addr</name>
 						<fileName>cnn/flat.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
 						<lineNumber>14</lineNumber>
 						<contextFuncName>flat</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1671,7 +1671,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>11</bitwidth>
+					<bitwidth>9</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>3</count>
@@ -1696,14 +1696,14 @@
 						<id>51</id>
 						<name>flat_array_addr_write_ln14</name>
 						<fileName>cnn/flat.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
 						<lineNumber>14</lineNumber>
 						<contextFuncName>flat</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1745,14 +1745,14 @@
 						<id>52</id>
 						<name>add_ln15_1</name>
 						<fileName>cnn/flat.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
 						<lineNumber>15</lineNumber>
 						<contextFuncName>flat</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1770,7 +1770,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>11</bitwidth>
+					<bitwidth>9</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
@@ -1783,7 +1783,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.63</m_delay>
+				<m_delay>1.82</m_delay>
 				<m_topoIndex>39</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -1794,14 +1794,14 @@
 						<id>53</id>
 						<name>_ln12</name>
 						<fileName>cnn/flat.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
 						<lineNumber>12</lineNumber>
 						<contextFuncName>flat</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1842,14 +1842,14 @@
 						<id>56</id>
 						<name>_ln9</name>
 						<fileName>cnn/flat.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
 						<lineNumber>9</lineNumber>
 						<contextFuncName>flat</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1890,14 +1890,14 @@
 						<id>59</id>
 						<name>_ln6</name>
 						<fileName>cnn/flat.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
 						<lineNumber>6</lineNumber>
 						<contextFuncName>flat</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1938,14 +1938,14 @@
 						<id>61</id>
 						<name>_ln19</name>
 						<fileName>cnn/flat.cpp</fileName>
-						<fileDirectory>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</fileDirectory>
+						<fileDirectory>C:\Users\chenq\MAG\code\FFF\HLS2019</fileDirectory>
 						<lineNumber>19</lineNumber>
 						<contextFuncName>flat</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+								<first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -2023,7 +2023,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>11</bitwidth>
+					<bitwidth>9</bitwidth>
 				</Value>
 				<const_type>0</const_type>
 				<content>0</content>
@@ -2092,10 +2092,10 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>11</bitwidth>
+					<bitwidth>9</bitwidth>
 				</Value>
 				<const_type>0</const_type>
-				<content>320</content>
+				<content>80</content>
 			</item>
 			<item class_id_reference="16" object_id="_48">
 				<Value>
@@ -2138,10 +2138,10 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>11</bitwidth>
+					<bitwidth>9</bitwidth>
 				</Value>
 				<const_type>0</const_type>
-				<content>64</content>
+				<content>16</content>
 			</item>
 			<item class_id_reference="16" object_id="_50">
 				<Value>
@@ -2161,7 +2161,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>6</bitwidth>
+					<bitwidth>4</bitwidth>
 				</Value>
 				<const_type>0</const_type>
 				<content>0</content>
@@ -2184,7 +2184,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>7</bitwidth>
+					<bitwidth>5</bitwidth>
 				</Value>
 				<const_type>0</const_type>
 				<content>0</content>
@@ -2207,10 +2207,10 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>7</bitwidth>
+					<bitwidth>5</bitwidth>
 				</Value>
 				<const_type>0</const_type>
-				<content>64</content>
+				<content>16</content>
 			</item>
 			<item class_id_reference="16" object_id="_53">
 				<Value>
@@ -2230,7 +2230,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>7</bitwidth>
+					<bitwidth>5</bitwidth>
 				</Value>
 				<const_type>0</const_type>
 				<content>1</content>
@@ -2276,7 +2276,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>11</bitwidth>
+					<bitwidth>9</bitwidth>
 				</Value>
 				<const_type>0</const_type>
 				<content>1</content>
@@ -3231,8 +3231,8 @@
 			<mDepth>-1</mDepth>
 			<mMinTripCount>-1</mMinTripCount>
 			<mMaxTripCount>-1</mMaxTripCount>
-			<mMinLatency>3261</mMinLatency>
-			<mMaxLatency>3261</mMaxLatency>
+			<mMinLatency>861</mMinLatency>
+			<mMaxLatency>861</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
 		</item>
@@ -3277,8 +3277,8 @@
 			<mDepth>-1</mDepth>
 			<mMinTripCount>5</mMinTripCount>
 			<mMaxTripCount>5</mMaxTripCount>
-			<mMinLatency>3260</mMinLatency>
-			<mMaxLatency>3260</mMaxLatency>
+			<mMinLatency>860</mMinLatency>
+			<mMaxLatency>860</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
 		</item>
@@ -3324,8 +3324,8 @@
 			<mDepth>-1</mDepth>
 			<mMinTripCount>5</mMinTripCount>
 			<mMaxTripCount>5</mMaxTripCount>
-			<mMinLatency>650</mMinLatency>
-			<mMaxLatency>650</mMaxLatency>
+			<mMinLatency>170</mMinLatency>
+			<mMaxLatency>170</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
 		</item>
@@ -3368,10 +3368,10 @@
 			</basic_blocks>
 			<mII>-1</mII>
 			<mDepth>-1</mDepth>
-			<mMinTripCount>64</mMinTripCount>
-			<mMaxTripCount>64</mMaxTripCount>
-			<mMinLatency>128</mMinLatency>
-			<mMaxLatency>128</mMaxLatency>
+			<mMinTripCount>16</mMinTripCount>
+			<mMaxTripCount>16</mMaxTripCount>
+			<mMinLatency>32</mMinLatency>
+			<mMaxLatency>32</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
 		</item>

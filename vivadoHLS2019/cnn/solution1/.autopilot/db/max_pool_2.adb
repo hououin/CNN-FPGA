@@ -32,7 +32,7 @@
           </Value>
           <direction>1</direction>
           <if_type>1</if_type>
-          <array_size>1600</array_size>
+          <array_size>400</array_size>
           <bit_vecs class_id="7" tracking_level="0" version="0">
             <count>0</count>
             <item_version>0</item_version>
@@ -60,7 +60,7 @@
           </Value>
           <direction>0</direction>
           <if_type>1</if_type>
-          <array_size>7744</array_size>
+          <array_size>1936</array_size>
           <bit_vecs>
             <count>0</count>
             <item_version>0</item_version>
@@ -75,16 +75,16 @@
             <Obj>
               <type>0</type>
               <id>3</id>
-              <name>_ln9</name>
+              <name>_ln10</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>9</lineNumber>
+              <lineNumber>10</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item class_id="10" tracking_level="0" version="0">
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second class_id="11" tracking_level="0" version="0">
                     <count>1</count>
                     <item_version>0</item_version>
@@ -93,7 +93,7 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>9</second>
+                      <second>10</second>
                     </item>
                   </second>
                 </item>
@@ -136,7 +136,7 @@
               <rtlName/>
               <coreName/>
             </Obj>
-            <bitwidth>7</bitwidth>
+            <bitwidth>5</bitwidth>
           </Value>
           <oprand_edges>
             <count>4</count>
@@ -160,16 +160,16 @@
             <Obj>
               <type>0</type>
               <id>6</id>
-              <name>icmp_ln9</name>
+              <name>icmp_ln10</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>9</lineNumber>
+              <lineNumber>10</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -178,13 +178,13 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>9</second>
+                      <second>10</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>icmp_ln9_fu_187_p2</rtlName>
+              <rtlName>icmp_ln10_fu_187_p2</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>1</bitwidth>
@@ -200,7 +200,7 @@
           <m_isOnCriticalPath>0</m_isOnCriticalPath>
           <m_isLCDNode>0</m_isLCDNode>
           <m_isStartOfPath>0</m_isStartOfPath>
-          <m_delay>1.48</m_delay>
+          <m_delay>1.36</m_delay>
           <m_topoIndex>3</m_topoIndex>
           <m_clusterGroupNumber>-1</m_clusterGroupNumber>
         </item>
@@ -212,13 +212,13 @@
               <name>f</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>9</lineNumber>
+              <lineNumber>10</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -227,7 +227,7 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>9</second>
+                      <second>10</second>
                     </item>
                   </second>
                 </item>
@@ -236,7 +236,7 @@
               <rtlName>f_fu_193_p2</rtlName>
               <coreName/>
             </Obj>
-            <bitwidth>7</bitwidth>
+            <bitwidth>5</bitwidth>
           </Value>
           <oprand_edges>
             <count>2</count>
@@ -249,7 +249,7 @@
           <m_isOnCriticalPath>0</m_isOnCriticalPath>
           <m_isLCDNode>0</m_isLCDNode>
           <m_isStartOfPath>0</m_isStartOfPath>
-          <m_delay>1.87</m_delay>
+          <m_delay>1.78</m_delay>
           <m_topoIndex>4</m_topoIndex>
           <m_clusterGroupNumber>-1</m_clusterGroupNumber>
         </item>
@@ -258,16 +258,16 @@
             <Obj>
               <type>0</type>
               <id>9</id>
-              <name>_ln9</name>
+              <name>_ln10</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>9</lineNumber>
+              <lineNumber>10</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -276,7 +276,7 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>9</second>
+                      <second>10</second>
                     </item>
                   </second>
                 </item>
@@ -308,16 +308,16 @@
             <Obj>
               <type>0</type>
               <id>13</id>
-              <name>zext_ln12</name>
+              <name>zext_ln13</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>12</lineNumber>
+              <lineNumber>13</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -326,16 +326,16 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>12</second>
+                      <second>13</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>zext_ln12_fu_199_p1</rtlName>
+              <rtlName>zext_ln13_fu_199_p1</rtlName>
               <coreName/>
             </Obj>
-            <bitwidth>14</bitwidth>
+            <bitwidth>12</bitwidth>
           </Value>
           <oprand_edges>
             <count>1</count>
@@ -356,16 +356,16 @@
             <Obj>
               <type>0</type>
               <id>14</id>
-              <name>zext_ln12_1</name>
+              <name>zext_ln13_1</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>12</lineNumber>
+              <lineNumber>13</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -374,16 +374,16 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>12</second>
+                      <second>13</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>zext_ln12_1_fu_203_p1</rtlName>
+              <rtlName>zext_ln13_1_fu_203_p1</rtlName>
               <coreName/>
             </Obj>
-            <bitwidth>12</bitwidth>
+            <bitwidth>10</bitwidth>
           </Value>
           <oprand_edges>
             <count>1</count>
@@ -404,16 +404,16 @@
             <Obj>
               <type>0</type>
               <id>15</id>
-              <name>_ln12</name>
+              <name>_ln13</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>12</lineNumber>
+              <lineNumber>13</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -422,7 +422,7 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>12</second>
+                      <second>13</second>
                     </item>
                   </second>
                 </item>
@@ -489,16 +489,16 @@
             <Obj>
               <type>0</type>
               <id>18</id>
-              <name>icmp_ln12</name>
+              <name>icmp_ln13</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>12</lineNumber>
+              <lineNumber>13</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -507,13 +507,13 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>12</second>
+                      <second>13</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>icmp_ln12_fu_207_p2</rtlName>
+              <rtlName>icmp_ln13_fu_207_p2</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>1</bitwidth>
@@ -541,13 +541,13 @@
               <name>r</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>12</lineNumber>
+              <lineNumber>13</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -556,7 +556,7 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>12</second>
+                      <second>13</second>
                     </item>
                   </second>
                 </item>
@@ -587,16 +587,16 @@
             <Obj>
               <type>0</type>
               <id>21</id>
-              <name>_ln12</name>
+              <name>_ln13</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>12</lineNumber>
+              <lineNumber>13</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -605,7 +605,7 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>12</second>
+                      <second>13</second>
                     </item>
                   </second>
                 </item>
@@ -640,13 +640,13 @@
               <name>shl_ln</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>25</lineNumber>
+              <lineNumber>26</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -655,7 +655,7 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>25</second>
+                      <second>26</second>
                     </item>
                   </second>
                 </item>
@@ -687,16 +687,16 @@
             <Obj>
               <type>0</type>
               <id>26</id>
-              <name>zext_ln35</name>
+              <name>zext_ln36</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>35</lineNumber>
+              <lineNumber>36</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -705,13 +705,13 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>35</second>
+                      <second>36</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>zext_ln35_fu_227_p1</rtlName>
+              <rtlName>zext_ln36_fu_227_p1</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>6</bitwidth>
@@ -738,13 +738,13 @@
               <name>tmp_7</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>35</lineNumber>
+              <lineNumber>36</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -753,7 +753,7 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>35</second>
+                      <second>36</second>
                     </item>
                   </second>
                 </item>
@@ -785,16 +785,16 @@
             <Obj>
               <type>0</type>
               <id>28</id>
-              <name>zext_ln35_1</name>
+              <name>zext_ln36_1</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>35</lineNumber>
+              <lineNumber>36</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -803,13 +803,13 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>35</second>
+                      <second>36</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>zext_ln35_1_fu_239_p1</rtlName>
+              <rtlName>zext_ln36_1_fu_239_p1</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>6</bitwidth>
@@ -833,16 +833,16 @@
             <Obj>
               <type>0</type>
               <id>29</id>
-              <name>add_ln35</name>
+              <name>add_ln36</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>35</lineNumber>
+              <lineNumber>36</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -851,13 +851,13 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>35</second>
+                      <second>36</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>add_ln35_fu_243_p2</rtlName>
+              <rtlName>add_ln36_fu_243_p2</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>6</bitwidth>
@@ -882,16 +882,16 @@
             <Obj>
               <type>0</type>
               <id>30</id>
-              <name>_ln15</name>
+              <name>_ln16</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>15</lineNumber>
+              <lineNumber>16</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -900,7 +900,7 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>15</second>
+                      <second>16</second>
                     </item>
                   </second>
                 </item>
@@ -967,16 +967,16 @@
             <Obj>
               <type>0</type>
               <id>33</id>
-              <name>icmp_ln15</name>
+              <name>icmp_ln16</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>15</lineNumber>
+              <lineNumber>16</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -985,13 +985,13 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>15</second>
+                      <second>16</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>icmp_ln15_fu_249_p2</rtlName>
+              <rtlName>icmp_ln16_fu_249_p2</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>1</bitwidth>
@@ -1019,13 +1019,13 @@
               <name>c</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>15</lineNumber>
+              <lineNumber>16</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1034,7 +1034,7 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>15</second>
+                      <second>16</second>
                     </item>
                   </second>
                 </item>
@@ -1065,16 +1065,16 @@
             <Obj>
               <type>0</type>
               <id>36</id>
-              <name>_ln15</name>
+              <name>_ln16</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>15</lineNumber>
+              <lineNumber>16</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1083,7 +1083,7 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>15</second>
+                      <second>16</second>
                     </item>
                   </second>
                 </item>
@@ -1118,13 +1118,13 @@
               <name>shl_ln1</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>26</lineNumber>
+              <lineNumber>27</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1133,7 +1133,7 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>26</second>
+                      <second>27</second>
                     </item>
                   </second>
                 </item>
@@ -1165,16 +1165,16 @@
             <Obj>
               <type>0</type>
               <id>41</id>
-              <name>_ln19</name>
+              <name>_ln20</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>19</lineNumber>
+              <lineNumber>20</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1183,7 +1183,7 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>19</second>
+                      <second>20</second>
                     </item>
                   </second>
                 </item>
@@ -1216,13 +1216,13 @@
               <name>max_0</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>28</lineNumber>
+              <lineNumber>29</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1231,7 +1231,7 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>28</second>
+                      <second>29</second>
                     </item>
                   </second>
                 </item>
@@ -1301,16 +1301,16 @@
             <Obj>
               <type>0</type>
               <id>45</id>
-              <name>zext_ln19</name>
+              <name>zext_ln20</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>19</lineNumber>
+              <lineNumber>20</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1319,13 +1319,13 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>19</second>
+                      <second>20</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>zext_ln19_fu_269_p1</rtlName>
+              <rtlName>zext_ln20_fu_269_p1</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>4</bitwidth>
@@ -1349,16 +1349,16 @@
             <Obj>
               <type>0</type>
               <id>46</id>
-              <name>icmp_ln19</name>
+              <name>icmp_ln20</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>19</lineNumber>
+              <lineNumber>20</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1367,13 +1367,13 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>19</second>
+                      <second>20</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>icmp_ln19_fu_273_p2</rtlName>
+              <rtlName>icmp_ln20_fu_273_p2</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>1</bitwidth>
@@ -1401,13 +1401,13 @@
               <name>mpr</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>19</lineNumber>
+              <lineNumber>20</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1416,7 +1416,7 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>19</second>
+                      <second>20</second>
                     </item>
                   </second>
                 </item>
@@ -1447,16 +1447,16 @@
             <Obj>
               <type>0</type>
               <id>49</id>
-              <name>_ln19</name>
+              <name>_ln20</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>19</lineNumber>
+              <lineNumber>20</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1465,7 +1465,7 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>19</second>
+                      <second>20</second>
                     </item>
                   </second>
                 </item>
@@ -1500,13 +1500,13 @@
               <name>i</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>25</lineNumber>
+              <lineNumber>26</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1515,7 +1515,7 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>25</second>
+                      <second>26</second>
                     </item>
                   </second>
                 </item>
@@ -1546,16 +1546,16 @@
             <Obj>
               <type>0</type>
               <id>54</id>
-              <name>zext_ln28</name>
+              <name>zext_ln29</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>28</lineNumber>
+              <lineNumber>29</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1564,13 +1564,13 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>28</second>
+                      <second>29</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>mul_ln28_fu_294_p00</rtlName>
+              <rtlName>mul_ln29_fu_294_p00</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>8</bitwidth>
@@ -1594,16 +1594,16 @@
             <Obj>
               <type>0</type>
               <id>55</id>
-              <name>mul_ln28</name>
+              <name>mul_ln29</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>28</lineNumber>
+              <lineNumber>29</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1612,13 +1612,13 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>28</second>
+                      <second>29</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>mul_ln28_fu_294_p2</rtlName>
+              <rtlName>mul_ln29_fu_294_p2</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>8</bitwidth>
@@ -1643,16 +1643,16 @@
             <Obj>
               <type>0</type>
               <id>56</id>
-              <name>_ln22</name>
+              <name>_ln23</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>22</lineNumber>
+              <lineNumber>23</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1661,7 +1661,7 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>22</second>
+                      <second>23</second>
                     </item>
                   </second>
                 </item>
@@ -1765,16 +1765,16 @@
             <Obj>
               <type>0</type>
               <id>60</id>
-              <name>zext_ln22</name>
+              <name>zext_ln23</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>22</lineNumber>
+              <lineNumber>23</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1783,13 +1783,13 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>22</second>
+                      <second>23</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>zext_ln22_fu_327_p1</rtlName>
+              <rtlName>zext_ln23_fu_327_p1</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>4</bitwidth>
@@ -1813,16 +1813,16 @@
             <Obj>
               <type>0</type>
               <id>61</id>
-              <name>icmp_ln22</name>
+              <name>icmp_ln23</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>22</lineNumber>
+              <lineNumber>23</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1831,13 +1831,13 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>22</second>
+                      <second>23</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>icmp_ln22_fu_331_p2</rtlName>
+              <rtlName>icmp_ln23_fu_331_p2</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>1</bitwidth>
@@ -1865,13 +1865,13 @@
               <name>mpc</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>22</lineNumber>
+              <lineNumber>23</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1880,7 +1880,7 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>22</second>
+                      <second>23</second>
                     </item>
                   </second>
                 </item>
@@ -1911,16 +1911,16 @@
             <Obj>
               <type>0</type>
               <id>64</id>
-              <name>_ln22</name>
+              <name>_ln23</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>22</lineNumber>
+              <lineNumber>23</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1929,7 +1929,7 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>22</second>
+                      <second>23</second>
                     </item>
                   </second>
                 </item>
@@ -1964,13 +1964,13 @@
               <name>j</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>26</lineNumber>
+              <lineNumber>27</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1979,7 +1979,7 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>26</second>
+                      <second>27</second>
                     </item>
                   </second>
                 </item>
@@ -2010,16 +2010,16 @@
             <Obj>
               <type>0</type>
               <id>68</id>
-              <name>zext_ln28_1</name>
+              <name>zext_ln29_1</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>28</lineNumber>
+              <lineNumber>29</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2028,13 +2028,13 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>28</second>
+                      <second>29</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>zext_ln28_1_fu_348_p1</rtlName>
+              <rtlName>zext_ln29_1_fu_348_p1</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>8</bitwidth>
@@ -2058,16 +2058,16 @@
             <Obj>
               <type>0</type>
               <id>69</id>
-              <name>add_ln28</name>
+              <name>add_ln29</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>28</lineNumber>
+              <lineNumber>29</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2076,13 +2076,13 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>28</second>
+                      <second>29</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>add_ln28_fu_352_p2</rtlName>
+              <rtlName>add_ln29_fu_352_p2</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>8</bitwidth>
@@ -2110,13 +2110,13 @@
               <name>tmp_11_cast</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>28</lineNumber>
+              <lineNumber>29</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2125,7 +2125,7 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>28</second>
+                      <second>29</second>
                     </item>
                   </second>
                 </item>
@@ -2134,7 +2134,7 @@
               <rtlName>tmp_11_cast_fu_357_p3</rtlName>
               <coreName/>
             </Obj>
-            <bitwidth>14</bitwidth>
+            <bitwidth>12</bitwidth>
           </Value>
           <oprand_edges>
             <count>3</count>
@@ -2157,16 +2157,16 @@
             <Obj>
               <type>0</type>
               <id>71</id>
-              <name>add_ln28_1</name>
+              <name>add_ln29_1</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>28</lineNumber>
+              <lineNumber>29</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2175,16 +2175,16 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>28</second>
+                      <second>29</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>add_ln28_1_fu_365_p2</rtlName>
+              <rtlName>add_ln29_1_fu_365_p2</rtlName>
               <coreName/>
             </Obj>
-            <bitwidth>14</bitwidth>
+            <bitwidth>12</bitwidth>
           </Value>
           <oprand_edges>
             <count>2</count>
@@ -2197,7 +2197,7 @@
           <m_isOnCriticalPath>0</m_isOnCriticalPath>
           <m_isLCDNode>0</m_isLCDNode>
           <m_isStartOfPath>0</m_isStartOfPath>
-          <m_delay>1.81</m_delay>
+          <m_delay>1.54</m_delay>
           <m_topoIndex>56</m_topoIndex>
           <m_clusterGroupNumber>-1</m_clusterGroupNumber>
         </item>
@@ -2206,16 +2206,16 @@
             <Obj>
               <type>0</type>
               <id>72</id>
-              <name>zext_ln28_2</name>
+              <name>zext_ln29_2</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>28</lineNumber>
+              <lineNumber>29</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2224,13 +2224,13 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>28</second>
+                      <second>29</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>zext_ln28_2_fu_370_p1</rtlName>
+              <rtlName>zext_ln29_2_fu_370_p1</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>64</bitwidth>
@@ -2257,13 +2257,13 @@
               <name>conv_2_out_addr</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>28</lineNumber>
+              <lineNumber>29</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2272,7 +2272,7 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>28</second>
+                      <second>29</second>
                     </item>
                   </second>
                 </item>
@@ -2281,7 +2281,7 @@
               <rtlName/>
               <coreName/>
             </Obj>
-            <bitwidth>13</bitwidth>
+            <bitwidth>11</bitwidth>
           </Value>
           <oprand_edges>
             <count>3</count>
@@ -2307,13 +2307,13 @@
               <name>max</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>28</lineNumber>
+              <lineNumber>29</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2322,7 +2322,7 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>28</second>
+                      <second>29</second>
                     </item>
                   </second>
                 </item>
@@ -2352,16 +2352,16 @@
             <Obj>
               <type>0</type>
               <id>75</id>
-              <name>bitcast_ln28</name>
+              <name>bitcast_ln29</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>28</lineNumber>
+              <lineNumber>29</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2370,13 +2370,13 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>28</second>
+                      <second>29</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>bitcast_ln28_fu_375_p1</rtlName>
+              <rtlName>bitcast_ln29_fu_375_p1</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>32</bitwidth>
@@ -2403,13 +2403,13 @@
               <name>tmp</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>28</lineNumber>
+              <lineNumber>29</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2418,7 +2418,7 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>28</second>
+                      <second>29</second>
                     </item>
                   </second>
                 </item>
@@ -2451,16 +2451,16 @@
             <Obj>
               <type>0</type>
               <id>77</id>
-              <name>trunc_ln28</name>
+              <name>trunc_ln29</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>28</lineNumber>
+              <lineNumber>29</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2469,13 +2469,13 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>28</second>
+                      <second>29</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>trunc_ln28_fu_388_p1</rtlName>
+              <rtlName>trunc_ln29_fu_388_p1</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>23</bitwidth>
@@ -2499,16 +2499,16 @@
             <Obj>
               <type>0</type>
               <id>78</id>
-              <name>bitcast_ln28_1</name>
+              <name>bitcast_ln29_1</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>28</lineNumber>
+              <lineNumber>29</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2517,13 +2517,13 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>28</second>
+                      <second>29</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>bitcast_ln28_1_fu_392_p1</rtlName>
+              <rtlName>bitcast_ln29_1_fu_392_p1</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>32</bitwidth>
@@ -2550,13 +2550,13 @@
               <name>tmp_5</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>28</lineNumber>
+              <lineNumber>29</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2565,7 +2565,7 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>28</second>
+                      <second>29</second>
                     </item>
                   </second>
                 </item>
@@ -2598,16 +2598,16 @@
             <Obj>
               <type>0</type>
               <id>80</id>
-              <name>trunc_ln28_1</name>
+              <name>trunc_ln29_1</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>28</lineNumber>
+              <lineNumber>29</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2616,13 +2616,13 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>28</second>
+                      <second>29</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>trunc_ln28_1_fu_406_p1</rtlName>
+              <rtlName>trunc_ln29_1_fu_406_p1</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>23</bitwidth>
@@ -2646,16 +2646,16 @@
             <Obj>
               <type>0</type>
               <id>81</id>
-              <name>icmp_ln28</name>
+              <name>icmp_ln29</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>28</lineNumber>
+              <lineNumber>29</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2664,13 +2664,13 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>28</second>
+                      <second>29</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>icmp_ln28_fu_410_p2</rtlName>
+              <rtlName>icmp_ln29_fu_410_p2</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>1</bitwidth>
@@ -2695,16 +2695,16 @@
             <Obj>
               <type>0</type>
               <id>82</id>
-              <name>icmp_ln28_1</name>
+              <name>icmp_ln29_1</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>28</lineNumber>
+              <lineNumber>29</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2713,13 +2713,13 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>28</second>
+                      <second>29</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>icmp_ln28_1_fu_416_p2</rtlName>
+              <rtlName>icmp_ln29_1_fu_416_p2</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>1</bitwidth>
@@ -2744,16 +2744,16 @@
             <Obj>
               <type>0</type>
               <id>83</id>
-              <name>or_ln28</name>
+              <name>or_ln29</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>28</lineNumber>
+              <lineNumber>29</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2762,13 +2762,13 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>28</second>
+                      <second>29</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>or_ln28_fu_422_p2</rtlName>
+              <rtlName>or_ln29_fu_422_p2</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>1</bitwidth>
@@ -2793,16 +2793,16 @@
             <Obj>
               <type>0</type>
               <id>84</id>
-              <name>icmp_ln28_2</name>
+              <name>icmp_ln29_2</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>28</lineNumber>
+              <lineNumber>29</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2811,13 +2811,13 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>28</second>
+                      <second>29</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>icmp_ln28_2_fu_428_p2</rtlName>
+              <rtlName>icmp_ln29_2_fu_428_p2</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>1</bitwidth>
@@ -2842,16 +2842,16 @@
             <Obj>
               <type>0</type>
               <id>85</id>
-              <name>icmp_ln28_3</name>
+              <name>icmp_ln29_3</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>28</lineNumber>
+              <lineNumber>29</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2860,13 +2860,13 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>28</second>
+                      <second>29</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>icmp_ln28_3_fu_434_p2</rtlName>
+              <rtlName>icmp_ln29_3_fu_434_p2</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>1</bitwidth>
@@ -2891,16 +2891,16 @@
             <Obj>
               <type>0</type>
               <id>86</id>
-              <name>or_ln28_1</name>
+              <name>or_ln29_1</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>28</lineNumber>
+              <lineNumber>29</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2909,13 +2909,13 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>28</second>
+                      <second>29</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>or_ln28_1_fu_440_p2</rtlName>
+              <rtlName>or_ln29_1_fu_440_p2</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>1</bitwidth>
@@ -2940,16 +2940,16 @@
             <Obj>
               <type>0</type>
               <id>87</id>
-              <name>and_ln28</name>
+              <name>and_ln29</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>28</lineNumber>
+              <lineNumber>29</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2958,13 +2958,13 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>28</second>
+                      <second>29</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>and_ln28_fu_446_p2</rtlName>
+              <rtlName>and_ln29_fu_446_p2</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>1</bitwidth>
@@ -2992,13 +2992,13 @@
               <name>tmp_6</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>28</lineNumber>
+              <lineNumber>29</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -3007,7 +3007,7 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>28</second>
+                      <second>29</second>
                     </item>
                   </second>
                 </item>
@@ -3038,16 +3038,16 @@
             <Obj>
               <type>0</type>
               <id>89</id>
-              <name>and_ln28_1</name>
+              <name>and_ln29_1</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>28</lineNumber>
+              <lineNumber>29</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -3056,13 +3056,13 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>28</second>
+                      <second>29</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>and_ln28_1_fu_452_p2</rtlName>
+              <rtlName>and_ln29_1_fu_452_p2</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>1</bitwidth>
@@ -3090,13 +3090,13 @@
               <name>max_2</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>28</lineNumber>
+              <lineNumber>29</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -3105,7 +3105,7 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>28</second>
+                      <second>29</second>
                     </item>
                   </second>
                 </item>
@@ -3137,16 +3137,16 @@
             <Obj>
               <type>0</type>
               <id>91</id>
-              <name>_ln22</name>
+              <name>_ln23</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>22</lineNumber>
+              <lineNumber>23</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -3155,7 +3155,7 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>22</second>
+                      <second>23</second>
                     </item>
                   </second>
                 </item>
@@ -3185,16 +3185,16 @@
             <Obj>
               <type>0</type>
               <id>94</id>
-              <name>_ln19</name>
+              <name>_ln20</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>19</lineNumber>
+              <lineNumber>20</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -3203,7 +3203,7 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>19</second>
+                      <second>20</second>
                     </item>
                   </second>
                 </item>
@@ -3233,16 +3233,16 @@
             <Obj>
               <type>0</type>
               <id>96</id>
-              <name>zext_ln35_2</name>
+              <name>zext_ln36_2</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>35</lineNumber>
+              <lineNumber>36</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -3251,13 +3251,13 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>35</second>
+                      <second>36</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>zext_ln35_2_fu_300_p1</rtlName>
+              <rtlName>zext_ln36_2_fu_300_p1</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>6</bitwidth>
@@ -3281,16 +3281,16 @@
             <Obj>
               <type>0</type>
               <id>97</id>
-              <name>add_ln35_1</name>
+              <name>add_ln36_1</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>35</lineNumber>
+              <lineNumber>36</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -3299,13 +3299,13 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>35</second>
+                      <second>36</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>add_ln35_1_fu_304_p2</rtlName>
+              <rtlName>add_ln36_1_fu_304_p2</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>6</bitwidth>
@@ -3333,13 +3333,13 @@
               <name>tmp_9_cast</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>35</lineNumber>
+              <lineNumber>36</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -3348,7 +3348,7 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>35</second>
+                      <second>36</second>
                     </item>
                   </second>
                 </item>
@@ -3357,7 +3357,7 @@
               <rtlName>tmp_9_cast_fu_309_p3</rtlName>
               <coreName/>
             </Obj>
-            <bitwidth>12</bitwidth>
+            <bitwidth>10</bitwidth>
           </Value>
           <oprand_edges>
             <count>3</count>
@@ -3380,16 +3380,16 @@
             <Obj>
               <type>0</type>
               <id>99</id>
-              <name>add_ln35_2</name>
+              <name>add_ln36_2</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>35</lineNumber>
+              <lineNumber>36</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -3398,16 +3398,16 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>35</second>
+                      <second>36</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>add_ln35_2_fu_317_p2</rtlName>
+              <rtlName>add_ln36_2_fu_317_p2</rtlName>
               <coreName/>
             </Obj>
-            <bitwidth>12</bitwidth>
+            <bitwidth>10</bitwidth>
           </Value>
           <oprand_edges>
             <count>2</count>
@@ -3420,7 +3420,7 @@
           <m_isOnCriticalPath>0</m_isOnCriticalPath>
           <m_isLCDNode>0</m_isLCDNode>
           <m_isStartOfPath>0</m_isStartOfPath>
-          <m_delay>1.54</m_delay>
+          <m_delay>1.73</m_delay>
           <m_topoIndex>41</m_topoIndex>
           <m_clusterGroupNumber>-1</m_clusterGroupNumber>
         </item>
@@ -3429,16 +3429,16 @@
             <Obj>
               <type>0</type>
               <id>100</id>
-              <name>zext_ln35_3</name>
+              <name>zext_ln36_3</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>35</lineNumber>
+              <lineNumber>36</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -3447,13 +3447,13 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>35</second>
+                      <second>36</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>zext_ln35_3_fu_322_p1</rtlName>
+              <rtlName>zext_ln36_3_fu_322_p1</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>64</bitwidth>
@@ -3480,13 +3480,13 @@
               <name>max_pool_out_addr</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>35</lineNumber>
+              <lineNumber>36</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -3495,7 +3495,7 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>35</second>
+                      <second>36</second>
                     </item>
                   </second>
                 </item>
@@ -3504,7 +3504,7 @@
               <rtlName/>
               <coreName/>
             </Obj>
-            <bitwidth>11</bitwidth>
+            <bitwidth>9</bitwidth>
           </Value>
           <oprand_edges>
             <count>3</count>
@@ -3527,16 +3527,16 @@
             <Obj>
               <type>0</type>
               <id>102</id>
-              <name>max_pool_out_addr_write_ln35</name>
+              <name>max_pool_out_addr_write_ln36</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>35</lineNumber>
+              <lineNumber>36</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -3545,7 +3545,7 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>35</second>
+                      <second>36</second>
                     </item>
                   </second>
                 </item>
@@ -3576,16 +3576,16 @@
             <Obj>
               <type>0</type>
               <id>104</id>
-              <name>_ln15</name>
+              <name>_ln16</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>15</lineNumber>
+              <lineNumber>16</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -3594,7 +3594,7 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>15</second>
+                      <second>16</second>
                     </item>
                   </second>
                 </item>
@@ -3624,16 +3624,16 @@
             <Obj>
               <type>0</type>
               <id>107</id>
-              <name>_ln12</name>
+              <name>_ln13</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>12</lineNumber>
+              <lineNumber>13</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -3642,7 +3642,7 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>12</second>
+                      <second>13</second>
                     </item>
                   </second>
                 </item>
@@ -3672,16 +3672,16 @@
             <Obj>
               <type>0</type>
               <id>110</id>
-              <name>_ln9</name>
+              <name>_ln10</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>9</lineNumber>
+              <lineNumber>10</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -3690,7 +3690,7 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>9</second>
+                      <second>10</second>
                     </item>
                   </second>
                 </item>
@@ -3720,16 +3720,16 @@
             <Obj>
               <type>0</type>
               <id>112</id>
-              <name>_ln39</name>
+              <name>_ln40</name>
               <fileName>cnn/max_pool_2.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>39</lineNumber>
+              <lineNumber>40</lineNumber>
               <contextFuncName>max_pool_2</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>C:\Users\chenq\MAG\code\CNN-FPGA\vivadoHLS2019</first>
+                  <first>C:\Users\chenq\MAG\code\FFF\HLS2019</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -3738,7 +3738,7 @@
                         <first>cnn/max_pool_2.cpp</first>
                         <second>max_pool_2</second>
                       </first>
-                      <second>39</second>
+                      <second>40</second>
                     </item>
                   </second>
                 </item>
@@ -3784,7 +3784,7 @@
               <rtlName/>
               <coreName/>
             </Obj>
-            <bitwidth>7</bitwidth>
+            <bitwidth>5</bitwidth>
           </Value>
           <const_type>0</const_type>
           <content>0</content>
@@ -3807,10 +3807,10 @@
               <rtlName/>
               <coreName/>
             </Obj>
-            <bitwidth>7</bitwidth>
+            <bitwidth>5</bitwidth>
           </Value>
           <const_type>0</const_type>
-          <content>64</content>
+          <content>16</content>
         </item>
         <item class_id_reference="16" object_id="_82">
           <Value>
@@ -3830,7 +3830,7 @@
               <rtlName/>
               <coreName/>
             </Obj>
-            <bitwidth>7</bitwidth>
+            <bitwidth>5</bitwidth>
           </Value>
           <const_type>0</const_type>
           <content>1</content>
@@ -4060,7 +4060,7 @@
               <rtlName/>
               <coreName/>
             </Obj>
-            <bitwidth>6</bitwidth>
+            <bitwidth>4</bitwidth>
           </Value>
           <const_type>0</const_type>
           <content>0</content>
@@ -5831,8 +5831,8 @@
         <mDepth>-1</mDepth>
         <mMinTripCount>-1</mMinTripCount>
         <mMaxTripCount>-1</mMaxTripCount>
-        <mMinLatency>29569</mMinLatency>
-        <mMaxLatency>29569</mMaxLatency>
+        <mMinLatency>7393</mMinLatency>
+        <mMaxLatency>7393</mMaxLatency>
         <mIsDfPipe>0</mIsDfPipe>
         <mDfPipe class_id="-1"/>
       </item>
@@ -5875,10 +5875,10 @@
         </basic_blocks>
         <mII>-1</mII>
         <mDepth>-1</mDepth>
-        <mMinTripCount>64</mMinTripCount>
-        <mMaxTripCount>64</mMaxTripCount>
-        <mMinLatency>29568</mMinLatency>
-        <mMaxLatency>29568</mMaxLatency>
+        <mMinTripCount>16</mMinTripCount>
+        <mMaxTripCount>16</mMaxTripCount>
+        <mMinLatency>7392</mMinLatency>
+        <mMaxLatency>7392</mMaxLatency>
         <mIsDfPipe>0</mIsDfPipe>
         <mDfPipe class_id="-1"/>
       </item>
@@ -7002,17 +7002,17 @@
         <count>27</count>
         <item_version>0</item_version>
         <item>
-          <first>add_ln28_1_fu_365_p2 ( + ) </first>
+          <first>add_ln29_1_fu_365_p2 ( + ) </first>
           <second>
             <count>4</count>
             <item_version>0</item_version>
             <item>
               <first>(0P0)</first>
-              <second>14</second>
+              <second>12</second>
             </item>
             <item>
               <first>(1P1)</first>
-              <second>14</second>
+              <second>12</second>
             </item>
             <item>
               <first>FF</first>
@@ -7020,12 +7020,12 @@
             </item>
             <item>
               <first>LUT</first>
-              <second>19</second>
+              <second>12</second>
             </item>
           </second>
         </item>
         <item>
-          <first>add_ln28_fu_352_p2 ( + ) </first>
+          <first>add_ln29_fu_352_p2 ( + ) </first>
           <second>
             <count>4</count>
             <item_version>0</item_version>
@@ -7048,7 +7048,7 @@
           </second>
         </item>
         <item>
-          <first>add_ln35_1_fu_304_p2 ( + ) </first>
+          <first>add_ln36_1_fu_304_p2 ( + ) </first>
           <second>
             <count>4</count>
             <item_version>0</item_version>
@@ -7071,17 +7071,17 @@
           </second>
         </item>
         <item>
-          <first>add_ln35_2_fu_317_p2 ( + ) </first>
+          <first>add_ln36_2_fu_317_p2 ( + ) </first>
           <second>
             <count>4</count>
             <item_version>0</item_version>
             <item>
               <first>(0P0)</first>
-              <second>12</second>
+              <second>10</second>
             </item>
             <item>
               <first>(1P1)</first>
-              <second>12</second>
+              <second>10</second>
             </item>
             <item>
               <first>FF</first>
@@ -7089,12 +7089,12 @@
             </item>
             <item>
               <first>LUT</first>
-              <second>12</second>
+              <second>14</second>
             </item>
           </second>
         </item>
         <item>
-          <first>add_ln35_fu_243_p2 ( + ) </first>
+          <first>add_ln36_fu_243_p2 ( + ) </first>
           <second>
             <count>4</count>
             <item_version>0</item_version>
@@ -7117,7 +7117,7 @@
           </second>
         </item>
         <item>
-          <first>and_ln28_1_fu_452_p2 ( and ) </first>
+          <first>and_ln29_1_fu_452_p2 ( and ) </first>
           <second>
             <count>4</count>
             <item_version>0</item_version>
@@ -7140,7 +7140,7 @@
           </second>
         </item>
         <item>
-          <first>and_ln28_fu_446_p2 ( and ) </first>
+          <first>and_ln29_fu_446_p2 ( and ) </first>
           <second>
             <count>4</count>
             <item_version>0</item_version>
@@ -7192,7 +7192,7 @@
             <item_version>0</item_version>
             <item>
               <first>(0P0)</first>
-              <second>7</second>
+              <second>5</second>
             </item>
             <item>
               <first>(1P1)</first>
@@ -7232,7 +7232,30 @@
           </second>
         </item>
         <item>
-          <first>icmp_ln12_fu_207_p2 ( icmp ) </first>
+          <first>icmp_ln10_fu_187_p2 ( icmp ) </first>
+          <second>
+            <count>4</count>
+            <item_version>0</item_version>
+            <item>
+              <first>(0P0)</first>
+              <second>5</second>
+            </item>
+            <item>
+              <first>(1P1)</first>
+              <second>6</second>
+            </item>
+            <item>
+              <first>FF</first>
+              <second>0</second>
+            </item>
+            <item>
+              <first>LUT</first>
+              <second>11</second>
+            </item>
+          </second>
+        </item>
+        <item>
+          <first>icmp_ln13_fu_207_p2 ( icmp ) </first>
           <second>
             <count>4</count>
             <item_version>0</item_version>
@@ -7255,7 +7278,7 @@
           </second>
         </item>
         <item>
-          <first>icmp_ln15_fu_249_p2 ( icmp ) </first>
+          <first>icmp_ln16_fu_249_p2 ( icmp ) </first>
           <second>
             <count>4</count>
             <item_version>0</item_version>
@@ -7278,7 +7301,7 @@
           </second>
         </item>
         <item>
-          <first>icmp_ln19_fu_273_p2 ( icmp ) </first>
+          <first>icmp_ln20_fu_273_p2 ( icmp ) </first>
           <second>
             <count>4</count>
             <item_version>0</item_version>
@@ -7301,7 +7324,7 @@
           </second>
         </item>
         <item>
-          <first>icmp_ln22_fu_331_p2 ( icmp ) </first>
+          <first>icmp_ln23_fu_331_p2 ( icmp ) </first>
           <second>
             <count>4</count>
             <item_version>0</item_version>
@@ -7324,7 +7347,7 @@
           </second>
         </item>
         <item>
-          <first>icmp_ln28_1_fu_416_p2 ( icmp ) </first>
+          <first>icmp_ln29_1_fu_416_p2 ( icmp ) </first>
           <second>
             <count>4</count>
             <item_version>0</item_version>
@@ -7347,7 +7370,7 @@
           </second>
         </item>
         <item>
-          <first>icmp_ln28_2_fu_428_p2 ( icmp ) </first>
+          <first>icmp_ln29_2_fu_428_p2 ( icmp ) </first>
           <second>
             <count>4</count>
             <item_version>0</item_version>
@@ -7370,7 +7393,7 @@
           </second>
         </item>
         <item>
-          <first>icmp_ln28_3_fu_434_p2 ( icmp ) </first>
+          <first>icmp_ln29_3_fu_434_p2 ( icmp ) </first>
           <second>
             <count>4</count>
             <item_version>0</item_version>
@@ -7393,7 +7416,7 @@
           </second>
         </item>
         <item>
-          <first>icmp_ln28_fu_410_p2 ( icmp ) </first>
+          <first>icmp_ln29_fu_410_p2 ( icmp ) </first>
           <second>
             <count>4</count>
             <item_version>0</item_version>
@@ -7404,29 +7427,6 @@
             <item>
               <first>(1P1)</first>
               <second>2</second>
-            </item>
-            <item>
-              <first>FF</first>
-              <second>0</second>
-            </item>
-            <item>
-              <first>LUT</first>
-              <second>11</second>
-            </item>
-          </second>
-        </item>
-        <item>
-          <first>icmp_ln9_fu_187_p2 ( icmp ) </first>
-          <second>
-            <count>4</count>
-            <item_version>0</item_version>
-            <item>
-              <first>(0P0)</first>
-              <second>7</second>
-            </item>
-            <item>
-              <first>(1P1)</first>
-              <second>8</second>
             </item>
             <item>
               <first>FF</first>
@@ -7535,7 +7535,7 @@
           </second>
         </item>
         <item>
-          <first>mul_ln28_fu_294_p2 ( * ) </first>
+          <first>mul_ln29_fu_294_p2 ( * ) </first>
           <second>
             <count>5</count>
             <item_version>0</item_version>
@@ -7562,7 +7562,7 @@
           </second>
         </item>
         <item>
-          <first>or_ln28_1_fu_440_p2 ( or ) </first>
+          <first>or_ln29_1_fu_440_p2 ( or ) </first>
           <second>
             <count>4</count>
             <item_version>0</item_version>
@@ -7585,7 +7585,7 @@
           </second>
         </item>
         <item>
-          <first>or_ln28_fu_422_p2 ( or ) </first>
+          <first>or_ln29_fu_422_p2 ( or ) </first>
           <second>
             <count>4</count>
             <item_version>0</item_version>
@@ -7699,11 +7699,11 @@
             </item>
             <item>
               <first>(1Bits)</first>
-              <second>7</second>
+              <second>5</second>
             </item>
             <item>
               <first>(2Count)</first>
-              <second>14</second>
+              <second>10</second>
             </item>
             <item>
               <first>LUT</first>
@@ -7831,7 +7831,7 @@
         <count>20</count>
         <item_version>0</item_version>
         <item>
-          <first>add_ln35_reg_496</first>
+          <first>add_ln36_reg_496</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -7913,7 +7913,7 @@
             <item_version>0</item_version>
             <item>
               <first>(Bits)</first>
-              <second>7</second>
+              <second>5</second>
             </item>
             <item>
               <first>(Consts)</first>
@@ -7921,7 +7921,7 @@
             </item>
             <item>
               <first>FF</first>
-              <second>7</second>
+              <second>5</second>
             </item>
           </second>
         </item>
@@ -7932,7 +7932,7 @@
             <item_version>0</item_version>
             <item>
               <first>(Bits)</first>
-              <second>7</second>
+              <second>5</second>
             </item>
             <item>
               <first>(Consts)</first>
@@ -7940,7 +7940,7 @@
             </item>
             <item>
               <first>FF</first>
-              <second>7</second>
+              <second>5</second>
             </item>
           </second>
         </item>
@@ -8078,7 +8078,7 @@
           </second>
         </item>
         <item>
-          <first>mul_ln28_reg_522</first>
+          <first>mul_ln29_reg_522</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -8173,7 +8173,26 @@
           </second>
         </item>
         <item>
-          <first>zext_ln12_1_reg_478</first>
+          <first>zext_ln13_1_reg_478</first>
+          <second>
+            <count>3</count>
+            <item_version>0</item_version>
+            <item>
+              <first>(Bits)</first>
+              <second>10</second>
+            </item>
+            <item>
+              <first>(Consts)</first>
+              <second>5</second>
+            </item>
+            <item>
+              <first>FF</first>
+              <second>5</second>
+            </item>
+          </second>
+        </item>
+        <item>
+          <first>zext_ln13_reg_473</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -8183,30 +8202,11 @@
             </item>
             <item>
               <first>(Consts)</first>
+              <second>7</second>
+            </item>
+            <item>
+              <first>FF</first>
               <second>5</second>
-            </item>
-            <item>
-              <first>FF</first>
-              <second>7</second>
-            </item>
-          </second>
-        </item>
-        <item>
-          <first>zext_ln12_reg_473</first>
-          <second>
-            <count>3</count>
-            <item_version>0</item_version>
-            <item>
-              <first>(Bits)</first>
-              <second>14</second>
-            </item>
-            <item>
-              <first>(Consts)</first>
-              <second>7</second>
-            </item>
-            <item>
-              <first>FF</first>
-              <second>7</second>
             </item>
           </second>
         </item>
@@ -8238,7 +8238,7 @@
         <count>27</count>
         <item_version>0</item_version>
         <item>
-          <first>add_ln28_1_fu_365_p2 ( + ) </first>
+          <first>add_ln29_1_fu_365_p2 ( + ) </first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -8246,7 +8246,7 @@
           </second>
         </item>
         <item>
-          <first>add_ln28_fu_352_p2 ( + ) </first>
+          <first>add_ln29_fu_352_p2 ( + ) </first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -8254,7 +8254,7 @@
           </second>
         </item>
         <item>
-          <first>add_ln35_1_fu_304_p2 ( + ) </first>
+          <first>add_ln36_1_fu_304_p2 ( + ) </first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -8262,7 +8262,7 @@
           </second>
         </item>
         <item>
-          <first>add_ln35_2_fu_317_p2 ( + ) </first>
+          <first>add_ln36_2_fu_317_p2 ( + ) </first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -8270,7 +8270,7 @@
           </second>
         </item>
         <item>
-          <first>add_ln35_fu_243_p2 ( + ) </first>
+          <first>add_ln36_fu_243_p2 ( + ) </first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -8278,7 +8278,7 @@
           </second>
         </item>
         <item>
-          <first>and_ln28_1_fu_452_p2 ( and ) </first>
+          <first>and_ln29_1_fu_452_p2 ( and ) </first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -8286,7 +8286,7 @@
           </second>
         </item>
         <item>
-          <first>and_ln28_fu_446_p2 ( and ) </first>
+          <first>and_ln29_fu_446_p2 ( and ) </first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -8318,7 +8318,15 @@
           </second>
         </item>
         <item>
-          <first>icmp_ln12_fu_207_p2 ( icmp ) </first>
+          <first>icmp_ln10_fu_187_p2 ( icmp ) </first>
+          <second>
+            <count>1</count>
+            <item_version>0</item_version>
+            <item>6</item>
+          </second>
+        </item>
+        <item>
+          <first>icmp_ln13_fu_207_p2 ( icmp ) </first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -8326,7 +8334,7 @@
           </second>
         </item>
         <item>
-          <first>icmp_ln15_fu_249_p2 ( icmp ) </first>
+          <first>icmp_ln16_fu_249_p2 ( icmp ) </first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -8334,7 +8342,7 @@
           </second>
         </item>
         <item>
-          <first>icmp_ln19_fu_273_p2 ( icmp ) </first>
+          <first>icmp_ln20_fu_273_p2 ( icmp ) </first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -8342,7 +8350,7 @@
           </second>
         </item>
         <item>
-          <first>icmp_ln22_fu_331_p2 ( icmp ) </first>
+          <first>icmp_ln23_fu_331_p2 ( icmp ) </first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -8350,7 +8358,7 @@
           </second>
         </item>
         <item>
-          <first>icmp_ln28_1_fu_416_p2 ( icmp ) </first>
+          <first>icmp_ln29_1_fu_416_p2 ( icmp ) </first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -8358,7 +8366,7 @@
           </second>
         </item>
         <item>
-          <first>icmp_ln28_2_fu_428_p2 ( icmp ) </first>
+          <first>icmp_ln29_2_fu_428_p2 ( icmp ) </first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -8366,7 +8374,7 @@
           </second>
         </item>
         <item>
-          <first>icmp_ln28_3_fu_434_p2 ( icmp ) </first>
+          <first>icmp_ln29_3_fu_434_p2 ( icmp ) </first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -8374,19 +8382,11 @@
           </second>
         </item>
         <item>
-          <first>icmp_ln28_fu_410_p2 ( icmp ) </first>
+          <first>icmp_ln29_fu_410_p2 ( icmp ) </first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
             <item>81</item>
-          </second>
-        </item>
-        <item>
-          <first>icmp_ln9_fu_187_p2 ( icmp ) </first>
-          <second>
-            <count>1</count>
-            <item_version>0</item_version>
-            <item>6</item>
           </second>
         </item>
         <item>
@@ -8422,7 +8422,7 @@
           </second>
         </item>
         <item>
-          <first>mul_ln28_fu_294_p2 ( * ) </first>
+          <first>mul_ln29_fu_294_p2 ( * ) </first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -8430,7 +8430,7 @@
           </second>
         </item>
         <item>
-          <first>or_ln28_1_fu_440_p2 ( or ) </first>
+          <first>or_ln29_1_fu_440_p2 ( or ) </first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -8438,7 +8438,7 @@
           </second>
         </item>
         <item>
-          <first>or_ln28_fu_422_p2 ( or ) </first>
+          <first>or_ln29_fu_422_p2 ( or ) </first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -9624,7 +9624,7 @@
       <count>58</count>
       <item_version>0</item_version>
       <item class_id="54" tracking_level="0" version="0">
-        <first>add_ln28_1_fu_365</first>
+        <first>add_ln29_1_fu_365</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9632,7 +9632,7 @@
         </second>
       </item>
       <item>
-        <first>add_ln28_fu_352</first>
+        <first>add_ln29_fu_352</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9640,7 +9640,7 @@
         </second>
       </item>
       <item>
-        <first>add_ln35_1_fu_304</first>
+        <first>add_ln36_1_fu_304</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9648,7 +9648,7 @@
         </second>
       </item>
       <item>
-        <first>add_ln35_2_fu_317</first>
+        <first>add_ln36_2_fu_317</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9656,7 +9656,7 @@
         </second>
       </item>
       <item>
-        <first>add_ln35_fu_243</first>
+        <first>add_ln36_fu_243</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9664,7 +9664,7 @@
         </second>
       </item>
       <item>
-        <first>and_ln28_1_fu_452</first>
+        <first>and_ln29_1_fu_452</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9672,7 +9672,7 @@
         </second>
       </item>
       <item>
-        <first>and_ln28_fu_446</first>
+        <first>and_ln29_fu_446</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9680,7 +9680,7 @@
         </second>
       </item>
       <item>
-        <first>bitcast_ln28_1_fu_392</first>
+        <first>bitcast_ln29_1_fu_392</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9688,7 +9688,7 @@
         </second>
       </item>
       <item>
-        <first>bitcast_ln28_fu_375</first>
+        <first>bitcast_ln29_fu_375</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9744,7 +9744,15 @@
         </second>
       </item>
       <item>
-        <first>icmp_ln12_fu_207</first>
+        <first>icmp_ln10_fu_187</first>
+        <second>
+          <count>1</count>
+          <item_version>0</item_version>
+          <item>6</item>
+        </second>
+      </item>
+      <item>
+        <first>icmp_ln13_fu_207</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9752,7 +9760,7 @@
         </second>
       </item>
       <item>
-        <first>icmp_ln15_fu_249</first>
+        <first>icmp_ln16_fu_249</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9760,7 +9768,7 @@
         </second>
       </item>
       <item>
-        <first>icmp_ln19_fu_273</first>
+        <first>icmp_ln20_fu_273</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9768,7 +9776,7 @@
         </second>
       </item>
       <item>
-        <first>icmp_ln22_fu_331</first>
+        <first>icmp_ln23_fu_331</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9776,7 +9784,7 @@
         </second>
       </item>
       <item>
-        <first>icmp_ln28_1_fu_416</first>
+        <first>icmp_ln29_1_fu_416</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9784,7 +9792,7 @@
         </second>
       </item>
       <item>
-        <first>icmp_ln28_2_fu_428</first>
+        <first>icmp_ln29_2_fu_428</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9792,7 +9800,7 @@
         </second>
       </item>
       <item>
-        <first>icmp_ln28_3_fu_434</first>
+        <first>icmp_ln29_3_fu_434</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9800,19 +9808,11 @@
         </second>
       </item>
       <item>
-        <first>icmp_ln28_fu_410</first>
+        <first>icmp_ln29_fu_410</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
           <item>81</item>
-        </second>
-      </item>
-      <item>
-        <first>icmp_ln9_fu_187</first>
-        <second>
-          <count>1</count>
-          <item_version>0</item_version>
-          <item>6</item>
         </second>
       </item>
       <item>
@@ -9888,7 +9888,7 @@
         </second>
       </item>
       <item>
-        <first>mul_ln28_fu_294</first>
+        <first>mul_ln29_fu_294</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9896,7 +9896,7 @@
         </second>
       </item>
       <item>
-        <first>or_ln28_1_fu_440</first>
+        <first>or_ln29_1_fu_440</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9904,7 +9904,7 @@
         </second>
       </item>
       <item>
-        <first>or_ln28_fu_422</first>
+        <first>or_ln29_fu_422</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9984,7 +9984,7 @@
         </second>
       </item>
       <item>
-        <first>trunc_ln28_1_fu_406</first>
+        <first>trunc_ln29_1_fu_406</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9992,7 +9992,7 @@
         </second>
       </item>
       <item>
-        <first>trunc_ln28_fu_388</first>
+        <first>trunc_ln29_fu_388</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -10000,7 +10000,7 @@
         </second>
       </item>
       <item>
-        <first>zext_ln12_1_fu_203</first>
+        <first>zext_ln13_1_fu_203</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -10008,7 +10008,7 @@
         </second>
       </item>
       <item>
-        <first>zext_ln12_fu_199</first>
+        <first>zext_ln13_fu_199</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -10016,7 +10016,7 @@
         </second>
       </item>
       <item>
-        <first>zext_ln19_fu_269</first>
+        <first>zext_ln20_fu_269</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -10024,7 +10024,7 @@
         </second>
       </item>
       <item>
-        <first>zext_ln22_fu_327</first>
+        <first>zext_ln23_fu_327</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -10032,7 +10032,7 @@
         </second>
       </item>
       <item>
-        <first>zext_ln28_1_fu_348</first>
+        <first>zext_ln29_1_fu_348</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -10040,7 +10040,7 @@
         </second>
       </item>
       <item>
-        <first>zext_ln28_2_fu_370</first>
+        <first>zext_ln29_2_fu_370</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -10048,7 +10048,7 @@
         </second>
       </item>
       <item>
-        <first>zext_ln28_fu_290</first>
+        <first>zext_ln29_fu_290</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -10056,7 +10056,7 @@
         </second>
       </item>
       <item>
-        <first>zext_ln35_1_fu_239</first>
+        <first>zext_ln36_1_fu_239</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -10064,7 +10064,7 @@
         </second>
       </item>
       <item>
-        <first>zext_ln35_2_fu_300</first>
+        <first>zext_ln36_2_fu_300</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -10072,7 +10072,7 @@
         </second>
       </item>
       <item>
-        <first>zext_ln35_3_fu_322</first>
+        <first>zext_ln36_3_fu_322</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -10080,7 +10080,7 @@
         </second>
       </item>
       <item>
-        <first>zext_ln35_fu_227</first>
+        <first>zext_ln36_fu_227</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -10312,7 +10312,7 @@
       <count>21</count>
       <item_version>0</item_version>
       <item>
-        <first>add_ln35_reg_496</first>
+        <first>add_ln36_reg_496</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -10424,7 +10424,7 @@
         </second>
       </item>
       <item>
-        <first>mul_ln28_reg_522</first>
+        <first>mul_ln29_reg_522</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -10464,7 +10464,7 @@
         </second>
       </item>
       <item>
-        <first>zext_ln12_1_reg_478</first>
+        <first>zext_ln13_1_reg_478</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -10472,7 +10472,7 @@
         </second>
       </item>
       <item>
-        <first>zext_ln12_reg_473</first>
+        <first>zext_ln13_reg_473</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>

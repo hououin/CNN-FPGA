@@ -12,12 +12,12 @@
 `define AUTOTB_PER_RESULT_TRANS_FILE "cnn.performance.result.transaction.xml"
 `define AUTOTB_TOP_INST AESL_inst_apatb_cnn_top
 `define AUTOTB_MAX_ALLOW_LATENCY  15000000
-`define AUTOTB_CLOCK_PERIOD_DIV2 5.00
+`define AUTOTB_CLOCK_PERIOD_DIV2 10.00
 
-`define AESL_BRAM_cnn_input AESL_autobram_cnn_input
-`define AESL_BRAM_INST_cnn_input bram_inst_cnn_input
-`define AESL_BRAM_prediction AESL_autobram_prediction
-`define AESL_BRAM_INST_prediction bram_inst_prediction
+`define AESL_MEM_cnn_input AESL_automem_cnn_input
+`define AESL_MEM_INST_cnn_input mem_inst_cnn_input
+`define AESL_MEM_prediction AESL_automem_prediction
+`define AESL_MEM_INST_prediction mem_inst_prediction
 `define AUTOTB_TVIN_cnn_input  "../tv/cdatafile/c.cnn.autotvin_cnn_input.dat"
 `define AUTOTB_TVIN_prediction  "../tv/cdatafile/c.cnn.autotvin_prediction.dat"
 `define AUTOTB_TVIN_cnn_input_out_wrapc  "../tv/rtldatafile/rtl.cnn.autotvin_cnn_input.dat"
@@ -28,13 +28,13 @@ module `AUTOTB_TOP;
 
 parameter AUTOTB_TRANSACTION_NUM = 20;
 parameter PROGRESS_TIMEOUT = 10000000;
-parameter LATENCY_ESTIMATION = 29898479;
+parameter LATENCY_ESTIMATION = 1303054;
 parameter LENGTH_cnn_input = 784;
 parameter LENGTH_prediction = 10;
 
 task read_token;
     input integer fp;
-    output reg [199 : 0] token;
+    output reg [175 : 0] token;
     integer ret;
     begin
         token = "";
@@ -60,38 +60,17 @@ reg AESL_done_delay2 = 0;
 reg AESL_ready_delay = 0;
 wire ready;
 wire ready_wire;
-wire [3 : 0] CRTL_BUS_AWADDR;
-wire  CRTL_BUS_AWVALID;
-wire  CRTL_BUS_AWREADY;
-wire  CRTL_BUS_WVALID;
-wire  CRTL_BUS_WREADY;
-wire [31 : 0] CRTL_BUS_WDATA;
-wire [3 : 0] CRTL_BUS_WSTRB;
-wire [3 : 0] CRTL_BUS_ARADDR;
-wire  CRTL_BUS_ARVALID;
-wire  CRTL_BUS_ARREADY;
-wire  CRTL_BUS_RVALID;
-wire  CRTL_BUS_RREADY;
-wire [31 : 0] CRTL_BUS_RDATA;
-wire [1 : 0] CRTL_BUS_RRESP;
-wire  CRTL_BUS_BVALID;
-wire  CRTL_BUS_BREADY;
-wire [1 : 0] CRTL_BUS_BRESP;
-wire  CRTL_BUS_INTERRUPT;
-wire [31 : 0] cnn_input_ADDR_A;
-wire  cnn_input_EN_A;
-wire [3 : 0] cnn_input_WEN_A;
-wire [31 : 0] cnn_input_DIN_A;
-wire [31 : 0] cnn_input_DOUT_A;
-wire  cnn_input_CLK_A;
-wire  cnn_input_RST_A;
-wire [31 : 0] prediction_ADDR_A;
-wire  prediction_EN_A;
-wire [3 : 0] prediction_WEN_A;
-wire [31 : 0] prediction_DIN_A;
-wire [31 : 0] prediction_DOUT_A;
-wire  prediction_CLK_A;
-wire  prediction_RST_A;
+wire ap_start;
+wire ap_done;
+wire ap_idle;
+wire ap_ready;
+wire [9 : 0] cnn_input_address0;
+wire  cnn_input_ce0;
+wire [31 : 0] cnn_input_q0;
+wire [3 : 0] prediction_address0;
+wire  prediction_ce0;
+wire  prediction_we0;
+wire [31 : 0] prediction_d0;
 integer done_cnt = 0;
 integer AESL_ready_cnt = 0;
 integer ready_cnt = 0;
@@ -101,244 +80,138 @@ reg ready_last_n;
 reg ready_delay_last_n;
 reg done_delay_last_n;
 reg interface_done = 0;
-wire AESL_slave_start;
-reg AESL_slave_start_lock = 0;
-wire AESL_slave_write_start_in;
-wire AESL_slave_write_start_finish;
-reg AESL_slave_ready;
-wire AESL_slave_output_done;
-wire AESL_slave_done;
-reg ready_rise = 0;
-reg start_rise = 0;
-reg slave_start_status = 0;
-reg slave_done_status = 0;
-reg ap_done_lock = 0;
 
 wire ap_clk;
+wire ap_rst;
 wire ap_rst_n;
-wire ap_rst_n_n;
 
 `AUTOTB_DUT `AUTOTB_DUT_INST(
-    .s_axi_CRTL_BUS_AWADDR(CRTL_BUS_AWADDR),
-    .s_axi_CRTL_BUS_AWVALID(CRTL_BUS_AWVALID),
-    .s_axi_CRTL_BUS_AWREADY(CRTL_BUS_AWREADY),
-    .s_axi_CRTL_BUS_WVALID(CRTL_BUS_WVALID),
-    .s_axi_CRTL_BUS_WREADY(CRTL_BUS_WREADY),
-    .s_axi_CRTL_BUS_WDATA(CRTL_BUS_WDATA),
-    .s_axi_CRTL_BUS_WSTRB(CRTL_BUS_WSTRB),
-    .s_axi_CRTL_BUS_ARADDR(CRTL_BUS_ARADDR),
-    .s_axi_CRTL_BUS_ARVALID(CRTL_BUS_ARVALID),
-    .s_axi_CRTL_BUS_ARREADY(CRTL_BUS_ARREADY),
-    .s_axi_CRTL_BUS_RVALID(CRTL_BUS_RVALID),
-    .s_axi_CRTL_BUS_RREADY(CRTL_BUS_RREADY),
-    .s_axi_CRTL_BUS_RDATA(CRTL_BUS_RDATA),
-    .s_axi_CRTL_BUS_RRESP(CRTL_BUS_RRESP),
-    .s_axi_CRTL_BUS_BVALID(CRTL_BUS_BVALID),
-    .s_axi_CRTL_BUS_BREADY(CRTL_BUS_BREADY),
-    .s_axi_CRTL_BUS_BRESP(CRTL_BUS_BRESP),
-    .interrupt(CRTL_BUS_INTERRUPT),
     .ap_clk(ap_clk),
-    .ap_rst_n(ap_rst_n),
-    .cnn_input_Addr_A(cnn_input_ADDR_A),
-    .cnn_input_EN_A(cnn_input_EN_A),
-    .cnn_input_WEN_A(cnn_input_WEN_A),
-    .cnn_input_Din_A(cnn_input_DIN_A),
-    .cnn_input_Dout_A(cnn_input_DOUT_A),
-    .cnn_input_Clk_A(cnn_input_CLK_A),
-    .cnn_input_Rst_A(cnn_input_RST_A),
-    .prediction_Addr_A(prediction_ADDR_A),
-    .prediction_EN_A(prediction_EN_A),
-    .prediction_WEN_A(prediction_WEN_A),
-    .prediction_Din_A(prediction_DIN_A),
-    .prediction_Dout_A(prediction_DOUT_A),
-    .prediction_Clk_A(prediction_CLK_A),
-    .prediction_Rst_A(prediction_RST_A));
+    .ap_rst(ap_rst),
+    .ap_start(ap_start),
+    .ap_done(ap_done),
+    .ap_idle(ap_idle),
+    .ap_ready(ap_ready),
+    .cnn_input_address0(cnn_input_address0),
+    .cnn_input_ce0(cnn_input_ce0),
+    .cnn_input_q0(cnn_input_q0),
+    .prediction_address0(prediction_address0),
+    .prediction_ce0(prediction_ce0),
+    .prediction_we0(prediction_we0),
+    .prediction_d0(prediction_d0));
 
 // Assignment for control signal
 assign ap_clk = AESL_clock;
-assign ap_rst_n = AESL_reset;
-assign ap_rst_n_n = ~AESL_reset;
+assign ap_rst = AESL_reset;
+assign ap_rst_n = ~AESL_reset;
 assign AESL_reset = rst;
+assign ap_start = AESL_start;
 assign AESL_start = start;
+assign AESL_done = ap_done;
+assign AESL_idle = ap_idle;
+assign AESL_ready = ap_ready;
 assign AESL_ce = ce;
 assign AESL_continue = tb_continue;
-  assign AESL_slave_write_start_in = slave_start_status ;
-  assign AESL_slave_start = AESL_slave_write_start_finish;
-  assign AESL_done = slave_done_status ;
+    always @(posedge AESL_clock) begin
+        if (AESL_reset) begin
+        end else begin
+            if (AESL_done !== 1 && AESL_done !== 0) begin
+                $display("ERROR: Control signal AESL_done is invalid!");
+                $finish;
+            end
+        end
+    end
+    always @(posedge AESL_clock) begin
+        if (AESL_reset) begin
+        end else begin
+            if (AESL_ready !== 1 && AESL_ready !== 0) begin
+                $display("ERROR: Control signal AESL_ready is invalid!");
+                $finish;
+            end
+        end
+    end
+//------------------------arraycnn_input Instantiation--------------
 
-always @(posedge AESL_clock)
-begin
-    if(AESL_reset === 0)
-    begin
-        slave_start_status <= 1;
-    end
-    else begin
-        if (AESL_start == 1 ) begin
-            start_rise = 1;
-        end
-        if (start_rise == 1 && AESL_done == 1 ) begin
-            slave_start_status <= 1;
-        end
-        if (AESL_slave_write_start_in == 1 && AESL_done == 0) begin 
-            slave_start_status <= 0;
-            start_rise = 0;
-        end
-    end
-end
+// The input and output of arraycnn_input
+wire    arraycnn_input_ce0, arraycnn_input_ce1;
+wire    arraycnn_input_we0, arraycnn_input_we1;
+wire    [9 : 0]    arraycnn_input_address0, arraycnn_input_address1;
+wire    [31 : 0]    arraycnn_input_din0, arraycnn_input_din1;
+wire    [31 : 0]    arraycnn_input_dout0, arraycnn_input_dout1;
+wire    arraycnn_input_ready;
+wire    arraycnn_input_done;
 
-always @(posedge AESL_clock)
-begin
-    if(AESL_reset === 0)
-    begin
-        AESL_slave_ready <= 0;
-        ready_rise = 0;
-    end
-    else begin
-        if (AESL_ready == 1 ) begin
-            ready_rise = 1;
-        end
-        if (ready_rise == 1 && AESL_done_delay == 1 ) begin
-            AESL_slave_ready <= 1;
-        end
-        if (AESL_slave_ready == 1) begin 
-            AESL_slave_ready <= 0;
-            ready_rise = 0;
-        end
-    end
-end
-
-always @ (posedge AESL_clock)
-begin
-    if (AESL_done == 1) begin
-        slave_done_status <= 0;
-    end
-    else if (AESL_slave_output_done == 1 ) begin
-        slave_done_status <= 1;
-    end
-end
-//------------------------bramcnn_input Instantiation--------------
-
-// The input and output of bramcnn_input
-wire  bramcnn_input_Clk_A, bramcnn_input_Clk_B;
-wire  bramcnn_input_EN_A, bramcnn_input_EN_B;
-wire  [4 - 1 : 0] bramcnn_input_WEN_A, bramcnn_input_WEN_B;
-wire    [31 : 0]    bramcnn_input_Addr_A, bramcnn_input_Addr_B;
-wire    [31 : 0]    bramcnn_input_Din_A, bramcnn_input_Din_B;
-wire    [31 : 0]    bramcnn_input_Dout_A, bramcnn_input_Dout_B;
-wire    bramcnn_input_ready;
-wire    bramcnn_input_done;
-
-`AESL_BRAM_cnn_input `AESL_BRAM_INST_cnn_input(
-    .Clk_A    (bramcnn_input_Clk_A),
-    .Rst_A    (bramcnn_input_Rst_A),
-    .EN_A     (bramcnn_input_EN_A),
-    .WEN_A    (bramcnn_input_WEN_A),
-    .Addr_A   (bramcnn_input_Addr_A),
-    .Din_A    (bramcnn_input_Din_A),
-    .Dout_A   (bramcnn_input_Dout_A),
-    .Clk_B    (bramcnn_input_Clk_B),
-    .Rst_B    (bramcnn_input_Rst_B),
-    .EN_B     (bramcnn_input_EN_B),
-    .WEN_B    (bramcnn_input_WEN_B),
-    .Addr_B   (bramcnn_input_Addr_B),
-    .Din_B    (bramcnn_input_Din_B),
-    .Dout_B   (bramcnn_input_Dout_B),
-    .ready    (bramcnn_input_ready),
-    .done        (bramcnn_input_done)
+`AESL_MEM_cnn_input `AESL_MEM_INST_cnn_input(
+    .clk        (AESL_clock),
+    .rst        (AESL_reset),
+    .ce0        (arraycnn_input_ce0),
+    .we0        (arraycnn_input_we0),
+    .address0   (arraycnn_input_address0),
+    .din0       (arraycnn_input_din0),
+    .dout0      (arraycnn_input_dout0),
+    .ce1        (arraycnn_input_ce1),
+    .we1        (arraycnn_input_we1),
+    .address1   (arraycnn_input_address1),
+    .din1       (arraycnn_input_din1),
+    .dout1      (arraycnn_input_dout1),
+    .ready      (arraycnn_input_ready),
+    .done    (arraycnn_input_done)
 );
 
-// Assignment between dut and bramcnn_input
-assign bramcnn_input_Clk_A = cnn_input_CLK_A;
-assign bramcnn_input_Rst_A = cnn_input_RST_A;
-assign bramcnn_input_Addr_A = cnn_input_ADDR_A;
-assign bramcnn_input_EN_A = cnn_input_EN_A;
-assign cnn_input_DOUT_A = bramcnn_input_Dout_A;
-assign bramcnn_input_WEN_A = 0;
-assign bramcnn_input_Din_A = 0;
-assign bramcnn_input_WEN_B = 0;
-assign bramcnn_input_Din_B = 0;
-assign bramcnn_input_ready=    ready;
-assign bramcnn_input_done = 0;
+// Assignment between dut and arraycnn_input
+assign arraycnn_input_address0 = cnn_input_address0;
+assign arraycnn_input_ce0 = cnn_input_ce0;
+assign cnn_input_q0 = arraycnn_input_dout0;
+assign arraycnn_input_we0 = 0;
+assign arraycnn_input_din0 = 0;
+assign arraycnn_input_we1 = 0;
+assign arraycnn_input_din1 = 0;
+assign arraycnn_input_ready=    ready;
+assign arraycnn_input_done = 0;
 
 
-//------------------------bramprediction Instantiation--------------
+//------------------------arrayprediction Instantiation--------------
 
-// The input and output of bramprediction
-wire  bramprediction_Clk_A, bramprediction_Clk_B;
-wire  bramprediction_EN_A, bramprediction_EN_B;
-wire  [4 - 1 : 0] bramprediction_WEN_A, bramprediction_WEN_B;
-wire    [31 : 0]    bramprediction_Addr_A, bramprediction_Addr_B;
-wire    [31 : 0]    bramprediction_Din_A, bramprediction_Din_B;
-wire    [31 : 0]    bramprediction_Dout_A, bramprediction_Dout_B;
-wire    bramprediction_ready;
-wire    bramprediction_done;
+// The input and output of arrayprediction
+wire    arrayprediction_ce0, arrayprediction_ce1;
+wire    arrayprediction_we0, arrayprediction_we1;
+wire    [3 : 0]    arrayprediction_address0, arrayprediction_address1;
+wire    [31 : 0]    arrayprediction_din0, arrayprediction_din1;
+wire    [31 : 0]    arrayprediction_dout0, arrayprediction_dout1;
+wire    arrayprediction_ready;
+wire    arrayprediction_done;
 
-`AESL_BRAM_prediction `AESL_BRAM_INST_prediction(
-    .Clk_A    (bramprediction_Clk_A),
-    .Rst_A    (bramprediction_Rst_A),
-    .EN_A     (bramprediction_EN_A),
-    .WEN_A    (bramprediction_WEN_A),
-    .Addr_A   (bramprediction_Addr_A),
-    .Din_A    (bramprediction_Din_A),
-    .Dout_A   (bramprediction_Dout_A),
-    .Clk_B    (bramprediction_Clk_B),
-    .Rst_B    (bramprediction_Rst_B),
-    .EN_B     (bramprediction_EN_B),
-    .WEN_B    (bramprediction_WEN_B),
-    .Addr_B   (bramprediction_Addr_B),
-    .Din_B    (bramprediction_Din_B),
-    .Dout_B   (bramprediction_Dout_B),
-    .ready    (bramprediction_ready),
-    .done        (bramprediction_done)
+`AESL_MEM_prediction `AESL_MEM_INST_prediction(
+    .clk        (AESL_clock),
+    .rst        (AESL_reset),
+    .ce0        (arrayprediction_ce0),
+    .we0        (arrayprediction_we0),
+    .address0   (arrayprediction_address0),
+    .din0       (arrayprediction_din0),
+    .dout0      (arrayprediction_dout0),
+    .ce1        (arrayprediction_ce1),
+    .we1        (arrayprediction_we1),
+    .address1   (arrayprediction_address1),
+    .din1       (arrayprediction_din1),
+    .dout1      (arrayprediction_dout1),
+    .ready      (arrayprediction_ready),
+    .done    (arrayprediction_done)
 );
 
-// Assignment between dut and bramprediction
-assign bramprediction_Clk_A = prediction_CLK_A;
-assign bramprediction_Rst_A = prediction_RST_A;
-assign bramprediction_Addr_A = prediction_ADDR_A;
-assign bramprediction_EN_A = prediction_EN_A;
-assign bramprediction_WEN_A = prediction_WEN_A;
-assign bramprediction_Din_A = prediction_DIN_A;
-assign bramprediction_WEN_B = 0;
-assign bramprediction_Din_B = 0;
-assign bramprediction_ready= ready_initial | bramprediction_done;
-assign bramprediction_done =    AESL_done_delay;
+// Assignment between dut and arrayprediction
+assign arrayprediction_address0 = prediction_address0;
+assign arrayprediction_ce0 = prediction_ce0;
+assign arrayprediction_we0 = prediction_we0;
+assign arrayprediction_din0 = prediction_d0;
+assign arrayprediction_we1 = 0;
+assign arrayprediction_din1 = 0;
+assign arrayprediction_ready= ready_initial | arrayprediction_done;
+assign arrayprediction_done =    AESL_done_delay;
 
-
-AESL_axi_slave_CRTL_BUS AESL_AXI_SLAVE_CRTL_BUS(
-    .clk   (AESL_clock),
-    .reset (AESL_reset),
-    .TRAN_s_axi_CRTL_BUS_AWADDR (CRTL_BUS_AWADDR),
-    .TRAN_s_axi_CRTL_BUS_AWVALID (CRTL_BUS_AWVALID),
-    .TRAN_s_axi_CRTL_BUS_AWREADY (CRTL_BUS_AWREADY),
-    .TRAN_s_axi_CRTL_BUS_WVALID (CRTL_BUS_WVALID),
-    .TRAN_s_axi_CRTL_BUS_WREADY (CRTL_BUS_WREADY),
-    .TRAN_s_axi_CRTL_BUS_WDATA (CRTL_BUS_WDATA),
-    .TRAN_s_axi_CRTL_BUS_WSTRB (CRTL_BUS_WSTRB),
-    .TRAN_s_axi_CRTL_BUS_ARADDR (CRTL_BUS_ARADDR),
-    .TRAN_s_axi_CRTL_BUS_ARVALID (CRTL_BUS_ARVALID),
-    .TRAN_s_axi_CRTL_BUS_ARREADY (CRTL_BUS_ARREADY),
-    .TRAN_s_axi_CRTL_BUS_RVALID (CRTL_BUS_RVALID),
-    .TRAN_s_axi_CRTL_BUS_RREADY (CRTL_BUS_RREADY),
-    .TRAN_s_axi_CRTL_BUS_RDATA (CRTL_BUS_RDATA),
-    .TRAN_s_axi_CRTL_BUS_RRESP (CRTL_BUS_RRESP),
-    .TRAN_s_axi_CRTL_BUS_BVALID (CRTL_BUS_BVALID),
-    .TRAN_s_axi_CRTL_BUS_BREADY (CRTL_BUS_BREADY),
-    .TRAN_s_axi_CRTL_BUS_BRESP (CRTL_BUS_BRESP),
-    .TRAN_CRTL_BUS_interrupt (CRTL_BUS_INTERRUPT),
-    .TRAN_CRTL_BUS_ready_out (AESL_ready),
-    .TRAN_CRTL_BUS_ready_in (AESL_slave_ready),
-    .TRAN_CRTL_BUS_done_out (AESL_slave_output_done),
-    .TRAN_CRTL_BUS_idle_out (AESL_idle),
-    .TRAN_CRTL_BUS_write_start_in     (AESL_slave_write_start_in),
-    .TRAN_CRTL_BUS_write_start_finish (AESL_slave_write_start_finish),
-    .TRAN_CRTL_BUS_transaction_done_in (AESL_done_delay),
-    .TRAN_CRTL_BUS_start_in  (AESL_slave_start)
-);
 
 initial begin : generate_AESL_ready_cnt_proc
     AESL_ready_cnt = 0;
-    wait(AESL_reset === 1);
+    wait(AESL_reset === 0);
     while(AESL_ready_cnt != AUTOTB_TRANSACTION_NUM) begin
         while(AESL_ready !== 1) begin
             @(posedge AESL_clock);
@@ -355,7 +228,7 @@ end
     
     initial begin : gen_ready_cnt
         ready_cnt = 0;
-        wait (AESL_reset === 1);
+        wait (AESL_reset === 0);
         forever begin
             @ (posedge AESL_clock);
             if (ready == 1) begin
@@ -371,7 +244,7 @@ end
     
     // done_cnt
     always @ (posedge AESL_clock) begin
-        if (~AESL_reset) begin
+        if (AESL_reset) begin
             done_cnt <= 0;
         end else begin
             if (AESL_done == 1) begin
@@ -407,10 +280,10 @@ reg [31:0] size_prediction_backup;
 
 initial begin : initial_process
     integer proc_rand;
-    rst = 0;
+    rst = 1;
     # 100;
     repeat(3) @ (posedge AESL_clock);
-    rst = 1;
+    rst = 0;
 end
 initial begin : start_process
     integer proc_rand;
@@ -418,7 +291,7 @@ initial begin : start_process
     ce = 1;
     start = 0;
     start_cnt = 0;
-    wait (AESL_reset === 1);
+    wait (AESL_reset === 0);
     @ (posedge AESL_clock);
     #0 start = 1;
     start_cnt = start_cnt + 1;
@@ -449,7 +322,7 @@ end
 
 always @(posedge AESL_clock)
 begin
-    if(AESL_reset === 0)
+    if(AESL_reset)
       AESL_ready_delay = 0;
   else
       AESL_ready_delay = AESL_ready;
@@ -463,7 +336,7 @@ end
 
 always @(posedge AESL_clock)
 begin
-    if(AESL_reset === 0)
+    if(AESL_reset)
       ready_delay_last_n = 0;
   else
       ready_delay_last_n <= ready_last_n;
@@ -480,7 +353,7 @@ end
 
 always @(posedge AESL_clock)
 begin
-    if(AESL_reset === 0)
+    if(AESL_reset)
   begin
       AESL_done_delay <= 0;
       AESL_done_delay2 <= 0;
@@ -492,7 +365,7 @@ begin
 end
 always @(posedge AESL_clock)
 begin
-    if(AESL_reset === 0)
+    if(AESL_reset)
       interface_done = 0;
   else begin
       # 0.01;
@@ -567,7 +440,7 @@ initial begin
     start_cnt = 0;
     finish_cnt = 0;
     ap_ready_cnt = 0;
-    wait (AESL_reset == 1);
+    wait (AESL_reset == 0);
     wait_start();
     start_timestamp[start_cnt] = clk_cnt;
     start_cnt = start_cnt + 1;
@@ -604,7 +477,7 @@ reg [31:0] progress_timeout;
 
 initial begin : simulation_progress
     real intra_progress;
-    wait (AESL_reset == 1);
+    wait (AESL_reset == 0);
     progress_timeout = PROGRESS_TIMEOUT;
     $display("////////////////////////////////////////////////////////////////////////////////////");
     $display("// Inter-Transaction Progress: Completed Transaction / Total Transaction");

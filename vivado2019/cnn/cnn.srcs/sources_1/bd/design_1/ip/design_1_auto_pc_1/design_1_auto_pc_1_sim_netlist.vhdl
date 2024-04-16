@@ -1,10 +1,10 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
--- Date        : Thu Sep 21 12:46:48 2023
+-- Date        : Mon Mar 11 14:25:47 2024
 -- Host        : DESKTOP-PI9AKPV running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim -rename_top design_1_auto_pc_1 -prefix
---               design_1_auto_pc_1_ design_1_auto_pc_1_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim
+--               c:/Users/chenq/MAG/code/FFF/VIVADO2019/cnn/cnn.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_1/design_1_auto_pc_1_sim_netlist.vhdl
 -- Design      : design_1_auto_pc_1
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -143,6 +143,8 @@ entity design_1_auto_pc_1_axi_protocol_converter_v2_1_19_axi_protocol_converter 
   attribute C_TRANSLATION_MODE of design_1_auto_pc_1_axi_protocol_converter_v2_1_19_axi_protocol_converter : entity is 2;
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of design_1_auto_pc_1_axi_protocol_converter_v2_1_19_axi_protocol_converter : entity is "yes";
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of design_1_auto_pc_1_axi_protocol_converter_v2_1_19_axi_protocol_converter : entity is "axi_protocol_converter_v2_1_19_axi_protocol_converter";
   attribute P_AXI3 : integer;
   attribute P_AXI3 of design_1_auto_pc_1_axi_protocol_converter_v2_1_19_axi_protocol_converter : entity is 1;
   attribute P_AXI4 : integer;

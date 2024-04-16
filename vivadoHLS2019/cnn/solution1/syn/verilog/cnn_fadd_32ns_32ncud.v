@@ -8,7 +8,7 @@
 module cnn_fadd_32ns_32ncud
 #(parameter
     ID         = 1,
-    NUM_STAGE  = 5,
+    NUM_STAGE  = 4,
     din0_WIDTH = 32,
     din1_WIDTH = 32,
     dout_WIDTH = 32
@@ -35,7 +35,7 @@ reg                   ce_r;
 wire [dout_WIDTH-1:0] dout_i;
 reg  [dout_WIDTH-1:0] dout_r;
 //------------------------Instantiation------------------
-cnn_ap_fadd_3_full_dsp_32 cnn_ap_fadd_3_full_dsp_32_u (
+cnn_ap_fadd_2_full_dsp_32 cnn_ap_fadd_2_full_dsp_32_u (
     .aclk                 ( aclk ),
     .aclken               ( aclken ),
     .s_axis_a_tvalid      ( a_tvalid ),
