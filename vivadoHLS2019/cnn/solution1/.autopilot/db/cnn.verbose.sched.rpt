@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'cnn'
 ================================================================
-* Date:           Wed Mar 13 20:39:49 2024
+* Date:           Tue May 14 12:18:54 2024
 
 * Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
 * Project:        cnn
@@ -37,17 +37,17 @@
         N/A
 
         * Loop: 
-        +-------------+--------+--------+----------+-----------+-----------+------+----------+
-        |             |     Latency     | Iteration|  Initiation Interval  | Trip |          |
-        |  Loop Name  |   min  |   max  |  Latency |  achieved |   target  | Count| Pipelined|
-        +-------------+--------+--------+----------+-----------+-----------+------+----------+
-        |- Loop 1     |    1624|    1624|        58|          -|          -|    28|    no    |
-        | + Loop 1.1  |      56|      56|         2|          -|          -|    28|    no    |
-        |- Loop 2     |  140350|  140350|      2807|          -|          -|    50|    no    |
-        | + Loop 2.1  |    2800|    2800|         7|          -|          -|   400|    no    |
-        |- Loop 3     |   10710|   10710|       357|          -|          -|    30|    no    |
-        | + Loop 3.1  |     350|     350|         7|          -|          -|    50|    no    |
-        +-------------+--------+--------+----------+-----------+-----------+------+----------+
+        +--------------+--------+--------+----------+-----------+-----------+------+----------+
+        |              |     Latency     | Iteration|  Initiation Interval  | Trip |          |
+        |   Loop Name  |   min  |   max  |  Latency |  achieved |   target  | Count| Pipelined|
+        +--------------+--------+--------+----------+-----------+-----------+------+----------+
+        |- Loop 1      |    1624|    1624|        58|          -|          -|    28|    no    |
+        | + Loop 1.1   |      56|      56|         2|          -|          -|    28|    no    |
+        |- DENSE_LOOP  |  140350|  140350|      2807|          -|          -|    50|    no    |
+        | + FLAT_LOOP  |    2800|    2800|         7|          -|          -|   400|    no    |
+        |- DENSE_LOOP  |   10710|   10710|       357|          -|          -|    30|    no    |
+        | + FLAT_LOOP  |     350|     350|         7|          -|          -|    50|    no    |
+        +--------------+--------+--------+----------+-----------+-----------+------+----------+
 
 ============================================================
 + Verbose Summary: Synthesis Manager
@@ -128,9 +128,9 @@ ST_1 : Operation 41 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBits
 ST_1 : Operation 42 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([10 x float]* %prediction) nounwind, !map !41"   --->   Operation 42 'specbitsmap' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 43 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([4 x i8]* @cnn_str) nounwind"   --->   Operation 43 'spectopmodule' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 44 [1/1] (0.00ns)   --->   "%conv_1_input = alloca [784 x float], align 4" [cnn/cnn.cpp:19]   --->   Operation 44 'alloca' 'conv_1_input' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 30> <RAM>
-ST_1 : Operation 45 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface([784 x float]* %cnn_input, [5 x i8]* @p_str28, i32 0, i32 0, [1 x i8]* @p_str129, i32 0, i32 0, [1 x i8]* @p_str129, [1 x i8]* @p_str129, [1 x i8]* @p_str129, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str129, [1 x i8]* @p_str129) nounwind" [cnn/cnn.cpp:18]   --->   Operation 45 'specinterface' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 46 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface([10 x float]* %prediction, [5 x i8]* @p_str28, i32 0, i32 0, [1 x i8]* @p_str129, i32 0, i32 0, [1 x i8]* @p_str129, [1 x i8]* @p_str129, [1 x i8]* @p_str129, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str129, [1 x i8]* @p_str129) nounwind" [cnn/cnn.cpp:18]   --->   Operation 46 'specinterface' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 47 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str230, i32 0, i32 0, [1 x i8]* @p_str129, i32 0, i32 0, [9 x i8]* @p_str331, [1 x i8]* @p_str129, [1 x i8]* @p_str129, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str129, [1 x i8]* @p_str129) nounwind" [cnn/cnn.cpp:18]   --->   Operation 47 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 45 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface([784 x float]* %cnn_input, [5 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [cnn/cnn.cpp:18]   --->   Operation 45 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 46 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface([10 x float]* %prediction, [5 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [cnn/cnn.cpp:18]   --->   Operation 46 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 47 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str2, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [9 x i8]* @p_str3, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [cnn/cnn.cpp:18]   --->   Operation 47 'specinterface' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 48 [1/1] (1.76ns)   --->   "br label %.loopexit" [cnn/cnn.cpp:23]   --->   Operation 48 'br' <Predicate = true> <Delay = 1.76>
 
 State 2 <SV = 1> <Delay = 1.78>
@@ -200,169 +200,177 @@ ST_13 : Operation 89 [1/2] (0.00ns)   --->   "call fastcc void @flat([400 x floa
 ST_13 : Operation 90 [1/1] (1.76ns)   --->   "br label %4" [cnn/dense_1.cpp:9->cnn/cnn.cpp:58]   --->   Operation 90 'br' <Predicate = true> <Delay = 1.76>
 
 State 14 <SV = 11> <Delay = 1.82>
-ST_14 : Operation 91 [1/1] (0.00ns)   --->   "%i_0_i = phi i6 [ 0, %meminst.preheader ], [ %i_1, %._crit_edge.i ]"   --->   Operation 91 'phi' 'i_0_i' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 91 [1/1] (0.00ns)   --->   "%i_0_i = phi i6 [ 0, %meminst.preheader ], [ %i_1, %DENSE_LOOP_end ]"   --->   Operation 91 'phi' 'i_0_i' <Predicate = true> <Delay = 0.00>
 ST_14 : Operation 92 [1/1] (1.42ns)   --->   "%icmp_ln9 = icmp eq i6 %i_0_i, -14" [cnn/dense_1.cpp:9->cnn/cnn.cpp:58]   --->   Operation 92 'icmp' 'icmp_ln9' <Predicate = true> <Delay = 1.42> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
 ST_14 : Operation 93 [1/1] (0.00ns)   --->   "%empty_47 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 50, i64 50, i64 50) nounwind"   --->   Operation 93 'speclooptripcount' 'empty_47' <Predicate = true> <Delay = 0.00>
 ST_14 : Operation 94 [1/1] (1.82ns)   --->   "%i_1 = add i6 %i_0_i, 1" [cnn/dense_1.cpp:9->cnn/cnn.cpp:58]   --->   Operation 94 'add' 'i_1' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_14 : Operation 95 [1/1] (0.00ns)   --->   "br i1 %icmp_ln9, label %dense_1.exit.preheader, label %.preheader.preheader.i" [cnn/dense_1.cpp:9->cnn/cnn.cpp:58]   --->   Operation 95 'br' <Predicate = true> <Delay = 0.00>
-ST_14 : Operation 96 [1/1] (0.00ns)   --->   "%zext_ln14 = zext i6 %i_0_i to i64" [cnn/dense_1.cpp:14->cnn/cnn.cpp:58]   --->   Operation 96 'zext' 'zext_ln14' <Predicate = (!icmp_ln9)> <Delay = 0.00>
-ST_14 : Operation 97 [1/1] (0.00ns)   --->   "%zext_ln13 = zext i6 %i_0_i to i15" [cnn/dense_1.cpp:13->cnn/cnn.cpp:58]   --->   Operation 97 'zext' 'zext_ln13' <Predicate = (!icmp_ln9)> <Delay = 0.00>
-ST_14 : Operation 98 [1/1] (1.76ns)   --->   "br label %.preheader.i" [cnn/dense_1.cpp:13->cnn/cnn.cpp:58]   --->   Operation 98 'br' <Predicate = (!icmp_ln9)> <Delay = 1.76>
-ST_14 : Operation 99 [1/1] (1.76ns)   --->   "br label %dense_1.exit" [cnn/dense_2.cpp:9->cnn/cnn.cpp:63]   --->   Operation 99 'br' <Predicate = (icmp_ln9)> <Delay = 1.76>
+ST_14 : Operation 95 [1/1] (0.00ns)   --->   "br i1 %icmp_ln9, label %dense_1.exit.preheader, label %DENSE_LOOP_begin" [cnn/dense_1.cpp:9->cnn/cnn.cpp:58]   --->   Operation 95 'br' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 96 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([11 x i8]* @p_str18) nounwind" [cnn/dense_1.cpp:9->cnn/cnn.cpp:58]   --->   Operation 96 'specloopname' <Predicate = (!icmp_ln9)> <Delay = 0.00>
+ST_14 : Operation 97 [1/1] (0.00ns)   --->   "%tmp_12_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([11 x i8]* @p_str18) nounwind" [cnn/dense_1.cpp:9->cnn/cnn.cpp:58]   --->   Operation 97 'specregionbegin' 'tmp_12_i' <Predicate = (!icmp_ln9)> <Delay = 0.00>
+ST_14 : Operation 98 [1/1] (0.00ns)   --->   "%zext_ln14 = zext i6 %i_0_i to i64" [cnn/dense_1.cpp:14->cnn/cnn.cpp:58]   --->   Operation 98 'zext' 'zext_ln14' <Predicate = (!icmp_ln9)> <Delay = 0.00>
+ST_14 : Operation 99 [1/1] (0.00ns)   --->   "%zext_ln13 = zext i6 %i_0_i to i15" [cnn/dense_1.cpp:13->cnn/cnn.cpp:58]   --->   Operation 99 'zext' 'zext_ln13' <Predicate = (!icmp_ln9)> <Delay = 0.00>
+ST_14 : Operation 100 [1/1] (1.76ns)   --->   "br label %5" [cnn/dense_1.cpp:13->cnn/cnn.cpp:58]   --->   Operation 100 'br' <Predicate = (!icmp_ln9)> <Delay = 1.76>
+ST_14 : Operation 101 [1/1] (1.76ns)   --->   "br label %dense_1.exit" [cnn/dense_2.cpp:9->cnn/cnn.cpp:63]   --->   Operation 101 'br' <Predicate = (icmp_ln9)> <Delay = 1.76>
 
 State 15 <SV = 12> <Delay = 5.19>
-ST_15 : Operation 100 [1/1] (0.00ns)   --->   "%sum_0_i = phi float [ %sum, %5 ], [ 0.000000e+00, %.preheader.preheader.i ]"   --->   Operation 100 'phi' 'sum_0_i' <Predicate = true> <Delay = 0.00>
-ST_15 : Operation 101 [1/1] (0.00ns)   --->   "%j_0_i = phi i9 [ %j_1, %5 ], [ 0, %.preheader.preheader.i ]"   --->   Operation 101 'phi' 'j_0_i' <Predicate = true> <Delay = 0.00>
-ST_15 : Operation 102 [1/1] (0.00ns)   --->   "%phi_mul = phi i15 [ %add_ln14_4, %5 ], [ 0, %.preheader.preheader.i ]" [cnn/dense_1.cpp:14->cnn/cnn.cpp:58]   --->   Operation 102 'phi' 'phi_mul' <Predicate = true> <Delay = 0.00>
-ST_15 : Operation 103 [1/1] (1.66ns)   --->   "%icmp_ln13 = icmp eq i9 %j_0_i, -112" [cnn/dense_1.cpp:13->cnn/cnn.cpp:58]   --->   Operation 103 'icmp' 'icmp_ln13' <Predicate = true> <Delay = 1.66> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_15 : Operation 104 [1/1] (0.00ns)   --->   "%empty_48 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 400, i64 400, i64 400) nounwind"   --->   Operation 104 'speclooptripcount' 'empty_48' <Predicate = true> <Delay = 0.00>
-ST_15 : Operation 105 [1/1] (1.82ns)   --->   "%j_1 = add i9 %j_0_i, 1" [cnn/dense_1.cpp:13->cnn/cnn.cpp:58]   --->   Operation 105 'add' 'j_1' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_15 : Operation 106 [1/1] (0.00ns)   --->   "br i1 %icmp_ln13, label %._crit_edge.i, label %5" [cnn/dense_1.cpp:13->cnn/cnn.cpp:58]   --->   Operation 106 'br' <Predicate = true> <Delay = 0.00>
-ST_15 : Operation 107 [1/1] (0.00ns)   --->   "%zext_ln14_5 = zext i9 %j_0_i to i64" [cnn/dense_1.cpp:14->cnn/cnn.cpp:58]   --->   Operation 107 'zext' 'zext_ln14_5' <Predicate = (!icmp_ln13)> <Delay = 0.00>
-ST_15 : Operation 108 [1/1] (1.94ns)   --->   "%add_ln14_4 = add i15 %phi_mul, 50" [cnn/dense_1.cpp:14->cnn/cnn.cpp:58]   --->   Operation 108 'add' 'add_ln14_4' <Predicate = (!icmp_ln13)> <Delay = 1.94> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_15 : Operation 109 [1/1] (1.94ns)   --->   "%add_ln14 = add i15 %zext_ln13, %phi_mul" [cnn/dense_1.cpp:14->cnn/cnn.cpp:58]   --->   Operation 109 'add' 'add_ln14' <Predicate = (!icmp_ln13)> <Delay = 1.94> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_15 : Operation 110 [1/1] (0.00ns)   --->   "%zext_ln14_7 = zext i15 %add_ln14 to i64" [cnn/dense_1.cpp:14->cnn/cnn.cpp:58]   --->   Operation 110 'zext' 'zext_ln14_7' <Predicate = (!icmp_ln13)> <Delay = 0.00>
-ST_15 : Operation 111 [1/1] (0.00ns)   --->   "%dense_1_weights_addr = getelementptr [20000 x float]* @dense_1_weights, i64 0, i64 %zext_ln14_7" [cnn/dense_1.cpp:14->cnn/cnn.cpp:58]   --->   Operation 111 'getelementptr' 'dense_1_weights_addr' <Predicate = (!icmp_ln13)> <Delay = 0.00>
-ST_15 : Operation 112 [1/1] (0.00ns)   --->   "%flat_array_addr = getelementptr [400 x float]* @flat_array, i64 0, i64 %zext_ln14_5" [cnn/dense_1.cpp:14->cnn/cnn.cpp:58]   --->   Operation 112 'getelementptr' 'flat_array_addr' <Predicate = (!icmp_ln13)> <Delay = 0.00>
-ST_15 : Operation 113 [2/2] (3.25ns)   --->   "%flat_array_load = load float* %flat_array_addr, align 4" [cnn/dense_1.cpp:14->cnn/cnn.cpp:58]   --->   Operation 113 'load' 'flat_array_load' <Predicate = (!icmp_ln13)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 30> <RAM>
-ST_15 : Operation 114 [2/2] (3.25ns)   --->   "%dense_1_weights_load = load float* %dense_1_weights_addr, align 4" [cnn/dense_1.cpp:14->cnn/cnn.cpp:58]   --->   Operation 114 'load' 'dense_1_weights_load' <Predicate = (!icmp_ln13)> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 30> <ROM>
-ST_15 : Operation 115 [1/1] (0.00ns)   --->   "%dense_1_bias_addr = getelementptr inbounds [50 x float]* @dense_1_bias, i64 0, i64 %zext_ln14" [cnn/dense_1.cpp:17->cnn/cnn.cpp:58]   --->   Operation 115 'getelementptr' 'dense_1_bias_addr' <Predicate = (icmp_ln13)> <Delay = 0.00>
-ST_15 : Operation 116 [2/2] (3.25ns)   --->   "%dense_1_bias_load = load float* %dense_1_bias_addr, align 4" [cnn/dense_1.cpp:17->cnn/cnn.cpp:58]   --->   Operation 116 'load' 'dense_1_bias_load' <Predicate = (icmp_ln13)> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 30> <ROM>
+ST_15 : Operation 102 [1/1] (0.00ns)   --->   "%sum_0_i = phi float [ 0.000000e+00, %DENSE_LOOP_begin ], [ %sum, %6 ]"   --->   Operation 102 'phi' 'sum_0_i' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 103 [1/1] (0.00ns)   --->   "%j_0_i = phi i9 [ 0, %DENSE_LOOP_begin ], [ %j_1, %6 ]"   --->   Operation 103 'phi' 'j_0_i' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 104 [1/1] (0.00ns)   --->   "%phi_mul = phi i15 [ 0, %DENSE_LOOP_begin ], [ %add_ln14_4, %6 ]" [cnn/dense_1.cpp:14->cnn/cnn.cpp:58]   --->   Operation 104 'phi' 'phi_mul' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 105 [1/1] (1.66ns)   --->   "%icmp_ln13 = icmp eq i9 %j_0_i, -112" [cnn/dense_1.cpp:13->cnn/cnn.cpp:58]   --->   Operation 105 'icmp' 'icmp_ln13' <Predicate = true> <Delay = 1.66> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 106 [1/1] (0.00ns)   --->   "%empty_48 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 400, i64 400, i64 400) nounwind"   --->   Operation 106 'speclooptripcount' 'empty_48' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 107 [1/1] (1.82ns)   --->   "%j_1 = add i9 %j_0_i, 1" [cnn/dense_1.cpp:13->cnn/cnn.cpp:58]   --->   Operation 107 'add' 'j_1' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 108 [1/1] (0.00ns)   --->   "br i1 %icmp_ln13, label %DENSE_LOOP_end, label %6" [cnn/dense_1.cpp:13->cnn/cnn.cpp:58]   --->   Operation 108 'br' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 109 [1/1] (0.00ns)   --->   "%zext_ln14_5 = zext i9 %j_0_i to i64" [cnn/dense_1.cpp:14->cnn/cnn.cpp:58]   --->   Operation 109 'zext' 'zext_ln14_5' <Predicate = (!icmp_ln13)> <Delay = 0.00>
+ST_15 : Operation 110 [1/1] (1.94ns)   --->   "%add_ln14_4 = add i15 %phi_mul, 50" [cnn/dense_1.cpp:14->cnn/cnn.cpp:58]   --->   Operation 110 'add' 'add_ln14_4' <Predicate = (!icmp_ln13)> <Delay = 1.94> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 111 [1/1] (1.94ns)   --->   "%add_ln14 = add i15 %zext_ln13, %phi_mul" [cnn/dense_1.cpp:14->cnn/cnn.cpp:58]   --->   Operation 111 'add' 'add_ln14' <Predicate = (!icmp_ln13)> <Delay = 1.94> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 112 [1/1] (0.00ns)   --->   "%zext_ln14_7 = zext i15 %add_ln14 to i64" [cnn/dense_1.cpp:14->cnn/cnn.cpp:58]   --->   Operation 112 'zext' 'zext_ln14_7' <Predicate = (!icmp_ln13)> <Delay = 0.00>
+ST_15 : Operation 113 [1/1] (0.00ns)   --->   "%dense_1_weights_addr = getelementptr [20000 x float]* @dense_1_weights, i64 0, i64 %zext_ln14_7" [cnn/dense_1.cpp:14->cnn/cnn.cpp:58]   --->   Operation 113 'getelementptr' 'dense_1_weights_addr' <Predicate = (!icmp_ln13)> <Delay = 0.00>
+ST_15 : Operation 114 [1/1] (0.00ns)   --->   "%flat_array_addr = getelementptr [400 x float]* @flat_array, i64 0, i64 %zext_ln14_5" [cnn/dense_1.cpp:14->cnn/cnn.cpp:58]   --->   Operation 114 'getelementptr' 'flat_array_addr' <Predicate = (!icmp_ln13)> <Delay = 0.00>
+ST_15 : Operation 115 [2/2] (3.25ns)   --->   "%flat_array_load = load float* %flat_array_addr, align 4" [cnn/dense_1.cpp:14->cnn/cnn.cpp:58]   --->   Operation 115 'load' 'flat_array_load' <Predicate = (!icmp_ln13)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 30> <RAM>
+ST_15 : Operation 116 [2/2] (3.25ns)   --->   "%dense_1_weights_load = load float* %dense_1_weights_addr, align 4" [cnn/dense_1.cpp:14->cnn/cnn.cpp:58]   --->   Operation 116 'load' 'dense_1_weights_load' <Predicate = (!icmp_ln13)> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 30> <ROM>
+ST_15 : Operation 117 [1/1] (0.00ns)   --->   "%dense_1_bias_addr = getelementptr inbounds [50 x float]* @dense_1_bias, i64 0, i64 %zext_ln14" [cnn/dense_1.cpp:17->cnn/cnn.cpp:58]   --->   Operation 117 'getelementptr' 'dense_1_bias_addr' <Predicate = (icmp_ln13)> <Delay = 0.00>
+ST_15 : Operation 118 [2/2] (3.25ns)   --->   "%dense_1_bias_load = load float* %dense_1_bias_addr, align 4" [cnn/dense_1.cpp:17->cnn/cnn.cpp:58]   --->   Operation 118 'load' 'dense_1_bias_load' <Predicate = (icmp_ln13)> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 30> <ROM>
 
 State 16 <SV = 13> <Delay = 15.6>
-ST_16 : Operation 117 [1/2] (3.25ns)   --->   "%flat_array_load = load float* %flat_array_addr, align 4" [cnn/dense_1.cpp:14->cnn/cnn.cpp:58]   --->   Operation 117 'load' 'flat_array_load' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 30> <RAM>
-ST_16 : Operation 118 [1/2] (3.25ns)   --->   "%dense_1_weights_load = load float* %dense_1_weights_addr, align 4" [cnn/dense_1.cpp:14->cnn/cnn.cpp:58]   --->   Operation 118 'load' 'dense_1_weights_load' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 30> <ROM>
-ST_16 : Operation 119 [2/2] (12.3ns)   --->   "%tmp_i = fmul float %flat_array_load, %dense_1_weights_load" [cnn/dense_1.cpp:14->cnn/cnn.cpp:58]   --->   Operation 119 'fmul' 'tmp_i' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 119 [1/2] (3.25ns)   --->   "%flat_array_load = load float* %flat_array_addr, align 4" [cnn/dense_1.cpp:14->cnn/cnn.cpp:58]   --->   Operation 119 'load' 'flat_array_load' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 30> <RAM>
+ST_16 : Operation 120 [1/2] (3.25ns)   --->   "%dense_1_weights_load = load float* %dense_1_weights_addr, align 4" [cnn/dense_1.cpp:14->cnn/cnn.cpp:58]   --->   Operation 120 'load' 'dense_1_weights_load' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 30> <ROM>
+ST_16 : Operation 121 [2/2] (12.3ns)   --->   "%tmp_i = fmul float %flat_array_load, %dense_1_weights_load" [cnn/dense_1.cpp:14->cnn/cnn.cpp:58]   --->   Operation 121 'fmul' 'tmp_i' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
 
 State 17 <SV = 14> <Delay = 12.3>
-ST_17 : Operation 120 [1/2] (12.3ns)   --->   "%tmp_i = fmul float %flat_array_load, %dense_1_weights_load" [cnn/dense_1.cpp:14->cnn/cnn.cpp:58]   --->   Operation 120 'fmul' 'tmp_i' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 122 [1/2] (12.3ns)   --->   "%tmp_i = fmul float %flat_array_load, %dense_1_weights_load" [cnn/dense_1.cpp:14->cnn/cnn.cpp:58]   --->   Operation 122 'fmul' 'tmp_i' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
 
 State 18 <SV = 15> <Delay = 10.5>
-ST_18 : Operation 121 [4/4] (10.5ns)   --->   "%sum = fadd float %sum_0_i, %tmp_i" [cnn/dense_1.cpp:14->cnn/cnn.cpp:58]   --->   Operation 121 'fadd' 'sum' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 123 [4/4] (10.5ns)   --->   "%sum = fadd float %sum_0_i, %tmp_i" [cnn/dense_1.cpp:14->cnn/cnn.cpp:58]   --->   Operation 123 'fadd' 'sum' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 
 State 19 <SV = 16> <Delay = 10.5>
-ST_19 : Operation 122 [3/4] (10.5ns)   --->   "%sum = fadd float %sum_0_i, %tmp_i" [cnn/dense_1.cpp:14->cnn/cnn.cpp:58]   --->   Operation 122 'fadd' 'sum' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 124 [3/4] (10.5ns)   --->   "%sum = fadd float %sum_0_i, %tmp_i" [cnn/dense_1.cpp:14->cnn/cnn.cpp:58]   --->   Operation 124 'fadd' 'sum' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 
 State 20 <SV = 17> <Delay = 10.5>
-ST_20 : Operation 123 [2/4] (10.5ns)   --->   "%sum = fadd float %sum_0_i, %tmp_i" [cnn/dense_1.cpp:14->cnn/cnn.cpp:58]   --->   Operation 123 'fadd' 'sum' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 125 [2/4] (10.5ns)   --->   "%sum = fadd float %sum_0_i, %tmp_i" [cnn/dense_1.cpp:14->cnn/cnn.cpp:58]   --->   Operation 125 'fadd' 'sum' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 
 State 21 <SV = 18> <Delay = 10.5>
-ST_21 : Operation 124 [1/4] (10.5ns)   --->   "%sum = fadd float %sum_0_i, %tmp_i" [cnn/dense_1.cpp:14->cnn/cnn.cpp:58]   --->   Operation 124 'fadd' 'sum' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
-ST_21 : Operation 125 [1/1] (0.00ns)   --->   "br label %.preheader.i" [cnn/dense_1.cpp:13->cnn/cnn.cpp:58]   --->   Operation 125 'br' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 126 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([10 x i8]* @p_str119) nounwind" [cnn/dense_1.cpp:13->cnn/cnn.cpp:58]   --->   Operation 126 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 127 [1/4] (10.5ns)   --->   "%sum = fadd float %sum_0_i, %tmp_i" [cnn/dense_1.cpp:14->cnn/cnn.cpp:58]   --->   Operation 127 'fadd' 'sum' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_21 : Operation 128 [1/1] (0.00ns)   --->   "br label %5" [cnn/dense_1.cpp:13->cnn/cnn.cpp:58]   --->   Operation 128 'br' <Predicate = true> <Delay = 0.00>
 
 State 22 <SV = 13> <Delay = 13.7>
-ST_22 : Operation 126 [1/2] (3.25ns)   --->   "%dense_1_bias_load = load float* %dense_1_bias_addr, align 4" [cnn/dense_1.cpp:17->cnn/cnn.cpp:58]   --->   Operation 126 'load' 'dense_1_bias_load' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 30> <ROM>
-ST_22 : Operation 127 [4/4] (10.5ns)   --->   "%tmp_i_49 = fadd float %sum_0_i, %dense_1_bias_load" [cnn/dense_1.cpp:17->cnn/cnn.cpp:58]   --->   Operation 127 'fadd' 'tmp_i_49' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 129 [1/2] (3.25ns)   --->   "%dense_1_bias_load = load float* %dense_1_bias_addr, align 4" [cnn/dense_1.cpp:17->cnn/cnn.cpp:58]   --->   Operation 129 'load' 'dense_1_bias_load' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 30> <ROM>
+ST_22 : Operation 130 [4/4] (10.5ns)   --->   "%tmp_i_49 = fadd float %sum_0_i, %dense_1_bias_load" [cnn/dense_1.cpp:17->cnn/cnn.cpp:58]   --->   Operation 130 'fadd' 'tmp_i_49' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 
 State 23 <SV = 14> <Delay = 10.5>
-ST_23 : Operation 128 [3/4] (10.5ns)   --->   "%tmp_i_49 = fadd float %sum_0_i, %dense_1_bias_load" [cnn/dense_1.cpp:17->cnn/cnn.cpp:58]   --->   Operation 128 'fadd' 'tmp_i_49' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_23 : Operation 131 [3/4] (10.5ns)   --->   "%tmp_i_49 = fadd float %sum_0_i, %dense_1_bias_load" [cnn/dense_1.cpp:17->cnn/cnn.cpp:58]   --->   Operation 131 'fadd' 'tmp_i_49' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 
 State 24 <SV = 15> <Delay = 10.5>
-ST_24 : Operation 129 [2/4] (10.5ns)   --->   "%tmp_i_49 = fadd float %sum_0_i, %dense_1_bias_load" [cnn/dense_1.cpp:17->cnn/cnn.cpp:58]   --->   Operation 129 'fadd' 'tmp_i_49' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_24 : Operation 132 [2/4] (10.5ns)   --->   "%tmp_i_49 = fadd float %sum_0_i, %dense_1_bias_load" [cnn/dense_1.cpp:17->cnn/cnn.cpp:58]   --->   Operation 132 'fadd' 'tmp_i_49' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 
 State 25 <SV = 16> <Delay = 15.9>
-ST_25 : Operation 130 [1/4] (10.5ns)   --->   "%tmp_i_49 = fadd float %sum_0_i, %dense_1_bias_load" [cnn/dense_1.cpp:17->cnn/cnn.cpp:58]   --->   Operation 130 'fadd' 'tmp_i_49' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
-ST_25 : Operation 131 [2/2] (5.43ns)   --->   "%tmp_s = fcmp olt float %tmp_i_49, 0.000000e+00" [cnn/dense_1.cpp:19->cnn/cnn.cpp:58]   --->   Operation 131 'fcmp' 'tmp_s' <Predicate = true> <Delay = 5.43> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 5.43> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_25 : Operation 133 [1/4] (10.5ns)   --->   "%tmp_i_49 = fadd float %sum_0_i, %dense_1_bias_load" [cnn/dense_1.cpp:17->cnn/cnn.cpp:58]   --->   Operation 133 'fadd' 'tmp_i_49' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_25 : Operation 134 [2/2] (5.43ns)   --->   "%tmp_s = fcmp olt float %tmp_i_49, 0.000000e+00" [cnn/dense_1.cpp:19->cnn/cnn.cpp:58]   --->   Operation 134 'fcmp' 'tmp_s' <Predicate = true> <Delay = 5.43> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 5.43> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
 
 State 26 <SV = 17> <Delay = 9.66>
-ST_26 : Operation 132 [1/1] (0.00ns)   --->   "%dense_1_out_addr = getelementptr [50 x float]* @dense_1_out, i64 0, i64 %zext_ln14" [cnn/dense_1.cpp:17->cnn/cnn.cpp:58]   --->   Operation 132 'getelementptr' 'dense_1_out_addr' <Predicate = true> <Delay = 0.00>
-ST_26 : Operation 133 [1/1] (0.00ns)   --->   "%bitcast_ln19 = bitcast float %tmp_i_49 to i32" [cnn/dense_1.cpp:19->cnn/cnn.cpp:58]   --->   Operation 133 'bitcast' 'bitcast_ln19' <Predicate = true> <Delay = 0.00>
-ST_26 : Operation 134 [1/1] (0.00ns)   --->   "%tmp = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %bitcast_ln19, i32 23, i32 30)" [cnn/dense_1.cpp:19->cnn/cnn.cpp:58]   --->   Operation 134 'partselect' 'tmp' <Predicate = true> <Delay = 0.00>
-ST_26 : Operation 135 [1/1] (0.00ns)   --->   "%trunc_ln19 = trunc i32 %bitcast_ln19 to i23" [cnn/dense_1.cpp:19->cnn/cnn.cpp:58]   --->   Operation 135 'trunc' 'trunc_ln19' <Predicate = true> <Delay = 0.00>
-ST_26 : Operation 136 [1/1] (1.55ns)   --->   "%icmp_ln19 = icmp ne i8 %tmp, -1" [cnn/dense_1.cpp:19->cnn/cnn.cpp:58]   --->   Operation 136 'icmp' 'icmp_ln19' <Predicate = true> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_26 : Operation 137 [1/1] (2.44ns)   --->   "%icmp_ln19_1 = icmp eq i23 %trunc_ln19, 0" [cnn/dense_1.cpp:19->cnn/cnn.cpp:58]   --->   Operation 137 'icmp' 'icmp_ln19_1' <Predicate = true> <Delay = 2.44> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_26 : Operation 138 [1/1] (0.00ns) (grouped into LUT with out node select_ln19)   --->   "%or_ln19 = or i1 %icmp_ln19_1, %icmp_ln19" [cnn/dense_1.cpp:19->cnn/cnn.cpp:58]   --->   Operation 138 'or' 'or_ln19' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_26 : Operation 139 [1/2] (5.43ns)   --->   "%tmp_s = fcmp olt float %tmp_i_49, 0.000000e+00" [cnn/dense_1.cpp:19->cnn/cnn.cpp:58]   --->   Operation 139 'fcmp' 'tmp_s' <Predicate = true> <Delay = 5.43> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 5.43> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
-ST_26 : Operation 140 [1/1] (0.00ns) (grouped into LUT with out node select_ln19)   --->   "%and_ln19 = and i1 %or_ln19, %tmp_s" [cnn/dense_1.cpp:19->cnn/cnn.cpp:58]   --->   Operation 140 'and' 'and_ln19' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_26 : Operation 141 [1/1] (0.97ns) (out node of the LUT)   --->   "%select_ln19 = select i1 %and_ln19, float 0.000000e+00, float %tmp_i_49" [cnn/dense_1.cpp:19->cnn/cnn.cpp:58]   --->   Operation 141 'select' 'select_ln19' <Predicate = true> <Delay = 0.97> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_26 : Operation 142 [1/1] (3.25ns)   --->   "store float %select_ln19, float* %dense_1_out_addr, align 4" [cnn/dense_1.cpp:17->cnn/cnn.cpp:58]   --->   Operation 142 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 30> <RAM>
-ST_26 : Operation 143 [1/1] (0.00ns)   --->   "br label %4" [cnn/dense_1.cpp:9->cnn/cnn.cpp:58]   --->   Operation 143 'br' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 135 [1/1] (0.00ns)   --->   "%dense_1_out_addr = getelementptr [50 x float]* @dense_1_out, i64 0, i64 %zext_ln14" [cnn/dense_1.cpp:17->cnn/cnn.cpp:58]   --->   Operation 135 'getelementptr' 'dense_1_out_addr' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 136 [1/1] (0.00ns)   --->   "%bitcast_ln19 = bitcast float %tmp_i_49 to i32" [cnn/dense_1.cpp:19->cnn/cnn.cpp:58]   --->   Operation 136 'bitcast' 'bitcast_ln19' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 137 [1/1] (0.00ns)   --->   "%tmp = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %bitcast_ln19, i32 23, i32 30)" [cnn/dense_1.cpp:19->cnn/cnn.cpp:58]   --->   Operation 137 'partselect' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 138 [1/1] (0.00ns)   --->   "%trunc_ln19 = trunc i32 %bitcast_ln19 to i23" [cnn/dense_1.cpp:19->cnn/cnn.cpp:58]   --->   Operation 138 'trunc' 'trunc_ln19' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 139 [1/1] (1.55ns)   --->   "%icmp_ln19 = icmp ne i8 %tmp, -1" [cnn/dense_1.cpp:19->cnn/cnn.cpp:58]   --->   Operation 139 'icmp' 'icmp_ln19' <Predicate = true> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 140 [1/1] (2.44ns)   --->   "%icmp_ln19_1 = icmp eq i23 %trunc_ln19, 0" [cnn/dense_1.cpp:19->cnn/cnn.cpp:58]   --->   Operation 140 'icmp' 'icmp_ln19_1' <Predicate = true> <Delay = 2.44> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 141 [1/1] (0.00ns) (grouped into LUT with out node select_ln19)   --->   "%or_ln19 = or i1 %icmp_ln19_1, %icmp_ln19" [cnn/dense_1.cpp:19->cnn/cnn.cpp:58]   --->   Operation 141 'or' 'or_ln19' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 142 [1/2] (5.43ns)   --->   "%tmp_s = fcmp olt float %tmp_i_49, 0.000000e+00" [cnn/dense_1.cpp:19->cnn/cnn.cpp:58]   --->   Operation 142 'fcmp' 'tmp_s' <Predicate = true> <Delay = 5.43> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 5.43> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 143 [1/1] (0.00ns) (grouped into LUT with out node select_ln19)   --->   "%and_ln19 = and i1 %or_ln19, %tmp_s" [cnn/dense_1.cpp:19->cnn/cnn.cpp:58]   --->   Operation 143 'and' 'and_ln19' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 144 [1/1] (0.97ns) (out node of the LUT)   --->   "%select_ln19 = select i1 %and_ln19, float 0.000000e+00, float %tmp_i_49" [cnn/dense_1.cpp:19->cnn/cnn.cpp:58]   --->   Operation 144 'select' 'select_ln19' <Predicate = true> <Delay = 0.97> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_26 : Operation 145 [1/1] (3.25ns)   --->   "store float %select_ln19, float* %dense_1_out_addr, align 4" [cnn/dense_1.cpp:17->cnn/cnn.cpp:58]   --->   Operation 145 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 30> <RAM>
+ST_26 : Operation 146 [1/1] (0.00ns)   --->   "%empty_50 = call i32 (...)* @_ssdm_op_SpecRegionEnd([11 x i8]* @p_str18, i32 %tmp_12_i) nounwind" [cnn/dense_1.cpp:22->cnn/cnn.cpp:58]   --->   Operation 146 'specregionend' 'empty_50' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 147 [1/1] (0.00ns)   --->   "br label %4" [cnn/dense_1.cpp:9->cnn/cnn.cpp:58]   --->   Operation 147 'br' <Predicate = true> <Delay = 0.00>
 
 State 27 <SV = 12> <Delay = 1.78>
-ST_27 : Operation 144 [1/1] (0.00ns)   --->   "%i_0_i3 = phi i5 [ %i_2, %._crit_edge.i17 ], [ 0, %dense_1.exit.preheader ]"   --->   Operation 144 'phi' 'i_0_i3' <Predicate = true> <Delay = 0.00>
-ST_27 : Operation 145 [1/1] (1.36ns)   --->   "%icmp_ln9_1 = icmp eq i5 %i_0_i3, -2" [cnn/dense_2.cpp:9->cnn/cnn.cpp:63]   --->   Operation 145 'icmp' 'icmp_ln9_1' <Predicate = true> <Delay = 1.36> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_27 : Operation 146 [1/1] (0.00ns)   --->   "%empty_50 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 30, i64 30, i64 30) nounwind"   --->   Operation 146 'speclooptripcount' 'empty_50' <Predicate = true> <Delay = 0.00>
-ST_27 : Operation 147 [1/1] (1.78ns)   --->   "%i_2 = add i5 %i_0_i3, 1" [cnn/dense_2.cpp:9->cnn/cnn.cpp:63]   --->   Operation 147 'add' 'i_2' <Predicate = true> <Delay = 1.78> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_27 : Operation 148 [1/1] (0.00ns)   --->   "br i1 %icmp_ln9_1, label %dense_2.exit, label %.preheader.preheader.i6" [cnn/dense_2.cpp:9->cnn/cnn.cpp:63]   --->   Operation 148 'br' <Predicate = true> <Delay = 0.00>
-ST_27 : Operation 149 [1/1] (0.00ns)   --->   "%zext_ln14_4 = zext i5 %i_0_i3 to i64" [cnn/dense_2.cpp:14->cnn/cnn.cpp:63]   --->   Operation 149 'zext' 'zext_ln14_4' <Predicate = (!icmp_ln9_1)> <Delay = 0.00>
-ST_27 : Operation 150 [1/1] (0.00ns)   --->   "%zext_ln13_3 = zext i5 %i_0_i3 to i12" [cnn/dense_2.cpp:13->cnn/cnn.cpp:63]   --->   Operation 150 'zext' 'zext_ln13_3' <Predicate = (!icmp_ln9_1)> <Delay = 0.00>
-ST_27 : Operation 151 [1/1] (1.76ns)   --->   "br label %.preheader.i10" [cnn/dense_2.cpp:13->cnn/cnn.cpp:63]   --->   Operation 151 'br' <Predicate = (!icmp_ln9_1)> <Delay = 1.76>
-ST_27 : Operation 152 [2/2] (0.00ns)   --->   "call fastcc void @dense_out([10 x float]* %prediction) nounwind" [cnn/cnn.cpp:66]   --->   Operation 152 'call' <Predicate = (icmp_ln9_1)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_27 : Operation 148 [1/1] (0.00ns)   --->   "%i_0_i3 = phi i5 [ %i_2, %DENSE_LOOP_end1 ], [ 0, %dense_1.exit.preheader ]"   --->   Operation 148 'phi' 'i_0_i3' <Predicate = true> <Delay = 0.00>
+ST_27 : Operation 149 [1/1] (1.36ns)   --->   "%icmp_ln9_1 = icmp eq i5 %i_0_i3, -2" [cnn/dense_2.cpp:9->cnn/cnn.cpp:63]   --->   Operation 149 'icmp' 'icmp_ln9_1' <Predicate = true> <Delay = 1.36> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_27 : Operation 150 [1/1] (0.00ns)   --->   "%empty_51 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 30, i64 30, i64 30) nounwind"   --->   Operation 150 'speclooptripcount' 'empty_51' <Predicate = true> <Delay = 0.00>
+ST_27 : Operation 151 [1/1] (1.78ns)   --->   "%i_2 = add i5 %i_0_i3, 1" [cnn/dense_2.cpp:9->cnn/cnn.cpp:63]   --->   Operation 151 'add' 'i_2' <Predicate = true> <Delay = 1.78> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_27 : Operation 152 [1/1] (0.00ns)   --->   "br i1 %icmp_ln9_1, label %dense_2.exit, label %DENSE_LOOP_begin1" [cnn/dense_2.cpp:9->cnn/cnn.cpp:63]   --->   Operation 152 'br' <Predicate = true> <Delay = 0.00>
+ST_27 : Operation 153 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([11 x i8]* @p_str22) nounwind" [cnn/dense_2.cpp:9->cnn/cnn.cpp:63]   --->   Operation 153 'specloopname' <Predicate = (!icmp_ln9_1)> <Delay = 0.00>
+ST_27 : Operation 154 [1/1] (0.00ns)   --->   "%tmp_11_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([11 x i8]* @p_str22) nounwind" [cnn/dense_2.cpp:9->cnn/cnn.cpp:63]   --->   Operation 154 'specregionbegin' 'tmp_11_i' <Predicate = (!icmp_ln9_1)> <Delay = 0.00>
+ST_27 : Operation 155 [1/1] (0.00ns)   --->   "%zext_ln14_4 = zext i5 %i_0_i3 to i64" [cnn/dense_2.cpp:14->cnn/cnn.cpp:63]   --->   Operation 155 'zext' 'zext_ln14_4' <Predicate = (!icmp_ln9_1)> <Delay = 0.00>
+ST_27 : Operation 156 [1/1] (0.00ns)   --->   "%zext_ln13_3 = zext i5 %i_0_i3 to i12" [cnn/dense_2.cpp:13->cnn/cnn.cpp:63]   --->   Operation 156 'zext' 'zext_ln13_3' <Predicate = (!icmp_ln9_1)> <Delay = 0.00>
+ST_27 : Operation 157 [1/1] (1.76ns)   --->   "br label %7" [cnn/dense_2.cpp:13->cnn/cnn.cpp:63]   --->   Operation 157 'br' <Predicate = (!icmp_ln9_1)> <Delay = 1.76>
+ST_27 : Operation 158 [2/2] (0.00ns)   --->   "call fastcc void @dense_out([10 x float]* %prediction) nounwind" [cnn/cnn.cpp:66]   --->   Operation 158 'call' <Predicate = (icmp_ln9_1)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 
 State 28 <SV = 13> <Delay = 7.04>
-ST_28 : Operation 153 [1/1] (0.00ns)   --->   "%sum_0_i7 = phi float [ %sum_1, %6 ], [ 0.000000e+00, %.preheader.preheader.i6 ]"   --->   Operation 153 'phi' 'sum_0_i7' <Predicate = true> <Delay = 0.00>
-ST_28 : Operation 154 [1/1] (0.00ns)   --->   "%j_0_i8 = phi i6 [ %j_2, %6 ], [ 0, %.preheader.preheader.i6 ]"   --->   Operation 154 'phi' 'j_0_i8' <Predicate = true> <Delay = 0.00>
-ST_28 : Operation 155 [1/1] (1.42ns)   --->   "%icmp_ln13_1 = icmp eq i6 %j_0_i8, -14" [cnn/dense_2.cpp:13->cnn/cnn.cpp:63]   --->   Operation 155 'icmp' 'icmp_ln13_1' <Predicate = true> <Delay = 1.42> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_28 : Operation 156 [1/1] (0.00ns)   --->   "%empty_51 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 50, i64 50, i64 50) nounwind"   --->   Operation 156 'speclooptripcount' 'empty_51' <Predicate = true> <Delay = 0.00>
-ST_28 : Operation 157 [1/1] (1.82ns)   --->   "%j_2 = add i6 %j_0_i8, 1" [cnn/dense_2.cpp:13->cnn/cnn.cpp:63]   --->   Operation 157 'add' 'j_2' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_28 : Operation 158 [1/1] (0.00ns)   --->   "br i1 %icmp_ln13_1, label %._crit_edge.i17, label %6" [cnn/dense_2.cpp:13->cnn/cnn.cpp:63]   --->   Operation 158 'br' <Predicate = true> <Delay = 0.00>
-ST_28 : Operation 159 [1/1] (0.00ns)   --->   "%zext_ln14_6 = zext i6 %j_0_i8 to i64" [cnn/dense_2.cpp:14->cnn/cnn.cpp:63]   --->   Operation 159 'zext' 'zext_ln14_6' <Predicate = (!icmp_ln13_1)> <Delay = 0.00>
-ST_28 : Operation 160 [1/1] (0.00ns)   --->   "%tmp_17 = call i11 @_ssdm_op_BitConcatenate.i11.i6.i5(i6 %j_0_i8, i5 0)" [cnn/dense_2.cpp:14->cnn/cnn.cpp:63]   --->   Operation 160 'bitconcatenate' 'tmp_17' <Predicate = (!icmp_ln13_1)> <Delay = 0.00>
-ST_28 : Operation 161 [1/1] (0.00ns)   --->   "%zext_ln14_8 = zext i11 %tmp_17 to i12" [cnn/dense_2.cpp:14->cnn/cnn.cpp:63]   --->   Operation 161 'zext' 'zext_ln14_8' <Predicate = (!icmp_ln13_1)> <Delay = 0.00>
-ST_28 : Operation 162 [1/1] (0.00ns)   --->   "%tmp_18 = call i7 @_ssdm_op_BitConcatenate.i7.i6.i1(i6 %j_0_i8, i1 false)" [cnn/dense_2.cpp:14->cnn/cnn.cpp:63]   --->   Operation 162 'bitconcatenate' 'tmp_18' <Predicate = (!icmp_ln13_1)> <Delay = 0.00>
-ST_28 : Operation 163 [1/1] (0.00ns)   --->   "%zext_ln14_9 = zext i7 %tmp_18 to i12" [cnn/dense_2.cpp:14->cnn/cnn.cpp:63]   --->   Operation 163 'zext' 'zext_ln14_9' <Predicate = (!icmp_ln13_1)> <Delay = 0.00>
-ST_28 : Operation 164 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%sub_ln14 = sub i12 %zext_ln14_8, %zext_ln14_9" [cnn/dense_2.cpp:14->cnn/cnn.cpp:63]   --->   Operation 164 'sub' 'sub_ln14' <Predicate = (!icmp_ln13_1)> <Delay = 0.00> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.89> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
-ST_28 : Operation 165 [1/1] (3.78ns) (root node of TernaryAdder)   --->   "%add_ln14_3 = add i12 %sub_ln14, %zext_ln13_3" [cnn/dense_2.cpp:14->cnn/cnn.cpp:63]   --->   Operation 165 'add' 'add_ln14_3' <Predicate = (!icmp_ln13_1)> <Delay = 3.78> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.89> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
-ST_28 : Operation 166 [1/1] (0.00ns)   --->   "%sext_ln14 = sext i12 %add_ln14_3 to i64" [cnn/dense_2.cpp:14->cnn/cnn.cpp:63]   --->   Operation 166 'sext' 'sext_ln14' <Predicate = (!icmp_ln13_1)> <Delay = 0.00>
-ST_28 : Operation 167 [1/1] (0.00ns)   --->   "%dense_2_weights_addr = getelementptr [1500 x float]* @dense_2_weights, i64 0, i64 %sext_ln14" [cnn/dense_2.cpp:14->cnn/cnn.cpp:63]   --->   Operation 167 'getelementptr' 'dense_2_weights_addr' <Predicate = (!icmp_ln13_1)> <Delay = 0.00>
-ST_28 : Operation 168 [1/1] (0.00ns)   --->   "%dense_1_out_addr_1 = getelementptr [50 x float]* @dense_1_out, i64 0, i64 %zext_ln14_6" [cnn/dense_2.cpp:14->cnn/cnn.cpp:63]   --->   Operation 168 'getelementptr' 'dense_1_out_addr_1' <Predicate = (!icmp_ln13_1)> <Delay = 0.00>
-ST_28 : Operation 169 [2/2] (3.25ns)   --->   "%dense_1_out_load = load float* %dense_1_out_addr_1, align 4" [cnn/dense_2.cpp:14->cnn/cnn.cpp:63]   --->   Operation 169 'load' 'dense_1_out_load' <Predicate = (!icmp_ln13_1)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 30> <RAM>
-ST_28 : Operation 170 [2/2] (3.25ns)   --->   "%dense_2_weights_load = load float* %dense_2_weights_addr, align 4" [cnn/dense_2.cpp:14->cnn/cnn.cpp:63]   --->   Operation 170 'load' 'dense_2_weights_load' <Predicate = (!icmp_ln13_1)> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 30> <ROM>
-ST_28 : Operation 171 [1/1] (0.00ns)   --->   "%dense_2_bias_addr = getelementptr inbounds [30 x float]* @dense_2_bias, i64 0, i64 %zext_ln14_4" [cnn/dense_2.cpp:17->cnn/cnn.cpp:63]   --->   Operation 171 'getelementptr' 'dense_2_bias_addr' <Predicate = (icmp_ln13_1)> <Delay = 0.00>
-ST_28 : Operation 172 [2/2] (3.25ns)   --->   "%dense_2_bias_load = load float* %dense_2_bias_addr, align 4" [cnn/dense_2.cpp:17->cnn/cnn.cpp:63]   --->   Operation 172 'load' 'dense_2_bias_load' <Predicate = (icmp_ln13_1)> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 30> <ROM>
+ST_28 : Operation 159 [1/1] (0.00ns)   --->   "%sum_0_i6 = phi float [ 0.000000e+00, %DENSE_LOOP_begin1 ], [ %sum_1, %8 ]"   --->   Operation 159 'phi' 'sum_0_i6' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 160 [1/1] (0.00ns)   --->   "%j_0_i7 = phi i6 [ 0, %DENSE_LOOP_begin1 ], [ %j_2, %8 ]"   --->   Operation 160 'phi' 'j_0_i7' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 161 [1/1] (1.42ns)   --->   "%icmp_ln13_1 = icmp eq i6 %j_0_i7, -14" [cnn/dense_2.cpp:13->cnn/cnn.cpp:63]   --->   Operation 161 'icmp' 'icmp_ln13_1' <Predicate = true> <Delay = 1.42> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 162 [1/1] (0.00ns)   --->   "%empty_52 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 50, i64 50, i64 50) nounwind"   --->   Operation 162 'speclooptripcount' 'empty_52' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 163 [1/1] (1.82ns)   --->   "%j_2 = add i6 %j_0_i7, 1" [cnn/dense_2.cpp:13->cnn/cnn.cpp:63]   --->   Operation 163 'add' 'j_2' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 164 [1/1] (0.00ns)   --->   "br i1 %icmp_ln13_1, label %DENSE_LOOP_end1, label %8" [cnn/dense_2.cpp:13->cnn/cnn.cpp:63]   --->   Operation 164 'br' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 165 [1/1] (0.00ns)   --->   "%zext_ln14_6 = zext i6 %j_0_i7 to i64" [cnn/dense_2.cpp:14->cnn/cnn.cpp:63]   --->   Operation 165 'zext' 'zext_ln14_6' <Predicate = (!icmp_ln13_1)> <Delay = 0.00>
+ST_28 : Operation 166 [1/1] (0.00ns)   --->   "%tmp_17 = call i11 @_ssdm_op_BitConcatenate.i11.i6.i5(i6 %j_0_i7, i5 0)" [cnn/dense_2.cpp:14->cnn/cnn.cpp:63]   --->   Operation 166 'bitconcatenate' 'tmp_17' <Predicate = (!icmp_ln13_1)> <Delay = 0.00>
+ST_28 : Operation 167 [1/1] (0.00ns)   --->   "%zext_ln14_8 = zext i11 %tmp_17 to i12" [cnn/dense_2.cpp:14->cnn/cnn.cpp:63]   --->   Operation 167 'zext' 'zext_ln14_8' <Predicate = (!icmp_ln13_1)> <Delay = 0.00>
+ST_28 : Operation 168 [1/1] (0.00ns)   --->   "%tmp_18 = call i7 @_ssdm_op_BitConcatenate.i7.i6.i1(i6 %j_0_i7, i1 false)" [cnn/dense_2.cpp:14->cnn/cnn.cpp:63]   --->   Operation 168 'bitconcatenate' 'tmp_18' <Predicate = (!icmp_ln13_1)> <Delay = 0.00>
+ST_28 : Operation 169 [1/1] (0.00ns)   --->   "%zext_ln14_9 = zext i7 %tmp_18 to i12" [cnn/dense_2.cpp:14->cnn/cnn.cpp:63]   --->   Operation 169 'zext' 'zext_ln14_9' <Predicate = (!icmp_ln13_1)> <Delay = 0.00>
+ST_28 : Operation 170 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%sub_ln14 = sub i12 %zext_ln14_8, %zext_ln14_9" [cnn/dense_2.cpp:14->cnn/cnn.cpp:63]   --->   Operation 170 'sub' 'sub_ln14' <Predicate = (!icmp_ln13_1)> <Delay = 0.00> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.89> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_28 : Operation 171 [1/1] (3.78ns) (root node of TernaryAdder)   --->   "%add_ln14_3 = add i12 %sub_ln14, %zext_ln13_3" [cnn/dense_2.cpp:14->cnn/cnn.cpp:63]   --->   Operation 171 'add' 'add_ln14_3' <Predicate = (!icmp_ln13_1)> <Delay = 3.78> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.89> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_28 : Operation 172 [1/1] (0.00ns)   --->   "%sext_ln14 = sext i12 %add_ln14_3 to i64" [cnn/dense_2.cpp:14->cnn/cnn.cpp:63]   --->   Operation 172 'sext' 'sext_ln14' <Predicate = (!icmp_ln13_1)> <Delay = 0.00>
+ST_28 : Operation 173 [1/1] (0.00ns)   --->   "%dense_2_weights_addr = getelementptr [1500 x float]* @dense_2_weights, i64 0, i64 %sext_ln14" [cnn/dense_2.cpp:14->cnn/cnn.cpp:63]   --->   Operation 173 'getelementptr' 'dense_2_weights_addr' <Predicate = (!icmp_ln13_1)> <Delay = 0.00>
+ST_28 : Operation 174 [1/1] (0.00ns)   --->   "%dense_1_out_addr_1 = getelementptr [50 x float]* @dense_1_out, i64 0, i64 %zext_ln14_6" [cnn/dense_2.cpp:14->cnn/cnn.cpp:63]   --->   Operation 174 'getelementptr' 'dense_1_out_addr_1' <Predicate = (!icmp_ln13_1)> <Delay = 0.00>
+ST_28 : Operation 175 [2/2] (3.25ns)   --->   "%dense_1_out_load = load float* %dense_1_out_addr_1, align 4" [cnn/dense_2.cpp:14->cnn/cnn.cpp:63]   --->   Operation 175 'load' 'dense_1_out_load' <Predicate = (!icmp_ln13_1)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 30> <RAM>
+ST_28 : Operation 176 [2/2] (3.25ns)   --->   "%dense_2_weights_load = load float* %dense_2_weights_addr, align 4" [cnn/dense_2.cpp:14->cnn/cnn.cpp:63]   --->   Operation 176 'load' 'dense_2_weights_load' <Predicate = (!icmp_ln13_1)> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 30> <ROM>
+ST_28 : Operation 177 [1/1] (0.00ns)   --->   "%dense_2_bias_addr = getelementptr inbounds [30 x float]* @dense_2_bias, i64 0, i64 %zext_ln14_4" [cnn/dense_2.cpp:17->cnn/cnn.cpp:63]   --->   Operation 177 'getelementptr' 'dense_2_bias_addr' <Predicate = (icmp_ln13_1)> <Delay = 0.00>
+ST_28 : Operation 178 [2/2] (3.25ns)   --->   "%dense_2_bias_load = load float* %dense_2_bias_addr, align 4" [cnn/dense_2.cpp:17->cnn/cnn.cpp:63]   --->   Operation 178 'load' 'dense_2_bias_load' <Predicate = (icmp_ln13_1)> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 30> <ROM>
 
 State 29 <SV = 14> <Delay = 15.6>
-ST_29 : Operation 173 [1/2] (3.25ns)   --->   "%dense_1_out_load = load float* %dense_1_out_addr_1, align 4" [cnn/dense_2.cpp:14->cnn/cnn.cpp:63]   --->   Operation 173 'load' 'dense_1_out_load' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 30> <RAM>
-ST_29 : Operation 174 [1/2] (3.25ns)   --->   "%dense_2_weights_load = load float* %dense_2_weights_addr, align 4" [cnn/dense_2.cpp:14->cnn/cnn.cpp:63]   --->   Operation 174 'load' 'dense_2_weights_load' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 30> <ROM>
-ST_29 : Operation 175 [2/2] (12.3ns)   --->   "%tmp_7_i = fmul float %dense_1_out_load, %dense_2_weights_load" [cnn/dense_2.cpp:14->cnn/cnn.cpp:63]   --->   Operation 175 'fmul' 'tmp_7_i' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_29 : Operation 179 [1/2] (3.25ns)   --->   "%dense_1_out_load = load float* %dense_1_out_addr_1, align 4" [cnn/dense_2.cpp:14->cnn/cnn.cpp:63]   --->   Operation 179 'load' 'dense_1_out_load' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 30> <RAM>
+ST_29 : Operation 180 [1/2] (3.25ns)   --->   "%dense_2_weights_load = load float* %dense_2_weights_addr, align 4" [cnn/dense_2.cpp:14->cnn/cnn.cpp:63]   --->   Operation 180 'load' 'dense_2_weights_load' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 30> <ROM>
+ST_29 : Operation 181 [2/2] (12.3ns)   --->   "%tmp_7_i = fmul float %dense_1_out_load, %dense_2_weights_load" [cnn/dense_2.cpp:14->cnn/cnn.cpp:63]   --->   Operation 181 'fmul' 'tmp_7_i' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
 
 State 30 <SV = 15> <Delay = 12.3>
-ST_30 : Operation 176 [1/2] (12.3ns)   --->   "%tmp_7_i = fmul float %dense_1_out_load, %dense_2_weights_load" [cnn/dense_2.cpp:14->cnn/cnn.cpp:63]   --->   Operation 176 'fmul' 'tmp_7_i' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 182 [1/2] (12.3ns)   --->   "%tmp_7_i = fmul float %dense_1_out_load, %dense_2_weights_load" [cnn/dense_2.cpp:14->cnn/cnn.cpp:63]   --->   Operation 182 'fmul' 'tmp_7_i' <Predicate = true> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
 
 State 31 <SV = 16> <Delay = 10.5>
-ST_31 : Operation 177 [4/4] (10.5ns)   --->   "%sum_1 = fadd float %sum_0_i7, %tmp_7_i" [cnn/dense_2.cpp:14->cnn/cnn.cpp:63]   --->   Operation 177 'fadd' 'sum_1' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 183 [4/4] (10.5ns)   --->   "%sum_1 = fadd float %sum_0_i6, %tmp_7_i" [cnn/dense_2.cpp:14->cnn/cnn.cpp:63]   --->   Operation 183 'fadd' 'sum_1' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 
 State 32 <SV = 17> <Delay = 10.5>
-ST_32 : Operation 178 [3/4] (10.5ns)   --->   "%sum_1 = fadd float %sum_0_i7, %tmp_7_i" [cnn/dense_2.cpp:14->cnn/cnn.cpp:63]   --->   Operation 178 'fadd' 'sum_1' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_32 : Operation 184 [3/4] (10.5ns)   --->   "%sum_1 = fadd float %sum_0_i6, %tmp_7_i" [cnn/dense_2.cpp:14->cnn/cnn.cpp:63]   --->   Operation 184 'fadd' 'sum_1' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 
 State 33 <SV = 18> <Delay = 10.5>
-ST_33 : Operation 179 [2/4] (10.5ns)   --->   "%sum_1 = fadd float %sum_0_i7, %tmp_7_i" [cnn/dense_2.cpp:14->cnn/cnn.cpp:63]   --->   Operation 179 'fadd' 'sum_1' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_33 : Operation 185 [2/4] (10.5ns)   --->   "%sum_1 = fadd float %sum_0_i6, %tmp_7_i" [cnn/dense_2.cpp:14->cnn/cnn.cpp:63]   --->   Operation 185 'fadd' 'sum_1' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 
 State 34 <SV = 19> <Delay = 10.5>
-ST_34 : Operation 180 [1/4] (10.5ns)   --->   "%sum_1 = fadd float %sum_0_i7, %tmp_7_i" [cnn/dense_2.cpp:14->cnn/cnn.cpp:63]   --->   Operation 180 'fadd' 'sum_1' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
-ST_34 : Operation 181 [1/1] (0.00ns)   --->   "br label %.preheader.i10" [cnn/dense_2.cpp:13->cnn/cnn.cpp:63]   --->   Operation 181 'br' <Predicate = true> <Delay = 0.00>
+ST_34 : Operation 186 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([10 x i8]* @p_str123) nounwind" [cnn/dense_2.cpp:13->cnn/cnn.cpp:63]   --->   Operation 186 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_34 : Operation 187 [1/4] (10.5ns)   --->   "%sum_1 = fadd float %sum_0_i6, %tmp_7_i" [cnn/dense_2.cpp:14->cnn/cnn.cpp:63]   --->   Operation 187 'fadd' 'sum_1' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_34 : Operation 188 [1/1] (0.00ns)   --->   "br label %7" [cnn/dense_2.cpp:13->cnn/cnn.cpp:63]   --->   Operation 188 'br' <Predicate = true> <Delay = 0.00>
 
 State 35 <SV = 14> <Delay = 13.7>
-ST_35 : Operation 182 [1/2] (3.25ns)   --->   "%dense_2_bias_load = load float* %dense_2_bias_addr, align 4" [cnn/dense_2.cpp:17->cnn/cnn.cpp:63]   --->   Operation 182 'load' 'dense_2_bias_load' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 30> <ROM>
-ST_35 : Operation 183 [4/4] (10.5ns)   --->   "%tmp_i1 = fadd float %sum_0_i7, %dense_2_bias_load" [cnn/dense_2.cpp:17->cnn/cnn.cpp:63]   --->   Operation 183 'fadd' 'tmp_i1' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_35 : Operation 189 [1/2] (3.25ns)   --->   "%dense_2_bias_load = load float* %dense_2_bias_addr, align 4" [cnn/dense_2.cpp:17->cnn/cnn.cpp:63]   --->   Operation 189 'load' 'dense_2_bias_load' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 30> <ROM>
+ST_35 : Operation 190 [4/4] (10.5ns)   --->   "%tmp_i1 = fadd float %sum_0_i6, %dense_2_bias_load" [cnn/dense_2.cpp:17->cnn/cnn.cpp:63]   --->   Operation 190 'fadd' 'tmp_i1' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 
 State 36 <SV = 15> <Delay = 10.5>
-ST_36 : Operation 184 [3/4] (10.5ns)   --->   "%tmp_i1 = fadd float %sum_0_i7, %dense_2_bias_load" [cnn/dense_2.cpp:17->cnn/cnn.cpp:63]   --->   Operation 184 'fadd' 'tmp_i1' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 191 [3/4] (10.5ns)   --->   "%tmp_i1 = fadd float %sum_0_i6, %dense_2_bias_load" [cnn/dense_2.cpp:17->cnn/cnn.cpp:63]   --->   Operation 191 'fadd' 'tmp_i1' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 
 State 37 <SV = 16> <Delay = 10.5>
-ST_37 : Operation 185 [2/4] (10.5ns)   --->   "%tmp_i1 = fadd float %sum_0_i7, %dense_2_bias_load" [cnn/dense_2.cpp:17->cnn/cnn.cpp:63]   --->   Operation 185 'fadd' 'tmp_i1' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_37 : Operation 192 [2/4] (10.5ns)   --->   "%tmp_i1 = fadd float %sum_0_i6, %dense_2_bias_load" [cnn/dense_2.cpp:17->cnn/cnn.cpp:63]   --->   Operation 192 'fadd' 'tmp_i1' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 
 State 38 <SV = 17> <Delay = 15.9>
-ST_38 : Operation 186 [1/4] (10.5ns)   --->   "%tmp_i1 = fadd float %sum_0_i7, %dense_2_bias_load" [cnn/dense_2.cpp:17->cnn/cnn.cpp:63]   --->   Operation 186 'fadd' 'tmp_i1' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
-ST_38 : Operation 187 [2/2] (5.43ns)   --->   "%tmp_12 = fcmp olt float %tmp_i1, 0.000000e+00" [cnn/dense_2.cpp:19->cnn/cnn.cpp:63]   --->   Operation 187 'fcmp' 'tmp_12' <Predicate = true> <Delay = 5.43> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 5.43> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_38 : Operation 193 [1/4] (10.5ns)   --->   "%tmp_i1 = fadd float %sum_0_i6, %dense_2_bias_load" [cnn/dense_2.cpp:17->cnn/cnn.cpp:63]   --->   Operation 193 'fadd' 'tmp_i1' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_38 : Operation 194 [2/2] (5.43ns)   --->   "%tmp_12 = fcmp olt float %tmp_i1, 0.000000e+00" [cnn/dense_2.cpp:19->cnn/cnn.cpp:63]   --->   Operation 194 'fcmp' 'tmp_12' <Predicate = true> <Delay = 5.43> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 5.43> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
 
 State 39 <SV = 18> <Delay = 8.73>
-ST_39 : Operation 188 [1/1] (0.00ns)   --->   "%dense_2_out_addr = getelementptr [30 x float]* @dense_2_out, i64 0, i64 %zext_ln14_4" [cnn/dense_2.cpp:17->cnn/cnn.cpp:63]   --->   Operation 188 'getelementptr' 'dense_2_out_addr' <Predicate = true> <Delay = 0.00>
-ST_39 : Operation 189 [1/1] (0.00ns)   --->   "%bitcast_ln19_1 = bitcast float %tmp_i1 to i32" [cnn/dense_2.cpp:19->cnn/cnn.cpp:63]   --->   Operation 189 'bitcast' 'bitcast_ln19_1' <Predicate = true> <Delay = 0.00>
-ST_39 : Operation 190 [1/1] (0.00ns)   --->   "%tmp_11 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %bitcast_ln19_1, i32 23, i32 30)" [cnn/dense_2.cpp:19->cnn/cnn.cpp:63]   --->   Operation 190 'partselect' 'tmp_11' <Predicate = true> <Delay = 0.00>
-ST_39 : Operation 191 [1/1] (0.00ns)   --->   "%trunc_ln19_1 = trunc i32 %bitcast_ln19_1 to i23" [cnn/dense_2.cpp:19->cnn/cnn.cpp:63]   --->   Operation 191 'trunc' 'trunc_ln19_1' <Predicate = true> <Delay = 0.00>
-ST_39 : Operation 192 [1/1] (1.55ns)   --->   "%icmp_ln19_2 = icmp ne i8 %tmp_11, -1" [cnn/dense_2.cpp:19->cnn/cnn.cpp:63]   --->   Operation 192 'icmp' 'icmp_ln19_2' <Predicate = true> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_39 : Operation 193 [1/1] (2.44ns)   --->   "%icmp_ln19_3 = icmp eq i23 %trunc_ln19_1, 0" [cnn/dense_2.cpp:19->cnn/cnn.cpp:63]   --->   Operation 193 'icmp' 'icmp_ln19_3' <Predicate = true> <Delay = 2.44> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_39 : Operation 194 [1/1] (0.00ns) (grouped into LUT with out node select_ln19_1)   --->   "%or_ln19_1 = or i1 %icmp_ln19_3, %icmp_ln19_2" [cnn/dense_2.cpp:19->cnn/cnn.cpp:63]   --->   Operation 194 'or' 'or_ln19_1' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_39 : Operation 195 [1/2] (5.43ns)   --->   "%tmp_12 = fcmp olt float %tmp_i1, 0.000000e+00" [cnn/dense_2.cpp:19->cnn/cnn.cpp:63]   --->   Operation 195 'fcmp' 'tmp_12' <Predicate = true> <Delay = 5.43> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 5.43> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
-ST_39 : Operation 196 [1/1] (0.00ns) (grouped into LUT with out node select_ln19_1)   --->   "%and_ln19_1 = and i1 %or_ln19_1, %tmp_12" [cnn/dense_2.cpp:19->cnn/cnn.cpp:63]   --->   Operation 196 'and' 'and_ln19_1' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_39 : Operation 197 [1/1] (0.97ns) (out node of the LUT)   --->   "%select_ln19_1 = select i1 %and_ln19_1, float 0.000000e+00, float %tmp_i1" [cnn/dense_2.cpp:19->cnn/cnn.cpp:63]   --->   Operation 197 'select' 'select_ln19_1' <Predicate = true> <Delay = 0.97> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_39 : Operation 198 [1/1] (2.32ns)   --->   "store float %select_ln19_1, float* %dense_2_out_addr, align 4" [cnn/dense_2.cpp:17->cnn/cnn.cpp:63]   --->   Operation 198 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 30> <RAM>
-ST_39 : Operation 199 [1/1] (0.00ns)   --->   "br label %dense_1.exit" [cnn/dense_2.cpp:9->cnn/cnn.cpp:63]   --->   Operation 199 'br' <Predicate = true> <Delay = 0.00>
+ST_39 : Operation 195 [1/1] (0.00ns)   --->   "%dense_2_out_addr = getelementptr [30 x float]* @dense_2_out, i64 0, i64 %zext_ln14_4" [cnn/dense_2.cpp:17->cnn/cnn.cpp:63]   --->   Operation 195 'getelementptr' 'dense_2_out_addr' <Predicate = true> <Delay = 0.00>
+ST_39 : Operation 196 [1/1] (0.00ns)   --->   "%bitcast_ln19_1 = bitcast float %tmp_i1 to i32" [cnn/dense_2.cpp:19->cnn/cnn.cpp:63]   --->   Operation 196 'bitcast' 'bitcast_ln19_1' <Predicate = true> <Delay = 0.00>
+ST_39 : Operation 197 [1/1] (0.00ns)   --->   "%tmp_11 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %bitcast_ln19_1, i32 23, i32 30)" [cnn/dense_2.cpp:19->cnn/cnn.cpp:63]   --->   Operation 197 'partselect' 'tmp_11' <Predicate = true> <Delay = 0.00>
+ST_39 : Operation 198 [1/1] (0.00ns)   --->   "%trunc_ln19_1 = trunc i32 %bitcast_ln19_1 to i23" [cnn/dense_2.cpp:19->cnn/cnn.cpp:63]   --->   Operation 198 'trunc' 'trunc_ln19_1' <Predicate = true> <Delay = 0.00>
+ST_39 : Operation 199 [1/1] (1.55ns)   --->   "%icmp_ln19_2 = icmp ne i8 %tmp_11, -1" [cnn/dense_2.cpp:19->cnn/cnn.cpp:63]   --->   Operation 199 'icmp' 'icmp_ln19_2' <Predicate = true> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_39 : Operation 200 [1/1] (2.44ns)   --->   "%icmp_ln19_3 = icmp eq i23 %trunc_ln19_1, 0" [cnn/dense_2.cpp:19->cnn/cnn.cpp:63]   --->   Operation 200 'icmp' 'icmp_ln19_3' <Predicate = true> <Delay = 2.44> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_39 : Operation 201 [1/1] (0.00ns) (grouped into LUT with out node select_ln19_1)   --->   "%or_ln19_1 = or i1 %icmp_ln19_3, %icmp_ln19_2" [cnn/dense_2.cpp:19->cnn/cnn.cpp:63]   --->   Operation 201 'or' 'or_ln19_1' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_39 : Operation 202 [1/2] (5.43ns)   --->   "%tmp_12 = fcmp olt float %tmp_i1, 0.000000e+00" [cnn/dense_2.cpp:19->cnn/cnn.cpp:63]   --->   Operation 202 'fcmp' 'tmp_12' <Predicate = true> <Delay = 5.43> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 5.43> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_39 : Operation 203 [1/1] (0.00ns) (grouped into LUT with out node select_ln19_1)   --->   "%and_ln19_1 = and i1 %or_ln19_1, %tmp_12" [cnn/dense_2.cpp:19->cnn/cnn.cpp:63]   --->   Operation 203 'and' 'and_ln19_1' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_39 : Operation 204 [1/1] (0.97ns) (out node of the LUT)   --->   "%select_ln19_1 = select i1 %and_ln19_1, float 0.000000e+00, float %tmp_i1" [cnn/dense_2.cpp:19->cnn/cnn.cpp:63]   --->   Operation 204 'select' 'select_ln19_1' <Predicate = true> <Delay = 0.97> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_39 : Operation 205 [1/1] (2.32ns)   --->   "store float %select_ln19_1, float* %dense_2_out_addr, align 4" [cnn/dense_2.cpp:17->cnn/cnn.cpp:63]   --->   Operation 205 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 30> <RAM>
+ST_39 : Operation 206 [1/1] (0.00ns)   --->   "%empty_53 = call i32 (...)* @_ssdm_op_SpecRegionEnd([11 x i8]* @p_str22, i32 %tmp_11_i) nounwind" [cnn/dense_2.cpp:22->cnn/cnn.cpp:63]   --->   Operation 206 'specregionend' 'empty_53' <Predicate = true> <Delay = 0.00>
+ST_39 : Operation 207 [1/1] (0.00ns)   --->   "br label %dense_1.exit" [cnn/dense_2.cpp:9->cnn/cnn.cpp:63]   --->   Operation 207 'br' <Predicate = true> <Delay = 0.00>
 
 State 40 <SV = 13> <Delay = 0.00>
-ST_40 : Operation 200 [1/2] (0.00ns)   --->   "call fastcc void @dense_out([10 x float]* %prediction) nounwind" [cnn/cnn.cpp:66]   --->   Operation 200 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
-ST_40 : Operation 201 [1/1] (0.00ns)   --->   "ret void" [cnn/cnn.cpp:67]   --->   Operation 201 'ret' <Predicate = true> <Delay = 0.00>
+ST_40 : Operation 208 [1/2] (0.00ns)   --->   "call fastcc void @dense_out([10 x float]* %prediction) nounwind" [cnn/cnn.cpp:66]   --->   Operation 208 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_40 : Operation 209 [1/1] (0.00ns)   --->   "ret void" [cnn/cnn.cpp:67]   --->   Operation 209 'ret' <Predicate = true> <Delay = 0.00>
 
 
 ============================================================
@@ -425,123 +433,123 @@ The critical path consists of the following:
 
  <State 15>: 5.2ns
 The critical path consists of the following:
-	'phi' operation ('phi_mul', cnn/dense_1.cpp:14->cnn/cnn.cpp:58) with incoming values : ('add_ln14_4', cnn/dense_1.cpp:14->cnn/cnn.cpp:58) [83]  (0 ns)
-	'add' operation ('add_ln14', cnn/dense_1.cpp:14->cnn/cnn.cpp:58) [91]  (1.94 ns)
-	'getelementptr' operation ('dense_1_weights_addr', cnn/dense_1.cpp:14->cnn/cnn.cpp:58) [93]  (0 ns)
-	'load' operation ('dense_1_weights_load', cnn/dense_1.cpp:14->cnn/cnn.cpp:58) on array 'dense_1_weights' [96]  (3.25 ns)
+	'phi' operation ('phi_mul', cnn/dense_1.cpp:14->cnn/cnn.cpp:58) with incoming values : ('add_ln14_4', cnn/dense_1.cpp:14->cnn/cnn.cpp:58) [85]  (0 ns)
+	'add' operation ('add_ln14', cnn/dense_1.cpp:14->cnn/cnn.cpp:58) [94]  (1.94 ns)
+	'getelementptr' operation ('dense_1_weights_addr', cnn/dense_1.cpp:14->cnn/cnn.cpp:58) [96]  (0 ns)
+	'load' operation ('dense_1_weights_load', cnn/dense_1.cpp:14->cnn/cnn.cpp:58) on array 'dense_1_weights' [99]  (3.25 ns)
 
  <State 16>: 15.6ns
 The critical path consists of the following:
-	'load' operation ('flat_array_load', cnn/dense_1.cpp:14->cnn/cnn.cpp:58) on array 'flat_array' [95]  (3.25 ns)
-	'fmul' operation ('tmp_i', cnn/dense_1.cpp:14->cnn/cnn.cpp:58) [97]  (12.4 ns)
+	'load' operation ('flat_array_load', cnn/dense_1.cpp:14->cnn/cnn.cpp:58) on array 'flat_array' [98]  (3.25 ns)
+	'fmul' operation ('tmp_i', cnn/dense_1.cpp:14->cnn/cnn.cpp:58) [100]  (12.4 ns)
 
  <State 17>: 12.4ns
 The critical path consists of the following:
-	'fmul' operation ('tmp_i', cnn/dense_1.cpp:14->cnn/cnn.cpp:58) [97]  (12.4 ns)
+	'fmul' operation ('tmp_i', cnn/dense_1.cpp:14->cnn/cnn.cpp:58) [100]  (12.4 ns)
 
  <State 18>: 10.5ns
 The critical path consists of the following:
-	'fadd' operation ('sum', cnn/dense_1.cpp:14->cnn/cnn.cpp:58) [98]  (10.5 ns)
+	'fadd' operation ('sum', cnn/dense_1.cpp:14->cnn/cnn.cpp:58) [101]  (10.5 ns)
 
  <State 19>: 10.5ns
 The critical path consists of the following:
-	'fadd' operation ('sum', cnn/dense_1.cpp:14->cnn/cnn.cpp:58) [98]  (10.5 ns)
+	'fadd' operation ('sum', cnn/dense_1.cpp:14->cnn/cnn.cpp:58) [101]  (10.5 ns)
 
  <State 20>: 10.5ns
 The critical path consists of the following:
-	'fadd' operation ('sum', cnn/dense_1.cpp:14->cnn/cnn.cpp:58) [98]  (10.5 ns)
+	'fadd' operation ('sum', cnn/dense_1.cpp:14->cnn/cnn.cpp:58) [101]  (10.5 ns)
 
  <State 21>: 10.5ns
 The critical path consists of the following:
-	'fadd' operation ('sum', cnn/dense_1.cpp:14->cnn/cnn.cpp:58) [98]  (10.5 ns)
+	'fadd' operation ('sum', cnn/dense_1.cpp:14->cnn/cnn.cpp:58) [101]  (10.5 ns)
 
  <State 22>: 13.8ns
 The critical path consists of the following:
-	'load' operation ('dense_1_bias_load', cnn/dense_1.cpp:17->cnn/cnn.cpp:58) on array 'dense_1_bias' [102]  (3.25 ns)
-	'fadd' operation ('tmp_i_49', cnn/dense_1.cpp:17->cnn/cnn.cpp:58) [103]  (10.5 ns)
+	'load' operation ('dense_1_bias_load', cnn/dense_1.cpp:17->cnn/cnn.cpp:58) on array 'dense_1_bias' [105]  (3.25 ns)
+	'fadd' operation ('tmp_i_49', cnn/dense_1.cpp:17->cnn/cnn.cpp:58) [106]  (10.5 ns)
 
  <State 23>: 10.5ns
 The critical path consists of the following:
-	'fadd' operation ('tmp_i_49', cnn/dense_1.cpp:17->cnn/cnn.cpp:58) [103]  (10.5 ns)
+	'fadd' operation ('tmp_i_49', cnn/dense_1.cpp:17->cnn/cnn.cpp:58) [106]  (10.5 ns)
 
  <State 24>: 10.5ns
 The critical path consists of the following:
-	'fadd' operation ('tmp_i_49', cnn/dense_1.cpp:17->cnn/cnn.cpp:58) [103]  (10.5 ns)
+	'fadd' operation ('tmp_i_49', cnn/dense_1.cpp:17->cnn/cnn.cpp:58) [106]  (10.5 ns)
 
  <State 25>: 16ns
 The critical path consists of the following:
-	'fadd' operation ('tmp_i_49', cnn/dense_1.cpp:17->cnn/cnn.cpp:58) [103]  (10.5 ns)
-	'fcmp' operation ('tmp_s', cnn/dense_1.cpp:19->cnn/cnn.cpp:58) [111]  (5.43 ns)
+	'fadd' operation ('tmp_i_49', cnn/dense_1.cpp:17->cnn/cnn.cpp:58) [106]  (10.5 ns)
+	'fcmp' operation ('tmp_s', cnn/dense_1.cpp:19->cnn/cnn.cpp:58) [114]  (5.43 ns)
 
  <State 26>: 9.66ns
 The critical path consists of the following:
-	'fcmp' operation ('tmp_s', cnn/dense_1.cpp:19->cnn/cnn.cpp:58) [111]  (5.43 ns)
-	'and' operation ('and_ln19', cnn/dense_1.cpp:19->cnn/cnn.cpp:58) [112]  (0 ns)
-	'select' operation ('select_ln19', cnn/dense_1.cpp:19->cnn/cnn.cpp:58) [113]  (0.978 ns)
-	'store' operation ('store_ln17', cnn/dense_1.cpp:17->cnn/cnn.cpp:58) of variable 'select_ln19', cnn/dense_1.cpp:19->cnn/cnn.cpp:58 on array 'dense_1_out' [114]  (3.25 ns)
+	'fcmp' operation ('tmp_s', cnn/dense_1.cpp:19->cnn/cnn.cpp:58) [114]  (5.43 ns)
+	'and' operation ('and_ln19', cnn/dense_1.cpp:19->cnn/cnn.cpp:58) [115]  (0 ns)
+	'select' operation ('select_ln19', cnn/dense_1.cpp:19->cnn/cnn.cpp:58) [116]  (0.978 ns)
+	'store' operation ('store_ln17', cnn/dense_1.cpp:17->cnn/cnn.cpp:58) of variable 'select_ln19', cnn/dense_1.cpp:19->cnn/cnn.cpp:58 on array 'dense_1_out' [117]  (3.25 ns)
 
  <State 27>: 1.78ns
 The critical path consists of the following:
-	'phi' operation ('i') with incoming values : ('i', cnn/dense_2.cpp:9->cnn/cnn.cpp:63) [119]  (0 ns)
-	'add' operation ('i', cnn/dense_2.cpp:9->cnn/cnn.cpp:63) [122]  (1.78 ns)
+	'phi' operation ('i') with incoming values : ('i', cnn/dense_2.cpp:9->cnn/cnn.cpp:63) [123]  (0 ns)
+	'add' operation ('i', cnn/dense_2.cpp:9->cnn/cnn.cpp:63) [126]  (1.78 ns)
 
  <State 28>: 7.04ns
 The critical path consists of the following:
-	'phi' operation ('j') with incoming values : ('j', cnn/dense_2.cpp:13->cnn/cnn.cpp:63) [130]  (0 ns)
-	'sub' operation ('sub_ln14', cnn/dense_2.cpp:14->cnn/cnn.cpp:63) [141]  (0 ns)
-	'add' operation ('add_ln14_3', cnn/dense_2.cpp:14->cnn/cnn.cpp:63) [142]  (3.79 ns)
-	'getelementptr' operation ('dense_2_weights_addr', cnn/dense_2.cpp:14->cnn/cnn.cpp:63) [144]  (0 ns)
-	'load' operation ('dense_2_weights_load', cnn/dense_2.cpp:14->cnn/cnn.cpp:63) on array 'dense_2_weights' [147]  (3.25 ns)
+	'phi' operation ('j') with incoming values : ('j', cnn/dense_2.cpp:13->cnn/cnn.cpp:63) [136]  (0 ns)
+	'sub' operation ('sub_ln14', cnn/dense_2.cpp:14->cnn/cnn.cpp:63) [148]  (0 ns)
+	'add' operation ('add_ln14_3', cnn/dense_2.cpp:14->cnn/cnn.cpp:63) [149]  (3.79 ns)
+	'getelementptr' operation ('dense_2_weights_addr', cnn/dense_2.cpp:14->cnn/cnn.cpp:63) [151]  (0 ns)
+	'load' operation ('dense_2_weights_load', cnn/dense_2.cpp:14->cnn/cnn.cpp:63) on array 'dense_2_weights' [154]  (3.25 ns)
 
  <State 29>: 15.6ns
 The critical path consists of the following:
-	'load' operation ('dense_1_out_load', cnn/dense_2.cpp:14->cnn/cnn.cpp:63) on array 'dense_1_out' [146]  (3.25 ns)
-	'fmul' operation ('tmp_7_i', cnn/dense_2.cpp:14->cnn/cnn.cpp:63) [148]  (12.4 ns)
+	'load' operation ('dense_1_out_load', cnn/dense_2.cpp:14->cnn/cnn.cpp:63) on array 'dense_1_out' [153]  (3.25 ns)
+	'fmul' operation ('tmp_7_i', cnn/dense_2.cpp:14->cnn/cnn.cpp:63) [155]  (12.4 ns)
 
  <State 30>: 12.4ns
 The critical path consists of the following:
-	'fmul' operation ('tmp_7_i', cnn/dense_2.cpp:14->cnn/cnn.cpp:63) [148]  (12.4 ns)
+	'fmul' operation ('tmp_7_i', cnn/dense_2.cpp:14->cnn/cnn.cpp:63) [155]  (12.4 ns)
 
  <State 31>: 10.5ns
 The critical path consists of the following:
-	'fadd' operation ('sum', cnn/dense_2.cpp:14->cnn/cnn.cpp:63) [149]  (10.5 ns)
+	'fadd' operation ('sum', cnn/dense_2.cpp:14->cnn/cnn.cpp:63) [156]  (10.5 ns)
 
  <State 32>: 10.5ns
 The critical path consists of the following:
-	'fadd' operation ('sum', cnn/dense_2.cpp:14->cnn/cnn.cpp:63) [149]  (10.5 ns)
+	'fadd' operation ('sum', cnn/dense_2.cpp:14->cnn/cnn.cpp:63) [156]  (10.5 ns)
 
  <State 33>: 10.5ns
 The critical path consists of the following:
-	'fadd' operation ('sum', cnn/dense_2.cpp:14->cnn/cnn.cpp:63) [149]  (10.5 ns)
+	'fadd' operation ('sum', cnn/dense_2.cpp:14->cnn/cnn.cpp:63) [156]  (10.5 ns)
 
  <State 34>: 10.5ns
 The critical path consists of the following:
-	'fadd' operation ('sum', cnn/dense_2.cpp:14->cnn/cnn.cpp:63) [149]  (10.5 ns)
+	'fadd' operation ('sum', cnn/dense_2.cpp:14->cnn/cnn.cpp:63) [156]  (10.5 ns)
 
  <State 35>: 13.8ns
 The critical path consists of the following:
-	'load' operation ('dense_2_bias_load', cnn/dense_2.cpp:17->cnn/cnn.cpp:63) on array 'dense_2_bias' [153]  (3.25 ns)
-	'fadd' operation ('tmp_i1', cnn/dense_2.cpp:17->cnn/cnn.cpp:63) [154]  (10.5 ns)
+	'load' operation ('dense_2_bias_load', cnn/dense_2.cpp:17->cnn/cnn.cpp:63) on array 'dense_2_bias' [160]  (3.25 ns)
+	'fadd' operation ('tmp_i1', cnn/dense_2.cpp:17->cnn/cnn.cpp:63) [161]  (10.5 ns)
 
  <State 36>: 10.5ns
 The critical path consists of the following:
-	'fadd' operation ('tmp_i1', cnn/dense_2.cpp:17->cnn/cnn.cpp:63) [154]  (10.5 ns)
+	'fadd' operation ('tmp_i1', cnn/dense_2.cpp:17->cnn/cnn.cpp:63) [161]  (10.5 ns)
 
  <State 37>: 10.5ns
 The critical path consists of the following:
-	'fadd' operation ('tmp_i1', cnn/dense_2.cpp:17->cnn/cnn.cpp:63) [154]  (10.5 ns)
+	'fadd' operation ('tmp_i1', cnn/dense_2.cpp:17->cnn/cnn.cpp:63) [161]  (10.5 ns)
 
  <State 38>: 16ns
 The critical path consists of the following:
-	'fadd' operation ('tmp_i1', cnn/dense_2.cpp:17->cnn/cnn.cpp:63) [154]  (10.5 ns)
-	'fcmp' operation ('tmp_12', cnn/dense_2.cpp:19->cnn/cnn.cpp:63) [162]  (5.43 ns)
+	'fadd' operation ('tmp_i1', cnn/dense_2.cpp:17->cnn/cnn.cpp:63) [161]  (10.5 ns)
+	'fcmp' operation ('tmp_12', cnn/dense_2.cpp:19->cnn/cnn.cpp:63) [169]  (5.43 ns)
 
  <State 39>: 8.73ns
 The critical path consists of the following:
-	'fcmp' operation ('tmp_12', cnn/dense_2.cpp:19->cnn/cnn.cpp:63) [162]  (5.43 ns)
-	'and' operation ('and_ln19_1', cnn/dense_2.cpp:19->cnn/cnn.cpp:63) [163]  (0 ns)
-	'select' operation ('select_ln19_1', cnn/dense_2.cpp:19->cnn/cnn.cpp:63) [164]  (0.978 ns)
-	'store' operation ('store_ln17', cnn/dense_2.cpp:17->cnn/cnn.cpp:63) of variable 'select_ln19_1', cnn/dense_2.cpp:19->cnn/cnn.cpp:63 on array 'dense_2_out' [165]  (2.32 ns)
+	'fcmp' operation ('tmp_12', cnn/dense_2.cpp:19->cnn/cnn.cpp:63) [169]  (5.43 ns)
+	'and' operation ('and_ln19_1', cnn/dense_2.cpp:19->cnn/cnn.cpp:63) [170]  (0 ns)
+	'select' operation ('select_ln19_1', cnn/dense_2.cpp:19->cnn/cnn.cpp:63) [171]  (0.978 ns)
+	'store' operation ('store_ln17', cnn/dense_2.cpp:17->cnn/cnn.cpp:63) of variable 'select_ln19_1', cnn/dense_2.cpp:19->cnn/cnn.cpp:63 on array 'dense_2_out' [172]  (2.32 ns)
 
  <State 40>: 0ns
 The critical path consists of the following:

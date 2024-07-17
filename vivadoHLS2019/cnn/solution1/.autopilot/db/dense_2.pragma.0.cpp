@@ -222,11 +222,11 @@ float dense_2_bias [30] = {0.253804, 0.338433, 0.296248, 0.150781, 0.024627, 0.1
 void dense_2(float dense_1_out[50], float dense_2_out[30]){_ssdm_SpecArrayDimSize(dense_1_out, 50);_ssdm_SpecArrayDimSize(dense_2_out, 30);
 
  float sum = 0.0;
-
+ DENSE_LOOP:
  for (int i = 0; i < 30; ++i){
 
      sum = 0.0;
-
+     FLAT_LOOP:
   for (int j = 0; j < 50; ++j){
    sum += dense_1_out[j] * dense_2_weights[j][i];
   }

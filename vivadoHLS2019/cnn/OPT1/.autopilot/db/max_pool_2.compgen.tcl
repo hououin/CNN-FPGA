@@ -11,7 +11,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 27 \
+    id 76 \
     name max_pool_out \
     reset_level 1 \
     sync_rst true \
@@ -30,14 +30,14 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 28 \
+    id 77 \
     name conv_2_out \
     reset_level 1 \
     sync_rst true \
     dir I \
     corename conv_2_out \
     op interface \
-    ports { conv_2_out_address0 { O 11 vector } conv_2_out_ce0 { O 1 bit } conv_2_out_q0 { I 32 vector } conv_2_out_address1 { O 11 vector } conv_2_out_ce1 { O 1 bit } conv_2_out_q1 { I 32 vector } } \
+    ports { conv_2_out_address0 { O 11 vector } conv_2_out_ce0 { O 1 bit } conv_2_out_q0 { I 32 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'conv_2_out'"

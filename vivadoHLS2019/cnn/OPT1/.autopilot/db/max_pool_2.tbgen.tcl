@@ -15,13 +15,13 @@ set C_modelName {max_pool_2}
 set C_modelType { void 0 }
 set C_modelArgList {
 	{ max_pool_out float 32 regular {array 400 { 0 3 } 0 1 }  }
-	{ conv_2_out float 32 regular {array 1936 { 1 1 } 1 1 } {global 0}  }
+	{ conv_2_out float 32 regular {array 1936 { 1 3 } 1 1 } {global 0}  }
 }
 set C_modelArgMapList {[ 
 	{ "Name" : "max_pool_out", "interface" : "memory", "bitwidth" : 32, "direction" : "WRITEONLY"} , 
  	{ "Name" : "conv_2_out", "interface" : "memory", "bitwidth" : 32, "direction" : "READONLY", "extern" : 0} ]}
 # RTL Port declarations: 
-set portNum 16
+set portNum 13
 set portList { 
 	{ ap_clk sc_in sc_logic 1 clock -1 } 
 	{ ap_rst sc_in sc_logic 1 reset -1 active_high_sync } 
@@ -36,9 +36,6 @@ set portList {
 	{ conv_2_out_address0 sc_out sc_lv 11 signal 1 } 
 	{ conv_2_out_ce0 sc_out sc_logic 1 signal 1 } 
 	{ conv_2_out_q0 sc_in sc_lv 32 signal 1 } 
-	{ conv_2_out_address1 sc_out sc_lv 11 signal 1 } 
-	{ conv_2_out_ce1 sc_out sc_logic 1 signal 1 } 
-	{ conv_2_out_q1 sc_in sc_lv 32 signal 1 } 
 }
 set NewPortList {[ 
 	{ "name": "ap_clk", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "clock", "bundle":{"name": "ap_clk", "role": "default" }} , 
@@ -53,10 +50,7 @@ set NewPortList {[
  	{ "name": "max_pool_out_d0", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "max_pool_out", "role": "d0" }} , 
  	{ "name": "conv_2_out_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "conv_2_out", "role": "address0" }} , 
  	{ "name": "conv_2_out_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "conv_2_out", "role": "ce0" }} , 
- 	{ "name": "conv_2_out_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "conv_2_out", "role": "q0" }} , 
- 	{ "name": "conv_2_out_address1", "direction": "out", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "conv_2_out", "role": "address1" }} , 
- 	{ "name": "conv_2_out_ce1", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "conv_2_out", "role": "ce1" }} , 
- 	{ "name": "conv_2_out_q1", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "conv_2_out", "role": "q1" }}  ]}
+ 	{ "name": "conv_2_out_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "conv_2_out", "role": "q0" }}  ]}
 
 set RtlHierarchyInfo {[
 	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1"],
@@ -65,7 +59,7 @@ set RtlHierarchyInfo {[
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "1603", "EstimateLatencyMax" : "1603",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "7393", "EstimateLatencyMax" : "7393",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -75,26 +69,25 @@ set RtlHierarchyInfo {[
 		"Port" : [
 			{"Name" : "max_pool_out", "Type" : "Memory", "Direction" : "O"},
 			{"Name" : "conv_2_out", "Type" : "Memory", "Direction" : "I"}]},
-	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.cnn_fcmp_32ns_32neOg_U26", "Parent" : "0"}]}
+	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.cnn_fcmp_32ns_32ndEe_U75", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
 	max_pool_2 {
 		max_pool_out {Type O LastRead -1 FirstWrite 4}
-		conv_2_out {Type I LastRead 2 FirstWrite -1}}}
+		conv_2_out {Type I LastRead 5 FirstWrite -1}}}
 
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "1603", "Max" : "1603"}
-	, {"Name" : "Interval", "Min" : "1603", "Max" : "1603"}
+	{"Name" : "Latency", "Min" : "7393", "Max" : "7393"}
+	, {"Name" : "Interval", "Min" : "7393", "Max" : "7393"}
 ]}
 
 set PipelineEnableSignalInfo {[
-	{"Pipeline" : "0", "EnableSignal" : "ap_enable_pp0"}
 ]}
 
 set Spec2ImplPortList { 
 	max_pool_out { ap_memory {  { max_pool_out_address0 mem_address 1 9 }  { max_pool_out_ce0 mem_ce 1 1 }  { max_pool_out_we0 mem_we 1 1 }  { max_pool_out_d0 mem_din 1 32 } } }
-	conv_2_out { ap_memory {  { conv_2_out_address0 mem_address 1 11 }  { conv_2_out_ce0 mem_ce 1 1 }  { conv_2_out_q0 mem_dout 0 32 }  { conv_2_out_address1 MemPortADDR2 1 11 }  { conv_2_out_ce1 MemPortCE2 1 1 }  { conv_2_out_q1 MemPortDOUT2 0 32 } } }
+	conv_2_out { ap_memory {  { conv_2_out_address0 mem_address 1 11 }  { conv_2_out_ce0 mem_ce 1 1 }  { conv_2_out_q0 mem_dout 0 32 } } }
 }

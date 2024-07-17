@@ -199,13 +199,13 @@ initial begin
 #0 ap_enable_reg_pp1_iter14 = 1'b0;
 end
 
-cnn_fadd_32ns_32ncud #(
+cnn_fadd_32ns_32nbkb #(
     .ID( 1 ),
     .NUM_STAGE( 4 ),
     .din0_WIDTH( 32 ),
     .din1_WIDTH( 32 ),
     .dout_WIDTH( 32 ))
-cnn_fadd_32ns_32ncud_U31(
+cnn_fadd_32ns_32nbkb_U80(
     .clk(ap_clk),
     .reset(ap_rst),
     .din0(sum_0_reg_80),
@@ -214,13 +214,13 @@ cnn_fadd_32ns_32ncud_U31(
     .dout(grp_fu_114_p2)
 );
 
-cnn_fdiv_32ns_32nibs #(
+cnn_fdiv_32ns_32ng8j #(
     .ID( 1 ),
     .NUM_STAGE( 8 ),
     .din0_WIDTH( 32 ),
     .din1_WIDTH( 32 ),
     .dout_WIDTH( 32 ))
-cnn_fdiv_32ns_32nibs_U32(
+cnn_fdiv_32ns_32ng8j_U81(
     .clk(ap_clk),
     .reset(ap_rst),
     .din0(reg_135),
@@ -229,13 +229,13 @@ cnn_fdiv_32ns_32nibs_U32(
     .dout(grp_fu_119_p2)
 );
 
-cnn_fexp_32ns_32njbC #(
+cnn_fexp_32ns_32nhbi #(
     .ID( 1 ),
     .NUM_STAGE( 5 ),
     .din0_WIDTH( 32 ),
     .din1_WIDTH( 32 ),
     .dout_WIDTH( 32 ))
-cnn_fexp_32ns_32njbC_U33(
+cnn_fexp_32ns_32nhbi_U82(
     .clk(ap_clk),
     .reset(ap_rst),
     .din0(32'd0),

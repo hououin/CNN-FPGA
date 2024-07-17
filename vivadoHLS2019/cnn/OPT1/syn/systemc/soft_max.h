@@ -11,9 +11,9 @@
 #include "systemc.h"
 #include "AESL_pkg.h"
 
-#include "cnn_fadd_32ns_32ncud.h"
-#include "cnn_fdiv_32ns_32nibs.h"
-#include "cnn_fexp_32ns_32njbC.h"
+#include "cnn_fadd_32ns_32nbkb.h"
+#include "cnn_fdiv_32ns_32ng8j.h"
+#include "cnn_fexp_32ns_32nhbi.h"
 
 namespace ap_rtl {
 
@@ -45,9 +45,9 @@ struct soft_max : public sc_module {
 
     sc_trace_file* mVcdFile;
 
-    cnn_fadd_32ns_32ncud<1,4,32,32,32>* cnn_fadd_32ns_32ncud_U31;
-    cnn_fdiv_32ns_32nibs<1,8,32,32,32>* cnn_fdiv_32ns_32nibs_U32;
-    cnn_fexp_32ns_32njbC<1,5,32,32,32>* cnn_fexp_32ns_32njbC_U33;
+    cnn_fadd_32ns_32nbkb<1,4,32,32,32>* cnn_fadd_32ns_32nbkb_U80;
+    cnn_fdiv_32ns_32ng8j<1,8,32,32,32>* cnn_fdiv_32ns_32ng8j_U81;
+    cnn_fexp_32ns_32nhbi<1,5,32,32,32>* cnn_fexp_32ns_32nhbi_U82;
     sc_signal< sc_lv<8> > ap_CS_fsm;
     sc_signal< sc_logic > ap_CS_fsm_state1;
     sc_signal< sc_lv<32> > sum_0_reg_80;

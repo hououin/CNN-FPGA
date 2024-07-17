@@ -258,6 +258,9 @@ void conv_2(float input[(26 / 2)][(26 / 2)][6], float conv_out[11][11][16]) {_ss
      Col_Loop:
         for (int c = 0; c < 11; ++c)
         {
+_ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
+# 12 "cnn/conv_2.cpp"
+
          Filter2_Loop:
             for (int f = 0; f < 16; ++f)
             {
@@ -271,9 +274,6 @@ void conv_2(float input[(26 / 2)][(26 / 2)][6], float conv_out[11][11][16]) {_ss
                      Filter1_Loop:
                         for (int ch = 0; ch < 6; ++ch)
                         {
-_ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
-# 25 "cnn/conv_2.cpp"
-
                             w_sum += conv_2_weights[wr][wc][ch][f] * input[r + wr][c + wc][ch];
                         }
                     }

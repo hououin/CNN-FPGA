@@ -1,0 +1,1553 @@
+
+
+================================================================
+== Vivado HLS Report for 'dense_out'
+================================================================
+* Date:           Sun Jul 14 20:03:52 2024
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        cnn
+* Solution:       solution4
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  20.00|    17.393|        2.50|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +------+------+------+------+---------+
+    |   Latency   |   Interval  | Pipeline|
+    |  min |  max |  min |  max |   Type  |
+    +------+------+------+------+---------+
+    |  1544|  1544|  1544|  1544|   none  |
+    +------+------+------+------+---------+
+
+    + Detail: 
+        * Instance: 
+        +---------------------+----------+-----+-----+-----+-----+---------+
+        |                     |          |  Latency  |  Interval | Pipeline|
+        |       Instance      |  Module  | min | max | min | max |   Type  |
+        +---------------------+----------+-----+-----+-----+-----+---------+
+        |grp_soft_max_fu_157  |soft_max  |  252|  252|  252|  252|   none  |
+        +---------------------+----------+-----+-----+-----+-----+---------+
+
+        * Loop: 
+        +--------------+------+------+----------+-----------+-----------+------+----------+
+        |              |   Latency   | Iteration|  Initiation Interval  | Trip |          |
+        |   Loop Name  |  min |  max |  Latency |  achieved |   target  | Count| Pipelined|
+        +--------------+------+------+----------+-----------+-----------+------+----------+
+        |- Dense_Loop  |  1290|  1290|       129|          -|          -|    10|    no    |
+        | + Flat_Loop  |   122|   122|         7|          4|          1|    30|    yes   |
+        +--------------+------+------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  | URAM|
++-----------------+---------+-------+--------+-------+-----+
+|DSP              |        -|      -|       -|      -|    -|
+|Expression       |        -|      -|       0|     74|    -|
+|FIFO             |        -|      -|       -|      -|    -|
+|Instance         |        -|     14|    1292|   3224|    -|
+|Memory           |        1|      -|      96|     10|    0|
+|Multiplexer      |        -|      -|       -|    161|    -|
+|Register         |        -|      -|     107|      -|    -|
++-----------------+---------+-------+--------+-------+-----+
+|Total            |        1|     14|    1495|   3469|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Available        |      280|    220|  106400|  53200|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Utilization (%)  |    ~0   |      6|       1|      6|    0|
++-----------------+---------+-------+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +---------------------------+----------------------+---------+-------+-----+------+-----+
+    |          Instance         |        Module        | BRAM_18K| DSP48E|  FF |  LUT | URAM|
+    +---------------------------+----------------------+---------+-------+-----+------+-----+
+    |cnn_fadd_32ns_32nbkb_U345  |cnn_fadd_32ns_32nbkb  |        0|      2|  227|   403|    0|
+    |cnn_fmul_32ns_32ncud_U346  |cnn_fmul_32ns_32ncud  |        0|      3|  128|   320|    0|
+    |grp_soft_max_fu_157        |soft_max              |        0|      9|  937|  2501|    0|
+    +---------------------------+----------------------+---------+-------+-----+------+-----+
+    |Total                      |                      |        0|     14| 1292|  3224|    0|
+    +---------------------------+----------------------+---------+-------+-----+------+-----+
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    +---------------------+----------------------+---------+----+----+-----+------+-----+------+-------------+
+    |        Memory       |        Module        | BRAM_18K| FF | LUT| URAM| Words| Bits| Banks| W*Bits*Banks|
+    +---------------------+----------------------+---------+----+----+-----+------+-----+------+-------------+
+    |dense_array_U        |dense_out_dense_abgk  |        0|  64|   5|    0|    10|   32|     1|          320|
+    |dense_out_weights_U  |dense_out_dense_obek  |        1|   0|   0|    0|   300|   32|     1|         9600|
+    |dense_out_bias_U     |dense_out_dense_obfk  |        0|  32|   5|    0|    10|   32|     1|          320|
+    +---------------------+----------------------+---------+----+----+-----+------+-----+------+-------------+
+    |Total                |                      |        1|  96|  10|    0|   320|   96|     3|        10240|
+    +---------------------+----------------------+---------+----+----+-----+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------+----------+-------+---+----+------------+------------+
+    |     Variable Name    | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------+----------+-------+---+----+------------+------------+
+    |add_ln38_1_fu_244_p2  |     +    |      0|  0|  12|           9|           9|
+    |add_ln38_fu_238_p2    |     +    |      0|  0|  12|           9|           9|
+    |d_fu_183_p2           |     +    |      0|  0|  13|           4|           1|
+    |f_fu_203_p2           |     +    |      0|  0|  15|           5|           1|
+    |icmp_ln31_fu_177_p2   |   icmp   |      0|  0|   9|           4|           4|
+    |icmp_ln36_fu_197_p2   |   icmp   |      0|  0|  11|           5|           3|
+    |ap_enable_pp0         |    xor   |      0|  0|   2|           1|           2|
+    +----------------------+----------+-------+---+----+------------+------------+
+    |Total                 |          |      0|  0|  74|          37|          29|
+    +----------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +------------------------------+----+-----------+-----+-----------+
+    |             Name             | LUT| Input Size| Bits| Total Bits|
+    +------------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                     |  56|         13|    1|         13|
+    |ap_enable_reg_pp0_iter1       |   9|          2|    1|          2|
+    |ap_phi_mux_f_0_phi_fu_150_p4  |   9|          2|    5|         10|
+    |d_0_reg_123                   |   9|          2|    4|          8|
+    |dense_array_address0          |  15|          3|    4|         12|
+    |dense_array_ce0               |  15|          3|    1|          3|
+    |f_0_reg_146                   |   9|          2|    5|         10|
+    |grp_fu_164_p0                 |  15|          3|   32|         96|
+    |grp_fu_164_p1                 |  15|          3|   32|         96|
+    |w_sum_0_reg_134               |   9|          2|   32|         64|
+    +------------------------------+----+-----------+-----+-----------+
+    |Total                         | 161|         35|  117|        314|
+    +------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------------------------+----+----+-----+-----------+
+    |               Name               | FF | LUT| Bits| Const Bits|
+    +----------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                         |  12|   0|   12|          0|
+    |ap_enable_reg_pp0_iter0           |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1           |   1|   0|    1|          0|
+    |d_0_reg_123                       |   4|   0|    4|          0|
+    |d_reg_258                         |   4|   0|    4|          0|
+    |f_0_reg_146                       |   5|   0|    5|          0|
+    |f_reg_278                         |   5|   0|    5|          0|
+    |grp_soft_max_fu_157_ap_start_reg  |   1|   0|    1|          0|
+    |icmp_ln36_reg_274                 |   1|   0|    1|          0|
+    |icmp_ln36_reg_274_pp0_iter1_reg   |   1|   0|    1|          0|
+    |tmp_4_reg_303                     |  32|   0|   32|          0|
+    |w_sum_0_reg_134                   |  32|   0|   32|          0|
+    |zext_ln36_reg_269                 |   4|   0|    9|          5|
+    |zext_ln38_reg_263                 |   4|   0|   64|         60|
+    +----------------------------------+----+----+-----+-----------+
+    |Total                             | 107|   0|  172|         65|
+    +----------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++----------------------+-----+-----+------------+--------------+--------------+
+|       RTL Ports      | Dir | Bits|  Protocol  | Source Object|    C Type    |
++----------------------+-----+-----+------------+--------------+--------------+
+|ap_clk                |  in |    1| ap_ctrl_hs |   dense_out  | return value |
+|ap_rst                |  in |    1| ap_ctrl_hs |   dense_out  | return value |
+|ap_start              |  in |    1| ap_ctrl_hs |   dense_out  | return value |
+|ap_done               | out |    1| ap_ctrl_hs |   dense_out  | return value |
+|ap_idle               | out |    1| ap_ctrl_hs |   dense_out  | return value |
+|ap_ready              | out |    1| ap_ctrl_hs |   dense_out  | return value |
+|prediction_Addr_A     | out |   32|    bram    |  prediction  |     array    |
+|prediction_EN_A       | out |    1|    bram    |  prediction  |     array    |
+|prediction_WEN_A      | out |    4|    bram    |  prediction  |     array    |
+|prediction_Din_A      | out |   32|    bram    |  prediction  |     array    |
+|prediction_Dout_A     |  in |   32|    bram    |  prediction  |     array    |
+|dense_2_out_address0  | out |    5|  ap_memory |  dense_2_out |     array    |
+|dense_2_out_ce0       | out |    1|  ap_memory |  dense_2_out |     array    |
+|dense_2_out_q0        |  in |   32|  ap_memory |  dense_2_out |     array    |
++----------------------+-----+-----+------------+--------------+--------------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 2
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 4, depth = 7
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 15
+* Pipeline : 1
+  Pipeline-0 : II = 4, D = 7, States = { 3 4 5 6 7 8 9 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 15 3 
+3 --> 10 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 3 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 2 
+15 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.32>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface([10 x float]* %prediction, [5 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind"   --->   Operation 16 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (2.32ns)   --->   "%dense_array = alloca [10 x float], align 16" [cnn/dense_out.cpp:28]   --->   Operation 17 'alloca' 'dense_array' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_1 : Operation 18 [1/1] (1.76ns)   --->   "br label %1" [cnn/dense_out.cpp:31]   --->   Operation 18 'br' <Predicate = true> <Delay = 1.76>
+
+State 2 <SV = 1> <Delay = 2.28>
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%d_0 = phi i4 [ 0, %0 ], [ %d, %Dense_Loop_end ]"   --->   Operation 19 'phi' 'd_0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 20 [1/1] (1.30ns)   --->   "%icmp_ln31 = icmp eq i4 %d_0, -6" [cnn/dense_out.cpp:31]   --->   Operation 20 'icmp' 'icmp_ln31' <Predicate = true> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.36> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 21 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 10, i64 10, i64 10)"   --->   Operation 21 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 22 [1/1] (1.73ns)   --->   "%d = add i4 %d_0, 1" [cnn/dense_out.cpp:31]   --->   Operation 22 'add' 'd' <Predicate = true> <Delay = 1.73> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 23 [1/1] (0.00ns)   --->   "br i1 %icmp_ln31, label %3, label %Dense_Loop_begin" [cnn/dense_out.cpp:31]   --->   Operation 23 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 24 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([11 x i8]* @p_str236) nounwind" [cnn/dense_out.cpp:32]   --->   Operation 24 'specloopname' <Predicate = (!icmp_ln31)> <Delay = 0.00>
+ST_2 : Operation 25 [1/1] (0.00ns)   --->   "%tmp_s = call i32 (...)* @_ssdm_op_SpecRegionBegin([11 x i8]* @p_str236)" [cnn/dense_out.cpp:32]   --->   Operation 25 'specregionbegin' 'tmp_s' <Predicate = (!icmp_ln31)> <Delay = 0.00>
+ST_2 : Operation 26 [1/1] (0.00ns)   --->   "%zext_ln38 = zext i4 %d_0 to i64" [cnn/dense_out.cpp:38]   --->   Operation 26 'zext' 'zext_ln38' <Predicate = (!icmp_ln31)> <Delay = 0.00>
+ST_2 : Operation 27 [1/1] (0.00ns)   --->   "%zext_ln36 = zext i4 %d_0 to i9" [cnn/dense_out.cpp:36]   --->   Operation 27 'zext' 'zext_ln36' <Predicate = (!icmp_ln31)> <Delay = 0.00>
+ST_2 : Operation 28 [1/1] (1.76ns)   --->   "br label %2" [cnn/dense_out.cpp:36]   --->   Operation 28 'br' <Predicate = (!icmp_ln31)> <Delay = 1.76>
+ST_2 : Operation 29 [2/2] (0.00ns)   --->   "call fastcc void @soft_max([10 x float]* %dense_array, [10 x float]* %prediction)" [cnn/dense_out.cpp:44]   --->   Operation 29 'call' <Predicate = (icmp_ln31)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 6.95>
+ST_3 : Operation 30 [1/1] (0.00ns)   --->   "%w_sum_0 = phi float [ 0.000000e+00, %Dense_Loop_begin ], [ %w_sum, %Flat_Loop ]"   --->   Operation 30 'phi' 'w_sum_0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 31 [1/1] (0.00ns)   --->   "%f_0 = phi i5 [ 0, %Dense_Loop_begin ], [ %f, %Flat_Loop ]"   --->   Operation 31 'phi' 'f_0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 32 [1/1] (1.36ns)   --->   "%icmp_ln36 = icmp eq i5 %f_0, -2" [cnn/dense_out.cpp:36]   --->   Operation 32 'icmp' 'icmp_ln36' <Predicate = true> <Delay = 1.36> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.36> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 33 [1/1] (0.00ns)   --->   "%empty_13 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 30, i64 30, i64 30)"   --->   Operation 33 'speclooptripcount' 'empty_13' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 34 [1/1] (1.78ns)   --->   "%f = add i5 %f_0, 1" [cnn/dense_out.cpp:36]   --->   Operation 34 'add' 'f' <Predicate = true> <Delay = 1.78> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 35 [1/1] (0.00ns)   --->   "br i1 %icmp_ln36, label %Dense_Loop_end, label %Flat_Loop" [cnn/dense_out.cpp:36]   --->   Operation 35 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 36 [1/1] (0.00ns)   --->   "%zext_ln38_1 = zext i5 %f_0 to i64" [cnn/dense_out.cpp:38]   --->   Operation 36 'zext' 'zext_ln38_1' <Predicate = (!icmp_ln36)> <Delay = 0.00>
+ST_3 : Operation 37 [1/1] (0.00ns)   --->   "%tmp_1 = call i8 @_ssdm_op_BitConcatenate.i8.i5.i3(i5 %f_0, i3 0)" [cnn/dense_out.cpp:38]   --->   Operation 37 'bitconcatenate' 'tmp_1' <Predicate = (!icmp_ln36)> <Delay = 0.00>
+ST_3 : Operation 38 [1/1] (0.00ns)   --->   "%zext_ln38_2 = zext i8 %tmp_1 to i9" [cnn/dense_out.cpp:38]   --->   Operation 38 'zext' 'zext_ln38_2' <Predicate = (!icmp_ln36)> <Delay = 0.00>
+ST_3 : Operation 39 [1/1] (0.00ns)   --->   "%tmp_3 = call i6 @_ssdm_op_BitConcatenate.i6.i5.i1(i5 %f_0, i1 false)" [cnn/dense_out.cpp:38]   --->   Operation 39 'bitconcatenate' 'tmp_3' <Predicate = (!icmp_ln36)> <Delay = 0.00>
+ST_3 : Operation 40 [1/1] (0.00ns)   --->   "%zext_ln38_3 = zext i6 %tmp_3 to i9" [cnn/dense_out.cpp:38]   --->   Operation 40 'zext' 'zext_ln38_3' <Predicate = (!icmp_ln36)> <Delay = 0.00>
+ST_3 : Operation 41 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln38 = add i9 %zext_ln38_3, %zext_ln38_2" [cnn/dense_out.cpp:38]   --->   Operation 41 'add' 'add_ln38' <Predicate = (!icmp_ln36)> <Delay = 0.00> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.89> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 42 [1/1] (3.69ns) (root node of TernaryAdder)   --->   "%add_ln38_1 = add i9 %add_ln38, %zext_ln36" [cnn/dense_out.cpp:38]   --->   Operation 42 'add' 'add_ln38_1' <Predicate = (!icmp_ln36)> <Delay = 3.69> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.89> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 43 [1/1] (0.00ns)   --->   "%zext_ln38_4 = zext i9 %add_ln38_1 to i64" [cnn/dense_out.cpp:38]   --->   Operation 43 'zext' 'zext_ln38_4' <Predicate = (!icmp_ln36)> <Delay = 0.00>
+ST_3 : Operation 44 [1/1] (0.00ns)   --->   "%dense_out_weights_ad = getelementptr [300 x float]* @dense_out_weights, i64 0, i64 %zext_ln38_4" [cnn/dense_out.cpp:38]   --->   Operation 44 'getelementptr' 'dense_out_weights_ad' <Predicate = (!icmp_ln36)> <Delay = 0.00>
+ST_3 : Operation 45 [2/2] (3.25ns)   --->   "%dense_out_weights_lo = load float* %dense_out_weights_ad, align 4" [cnn/dense_out.cpp:38]   --->   Operation 45 'load' 'dense_out_weights_lo' <Predicate = (!icmp_ln36)> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+ST_3 : Operation 46 [1/1] (0.00ns)   --->   "%dense_2_out_addr = getelementptr [30 x float]* @dense_2_out, i64 0, i64 %zext_ln38_1" [cnn/dense_out.cpp:38]   --->   Operation 46 'getelementptr' 'dense_2_out_addr' <Predicate = (!icmp_ln36)> <Delay = 0.00>
+ST_3 : Operation 47 [2/2] (2.32ns)   --->   "%dense_2_out_load = load float* %dense_2_out_addr, align 4" [cnn/dense_out.cpp:38]   --->   Operation 47 'load' 'dense_2_out_load' <Predicate = (!icmp_ln36)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+
+State 4 <SV = 3> <Delay = 15.6>
+ST_4 : Operation 48 [1/2] (3.25ns)   --->   "%dense_out_weights_lo = load float* %dense_out_weights_ad, align 4" [cnn/dense_out.cpp:38]   --->   Operation 48 'load' 'dense_out_weights_lo' <Predicate = (!icmp_ln36)> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+ST_4 : Operation 49 [1/2] (2.32ns)   --->   "%dense_2_out_load = load float* %dense_2_out_addr, align 4" [cnn/dense_out.cpp:38]   --->   Operation 49 'load' 'dense_2_out_load' <Predicate = (!icmp_ln36)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_4 : Operation 50 [2/2] (12.3ns)   --->   "%tmp_4 = fmul float %dense_out_weights_lo, %dense_2_out_load" [cnn/dense_out.cpp:38]   --->   Operation 50 'fmul' 'tmp_4' <Predicate = (!icmp_ln36)> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 5 <SV = 4> <Delay = 12.3>
+ST_5 : Operation 51 [1/2] (12.3ns)   --->   "%tmp_4 = fmul float %dense_out_weights_lo, %dense_2_out_load" [cnn/dense_out.cpp:38]   --->   Operation 51 'fmul' 'tmp_4' <Predicate = (!icmp_ln36)> <Delay = 12.3> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 6 <SV = 5> <Delay = 10.5>
+ST_6 : Operation 52 [4/4] (10.5ns)   --->   "%w_sum = fadd float %w_sum_0, %tmp_4" [cnn/dense_out.cpp:38]   --->   Operation 52 'fadd' 'w_sum' <Predicate = (!icmp_ln36)> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 7 <SV = 6> <Delay = 10.5>
+ST_7 : Operation 53 [3/4] (10.5ns)   --->   "%w_sum = fadd float %w_sum_0, %tmp_4" [cnn/dense_out.cpp:38]   --->   Operation 53 'fadd' 'w_sum' <Predicate = (!icmp_ln36)> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 8 <SV = 7> <Delay = 10.5>
+ST_8 : Operation 54 [2/4] (10.5ns)   --->   "%w_sum = fadd float %w_sum_0, %tmp_4" [cnn/dense_out.cpp:38]   --->   Operation 54 'fadd' 'w_sum' <Predicate = (!icmp_ln36)> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 9 <SV = 8> <Delay = 10.5>
+ST_9 : Operation 55 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([10 x i8]* @p_str438) nounwind" [cnn/dense_out.cpp:37]   --->   Operation 55 'specloopname' <Predicate = (!icmp_ln36)> <Delay = 0.00>
+ST_9 : Operation 56 [1/1] (0.00ns)   --->   "%tmp_2 = call i32 (...)* @_ssdm_op_SpecRegionBegin([10 x i8]* @p_str438)" [cnn/dense_out.cpp:37]   --->   Operation 56 'specregionbegin' 'tmp_2' <Predicate = (!icmp_ln36)> <Delay = 0.00>
+ST_9 : Operation 57 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str337) nounwind" [cnn/dense_out.cpp:38]   --->   Operation 57 'specpipeline' <Predicate = (!icmp_ln36)> <Delay = 0.00>
+ST_9 : Operation 58 [1/4] (10.5ns)   --->   "%w_sum = fadd float %w_sum_0, %tmp_4" [cnn/dense_out.cpp:38]   --->   Operation 58 'fadd' 'w_sum' <Predicate = (!icmp_ln36)> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 59 [1/1] (0.00ns)   --->   "%empty_14 = call i32 (...)* @_ssdm_op_SpecRegionEnd([10 x i8]* @p_str438, i32 %tmp_2)" [cnn/dense_out.cpp:40]   --->   Operation 59 'specregionend' 'empty_14' <Predicate = (!icmp_ln36)> <Delay = 0.00>
+ST_9 : Operation 60 [1/1] (0.00ns)   --->   "br label %2" [cnn/dense_out.cpp:36]   --->   Operation 60 'br' <Predicate = (!icmp_ln36)> <Delay = 0.00>
+
+State 10 <SV = 3> <Delay = 3.25>
+ST_10 : Operation 61 [1/1] (0.00ns)   --->   "%dense_out_bias_addr = getelementptr inbounds [10 x float]* @dense_out_bias, i64 0, i64 %zext_ln38" [cnn/dense_out.cpp:41]   --->   Operation 61 'getelementptr' 'dense_out_bias_addr' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 62 [2/2] (3.25ns)   --->   "%dense_out_bias_load = load float* %dense_out_bias_addr, align 4" [cnn/dense_out.cpp:41]   --->   Operation 62 'load' 'dense_out_bias_load' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+
+State 11 <SV = 4> <Delay = 13.7>
+ST_11 : Operation 63 [1/2] (3.25ns)   --->   "%dense_out_bias_load = load float* %dense_out_bias_addr, align 4" [cnn/dense_out.cpp:41]   --->   Operation 63 'load' 'dense_out_bias_load' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 10> <ROM>
+ST_11 : Operation 64 [4/4] (10.5ns)   --->   "%tmp = fadd float %w_sum_0, %dense_out_bias_load" [cnn/dense_out.cpp:41]   --->   Operation 64 'fadd' 'tmp' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 12 <SV = 5> <Delay = 10.5>
+ST_12 : Operation 65 [3/4] (10.5ns)   --->   "%tmp = fadd float %w_sum_0, %dense_out_bias_load" [cnn/dense_out.cpp:41]   --->   Operation 65 'fadd' 'tmp' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 13 <SV = 6> <Delay = 10.5>
+ST_13 : Operation 66 [2/4] (10.5ns)   --->   "%tmp = fadd float %w_sum_0, %dense_out_bias_load" [cnn/dense_out.cpp:41]   --->   Operation 66 'fadd' 'tmp' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 14 <SV = 7> <Delay = 12.8>
+ST_14 : Operation 67 [1/4] (10.5ns)   --->   "%tmp = fadd float %w_sum_0, %dense_out_bias_load" [cnn/dense_out.cpp:41]   --->   Operation 67 'fadd' 'tmp' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 68 [1/1] (0.00ns)   --->   "%dense_array_addr = getelementptr inbounds [10 x float]* %dense_array, i64 0, i64 %zext_ln38" [cnn/dense_out.cpp:41]   --->   Operation 68 'getelementptr' 'dense_array_addr' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 69 [1/1] (2.32ns)   --->   "store float %tmp, float* %dense_array_addr, align 4" [cnn/dense_out.cpp:41]   --->   Operation 69 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_14 : Operation 70 [1/1] (0.00ns)   --->   "%empty_15 = call i32 (...)* @_ssdm_op_SpecRegionEnd([11 x i8]* @p_str236, i32 %tmp_s)" [cnn/dense_out.cpp:42]   --->   Operation 70 'specregionend' 'empty_15' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 71 [1/1] (0.00ns)   --->   "br label %1" [cnn/dense_out.cpp:31]   --->   Operation 71 'br' <Predicate = true> <Delay = 0.00>
+
+State 15 <SV = 2> <Delay = 0.00>
+ST_15 : Operation 72 [1/2] (0.00ns)   --->   "call fastcc void @soft_max([10 x float]* %dense_array, [10 x float]* %prediction)" [cnn/dense_out.cpp:44]   --->   Operation 72 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_15 : Operation 73 [1/1] (0.00ns)   --->   "ret void" [cnn/dense_out.cpp:45]   --->   Operation 73 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+STG Binding: 
+---------------- STG Properties BEGIN ----------------
+- Is combinational: 0
+- Is one-state seq: 0
+- Is datapath-only: 0
+- Is pipelined: 0
+- Is top level: 0
+Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
+Port [ prediction]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=1; pingpong=0; private_global=0; MemPort=[03]; IO mode=bram:ce=0
+Port [ dense_out_weights]:  wired=0; compound=1; hidden=1; nouse=0; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=1; linkage=7; visibility=0; MemPort=[1]; IO mode=ap_memory:ce=0
+Port [ dense_2_out]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[13]; IO mode=ap_memory:ce=0
+Port [ dense_out_bias]:  wired=0; compound=1; hidden=1; nouse=0; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=1; linkage=7; visibility=0; MemPort=[1]; IO mode=ap_memory:ce=0
+---------------- STG Properties END ------------------
+
+---------------- Datapath Model BEGIN ----------------
+
+<LifeTime>
+<method=bitvector/>
+specinterface_ln0    (specinterface    ) [ 0000000000000000]
+dense_array          (alloca           ) [ 0011111111111111]
+br_ln31              (br               ) [ 0111111111111110]
+d_0                  (phi              ) [ 0010000000000000]
+icmp_ln31            (icmp             ) [ 0011111111111110]
+empty                (speclooptripcount) [ 0000000000000000]
+d                    (add              ) [ 0111111111111110]
+br_ln31              (br               ) [ 0000000000000000]
+specloopname_ln32    (specloopname     ) [ 0000000000000000]
+tmp_s                (specregionbegin  ) [ 0001111111111110]
+zext_ln38            (zext             ) [ 0001111111111110]
+zext_ln36            (zext             ) [ 0001111111000000]
+br_ln36              (br               ) [ 0011111111111110]
+w_sum_0              (phi              ) [ 0001111111111110]
+f_0                  (phi              ) [ 0001000000000000]
+icmp_ln36            (icmp             ) [ 0011111111111110]
+empty_13             (speclooptripcount) [ 0000000000000000]
+f                    (add              ) [ 0011111111111110]
+br_ln36              (br               ) [ 0000000000000000]
+zext_ln38_1          (zext             ) [ 0000000000000000]
+tmp_1                (bitconcatenate   ) [ 0000000000000000]
+zext_ln38_2          (zext             ) [ 0000000000000000]
+tmp_3                (bitconcatenate   ) [ 0000000000000000]
+zext_ln38_3          (zext             ) [ 0000000000000000]
+add_ln38             (add              ) [ 0000000000000000]
+add_ln38_1           (add              ) [ 0000000000000000]
+zext_ln38_4          (zext             ) [ 0000000000000000]
+dense_out_weights_ad (getelementptr    ) [ 0000100000000000]
+dense_2_out_addr     (getelementptr    ) [ 0000100000000000]
+dense_out_weights_lo (load             ) [ 0000010000000000]
+dense_2_out_load     (load             ) [ 0000010000000000]
+tmp_4                (fmul             ) [ 0001111111000000]
+specloopname_ln37    (specloopname     ) [ 0000000000000000]
+tmp_2                (specregionbegin  ) [ 0000000000000000]
+specpipeline_ln38    (specpipeline     ) [ 0000000000000000]
+w_sum                (fadd             ) [ 0011111111111110]
+empty_14             (specregionend    ) [ 0000000000000000]
+br_ln36              (br               ) [ 0011111111111110]
+dense_out_bias_addr  (getelementptr    ) [ 0000000000010000]
+dense_out_bias_load  (load             ) [ 0000000000001110]
+tmp                  (fadd             ) [ 0000000000000000]
+dense_array_addr     (getelementptr    ) [ 0000000000000000]
+store_ln41           (store            ) [ 0000000000000000]
+empty_15             (specregionend    ) [ 0000000000000000]
+br_ln31              (br               ) [ 0111111111111110]
+call_ln44            (call             ) [ 0000000000000000]
+ret_ln45             (ret              ) [ 0000000000000000]
+</LifeTime>
+
+<model>
+
+<comp_list>
+<comp id="0" class="1000" name="prediction">
+<pin_list>
+<pin id="1" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="prediction"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="2" class="1000" name="dense_out_weights">
+<pin_list>
+<pin id="3" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="dense_out_weights"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="4" class="1000" name="dense_2_out">
+<pin_list>
+<pin id="5" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="dense_2_out"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="6" class="1000" name="dense_out_bias">
+<pin_list>
+<pin id="7" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="dense_out_bias"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="8" class="1001" name="const_8">
+<pin_list>
+<pin id="9" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecInterface"/></StgValue>
+</bind>
+</comp>
+
+<comp id="10" class="1001" name="const_10">
+<pin_list>
+<pin id="11" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="12" class="1001" name="const_12">
+<pin_list>
+<pin id="13" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="14" class="1001" name="const_14">
+<pin_list>
+<pin id="15" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="16" class="1001" name="const_16">
+<pin_list>
+<pin id="17" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="18" class="1001" name="const_18">
+<pin_list>
+<pin id="19" dir="1" index="0" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="20" class="1001" name="const_20">
+<pin_list>
+<pin id="21" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="22" class="1001" name="const_22">
+<pin_list>
+<pin id="23" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecLoopTripCount"/></StgValue>
+</bind>
+</comp>
+
+<comp id="24" class="1001" name="const_24">
+<pin_list>
+<pin id="25" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="26" class="1001" name="const_26">
+<pin_list>
+<pin id="27" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="28" class="1001" name="const_28">
+<pin_list>
+<pin id="29" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecLoopName"/></StgValue>
+</bind>
+</comp>
+
+<comp id="30" class="1001" name="const_30">
+<pin_list>
+<pin id="31" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str236"/></StgValue>
+</bind>
+</comp>
+
+<comp id="32" class="1001" name="const_32">
+<pin_list>
+<pin id="33" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecRegionBegin"/></StgValue>
+</bind>
+</comp>
+
+<comp id="34" class="1001" name="const_34">
+<pin_list>
+<pin id="35" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="soft_max"/></StgValue>
+</bind>
+</comp>
+
+<comp id="36" class="1001" name="const_36">
+<pin_list>
+<pin id="37" dir="1" index="0" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="38" class="1001" name="const_38">
+<pin_list>
+<pin id="39" dir="1" index="0" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="40" class="1001" name="const_40">
+<pin_list>
+<pin id="41" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="42" class="1001" name="const_42">
+<pin_list>
+<pin id="43" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="44" class="1001" name="const_44">
+<pin_list>
+<pin id="45" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="46" class="1001" name="const_46">
+<pin_list>
+<pin id="47" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_BitConcatenate.i8.i5.i3"/></StgValue>
+</bind>
+</comp>
+
+<comp id="48" class="1001" name="const_48">
+<pin_list>
+<pin id="49" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="50" class="1001" name="const_50">
+<pin_list>
+<pin id="51" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_BitConcatenate.i6.i5.i1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="52" class="1001" name="const_52">
+<pin_list>
+<pin id="53" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="54" class="1001" name="const_54">
+<pin_list>
+<pin id="55" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="56" class="1001" name="const_56">
+<pin_list>
+<pin id="57" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str438"/></StgValue>
+</bind>
+</comp>
+
+<comp id="58" class="1001" name="const_58">
+<pin_list>
+<pin id="59" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecPipeline"/></StgValue>
+</bind>
+</comp>
+
+<comp id="60" class="1001" name="const_60">
+<pin_list>
+<pin id="61" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="62" class="1001" name="const_62">
+<pin_list>
+<pin id="63" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="64" class="1001" name="const_64">
+<pin_list>
+<pin id="65" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str337"/></StgValue>
+</bind>
+</comp>
+
+<comp id="66" class="1001" name="const_66">
+<pin_list>
+<pin id="67" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecRegionEnd"/></StgValue>
+</bind>
+</comp>
+
+<comp id="68" class="1004" name="dense_array_alloca_fu_68">
+<pin_list>
+<pin id="69" dir="0" index="0" bw="1" slack="0"/>
+<pin id="70" dir="1" index="1" bw="32" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="dense_array/1 "/>
+</bind>
+</comp>
+
+<comp id="72" class="1004" name="dense_out_weights_ad_gep_fu_72">
+<pin_list>
+<pin id="73" dir="0" index="0" bw="32" slack="0"/>
+<pin id="74" dir="0" index="1" bw="1" slack="0"/>
+<pin id="75" dir="0" index="2" bw="9" slack="0"/>
+<pin id="76" dir="1" index="3" bw="9" slack="0"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="dense_out_weights_ad/3 "/>
+</bind>
+</comp>
+
+<comp id="79" class="1004" name="grp_access_fu_79">
+<pin_list>
+<pin id="80" dir="0" index="0" bw="9" slack="0"/>
+<pin id="81" dir="0" index="1" bw="32" slack="2147483647"/>
+<pin id="82" dir="0" index="2" bw="0" slack="2147483647"/>
+<pin id="83" dir="1" index="3" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="load(27) " fcode="load"/>
+<opset="dense_out_weights_lo/3 "/>
+</bind>
+</comp>
+
+<comp id="85" class="1004" name="dense_2_out_addr_gep_fu_85">
+<pin_list>
+<pin id="86" dir="0" index="0" bw="32" slack="0"/>
+<pin id="87" dir="0" index="1" bw="1" slack="0"/>
+<pin id="88" dir="0" index="2" bw="5" slack="0"/>
+<pin id="89" dir="1" index="3" bw="5" slack="0"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="dense_2_out_addr/3 "/>
+</bind>
+</comp>
+
+<comp id="92" class="1004" name="grp_access_fu_92">
+<pin_list>
+<pin id="93" dir="0" index="0" bw="5" slack="0"/>
+<pin id="94" dir="0" index="1" bw="32" slack="2147483647"/>
+<pin id="95" dir="0" index="2" bw="0" slack="2147483647"/>
+<pin id="96" dir="1" index="3" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="load(27) " fcode="load"/>
+<opset="dense_2_out_load/3 "/>
+</bind>
+</comp>
+
+<comp id="98" class="1004" name="dense_out_bias_addr_gep_fu_98">
+<pin_list>
+<pin id="99" dir="0" index="0" bw="32" slack="0"/>
+<pin id="100" dir="0" index="1" bw="1" slack="0"/>
+<pin id="101" dir="0" index="2" bw="4" slack="2"/>
+<pin id="102" dir="1" index="3" bw="4" slack="0"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="dense_out_bias_addr/10 "/>
+</bind>
+</comp>
+
+<comp id="105" class="1004" name="grp_access_fu_105">
+<pin_list>
+<pin id="106" dir="0" index="0" bw="4" slack="0"/>
+<pin id="107" dir="0" index="1" bw="32" slack="2147483647"/>
+<pin id="108" dir="0" index="2" bw="0" slack="2147483647"/>
+<pin id="109" dir="1" index="3" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="load(27) " fcode="load"/>
+<opset="dense_out_bias_load/10 "/>
+</bind>
+</comp>
+
+<comp id="111" class="1004" name="dense_array_addr_gep_fu_111">
+<pin_list>
+<pin id="112" dir="0" index="0" bw="32" slack="2147483647"/>
+<pin id="113" dir="0" index="1" bw="1" slack="0"/>
+<pin id="114" dir="0" index="2" bw="4" slack="6"/>
+<pin id="115" dir="1" index="3" bw="4" slack="0"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="dense_array_addr/14 "/>
+</bind>
+</comp>
+
+<comp id="117" class="1004" name="store_ln41_access_fu_117">
+<pin_list>
+<pin id="118" dir="0" index="0" bw="4" slack="0"/>
+<pin id="119" dir="0" index="1" bw="32" slack="0"/>
+<pin id="120" dir="0" index="2" bw="0" slack="2147483647"/>
+<pin id="121" dir="1" index="3" bw="32" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="store(28) " fcode="store"/>
+<opset="store_ln41/14 "/>
+</bind>
+</comp>
+
+<comp id="123" class="1005" name="d_0_reg_123">
+<pin_list>
+<pin id="124" dir="0" index="0" bw="4" slack="1"/>
+<pin id="125" dir="1" index="1" bw="4" slack="1"/>
+</pin_list>
+<bind>
+<opset="d_0 (phireg) "/>
+</bind>
+</comp>
+
+<comp id="127" class="1004" name="d_0_phi_fu_127">
+<pin_list>
+<pin id="128" dir="0" index="0" bw="1" slack="1"/>
+<pin id="129" dir="0" index="1" bw="0" slack="2147483647"/>
+<pin id="130" dir="0" index="2" bw="4" slack="0"/>
+<pin id="131" dir="0" index="3" bw="0" slack="2147483647"/>
+<pin id="132" dir="1" index="4" bw="4" slack="0"/>
+</pin_list>
+<bind>
+<opcode="phi(47) " fcode="phi"/>
+<opset="d_0/2 "/>
+</bind>
+</comp>
+
+<comp id="134" class="1005" name="w_sum_0_reg_134">
+<pin_list>
+<pin id="135" dir="0" index="0" bw="32" slack="1"/>
+<pin id="136" dir="1" index="1" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opset="w_sum_0 (phireg) "/>
+</bind>
+</comp>
+
+<comp id="138" class="1004" name="w_sum_0_phi_fu_138">
+<pin_list>
+<pin id="139" dir="0" index="0" bw="32" slack="1"/>
+<pin id="140" dir="0" index="1" bw="0" slack="2147483647"/>
+<pin id="141" dir="0" index="2" bw="32" slack="1"/>
+<pin id="142" dir="0" index="3" bw="0" slack="2147483647"/>
+<pin id="143" dir="1" index="4" bw="32" slack="2"/>
+</pin_list>
+<bind>
+<opcode="phi(47) " fcode="phi"/>
+<opset="w_sum_0/3 "/>
+</bind>
+</comp>
+
+<comp id="146" class="1005" name="f_0_reg_146">
+<pin_list>
+<pin id="147" dir="0" index="0" bw="5" slack="1"/>
+<pin id="148" dir="1" index="1" bw="5" slack="1"/>
+</pin_list>
+<bind>
+<opset="f_0 (phireg) "/>
+</bind>
+</comp>
+
+<comp id="150" class="1004" name="f_0_phi_fu_150">
+<pin_list>
+<pin id="151" dir="0" index="0" bw="1" slack="1"/>
+<pin id="152" dir="0" index="1" bw="0" slack="2147483647"/>
+<pin id="153" dir="0" index="2" bw="5" slack="0"/>
+<pin id="154" dir="0" index="3" bw="0" slack="2147483647"/>
+<pin id="155" dir="1" index="4" bw="5" slack="0"/>
+</pin_list>
+<bind>
+<opcode="phi(47) " fcode="phi"/>
+<opset="f_0/3 "/>
+</bind>
+</comp>
+
+<comp id="157" class="1004" name="grp_soft_max_fu_157">
+<pin_list>
+<pin id="158" dir="0" index="0" bw="0" slack="0"/>
+<pin id="159" dir="0" index="1" bw="32" slack="2147483647"/>
+<pin id="160" dir="0" index="2" bw="32" slack="0"/>
+<pin id="161" dir="1" index="3" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="call_ln44/2 "/>
+</bind>
+</comp>
+
+<comp id="164" class="1004" name="grp_fu_164">
+<pin_list>
+<pin id="165" dir="0" index="0" bw="32" slack="2"/>
+<pin id="166" dir="0" index="1" bw="32" slack="0"/>
+<pin id="167" dir="1" index="2" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="fadd(9) " fcode="fadd"/>
+<opset="w_sum/6 tmp/11 "/>
+</bind>
+</comp>
+
+<comp id="171" class="1004" name="grp_fu_171">
+<pin_list>
+<pin id="172" dir="0" index="0" bw="32" slack="0"/>
+<pin id="173" dir="0" index="1" bw="32" slack="0"/>
+<pin id="174" dir="1" index="2" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opcode="fmul(13) " fcode="fmul"/>
+<opset="tmp_4/4 "/>
+</bind>
+</comp>
+
+<comp id="177" class="1004" name="icmp_ln31_fu_177">
+<pin_list>
+<pin id="178" dir="0" index="0" bw="4" slack="0"/>
+<pin id="179" dir="0" index="1" bw="4" slack="0"/>
+<pin id="180" dir="1" index="2" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="icmp_ln31/2 "/>
+</bind>
+</comp>
+
+<comp id="183" class="1004" name="d_fu_183">
+<pin_list>
+<pin id="184" dir="0" index="0" bw="4" slack="0"/>
+<pin id="185" dir="0" index="1" bw="1" slack="0"/>
+<pin id="186" dir="1" index="2" bw="4" slack="0"/>
+</pin_list>
+<bind>
+<opcode="add(8) " fcode="add"/>
+<opset="d/2 "/>
+</bind>
+</comp>
+
+<comp id="189" class="1004" name="zext_ln38_fu_189">
+<pin_list>
+<pin id="190" dir="0" index="0" bw="4" slack="0"/>
+<pin id="191" dir="1" index="1" bw="64" slack="2"/>
+</pin_list>
+<bind>
+<opcode="zext(34) " fcode="zext"/>
+<opset="zext_ln38/2 "/>
+</bind>
+</comp>
+
+<comp id="193" class="1004" name="zext_ln36_fu_193">
+<pin_list>
+<pin id="194" dir="0" index="0" bw="4" slack="0"/>
+<pin id="195" dir="1" index="1" bw="9" slack="1"/>
+</pin_list>
+<bind>
+<opcode="zext(34) " fcode="zext"/>
+<opset="zext_ln36/2 "/>
+</bind>
+</comp>
+
+<comp id="197" class="1004" name="icmp_ln36_fu_197">
+<pin_list>
+<pin id="198" dir="0" index="0" bw="5" slack="0"/>
+<pin id="199" dir="0" index="1" bw="5" slack="0"/>
+<pin id="200" dir="1" index="2" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="icmp_ln36/3 "/>
+</bind>
+</comp>
+
+<comp id="203" class="1004" name="f_fu_203">
+<pin_list>
+<pin id="204" dir="0" index="0" bw="5" slack="0"/>
+<pin id="205" dir="0" index="1" bw="1" slack="0"/>
+<pin id="206" dir="1" index="2" bw="5" slack="0"/>
+</pin_list>
+<bind>
+<opcode="add(8) " fcode="add"/>
+<opset="f/3 "/>
+</bind>
+</comp>
+
+<comp id="209" class="1004" name="zext_ln38_1_fu_209">
+<pin_list>
+<pin id="210" dir="0" index="0" bw="5" slack="0"/>
+<pin id="211" dir="1" index="1" bw="64" slack="0"/>
+</pin_list>
+<bind>
+<opcode="zext(34) " fcode="zext"/>
+<opset="zext_ln38_1/3 "/>
+</bind>
+</comp>
+
+<comp id="214" class="1004" name="tmp_1_fu_214">
+<pin_list>
+<pin id="215" dir="0" index="0" bw="8" slack="0"/>
+<pin id="216" dir="0" index="1" bw="5" slack="0"/>
+<pin id="217" dir="0" index="2" bw="1" slack="0"/>
+<pin id="218" dir="1" index="3" bw="8" slack="0"/>
+</pin_list>
+<bind>
+<opcode="bitconcatenate(1004) " fcode="bitconcatenate"/>
+<opset="tmp_1/3 "/>
+</bind>
+</comp>
+
+<comp id="222" class="1004" name="zext_ln38_2_fu_222">
+<pin_list>
+<pin id="223" dir="0" index="0" bw="8" slack="0"/>
+<pin id="224" dir="1" index="1" bw="9" slack="0"/>
+</pin_list>
+<bind>
+<opcode="zext(34) " fcode="zext"/>
+<opset="zext_ln38_2/3 "/>
+</bind>
+</comp>
+
+<comp id="226" class="1004" name="tmp_3_fu_226">
+<pin_list>
+<pin id="227" dir="0" index="0" bw="6" slack="0"/>
+<pin id="228" dir="0" index="1" bw="5" slack="0"/>
+<pin id="229" dir="0" index="2" bw="1" slack="0"/>
+<pin id="230" dir="1" index="3" bw="6" slack="0"/>
+</pin_list>
+<bind>
+<opcode="bitconcatenate(1004) " fcode="bitconcatenate"/>
+<opset="tmp_3/3 "/>
+</bind>
+</comp>
+
+<comp id="234" class="1004" name="zext_ln38_3_fu_234">
+<pin_list>
+<pin id="235" dir="0" index="0" bw="6" slack="0"/>
+<pin id="236" dir="1" index="1" bw="9" slack="0"/>
+</pin_list>
+<bind>
+<opcode="zext(34) " fcode="zext"/>
+<opset="zext_ln38_3/3 "/>
+</bind>
+</comp>
+
+<comp id="238" class="1004" name="add_ln38_fu_238">
+<pin_list>
+<pin id="239" dir="0" index="0" bw="6" slack="0"/>
+<pin id="240" dir="0" index="1" bw="8" slack="0"/>
+<pin id="241" dir="1" index="2" bw="9" slack="0"/>
+</pin_list>
+<bind>
+<opcode="add(8) " fcode="add"/>
+<opset="add_ln38/3 "/>
+</bind>
+</comp>
+
+<comp id="244" class="1004" name="add_ln38_1_fu_244">
+<pin_list>
+<pin id="245" dir="0" index="0" bw="9" slack="0"/>
+<pin id="246" dir="0" index="1" bw="4" slack="1"/>
+<pin id="247" dir="1" index="2" bw="9" slack="0"/>
+</pin_list>
+<bind>
+<opcode="add(8) " fcode="add"/>
+<opset="add_ln38_1/3 "/>
+</bind>
+</comp>
+
+<comp id="249" class="1004" name="zext_ln38_4_fu_249">
+<pin_list>
+<pin id="250" dir="0" index="0" bw="9" slack="0"/>
+<pin id="251" dir="1" index="1" bw="64" slack="0"/>
+</pin_list>
+<bind>
+<opcode="zext(34) " fcode="zext"/>
+<opset="zext_ln38_4/3 "/>
+</bind>
+</comp>
+
+<comp id="254" class="1005" name="icmp_ln31_reg_254">
+<pin_list>
+<pin id="255" dir="0" index="0" bw="1" slack="1"/>
+<pin id="256" dir="1" index="1" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opset="icmp_ln31 "/>
+</bind>
+</comp>
+
+<comp id="258" class="1005" name="d_reg_258">
+<pin_list>
+<pin id="259" dir="0" index="0" bw="4" slack="0"/>
+<pin id="260" dir="1" index="1" bw="4" slack="0"/>
+</pin_list>
+<bind>
+<opset="d "/>
+</bind>
+</comp>
+
+<comp id="263" class="1005" name="zext_ln38_reg_263">
+<pin_list>
+<pin id="264" dir="0" index="0" bw="64" slack="2"/>
+<pin id="265" dir="1" index="1" bw="64" slack="2"/>
+</pin_list>
+<bind>
+<opset="zext_ln38 "/>
+</bind>
+</comp>
+
+<comp id="269" class="1005" name="zext_ln36_reg_269">
+<pin_list>
+<pin id="270" dir="0" index="0" bw="9" slack="1"/>
+<pin id="271" dir="1" index="1" bw="9" slack="1"/>
+</pin_list>
+<bind>
+<opset="zext_ln36 "/>
+</bind>
+</comp>
+
+<comp id="274" class="1005" name="icmp_ln36_reg_274">
+<pin_list>
+<pin id="275" dir="0" index="0" bw="1" slack="1"/>
+<pin id="276" dir="1" index="1" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opset="icmp_ln36 "/>
+</bind>
+</comp>
+
+<comp id="278" class="1005" name="f_reg_278">
+<pin_list>
+<pin id="279" dir="0" index="0" bw="5" slack="0"/>
+<pin id="280" dir="1" index="1" bw="5" slack="0"/>
+</pin_list>
+<bind>
+<opset="f "/>
+</bind>
+</comp>
+
+<comp id="283" class="1005" name="dense_out_weights_ad_reg_283">
+<pin_list>
+<pin id="284" dir="0" index="0" bw="9" slack="1"/>
+<pin id="285" dir="1" index="1" bw="9" slack="1"/>
+</pin_list>
+<bind>
+<opset="dense_out_weights_ad "/>
+</bind>
+</comp>
+
+<comp id="288" class="1005" name="dense_2_out_addr_reg_288">
+<pin_list>
+<pin id="289" dir="0" index="0" bw="5" slack="1"/>
+<pin id="290" dir="1" index="1" bw="5" slack="1"/>
+</pin_list>
+<bind>
+<opset="dense_2_out_addr "/>
+</bind>
+</comp>
+
+<comp id="293" class="1005" name="dense_out_weights_lo_reg_293">
+<pin_list>
+<pin id="294" dir="0" index="0" bw="32" slack="1"/>
+<pin id="295" dir="1" index="1" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opset="dense_out_weights_lo "/>
+</bind>
+</comp>
+
+<comp id="298" class="1005" name="dense_2_out_load_reg_298">
+<pin_list>
+<pin id="299" dir="0" index="0" bw="32" slack="1"/>
+<pin id="300" dir="1" index="1" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opset="dense_2_out_load "/>
+</bind>
+</comp>
+
+<comp id="303" class="1005" name="tmp_4_reg_303">
+<pin_list>
+<pin id="304" dir="0" index="0" bw="32" slack="1"/>
+<pin id="305" dir="1" index="1" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opset="tmp_4 "/>
+</bind>
+</comp>
+
+<comp id="308" class="1005" name="w_sum_reg_308">
+<pin_list>
+<pin id="309" dir="0" index="0" bw="32" slack="1"/>
+<pin id="310" dir="1" index="1" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opset="w_sum "/>
+</bind>
+</comp>
+
+<comp id="313" class="1005" name="dense_out_bias_addr_reg_313">
+<pin_list>
+<pin id="314" dir="0" index="0" bw="4" slack="1"/>
+<pin id="315" dir="1" index="1" bw="4" slack="1"/>
+</pin_list>
+<bind>
+<opset="dense_out_bias_addr "/>
+</bind>
+</comp>
+
+<comp id="318" class="1005" name="dense_out_bias_load_reg_318">
+<pin_list>
+<pin id="319" dir="0" index="0" bw="32" slack="1"/>
+<pin id="320" dir="1" index="1" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opset="dense_out_bias_load "/>
+</bind>
+</comp>
+
+</comp_list>
+
+<net_list>
+<net id="71"><net_src comp="16" pin="0"/><net_sink comp="68" pin=0"/></net>
+
+<net id="77"><net_src comp="2" pin="0"/><net_sink comp="72" pin=0"/></net>
+
+<net id="78"><net_src comp="54" pin="0"/><net_sink comp="72" pin=1"/></net>
+
+<net id="84"><net_src comp="72" pin="3"/><net_sink comp="79" pin=0"/></net>
+
+<net id="90"><net_src comp="4" pin="0"/><net_sink comp="85" pin=0"/></net>
+
+<net id="91"><net_src comp="54" pin="0"/><net_sink comp="85" pin=1"/></net>
+
+<net id="97"><net_src comp="85" pin="3"/><net_sink comp="92" pin=0"/></net>
+
+<net id="103"><net_src comp="6" pin="0"/><net_sink comp="98" pin=0"/></net>
+
+<net id="104"><net_src comp="54" pin="0"/><net_sink comp="98" pin=1"/></net>
+
+<net id="110"><net_src comp="98" pin="3"/><net_sink comp="105" pin=0"/></net>
+
+<net id="116"><net_src comp="54" pin="0"/><net_sink comp="111" pin=1"/></net>
+
+<net id="122"><net_src comp="111" pin="3"/><net_sink comp="117" pin=0"/></net>
+
+<net id="126"><net_src comp="18" pin="0"/><net_sink comp="123" pin=0"/></net>
+
+<net id="133"><net_src comp="123" pin="1"/><net_sink comp="127" pin=0"/></net>
+
+<net id="137"><net_src comp="36" pin="0"/><net_sink comp="134" pin=0"/></net>
+
+<net id="144"><net_src comp="134" pin="1"/><net_sink comp="138" pin=0"/></net>
+
+<net id="145"><net_src comp="138" pin="4"/><net_sink comp="134" pin=0"/></net>
+
+<net id="149"><net_src comp="38" pin="0"/><net_sink comp="146" pin=0"/></net>
+
+<net id="156"><net_src comp="146" pin="1"/><net_sink comp="150" pin=0"/></net>
+
+<net id="162"><net_src comp="34" pin="0"/><net_sink comp="157" pin=0"/></net>
+
+<net id="163"><net_src comp="0" pin="0"/><net_sink comp="157" pin=2"/></net>
+
+<net id="168"><net_src comp="134" pin="1"/><net_sink comp="164" pin=0"/></net>
+
+<net id="169"><net_src comp="164" pin="2"/><net_sink comp="117" pin=1"/></net>
+
+<net id="170"><net_src comp="105" pin="3"/><net_sink comp="164" pin=1"/></net>
+
+<net id="175"><net_src comp="79" pin="3"/><net_sink comp="171" pin=0"/></net>
+
+<net id="176"><net_src comp="92" pin="3"/><net_sink comp="171" pin=1"/></net>
+
+<net id="181"><net_src comp="127" pin="4"/><net_sink comp="177" pin=0"/></net>
+
+<net id="182"><net_src comp="20" pin="0"/><net_sink comp="177" pin=1"/></net>
+
+<net id="187"><net_src comp="127" pin="4"/><net_sink comp="183" pin=0"/></net>
+
+<net id="188"><net_src comp="26" pin="0"/><net_sink comp="183" pin=1"/></net>
+
+<net id="192"><net_src comp="127" pin="4"/><net_sink comp="189" pin=0"/></net>
+
+<net id="196"><net_src comp="127" pin="4"/><net_sink comp="193" pin=0"/></net>
+
+<net id="201"><net_src comp="150" pin="4"/><net_sink comp="197" pin=0"/></net>
+
+<net id="202"><net_src comp="40" pin="0"/><net_sink comp="197" pin=1"/></net>
+
+<net id="207"><net_src comp="150" pin="4"/><net_sink comp="203" pin=0"/></net>
+
+<net id="208"><net_src comp="44" pin="0"/><net_sink comp="203" pin=1"/></net>
+
+<net id="212"><net_src comp="150" pin="4"/><net_sink comp="209" pin=0"/></net>
+
+<net id="213"><net_src comp="209" pin="1"/><net_sink comp="85" pin=2"/></net>
+
+<net id="219"><net_src comp="46" pin="0"/><net_sink comp="214" pin=0"/></net>
+
+<net id="220"><net_src comp="150" pin="4"/><net_sink comp="214" pin=1"/></net>
+
+<net id="221"><net_src comp="48" pin="0"/><net_sink comp="214" pin=2"/></net>
+
+<net id="225"><net_src comp="214" pin="3"/><net_sink comp="222" pin=0"/></net>
+
+<net id="231"><net_src comp="50" pin="0"/><net_sink comp="226" pin=0"/></net>
+
+<net id="232"><net_src comp="150" pin="4"/><net_sink comp="226" pin=1"/></net>
+
+<net id="233"><net_src comp="52" pin="0"/><net_sink comp="226" pin=2"/></net>
+
+<net id="237"><net_src comp="226" pin="3"/><net_sink comp="234" pin=0"/></net>
+
+<net id="242"><net_src comp="234" pin="1"/><net_sink comp="238" pin=0"/></net>
+
+<net id="243"><net_src comp="222" pin="1"/><net_sink comp="238" pin=1"/></net>
+
+<net id="248"><net_src comp="238" pin="2"/><net_sink comp="244" pin=0"/></net>
+
+<net id="252"><net_src comp="244" pin="2"/><net_sink comp="249" pin=0"/></net>
+
+<net id="253"><net_src comp="249" pin="1"/><net_sink comp="72" pin=2"/></net>
+
+<net id="257"><net_src comp="177" pin="2"/><net_sink comp="254" pin=0"/></net>
+
+<net id="261"><net_src comp="183" pin="2"/><net_sink comp="258" pin=0"/></net>
+
+<net id="262"><net_src comp="258" pin="1"/><net_sink comp="127" pin=2"/></net>
+
+<net id="266"><net_src comp="189" pin="1"/><net_sink comp="263" pin=0"/></net>
+
+<net id="267"><net_src comp="263" pin="1"/><net_sink comp="98" pin=2"/></net>
+
+<net id="268"><net_src comp="263" pin="1"/><net_sink comp="111" pin=2"/></net>
+
+<net id="272"><net_src comp="193" pin="1"/><net_sink comp="269" pin=0"/></net>
+
+<net id="273"><net_src comp="269" pin="1"/><net_sink comp="244" pin=1"/></net>
+
+<net id="277"><net_src comp="197" pin="2"/><net_sink comp="274" pin=0"/></net>
+
+<net id="281"><net_src comp="203" pin="2"/><net_sink comp="278" pin=0"/></net>
+
+<net id="282"><net_src comp="278" pin="1"/><net_sink comp="150" pin=2"/></net>
+
+<net id="286"><net_src comp="72" pin="3"/><net_sink comp="283" pin=0"/></net>
+
+<net id="287"><net_src comp="283" pin="1"/><net_sink comp="79" pin=0"/></net>
+
+<net id="291"><net_src comp="85" pin="3"/><net_sink comp="288" pin=0"/></net>
+
+<net id="292"><net_src comp="288" pin="1"/><net_sink comp="92" pin=0"/></net>
+
+<net id="296"><net_src comp="79" pin="3"/><net_sink comp="293" pin=0"/></net>
+
+<net id="297"><net_src comp="293" pin="1"/><net_sink comp="171" pin=0"/></net>
+
+<net id="301"><net_src comp="92" pin="3"/><net_sink comp="298" pin=0"/></net>
+
+<net id="302"><net_src comp="298" pin="1"/><net_sink comp="171" pin=1"/></net>
+
+<net id="306"><net_src comp="171" pin="2"/><net_sink comp="303" pin=0"/></net>
+
+<net id="307"><net_src comp="303" pin="1"/><net_sink comp="164" pin=1"/></net>
+
+<net id="311"><net_src comp="164" pin="2"/><net_sink comp="308" pin=0"/></net>
+
+<net id="312"><net_src comp="308" pin="1"/><net_sink comp="138" pin=2"/></net>
+
+<net id="316"><net_src comp="98" pin="3"/><net_sink comp="313" pin=0"/></net>
+
+<net id="317"><net_src comp="313" pin="1"/><net_sink comp="105" pin=0"/></net>
+
+<net id="321"><net_src comp="105" pin="3"/><net_sink comp="318" pin=0"/></net>
+
+<net id="322"><net_src comp="318" pin="1"/><net_sink comp="164" pin=1"/></net>
+
+</net_list>
+
+</model> 
+---------------- Datapath Model END ------------------
+
+* FSMD analyzer results:
+  - Output states:
+	Port: prediction | {2 15 }
+	Port: dense_out_weights | {}
+	Port: dense_2_out | {}
+	Port: dense_out_bias | {}
+ - Input state : 
+	Port: dense_out : prediction | {}
+	Port: dense_out : dense_out_weights | {3 4 }
+	Port: dense_out : dense_2_out | {3 4 }
+	Port: dense_out : dense_out_bias | {10 11 }
+  - Chain level:
+	State 1
+	State 2
+		icmp_ln31 : 1
+		d : 1
+		br_ln31 : 2
+		zext_ln38 : 1
+		zext_ln36 : 1
+	State 3
+		icmp_ln36 : 1
+		f : 1
+		br_ln36 : 2
+		zext_ln38_1 : 1
+		tmp_1 : 1
+		zext_ln38_2 : 2
+		tmp_3 : 1
+		zext_ln38_3 : 2
+		add_ln38 : 3
+		add_ln38_1 : 4
+		zext_ln38_4 : 5
+		dense_out_weights_ad : 6
+		dense_out_weights_lo : 7
+		dense_2_out_addr : 2
+		dense_2_out_load : 3
+	State 4
+		tmp_4 : 1
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+		empty_14 : 1
+	State 10
+		dense_out_bias_load : 1
+	State 11
+		tmp : 1
+	State 12
+	State 13
+	State 14
+		store_ln41 : 1
+	State 15
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+
+* Functional unit list:
+|----------|---------------------|---------|---------|---------|---------|
+| Operation|   Functional Unit   |  DSP48E |  Delay  |    FF   |   LUT   |
+|----------|---------------------|---------|---------|---------|---------|
+|   call   | grp_soft_max_fu_157 |    9    |  5.3985 |   1043  |   2364  |
+|----------|---------------------|---------|---------|---------|---------|
+|   fadd   |      grp_fu_164     |    2    |    0    |   227   |   403   |
+|----------|---------------------|---------|---------|---------|---------|
+|   fmul   |      grp_fu_171     |    3    |    0    |   128   |   320   |
+|----------|---------------------|---------|---------|---------|---------|
+|          |       d_fu_183      |    0    |    0    |    0    |    13   |
+|    add   |       f_fu_203      |    0    |    0    |    0    |    15   |
+|          |   add_ln38_fu_238   |    0    |    0    |    0    |    12   |
+|          |  add_ln38_1_fu_244  |    0    |    0    |    0    |    12   |
+|----------|---------------------|---------|---------|---------|---------|
+|   icmp   |   icmp_ln31_fu_177  |    0    |    0    |    0    |    9    |
+|          |   icmp_ln36_fu_197  |    0    |    0    |    0    |    11   |
+|----------|---------------------|---------|---------|---------|---------|
+|          |   zext_ln38_fu_189  |    0    |    0    |    0    |    0    |
+|          |   zext_ln36_fu_193  |    0    |    0    |    0    |    0    |
+|   zext   |  zext_ln38_1_fu_209 |    0    |    0    |    0    |    0    |
+|          |  zext_ln38_2_fu_222 |    0    |    0    |    0    |    0    |
+|          |  zext_ln38_3_fu_234 |    0    |    0    |    0    |    0    |
+|          |  zext_ln38_4_fu_249 |    0    |    0    |    0    |    0    |
+|----------|---------------------|---------|---------|---------|---------|
+|bitconcatenate|     tmp_1_fu_214    |    0    |    0    |    0    |    0    |
+|          |     tmp_3_fu_226    |    0    |    0    |    0    |    0    |
+|----------|---------------------|---------|---------|---------|---------|
+|   Total  |                     |    14   |  5.3985 |   1398  |   3159  |
+|----------|---------------------|---------|---------|---------|---------|
+
+Memories:
++-----------+--------+--------+--------+--------+
+|           |  BRAM  |   FF   |   LUT  |  URAM  |
++-----------+--------+--------+--------+--------+
+|dense_array|    0   |   64   |    5   |    0   |
++-----------+--------+--------+--------+--------+
+|   Total   |    0   |   64   |    5   |    0   |
++-----------+--------+--------+--------+--------+
+
+* Register list:
++----------------------------+--------+
+|                            |   FF   |
++----------------------------+--------+
+|         d_0_reg_123        |    4   |
+|          d_reg_258         |    4   |
+|  dense_2_out_addr_reg_288  |    5   |
+|  dense_2_out_load_reg_298  |   32   |
+| dense_out_bias_addr_reg_313|    4   |
+| dense_out_bias_load_reg_318|   32   |
+|dense_out_weights_ad_reg_283|    9   |
+|dense_out_weights_lo_reg_293|   32   |
+|         f_0_reg_146        |    5   |
+|          f_reg_278         |    5   |
+|      icmp_ln31_reg_254     |    1   |
+|      icmp_ln36_reg_274     |    1   |
+|        tmp_4_reg_303       |   32   |
+|       w_sum_0_reg_134      |   32   |
+|        w_sum_reg_308       |   32   |
+|      zext_ln36_reg_269     |    9   |
+|      zext_ln38_reg_263     |   64   |
++----------------------------+--------+
+|            Total           |   303  |
++----------------------------+--------+
+
+* Multiplexer (MUX) list: 
+|-------------------|------|------|------|--------||---------||---------|
+|        Comp       |  Pin | Size |  BW  | S x BW ||  Delay  ||   LUT   |
+|-------------------|------|------|------|--------||---------||---------|
+|  grp_access_fu_79 |  p0  |   2  |   9  |   18   ||    9    |
+|  grp_access_fu_92 |  p0  |   2  |   5  |   10   ||    9    |
+| grp_access_fu_105 |  p0  |   2  |   4  |    8   ||    9    |
+|  w_sum_0_reg_134  |  p0  |   2  |  32  |   64   ||    9    |
+|     grp_fu_164    |  p1  |   3  |  32  |   96   ||    15   |
+|     grp_fu_171    |  p0  |   2  |  32  |   64   ||    9    |
+|     grp_fu_171    |  p1  |   2  |  32  |   64   ||    9    |
+|-------------------|------|------|------|--------||---------||---------|
+|       Total       |      |      |      |   324  || 12.4287 ||    69   |
+|-------------------|------|------|------|--------||---------||---------|
+
+
+
+* Summary:
++-----------+--------+--------+--------+--------+--------+--------+
+|           |  BRAM  | DSP48E |  Delay |   FF   |   LUT  |  URAM  |
++-----------+--------+--------+--------+--------+--------+--------+
+|  Function |    -   |   14   |    5   |  1398  |  3159  |    -   |
+|   Memory  |    0   |    -   |    -   |   64   |    5   |    0   |
+|Multiplexer|    -   |    -   |   12   |    -   |   69   |    -   |
+|  Register |    -   |    -   |    -   |   303  |    -   |    -   |
++-----------+--------+--------+--------+--------+--------+--------+
+|   Total   |    0   |   14   |   17   |  1765  |  3233  |    0   |
++-----------+--------+--------+--------+--------+--------+--------+

@@ -40,15 +40,15 @@ set SCTraceFileName mytrace
 set SCTraceFileFormat vcd
 set SCTraceOption all
 set TargetInfo xc7z020:-clg400:-1
-set SourceFiles {sc {} c {../max_pool_2.cpp ../max_pool_1.cpp ../flat.cpp ../dense_out.cpp ../dense_2.cpp ../dense_1.cpp ../conv_2.cpp ../conv_1.cpp ../cnn.cpp}}
+set SourceFiles {sc {} c {../cnn.cpp ../conv_1.cpp ../conv_2.cpp ../dense_1.cpp ../dense_2.cpp ../dense_out.cpp ../flat.cpp ../max_pool_1.cpp ../max_pool_2.cpp}}
 set SourceFlags {sc {} c {{} {} {} {} {} {} {} {} {}}}
 set DirectiveFile C:/Users/chenq/MAG/code/FFF/HLS2019/cnn/solution1/solution1.directive
-set TBFiles {verilog {../main.cpp ../inputs.dat ../golden.dat} bc {../main.cpp ../inputs.dat ../golden.dat} vhdl {../main.cpp ../inputs.dat ../golden.dat} sc {../main.cpp ../inputs.dat ../golden.dat} cas {../main.cpp ../inputs.dat ../golden.dat} c {}}
+set TBFiles {verilog {../golden.dat ../inputs.dat ../labels.dat ../main.cpp} bc {../golden.dat ../inputs.dat ../labels.dat ../main.cpp} sc {../golden.dat ../inputs.dat ../labels.dat ../main.cpp} vhdl {../golden.dat ../inputs.dat ../labels.dat ../main.cpp} c {} cas {../golden.dat ../inputs.dat ../labels.dat ../main.cpp}}
 set SpecLanguage C
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
 set TVOutFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
-set TBTops {verilog {} bc {} vhdl {} sc {} cas {} c {}}
-set TBInstNames {verilog {} bc {} vhdl {} sc {} cas {} c {}}
+set TBTops {verilog {} bc {} sc {} vhdl {} c {} cas {}}
+set TBInstNames {verilog {} bc {} sc {} vhdl {} c {} cas {}}
 set XDCFiles {}
 set ExtraGlobalOptions {"area_timing" 1 "clock_gate" 1 "impl_flow" map "power_gate" 0}
 set TBTVFileNotFound {}

@@ -572,11 +572,11 @@ float dense_1_bias [50] = {-0.036613, 0.039719, -0.014816, -0.015874, -0.028786,
 void dense_1(float flat_array[(16 * (11 / 2) * (11 / 2))], float dense_1_out[50]){_ssdm_SpecArrayDimSize(flat_array, 400);_ssdm_SpecArrayDimSize(dense_1_out, 50);
 
  float sum = 0.0;
-
+ DENSE_LOOP:
  for (int i = 0; i < 50; ++i){
 
      sum = 0.0;
-
+     FLAT_LOOP:
   for (int j = 0; j < (16 * (11 / 2) * (11 / 2)); ++j){
    sum += flat_array[j] * dense_1_weights[j][i];
   }

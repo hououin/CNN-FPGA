@@ -1,0 +1,1461 @@
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'maxpool/max_pool.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 184.387 ; gain = 92.930
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 184.387 ; gain = 92.930
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 184.387 ; gain = 92.930
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 184.387 ; gain = 92.930
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Row_Loop' (maxpool/max_pool.cpp:14) in function 'max_pool' for pipelining.
+INFO: [XFORM 203-501] Unrolling loop 'Row_Loop' (maxpool/max_pool.cpp:14) in function 'max_pool' partially with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'Col_Loop' (maxpool/max_pool.cpp:17) in function 'max_pool' completely with a factor of 13.
+INFO: [HLS 200-489] Unrolling loop 'Pool_Row_Loop' (maxpool/max_pool.cpp:21) in function 'max_pool' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'Pool_Col_Loop' (maxpool/max_pool.cpp:24) in function 'max_pool' completely with a factor of 2.
+INFO: [XFORM 203-101] Partitioning array 'conv_out' (maxpool/max_pool.cpp:6) in dimension 2 with a cyclic factor 13.
+INFO: [XFORM 203-101] Partitioning array 'max_pool_out' (maxpool/max_pool.cpp:6) in dimension 2 completely.
+WARNING: [XFORM 203-561] Updating loop upper bound from 7 to 6 for loop 'Row_Loop' in function 'max_pool'.
+WARNING: [XFORM 203-561] Updating loop lower bound from 7 to 6 for loop 'Row_Loop' in function 'max_pool'.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 184.387 ; gain = 92.930
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Filter_Loop' (maxpool/max_pool.cpp:11:6) in function 'max_pool' : 
+
+the outer loop is not a perfect loop because there is nontrivial logic in the sub loop header.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 184.387 ; gain = 92.930
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'max_pool' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'max_pool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Row_Loop'.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('conv_out_1_load', maxpool/max_pool.cpp:29) on array 'conv_out_1' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'conv_out_1'.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('conv_out_0_load_1', maxpool/max_pool.cpp:29) on array 'conv_out_0' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'conv_out_0'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 4, Depth = 6.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 9.143 seconds; current allocated memory: 117.840 MB.
+INFO: [HLS 200-434] Only 1 loops out of a total 2 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.914 seconds; current allocated memory: 123.256 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'max_pool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_8' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_9' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_10' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_11' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_12' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_8' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_9' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_10' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_11' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_12' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'max_pool' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'max_pool_fcmp_32ns_32ns_1_2_1' to 'max_pool_fcmp_32nbkb' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'max_pool_fcmp_32nbkb': 26 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'max_pool'.
+INFO: [HLS 200-111]  Elapsed time: 1.762 seconds; current allocated memory: 133.879 MB.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:09 ; elapsed = 00:00:19 . Memory (MB): peak = 233.438 ; gain = 141.980
+INFO: [VHDL 208-304] Generating VHDL RTL for max_pool.
+INFO: [VLOG 209-307] Generating Verilog RTL for max_pool.
+INFO: [HLS 200-112] Total elapsed time: 19.209 seconds; peak allocated memory: 133.879 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'maxpool/max_pool.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 185.527 ; gain = 118.734
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 185.527 ; gain = 118.734
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 185.527 ; gain = 118.734
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 185.527 ; gain = 118.734
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Row_Loop' (maxpool/max_pool.cpp:14) in function 'max_pool' for pipelining.
+INFO: [XFORM 203-501] Unrolling loop 'Row_Loop' (maxpool/max_pool.cpp:14) in function 'max_pool' partially with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'Col_Loop' (maxpool/max_pool.cpp:17) in function 'max_pool' completely with a factor of 13.
+INFO: [HLS 200-489] Unrolling loop 'Pool_Row_Loop' (maxpool/max_pool.cpp:21) in function 'max_pool' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'Pool_Col_Loop' (maxpool/max_pool.cpp:24) in function 'max_pool' completely with a factor of 2.
+INFO: [XFORM 203-101] Partitioning array 'conv_out' (maxpool/max_pool.cpp:6) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'max_pool_out' (maxpool/max_pool.cpp:6) in dimension 2 completely.
+WARNING: [XFORM 203-561] Updating loop upper bound from 7 to 6 for loop 'Row_Loop' in function 'max_pool'.
+WARNING: [XFORM 203-561] Updating loop lower bound from 7 to 6 for loop 'Row_Loop' in function 'max_pool'.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 185.527 ; gain = 118.734
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Filter_Loop' (maxpool/max_pool.cpp:11:6) in function 'max_pool' : 
+
+the outer loop is not a perfect loop because there is nontrivial logic in the sub loop header.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:02 ; elapsed = 00:00:11 . Memory (MB): peak = 185.527 ; gain = 118.734
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'max_pool' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'max_pool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Row_Loop'.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('conv_out_0_load_1', maxpool/max_pool.cpp:29) on array 'conv_out_0' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'conv_out_0'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 2, Depth = 6.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 11.173 seconds; current allocated memory: 117.796 MB.
+INFO: [HLS 200-434] Only 1 loops out of a total 2 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.893 seconds; current allocated memory: 123.354 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'max_pool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_8' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_9' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_10' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_11' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_12' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_13' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_14' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_15' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_16' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_17' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_18' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_19' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_20' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_21' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_22' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_23' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_24' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_25' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_8' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_9' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_10' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_11' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_12' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'max_pool' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'max_pool_fcmp_32ns_32ns_1_2_1' to 'max_pool_fcmp_32nbkb' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'max_pool_fcmp_32nbkb': 52 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'max_pool'.
+INFO: [HLS 200-111]  Elapsed time: 2.038 seconds; current allocated memory: 134.432 MB.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:10 ; elapsed = 00:00:23 . Memory (MB): peak = 236.344 ; gain = 169.551
+INFO: [VHDL 208-304] Generating VHDL RTL for max_pool.
+INFO: [VLOG 209-307] Generating Verilog RTL for max_pool.
+INFO: [HLS 200-112] Total elapsed time: 23.364 seconds; peak allocated memory: 134.432 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'maxpool/max_pool.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 185.141 ; gain = 93.699
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 185.141 ; gain = 93.699
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 185.141 ; gain = 93.699
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 185.141 ; gain = 93.699
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Row_Loop' (maxpool/max_pool.cpp:14) in function 'max_pool' for pipelining.
+INFO: [XFORM 203-501] Unrolling loop 'Row_Loop' (maxpool/max_pool.cpp:14) in function 'max_pool' partially with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'Col_Loop' (maxpool/max_pool.cpp:17) in function 'max_pool' completely with a factor of 13.
+INFO: [HLS 200-489] Unrolling loop 'Pool_Row_Loop' (maxpool/max_pool.cpp:21) in function 'max_pool' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'Pool_Col_Loop' (maxpool/max_pool.cpp:24) in function 'max_pool' completely with a factor of 2.
+INFO: [XFORM 203-101] Partitioning array 'conv_out' (maxpool/max_pool.cpp:6) in dimension 1 with a cyclic factor 2.
+INFO: [XFORM 203-101] Partitioning array 'max_pool_out' (maxpool/max_pool.cpp:6) in dimension 1 with a cyclic factor 2.
+INFO: [XFORM 203-101] Partitioning array 'conv_out' (maxpool/max_pool.cpp:6) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'max_pool_out' (maxpool/max_pool.cpp:6) in dimension 2 completely.
+WARNING: [XFORM 203-561] Updating loop upper bound from 7 to 6 for loop 'Row_Loop' in function 'max_pool'.
+WARNING: [XFORM 203-561] Updating loop lower bound from 7 to 6 for loop 'Row_Loop' in function 'max_pool'.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 185.141 ; gain = 93.699
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Filter_Loop' (maxpool/max_pool.cpp:11:6) in function 'max_pool' : 
+
+the outer loop is not a perfect loop because there is nontrivial logic in the sub loop header.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 185.141 ; gain = 93.699
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'max_pool' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'max_pool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Row_Loop'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 6.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 9.3 seconds; current allocated memory: 118.129 MB.
+INFO: [HLS 200-434] Only 1 loops out of a total 2 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.918 seconds; current allocated memory: 123.664 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'max_pool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_8' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_9' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_10' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_11' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_12' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_13' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_14' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_15' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_16' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_17' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_18' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_19' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_20' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_21' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_22' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_23' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_24' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_25' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_8' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_9' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_10' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_11' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_12' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_13' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_14' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_15' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_16' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_17' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_18' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_19' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_20' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_21' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_22' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_23' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_24' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_25' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_8' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_9' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_10' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_11' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_12' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_8' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_9' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_10' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_11' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_12' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'max_pool' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'max_pool_fcmp_32ns_32ns_1_2_1' to 'max_pool_fcmp_32nbkb' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'max_pool_fcmp_32nbkb': 104 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'max_pool'.
+INFO: [HLS 200-111]  Elapsed time: 2.744 seconds; current allocated memory: 135.966 MB.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:13 ; elapsed = 00:00:26 . Memory (MB): peak = 245.027 ; gain = 153.586
+INFO: [VHDL 208-304] Generating VHDL RTL for max_pool.
+INFO: [VLOG 209-307] Generating Verilog RTL for max_pool.
+INFO: [HLS 200-112] Total elapsed time: 25.655 seconds; peak allocated memory: 135.966 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'maxpool/max_pool.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 184.883 ; gain = 93.465
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 184.883 ; gain = 93.465
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 184.883 ; gain = 93.465
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 184.883 ; gain = 93.465
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Row_Loop' (maxpool/max_pool.cpp:14) in function 'max_pool' for pipelining.
+INFO: [XFORM 203-501] Unrolling loop 'Row_Loop' (maxpool/max_pool.cpp:14) in function 'max_pool' partially with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'Col_Loop' (maxpool/max_pool.cpp:18) in function 'max_pool' completely with a factor of 13.
+INFO: [HLS 200-489] Unrolling loop 'Pool_Row_Loop' (maxpool/max_pool.cpp:22) in function 'max_pool' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'Pool_Col_Loop' (maxpool/max_pool.cpp:25) in function 'max_pool' completely with a factor of 2.
+INFO: [XFORM 203-101] Partitioning array 'conv_out' (maxpool/max_pool.cpp:6) in dimension 1 with a cyclic factor 2.
+INFO: [XFORM 203-101] Partitioning array 'max_pool_out' (maxpool/max_pool.cpp:6) in dimension 1 with a cyclic factor 2.
+INFO: [XFORM 203-101] Partitioning array 'conv_out' (maxpool/max_pool.cpp:6) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'max_pool_out' (maxpool/max_pool.cpp:6) in dimension 2 completely.
+WARNING: [XFORM 203-561] Updating loop upper bound from 7 to 6 for loop 'Row_Loop' in function 'max_pool'.
+WARNING: [XFORM 203-561] Updating loop lower bound from 7 to 6 for loop 'Row_Loop' in function 'max_pool'.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 184.883 ; gain = 93.465
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Filter_Loop' (maxpool/max_pool.cpp:11:6) in function 'max_pool' : 
+
+the outer loop is not a perfect loop because there is nontrivial logic in the sub loop header.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 184.883 ; gain = 93.465
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'max_pool' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'max_pool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Row_Loop'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 6.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 9.032 seconds; current allocated memory: 118.132 MB.
+INFO: [HLS 200-434] Only 1 loops out of a total 2 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.917 seconds; current allocated memory: 123.667 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'max_pool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_8' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_9' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_10' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_11' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_12' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_13' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_14' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_15' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_16' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_17' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_18' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_19' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_20' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_21' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_22' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_23' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_24' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_25' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_8' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_9' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_10' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_11' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_12' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_13' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_14' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_15' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_16' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_17' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_18' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_19' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_20' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_21' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_22' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_23' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_24' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_25' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_8' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_9' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_10' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_11' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_12' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_8' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_9' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_10' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_11' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_12' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'max_pool' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'max_pool_fcmp_32ns_32ns_1_2_1' to 'max_pool_fcmp_32nbkb' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'max_pool_fcmp_32nbkb': 104 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'max_pool'.
+INFO: [HLS 200-111]  Elapsed time: 2.706 seconds; current allocated memory: 135.969 MB.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:12 ; elapsed = 00:00:24 . Memory (MB): peak = 244.215 ; gain = 152.797
+INFO: [VHDL 208-304] Generating VHDL RTL for max_pool.
+INFO: [VLOG 209-307] Generating Verilog RTL for max_pool.
+INFO: [HLS 200-112] Total elapsed time: 24.132 seconds; peak allocated memory: 135.969 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'maxpool/max_pool.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 185.004 ; gain = 93.535
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 185.004 ; gain = 93.535
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 185.004 ; gain = 93.535
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 185.004 ; gain = 93.535
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Row_Loop' (maxpool/max_pool.cpp:14) in function 'max_pool' for pipelining.
+INFO: [XFORM 203-501] Unrolling loop 'Row_Loop' (maxpool/max_pool.cpp:14) in function 'max_pool' partially with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'Col_Loop' (maxpool/max_pool.cpp:18) in function 'max_pool' completely with a factor of 13.
+INFO: [HLS 200-489] Unrolling loop 'Pool_Row_Loop' (maxpool/max_pool.cpp:22) in function 'max_pool' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'Pool_Col_Loop' (maxpool/max_pool.cpp:25) in function 'max_pool' completely with a factor of 2.
+INFO: [XFORM 203-101] Partitioning array 'conv_out' (maxpool/max_pool.cpp:6) in dimension 1 with a cyclic factor 2.
+INFO: [XFORM 203-101] Partitioning array 'max_pool_out' (maxpool/max_pool.cpp:6) in dimension 1 with a cyclic factor 2.
+INFO: [XFORM 203-101] Partitioning array 'conv_out' (maxpool/max_pool.cpp:6) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'max_pool_out' (maxpool/max_pool.cpp:6) in dimension 2 completely.
+WARNING: [XFORM 203-561] Updating loop upper bound from 7 to 6 for loop 'Row_Loop' in function 'max_pool'.
+WARNING: [XFORM 203-561] Updating loop lower bound from 7 to 6 for loop 'Row_Loop' in function 'max_pool'.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 185.004 ; gain = 93.535
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Filter_Loop' (maxpool/max_pool.cpp:11:6) in function 'max_pool' : 
+
+the outer loop is not a perfect loop because there is nontrivial logic in the sub loop header.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 185.004 ; gain = 93.535
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'max_pool' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'max_pool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Row_Loop'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 6.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 9.055 seconds; current allocated memory: 118.132 MB.
+INFO: [HLS 200-434] Only 1 loops out of a total 2 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.981 seconds; current allocated memory: 123.667 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'max_pool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_8' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_9' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_10' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_11' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_12' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_13' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_14' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_15' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_16' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_17' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_18' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_19' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_20' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_21' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_22' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_23' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_24' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_25' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_8' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_9' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_10' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_11' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_12' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_13' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_14' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_15' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_16' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_17' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_18' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_19' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_20' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_21' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_22' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_23' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_24' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_25' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_8' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_9' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_10' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_11' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_12' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_8' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_9' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_10' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_11' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_12' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'max_pool' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'max_pool_fcmp_32ns_32ns_1_2_1' to 'max_pool_fcmp_32nbkb' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'max_pool_fcmp_32nbkb': 104 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'max_pool'.
+INFO: [HLS 200-111]  Elapsed time: 2.515 seconds; current allocated memory: 135.969 MB.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:12 ; elapsed = 00:00:24 . Memory (MB): peak = 245.449 ; gain = 153.980
+INFO: [VHDL 208-304] Generating VHDL RTL for max_pool.
+INFO: [VLOG 209-307] Generating Verilog RTL for max_pool.
+INFO: [HLS 200-112] Total elapsed time: 23.91 seconds; peak allocated memory: 135.969 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'maxpool/max_pool.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 184.922 ; gain = 93.492
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 184.922 ; gain = 93.492
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 184.922 ; gain = 93.492
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 184.922 ; gain = 93.492
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Row_Loop' (maxpool/max_pool.cpp:14) in function 'max_pool' for pipelining.
+INFO: [XFORM 203-501] Unrolling loop 'Row_Loop' (maxpool/max_pool.cpp:14) in function 'max_pool' partially with a factor of 4.
+INFO: [HLS 200-489] Unrolling loop 'Col_Loop' (maxpool/max_pool.cpp:17) in function 'max_pool' completely with a factor of 13.
+INFO: [HLS 200-489] Unrolling loop 'Pool_Row_Loop' (maxpool/max_pool.cpp:21) in function 'max_pool' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'Pool_Col_Loop' (maxpool/max_pool.cpp:24) in function 'max_pool' completely with a factor of 2.
+INFO: [XFORM 203-101] Partitioning array 'conv_out' (maxpool/max_pool.cpp:6) in dimension 1 with a cyclic factor 4.
+INFO: [XFORM 203-101] Partitioning array 'max_pool_out' (maxpool/max_pool.cpp:6) in dimension 1 with a cyclic factor 4.
+INFO: [XFORM 203-101] Partitioning array 'conv_out' (maxpool/max_pool.cpp:6) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'max_pool_out' (maxpool/max_pool.cpp:6) in dimension 2 completely.
+WARNING: [XFORM 203-561] Updating loop upper bound from 4 to 3 for loop 'Row_Loop' in function 'max_pool'.
+WARNING: [XFORM 203-561] Updating loop lower bound from 4 to 3 for loop 'Row_Loop' in function 'max_pool'.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 184.922 ; gain = 93.492
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Filter_Loop' (maxpool/max_pool.cpp:11:6) in function 'max_pool' : 
+
+the outer loop is not a perfect loop because there is nontrivial logic in the sub loop header.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:06 ; elapsed = 00:00:12 . Memory (MB): peak = 184.922 ; gain = 93.492
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'max_pool' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'max_pool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Row_Loop'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 6.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 13.23 seconds; current allocated memory: 135.579 MB.
+INFO: [HLS 200-434] Only 1 loops out of a total 2 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 2.221 seconds; current allocated memory: 146.674 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'max_pool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_8' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_9' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_10' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_11' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_12' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_13' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_14' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_15' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_16' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_17' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_18' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_19' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_20' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_21' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_22' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_23' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_24' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_25' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_8' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_9' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_10' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_11' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_12' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_13' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_14' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_15' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_16' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_17' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_18' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_19' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_20' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_21' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_22' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_23' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_24' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_25' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_8' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_9' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_10' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_11' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_12' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_13' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_14' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_15' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_16' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_17' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_18' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_19' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_20' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_21' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_22' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_23' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_24' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_25' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_8' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_9' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_10' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_11' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_12' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_13' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_14' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_15' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_16' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_17' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_18' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_19' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_20' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_21' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_22' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_23' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_24' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_25' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_8' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_9' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_10' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_11' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_12' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_8' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_9' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_10' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_11' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_12' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2_8' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2_9' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2_10' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2_11' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2_12' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3_8' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3_9' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3_10' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3_11' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3_12' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'max_pool' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'max_pool_fcmp_32ns_32ns_1_2_1' to 'max_pool_fcmp_32nbkb' due to the length limit 20
+INFO: [RTGEN 206-104] Estimated max fanout for 'max_pool' is 11241 from HDL expression: (1'b0 == ap_block_pp0_stage0_11001)
+INFO: [RTGEN 206-100] Generating core module 'max_pool_fcmp_32nbkb': 208 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'max_pool'.
+INFO: [HLS 200-111]  Elapsed time: 6.75 seconds; current allocated memory: 171.497 MB.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:33 ; elapsed = 00:00:51 . Memory (MB): peak = 330.184 ; gain = 238.754
+INFO: [VHDL 208-304] Generating VHDL RTL for max_pool.
+INFO: [VLOG 209-307] Generating Verilog RTL for max_pool.
+INFO: [HLS 200-112] Total elapsed time: 50.915 seconds; peak allocated memory: 171.497 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'maxpool/max_pool.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 184.602 ; gain = 93.227
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 184.602 ; gain = 93.227
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 184.602 ; gain = 93.227
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 184.602 ; gain = 93.227
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Row_Loop' (maxpool/max_pool.cpp:14) in function 'max_pool' for pipelining.
+INFO: [XFORM 203-501] Unrolling loop 'Row_Loop' (maxpool/max_pool.cpp:14) in function 'max_pool' partially with a factor of 4.
+INFO: [HLS 200-489] Unrolling loop 'Col_Loop' (maxpool/max_pool.cpp:17) in function 'max_pool' completely with a factor of 13.
+INFO: [HLS 200-489] Unrolling loop 'Pool_Row_Loop' (maxpool/max_pool.cpp:21) in function 'max_pool' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'Pool_Col_Loop' (maxpool/max_pool.cpp:24) in function 'max_pool' completely with a factor of 2.
+INFO: [XFORM 203-101] Partitioning array 'conv_out' (maxpool/max_pool.cpp:6) in dimension 1 with a cyclic factor 4.
+INFO: [XFORM 203-101] Partitioning array 'max_pool_out' (maxpool/max_pool.cpp:6) in dimension 1 with a cyclic factor 4.
+INFO: [XFORM 203-101] Partitioning array 'conv_out' (maxpool/max_pool.cpp:6) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'max_pool_out' (maxpool/max_pool.cpp:6) in dimension 2 completely.
+WARNING: [XFORM 203-561] Updating loop upper bound from 4 to 3 for loop 'Row_Loop' in function 'max_pool'.
+WARNING: [XFORM 203-561] Updating loop lower bound from 4 to 3 for loop 'Row_Loop' in function 'max_pool'.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 184.602 ; gain = 93.227
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Filter_Loop' (maxpool/max_pool.cpp:11:6) in function 'max_pool' : 
+
+the outer loop is not a perfect loop because there is nontrivial logic in the sub loop header.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:06 ; elapsed = 00:00:12 . Memory (MB): peak = 184.602 ; gain = 93.227
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'max_pool' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'max_pool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Row_Loop'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 6.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 13.174 seconds; current allocated memory: 135.578 MB.
+INFO: [HLS 200-434] Only 1 loops out of a total 2 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 2.186 seconds; current allocated memory: 146.673 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'max_pool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_8' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_9' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_10' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_11' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_12' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_13' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_14' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_15' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_16' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_17' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_18' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_19' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_20' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_21' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_22' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_23' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_24' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_25' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_8' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_9' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_10' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_11' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_12' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_13' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_14' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_15' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_16' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_17' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_18' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_19' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_20' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_21' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_22' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_23' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_24' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_25' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_8' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_9' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_10' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_11' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_12' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_13' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_14' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_15' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_16' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_17' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_18' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_19' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_20' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_21' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_22' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_23' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_24' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_25' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_8' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_9' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_10' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_11' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_12' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_13' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_14' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_15' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_16' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_17' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_18' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_19' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_20' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_21' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_22' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_23' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_24' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_25' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_8' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_9' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_10' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_11' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_12' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_8' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_9' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_10' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_11' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_12' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2_8' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2_9' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2_10' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2_11' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2_12' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3_8' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3_9' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3_10' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3_11' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3_12' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'max_pool' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'max_pool_fcmp_32ns_32ns_1_2_1' to 'max_pool_fcmp_32nbkb' due to the length limit 20
+INFO: [RTGEN 206-104] Estimated max fanout for 'max_pool' is 11241 from HDL expression: (1'b0 == ap_block_pp0_stage0_11001)
+INFO: [RTGEN 206-100] Generating core module 'max_pool_fcmp_32nbkb': 208 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'max_pool'.
+INFO: [HLS 200-111]  Elapsed time: 6.552 seconds; current allocated memory: 171.496 MB.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:33 ; elapsed = 00:00:50 . Memory (MB): peak = 330.152 ; gain = 238.777
+INFO: [VHDL 208-304] Generating VHDL RTL for max_pool.
+INFO: [VLOG 209-307] Generating Verilog RTL for max_pool.
+INFO: [HLS 200-112] Total elapsed time: 50.221 seconds; peak allocated memory: 171.496 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'maxpool/max_pool.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 184.703 ; gain = 93.305
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 184.703 ; gain = 93.305
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [XFORM 203-501] Unrolling loop 'Row_Loop' (maxpool/max_pool.cpp:14) in function 'max_pool(float (*) [26][6], float (*) [13][6])': changing partial unrolling into complete unrolling since the unrolling factor (=13) is no less than the loop trip count (=13).
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 184.703 ; gain = 93.305
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 184.703 ; gain = 93.305
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Row_Loop' (maxpool/max_pool.cpp:14) in function 'max_pool' for pipelining.
+INFO: [XFORM 203-501] Unrolling loop 'Row_Loop' (maxpool/max_pool.cpp:14) in function 'max_pool': changing partial unrolling into complete unrolling since the unrolling factor (=13) is no less than the loop trip count (=13).
+INFO: [HLS 200-489] Unrolling loop 'Row_Loop' (maxpool/max_pool.cpp:14) in function 'max_pool' completely with a factor of 13.
+WARNING: [XFORM 203-505] Pipeline directive for loop 'Row_Loop' (maxpool/max_pool.cpp:14) in function 'max_pool' has been removed because the loop is unrolled completely.
+INFO: [HLS 200-489] Unrolling loop 'Col_Loop' (maxpool/max_pool.cpp:17) in function 'max_pool' completely with a factor of 13.
+INFO: [HLS 200-489] Unrolling loop 'Pool_Row_Loop' (maxpool/max_pool.cpp:21) in function 'max_pool' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'Pool_Col_Loop' (maxpool/max_pool.cpp:24) in function 'max_pool' completely with a factor of 2.
+INFO: [XFORM 203-101] Partitioning array 'conv_out' (maxpool/max_pool.cpp:6) in dimension 1 with a cyclic factor 4.
+INFO: [XFORM 203-101] Partitioning array 'max_pool_out' (maxpool/max_pool.cpp:6) in dimension 1 with a cyclic factor 4.
+INFO: [XFORM 203-101] Partitioning array 'conv_out' (maxpool/max_pool.cpp:6) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'max_pool_out' (maxpool/max_pool.cpp:6) in dimension 2 completely.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:07 ; elapsed = 00:00:13 . Memory (MB): peak = 185.129 ; gain = 93.730
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:33 ; elapsed = 00:00:39 . Memory (MB): peak = 242.332 ; gain = 150.934
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'max_pool' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'max_pool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 42.339 seconds; current allocated memory: 202.605 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 1 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 14.474 seconds; current allocated memory: 235.925 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'max_pool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_8' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_9' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_10' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_11' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_12' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_13' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_14' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_15' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_16' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_17' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_18' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_19' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_20' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_21' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_22' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_23' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_24' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_25' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_8' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_9' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_10' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_11' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_12' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_13' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_14' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_15' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_16' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_17' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_18' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_19' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_20' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_21' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_22' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_23' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_24' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_25' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_8' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_9' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_10' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_11' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_12' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_13' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_14' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_15' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_16' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_17' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_18' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_19' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_20' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_21' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_22' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_23' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_24' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_25' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_8' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_9' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_10' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_11' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_12' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_13' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_14' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_15' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_16' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_17' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_18' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_19' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_20' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_21' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_22' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_23' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_24' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_25' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_8' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_9' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_10' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_11' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_12' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_8' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_9' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_10' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_11' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_12' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2_8' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2_9' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2_10' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2_11' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2_12' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3_8' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3_9' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3_10' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3_11' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3_12' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'max_pool' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'max_pool_fcmp_32ns_32ns_1_2_1' to 'max_pool_fcmp_32nbkb' due to the length limit 20
+INFO: [RTGEN 206-104] Estimated max fanout for 'max_pool' is 14702 from HDL expression: (1'b1 == ap_CS_fsm_state5)
+INFO: [RTGEN 206-100] Generating core module 'max_pool_fcmp_32nbkb': 169 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'max_pool'.
+INFO: [HLS 200-111]  Elapsed time: 18.596 seconds; current allocated memory: 299.127 MB.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:44 ; elapsed = 00:02:13 . Memory (MB): peak = 621.070 ; gain = 529.672
+INFO: [VHDL 208-304] Generating VHDL RTL for max_pool.
+INFO: [VLOG 209-307] Generating Verilog RTL for max_pool.
+INFO: [HLS 200-112] Total elapsed time: 132.847 seconds; peak allocated memory: 299.127 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'maxpool/max_pool.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 185.176 ; gain = 93.703
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 185.176 ; gain = 93.703
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 185.176 ; gain = 93.703
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 185.176 ; gain = 93.703
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Row_Loop' (maxpool/max_pool.cpp:14) in function 'max_pool' for pipelining.
+INFO: [XFORM 203-501] Unrolling loop 'Row_Loop' (maxpool/max_pool.cpp:14) in function 'max_pool' partially with a factor of 12.
+INFO: [HLS 200-489] Unrolling loop 'Col_Loop' (maxpool/max_pool.cpp:17) in function 'max_pool' completely with a factor of 13.
+INFO: [HLS 200-489] Unrolling loop 'Pool_Row_Loop' (maxpool/max_pool.cpp:21) in function 'max_pool' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'Pool_Col_Loop' (maxpool/max_pool.cpp:24) in function 'max_pool' completely with a factor of 2.
+INFO: [XFORM 203-101] Partitioning array 'conv_out' (maxpool/max_pool.cpp:6) in dimension 1 with a cyclic factor 4.
+INFO: [XFORM 203-101] Partitioning array 'max_pool_out' (maxpool/max_pool.cpp:6) in dimension 1 with a cyclic factor 4.
+INFO: [XFORM 203-101] Partitioning array 'conv_out' (maxpool/max_pool.cpp:6) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'max_pool_out' (maxpool/max_pool.cpp:6) in dimension 2 completely.
+WARNING: [XFORM 203-561] Updating loop upper bound from 2 to 1 for loop 'Row_Loop' in function 'max_pool'.
+WARNING: [XFORM 203-561] Updating loop lower bound from 2 to 1 for loop 'Row_Loop' in function 'max_pool'.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:05 ; elapsed = 00:00:11 . Memory (MB): peak = 193.785 ; gain = 102.312
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Filter_Loop' (maxpool/max_pool.cpp:11:6) in function 'max_pool' : 
+
+the outer loop is not a perfect loop because there is nontrivial logic in the sub loop header.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:28 ; elapsed = 00:00:35 . Memory (MB): peak = 238.586 ; gain = 147.113
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'max_pool' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'max_pool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Row_Loop'.
+WARNING: [SCHED 204-68] The II Violation in module 'max_pool' (Loop: Row_Loop): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'store' operation ('max_pool_out_0_0_a_1_write_ln36', maxpool/max_pool.cpp:36) of variable 'select_ln29_211', maxpool/max_pool.cpp:29 on array 'max_pool_out_0_0' and 'store' operation ('max_pool_out_0_0_a_write_ln36', maxpool/max_pool.cpp:36) of variable 'select_ln29_3', maxpool/max_pool.cpp:29 on array 'max_pool_out_0_0'.
+WARNING: [SCHED 204-68] The II Violation in module 'max_pool' (Loop: Row_Loop): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between 'store' operation ('max_pool_out_0_0_a_2_write_ln36', maxpool/max_pool.cpp:36) of variable 'select_ln29_419', maxpool/max_pool.cpp:29 on array 'max_pool_out_0_0' and 'store' operation ('max_pool_out_0_0_a_write_ln36', maxpool/max_pool.cpp:36) of variable 'select_ln29_3', maxpool/max_pool.cpp:29 on array 'max_pool_out_0_0'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 3, Depth = 8.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 42.19 seconds; current allocated memory: 197.671 MB.
+INFO: [HLS 200-434] Only 1 loops out of a total 2 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 13.114 seconds; current allocated memory: 229.097 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'max_pool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_8' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_9' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_10' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_11' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_12' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_13' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_14' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_15' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_16' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_17' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_18' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_19' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_20' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_21' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_22' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_23' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_24' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_0_25' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_8' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_9' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_10' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_11' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_12' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_13' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_14' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_15' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_16' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_17' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_18' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_19' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_20' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_21' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_22' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_23' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_24' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_1_25' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_8' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_9' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_10' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_11' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_12' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_13' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_14' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_15' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_16' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_17' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_18' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_19' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_20' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_21' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_22' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_23' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_24' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_2_25' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_8' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_9' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_10' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_11' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_12' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_13' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_14' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_15' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_16' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_17' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_18' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_19' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_20' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_21' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_22' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_23' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_24' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/conv_out_3_25' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_8' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_9' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_10' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_11' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_0_12' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_8' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_9' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_10' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_11' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_1_12' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2_8' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2_9' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2_10' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2_11' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_2_12' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3_8' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3_9' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3_10' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3_11' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'max_pool/max_pool_out_3_12' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'max_pool' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'max_pool_fcmp_32ns_32ns_1_2_1' to 'max_pool_fcmp_32nbkb' due to the length limit 20
+INFO: [RTGEN 206-104] Estimated max fanout for 'max_pool' is 6656, found 3 HDL expressions with this fanout: ((1'b0 == ap_block_pp0_stage2) & (1'b1 == ap_CS_fsm_pp0_stage2) & (ap_enable_reg_pp0_iter0 == 1'b1)), ((1'b0 == ap_block_pp0_stage0) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0)), ((1'b0 == ap_block_pp0_stage1) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage1))
+INFO: [RTGEN 206-100] Generating core module 'max_pool_fcmp_32nbkb': 208 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'max_pool'.
+INFO: [HLS 200-111]  Elapsed time: 20.808 seconds; current allocated memory: 290.906 MB.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:44 ; elapsed = 00:02:11 . Memory (MB): peak = 590.207 ; gain = 498.734
+INFO: [VHDL 208-304] Generating VHDL RTL for max_pool.
+INFO: [VLOG 209-307] Generating Verilog RTL for max_pool.
+INFO: [HLS 200-112] Total elapsed time: 131.303 seconds; peak allocated memory: 290.906 MB.

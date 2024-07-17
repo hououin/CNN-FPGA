@@ -5,9 +5,9 @@
 ############################################################
 open_project maxpool
 set_top max_pool
-add_files maxpool/parameters.h
-add_files maxpool/max_pool.h
 add_files maxpool/max_pool.cpp
+add_files maxpool/max_pool.h
+add_files maxpool/parameters.h
 add_files -tb maxpool/main.cpp -cflags "-Wno-unknown-pragmas" -csimflags "-Wno-unknown-pragmas"
 add_files -tb maxpool/conv_1_out.txt -cflags "-Wno-unknown-pragmas" -csimflags "-Wno-unknown-pragmas"
 open_solution "S16"

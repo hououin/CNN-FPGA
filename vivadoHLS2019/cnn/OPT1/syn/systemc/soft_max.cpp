@@ -40,27 +40,27 @@ const sc_lv<4> soft_max::ap_const_lv4_1 = "1";
 const sc_lv<32> soft_max::ap_const_lv32_7 = "111";
 
 soft_max::soft_max(sc_module_name name) : sc_module(name), mVcdFile(0) {
-    cnn_fadd_32ns_32ncud_U31 = new cnn_fadd_32ns_32ncud<1,4,32,32,32>("cnn_fadd_32ns_32ncud_U31");
-    cnn_fadd_32ns_32ncud_U31->clk(ap_clk);
-    cnn_fadd_32ns_32ncud_U31->reset(ap_rst);
-    cnn_fadd_32ns_32ncud_U31->din0(sum_0_reg_80);
-    cnn_fadd_32ns_32ncud_U31->din1(reg_135);
-    cnn_fadd_32ns_32ncud_U31->ce(ap_var_for_const0);
-    cnn_fadd_32ns_32ncud_U31->dout(grp_fu_114_p2);
-    cnn_fdiv_32ns_32nibs_U32 = new cnn_fdiv_32ns_32nibs<1,8,32,32,32>("cnn_fdiv_32ns_32nibs_U32");
-    cnn_fdiv_32ns_32nibs_U32->clk(ap_clk);
-    cnn_fdiv_32ns_32nibs_U32->reset(ap_rst);
-    cnn_fdiv_32ns_32nibs_U32->din0(reg_135);
-    cnn_fdiv_32ns_32nibs_U32->din1(sum_0_reg_80);
-    cnn_fdiv_32ns_32nibs_U32->ce(ap_var_for_const0);
-    cnn_fdiv_32ns_32nibs_U32->dout(grp_fu_119_p2);
-    cnn_fexp_32ns_32njbC_U33 = new cnn_fexp_32ns_32njbC<1,5,32,32,32>("cnn_fexp_32ns_32njbC_U33");
-    cnn_fexp_32ns_32njbC_U33->clk(ap_clk);
-    cnn_fexp_32ns_32njbC_U33->reset(ap_rst);
-    cnn_fexp_32ns_32njbC_U33->din0(ap_var_for_const1);
-    cnn_fexp_32ns_32njbC_U33->din1(dense_array_q0);
-    cnn_fexp_32ns_32njbC_U33->ce(ap_var_for_const0);
-    cnn_fexp_32ns_32njbC_U33->dout(grp_fu_124_p2);
+    cnn_fadd_32ns_32nbkb_U80 = new cnn_fadd_32ns_32nbkb<1,4,32,32,32>("cnn_fadd_32ns_32nbkb_U80");
+    cnn_fadd_32ns_32nbkb_U80->clk(ap_clk);
+    cnn_fadd_32ns_32nbkb_U80->reset(ap_rst);
+    cnn_fadd_32ns_32nbkb_U80->din0(sum_0_reg_80);
+    cnn_fadd_32ns_32nbkb_U80->din1(reg_135);
+    cnn_fadd_32ns_32nbkb_U80->ce(ap_var_for_const0);
+    cnn_fadd_32ns_32nbkb_U80->dout(grp_fu_114_p2);
+    cnn_fdiv_32ns_32ng8j_U81 = new cnn_fdiv_32ns_32ng8j<1,8,32,32,32>("cnn_fdiv_32ns_32ng8j_U81");
+    cnn_fdiv_32ns_32ng8j_U81->clk(ap_clk);
+    cnn_fdiv_32ns_32ng8j_U81->reset(ap_rst);
+    cnn_fdiv_32ns_32ng8j_U81->din0(reg_135);
+    cnn_fdiv_32ns_32ng8j_U81->din1(sum_0_reg_80);
+    cnn_fdiv_32ns_32ng8j_U81->ce(ap_var_for_const0);
+    cnn_fdiv_32ns_32ng8j_U81->dout(grp_fu_119_p2);
+    cnn_fexp_32ns_32nhbi_U82 = new cnn_fexp_32ns_32nhbi<1,5,32,32,32>("cnn_fexp_32ns_32nhbi_U82");
+    cnn_fexp_32ns_32nhbi_U82->clk(ap_clk);
+    cnn_fexp_32ns_32nhbi_U82->reset(ap_rst);
+    cnn_fexp_32ns_32nhbi_U82->din0(ap_var_for_const1);
+    cnn_fexp_32ns_32nhbi_U82->din1(dense_array_q0);
+    cnn_fexp_32ns_32nhbi_U82->ce(ap_var_for_const0);
+    cnn_fexp_32ns_32nhbi_U82->dout(grp_fu_124_p2);
 
     SC_METHOD(thread_ap_clk_no_reset_);
     dont_initialize();
@@ -477,9 +477,9 @@ soft_max::~soft_max() {
     if (mVcdFile) 
         sc_close_vcd_trace_file(mVcdFile);
 
-    delete cnn_fadd_32ns_32ncud_U31;
-    delete cnn_fdiv_32ns_32nibs_U32;
-    delete cnn_fexp_32ns_32njbC_U33;
+    delete cnn_fadd_32ns_32nbkb_U80;
+    delete cnn_fdiv_32ns_32ng8j_U81;
+    delete cnn_fexp_32ns_32nhbi_U82;
 }
 
 void soft_max::thread_ap_var_for_const0() {

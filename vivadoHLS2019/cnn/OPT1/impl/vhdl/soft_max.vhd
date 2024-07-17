@@ -186,7 +186,7 @@ architecture behav of soft_max is
     signal ap_idle_pp1 : STD_LOGIC;
     signal ap_enable_pp1 : STD_LOGIC;
 
-    component cnn_fadd_32ns_32ncud IS
+    component cnn_fadd_32ns_32nbkb IS
     generic (
         ID : INTEGER;
         NUM_STAGE : INTEGER;
@@ -203,7 +203,7 @@ architecture behav of soft_max is
     end component;
 
 
-    component cnn_fdiv_32ns_32nibs IS
+    component cnn_fdiv_32ns_32ng8j IS
     generic (
         ID : INTEGER;
         NUM_STAGE : INTEGER;
@@ -220,7 +220,7 @@ architecture behav of soft_max is
     end component;
 
 
-    component cnn_fexp_32ns_32njbC IS
+    component cnn_fexp_32ns_32nhbi IS
     generic (
         ID : INTEGER;
         NUM_STAGE : INTEGER;
@@ -239,7 +239,7 @@ architecture behav of soft_max is
 
 
 begin
-    cnn_fadd_32ns_32ncud_U31 : component cnn_fadd_32ns_32ncud
+    cnn_fadd_32ns_32nbkb_U80 : component cnn_fadd_32ns_32nbkb
     generic map (
         ID => 1,
         NUM_STAGE => 4,
@@ -254,7 +254,7 @@ begin
         ce => ap_const_logic_1,
         dout => grp_fu_114_p2);
 
-    cnn_fdiv_32ns_32nibs_U32 : component cnn_fdiv_32ns_32nibs
+    cnn_fdiv_32ns_32ng8j_U81 : component cnn_fdiv_32ns_32ng8j
     generic map (
         ID => 1,
         NUM_STAGE => 8,
@@ -269,7 +269,7 @@ begin
         ce => ap_const_logic_1,
         dout => grp_fu_119_p2);
 
-    cnn_fexp_32ns_32njbC_U33 : component cnn_fexp_32ns_32njbC
+    cnn_fexp_32ns_32nhbi_U82 : component cnn_fexp_32ns_32nhbi
     generic map (
         ID => 1,
         NUM_STAGE => 5,

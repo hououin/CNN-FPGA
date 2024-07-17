@@ -1,0 +1,80 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+    <sourceFile name="">
+        <directive functionName="cnn" label="" functionLabel="">
+            <pragma name="INTERFACE">
+                <option name="s_axilite" value="" positionalBoolean="mode"/>
+                <option name="port" value="return" positionalBoolean="4"/>
+                <option name="bundle" value="CRTL_BUS"/>
+            </pragma>
+        </directive>
+        <directive functionName="cnn" label="" functionLabel="">
+            <pragma name="INTERFACE">
+                <option name="bram" value="" positionalBoolean="mode"/>
+                <option name="port" value="cnn_input" positionalBoolean="4"/>
+            </pragma>
+        </directive>
+        <directive functionName="cnn" label="" functionLabel="">
+            <pragma name="INTERFACE">
+                <option name="bram" value="" positionalBoolean="mode"/>
+                <option name="port" value="prediction" positionalBoolean="4"/>
+            </pragma>
+        </directive>
+        <directive functionName="max_pool_1" label="Pool_Row_Loop" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="max_pool_2" label="Pool_Row_Loop" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="dense_1" label="FLAT_LOOP" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="dense_2" label="FLAT_LOOP" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="dense_out" label="Flat_Loop" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="flat" label="Filter_Loop" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="dense_out" label="Dense_Loop" functionLabel="">
+            <pragma name="LOOP_FLATTEN">
+                <option name="off" value="" positionalBoolean="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="conv_1" label="Col_Loop" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="cnn" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="variable" value="max_pool_1_out" positionalBoolean="4"/>
+                <option name="complete" value="" positionalBoolean="type"/>
+                <option name="dim" value="3"/>
+            </pragma>
+        </directive>
+        <directive functionName="conv_2" label="Filter2_Loop" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="dense_1" label="FLAT_LOOP" functionLabel="">
+            <pragma name="UNROLL">
+                <option name="factor" value="50"/>
+            </pragma>
+        </directive>
+        <directive functionName="cnn" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="variable" value="flat_array" positionalBoolean="4"/>
+                <option name="block" value="" positionalBoolean="type"/>
+                <option name="factor" value="50"/>
+                <option name="dim" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="cnn" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="variable" value="dense_1_out" positionalBoolean="4"/>
+                <option name="complete" value="" positionalBoolean="type"/>
+                <option name="dim" value="1"/>
+            </pragma>
+        </directive>
+    </sourceFile>
+</AutoPilot:ProjectResources>
+

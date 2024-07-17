@@ -1,7 +1,7 @@
 # This script segment is generated automatically by AutoPilot
 
-set id 46
-set name cnn_mac_muladd_9nncg
+set id 95
+set name cnn_mac_muladd_9nlbW
 set corename simcore_mac
 set op mac
 set stage_num 1
@@ -83,11 +83,11 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_dsp48, check your p
 
 
 # Memory (RAM/ROM)  definition:
-set ID 48
+set ID 97
 set hasByteEnable 0
 set MemName cnn_conv_1_out
 set CoreName ap_simcore_mem
-set PortList { 2 1 }
+set PortList { 2 0 }
 set DataWd 32
 set AddrRange 4056
 set AddrWd 12
@@ -169,11 +169,11 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 49
+set ID 98
 set hasByteEnable 0
 set MemName cnn_max_pool_1_out
 set CoreName ap_simcore_mem
-set PortList { 2 3 }
+set PortList { 2 1 }
 set DataWd 32
 set AddrRange 1014
 set AddrWd 10
@@ -255,11 +255,11 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 50
+set ID 99
 set hasByteEnable 0
 set MemName cnn_conv_2_out
 set CoreName ap_simcore_mem
-set PortList { 2 1 }
+set PortList { 2 3 }
 set DataWd 32
 set AddrRange 1936
 set AddrWd 11
@@ -341,7 +341,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 51
+set ID 100
 set hasByteEnable 0
 set MemName cnn_max_pool_2_out
 set CoreName ap_simcore_mem
@@ -427,7 +427,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 52
+set ID 101
 set hasByteEnable 0
 set MemName cnn_dense_1_bias
 set CoreName ap_simcore_mem
@@ -510,7 +510,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 53
+set ID 102
 set hasByteEnable 0
 set MemName cnn_dense_1_out
 set CoreName ap_simcore_mem
@@ -596,7 +596,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 54
+set ID 103
 set hasByteEnable 0
 set MemName cnn_dense_1_weights
 set CoreName ap_simcore_mem
@@ -679,7 +679,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 55
+set ID 104
 set hasByteEnable 0
 set MemName cnn_dense_2_bias
 set CoreName ap_simcore_mem
@@ -762,7 +762,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 56
+set ID 105
 set hasByteEnable 0
 set MemName cnn_dense_2_out
 set CoreName ap_simcore_mem
@@ -848,7 +848,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 57
+set ID 106
 set hasByteEnable 0
 set MemName cnn_dense_2_weights
 set CoreName ap_simcore_mem
@@ -931,11 +931,11 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 58
+set ID 107
 set hasByteEnable 0
 set MemName cnn_conv_1_input
 set CoreName ap_simcore_mem
-set PortList { 2 3 }
+set PortList { 2 1 }
 set DataWd 32
 set AddrRange 784
 set AddrWd 10
@@ -1036,7 +1036,7 @@ dict set axilite_register_dict CRTL_BUS $port_CRTL_BUS
 if {${::AESL::PGuard_simmodel_gen}} {
 	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
 		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
-			id 59 \
+			id 108 \
 			corename cnn_CRTL_BUS_axilite \
 			name cnn_CRTL_BUS_s_axi \
 			ports {$port_CRTL_BUS} \

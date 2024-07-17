@@ -6,7 +6,7 @@
 #include <cmath>
 #include <stdlib.h>
 
-#define N 20
+#define N 1
 
 int read_images(const char* file, float images[N][INPUT_ROWS][INPUT_COLS])
 {
@@ -26,7 +26,23 @@ int read_images(const char* file, float images[N][INPUT_ROWS][INPUT_COLS])
     return fclose(fp);
 }
 
+int read_labels(const char* file, int labels[N])
+{
+	FILE* fp;
 
+	fp = fopen(file, "r");
+
+	if(fp == NULL)
+		return -1;
+
+	for (int i = 0; i < N; i++)
+		if(fscanf(fp, "%d", &labels[i]) != 1)
+			return 1;
+
+	return fclose(fp);
+}
+
+/*
 int read_golden_results(const char* file, float python_predictions[N][DIGITS])
 {
     FILE* fp;
@@ -57,6 +73,7 @@ int compare_to_golden_results(float prediction[DIGITS], float golden_result[DIGI
 
     return 0;
 }
+*/
 
 int main()
 {
@@ -69,12 +86,20 @@ int main()
         return 1;
     }
 
-
+/*
     float python_predictions[N][DIGITS];
     if (0 != read_golden_results("golden.dat", python_predictions))
     {
         printf("Read Golden results Error\n");
         return 1;
+    }
+*/
+
+    int labels[N];
+    if (0 != read_labels("labels.dat", labels))
+    {
+    	printf("Read labels Error\n");
+    	return 1;
     }
 
     int correct_predictions = 0;
@@ -101,7 +126,7 @@ int main()
 
 
         cnn(cnn_input, prediction);
-
+/*
         if (compare_to_golden_results(prediction, python_predictions[i]) == 1)
         {
             for (int j = 0; j < DIGITS; ++j)
@@ -118,8 +143,29 @@ int main()
         	printf("\n------\n");
             printf("%d is correct\n", i);
         }
+*/
+        //find the max index (result) in prediction
+        int pred_res = -1;
+        float max = 0;
+        for(int j = 0; j < DIGITS; ++j)
+        {
+        	if(prediction[j] > max)
+        	{
+        		max = prediction[j];
+        		pred_res = j;
+        	}
+        }
 
+        if(pred_res == labels[i]){
+
+        	correct_predictions++;
+
+        }else{
+        	false_predictions++;
+        }
     }
+
+    printf("accuracy: %f\n", (float)correct_predictions/N);
 
     return 0;
 }

@@ -3,9 +3,9 @@
   <files>
     <file name="../main.cpp" sc="0" tb="1" cflags=" -Wno-unknown-pragmas" blackbox="false" csimflags=" -Wno-unknown-pragmas"/>
     <file name="../conv_1_out.txt" sc="0" tb="1" cflags=" -Wno-unknown-pragmas" blackbox="false" csimflags=" -Wno-unknown-pragmas"/>
-    <file name="maxpool/parameters.h" sc="0" tb="false" cflags="" blackbox="false" csimflags=""/>
-    <file name="maxpool/max_pool.h" sc="0" tb="false" cflags="" blackbox="false" csimflags=""/>
-    <file name="maxpool/max_pool.cpp" sc="0" tb="false" cflags="" blackbox="false" csimflags=""/>
+    <file name="maxpool/max_pool.cpp" sc="0" tb="false" cflags="" blackbox="false"/>
+    <file name="maxpool/max_pool.h" sc="0" tb="false" cflags="" blackbox="false"/>
+    <file name="maxpool/parameters.h" sc="0" tb="false" cflags="" blackbox="false"/>
   </files>
   <solutions>
     <solution name="solution1" status="inactive"/>
@@ -20,7 +20,7 @@
     <solution name="Pool_Col_unroll" status="inactive"/>
     <solution name="Row_pipeline_nf" status="inactive"/>
     <solution name="Col_pipeline_nf" status="inactive"/>
-    <solution name="Pool_Row_pipeline_nf" status="active"/>
+    <solution name="Pool_Row_pipeline_nf" status="inactive"/>
     <solution name="Pool_Col_pipeline_nf" status="inactive"/>
     <solution name="Pool_Row_pipeline" status="inactive"/>
     <solution name="S15" status="inactive"/>
@@ -28,6 +28,11 @@
     <solution name="S17" status="inactive"/>
     <solution name="S18" status="inactive"/>
     <solution name="S19" status="inactive"/>
+    <solution name="Pool_Col_unroll_ap" status="inactive"/>
+    <solution name="Col_Loop_puf_2" status="active"/>
+    <solution name="Row_puf_2" status="inactive"/>
+    <solution name="Row_puf_2_ap" status="inactive"/>
+    <solution name="Col_Loop_puf_4" status="inactive"/>
   </solutions>
   <includePaths/>
   <libraryPaths/>

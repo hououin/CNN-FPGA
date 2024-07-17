@@ -203,6 +203,9 @@ void conv_1(float input[28][28], float conv_out[26][26][6]) {_ssdm_SpecArrayDimS
      Col_Loop:
         for (int c = 0; c < 26; ++c)
         {
+_ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
+# 12 "cnn/conv_1.cpp"
+
          Filter1_Loop:
             for (int f = 0; f < 6; ++f)
             {
@@ -213,9 +216,6 @@ void conv_1(float input[28][28], float conv_out[26][26][6]) {_ssdm_SpecArrayDimS
                  W_Col_Loop:
                     for (int wc = 0; wc < 3; ++wc)
                     {
-_ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
-# 22 "cnn/conv_1.cpp"
-
                        w_sum += conv_1_weights[wr][wc][f] * input[r + wr][c + wc];
                     }
                 }

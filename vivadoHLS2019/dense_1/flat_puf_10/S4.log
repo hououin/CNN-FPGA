@@ -1,0 +1,73 @@
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'dense_1/dense_1.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 184.055 ; gain = 92.555
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 184.055 ; gain = 92.555
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 184.055 ; gain = 92.555
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 184.055 ; gain = 92.555
+INFO: [XFORM 203-501] Unrolling loop 'FLAT_LOOP' (dense_1/dense_1.cpp:13) in function 'dense_1' partially with a factor of 10.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 184.055 ; gain = 92.555
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'DENSE_LOOP' (dense_1/dense_1.cpp:9:31) in function 'dense_1' : 
+
+the outer loop is not a perfect loop because there is nontrivial logic in the loop latch.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 184.055 ; gain = 92.555
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'dense_1' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dense_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'FLAT_LOOP'.
+WARNING: [SCHED 204-68] The II Violation in module 'dense_1' (Loop: FLAT_LOOP): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'fadd' operation ('sum_9', dense_1/dense_1.cpp:14) and 'fadd' operation ('sum_s', dense_1/dense_1.cpp:14).
+WARNING: [SCHED 204-68] The II Violation in module 'dense_1' (Loop: FLAT_LOOP): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between 'fadd' operation ('sum_9', dense_1/dense_1.cpp:14) and 'fadd' operation ('sum_s', dense_1/dense_1.cpp:14).
+WARNING: [SCHED 204-68] The II Violation in module 'dense_1' (Loop: FLAT_LOOP): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between 'fadd' operation ('sum_9', dense_1/dense_1.cpp:14) and 'fadd' operation ('sum_s', dense_1/dense_1.cpp:14).
+WARNING: [SCHED 204-68] The II Violation in module 'dense_1' (Loop: FLAT_LOOP): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between 'fadd' operation ('sum_9', dense_1/dense_1.cpp:14) and 'fadd' operation ('sum_s', dense_1/dense_1.cpp:14).
+WARNING: [SCHED 204-68] The II Violation in module 'dense_1' (Loop: FLAT_LOOP): Unable to enforce a carried dependence constraint (II = 35, distance = 1, offset = 1)
+   between 'fadd' operation ('sum_9', dense_1/dense_1.cpp:14) and 'fadd' operation ('sum_s', dense_1/dense_1.cpp:14).
+WARNING: [SCHED 204-68] The II Violation in module 'dense_1' (Loop: FLAT_LOOP): Unable to enforce a carried dependence constraint (II = 39, distance = 1, offset = 1)
+   between 'fadd' operation ('sum_9', dense_1/dense_1.cpp:14) and 'fadd' operation ('sum_s', dense_1/dense_1.cpp:14).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 40, Depth = 43.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 7.804 seconds; current allocated memory: 105.021 MB.
+INFO: [HLS 200-434] Only 1 loops out of a total 2 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.12 seconds; current allocated memory: 105.830 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dense_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'dense_1/flat_array' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'dense_1/dense_1_out' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'dense_1' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'dense_1_dense_1_weights' to 'dense_1_dense_1_wbkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'dense_1_dense_1_bias' to 'dense_1_dense_1_bcud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'dense_1_fadd_32ns_32ns_32_4_full_dsp_1' to 'dense_1_fadd_32nsdEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'dense_1_fmul_32ns_32ns_32_2_max_dsp_1' to 'dense_1_fmul_32nseOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'dense_1_fcmp_32ns_32ns_1_2_1' to 'dense_1_fcmp_32nsfYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'dense_1_mac_muladd_9ns_7ns_6ns_15_1_1' to 'dense_1_mac_muladg8j' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'dense_1_fadd_32nsdEe': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dense_1_fcmp_32nsfYi': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dense_1_fmul_32nseOg': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dense_1_mac_muladg8j': 10 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dense_1'.
+INFO: [HLS 200-111]  Elapsed time: 0.242 seconds; current allocated memory: 107.468 MB.
+INFO: [RTMG 210-279] Implementing memory 'dense_1_dense_1_wbkb_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dense_1_dense_1_bcud_rom' using auto ROMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:03 ; elapsed = 00:00:11 . Memory (MB): peak = 184.055 ; gain = 92.555
+INFO: [VHDL 208-304] Generating VHDL RTL for dense_1.
+INFO: [VLOG 209-307] Generating Verilog RTL for dense_1.
+INFO: [HLS 200-112] Total elapsed time: 10.991 seconds; peak allocated memory: 107.468 MB.

@@ -2,7 +2,9 @@
 #include "parameters.h"
 #include "conv_weights.h"
 
-void conv(float input[POOL_1_OUT_ROWS][POOL_1_OUT_COLS][FILTERS_1], float conv_out[CONV_2_ROWS][CONV_2_COLS][FILTERS_2]) {
+void conv( float input[POOL_1_OUT_ROWS][POOL_1_OUT_COLS][FILTERS_1],
+		   float conv_out[CONV_2_ROWS][CONV_2_COLS][FILTERS_2] )
+{
 
 	Row_Loop:
     for (int r = 0; r < CONV_2_ROWS; ++r)
@@ -39,3 +41,5 @@ void conv(float input[POOL_1_OUT_ROWS][POOL_1_OUT_COLS][FILTERS_1], float conv_o
         }
     }
 }
+
+

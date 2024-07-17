@@ -1169,17 +1169,11 @@ void dense_out(float dense_2_out[30], float prediction[10])
     Dense_Loop:
     for (int d = 0; d < 10; ++d)
     {
-#pragma HLS LOOP_FLATTEN off
-# 32 "cnn/dense_out.cpp"
-
      w_sum = 0.0;
 
         Flat_Loop:
         for (int f = 0; f < 30; ++f)
         {
-#pragma HLS PIPELINE
-# 37 "cnn/dense_out.cpp"
-
             w_sum += dense_out_weights[f][d] * dense_2_out[f];
 
         }

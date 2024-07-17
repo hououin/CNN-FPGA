@@ -362,9 +362,6 @@ void max_pool_1(float conv_out[26][26][6], float max_pool_out[(26 / 2)][(26 / 2)
                 Pool_Row_Loop:
                 for (int mpr = 0; mpr < 2; ++mpr)
                 {
-_ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
-# 21 "cnn/max_pool_1.cpp"
-
                  Pool_Col_Loop:
                     for (int mpc = 0; mpc < 2; ++mpc)
                     {

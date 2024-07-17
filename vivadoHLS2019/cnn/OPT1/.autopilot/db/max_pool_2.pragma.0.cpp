@@ -362,9 +362,6 @@ void max_pool_2(float conv_out[11][11][16], float max_pool_out[(11 / 2)][(11 / 2
                 Pool_Row_Loop:
                 for (int mpr = 0; mpr < 2; ++mpr)
                 {
-#pragma HLS PIPELINE
-# 21 "cnn/max_pool_2.cpp"
-
                  Pool_Col_Loop:
                     for (int mpc = 0; mpc < 2; ++mpc)
                     {

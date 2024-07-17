@@ -5,37 +5,47 @@
         <SimFlow name="csim" csimMode="0" lastCsimMode="0"/>
     </Simulation>
     <files xmlns="">
-        <file name="../golden.dat" sc="0" tb="1" cflags=" -Wno-unknown-pragmas" csimflags=" -Wno-unknown-pragmas" blackbox="false"/>
-        <file name="../inputs.dat" sc="0" tb="1" cflags=" -Wno-unknown-pragmas" csimflags=" -Wno-unknown-pragmas" blackbox="false"/>
         <file name="../main.cpp" sc="0" tb="1" cflags=" -Wno-unknown-pragmas" csimflags=" -Wno-unknown-pragmas" blackbox="false"/>
-        <file name="cnn/cnn.cpp" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
-        <file name="cnn/cnn.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
-        <file name="cnn/conv_1.cpp" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
-        <file name="cnn/conv_1.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
-        <file name="cnn/conv_1_weights.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
-        <file name="cnn/conv_2.cpp" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
-        <file name="cnn/conv_2.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
-        <file name="cnn/conv_2_weights.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
-        <file name="cnn/dense_1.cpp" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
-        <file name="cnn/dense_1.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
-        <file name="cnn/dense_1_weights.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
-        <file name="cnn/dense_2.cpp" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
-        <file name="cnn/dense_2.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
-        <file name="cnn/dense_2_weights.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
-        <file name="cnn/dense_out.cpp" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
-        <file name="cnn/dense_out.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
-        <file name="cnn/dense_weights_out.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
-        <file name="cnn/flat.cpp" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
-        <file name="cnn/flat.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
-        <file name="cnn/max_pool_1.cpp" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
-        <file name="cnn/max_pool_1.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
-        <file name="cnn/max_pool_2.cpp" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
-        <file name="cnn/max_pool_2.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
+        <file name="../labels.dat" sc="0" tb="1" cflags=" -Wno-unknown-pragmas" csimflags=" -Wno-unknown-pragmas" blackbox="false"/>
+        <file name="../inputs.dat" sc="0" tb="1" cflags=" -Wno-unknown-pragmas" csimflags=" -Wno-unknown-pragmas" blackbox="false"/>
+        <file name="../golden.dat" sc="0" tb="1" cflags=" -Wno-unknown-pragmas" csimflags=" -Wno-unknown-pragmas" blackbox="false"/>
         <file name="cnn/parameters.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
+        <file name="cnn/max_pool_2.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
+        <file name="cnn/max_pool_2.cpp" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
+        <file name="cnn/max_pool_1.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
+        <file name="cnn/max_pool_1.cpp" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
+        <file name="cnn/flat.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
+        <file name="cnn/flat.cpp" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
+        <file name="cnn/dense_weights_out.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
+        <file name="cnn/dense_out.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
+        <file name="cnn/dense_out.cpp" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
+        <file name="cnn/dense_2_weights.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
+        <file name="cnn/dense_2.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
+        <file name="cnn/dense_2.cpp" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
+        <file name="cnn/dense_1_weights.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
+        <file name="cnn/dense_1.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
+        <file name="cnn/dense_1.cpp" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
+        <file name="cnn/conv_2_weights.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
+        <file name="cnn/conv_2.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
+        <file name="cnn/conv_2.cpp" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
+        <file name="cnn/conv_1_weights.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
+        <file name="cnn/conv_1.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
+        <file name="cnn/conv_1.cpp" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
+        <file name="cnn/cnn.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
+        <file name="cnn/cnn.cpp" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
     </files>
     <solutions xmlns="">
         <solution name="solution1" status="inactive"/>
-        <solution name="OPT1" status="active"/>
+        <solution name="OPT1" status="inactive"/>
+        <solution name="solution2" status="inactive"/>
+        <solution name="OPT2" status="inactive"/>
+        <solution name="OPT3" status="inactive"/>
+        <solution name="OPT4" status="inactive"/>
+        <solution name="OPT5" status="inactive"/>
+        <solution name="OPT6" status="inactive"/>
+        <solution name="OPT7" status="inactive"/>
+        <solution name="OPT8" status="inactive"/>
+        <solution name="OPT9" status="active"/>
     </solutions>
 </project>
 

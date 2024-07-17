@@ -1,0 +1,180 @@
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'conv/conv.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 185.199 ; gain = 93.715
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 185.199 ; gain = 93.715
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 185.199 ; gain = 93.715
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 185.199 ; gain = 93.715
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Filter2_Loop' (conv/conv.cpp:15) in function 'conv' for pipelining.
+INFO: [XFORM 203-501] Unrolling loop 'Filter2_Loop' (conv/conv.cpp:15) in function 'conv' partially with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'W_Row_Loop' (conv/conv.cpp:19) in function 'conv' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'W_Col_Loop' (conv/conv.cpp:22) in function 'conv' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Filter1_Loop' (conv/conv.cpp:25) in function 'conv' completely with a factor of 6.
+INFO: [XFORM 203-102] Partitioning array 'conv_weights' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_weights.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_weights.0.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_weights.0.1' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_weights.0.2' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_weights.1' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_weights.1.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_weights.1.1' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_weights.1.2' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_weights.2' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_weights.2.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_weights.2.1' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_weights.2.2' in dimension 1 automatically.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 185.199 ; gain = 93.715
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 185.199 ; gain = 93.715
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'conv' ...
+WARNING: [SYN 201-107] Renaming port name 'conv/input' to 'conv/input_r' to avoid the conflict with HDL keywords or other object names.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'conv' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Filter2_Loop'.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('input_load_2', conv/conv.cpp:26) on array 'input_r' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'input_r'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 27, Depth = 225.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 8.335 seconds; current allocated memory: 108.262 MB.
+INFO: [HLS 200-434] Only 1 loops out of a total 3 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.542 seconds; current allocated memory: 112.057 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'conv' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'conv/input_r' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'conv/conv_out' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'conv' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_0_0_0' to 'conv_conv_weightsbkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_0_0_1' to 'conv_conv_weightscud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_0_0_2' to 'conv_conv_weightsdEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_0_0_3' to 'conv_conv_weightseOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_0_0_4' to 'conv_conv_weightsfYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_0_0_5' to 'conv_conv_weightsg8j' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_0_1_0' to 'conv_conv_weightshbi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_0_1_1' to 'conv_conv_weightsibs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_0_1_2' to 'conv_conv_weightsjbC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_0_1_3' to 'conv_conv_weightskbM' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_0_1_4' to 'conv_conv_weightslbW' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_0_1_5' to 'conv_conv_weightsmb6' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_0_2_0' to 'conv_conv_weightsncg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_0_2_1' to 'conv_conv_weightsocq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_0_2_2' to 'conv_conv_weightspcA' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_0_2_3' to 'conv_conv_weightsqcK' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_0_2_4' to 'conv_conv_weightsrcU' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_0_2_5' to 'conv_conv_weightssc4' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_1_0_0' to 'conv_conv_weightstde' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_1_0_1' to 'conv_conv_weightsudo' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_1_0_2' to 'conv_conv_weightsvdy' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_1_0_3' to 'conv_conv_weightswdI' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_1_0_4' to 'conv_conv_weightsxdS' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_1_0_5' to 'conv_conv_weightsyd2' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_1_1_0' to 'conv_conv_weightszec' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_1_1_1' to 'conv_conv_weightsAem' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_1_1_2' to 'conv_conv_weightsBew' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_1_1_3' to 'conv_conv_weightsCeG' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_1_1_4' to 'conv_conv_weightsDeQ' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_1_1_5' to 'conv_conv_weightsEe0' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_1_2_0' to 'conv_conv_weightsFfa' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_1_2_1' to 'conv_conv_weightsGfk' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_1_2_2' to 'conv_conv_weightsHfu' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_1_2_3' to 'conv_conv_weightsIfE' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_1_2_4' to 'conv_conv_weightsJfO' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_1_2_5' to 'conv_conv_weightsKfY' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_2_0_0' to 'conv_conv_weightsLf8' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_2_0_1' to 'conv_conv_weightsMgi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_2_0_2' to 'conv_conv_weightsNgs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_2_0_3' to 'conv_conv_weightsOgC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_2_0_4' to 'conv_conv_weightsPgM' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_2_0_5' to 'conv_conv_weightsQgW' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_2_1_0' to 'conv_conv_weightsRg6' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_2_1_1' to 'conv_conv_weightsShg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_2_1_2' to 'conv_conv_weightsThq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_2_1_3' to 'conv_conv_weightsUhA' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_2_1_4' to 'conv_conv_weightsVhK' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_2_1_5' to 'conv_conv_weightsWhU' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_2_2_0' to 'conv_conv_weightsXh4' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_2_2_1' to 'conv_conv_weightsYie' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_2_2_2' to 'conv_conv_weightsZio' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_2_2_3' to 'conv_conv_weights0iy' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_2_2_4' to 'conv_conv_weights1iI' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_conv_weights_2_2_5' to 'conv_conv_weights2iS' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_fadd_32ns_32ns_32_4_full_dsp_1' to 'conv_fadd_32ns_323i2' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_fmul_32ns_32ns_32_2_max_dsp_1' to 'conv_fmul_32ns_324jc' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_fcmp_32ns_32ns_1_2_1' to 'conv_fcmp_32ns_325jm' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'conv_fadd_32ns_323i2': 5 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'conv_fcmp_32ns_325jm': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'conv_fmul_32ns_324jc': 4 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'conv'.
+INFO: [HLS 200-111]  Elapsed time: 1.981 seconds; current allocated memory: 118.001 MB.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weightsbkb_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weightscud_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weightsdEe_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weightseOg_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weightsfYi_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weightsg8j_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weightshbi_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weightsibs_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weightsjbC_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weightskbM_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weightslbW_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weightsmb6_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weightsncg_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weightsocq_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weightspcA_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weightsqcK_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weightsrcU_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weightssc4_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weightstde_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weightsudo_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weightsvdy_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weightswdI_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weightsxdS_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weightsyd2_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weightszec_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weightsAem_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weightsBew_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weightsCeG_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weightsDeQ_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weightsEe0_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weightsFfa_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weightsGfk_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weightsHfu_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weightsIfE_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weightsJfO_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weightsKfY_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weightsLf8_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weightsMgi_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weightsNgs_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weightsOgC_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weightsPgM_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weightsQgW_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weightsRg6_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weightsShg_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weightsThq_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weightsUhA_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weightsVhK_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weightsWhU_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weightsXh4_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weightsYie_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weightsZio_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weights0iy_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weights1iI_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_weights2iS_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_conv_bias_rom' using distributed ROMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:06 ; elapsed = 00:00:19 . Memory (MB): peak = 195.414 ; gain = 103.930
+INFO: [VHDL 208-304] Generating VHDL RTL for conv.
+INFO: [VLOG 209-307] Generating Verilog RTL for conv.
+INFO: [HLS 200-112] Total elapsed time: 18.967 seconds; peak allocated memory: 118.001 MB.

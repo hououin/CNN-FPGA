@@ -116,7 +116,7 @@ architecture behav of flat is
     signal zext_ln15_fu_335_p1 : STD_LOGIC_VECTOR (5 downto 0);
     signal add_ln14_1_fu_339_p2 : STD_LOGIC_VECTOR (5 downto 0);
     signal select_ln15_5_fu_319_p3 : STD_LOGIC_VECTOR (4 downto 0);
-    signal tmp_22_cast_fu_345_p3 : STD_LOGIC_VECTOR (9 downto 0);
+    signal tmp_17_cast_fu_345_p3 : STD_LOGIC_VECTOR (9 downto 0);
     signal zext_ln14_2_fu_361_p1 : STD_LOGIC_VECTOR (9 downto 0);
     signal add_ln14_2_fu_365_p2 : STD_LOGIC_VECTOR (9 downto 0);
     signal add_ln9_fu_388_p2 : STD_LOGIC_VECTOR (7 downto 0);
@@ -315,7 +315,7 @@ begin
         end case;
     end process;
     add_ln14_1_fu_339_p2 <= std_logic_vector(unsigned(add_ln14_fu_261_p2) + unsigned(zext_ln15_fu_335_p1));
-    add_ln14_2_fu_365_p2 <= std_logic_vector(unsigned(tmp_22_cast_fu_345_p3) + unsigned(zext_ln14_2_fu_361_p1));
+    add_ln14_2_fu_365_p2 <= std_logic_vector(unsigned(tmp_17_cast_fu_345_p3) + unsigned(zext_ln14_2_fu_361_p1));
     add_ln14_fu_261_p2 <= std_logic_vector(unsigned(zext_ln14_fu_245_p1) + unsigned(zext_ln14_1_fu_257_p1));
     add_ln15_1_fu_376_p2 <= std_logic_vector(unsigned(select_ln15_4_fu_305_p3) + unsigned(ap_const_lv9_1));
     add_ln15_2_fu_299_p2 <= std_logic_vector(unsigned(select_ln15_fu_213_p3) + unsigned(ap_const_lv9_10));
@@ -472,7 +472,7 @@ begin
     select_ln9_fu_353_p3 <= 
         add_ln15_2_fu_299_p2 when (and_ln15_fu_279_p2(0) = '1') else 
         select_ln15_fu_213_p3;
-    tmp_22_cast_fu_345_p3 <= (add_ln14_1_fu_339_p2 & ap_const_lv4_0);
+    tmp_17_cast_fu_345_p3 <= (add_ln14_1_fu_339_p2 & ap_const_lv4_0);
     tmp_fu_249_p3 <= (select_ln15_3_fu_237_p3 & ap_const_lv2_0);
     xor_ln15_fu_267_p2 <= (icmp_ln9_fu_207_p2 xor ap_const_lv1_1);
     zext_ln14_1_fu_257_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(tmp_fu_249_p3),6));

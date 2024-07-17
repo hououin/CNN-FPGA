@@ -515,7 +515,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>cnn_fexp_32ns_32njbC_U33</rtlName>
+              <rtlName>cnn_fexp_32ns_32nhbi_U82</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>32</bitwidth>
@@ -564,7 +564,7 @@
                 </item>
               </inlineStackInfo>
               <originalName>sum</originalName>
-              <rtlName>cnn_fadd_32ns_32ncud_U31</rtlName>
+              <rtlName>cnn_fadd_32ns_32nbkb_U80</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>32</bitwidth>
@@ -1040,7 +1040,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>cnn_fexp_32ns_32njbC_U33</rtlName>
+              <rtlName>cnn_fexp_32ns_32nhbi_U82</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>32</bitwidth>
@@ -1089,7 +1089,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>cnn_fdiv_32ns_32nibs_U32</rtlName>
+              <rtlName>cnn_fdiv_32ns_32ng8j_U81</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>32</bitwidth>
@@ -3126,7 +3126,7 @@
         <count>3</count>
         <item_version>0</item_version>
         <item class_id="38" tracking_level="0" version="0">
-          <first>cnn_fadd_32ns_32ncud_U31 (cnn_fadd_32ns_32ncud)</first>
+          <first>cnn_fadd_32ns_32nbkb_U80 (cnn_fadd_32ns_32nbkb)</first>
           <second class_id="39" tracking_level="0" version="0">
             <count>3</count>
             <item_version>0</item_version>
@@ -3145,7 +3145,7 @@
           </second>
         </item>
         <item>
-          <first>cnn_fdiv_32ns_32nibs_U32 (cnn_fdiv_32ns_32nibs)</first>
+          <first>cnn_fdiv_32ns_32ng8j_U81 (cnn_fdiv_32ns_32ng8j)</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -3164,7 +3164,7 @@
           </second>
         </item>
         <item>
-          <first>cnn_fexp_32ns_32njbC_U33 (cnn_fexp_32ns_32njbC)</first>
+          <first>cnn_fexp_32ns_32nhbi_U82 (cnn_fexp_32ns_32nhbi)</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -4130,21 +4130,21 @@
         <count>3</count>
         <item_version>0</item_version>
         <item>
-          <first>cnn_fadd_32ns_32ncud_U31</first>
+          <first>cnn_fadd_32ns_32nbkb_U80</first>
           <second>
             <count>0</count>
             <item_version>0</item_version>
           </second>
         </item>
         <item>
-          <first>cnn_fdiv_32ns_32nibs_U32</first>
+          <first>cnn_fdiv_32ns_32ng8j_U81</first>
           <second>
             <count>0</count>
             <item_version>0</item_version>
           </second>
         </item>
         <item>
-          <first>cnn_fexp_32ns_32njbC_U33</first>
+          <first>cnn_fexp_32ns_32nhbi_U82</first>
           <second>
             <count>0</count>
             <item_version>0</item_version>
@@ -4155,7 +4155,7 @@
         <count>3</count>
         <item_version>0</item_version>
         <item class_id="42" tracking_level="0" version="0">
-          <first>cnn_fadd_32ns_32ncud_U31 (cnn_fadd_32ns_32ncud)</first>
+          <first>cnn_fadd_32ns_32nbkb_U80 (cnn_fadd_32ns_32nbkb)</first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -4163,7 +4163,7 @@
           </second>
         </item>
         <item>
-          <first>cnn_fdiv_32ns_32nibs_U32 (cnn_fdiv_32ns_32nibs)</first>
+          <first>cnn_fdiv_32ns_32ng8j_U81 (cnn_fdiv_32ns_32ng8j)</first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -4171,7 +4171,7 @@
           </second>
         </item>
         <item>
-          <first>cnn_fexp_32ns_32njbC_U33 (cnn_fexp_32ns_32njbC)</first>
+          <first>cnn_fexp_32ns_32nhbi_U82 (cnn_fexp_32ns_32nhbi)</first>
           <second>
             <count>2</count>
             <item_version>0</item_version>

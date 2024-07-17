@@ -95,7 +95,7 @@ struct flat : public sc_module {
     sc_signal< sc_lv<6> > zext_ln15_fu_335_p1;
     sc_signal< sc_lv<6> > add_ln14_1_fu_339_p2;
     sc_signal< sc_lv<5> > select_ln15_5_fu_319_p3;
-    sc_signal< sc_lv<10> > tmp_22_cast_fu_345_p3;
+    sc_signal< sc_lv<10> > tmp_17_cast_fu_345_p3;
     sc_signal< sc_lv<10> > zext_ln14_2_fu_361_p1;
     sc_signal< sc_lv<10> > add_ln14_2_fu_365_p2;
     sc_signal< sc_lv<8> > add_ln9_fu_388_p2;
@@ -180,7 +180,7 @@ struct flat : public sc_module {
     void thread_select_ln6_fu_285_p3();
     void thread_select_ln9_1_fu_394_p3();
     void thread_select_ln9_fu_353_p3();
-    void thread_tmp_22_cast_fu_345_p3();
+    void thread_tmp_17_cast_fu_345_p3();
     void thread_tmp_fu_249_p3();
     void thread_xor_ln15_fu_267_p2();
     void thread_zext_ln14_1_fu_257_p1();
