@@ -1,0 +1,275 @@
+
+
+================================================================
+== Vivado HLS Report for 'dense_out'
+================================================================
+* Date:           Mon Jul 22 20:56:39 2024
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        cnn_ap_type
+* Solution:       W14_6_OPT3_SAT
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  20.00|    17.134|        2.50|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +------+------+------+------+---------+
+    |   Latency   |   Interval  | Pipeline|
+    |  min |  max |  min |  max |   Type  |
+    +------+------+------+------+---------+
+    |  1275|  1275|  1275|  1275|   none  |
+    +------+------+------+------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +--------------+-----+-----+----------+-----------+-----------+------+----------+
+        |              |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |   Loop Name  | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +--------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Dense_Loop  |  930|  930|        93|          -|          -|    10|    no    |
+        | + Flat_Loop  |   90|   90|         3|          -|          -|    30|    no    |
+        +--------------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 7
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 7 3 
+3 --> 4 6 
+4 --> 5 
+5 --> 3 
+6 --> 2 
+7 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.76>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%dense_array_V = alloca [10 x i14], align 2" [cnn_ap_type/dense_out.cpp:38]   --->   Operation 8 'alloca' 'dense_array_V' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 14> <Depth = 10> <RAM>
+ST_1 : Operation 9 [1/1] (1.76ns)   --->   "br label %.preheader" [cnn_ap_type/dense_out.cpp:41]   --->   Operation 9 'br' <Predicate = true> <Delay = 1.76>
+
+State 2 <SV = 1> <Delay = 1.76>
+ST_2 : Operation 10 [1/1] (0.00ns)   --->   "%d_0 = phi i4 [ %d, %Dense_Loop_end ], [ 0, %.preheader.preheader ]"   --->   Operation 10 'phi' 'd_0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 11 [1/1] (1.30ns)   --->   "%icmp_ln41 = icmp eq i4 %d_0, -6" [cnn_ap_type/dense_out.cpp:41]   --->   Operation 11 'icmp' 'icmp_ln41' <Predicate = true> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.36> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 12 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 10, i64 10, i64 10)"   --->   Operation 12 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 13 [1/1] (1.73ns)   --->   "%d = add i4 %d_0, 1" [cnn_ap_type/dense_out.cpp:41]   --->   Operation 13 'add' 'd' <Predicate = true> <Delay = 1.73> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.81> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 14 [1/1] (0.00ns)   --->   "br i1 %icmp_ln41, label %1, label %Dense_Loop_begin" [cnn_ap_type/dense_out.cpp:41]   --->   Operation 14 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 15 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([11 x i8]* @p_str417) nounwind" [cnn_ap_type/dense_out.cpp:42]   --->   Operation 15 'specloopname' <Predicate = (!icmp_ln41)> <Delay = 0.00>
+ST_2 : Operation 16 [1/1] (0.00ns)   --->   "%tmp = call i32 (...)* @_ssdm_op_SpecRegionBegin([11 x i8]* @p_str417)" [cnn_ap_type/dense_out.cpp:42]   --->   Operation 16 'specregionbegin' 'tmp' <Predicate = (!icmp_ln41)> <Delay = 0.00>
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%zext_ln48 = zext i4 %d_0 to i64" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 17 'zext' 'zext_ln48' <Predicate = (!icmp_ln41)> <Delay = 0.00>
+ST_2 : Operation 18 [1/1] (0.00ns)   --->   "%zext_ln46 = zext i4 %d_0 to i9" [cnn_ap_type/dense_out.cpp:46]   --->   Operation 18 'zext' 'zext_ln46' <Predicate = (!icmp_ln41)> <Delay = 0.00>
+ST_2 : Operation 19 [1/1] (1.76ns)   --->   "br label %0" [cnn_ap_type/dense_out.cpp:46]   --->   Operation 19 'br' <Predicate = (!icmp_ln41)> <Delay = 1.76>
+ST_2 : Operation 20 [2/2] (0.00ns)   --->   "call fastcc void @soft_max([10 x i14]* %dense_array_V, [10 x i14]* %prediction_V)" [cnn_ap_type/dense_out.cpp:54]   --->   Operation 20 'call' <Predicate = (icmp_ln41)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 6.95>
+ST_3 : Operation 21 [1/1] (0.00ns)   --->   "%p_Val2_s = phi i14 [ 0, %Dense_Loop_begin ], [ %select_ln340_7, %_ZN13ap_fixed_baseILi29ELi13ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1ILi14ELi6ELb1ELS0_0ELS1_0ELi0EEERKS_IXT_EXT0_EXT1_EXT2_EXT3_EXT4_EE.exit.i.i_ifconv ]" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 21 'phi' 'p_Val2_s' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 22 [1/1] (0.00ns)   --->   "%f_0 = phi i5 [ 0, %Dense_Loop_begin ], [ %f, %_ZN13ap_fixed_baseILi29ELi13ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1ILi14ELi6ELb1ELS0_0ELS1_0ELi0EEERKS_IXT_EXT0_EXT1_EXT2_EXT3_EXT4_EE.exit.i.i_ifconv ]"   --->   Operation 22 'phi' 'f_0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 23 [1/1] (1.36ns)   --->   "%icmp_ln46 = icmp eq i5 %f_0, -2" [cnn_ap_type/dense_out.cpp:46]   --->   Operation 23 'icmp' 'icmp_ln46' <Predicate = true> <Delay = 1.36> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.36> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 24 [1/1] (0.00ns)   --->   "%empty_56 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 30, i64 30, i64 30)"   --->   Operation 24 'speclooptripcount' 'empty_56' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 25 [1/1] (1.78ns)   --->   "%f = add i5 %f_0, 1" [cnn_ap_type/dense_out.cpp:46]   --->   Operation 25 'add' 'f' <Predicate = true> <Delay = 1.78> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.81> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 26 [1/1] (0.00ns)   --->   "br i1 %icmp_ln46, label %Dense_Loop_end, label %_ZN13ap_fixed_baseILi29ELi13ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1ILi14ELi6ELb1ELS0_0ELS1_0ELi0EEERKS_IXT_EXT0_EXT1_EXT2_EXT3_EXT4_EE.exit.i.i_ifconv" [cnn_ap_type/dense_out.cpp:46]   --->   Operation 26 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 27 [1/1] (0.00ns)   --->   "%zext_ln48_1 = zext i5 %f_0 to i64" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 27 'zext' 'zext_ln48_1' <Predicate = (!icmp_ln46)> <Delay = 0.00>
+ST_3 : Operation 28 [1/1] (0.00ns)   --->   "%tmp_s = call i8 @_ssdm_op_BitConcatenate.i8.i5.i3(i5 %f_0, i3 0)" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 28 'bitconcatenate' 'tmp_s' <Predicate = (!icmp_ln46)> <Delay = 0.00>
+ST_3 : Operation 29 [1/1] (0.00ns)   --->   "%zext_ln1116 = zext i8 %tmp_s to i9" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 29 'zext' 'zext_ln1116' <Predicate = (!icmp_ln46)> <Delay = 0.00>
+ST_3 : Operation 30 [1/1] (0.00ns)   --->   "%tmp_2 = call i6 @_ssdm_op_BitConcatenate.i6.i5.i1(i5 %f_0, i1 false)" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 30 'bitconcatenate' 'tmp_2' <Predicate = (!icmp_ln46)> <Delay = 0.00>
+ST_3 : Operation 31 [1/1] (0.00ns)   --->   "%zext_ln1116_1 = zext i6 %tmp_2 to i9" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 31 'zext' 'zext_ln1116_1' <Predicate = (!icmp_ln46)> <Delay = 0.00>
+ST_3 : Operation 32 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln1116 = add i9 %zext_ln1116, %zext_ln1116_1" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 32 'add' 'add_ln1116' <Predicate = (!icmp_ln46)> <Delay = 0.00> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.84> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 33 [1/1] (3.69ns) (root node of TernaryAdder)   --->   "%add_ln1116_1 = add i9 %zext_ln46, %add_ln1116" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 33 'add' 'add_ln1116_1' <Predicate = (!icmp_ln46)> <Delay = 3.69> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.84> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 34 [1/1] (0.00ns)   --->   "%zext_ln1116_2 = zext i9 %add_ln1116_1 to i64" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 34 'zext' 'zext_ln1116_2' <Predicate = (!icmp_ln46)> <Delay = 0.00>
+ST_3 : Operation 35 [1/1] (0.00ns)   --->   "%dense_out_weights_V_s = getelementptr [300 x i9]* @dense_out_weights_V, i64 0, i64 %zext_ln1116_2" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 35 'getelementptr' 'dense_out_weights_V_s' <Predicate = (!icmp_ln46)> <Delay = 0.00>
+ST_3 : Operation 36 [2/2] (3.25ns)   --->   "%dense_out_weights_V_1 = load i9* %dense_out_weights_V_s, align 2" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 36 'load' 'dense_out_weights_V_1' <Predicate = (!icmp_ln46)> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 10> <ROM>
+ST_3 : Operation 37 [1/1] (0.00ns)   --->   "%dense_2_out_V_addr = getelementptr [30 x i13]* %dense_2_out_V, i64 0, i64 %zext_ln48_1" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 37 'getelementptr' 'dense_2_out_V_addr' <Predicate = (!icmp_ln46)> <Delay = 0.00>
+ST_3 : Operation 38 [2/2] (2.32ns)   --->   "%dense_2_out_V_load = load i13* %dense_2_out_V_addr, align 2" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 38 'load' 'dense_2_out_V_load' <Predicate = (!icmp_ln46)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 14> <Depth = 10> <RAM>
+ST_3 : Operation 39 [1/1] (0.00ns)   --->   "%dense_out_bias_V_add = getelementptr [10 x i8]* @dense_out_bias_V, i64 0, i64 %zext_ln48" [cnn_ap_type/dense_out.cpp:51]   --->   Operation 39 'getelementptr' 'dense_out_bias_V_add' <Predicate = (icmp_ln46)> <Delay = 0.00>
+ST_3 : Operation 40 [2/2] (3.25ns)   --->   "%p_Val2_20 = load i8* %dense_out_bias_V_add, align 1" [cnn_ap_type/dense_out.cpp:51]   --->   Operation 40 'load' 'p_Val2_20' <Predicate = (icmp_ln46)> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 10> <ROM>
+
+State 4 <SV = 3> <Delay = 14.6>
+ST_4 : Operation 41 [1/2] (3.25ns)   --->   "%dense_out_weights_V_1 = load i9* %dense_out_weights_V_s, align 2" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 41 'load' 'dense_out_weights_V_1' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 10> <ROM>
+ST_4 : Operation 42 [1/1] (0.00ns)   --->   "%sext_ln1117 = sext i9 %dense_out_weights_V_1 to i22" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 42 'sext' 'sext_ln1117' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 43 [1/2] (2.32ns)   --->   "%dense_2_out_V_load = load i13* %dense_2_out_V_addr, align 2" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 43 'load' 'dense_2_out_V_load' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 14> <Depth = 10> <RAM>
+ST_4 : Operation 44 [1/1] (0.00ns)   --->   "%zext_ln703 = zext i13 %dense_2_out_V_load to i22" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 44 'zext' 'zext_ln703' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 45 [1/1] (6.38ns) (root node of the DSP)   --->   "%mul_ln703 = mul i22 %sext_ln1117, %zext_ln703" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 45 'mul' 'mul_ln703' <Predicate = true> <Delay = 6.38> <Core = "DSP48">   --->   Core 88 'DSP48' <Latency = 0> <II = 1> <Delay = 6.38> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 46 [1/1] (0.00ns)   --->   "%sext_ln703 = sext i22 %mul_ln703 to i23" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 46 'sext' 'sext_ln703' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 47 [1/1] (0.00ns)   --->   "%lhs_V_2 = call i22 @_ssdm_op_BitConcatenate.i22.i14.i8(i14 %p_Val2_s, i8 0)" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 47 'bitconcatenate' 'lhs_V_2' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 48 [1/1] (0.00ns)   --->   "%sext_ln728 = sext i22 %lhs_V_2 to i23" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 48 'sext' 'sext_ln728' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 49 [1/1] (2.25ns)   --->   "%add_ln1192 = add i22 %mul_ln703, %lhs_V_2" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 49 'add' 'add_ln1192' <Predicate = true> <Delay = 2.25> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.81> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 50 [1/1] (2.25ns)   --->   "%ret_V = add i23 %sext_ln728, %sext_ln703" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 50 'add' 'ret_V' <Predicate = true> <Delay = 2.25> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.81> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 51 [1/1] (0.00ns)   --->   "%p_Result_s = call i1 @_ssdm_op_BitSelect.i1.i23.i32(i23 %ret_V, i32 22)" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 51 'bitselect' 'p_Result_s' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 52 [1/1] (0.00ns)   --->   "%p_Val2_24 = call i14 @_ssdm_op_PartSelect.i14.i22.i32.i32(i22 %add_ln1192, i32 8, i32 21)" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 52 'partselect' 'p_Val2_24' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 53 [1/1] (0.00ns)   --->   "%p_Result_19 = call i1 @_ssdm_op_BitSelect.i1.i22.i32(i22 %add_ln1192, i32 21)" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 53 'bitselect' 'p_Result_19' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 54 [1/1] (0.00ns)   --->   "%tmp_17 = call i1 @_ssdm_op_BitSelect.i1.i22.i32(i22 %add_ln1192, i32 7)" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 54 'bitselect' 'tmp_17' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 55 [1/1] (0.00ns)   --->   "%zext_ln415 = zext i1 %tmp_17 to i14" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 55 'zext' 'zext_ln415' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 56 [1/1] (1.81ns)   --->   "%w_sum_V = add i14 %p_Val2_24, %zext_ln415" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 56 'add' 'w_sum_V' <Predicate = true> <Delay = 1.81> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.81> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 57 [1/1] (0.00ns)   --->   "%tmp_18 = call i1 @_ssdm_op_BitSelect.i1.i14.i32(i14 %w_sum_V, i32 13)" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 57 'bitselect' 'tmp_18' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 58 [1/1] (0.00ns) (grouped into LUT with out node carry_1)   --->   "%xor_ln416_1 = xor i1 %tmp_18, true" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 58 'xor' 'xor_ln416_1' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 59 [1/1] (0.97ns) (out node of the LUT)   --->   "%carry_1 = and i1 %p_Result_19, %xor_ln416_1" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 59 'and' 'carry_1' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 60 [1/1] (0.00ns)   --->   "%p_Result_20 = call i1 @_ssdm_op_BitSelect.i1.i14.i32(i14 %w_sum_V, i32 13)" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 60 'bitselect' 'p_Result_20' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 61 [1/1] (0.00ns)   --->   "%Range2_all_ones = call i1 @_ssdm_op_BitSelect.i1.i23.i32(i23 %ret_V, i32 22)" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 61 'bitselect' 'Range2_all_ones' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 62 [1/1] (0.00ns) (grouped into LUT with out node and_ln786)   --->   "%tmp_21 = call i1 @_ssdm_op_BitSelect.i1.i23.i32(i23 %ret_V, i32 22)" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 62 'bitselect' 'tmp_21' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 63 [1/1] (0.00ns) (grouped into LUT with out node and_ln786)   --->   "%xor_ln779 = xor i1 %tmp_21, true" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 63 'xor' 'xor_ln779' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 64 [1/1] (0.00ns) (grouped into LUT with out node and_ln786)   --->   "%xor_ln416_2 = xor i1 %p_Result_19, true" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 64 'xor' 'xor_ln416_2' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 65 [1/1] (0.00ns) (grouped into LUT with out node and_ln786)   --->   "%or_ln416_1 = or i1 %tmp_18, %xor_ln416_2" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 65 'or' 'or_ln416_1' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 66 [1/1] (0.00ns) (grouped into LUT with out node and_ln786)   --->   "%or_ln416 = or i1 %or_ln416_1, %xor_ln779" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 66 'or' 'or_ln416' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 67 [1/1] (0.00ns) (grouped into LUT with out node and_ln786)   --->   "%deleted_ones = and i1 %Range2_all_ones, %or_ln416" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 67 'and' 'deleted_ones' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 68 [1/1] (0.97ns) (out node of the LUT)   --->   "%and_ln786 = and i1 %p_Result_20, %deleted_ones" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 68 'and' 'and_ln786' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+
+State 5 <SV = 4> <Delay = 3.91>
+ST_5 : Operation 69 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([10 x i8]* @p_str518) nounwind" [cnn_ap_type/dense_out.cpp:47]   --->   Operation 69 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 70 [1/1] (0.97ns)   --->   "%and_ln781 = and i1 %carry_1, %Range2_all_ones" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 70 'and' 'and_ln781' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 71 [1/1] (0.00ns) (grouped into LUT with out node select_ln340_3)   --->   "%xor_ln785 = xor i1 %Range2_all_ones, %carry_1" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 71 'xor' 'xor_ln785' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 72 [1/1] (0.00ns) (grouped into LUT with out node select_ln340_3)   --->   "%or_ln785 = or i1 %p_Result_20, %xor_ln785" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 72 'or' 'or_ln785' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 73 [1/1] (0.97ns)   --->   "%xor_ln785_1 = xor i1 %p_Result_s, true" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 73 'xor' 'xor_ln785_1' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 74 [1/1] (0.00ns) (grouped into LUT with out node select_ln340_3)   --->   "%overflow = and i1 %or_ln785, %xor_ln785_1" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 74 'and' 'overflow' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 75 [1/1] (0.00ns) (grouped into LUT with out node underflow)   --->   "%or_ln786 = or i1 %and_ln781, %and_ln786" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 75 'or' 'or_ln786' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 76 [1/1] (0.00ns) (grouped into LUT with out node underflow)   --->   "%xor_ln786_3 = xor i1 %or_ln786, true" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 76 'xor' 'xor_ln786_3' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 77 [1/1] (0.97ns) (out node of the LUT)   --->   "%underflow = and i1 %p_Result_s, %xor_ln786_3" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 77 'and' 'underflow' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 78 [1/1] (0.00ns) (grouped into LUT with out node select_ln340_3)   --->   "%or_ln340_4 = or i1 %underflow, %overflow" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 78 'or' 'or_ln340_4' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 79 [1/1] (0.00ns) (grouped into LUT with out node select_ln340_7)   --->   "%or_ln340_5 = or i1 %and_ln786, %xor_ln785_1" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 79 'or' 'or_ln340_5' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 80 [1/1] (0.00ns) (grouped into LUT with out node select_ln340_7)   --->   "%or_ln340_6 = or i1 %or_ln340_5, %and_ln781" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 80 'or' 'or_ln340_6' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 81 [1/1] (0.97ns) (out node of the LUT)   --->   "%select_ln340_3 = select i1 %or_ln340_4, i14 8191, i14 %w_sum_V" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 81 'select' 'select_ln340_3' <Predicate = true> <Delay = 0.97> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_5 : Operation 82 [1/1] (0.00ns) (grouped into LUT with out node select_ln340_7)   --->   "%select_ln388_3 = select i1 %underflow, i14 -8192, i14 %w_sum_V" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 82 'select' 'select_ln388_3' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_5 : Operation 83 [1/1] (0.97ns) (out node of the LUT)   --->   "%select_ln340_7 = select i1 %or_ln340_6, i14 %select_ln340_3, i14 %select_ln388_3" [cnn_ap_type/dense_out.cpp:48]   --->   Operation 83 'select' 'select_ln340_7' <Predicate = true> <Delay = 0.97> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_5 : Operation 84 [1/1] (0.00ns)   --->   "br label %0" [cnn_ap_type/dense_out.cpp:46]   --->   Operation 84 'br' <Predicate = true> <Delay = 0.00>
+
+State 6 <SV = 3> <Delay = 9.34>
+ST_6 : Operation 85 [1/1] (0.00ns)   --->   "%lhs_V = sext i14 %p_Val2_s to i15" [cnn_ap_type/dense_out.cpp:51]   --->   Operation 85 'sext' 'lhs_V' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 86 [1/2] (3.25ns)   --->   "%p_Val2_20 = load i8* %dense_out_bias_V_add, align 1" [cnn_ap_type/dense_out.cpp:51]   --->   Operation 86 'load' 'p_Val2_20' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 10> <ROM>
+ST_6 : Operation 87 [1/1] (0.00ns)   --->   "%sext_ln1265 = sext i8 %p_Val2_20 to i14" [cnn_ap_type/dense_out.cpp:51]   --->   Operation 87 'sext' 'sext_ln1265' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 88 [1/1] (0.00ns)   --->   "%rhs_V = sext i8 %p_Val2_20 to i15" [cnn_ap_type/dense_out.cpp:51]   --->   Operation 88 'sext' 'rhs_V' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 89 [1/1] (1.81ns)   --->   "%ret_V_6 = add nsw i15 %rhs_V, %lhs_V" [cnn_ap_type/dense_out.cpp:51]   --->   Operation 89 'add' 'ret_V_6' <Predicate = true> <Delay = 1.81> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.81> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 90 [1/1] (0.00ns)   --->   "%p_Result_21 = call i1 @_ssdm_op_BitSelect.i1.i15.i32(i15 %ret_V_6, i32 14)" [cnn_ap_type/dense_out.cpp:51]   --->   Operation 90 'bitselect' 'p_Result_21' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 91 [1/1] (1.81ns)   --->   "%p_Val2_22 = add i14 %sext_ln1265, %p_Val2_s" [cnn_ap_type/dense_out.cpp:51]   --->   Operation 91 'add' 'p_Val2_22' <Predicate = true> <Delay = 1.81> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.81> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 92 [1/1] (0.00ns)   --->   "%p_Result_22 = call i1 @_ssdm_op_BitSelect.i1.i14.i32(i14 %p_Val2_22, i32 13)" [cnn_ap_type/dense_out.cpp:51]   --->   Operation 92 'bitselect' 'p_Result_22' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 93 [1/1] (0.00ns) (grouped into LUT with out node select_ln388)   --->   "%xor_ln786 = xor i1 %p_Result_22, true" [cnn_ap_type/dense_out.cpp:51]   --->   Operation 93 'xor' 'xor_ln786' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 94 [1/1] (0.00ns) (grouped into LUT with out node select_ln388)   --->   "%underflow_3 = and i1 %p_Result_21, %xor_ln786" [cnn_ap_type/dense_out.cpp:51]   --->   Operation 94 'and' 'underflow_3' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 95 [1/1] (0.00ns) (grouped into LUT with out node select_ln340_6)   --->   "%xor_ln340_5 = xor i1 %p_Result_21, %p_Result_22" [cnn_ap_type/dense_out.cpp:51]   --->   Operation 95 'xor' 'xor_ln340_5' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 96 [1/1] (0.00ns) (grouped into LUT with out node select_ln340_6)   --->   "%xor_ln340 = xor i1 %p_Result_21, true" [cnn_ap_type/dense_out.cpp:51]   --->   Operation 96 'xor' 'xor_ln340' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 97 [1/1] (0.00ns) (grouped into LUT with out node select_ln340_6)   --->   "%or_ln340 = or i1 %p_Result_22, %xor_ln340" [cnn_ap_type/dense_out.cpp:51]   --->   Operation 97 'or' 'or_ln340' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 98 [1/1] (0.00ns) (grouped into LUT with out node select_ln340_6)   --->   "%select_ln340 = select i1 %xor_ln340_5, i14 8191, i14 %p_Val2_22" [cnn_ap_type/dense_out.cpp:51]   --->   Operation 98 'select' 'select_ln340' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_6 : Operation 99 [1/1] (0.97ns) (out node of the LUT)   --->   "%select_ln388 = select i1 %underflow_3, i14 -8192, i14 %p_Val2_22" [cnn_ap_type/dense_out.cpp:51]   --->   Operation 99 'select' 'select_ln388' <Predicate = true> <Delay = 0.97> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_6 : Operation 100 [1/1] (0.97ns) (out node of the LUT)   --->   "%select_ln340_6 = select i1 %or_ln340, i14 %select_ln340, i14 %select_ln388" [cnn_ap_type/dense_out.cpp:51]   --->   Operation 100 'select' 'select_ln340_6' <Predicate = true> <Delay = 0.97> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_6 : Operation 101 [1/1] (0.00ns)   --->   "%dense_array_V_addr = getelementptr [10 x i14]* %dense_array_V, i64 0, i64 %zext_ln48" [cnn_ap_type/dense_out.cpp:51]   --->   Operation 101 'getelementptr' 'dense_array_V_addr' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 102 [1/1] (2.32ns)   --->   "store i14 %select_ln340_6, i14* %dense_array_V_addr, align 2" [cnn_ap_type/dense_out.cpp:51]   --->   Operation 102 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 14> <Depth = 10> <RAM>
+ST_6 : Operation 103 [1/1] (0.00ns)   --->   "%empty_57 = call i32 (...)* @_ssdm_op_SpecRegionEnd([11 x i8]* @p_str417, i32 %tmp)" [cnn_ap_type/dense_out.cpp:52]   --->   Operation 103 'specregionend' 'empty_57' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 104 [1/1] (0.00ns)   --->   "br label %.preheader" [cnn_ap_type/dense_out.cpp:41]   --->   Operation 104 'br' <Predicate = true> <Delay = 0.00>
+
+State 7 <SV = 2> <Delay = 0.00>
+ST_7 : Operation 105 [1/2] (0.00ns)   --->   "call fastcc void @soft_max([10 x i14]* %dense_array_V, [10 x i14]* %prediction_V)" [cnn_ap_type/dense_out.cpp:54]   --->   Operation 105 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_7 : Operation 106 [1/1] (0.00ns)   --->   "ret void" [cnn_ap_type/dense_out.cpp:55]   --->   Operation 106 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 20ns, clock uncertainty: 2.5ns.
+
+ <State 1>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('d') with incoming values : ('d', cnn_ap_type/dense_out.cpp:41) [11]  (1.77 ns)
+
+ <State 2>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('__Val2__', cnn_ap_type/dense_out.cpp:48) with incoming values : ('select_ln340_7', cnn_ap_type/dense_out.cpp:48) [23]  (1.77 ns)
+
+ <State 3>: 6.95ns
+The critical path consists of the following:
+	'phi' operation ('f') with incoming values : ('f', cnn_ap_type/dense_out.cpp:46) [24]  (0 ns)
+	'add' operation ('add_ln1116', cnn_ap_type/dense_out.cpp:48) [36]  (0 ns)
+	'add' operation ('add_ln1116_1', cnn_ap_type/dense_out.cpp:48) [37]  (3.7 ns)
+	'getelementptr' operation ('dense_out_weights_V_s', cnn_ap_type/dense_out.cpp:48) [39]  (0 ns)
+	'load' operation ('dense_out_weights_V_1', cnn_ap_type/dense_out.cpp:48) on array 'dense_out_weights_V' [40]  (3.25 ns)
+
+ <State 4>: 14.7ns
+The critical path consists of the following:
+	'load' operation ('dense_out_weights_V_1', cnn_ap_type/dense_out.cpp:48) on array 'dense_out_weights_V' [40]  (3.25 ns)
+	'mul' operation of DSP[45] ('mul_ln703', cnn_ap_type/dense_out.cpp:48) [45]  (6.38 ns)
+	'add' operation ('add_ln1192', cnn_ap_type/dense_out.cpp:48) [49]  (2.26 ns)
+	'add' operation ('w_sum.V', cnn_ap_type/dense_out.cpp:48) [56]  (1.81 ns)
+	'xor' operation ('xor_ln416_1', cnn_ap_type/dense_out.cpp:48) [58]  (0 ns)
+	'and' operation ('carry', cnn_ap_type/dense_out.cpp:48) [59]  (0.978 ns)
+
+ <State 5>: 3.91ns
+The critical path consists of the following:
+	'and' operation ('and_ln781', cnn_ap_type/dense_out.cpp:48) [68]  (0.978 ns)
+	'or' operation ('or_ln786', cnn_ap_type/dense_out.cpp:48) [74]  (0 ns)
+	'xor' operation ('xor_ln786_3', cnn_ap_type/dense_out.cpp:48) [75]  (0 ns)
+	'and' operation ('underflow', cnn_ap_type/dense_out.cpp:48) [76]  (0.978 ns)
+	'or' operation ('or_ln340_4', cnn_ap_type/dense_out.cpp:48) [77]  (0 ns)
+	'select' operation ('select_ln340_3', cnn_ap_type/dense_out.cpp:48) [80]  (0.978 ns)
+	'select' operation ('select_ln340_7', cnn_ap_type/dense_out.cpp:48) [82]  (0.978 ns)
+
+ <State 6>: 9.34ns
+The critical path consists of the following:
+	'load' operation ('__Val2__', cnn_ap_type/dense_out.cpp:51) on array 'dense_out_bias_V' [87]  (3.25 ns)
+	'add' operation ('__Val2__', cnn_ap_type/dense_out.cpp:51) [92]  (1.81 ns)
+	'select' operation ('select_ln388', cnn_ap_type/dense_out.cpp:51) [100]  (0.978 ns)
+	'select' operation ('select_ln340_6', cnn_ap_type/dense_out.cpp:51) [101]  (0.978 ns)
+	'store' operation ('store_ln51', cnn_ap_type/dense_out.cpp:51) of variable 'select_ln340_6', cnn_ap_type/dense_out.cpp:51 on array 'dense_array.V', cnn_ap_type/dense_out.cpp:38 [103]  (2.32 ns)
+
+ <State 7>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

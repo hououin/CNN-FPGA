@@ -1,0 +1,249 @@
+
+
+================================================================
+== Vivado HLS Report for 'dense_2'
+================================================================
+* Date:           Mon Jul 22 20:58:04 2024
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        cnn_ap_type
+* Solution:       W14_6_OPT3_SAT
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  20.00|    16.336|        2.50|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +------+------+------+------+---------+
+    |   Latency   |   Interval  | Pipeline|
+    |  min |  max |  min |  max |   Type  |
+    +------+------+------+------+---------+
+    |  3091|  3091|  3091|  3091|   none  |
+    +------+------+------+------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +--------------+------+------+----------+-----------+-----------+------+----------+
+        |              |   Latency   | Iteration|  Initiation Interval  | Trip |          |
+        |   Loop Name  |  min |  max |  Latency |  achieved |   target  | Count| Pipelined|
+        +--------------+------+------+----------+-----------+-----------+------+----------+
+        |- DENSE_LOOP  |  3090|  3090|       103|          -|          -|    30|    no    |
+        | + FLAT_LOOP  |   100|   100|         2|          -|          -|    50|    no    |
+        +--------------+------+------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  | URAM|
++-----------------+---------+-------+--------+-------+-----+
+|DSP              |        -|      1|       -|      -|    -|
+|Expression       |        -|      -|       0|    274|    -|
+|FIFO             |        -|      -|       -|      -|    -|
+|Instance         |        -|      -|       0|    217|    -|
+|Memory           |        1|      -|       9|      5|    -|
+|Multiplexer      |        -|      -|       -|     60|    -|
+|Register         |        -|      -|      65|      -|    -|
++-----------------+---------+-------+--------+-------+-----+
+|Total            |        1|      1|      74|    556|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Available        |      280|    220|  106400|  53200|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Utilization (%)  |    ~0   |   ~0  |   ~0   |      1|    0|
++-----------------+---------+-------+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +-------------------------+--------------------+---------+-------+---+-----+-----+
+    |         Instance        |       Module       | BRAM_18K| DSP48E| FF| LUT | URAM|
+    +-------------------------+--------------------+---------+-------+---+-----+-----+
+    |cnn_mux_506_14_1_1_U604  |cnn_mux_506_14_1_1  |        0|      0|  0|  217|    0|
+    +-------------------------+--------------------+---------+-------+---+-----+-----+
+    |Total                    |                    |        0|      0|  0|  217|    0|
+    +-------------------------+--------------------+---------+-------+---+-----+-----+
+
+    * DSP48E: 
+    +---------------------------+----------------------+--------------+
+    |          Instance         |        Module        |  Expression  |
+    +---------------------------+----------------------+--------------+
+    |cnn_mac_muladd_14bgk_U605  |cnn_mac_muladd_14bgk  | i0 + i1 * i2 |
+    +---------------------------+----------------------+--------------+
+
+    * Memory: 
+    +---------------------+----------------------+---------+---+----+-----+------+-----+------+-------------+
+    |        Memory       |        Module        | BRAM_18K| FF| LUT| URAM| Words| Bits| Banks| W*Bits*Banks|
+    +---------------------+----------------------+---------+---+----+-----+------+-----+------+-------------+
+    |dense_2_bias_V_U     |dense_2_dense_2_bbom  |        0|  9|   5|    0|    30|    9|     1|          270|
+    |dense_2_weights_V_U  |dense_2_dense_2_wbnm  |        1|  0|   0|    0|  1500|    9|     1|        13500|
+    +---------------------+----------------------+---------+---+----+-----+------+-----+------+-------------+
+    |Total                |                      |        1|  9|   5|    0|  1530|   18|     2|        13770|
+    +---------------------+----------------------+---------+---+----+-----+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +--------------------------+----------+-------+---+----+------------+------------+
+    |       Variable Name      | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +--------------------------+----------+-------+---+----+------------+------------+
+    |add_ln1117_fu_615_p2      |     +    |      0|  0|   8|          12|          12|
+    |i_fu_559_p2               |     +    |      0|  0|  15|           5|           1|
+    |j_fu_579_p2               |     +    |      0|  0|  15|           6|           1|
+    |p_Val2_28_fu_934_p2       |     +    |      0|  0|  19|          14|          14|
+    |ret_V_8_fu_920_p2         |     +    |      0|  0|  21|          15|          15|
+    |sum_V_fu_734_p2           |     +    |      0|  0|  19|          14|          14|
+    |sub_ln1117_fu_609_p2      |     -    |      0|  0|   8|          12|          12|
+    |and_ln781_fu_812_p2       |    and   |      0|  0|   2|           1|           1|
+    |and_ln786_fu_842_p2       |    and   |      0|  0|   2|           1|           1|
+    |carry_2_fu_754_p2         |    and   |      0|  0|   2|           1|           1|
+    |deleted_ones_fu_806_p2    |    and   |      0|  0|   2|           1|           1|
+    |overflow_fu_836_p2        |    and   |      0|  0|   2|           1|           1|
+    |underflow_4_fu_954_p2     |    and   |      0|  0|   2|           1|           1|
+    |underflow_fu_860_p2       |    and   |      0|  0|   2|           1|           1|
+    |icmp_ln13_fu_573_p2       |   icmp   |      0|  0|  11|           6|           5|
+    |icmp_ln9_fu_553_p2        |   icmp   |      0|  0|  11|           5|           3|
+    |or_ln340_7_fu_866_p2      |    or    |      0|  0|   2|           1|           1|
+    |or_ln340_8_fu_872_p2      |    or    |      0|  0|   2|           1|           1|
+    |or_ln340_9_fu_878_p2      |    or    |      0|  0|   2|           1|           1|
+    |or_ln340_fu_972_p2        |    or    |      0|  0|   2|           1|           1|
+    |or_ln416_2_fu_794_p2      |    or    |      0|  0|   2|           1|           1|
+    |or_ln416_fu_800_p2        |    or    |      0|  0|   2|           1|           1|
+    |or_ln785_fu_824_p2        |    or    |      0|  0|   2|           1|           1|
+    |or_ln786_fu_848_p2        |    or    |      0|  0|   2|           1|           1|
+    |dense_2_out_V_d0          |  select  |      0|  0|  13|           1|           1|
+    |select_ln340_4_fu_884_p3  |  select  |      0|  0|  14|           1|          13|
+    |select_ln340_8_fu_994_p3  |  select  |      0|  0|  14|           1|          14|
+    |select_ln340_9_fu_900_p3  |  select  |      0|  0|  14|           1|          14|
+    |select_ln340_fu_978_p3    |  select  |      0|  0|  14|           1|          13|
+    |select_ln388_4_fu_892_p3  |  select  |      0|  0|  15|           1|          15|
+    |select_ln388_fu_986_p3    |  select  |      0|  0|  15|           1|          15|
+    |xor_ln340_6_fu_960_p2     |    xor   |      0|  0|   2|           1|           1|
+    |xor_ln340_fu_966_p2       |    xor   |      0|  0|   2|           1|           2|
+    |xor_ln416_3_fu_748_p2     |    xor   |      0|  0|   2|           1|           2|
+    |xor_ln416_4_fu_788_p2     |    xor   |      0|  0|   2|           1|           2|
+    |xor_ln779_fu_782_p2       |    xor   |      0|  0|   2|           1|           2|
+    |xor_ln785_2_fu_830_p2     |    xor   |      0|  0|   2|           1|           2|
+    |xor_ln785_fu_818_p2       |    xor   |      0|  0|   2|           1|           1|
+    |xor_ln786_4_fu_854_p2     |    xor   |      0|  0|   2|           1|           2|
+    |xor_ln786_fu_948_p2       |    xor   |      0|  0|   2|           1|           2|
+    +--------------------------+----------+-------+---+----+------------+------------+
+    |Total                     |          |      0|  0| 274|         120|         193|
+    +--------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +------------------+----+-----------+-----+-----------+
+    |       Name       | LUT| Input Size| Bits| Total Bits|
+    +------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm         |  33|          6|    1|          6|
+    |i_0_reg_519       |   9|          2|    5|         10|
+    |j_0_reg_542       |   9|          2|    6|         12|
+    |p_Val2_s_reg_530  |   9|          2|   14|         28|
+    +------------------+----+-----------+-----+-----------+
+    |Total             |  60|         12|   26|         56|
+    +------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +--------------------+----+----+-----+-----------+
+    |        Name        | FF | LUT| Bits| Const Bits|
+    +--------------------+----+----+-----+-----------+
+    |ap_CS_fsm           |   5|   0|    5|          0|
+    |i_0_reg_519         |   5|   0|    5|          0|
+    |i_reg_1290          |   5|   0|    5|          0|
+    |j_0_reg_542         |   6|   0|    6|          0|
+    |j_reg_1309          |   6|   0|    6|          0|
+    |p_Val2_s_reg_530    |  14|   0|   14|          0|
+    |tmp_3_reg_1319      |  14|   0|   14|          0|
+    |zext_ln13_reg_1301  |   5|   0|   12|          7|
+    |zext_ln14_reg_1295  |   5|   0|   64|         59|
+    +--------------------+----+----+-----+-----------+
+    |Total               |  65|   0|  131|         66|
+    +--------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++------------------------+-----+-----+------------+---------------------+--------------+
+|        RTL Ports       | Dir | Bits|  Protocol  |    Source Object    |    C Type    |
++------------------------+-----+-----+------------+---------------------+--------------+
+|ap_clk                  |  in |    1| ap_ctrl_hs |       dense_2       | return value |
+|ap_rst                  |  in |    1| ap_ctrl_hs |       dense_2       | return value |
+|ap_start                |  in |    1| ap_ctrl_hs |       dense_2       | return value |
+|ap_done                 | out |    1| ap_ctrl_hs |       dense_2       | return value |
+|ap_idle                 | out |    1| ap_ctrl_hs |       dense_2       | return value |
+|ap_ready                | out |    1| ap_ctrl_hs |       dense_2       | return value |
+|dense_1_out_0_V_rea     |  in |   14|   ap_none  | dense_1_out_0_V_rea |    scalar    |
+|dense_1_out_1_V_rea     |  in |   14|   ap_none  | dense_1_out_1_V_rea |    scalar    |
+|dense_1_out_2_V_rea     |  in |   14|   ap_none  | dense_1_out_2_V_rea |    scalar    |
+|dense_1_out_3_V_rea     |  in |   14|   ap_none  | dense_1_out_3_V_rea |    scalar    |
+|dense_1_out_4_V_rea     |  in |   14|   ap_none  | dense_1_out_4_V_rea |    scalar    |
+|dense_1_out_5_V_rea     |  in |   14|   ap_none  | dense_1_out_5_V_rea |    scalar    |
+|dense_1_out_6_V_rea     |  in |   14|   ap_none  | dense_1_out_6_V_rea |    scalar    |
+|dense_1_out_7_V_rea     |  in |   14|   ap_none  | dense_1_out_7_V_rea |    scalar    |
+|dense_1_out_8_V_rea     |  in |   14|   ap_none  | dense_1_out_8_V_rea |    scalar    |
+|dense_1_out_9_V_rea     |  in |   14|   ap_none  | dense_1_out_9_V_rea |    scalar    |
+|dense_1_out_10_V_re     |  in |   14|   ap_none  | dense_1_out_10_V_re |    scalar    |
+|dense_1_out_11_V_re     |  in |   14|   ap_none  | dense_1_out_11_V_re |    scalar    |
+|dense_1_out_12_V_re     |  in |   14|   ap_none  | dense_1_out_12_V_re |    scalar    |
+|dense_1_out_13_V_re     |  in |   14|   ap_none  | dense_1_out_13_V_re |    scalar    |
+|dense_1_out_14_V_re     |  in |   14|   ap_none  | dense_1_out_14_V_re |    scalar    |
+|dense_1_out_15_V_re     |  in |   14|   ap_none  | dense_1_out_15_V_re |    scalar    |
+|dense_1_out_16_V_re     |  in |   14|   ap_none  | dense_1_out_16_V_re |    scalar    |
+|dense_1_out_17_V_re     |  in |   14|   ap_none  | dense_1_out_17_V_re |    scalar    |
+|dense_1_out_18_V_re     |  in |   14|   ap_none  | dense_1_out_18_V_re |    scalar    |
+|dense_1_out_19_V_re     |  in |   14|   ap_none  | dense_1_out_19_V_re |    scalar    |
+|dense_1_out_20_V_re     |  in |   14|   ap_none  | dense_1_out_20_V_re |    scalar    |
+|dense_1_out_21_V_re     |  in |   14|   ap_none  | dense_1_out_21_V_re |    scalar    |
+|dense_1_out_22_V_re     |  in |   14|   ap_none  | dense_1_out_22_V_re |    scalar    |
+|dense_1_out_23_V_re     |  in |   14|   ap_none  | dense_1_out_23_V_re |    scalar    |
+|dense_1_out_24_V_re     |  in |   14|   ap_none  | dense_1_out_24_V_re |    scalar    |
+|dense_1_out_25_V_re     |  in |   14|   ap_none  | dense_1_out_25_V_re |    scalar    |
+|dense_1_out_26_V_re     |  in |   14|   ap_none  | dense_1_out_26_V_re |    scalar    |
+|dense_1_out_27_V_re     |  in |   14|   ap_none  | dense_1_out_27_V_re |    scalar    |
+|dense_1_out_28_V_re     |  in |   14|   ap_none  | dense_1_out_28_V_re |    scalar    |
+|dense_1_out_29_V_re     |  in |   14|   ap_none  | dense_1_out_29_V_re |    scalar    |
+|dense_1_out_30_V_re     |  in |   14|   ap_none  | dense_1_out_30_V_re |    scalar    |
+|dense_1_out_31_V_re     |  in |   14|   ap_none  | dense_1_out_31_V_re |    scalar    |
+|dense_1_out_32_V_re     |  in |   14|   ap_none  | dense_1_out_32_V_re |    scalar    |
+|dense_1_out_33_V_re     |  in |   14|   ap_none  | dense_1_out_33_V_re |    scalar    |
+|dense_1_out_34_V_re     |  in |   14|   ap_none  | dense_1_out_34_V_re |    scalar    |
+|dense_1_out_35_V_re     |  in |   14|   ap_none  | dense_1_out_35_V_re |    scalar    |
+|dense_1_out_36_V_re     |  in |   14|   ap_none  | dense_1_out_36_V_re |    scalar    |
+|dense_1_out_37_V_re     |  in |   14|   ap_none  | dense_1_out_37_V_re |    scalar    |
+|dense_1_out_38_V_re     |  in |   14|   ap_none  | dense_1_out_38_V_re |    scalar    |
+|dense_1_out_39_V_re     |  in |   14|   ap_none  | dense_1_out_39_V_re |    scalar    |
+|dense_1_out_40_V_re     |  in |   14|   ap_none  | dense_1_out_40_V_re |    scalar    |
+|dense_1_out_41_V_re     |  in |   14|   ap_none  | dense_1_out_41_V_re |    scalar    |
+|dense_1_out_42_V_re     |  in |   14|   ap_none  | dense_1_out_42_V_re |    scalar    |
+|dense_1_out_43_V_re     |  in |   14|   ap_none  | dense_1_out_43_V_re |    scalar    |
+|dense_1_out_44_V_re     |  in |   14|   ap_none  | dense_1_out_44_V_re |    scalar    |
+|dense_1_out_45_V_re     |  in |   14|   ap_none  | dense_1_out_45_V_re |    scalar    |
+|dense_1_out_46_V_re     |  in |   14|   ap_none  | dense_1_out_46_V_re |    scalar    |
+|dense_1_out_47_V_re     |  in |   14|   ap_none  | dense_1_out_47_V_re |    scalar    |
+|dense_1_out_48_V_re     |  in |   14|   ap_none  | dense_1_out_48_V_re |    scalar    |
+|dense_1_out_49_V_re     |  in |   14|   ap_none  | dense_1_out_49_V_re |    scalar    |
+|dense_2_out_V_address0  | out |    5|  ap_memory |    dense_2_out_V    |     array    |
+|dense_2_out_V_ce0       | out |    1|  ap_memory |    dense_2_out_V    |     array    |
+|dense_2_out_V_we0       | out |    1|  ap_memory |    dense_2_out_V    |     array    |
+|dense_2_out_V_d0        | out |   13|  ap_memory |    dense_2_out_V    |     array    |
++------------------------+-----+-----+------------+---------------------+--------------+
+
