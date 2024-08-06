@@ -7,7 +7,7 @@
 
 module cnn_fexp_32ns_32nlbW
 #(parameter
-    ID         = 42,
+    ID         = 64,
     NUM_STAGE  = 5,
     din0_WIDTH = 32,
     din1_WIDTH = 32,

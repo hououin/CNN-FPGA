@@ -22,14 +22,16 @@
       "set_directive_interface cnn ",
       "set_directive_interface cnn ",
       "set_directive_inline dense_1 -off",
-      "set_directive_inline dense_2 -off"
+      "set_directive_inline dense_2 -off",
+      "set_directive_pipeline conv_1\/Col_Loop "
     ],
     "DirectiveInfo": [
       "interface cnn {{s_axilite positionBoolean0mode} {port positionBooleanTextRequiredreturn} {bundle CRTL_BUS}} {}",
       "interface cnn {{bram positionBoolean0mode} {port positionBooleanTextRequiredcnn_input}} {}",
       "interface cnn {{bram positionBoolean0mode} {port positionBooleanTextRequiredprediction}} {}",
       "inline dense_1 {{off positionBoolean1}} {}",
-      "inline dense_2 {{off positionBoolean1}} {}"
+      "inline dense_2 {{off positionBoolean1}} {}",
+      "pipeline conv_1\/Col_Loop {} {}"
     ]
   },
   "Args": {
@@ -62,7 +64,7 @@
     "ClockPeriod": "20",
     "IsCombLogic": "0",
     "II": "x",
-    "Latency": "1283541",
+    "Latency": "977302",
     "Uncertainty": "2.5"
   },
   "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 20.000 [get_ports ap_clk]"]},
@@ -79,15 +81,15 @@
   },
   "Files": {
     "CSource": [
-      "..\/max_pool_2.cpp",
-      "..\/max_pool_1.cpp",
-      "..\/flat.cpp",
-      "..\/dense_out.cpp",
-      "..\/dense_2.cpp",
-      "..\/dense_1.cpp",
-      "..\/conv_2.cpp",
+      "..\/cnn.cpp",
       "..\/conv_1.cpp",
-      "..\/cnn.cpp"
+      "..\/conv_2.cpp",
+      "..\/dense_1.cpp",
+      "..\/dense_2.cpp",
+      "..\/dense_out.cpp",
+      "..\/flat.cpp",
+      "..\/max_pool_1.cpp",
+      "..\/max_pool_2.cpp"
     ],
     "Vhdl": [
       "impl\/vhdl\/cnn_conv_1_input.vhd",
@@ -96,16 +98,15 @@
       "impl\/vhdl\/cnn_CRTL_BUS_s_axi.vhd",
       "impl\/vhdl\/cnn_dense_1_out.vhd",
       "impl\/vhdl\/cnn_dense_2_out.vhd",
-      "impl\/vhdl\/cnn_fadd_32ns_32ncud.vhd",
-      "impl\/vhdl\/cnn_fcmp_32ns_32neOg.vhd",
+      "impl\/vhdl\/cnn_fadd_32ns_32nbkb.vhd",
+      "impl\/vhdl\/cnn_fcmp_32ns_32ndEe.vhd",
       "impl\/vhdl\/cnn_fdiv_32ns_32nkbM.vhd",
       "impl\/vhdl\/cnn_fexp_32ns_32nlbW.vhd",
-      "impl\/vhdl\/cnn_fmul_32ns_32ndEe.vhd",
+      "impl\/vhdl\/cnn_fmul_32ns_32ncud.vhd",
+      "impl\/vhdl\/cnn_mac_muladd_6neOg.vhd",
       "impl\/vhdl\/cnn_max_pool_1_out.vhd",
       "impl\/vhdl\/cnn_max_pool_2_out.vhd",
       "impl\/vhdl\/conv_1.vhd",
-      "impl\/vhdl\/conv_1_conv_1_bias.vhd",
-      "impl\/vhdl\/conv_1_conv_1_weibkb.vhd",
       "impl\/vhdl\/conv_2.vhd",
       "impl\/vhdl\/conv_2_conv_2_bias.vhd",
       "impl\/vhdl\/conv_2_conv_2_weifYi.vhd",
@@ -136,20 +137,17 @@
       "impl\/verilog\/cnn_dense_1_out_ram.dat",
       "impl\/verilog\/cnn_dense_2_out.v",
       "impl\/verilog\/cnn_dense_2_out_ram.dat",
-      "impl\/verilog\/cnn_fadd_32ns_32ncud.v",
-      "impl\/verilog\/cnn_fcmp_32ns_32neOg.v",
+      "impl\/verilog\/cnn_fadd_32ns_32nbkb.v",
+      "impl\/verilog\/cnn_fcmp_32ns_32ndEe.v",
       "impl\/verilog\/cnn_fdiv_32ns_32nkbM.v",
       "impl\/verilog\/cnn_fexp_32ns_32nlbW.v",
-      "impl\/verilog\/cnn_fmul_32ns_32ndEe.v",
+      "impl\/verilog\/cnn_fmul_32ns_32ncud.v",
+      "impl\/verilog\/cnn_mac_muladd_6neOg.v",
       "impl\/verilog\/cnn_max_pool_1_out.v",
       "impl\/verilog\/cnn_max_pool_1_out_ram.dat",
       "impl\/verilog\/cnn_max_pool_2_out.v",
       "impl\/verilog\/cnn_max_pool_2_out_ram.dat",
       "impl\/verilog\/conv_1.v",
-      "impl\/verilog\/conv_1_conv_1_bias.v",
-      "impl\/verilog\/conv_1_conv_1_bias_rom.dat",
-      "impl\/verilog\/conv_1_conv_1_weibkb.v",
-      "impl\/verilog\/conv_1_conv_1_weibkb_rom.dat",
       "impl\/verilog\/conv_2.v",
       "impl\/verilog\/conv_2_conv_2_bias.v",
       "impl\/verilog\/conv_2_conv_2_bias_rom.dat",
@@ -677,8 +675,12 @@
       "ModuleName": "cnn",
       "Instances": [
         {
+          "ModuleName": "conv_1",
+          "InstanceName": "grp_conv_1_fu_168"
+        },
+        {
           "ModuleName": "dense_out",
-          "InstanceName": "grp_dense_out_fu_172",
+          "InstanceName": "grp_dense_out_fu_175",
           "Instances": [{
               "ModuleName": "soft_max",
               "InstanceName": "grp_soft_max_fu_149"
@@ -686,31 +688,27 @@
         },
         {
           "ModuleName": "conv_2",
-          "InstanceName": "grp_conv_2_fu_184"
-        },
-        {
-          "ModuleName": "conv_1",
-          "InstanceName": "grp_conv_1_fu_196"
+          "InstanceName": "grp_conv_2_fu_187"
         },
         {
           "ModuleName": "dense_1",
-          "InstanceName": "grp_dense_1_fu_207"
+          "InstanceName": "grp_dense_1_fu_199"
         },
         {
           "ModuleName": "dense_2",
-          "InstanceName": "grp_dense_2_fu_219"
+          "InstanceName": "grp_dense_2_fu_211"
         },
         {
           "ModuleName": "max_pool_1",
-          "InstanceName": "grp_max_pool_1_fu_231"
+          "InstanceName": "grp_max_pool_1_fu_223"
         },
         {
           "ModuleName": "max_pool_2",
-          "InstanceName": "grp_max_pool_2_fu_239"
+          "InstanceName": "grp_max_pool_2_fu_231"
         },
         {
           "ModuleName": "flat",
-          "InstanceName": "grp_flat_fu_247"
+          "InstanceName": "grp_flat_fu_239"
         }
       ]
     },
@@ -789,58 +787,30 @@
     "Metrics": {
       "conv_1": {
         "Latency": {
-          "LatencyBest": "309661",
-          "LatencyAvg": "309661",
-          "LatencyWorst": "309661",
-          "PipelineII": "309661",
+          "LatencyBest": "3422",
+          "LatencyAvg": "3422",
+          "LatencyWorst": "3422",
+          "PipelineII": "3422",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
         "Timing": {
           "Target": "20.00",
           "Uncertainty": "2.50",
-          "Estimate": "15.964"
+          "Estimate": "16.781"
         },
         "Loops": [{
-            "Name": "Row_Loop",
-            "TripCount": "26",
-            "Latency": "309660",
-            "PipelineII": "",
-            "PipelineDepth": "11910",
-            "Loops": [{
-                "Name": "Col_Loop",
-                "TripCount": "26",
-                "Latency": "11908",
-                "PipelineII": "",
-                "PipelineDepth": "458",
-                "Loops": [{
-                    "Name": "Filter1_Loop",
-                    "TripCount": "6",
-                    "Latency": "456",
-                    "PipelineII": "",
-                    "PipelineDepth": "76",
-                    "Loops": [{
-                        "Name": "W_Row_Loop",
-                        "TripCount": "3",
-                        "Latency": "69",
-                        "PipelineII": "",
-                        "PipelineDepth": "23",
-                        "Loops": [{
-                            "Name": "W_Col_Loop",
-                            "TripCount": "3",
-                            "Latency": "21",
-                            "PipelineII": "",
-                            "PipelineDepth": "7"
-                          }]
-                      }]
-                  }]
-              }]
+            "Name": "Row_Loop_Col_Loop",
+            "TripCount": "676",
+            "Latency": "3420",
+            "PipelineII": "5",
+            "PipelineDepth": "46"
           }],
         "Area": {
-          "BRAM_18K": "1",
-          "DSP48E": "5",
-          "FF": "697",
-          "LUT": "1496",
+          "BRAM_18K": "0",
+          "DSP48E": "58",
+          "FF": "10944",
+          "LUT": "12654",
           "URAM": "0"
         }
       },
@@ -1213,10 +1183,10 @@
       },
       "cnn": {
         "Latency": {
-          "LatencyBest": "1283541",
-          "LatencyAvg": "1283541",
-          "LatencyWorst": "1283541",
-          "PipelineII": "1283542",
+          "LatencyBest": "977302",
+          "LatencyAvg": "977302",
+          "LatencyWorst": "977302",
+          "PipelineII": "977303",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
@@ -1240,10 +1210,10 @@
               }]
           }],
         "Area": {
-          "BRAM_18K": "92",
-          "DSP48E": "34",
-          "FF": "4891",
-          "LUT": "11136",
+          "BRAM_18K": "91",
+          "DSP48E": "87",
+          "FF": "15138",
+          "LUT": "22321",
           "URAM": "0"
         }
       }
@@ -1259,7 +1229,7 @@
   },
   "GenData": {
     "DataVersion": "0.2",
-    "Time": "2024-05-14 13:25:29 +0200",
+    "Time": "2024-07-31 10:07:10 +0200",
     "ToolName": "vivado_hls",
     "ToolVersion": "2019.1"
   }

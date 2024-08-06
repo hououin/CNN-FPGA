@@ -179,13 +179,13 @@ soft_max grp_soft_max_fu_149(
     .prediction_Dout_A(32'd0)
 );
 
-cnn_fadd_32ns_32ncud #(
+cnn_fadd_32ns_32nbkb #(
     .ID( 1 ),
     .NUM_STAGE( 4 ),
     .din0_WIDTH( 32 ),
     .din1_WIDTH( 32 ),
     .dout_WIDTH( 32 ))
-cnn_fadd_32ns_32ncud_U46(
+cnn_fadd_32ns_32nbkb_U68(
     .clk(ap_clk),
     .reset(ap_rst),
     .din0(w_sum_0_reg_126),
@@ -194,13 +194,13 @@ cnn_fadd_32ns_32ncud_U46(
     .dout(grp_fu_156_p2)
 );
 
-cnn_fmul_32ns_32ndEe #(
+cnn_fmul_32ns_32ncud #(
     .ID( 1 ),
     .NUM_STAGE( 2 ),
     .din0_WIDTH( 32 ),
     .din1_WIDTH( 32 ),
     .dout_WIDTH( 32 ))
-cnn_fmul_32ns_32ndEe_U47(
+cnn_fmul_32ns_32ncud_U69(
     .clk(ap_clk),
     .reset(ap_rst),
     .din0(dense_out_weights_q0),

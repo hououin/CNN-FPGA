@@ -208,13 +208,13 @@ conv_2_bias_U(
     .q0(conv_2_bias_q0)
 );
 
-cnn_fadd_32ns_32ncud #(
+cnn_fadd_32ns_32nbkb #(
     .ID( 1 ),
     .NUM_STAGE( 4 ),
     .din0_WIDTH( 32 ),
     .din1_WIDTH( 32 ),
     .dout_WIDTH( 32 ))
-cnn_fadd_32ns_32ncud_U14(
+cnn_fadd_32ns_32nbkb_U36(
     .clk(ap_clk),
     .reset(ap_rst),
     .din0(grp_fu_261_p0),
@@ -223,13 +223,13 @@ cnn_fadd_32ns_32ncud_U14(
     .dout(grp_fu_261_p2)
 );
 
-cnn_fmul_32ns_32ndEe #(
+cnn_fmul_32ns_32ncud #(
     .ID( 1 ),
     .NUM_STAGE( 2 ),
     .din0_WIDTH( 32 ),
     .din1_WIDTH( 32 ),
     .dout_WIDTH( 32 ))
-cnn_fmul_32ns_32ndEe_U15(
+cnn_fmul_32ns_32ncud_U37(
     .clk(ap_clk),
     .reset(ap_rst),
     .din0(conv_2_weights_q0),
@@ -238,13 +238,13 @@ cnn_fmul_32ns_32ndEe_U15(
     .dout(grp_fu_268_p2)
 );
 
-cnn_fcmp_32ns_32neOg #(
+cnn_fcmp_32ns_32ndEe #(
     .ID( 1 ),
     .NUM_STAGE( 2 ),
     .din0_WIDTH( 32 ),
     .din1_WIDTH( 32 ),
     .dout_WIDTH( 1 ))
-cnn_fcmp_32ns_32neOg_U16(
+cnn_fcmp_32ns_32ndEe_U38(
     .clk(ap_clk),
     .reset(ap_rst),
     .din0(grp_fu_261_p2),

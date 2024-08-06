@@ -1,0 +1,279 @@
+
+
+================================================================
+== Vivado HLS Report for 'max_pool_2'
+================================================================
+* Date:           Sun Aug  4 11:15:39 2024
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        cnn
+* Solution:       conv_1_fp2_ap_d2_r3
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  20.00|     8.685|        2.50|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +------+------+------+------+---------+
+    |   Latency   |   Interval  | Pipeline|
+    |  min |  max |  min |  max |   Type  |
+    +------+------+------+------+---------+
+    |  7393|  7393|  7393|  7393|   none  |
+    +------+------+------+------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +------------------------+------+------+----------+-----------+-----------+------+----------+
+        |                        |   Latency   | Iteration|  Initiation Interval  | Trip |          |
+        |        Loop Name       |  min |  max |  Latency |  achieved |   target  | Count| Pipelined|
+        +------------------------+------+------+----------+-----------+-----------+------+----------+
+        |- Filter_Loop           |  7392|  7392|       462|          -|          -|    16|    no    |
+        | + Row_Loop             |   460|   460|        92|          -|          -|     5|    no    |
+        |  ++ Col_Loop           |    90|    90|        18|          -|          -|     5|    no    |
+        |   +++ Pool_Row_Loop    |    16|    16|         8|          -|          -|     2|    no    |
+        |    ++++ Pool_Col_Loop  |     6|     6|         3|          -|          -|     2|    no    |
+        +------------------------+------+------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 8
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 2 
+4 --> 5 3 
+5 --> 6 4 
+6 --> 7 5 
+7 --> 8 
+8 --> 6 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.76>
+ST_1 : Operation 9 [1/1] (1.76ns)   --->   "br label %1" [cnn/max_pool_2.cpp:10]   --->   Operation 9 'br' <Predicate = true> <Delay = 1.76>
+
+State 2 <SV = 1> <Delay = 1.78>
+ST_2 : Operation 10 [1/1] (0.00ns)   --->   "%f_0 = phi i5 [ 0, %0 ], [ %f, %Filter_Loop_end ]"   --->   Operation 10 'phi' 'f_0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 11 [1/1] (1.36ns)   --->   "%icmp_ln10 = icmp eq i5 %f_0, -16" [cnn/max_pool_2.cpp:10]   --->   Operation 11 'icmp' 'icmp_ln10' <Predicate = true> <Delay = 1.36> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 12 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 16, i64 16, i64 16)"   --->   Operation 12 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 13 [1/1] (1.78ns)   --->   "%f = add i5 %f_0, 1" [cnn/max_pool_2.cpp:10]   --->   Operation 13 'add' 'f' <Predicate = true> <Delay = 1.78> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 14 [1/1] (0.00ns)   --->   "br i1 %icmp_ln10, label %6, label %Filter_Loop_begin" [cnn/max_pool_2.cpp:10]   --->   Operation 14 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 15 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([12 x i8]* @p_str) nounwind" [cnn/max_pool_2.cpp:11]   --->   Operation 15 'specloopname' <Predicate = (!icmp_ln10)> <Delay = 0.00>
+ST_2 : Operation 16 [1/1] (0.00ns)   --->   "%tmp_1 = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str)" [cnn/max_pool_2.cpp:11]   --->   Operation 16 'specregionbegin' 'tmp_1' <Predicate = (!icmp_ln10)> <Delay = 0.00>
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%zext_ln13 = zext i5 %f_0 to i12" [cnn/max_pool_2.cpp:13]   --->   Operation 17 'zext' 'zext_ln13' <Predicate = (!icmp_ln10)> <Delay = 0.00>
+ST_2 : Operation 18 [1/1] (0.00ns)   --->   "%zext_ln13_1 = zext i5 %f_0 to i10" [cnn/max_pool_2.cpp:13]   --->   Operation 18 'zext' 'zext_ln13_1' <Predicate = (!icmp_ln10)> <Delay = 0.00>
+ST_2 : Operation 19 [1/1] (1.76ns)   --->   "br label %2" [cnn/max_pool_2.cpp:13]   --->   Operation 19 'br' <Predicate = (!icmp_ln10)> <Delay = 1.76>
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "ret void" [cnn/max_pool_2.cpp:40]   --->   Operation 20 'ret' <Predicate = (icmp_ln10)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 1.78>
+ST_3 : Operation 21 [1/1] (0.00ns)   --->   "%r_0 = phi i3 [ 0, %Filter_Loop_begin ], [ %r, %Row_Loop_end ]"   --->   Operation 21 'phi' 'r_0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 22 [1/1] (1.13ns)   --->   "%icmp_ln13 = icmp eq i3 %r_0, -3" [cnn/max_pool_2.cpp:13]   --->   Operation 22 'icmp' 'icmp_ln13' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 23 [1/1] (0.00ns)   --->   "%empty_10 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 5, i64 5, i64 5)"   --->   Operation 23 'speclooptripcount' 'empty_10' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 24 [1/1] (1.65ns)   --->   "%r = add i3 %r_0, 1" [cnn/max_pool_2.cpp:13]   --->   Operation 24 'add' 'r' <Predicate = true> <Delay = 1.65> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 25 [1/1] (0.00ns)   --->   "br i1 %icmp_ln13, label %Filter_Loop_end, label %Row_Loop_begin" [cnn/max_pool_2.cpp:13]   --->   Operation 25 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 26 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([9 x i8]* @p_str1) nounwind" [cnn/max_pool_2.cpp:14]   --->   Operation 26 'specloopname' <Predicate = (!icmp_ln13)> <Delay = 0.00>
+ST_3 : Operation 27 [1/1] (0.00ns)   --->   "%tmp_2 = call i32 (...)* @_ssdm_op_SpecRegionBegin([9 x i8]* @p_str1)" [cnn/max_pool_2.cpp:14]   --->   Operation 27 'specregionbegin' 'tmp_2' <Predicate = (!icmp_ln13)> <Delay = 0.00>
+ST_3 : Operation 28 [1/1] (0.00ns)   --->   "%shl_ln = call i4 @_ssdm_op_BitConcatenate.i4.i3.i1(i3 %r_0, i1 false)" [cnn/max_pool_2.cpp:26]   --->   Operation 28 'bitconcatenate' 'shl_ln' <Predicate = (!icmp_ln13)> <Delay = 0.00>
+ST_3 : Operation 29 [1/1] (0.00ns)   --->   "%zext_ln36 = zext i3 %r_0 to i6" [cnn/max_pool_2.cpp:36]   --->   Operation 29 'zext' 'zext_ln36' <Predicate = (!icmp_ln13)> <Delay = 0.00>
+ST_3 : Operation 30 [1/1] (0.00ns)   --->   "%tmp_7 = call i5 @_ssdm_op_BitConcatenate.i5.i3.i2(i3 %r_0, i2 0)" [cnn/max_pool_2.cpp:36]   --->   Operation 30 'bitconcatenate' 'tmp_7' <Predicate = (!icmp_ln13)> <Delay = 0.00>
+ST_3 : Operation 31 [1/1] (0.00ns)   --->   "%zext_ln36_1 = zext i5 %tmp_7 to i6" [cnn/max_pool_2.cpp:36]   --->   Operation 31 'zext' 'zext_ln36_1' <Predicate = (!icmp_ln13)> <Delay = 0.00>
+ST_3 : Operation 32 [1/1] (1.78ns)   --->   "%add_ln36 = add i6 %zext_ln36, %zext_ln36_1" [cnn/max_pool_2.cpp:36]   --->   Operation 32 'add' 'add_ln36' <Predicate = (!icmp_ln13)> <Delay = 1.78> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 33 [1/1] (1.76ns)   --->   "br label %3" [cnn/max_pool_2.cpp:16]   --->   Operation 33 'br' <Predicate = (!icmp_ln13)> <Delay = 1.76>
+ST_3 : Operation 34 [1/1] (0.00ns)   --->   "%empty_17 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str, i32 %tmp_1)" [cnn/max_pool_2.cpp:39]   --->   Operation 34 'specregionend' 'empty_17' <Predicate = (icmp_ln13)> <Delay = 0.00>
+ST_3 : Operation 35 [1/1] (0.00ns)   --->   "br label %1" [cnn/max_pool_2.cpp:10]   --->   Operation 35 'br' <Predicate = (icmp_ln13)> <Delay = 0.00>
+
+State 4 <SV = 3> <Delay = 1.76>
+ST_4 : Operation 36 [1/1] (0.00ns)   --->   "%c_0 = phi i3 [ 0, %Row_Loop_begin ], [ %c, %Col_Loop_end ]"   --->   Operation 36 'phi' 'c_0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 37 [1/1] (1.13ns)   --->   "%icmp_ln16 = icmp eq i3 %c_0, -3" [cnn/max_pool_2.cpp:16]   --->   Operation 37 'icmp' 'icmp_ln16' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 38 [1/1] (0.00ns)   --->   "%empty_11 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 5, i64 5, i64 5)"   --->   Operation 38 'speclooptripcount' 'empty_11' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 39 [1/1] (1.65ns)   --->   "%c = add i3 %c_0, 1" [cnn/max_pool_2.cpp:16]   --->   Operation 39 'add' 'c' <Predicate = true> <Delay = 1.65> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 40 [1/1] (0.00ns)   --->   "br i1 %icmp_ln16, label %Row_Loop_end, label %Col_Loop_begin" [cnn/max_pool_2.cpp:16]   --->   Operation 40 'br' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 41 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([9 x i8]* @p_str2) nounwind" [cnn/max_pool_2.cpp:17]   --->   Operation 41 'specloopname' <Predicate = (!icmp_ln16)> <Delay = 0.00>
+ST_4 : Operation 42 [1/1] (0.00ns)   --->   "%tmp_3 = call i32 (...)* @_ssdm_op_SpecRegionBegin([9 x i8]* @p_str2)" [cnn/max_pool_2.cpp:17]   --->   Operation 42 'specregionbegin' 'tmp_3' <Predicate = (!icmp_ln16)> <Delay = 0.00>
+ST_4 : Operation 43 [1/1] (0.00ns)   --->   "%shl_ln1 = call i4 @_ssdm_op_BitConcatenate.i4.i3.i1(i3 %c_0, i1 false)" [cnn/max_pool_2.cpp:27]   --->   Operation 43 'bitconcatenate' 'shl_ln1' <Predicate = (!icmp_ln16)> <Delay = 0.00>
+ST_4 : Operation 44 [1/1] (1.76ns)   --->   "br label %4" [cnn/max_pool_2.cpp:20]   --->   Operation 44 'br' <Predicate = (!icmp_ln16)> <Delay = 1.76>
+ST_4 : Operation 45 [1/1] (0.00ns)   --->   "%empty_16 = call i32 (...)* @_ssdm_op_SpecRegionEnd([9 x i8]* @p_str1, i32 %tmp_2)" [cnn/max_pool_2.cpp:38]   --->   Operation 45 'specregionend' 'empty_16' <Predicate = (icmp_ln16)> <Delay = 0.00>
+ST_4 : Operation 46 [1/1] (0.00ns)   --->   "br label %2" [cnn/max_pool_2.cpp:13]   --->   Operation 46 'br' <Predicate = (icmp_ln16)> <Delay = 0.00>
+
+State 5 <SV = 4> <Delay = 6.81>
+ST_5 : Operation 47 [1/1] (0.00ns)   --->   "%max_0 = phi float [ 0x3810000000000000, %Col_Loop_begin ], [ %max_1, %Pool_Row_Loop_end ]" [cnn/max_pool_2.cpp:29]   --->   Operation 47 'phi' 'max_0' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 48 [1/1] (0.00ns)   --->   "%mpr_0 = phi i2 [ 0, %Col_Loop_begin ], [ %mpr, %Pool_Row_Loop_end ]"   --->   Operation 48 'phi' 'mpr_0' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 49 [1/1] (0.00ns)   --->   "%zext_ln20 = zext i2 %mpr_0 to i4" [cnn/max_pool_2.cpp:20]   --->   Operation 49 'zext' 'zext_ln20' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 50 [1/1] (0.95ns)   --->   "%icmp_ln20 = icmp eq i2 %mpr_0, -2" [cnn/max_pool_2.cpp:20]   --->   Operation 50 'icmp' 'icmp_ln20' <Predicate = true> <Delay = 0.95> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 51 [1/1] (0.00ns)   --->   "%empty_12 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2, i64 2, i64 2)"   --->   Operation 51 'speclooptripcount' 'empty_12' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 52 [1/1] (1.56ns)   --->   "%mpr = add i2 %mpr_0, 1" [cnn/max_pool_2.cpp:20]   --->   Operation 52 'add' 'mpr' <Predicate = true> <Delay = 1.56> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 53 [1/1] (0.00ns)   --->   "br i1 %icmp_ln20, label %Col_Loop_end, label %Pool_Row_Loop_begin" [cnn/max_pool_2.cpp:20]   --->   Operation 53 'br' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 54 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([14 x i8]* @p_str3) nounwind" [cnn/max_pool_2.cpp:21]   --->   Operation 54 'specloopname' <Predicate = (!icmp_ln20)> <Delay = 0.00>
+ST_5 : Operation 55 [1/1] (0.00ns)   --->   "%tmp_4 = call i32 (...)* @_ssdm_op_SpecRegionBegin([14 x i8]* @p_str3)" [cnn/max_pool_2.cpp:21]   --->   Operation 55 'specregionbegin' 'tmp_4' <Predicate = (!icmp_ln20)> <Delay = 0.00>
+ST_5 : Operation 56 [1/1] (1.73ns)   --->   "%i = add i4 %zext_ln20, %shl_ln" [cnn/max_pool_2.cpp:26]   --->   Operation 56 'add' 'i' <Predicate = (!icmp_ln20)> <Delay = 1.73> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 57 [1/1] (0.00ns)   --->   "%zext_ln29 = zext i4 %i to i8" [cnn/max_pool_2.cpp:29]   --->   Operation 57 'zext' 'zext_ln29' <Predicate = (!icmp_ln20)> <Delay = 0.00>
+ST_5 : Operation 58 [1/1] (3.49ns)   --->   "%mul_ln29 = mul i8 %zext_ln29, 11" [cnn/max_pool_2.cpp:29]   --->   Operation 58 'mul' 'mul_ln29' <Predicate = (!icmp_ln20)> <Delay = 3.49> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 3.49> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 59 [1/1] (1.76ns)   --->   "br label %5" [cnn/max_pool_2.cpp:23]   --->   Operation 59 'br' <Predicate = (!icmp_ln20)> <Delay = 1.76>
+ST_5 : Operation 60 [1/1] (0.00ns)   --->   "%zext_ln36_2 = zext i3 %c_0 to i6" [cnn/max_pool_2.cpp:36]   --->   Operation 60 'zext' 'zext_ln36_2' <Predicate = (icmp_ln20)> <Delay = 0.00>
+ST_5 : Operation 61 [1/1] (1.82ns)   --->   "%add_ln36_1 = add i6 %zext_ln36_2, %add_ln36" [cnn/max_pool_2.cpp:36]   --->   Operation 61 'add' 'add_ln36_1' <Predicate = (icmp_ln20)> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 62 [1/1] (0.00ns)   --->   "%tmp_9_cast = call i10 @_ssdm_op_BitConcatenate.i10.i6.i4(i6 %add_ln36_1, i4 0)" [cnn/max_pool_2.cpp:36]   --->   Operation 62 'bitconcatenate' 'tmp_9_cast' <Predicate = (icmp_ln20)> <Delay = 0.00>
+ST_5 : Operation 63 [1/1] (1.73ns)   --->   "%add_ln36_2 = add i10 %zext_ln13_1, %tmp_9_cast" [cnn/max_pool_2.cpp:36]   --->   Operation 63 'add' 'add_ln36_2' <Predicate = (icmp_ln20)> <Delay = 1.73> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 64 [1/1] (0.00ns)   --->   "%zext_ln36_3 = zext i10 %add_ln36_2 to i64" [cnn/max_pool_2.cpp:36]   --->   Operation 64 'zext' 'zext_ln36_3' <Predicate = (icmp_ln20)> <Delay = 0.00>
+ST_5 : Operation 65 [1/1] (0.00ns)   --->   "%max_pool_out_addr = getelementptr [400 x float]* %max_pool_out, i64 0, i64 %zext_ln36_3" [cnn/max_pool_2.cpp:36]   --->   Operation 65 'getelementptr' 'max_pool_out_addr' <Predicate = (icmp_ln20)> <Delay = 0.00>
+ST_5 : Operation 66 [1/1] (3.25ns)   --->   "store float %max_0, float* %max_pool_out_addr, align 4" [cnn/max_pool_2.cpp:36]   --->   Operation 66 'store' <Predicate = (icmp_ln20)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 400> <RAM>
+ST_5 : Operation 67 [1/1] (0.00ns)   --->   "%empty_15 = call i32 (...)* @_ssdm_op_SpecRegionEnd([9 x i8]* @p_str2, i32 %tmp_3)" [cnn/max_pool_2.cpp:37]   --->   Operation 67 'specregionend' 'empty_15' <Predicate = (icmp_ln20)> <Delay = 0.00>
+ST_5 : Operation 68 [1/1] (0.00ns)   --->   "br label %3" [cnn/max_pool_2.cpp:16]   --->   Operation 68 'br' <Predicate = (icmp_ln20)> <Delay = 0.00>
+
+State 6 <SV = 5> <Delay = 8.45>
+ST_6 : Operation 69 [1/1] (0.00ns)   --->   "%max_1 = phi float [ %max_0, %Pool_Row_Loop_begin ], [ %max_2, %._crit_edge ]"   --->   Operation 69 'phi' 'max_1' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 70 [1/1] (0.00ns)   --->   "%mpc_0 = phi i2 [ 0, %Pool_Row_Loop_begin ], [ %mpc, %._crit_edge ]"   --->   Operation 70 'phi' 'mpc_0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 71 [1/1] (0.00ns)   --->   "%zext_ln23 = zext i2 %mpc_0 to i4" [cnn/max_pool_2.cpp:23]   --->   Operation 71 'zext' 'zext_ln23' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 72 [1/1] (0.95ns)   --->   "%icmp_ln23 = icmp eq i2 %mpc_0, -2" [cnn/max_pool_2.cpp:23]   --->   Operation 72 'icmp' 'icmp_ln23' <Predicate = true> <Delay = 0.95> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 73 [1/1] (0.00ns)   --->   "%empty_13 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2, i64 2, i64 2)"   --->   Operation 73 'speclooptripcount' 'empty_13' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 74 [1/1] (1.56ns)   --->   "%mpc = add i2 %mpc_0, 1" [cnn/max_pool_2.cpp:23]   --->   Operation 74 'add' 'mpc' <Predicate = true> <Delay = 1.56> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 75 [1/1] (0.00ns)   --->   "br i1 %icmp_ln23, label %Pool_Row_Loop_end, label %._crit_edge" [cnn/max_pool_2.cpp:23]   --->   Operation 75 'br' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 76 [1/1] (1.73ns)   --->   "%j = add i4 %zext_ln23, %shl_ln1" [cnn/max_pool_2.cpp:27]   --->   Operation 76 'add' 'j' <Predicate = (!icmp_ln23)> <Delay = 1.73> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 77 [1/1] (0.00ns)   --->   "%zext_ln29_1 = zext i4 %j to i8" [cnn/max_pool_2.cpp:29]   --->   Operation 77 'zext' 'zext_ln29_1' <Predicate = (!icmp_ln23)> <Delay = 0.00>
+ST_6 : Operation 78 [1/1] (1.91ns)   --->   "%add_ln29 = add i8 %mul_ln29, %zext_ln29_1" [cnn/max_pool_2.cpp:29]   --->   Operation 78 'add' 'add_ln29' <Predicate = (!icmp_ln23)> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 79 [1/1] (0.00ns)   --->   "%tmp_11_cast = call i12 @_ssdm_op_BitConcatenate.i12.i8.i4(i8 %add_ln29, i4 0)" [cnn/max_pool_2.cpp:29]   --->   Operation 79 'bitconcatenate' 'tmp_11_cast' <Predicate = (!icmp_ln23)> <Delay = 0.00>
+ST_6 : Operation 80 [1/1] (1.54ns)   --->   "%add_ln29_1 = add i12 %tmp_11_cast, %zext_ln13" [cnn/max_pool_2.cpp:29]   --->   Operation 80 'add' 'add_ln29_1' <Predicate = (!icmp_ln23)> <Delay = 1.54> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 81 [1/1] (0.00ns)   --->   "%zext_ln29_2 = zext i12 %add_ln29_1 to i64" [cnn/max_pool_2.cpp:29]   --->   Operation 81 'zext' 'zext_ln29_2' <Predicate = (!icmp_ln23)> <Delay = 0.00>
+ST_6 : Operation 82 [1/1] (0.00ns)   --->   "%conv_2_out_addr = getelementptr [1936 x float]* @conv_2_out, i64 0, i64 %zext_ln29_2" [cnn/max_pool_2.cpp:29]   --->   Operation 82 'getelementptr' 'conv_2_out_addr' <Predicate = (!icmp_ln23)> <Delay = 0.00>
+ST_6 : Operation 83 [2/2] (3.25ns)   --->   "%max = load float* %conv_2_out_addr, align 4" [cnn/max_pool_2.cpp:29]   --->   Operation 83 'load' 'max' <Predicate = (!icmp_ln23)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 400> <RAM>
+ST_6 : Operation 84 [1/1] (0.00ns)   --->   "%empty_14 = call i32 (...)* @_ssdm_op_SpecRegionEnd([14 x i8]* @p_str3, i32 %tmp_4)" [cnn/max_pool_2.cpp:34]   --->   Operation 84 'specregionend' 'empty_14' <Predicate = (icmp_ln23)> <Delay = 0.00>
+ST_6 : Operation 85 [1/1] (0.00ns)   --->   "br label %4" [cnn/max_pool_2.cpp:20]   --->   Operation 85 'br' <Predicate = (icmp_ln23)> <Delay = 0.00>
+
+State 7 <SV = 6> <Delay = 8.68>
+ST_7 : Operation 86 [1/2] (3.25ns)   --->   "%max = load float* %conv_2_out_addr, align 4" [cnn/max_pool_2.cpp:29]   --->   Operation 86 'load' 'max' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 400> <RAM>
+ST_7 : Operation 87 [2/2] (5.43ns)   --->   "%tmp_6 = fcmp ogt float %max, %max_1" [cnn/max_pool_2.cpp:29]   --->   Operation 87 'fcmp' 'tmp_6' <Predicate = true> <Delay = 5.43> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 5.43> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+
+State 8 <SV = 7> <Delay = 7.10>
+ST_8 : Operation 88 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([14 x i8]* @p_str4) nounwind" [cnn/max_pool_2.cpp:24]   --->   Operation 88 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 89 [1/1] (0.00ns)   --->   "%bitcast_ln29 = bitcast float %max to i32" [cnn/max_pool_2.cpp:29]   --->   Operation 89 'bitcast' 'bitcast_ln29' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 90 [1/1] (0.00ns)   --->   "%tmp = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %bitcast_ln29, i32 23, i32 30)" [cnn/max_pool_2.cpp:29]   --->   Operation 90 'partselect' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 91 [1/1] (0.00ns)   --->   "%trunc_ln29 = trunc i32 %bitcast_ln29 to i23" [cnn/max_pool_2.cpp:29]   --->   Operation 91 'trunc' 'trunc_ln29' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 92 [1/1] (0.00ns)   --->   "%bitcast_ln29_1 = bitcast float %max_1 to i32" [cnn/max_pool_2.cpp:29]   --->   Operation 92 'bitcast' 'bitcast_ln29_1' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 93 [1/1] (0.00ns)   --->   "%tmp_5 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %bitcast_ln29_1, i32 23, i32 30)" [cnn/max_pool_2.cpp:29]   --->   Operation 93 'partselect' 'tmp_5' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 94 [1/1] (0.00ns)   --->   "%trunc_ln29_1 = trunc i32 %bitcast_ln29_1 to i23" [cnn/max_pool_2.cpp:29]   --->   Operation 94 'trunc' 'trunc_ln29_1' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 95 [1/1] (1.55ns)   --->   "%icmp_ln29 = icmp ne i8 %tmp, -1" [cnn/max_pool_2.cpp:29]   --->   Operation 95 'icmp' 'icmp_ln29' <Predicate = true> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 96 [1/1] (2.44ns)   --->   "%icmp_ln29_1 = icmp eq i23 %trunc_ln29, 0" [cnn/max_pool_2.cpp:29]   --->   Operation 96 'icmp' 'icmp_ln29_1' <Predicate = true> <Delay = 2.44> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 97 [1/1] (0.00ns) (grouped into LUT with out node and_ln29_1)   --->   "%or_ln29 = or i1 %icmp_ln29_1, %icmp_ln29" [cnn/max_pool_2.cpp:29]   --->   Operation 97 'or' 'or_ln29' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 98 [1/1] (1.55ns)   --->   "%icmp_ln29_2 = icmp ne i8 %tmp_5, -1" [cnn/max_pool_2.cpp:29]   --->   Operation 98 'icmp' 'icmp_ln29_2' <Predicate = true> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 99 [1/1] (2.44ns)   --->   "%icmp_ln29_3 = icmp eq i23 %trunc_ln29_1, 0" [cnn/max_pool_2.cpp:29]   --->   Operation 99 'icmp' 'icmp_ln29_3' <Predicate = true> <Delay = 2.44> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 100 [1/1] (0.00ns) (grouped into LUT with out node and_ln29_1)   --->   "%or_ln29_1 = or i1 %icmp_ln29_3, %icmp_ln29_2" [cnn/max_pool_2.cpp:29]   --->   Operation 100 'or' 'or_ln29_1' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 101 [1/1] (0.00ns) (grouped into LUT with out node and_ln29_1)   --->   "%and_ln29 = and i1 %or_ln29, %or_ln29_1" [cnn/max_pool_2.cpp:29]   --->   Operation 101 'and' 'and_ln29' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 102 [1/2] (5.43ns)   --->   "%tmp_6 = fcmp ogt float %max, %max_1" [cnn/max_pool_2.cpp:29]   --->   Operation 102 'fcmp' 'tmp_6' <Predicate = true> <Delay = 5.43> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 5.43> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 103 [1/1] (0.97ns) (out node of the LUT)   --->   "%and_ln29_1 = and i1 %and_ln29, %tmp_6" [cnn/max_pool_2.cpp:29]   --->   Operation 103 'and' 'and_ln29_1' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 104 [1/1] (0.69ns) (out node of the LUT)   --->   "%max_2 = select i1 %and_ln29_1, float %max, float %max_1" [cnn/max_pool_2.cpp:29]   --->   Operation 104 'select' 'max_2' <Predicate = true> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_8 : Operation 105 [1/1] (0.00ns)   --->   "br label %5" [cnn/max_pool_2.cpp:23]   --->   Operation 105 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 20ns, clock uncertainty: 2.5ns.
+
+ <State 1>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('f') with incoming values : ('f', cnn/max_pool_2.cpp:10) [5]  (1.77 ns)
+
+ <State 2>: 1.78ns
+The critical path consists of the following:
+	'phi' operation ('f') with incoming values : ('f', cnn/max_pool_2.cpp:10) [5]  (0 ns)
+	'add' operation ('f', cnn/max_pool_2.cpp:10) [8]  (1.78 ns)
+
+ <State 3>: 1.78ns
+The critical path consists of the following:
+	'phi' operation ('r') with incoming values : ('r', cnn/max_pool_2.cpp:13) [17]  (0 ns)
+	'add' operation ('add_ln36', cnn/max_pool_2.cpp:36) [29]  (1.78 ns)
+
+ <State 4>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('max_0', cnn/max_pool_2.cpp:29) with incoming values : ('max', cnn/max_pool_2.cpp:29) [43]  (1.77 ns)
+
+ <State 5>: 6.81ns
+The critical path consists of the following:
+	'add' operation ('add_ln36_1', cnn/max_pool_2.cpp:36) [97]  (1.83 ns)
+	'add' operation ('add_ln36_2', cnn/max_pool_2.cpp:36) [99]  (1.73 ns)
+	'getelementptr' operation ('max_pool_out_addr', cnn/max_pool_2.cpp:36) [101]  (0 ns)
+	'store' operation ('store_ln36', cnn/max_pool_2.cpp:36) of variable 'max_0', cnn/max_pool_2.cpp:29 on array 'max_pool_out' [102]  (3.25 ns)
+
+ <State 6>: 8.45ns
+The critical path consists of the following:
+	'phi' operation ('mpc') with incoming values : ('mpc', cnn/max_pool_2.cpp:23) [59]  (0 ns)
+	'add' operation ('j', cnn/max_pool_2.cpp:27) [67]  (1.74 ns)
+	'add' operation ('add_ln29', cnn/max_pool_2.cpp:29) [69]  (1.92 ns)
+	'add' operation ('add_ln29_1', cnn/max_pool_2.cpp:29) [71]  (1.55 ns)
+	'getelementptr' operation ('conv_2_out_addr', cnn/max_pool_2.cpp:29) [73]  (0 ns)
+	'load' operation ('max', cnn/max_pool_2.cpp:29) on array 'conv_2_out' [74]  (3.25 ns)
+
+ <State 7>: 8.69ns
+The critical path consists of the following:
+	'load' operation ('max', cnn/max_pool_2.cpp:29) on array 'conv_2_out' [74]  (3.25 ns)
+	'fcmp' operation ('tmp_6', cnn/max_pool_2.cpp:29) [88]  (5.43 ns)
+
+ <State 8>: 7.11ns
+The critical path consists of the following:
+	'fcmp' operation ('tmp_6', cnn/max_pool_2.cpp:29) [88]  (5.43 ns)
+	'and' operation ('and_ln29_1', cnn/max_pool_2.cpp:29) [89]  (0.978 ns)
+	'select' operation ('max', cnn/max_pool_2.cpp:29) [90]  (0.698 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

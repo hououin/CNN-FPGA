@@ -3929,7 +3929,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>cnn_fmul_32ns_32ndEe_U15</rtlName>
+              <rtlName>cnn_fmul_32ns_32ncud_U37</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>32</bitwidth>
@@ -3978,7 +3978,7 @@
                 </item>
               </inlineStackInfo>
               <originalName>w_sum</originalName>
-              <rtlName>cnn_fadd_32ns_32ncud_U14</rtlName>
+              <rtlName>cnn_fadd_32ns_32nbkb_U36</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>32</bitwidth>
@@ -4269,7 +4269,7 @@
                 </item>
               </inlineStackInfo>
               <originalName>w_sum</originalName>
-              <rtlName>cnn_fadd_32ns_32ncud_U14</rtlName>
+              <rtlName>cnn_fadd_32ns_32nbkb_U36</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>32</bitwidth>
@@ -4612,7 +4612,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>cnn_fcmp_32ns_32neOg_U16</rtlName>
+              <rtlName>cnn_fcmp_32ns_32ndEe_U38</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>1</bitwidth>
@@ -9236,7 +9236,7 @@
         <count>3</count>
         <item_version>0</item_version>
         <item class_id="38" tracking_level="0" version="0">
-          <first>cnn_fadd_32ns_32ncud_U14 (cnn_fadd_32ns_32ncud)</first>
+          <first>cnn_fadd_32ns_32nbkb_U36 (cnn_fadd_32ns_32nbkb)</first>
           <second class_id="39" tracking_level="0" version="0">
             <count>3</count>
             <item_version>0</item_version>
@@ -9255,7 +9255,7 @@
           </second>
         </item>
         <item>
-          <first>cnn_fcmp_32ns_32neOg_U16 (cnn_fcmp_32ns_32neOg)</first>
+          <first>cnn_fcmp_32ns_32ndEe_U38 (cnn_fcmp_32ns_32ndEe)</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -9274,7 +9274,7 @@
           </second>
         </item>
         <item>
-          <first>cnn_fmul_32ns_32ndEe_U15 (cnn_fmul_32ns_32ndEe)</first>
+          <first>cnn_fmul_32ns_32ncud_U37 (cnn_fmul_32ns_32ncud)</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -10939,21 +10939,21 @@
         <count>3</count>
         <item_version>0</item_version>
         <item>
-          <first>cnn_fadd_32ns_32ncud_U14</first>
+          <first>cnn_fadd_32ns_32nbkb_U36</first>
           <second>
             <count>0</count>
             <item_version>0</item_version>
           </second>
         </item>
         <item>
-          <first>cnn_fcmp_32ns_32neOg_U16</first>
+          <first>cnn_fcmp_32ns_32ndEe_U38</first>
           <second>
             <count>0</count>
             <item_version>0</item_version>
           </second>
         </item>
         <item>
-          <first>cnn_fmul_32ns_32ndEe_U15</first>
+          <first>cnn_fmul_32ns_32ncud_U37</first>
           <second>
             <count>0</count>
             <item_version>0</item_version>
@@ -10964,7 +10964,7 @@
         <count>3</count>
         <item_version>0</item_version>
         <item class_id="42" tracking_level="0" version="0">
-          <first>cnn_fadd_32ns_32ncud_U14 (cnn_fadd_32ns_32ncud)</first>
+          <first>cnn_fadd_32ns_32nbkb_U36 (cnn_fadd_32ns_32nbkb)</first>
           <second>
             <count>2</count>
             <item_version>0</item_version>
@@ -10973,7 +10973,7 @@
           </second>
         </item>
         <item>
-          <first>cnn_fcmp_32ns_32neOg_U16 (cnn_fcmp_32ns_32neOg)</first>
+          <first>cnn_fcmp_32ns_32ndEe_U38 (cnn_fcmp_32ns_32ndEe)</first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -10981,7 +10981,7 @@
           </second>
         </item>
         <item>
-          <first>cnn_fmul_32ns_32ndEe_U15 (cnn_fmul_32ns_32ndEe)</first>
+          <first>cnn_fmul_32ns_32ncud_U37 (cnn_fmul_32ns_32ncud)</first>
           <second>
             <count>1</count>
             <item_version>0</item_version>

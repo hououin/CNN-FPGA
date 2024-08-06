@@ -96,11 +96,11 @@ set RtlHierarchyInfo {[
 		"Port" : [
 			{"Name" : "dense_array", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "prediction", "Type" : "Bram", "Direction" : "O"}]},
-	{"ID" : "5", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_soft_max_fu_149.cnn_fadd_32ns_32ncud_U40", "Parent" : "4"},
-	{"ID" : "6", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_soft_max_fu_149.cnn_fdiv_32ns_32nkbM_U41", "Parent" : "4"},
-	{"ID" : "7", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_soft_max_fu_149.cnn_fexp_32ns_32nlbW_U42", "Parent" : "4"},
-	{"ID" : "8", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.cnn_fadd_32ns_32ncud_U46", "Parent" : "0"},
-	{"ID" : "9", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.cnn_fmul_32ns_32ndEe_U47", "Parent" : "0"}]}
+	{"ID" : "5", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_soft_max_fu_149.cnn_fadd_32ns_32nbkb_U62", "Parent" : "4"},
+	{"ID" : "6", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_soft_max_fu_149.cnn_fdiv_32ns_32nkbM_U63", "Parent" : "4"},
+	{"ID" : "7", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_soft_max_fu_149.cnn_fexp_32ns_32nlbW_U64", "Parent" : "4"},
+	{"ID" : "8", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.cnn_fadd_32ns_32nbkb_U68", "Parent" : "0"},
+	{"ID" : "9", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.cnn_fmul_32ns_32ncud_U69", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {

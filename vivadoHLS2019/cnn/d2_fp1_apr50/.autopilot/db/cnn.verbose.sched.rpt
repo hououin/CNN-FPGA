@@ -1,0 +1,443 @@
+
+
+================================================================
+== Vivado HLS Report for 'cnn'
+================================================================
+* Date:           Mon Aug  5 22:07:47 2024
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        cnn
+* Solution:       dp_fp1_apr50
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  20.00|    17.393|        2.50|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +---------+---------+---------+---------+---------+
+    |      Latency      |      Interval     | Pipeline|
+    |   min   |   max   |   min   |   max   |   Type  |
+    +---------+---------+---------+---------+---------+
+    |  1273117|  1273117|  1273117|  1273117|   none  |
+    +---------+---------+---------+---------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+------+------+----------+-----------+-----------+------+----------+
+        |             |   Latency   | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name  |  min |  max |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------+------+------+----------+-----------+-----------+------+----------+
+        |- Loop 1     |  1624|  1624|        58|          -|          -|    28|    no    |
+        | + Loop 1.1  |    56|    56|         2|          -|          -|    28|    no    |
+        +-------------+------+------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 18
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 5 3 
+3 --> 4 2 
+4 --> 3 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.76>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([784 x float]* %cnn_input) nounwind, !map !35"   --->   Operation 19 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([10 x float]* %prediction) nounwind, !map !41"   --->   Operation 20 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([4 x i8]* @cnn_str) nounwind"   --->   Operation 21 'spectopmodule' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%conv_1_input = alloca [784 x float], align 4" [cnn/cnn.cpp:19]   --->   Operation 22 'alloca' 'conv_1_input' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 784> <RAM>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface([784 x float]* %cnn_input, [5 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [cnn/cnn.cpp:18]   --->   Operation 23 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface([10 x float]* %prediction, [5 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [cnn/cnn.cpp:18]   --->   Operation 24 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str2, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [9 x i8]* @p_str3, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [cnn/cnn.cpp:18]   --->   Operation 25 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (1.76ns)   --->   "br label %.loopexit" [cnn/cnn.cpp:23]   --->   Operation 26 'br' <Predicate = true> <Delay = 1.76>
+
+State 2 <SV = 1> <Delay = 1.78>
+ST_2 : Operation 27 [1/1] (0.00ns)   --->   "%ix_in_0 = phi i10 [ 0, %0 ], [ %ix_in, %.loopexit.loopexit ]"   --->   Operation 27 'phi' 'ix_in_0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 28 [1/1] (0.00ns)   --->   "%i_0 = phi i5 [ 0, %0 ], [ %i, %.loopexit.loopexit ]"   --->   Operation 28 'phi' 'i_0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 29 [1/1] (1.36ns)   --->   "%icmp_ln23 = icmp eq i5 %i_0, -4" [cnn/cnn.cpp:23]   --->   Operation 29 'icmp' 'icmp_ln23' <Predicate = true> <Delay = 1.36> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.36> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 30 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 28, i64 28, i64 28) nounwind"   --->   Operation 30 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 31 [1/1] (1.78ns)   --->   "%i = add i5 %i_0, 1" [cnn/cnn.cpp:23]   --->   Operation 31 'add' 'i' <Predicate = true> <Delay = 1.78> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 32 [1/1] (0.00ns)   --->   "br i1 %icmp_ln23, label %meminst.preheader, label %1" [cnn/cnn.cpp:23]   --->   Operation 32 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 33 [1/1] (1.73ns)   --->   "%ix_in = add i10 %ix_in_0, 28" [cnn/cnn.cpp:28]   --->   Operation 33 'add' 'ix_in' <Predicate = (!icmp_ln23)> <Delay = 1.73> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 34 [1/1] (0.00ns)   --->   "%tmp = call i10 @_ssdm_op_BitConcatenate.i10.i5.i5(i5 %i_0, i5 0)" [cnn/cnn.cpp:27]   --->   Operation 34 'bitconcatenate' 'tmp' <Predicate = (!icmp_ln23)> <Delay = 0.00>
+ST_2 : Operation 35 [1/1] (0.00ns)   --->   "%zext_ln27 = zext i10 %tmp to i11" [cnn/cnn.cpp:27]   --->   Operation 35 'zext' 'zext_ln27' <Predicate = (!icmp_ln23)> <Delay = 0.00>
+ST_2 : Operation 36 [1/1] (0.00ns)   --->   "%tmp_s = call i7 @_ssdm_op_BitConcatenate.i7.i5.i2(i5 %i_0, i2 0)" [cnn/cnn.cpp:27]   --->   Operation 36 'bitconcatenate' 'tmp_s' <Predicate = (!icmp_ln23)> <Delay = 0.00>
+ST_2 : Operation 37 [1/1] (0.00ns)   --->   "%zext_ln27_2 = zext i7 %tmp_s to i11" [cnn/cnn.cpp:27]   --->   Operation 37 'zext' 'zext_ln27_2' <Predicate = (!icmp_ln23)> <Delay = 0.00>
+ST_2 : Operation 38 [1/1] (1.73ns)   --->   "%sub_ln27 = sub i11 %zext_ln27, %zext_ln27_2" [cnn/cnn.cpp:27]   --->   Operation 38 'sub' 'sub_ln27' <Predicate = (!icmp_ln23)> <Delay = 1.73> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 39 [1/1] (1.76ns)   --->   "br label %2" [cnn/cnn.cpp:25]   --->   Operation 39 'br' <Predicate = (!icmp_ln23)> <Delay = 1.76>
+ST_2 : Operation 40 [2/2] (0.00ns)   --->   "call fastcc void @conv_1([784 x float]* %conv_1_input, [4056 x float]* @conv_1_out) nounwind" [cnn/cnn.cpp:33]   --->   Operation 40 'call' <Predicate = (icmp_ln23)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 3.25>
+ST_3 : Operation 41 [1/1] (0.00ns)   --->   "%ix_in_1 = phi i10 [ %ix_in_0, %1 ], [ %add_ln28, %3 ]" [cnn/cnn.cpp:28]   --->   Operation 41 'phi' 'ix_in_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 42 [1/1] (0.00ns)   --->   "%j_0 = phi i5 [ 0, %1 ], [ %j, %3 ]"   --->   Operation 42 'phi' 'j_0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 43 [1/1] (1.36ns)   --->   "%icmp_ln25 = icmp eq i5 %j_0, -4" [cnn/cnn.cpp:25]   --->   Operation 43 'icmp' 'icmp_ln25' <Predicate = true> <Delay = 1.36> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.36> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 44 [1/1] (0.00ns)   --->   "%empty_49 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 28, i64 28, i64 28) nounwind"   --->   Operation 44 'speclooptripcount' 'empty_49' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 45 [1/1] (1.78ns)   --->   "%j = add i5 %j_0, 1" [cnn/cnn.cpp:25]   --->   Operation 45 'add' 'j' <Predicate = true> <Delay = 1.78> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 46 [1/1] (0.00ns)   --->   "br i1 %icmp_ln25, label %.loopexit.loopexit, label %3" [cnn/cnn.cpp:25]   --->   Operation 46 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 47 [1/1] (0.00ns)   --->   "%zext_ln27_1 = zext i10 %ix_in_1 to i64" [cnn/cnn.cpp:27]   --->   Operation 47 'zext' 'zext_ln27_1' <Predicate = (!icmp_ln25)> <Delay = 0.00>
+ST_3 : Operation 48 [1/1] (0.00ns)   --->   "%cnn_input_addr = getelementptr [784 x float]* %cnn_input, i64 0, i64 %zext_ln27_1" [cnn/cnn.cpp:27]   --->   Operation 48 'getelementptr' 'cnn_input_addr' <Predicate = (!icmp_ln25)> <Delay = 0.00>
+ST_3 : Operation 49 [2/2] (3.25ns)   --->   "%cnn_input_load = load float* %cnn_input_addr, align 4" [cnn/cnn.cpp:27]   --->   Operation 49 'load' 'cnn_input_load' <Predicate = (!icmp_ln25)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 784> <RAM>
+ST_3 : Operation 50 [1/1] (0.00ns)   --->   "%zext_ln27_3 = zext i5 %j_0 to i11" [cnn/cnn.cpp:27]   --->   Operation 50 'zext' 'zext_ln27_3' <Predicate = (!icmp_ln25)> <Delay = 0.00>
+ST_3 : Operation 51 [1/1] (1.63ns)   --->   "%add_ln27 = add i11 %sub_ln27, %zext_ln27_3" [cnn/cnn.cpp:27]   --->   Operation 51 'add' 'add_ln27' <Predicate = (!icmp_ln25)> <Delay = 1.63> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 52 [1/1] (1.73ns)   --->   "%add_ln28 = add i10 %ix_in_1, 1" [cnn/cnn.cpp:28]   --->   Operation 52 'add' 'add_ln28' <Predicate = (!icmp_ln25)> <Delay = 1.73> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 53 [1/1] (0.00ns)   --->   "br label %.loopexit"   --->   Operation 53 'br' <Predicate = (icmp_ln25)> <Delay = 0.00>
+
+State 4 <SV = 3> <Delay = 6.50>
+ST_4 : Operation 54 [1/2] (3.25ns)   --->   "%cnn_input_load = load float* %cnn_input_addr, align 4" [cnn/cnn.cpp:27]   --->   Operation 54 'load' 'cnn_input_load' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 784> <RAM>
+ST_4 : Operation 55 [1/1] (0.00ns)   --->   "%sext_ln27 = sext i11 %add_ln27 to i64" [cnn/cnn.cpp:27]   --->   Operation 55 'sext' 'sext_ln27' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 56 [1/1] (0.00ns)   --->   "%conv_1_input_addr = getelementptr [784 x float]* %conv_1_input, i64 0, i64 %sext_ln27" [cnn/cnn.cpp:27]   --->   Operation 56 'getelementptr' 'conv_1_input_addr' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 57 [1/1] (3.25ns)   --->   "store float %cnn_input_load, float* %conv_1_input_addr, align 4" [cnn/cnn.cpp:27]   --->   Operation 57 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 784> <RAM>
+ST_4 : Operation 58 [1/1] (0.00ns)   --->   "br label %2" [cnn/cnn.cpp:25]   --->   Operation 58 'br' <Predicate = true> <Delay = 0.00>
+
+State 5 <SV = 2> <Delay = 0.00>
+ST_5 : Operation 59 [1/2] (0.00ns)   --->   "call fastcc void @conv_1([784 x float]* %conv_1_input, [4056 x float]* @conv_1_out) nounwind" [cnn/cnn.cpp:33]   --->   Operation 59 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 6 <SV = 3> <Delay = 0.00>
+ST_6 : Operation 60 [2/2] (0.00ns)   --->   "call fastcc void @max_pool_1([1014 x float]* @max_pool_1_out) nounwind" [cnn/cnn.cpp:38]   --->   Operation 60 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 7 <SV = 4> <Delay = 0.00>
+ST_7 : Operation 61 [1/2] (0.00ns)   --->   "call fastcc void @max_pool_1([1014 x float]* @max_pool_1_out) nounwind" [cnn/cnn.cpp:38]   --->   Operation 61 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 8 <SV = 5> <Delay = 0.00>
+ST_8 : Operation 62 [2/2] (0.00ns)   --->   "call fastcc void @conv_2([1936 x float]* @conv_2_out) nounwind" [cnn/cnn.cpp:43]   --->   Operation 62 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 9 <SV = 6> <Delay = 0.00>
+ST_9 : Operation 63 [1/2] (0.00ns)   --->   "call fastcc void @conv_2([1936 x float]* @conv_2_out) nounwind" [cnn/cnn.cpp:43]   --->   Operation 63 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 10 <SV = 7> <Delay = 0.00>
+ST_10 : Operation 64 [2/2] (0.00ns)   --->   "call fastcc void @max_pool_2([400 x float]* @max_pool_2_out) nounwind" [cnn/cnn.cpp:48]   --->   Operation 64 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 11 <SV = 8> <Delay = 0.00>
+ST_11 : Operation 65 [1/2] (0.00ns)   --->   "call fastcc void @max_pool_2([400 x float]* @max_pool_2_out) nounwind" [cnn/cnn.cpp:48]   --->   Operation 65 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 12 <SV = 9> <Delay = 0.00>
+ST_12 : Operation 66 [2/2] (0.00ns)   --->   "call fastcc void @flat() nounwind" [cnn/cnn.cpp:53]   --->   Operation 66 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 13 <SV = 10> <Delay = 0.00>
+ST_13 : Operation 67 [1/2] (0.00ns)   --->   "call fastcc void @flat() nounwind" [cnn/cnn.cpp:53]   --->   Operation 67 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 14 <SV = 11> <Delay = 0.00>
+ST_14 : Operation 68 [1/1] (0.00ns)   --->   "%dense_1_out_0_0_load = load float* @dense_1_out_0_0, align 4" [cnn/cnn.cpp:58]   --->   Operation 68 'load' 'dense_1_out_0_0_load' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 69 [1/1] (0.00ns)   --->   "%dense_1_out_0_1_load = load float* @dense_1_out_0_1, align 4" [cnn/cnn.cpp:58]   --->   Operation 69 'load' 'dense_1_out_0_1_load' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 70 [1/1] (0.00ns)   --->   "%dense_1_out_1_0_load = load float* @dense_1_out_1_0, align 4" [cnn/cnn.cpp:58]   --->   Operation 70 'load' 'dense_1_out_1_0_load' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 71 [1/1] (0.00ns)   --->   "%dense_1_out_1_1_load = load float* @dense_1_out_1_1, align 4" [cnn/cnn.cpp:58]   --->   Operation 71 'load' 'dense_1_out_1_1_load' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 72 [1/1] (0.00ns)   --->   "%dense_1_out_2_0_load = load float* @dense_1_out_2_0, align 4" [cnn/cnn.cpp:58]   --->   Operation 72 'load' 'dense_1_out_2_0_load' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 73 [1/1] (0.00ns)   --->   "%dense_1_out_2_1_load = load float* @dense_1_out_2_1, align 4" [cnn/cnn.cpp:58]   --->   Operation 73 'load' 'dense_1_out_2_1_load' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 74 [1/1] (0.00ns)   --->   "%dense_1_out_3_0_load = load float* @dense_1_out_3_0, align 4" [cnn/cnn.cpp:58]   --->   Operation 74 'load' 'dense_1_out_3_0_load' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 75 [1/1] (0.00ns)   --->   "%dense_1_out_3_1_load = load float* @dense_1_out_3_1, align 4" [cnn/cnn.cpp:58]   --->   Operation 75 'load' 'dense_1_out_3_1_load' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 76 [1/1] (0.00ns)   --->   "%dense_1_out_4_0_load = load float* @dense_1_out_4_0, align 4" [cnn/cnn.cpp:58]   --->   Operation 76 'load' 'dense_1_out_4_0_load' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 77 [1/1] (0.00ns)   --->   "%dense_1_out_4_1_load = load float* @dense_1_out_4_1, align 4" [cnn/cnn.cpp:58]   --->   Operation 77 'load' 'dense_1_out_4_1_load' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 78 [1/1] (0.00ns)   --->   "%dense_1_out_5_0_load = load float* @dense_1_out_5_0, align 4" [cnn/cnn.cpp:58]   --->   Operation 78 'load' 'dense_1_out_5_0_load' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 79 [1/1] (0.00ns)   --->   "%dense_1_out_5_1_load = load float* @dense_1_out_5_1, align 4" [cnn/cnn.cpp:58]   --->   Operation 79 'load' 'dense_1_out_5_1_load' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 80 [1/1] (0.00ns)   --->   "%dense_1_out_6_0_load = load float* @dense_1_out_6_0, align 4" [cnn/cnn.cpp:58]   --->   Operation 80 'load' 'dense_1_out_6_0_load' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 81 [1/1] (0.00ns)   --->   "%dense_1_out_6_1_load = load float* @dense_1_out_6_1, align 4" [cnn/cnn.cpp:58]   --->   Operation 81 'load' 'dense_1_out_6_1_load' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 82 [1/1] (0.00ns)   --->   "%dense_1_out_7_0_load = load float* @dense_1_out_7_0, align 4" [cnn/cnn.cpp:58]   --->   Operation 82 'load' 'dense_1_out_7_0_load' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 83 [1/1] (0.00ns)   --->   "%dense_1_out_7_1_load = load float* @dense_1_out_7_1, align 4" [cnn/cnn.cpp:58]   --->   Operation 83 'load' 'dense_1_out_7_1_load' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 84 [1/1] (0.00ns)   --->   "%dense_1_out_8_0_load = load float* @dense_1_out_8_0, align 4" [cnn/cnn.cpp:58]   --->   Operation 84 'load' 'dense_1_out_8_0_load' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 85 [1/1] (0.00ns)   --->   "%dense_1_out_8_1_load = load float* @dense_1_out_8_1, align 4" [cnn/cnn.cpp:58]   --->   Operation 85 'load' 'dense_1_out_8_1_load' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 86 [1/1] (0.00ns)   --->   "%dense_1_out_9_0_load = load float* @dense_1_out_9_0, align 4" [cnn/cnn.cpp:58]   --->   Operation 86 'load' 'dense_1_out_9_0_load' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 87 [1/1] (0.00ns)   --->   "%dense_1_out_9_1_load = load float* @dense_1_out_9_1, align 4" [cnn/cnn.cpp:58]   --->   Operation 87 'load' 'dense_1_out_9_1_load' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 88 [1/1] (0.00ns)   --->   "%dense_1_out_10_0_loa = load float* @dense_1_out_10_0, align 4" [cnn/cnn.cpp:58]   --->   Operation 88 'load' 'dense_1_out_10_0_loa' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 89 [1/1] (0.00ns)   --->   "%dense_1_out_10_1_loa = load float* @dense_1_out_10_1, align 4" [cnn/cnn.cpp:58]   --->   Operation 89 'load' 'dense_1_out_10_1_loa' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 90 [1/1] (0.00ns)   --->   "%dense_1_out_11_0_loa = load float* @dense_1_out_11_0, align 4" [cnn/cnn.cpp:58]   --->   Operation 90 'load' 'dense_1_out_11_0_loa' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 91 [1/1] (0.00ns)   --->   "%dense_1_out_11_1_loa = load float* @dense_1_out_11_1, align 4" [cnn/cnn.cpp:58]   --->   Operation 91 'load' 'dense_1_out_11_1_loa' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 92 [1/1] (0.00ns)   --->   "%dense_1_out_12_0_loa = load float* @dense_1_out_12_0, align 4" [cnn/cnn.cpp:58]   --->   Operation 92 'load' 'dense_1_out_12_0_loa' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 93 [1/1] (0.00ns)   --->   "%dense_1_out_12_1_loa = load float* @dense_1_out_12_1, align 4" [cnn/cnn.cpp:58]   --->   Operation 93 'load' 'dense_1_out_12_1_loa' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 94 [1/1] (0.00ns)   --->   "%dense_1_out_13_0_loa = load float* @dense_1_out_13_0, align 4" [cnn/cnn.cpp:58]   --->   Operation 94 'load' 'dense_1_out_13_0_loa' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 95 [1/1] (0.00ns)   --->   "%dense_1_out_13_1_loa = load float* @dense_1_out_13_1, align 4" [cnn/cnn.cpp:58]   --->   Operation 95 'load' 'dense_1_out_13_1_loa' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 96 [1/1] (0.00ns)   --->   "%dense_1_out_14_0_loa = load float* @dense_1_out_14_0, align 4" [cnn/cnn.cpp:58]   --->   Operation 96 'load' 'dense_1_out_14_0_loa' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 97 [1/1] (0.00ns)   --->   "%dense_1_out_14_1_loa = load float* @dense_1_out_14_1, align 4" [cnn/cnn.cpp:58]   --->   Operation 97 'load' 'dense_1_out_14_1_loa' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 98 [1/1] (0.00ns)   --->   "%dense_1_out_15_0_loa = load float* @dense_1_out_15_0, align 4" [cnn/cnn.cpp:58]   --->   Operation 98 'load' 'dense_1_out_15_0_loa' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 99 [1/1] (0.00ns)   --->   "%dense_1_out_15_1_loa = load float* @dense_1_out_15_1, align 4" [cnn/cnn.cpp:58]   --->   Operation 99 'load' 'dense_1_out_15_1_loa' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 100 [1/1] (0.00ns)   --->   "%dense_1_out_16_0_loa = load float* @dense_1_out_16_0, align 4" [cnn/cnn.cpp:58]   --->   Operation 100 'load' 'dense_1_out_16_0_loa' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 101 [1/1] (0.00ns)   --->   "%dense_1_out_16_1_loa = load float* @dense_1_out_16_1, align 4" [cnn/cnn.cpp:58]   --->   Operation 101 'load' 'dense_1_out_16_1_loa' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 102 [1/1] (0.00ns)   --->   "%dense_1_out_17_0_loa = load float* @dense_1_out_17_0, align 4" [cnn/cnn.cpp:58]   --->   Operation 102 'load' 'dense_1_out_17_0_loa' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 103 [1/1] (0.00ns)   --->   "%dense_1_out_17_1_loa = load float* @dense_1_out_17_1, align 4" [cnn/cnn.cpp:58]   --->   Operation 103 'load' 'dense_1_out_17_1_loa' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 104 [1/1] (0.00ns)   --->   "%dense_1_out_18_0_loa = load float* @dense_1_out_18_0, align 4" [cnn/cnn.cpp:58]   --->   Operation 104 'load' 'dense_1_out_18_0_loa' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 105 [1/1] (0.00ns)   --->   "%dense_1_out_18_1_loa = load float* @dense_1_out_18_1, align 4" [cnn/cnn.cpp:58]   --->   Operation 105 'load' 'dense_1_out_18_1_loa' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 106 [1/1] (0.00ns)   --->   "%dense_1_out_19_0_loa = load float* @dense_1_out_19_0, align 4" [cnn/cnn.cpp:58]   --->   Operation 106 'load' 'dense_1_out_19_0_loa' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 107 [1/1] (0.00ns)   --->   "%dense_1_out_19_1_loa = load float* @dense_1_out_19_1, align 4" [cnn/cnn.cpp:58]   --->   Operation 107 'load' 'dense_1_out_19_1_loa' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 108 [1/1] (0.00ns)   --->   "%dense_1_out_20_0_loa = load float* @dense_1_out_20_0, align 4" [cnn/cnn.cpp:58]   --->   Operation 108 'load' 'dense_1_out_20_0_loa' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 109 [1/1] (0.00ns)   --->   "%dense_1_out_20_1_loa = load float* @dense_1_out_20_1, align 4" [cnn/cnn.cpp:58]   --->   Operation 109 'load' 'dense_1_out_20_1_loa' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 110 [1/1] (0.00ns)   --->   "%dense_1_out_21_0_loa = load float* @dense_1_out_21_0, align 4" [cnn/cnn.cpp:58]   --->   Operation 110 'load' 'dense_1_out_21_0_loa' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 111 [1/1] (0.00ns)   --->   "%dense_1_out_21_1_loa = load float* @dense_1_out_21_1, align 4" [cnn/cnn.cpp:58]   --->   Operation 111 'load' 'dense_1_out_21_1_loa' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 112 [1/1] (0.00ns)   --->   "%dense_1_out_22_0_loa = load float* @dense_1_out_22_0, align 4" [cnn/cnn.cpp:58]   --->   Operation 112 'load' 'dense_1_out_22_0_loa' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 113 [1/1] (0.00ns)   --->   "%dense_1_out_22_1_loa = load float* @dense_1_out_22_1, align 4" [cnn/cnn.cpp:58]   --->   Operation 113 'load' 'dense_1_out_22_1_loa' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 114 [1/1] (0.00ns)   --->   "%dense_1_out_23_0_loa = load float* @dense_1_out_23_0, align 4" [cnn/cnn.cpp:58]   --->   Operation 114 'load' 'dense_1_out_23_0_loa' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 115 [1/1] (0.00ns)   --->   "%dense_1_out_23_1_loa = load float* @dense_1_out_23_1, align 4" [cnn/cnn.cpp:58]   --->   Operation 115 'load' 'dense_1_out_23_1_loa' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 116 [1/1] (0.00ns)   --->   "%dense_1_out_24_0_loa = load float* @dense_1_out_24_0, align 4" [cnn/cnn.cpp:58]   --->   Operation 116 'load' 'dense_1_out_24_0_loa' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 117 [1/1] (0.00ns)   --->   "%dense_1_out_24_1_loa = load float* @dense_1_out_24_1, align 4" [cnn/cnn.cpp:58]   --->   Operation 117 'load' 'dense_1_out_24_1_loa' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 118 [2/2] (0.00ns)   --->   "%call_ret = call fastcc { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float } @dense_1([400 x float]* @flat_array, float %dense_1_out_0_0_load, float %dense_1_out_0_1_load, float %dense_1_out_1_0_load, float %dense_1_out_1_1_load, float %dense_1_out_2_0_load, float %dense_1_out_2_1_load, float %dense_1_out_3_0_load, float %dense_1_out_3_1_load, float %dense_1_out_4_0_load, float %dense_1_out_4_1_load, float %dense_1_out_5_0_load, float %dense_1_out_5_1_load, float %dense_1_out_6_0_load, float %dense_1_out_6_1_load, float %dense_1_out_7_0_load, float %dense_1_out_7_1_load, float %dense_1_out_8_0_load, float %dense_1_out_8_1_load, float %dense_1_out_9_0_load, float %dense_1_out_9_1_load, float %dense_1_out_10_0_loa, float %dense_1_out_10_1_loa, float %dense_1_out_11_0_loa, float %dense_1_out_11_1_loa, float %dense_1_out_12_0_loa, float %dense_1_out_12_1_loa, float %dense_1_out_13_0_loa, float %dense_1_out_13_1_loa, float %dense_1_out_14_0_loa, float %dense_1_out_14_1_loa, float %dense_1_out_15_0_loa, float %dense_1_out_15_1_loa, float %dense_1_out_16_0_loa, float %dense_1_out_16_1_loa, float %dense_1_out_17_0_loa, float %dense_1_out_17_1_loa, float %dense_1_out_18_0_loa, float %dense_1_out_18_1_loa, float %dense_1_out_19_0_loa, float %dense_1_out_19_1_loa, float %dense_1_out_20_0_loa, float %dense_1_out_20_1_loa, float %dense_1_out_21_0_loa, float %dense_1_out_21_1_loa, float %dense_1_out_22_0_loa, float %dense_1_out_22_1_loa, float %dense_1_out_23_0_loa, float %dense_1_out_23_1_loa, float %dense_1_out_24_0_loa, float %dense_1_out_24_1_loa) nounwind" [cnn/cnn.cpp:58]   --->   Operation 118 'call' 'call_ret' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 15 <SV = 12> <Delay = 0.69>
+ST_15 : Operation 119 [1/2] (0.69ns)   --->   "%call_ret = call fastcc { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float } @dense_1([400 x float]* @flat_array, float %dense_1_out_0_0_load, float %dense_1_out_0_1_load, float %dense_1_out_1_0_load, float %dense_1_out_1_1_load, float %dense_1_out_2_0_load, float %dense_1_out_2_1_load, float %dense_1_out_3_0_load, float %dense_1_out_3_1_load, float %dense_1_out_4_0_load, float %dense_1_out_4_1_load, float %dense_1_out_5_0_load, float %dense_1_out_5_1_load, float %dense_1_out_6_0_load, float %dense_1_out_6_1_load, float %dense_1_out_7_0_load, float %dense_1_out_7_1_load, float %dense_1_out_8_0_load, float %dense_1_out_8_1_load, float %dense_1_out_9_0_load, float %dense_1_out_9_1_load, float %dense_1_out_10_0_loa, float %dense_1_out_10_1_loa, float %dense_1_out_11_0_loa, float %dense_1_out_11_1_loa, float %dense_1_out_12_0_loa, float %dense_1_out_12_1_loa, float %dense_1_out_13_0_loa, float %dense_1_out_13_1_loa, float %dense_1_out_14_0_loa, float %dense_1_out_14_1_loa, float %dense_1_out_15_0_loa, float %dense_1_out_15_1_loa, float %dense_1_out_16_0_loa, float %dense_1_out_16_1_loa, float %dense_1_out_17_0_loa, float %dense_1_out_17_1_loa, float %dense_1_out_18_0_loa, float %dense_1_out_18_1_loa, float %dense_1_out_19_0_loa, float %dense_1_out_19_1_loa, float %dense_1_out_20_0_loa, float %dense_1_out_20_1_loa, float %dense_1_out_21_0_loa, float %dense_1_out_21_1_loa, float %dense_1_out_22_0_loa, float %dense_1_out_22_1_loa, float %dense_1_out_23_0_loa, float %dense_1_out_23_1_loa, float %dense_1_out_24_0_loa, float %dense_1_out_24_1_loa) nounwind" [cnn/cnn.cpp:58]   --->   Operation 119 'call' 'call_ret' <Predicate = true> <Delay = 0.69> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_15 : Operation 120 [1/1] (0.00ns)   --->   "%dense_1_out_0_0_loc = extractvalue { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float } %call_ret, 0" [cnn/cnn.cpp:58]   --->   Operation 120 'extractvalue' 'dense_1_out_0_0_loc' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 121 [1/1] (0.00ns)   --->   "store float %dense_1_out_0_0_loc, float* @dense_1_out_0_0, align 4" [cnn/cnn.cpp:58]   --->   Operation 121 'store' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 122 [1/1] (0.00ns)   --->   "%dense_1_out_0_1_loc = extractvalue { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float } %call_ret, 1" [cnn/cnn.cpp:58]   --->   Operation 122 'extractvalue' 'dense_1_out_0_1_loc' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 123 [1/1] (0.00ns)   --->   "store float %dense_1_out_0_1_loc, float* @dense_1_out_0_1, align 4" [cnn/cnn.cpp:58]   --->   Operation 123 'store' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 124 [1/1] (0.00ns)   --->   "%dense_1_out_1_0_loc = extractvalue { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float } %call_ret, 2" [cnn/cnn.cpp:58]   --->   Operation 124 'extractvalue' 'dense_1_out_1_0_loc' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 125 [1/1] (0.00ns)   --->   "store float %dense_1_out_1_0_loc, float* @dense_1_out_1_0, align 4" [cnn/cnn.cpp:58]   --->   Operation 125 'store' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 126 [1/1] (0.00ns)   --->   "%dense_1_out_1_1_loc = extractvalue { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float } %call_ret, 3" [cnn/cnn.cpp:58]   --->   Operation 126 'extractvalue' 'dense_1_out_1_1_loc' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 127 [1/1] (0.00ns)   --->   "store float %dense_1_out_1_1_loc, float* @dense_1_out_1_1, align 4" [cnn/cnn.cpp:58]   --->   Operation 127 'store' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 128 [1/1] (0.00ns)   --->   "%dense_1_out_2_0_loc = extractvalue { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float } %call_ret, 4" [cnn/cnn.cpp:58]   --->   Operation 128 'extractvalue' 'dense_1_out_2_0_loc' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 129 [1/1] (0.00ns)   --->   "store float %dense_1_out_2_0_loc, float* @dense_1_out_2_0, align 4" [cnn/cnn.cpp:58]   --->   Operation 129 'store' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 130 [1/1] (0.00ns)   --->   "%dense_1_out_2_1_loc = extractvalue { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float } %call_ret, 5" [cnn/cnn.cpp:58]   --->   Operation 130 'extractvalue' 'dense_1_out_2_1_loc' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 131 [1/1] (0.00ns)   --->   "store float %dense_1_out_2_1_loc, float* @dense_1_out_2_1, align 4" [cnn/cnn.cpp:58]   --->   Operation 131 'store' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 132 [1/1] (0.00ns)   --->   "%dense_1_out_3_0_loc = extractvalue { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float } %call_ret, 6" [cnn/cnn.cpp:58]   --->   Operation 132 'extractvalue' 'dense_1_out_3_0_loc' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 133 [1/1] (0.00ns)   --->   "store float %dense_1_out_3_0_loc, float* @dense_1_out_3_0, align 4" [cnn/cnn.cpp:58]   --->   Operation 133 'store' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 134 [1/1] (0.00ns)   --->   "%dense_1_out_3_1_loc = extractvalue { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float } %call_ret, 7" [cnn/cnn.cpp:58]   --->   Operation 134 'extractvalue' 'dense_1_out_3_1_loc' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 135 [1/1] (0.00ns)   --->   "store float %dense_1_out_3_1_loc, float* @dense_1_out_3_1, align 4" [cnn/cnn.cpp:58]   --->   Operation 135 'store' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 136 [1/1] (0.00ns)   --->   "%dense_1_out_4_0_loc = extractvalue { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float } %call_ret, 8" [cnn/cnn.cpp:58]   --->   Operation 136 'extractvalue' 'dense_1_out_4_0_loc' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 137 [1/1] (0.00ns)   --->   "store float %dense_1_out_4_0_loc, float* @dense_1_out_4_0, align 4" [cnn/cnn.cpp:58]   --->   Operation 137 'store' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 138 [1/1] (0.00ns)   --->   "%dense_1_out_4_1_loc = extractvalue { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float } %call_ret, 9" [cnn/cnn.cpp:58]   --->   Operation 138 'extractvalue' 'dense_1_out_4_1_loc' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 139 [1/1] (0.00ns)   --->   "store float %dense_1_out_4_1_loc, float* @dense_1_out_4_1, align 4" [cnn/cnn.cpp:58]   --->   Operation 139 'store' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 140 [1/1] (0.00ns)   --->   "%dense_1_out_5_0_loc = extractvalue { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float } %call_ret, 10" [cnn/cnn.cpp:58]   --->   Operation 140 'extractvalue' 'dense_1_out_5_0_loc' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 141 [1/1] (0.00ns)   --->   "store float %dense_1_out_5_0_loc, float* @dense_1_out_5_0, align 4" [cnn/cnn.cpp:58]   --->   Operation 141 'store' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 142 [1/1] (0.00ns)   --->   "%dense_1_out_5_1_loc = extractvalue { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float } %call_ret, 11" [cnn/cnn.cpp:58]   --->   Operation 142 'extractvalue' 'dense_1_out_5_1_loc' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 143 [1/1] (0.00ns)   --->   "store float %dense_1_out_5_1_loc, float* @dense_1_out_5_1, align 4" [cnn/cnn.cpp:58]   --->   Operation 143 'store' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 144 [1/1] (0.00ns)   --->   "%dense_1_out_6_0_loc = extractvalue { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float } %call_ret, 12" [cnn/cnn.cpp:58]   --->   Operation 144 'extractvalue' 'dense_1_out_6_0_loc' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 145 [1/1] (0.00ns)   --->   "store float %dense_1_out_6_0_loc, float* @dense_1_out_6_0, align 4" [cnn/cnn.cpp:58]   --->   Operation 145 'store' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 146 [1/1] (0.00ns)   --->   "%dense_1_out_6_1_loc = extractvalue { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float } %call_ret, 13" [cnn/cnn.cpp:58]   --->   Operation 146 'extractvalue' 'dense_1_out_6_1_loc' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 147 [1/1] (0.00ns)   --->   "store float %dense_1_out_6_1_loc, float* @dense_1_out_6_1, align 4" [cnn/cnn.cpp:58]   --->   Operation 147 'store' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 148 [1/1] (0.00ns)   --->   "%dense_1_out_7_0_loc = extractvalue { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float } %call_ret, 14" [cnn/cnn.cpp:58]   --->   Operation 148 'extractvalue' 'dense_1_out_7_0_loc' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 149 [1/1] (0.00ns)   --->   "store float %dense_1_out_7_0_loc, float* @dense_1_out_7_0, align 4" [cnn/cnn.cpp:58]   --->   Operation 149 'store' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 150 [1/1] (0.00ns)   --->   "%dense_1_out_7_1_loc = extractvalue { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float } %call_ret, 15" [cnn/cnn.cpp:58]   --->   Operation 150 'extractvalue' 'dense_1_out_7_1_loc' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 151 [1/1] (0.00ns)   --->   "store float %dense_1_out_7_1_loc, float* @dense_1_out_7_1, align 4" [cnn/cnn.cpp:58]   --->   Operation 151 'store' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 152 [1/1] (0.00ns)   --->   "%dense_1_out_8_0_loc = extractvalue { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float } %call_ret, 16" [cnn/cnn.cpp:58]   --->   Operation 152 'extractvalue' 'dense_1_out_8_0_loc' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 153 [1/1] (0.00ns)   --->   "store float %dense_1_out_8_0_loc, float* @dense_1_out_8_0, align 4" [cnn/cnn.cpp:58]   --->   Operation 153 'store' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 154 [1/1] (0.00ns)   --->   "%dense_1_out_8_1_loc = extractvalue { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float } %call_ret, 17" [cnn/cnn.cpp:58]   --->   Operation 154 'extractvalue' 'dense_1_out_8_1_loc' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 155 [1/1] (0.00ns)   --->   "store float %dense_1_out_8_1_loc, float* @dense_1_out_8_1, align 4" [cnn/cnn.cpp:58]   --->   Operation 155 'store' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 156 [1/1] (0.00ns)   --->   "%dense_1_out_9_0_loc = extractvalue { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float } %call_ret, 18" [cnn/cnn.cpp:58]   --->   Operation 156 'extractvalue' 'dense_1_out_9_0_loc' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 157 [1/1] (0.00ns)   --->   "store float %dense_1_out_9_0_loc, float* @dense_1_out_9_0, align 4" [cnn/cnn.cpp:58]   --->   Operation 157 'store' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 158 [1/1] (0.00ns)   --->   "%dense_1_out_9_1_loc = extractvalue { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float } %call_ret, 19" [cnn/cnn.cpp:58]   --->   Operation 158 'extractvalue' 'dense_1_out_9_1_loc' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 159 [1/1] (0.00ns)   --->   "store float %dense_1_out_9_1_loc, float* @dense_1_out_9_1, align 4" [cnn/cnn.cpp:58]   --->   Operation 159 'store' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 160 [1/1] (0.00ns)   --->   "%dense_1_out_10_0_loc = extractvalue { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float } %call_ret, 20" [cnn/cnn.cpp:58]   --->   Operation 160 'extractvalue' 'dense_1_out_10_0_loc' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 161 [1/1] (0.00ns)   --->   "store float %dense_1_out_10_0_loc, float* @dense_1_out_10_0, align 4" [cnn/cnn.cpp:58]   --->   Operation 161 'store' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 162 [1/1] (0.00ns)   --->   "%dense_1_out_10_1_loc = extractvalue { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float } %call_ret, 21" [cnn/cnn.cpp:58]   --->   Operation 162 'extractvalue' 'dense_1_out_10_1_loc' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 163 [1/1] (0.00ns)   --->   "store float %dense_1_out_10_1_loc, float* @dense_1_out_10_1, align 4" [cnn/cnn.cpp:58]   --->   Operation 163 'store' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 164 [1/1] (0.00ns)   --->   "%dense_1_out_11_0_loc = extractvalue { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float } %call_ret, 22" [cnn/cnn.cpp:58]   --->   Operation 164 'extractvalue' 'dense_1_out_11_0_loc' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 165 [1/1] (0.00ns)   --->   "store float %dense_1_out_11_0_loc, float* @dense_1_out_11_0, align 4" [cnn/cnn.cpp:58]   --->   Operation 165 'store' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 166 [1/1] (0.00ns)   --->   "%dense_1_out_11_1_loc = extractvalue { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float } %call_ret, 23" [cnn/cnn.cpp:58]   --->   Operation 166 'extractvalue' 'dense_1_out_11_1_loc' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 167 [1/1] (0.00ns)   --->   "store float %dense_1_out_11_1_loc, float* @dense_1_out_11_1, align 4" [cnn/cnn.cpp:58]   --->   Operation 167 'store' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 168 [1/1] (0.00ns)   --->   "%dense_1_out_12_0_loc = extractvalue { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float } %call_ret, 24" [cnn/cnn.cpp:58]   --->   Operation 168 'extractvalue' 'dense_1_out_12_0_loc' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 169 [1/1] (0.00ns)   --->   "store float %dense_1_out_12_0_loc, float* @dense_1_out_12_0, align 4" [cnn/cnn.cpp:58]   --->   Operation 169 'store' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 170 [1/1] (0.00ns)   --->   "%dense_1_out_12_1_loc = extractvalue { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float } %call_ret, 25" [cnn/cnn.cpp:58]   --->   Operation 170 'extractvalue' 'dense_1_out_12_1_loc' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 171 [1/1] (0.00ns)   --->   "store float %dense_1_out_12_1_loc, float* @dense_1_out_12_1, align 4" [cnn/cnn.cpp:58]   --->   Operation 171 'store' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 172 [1/1] (0.00ns)   --->   "%dense_1_out_13_0_loc = extractvalue { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float } %call_ret, 26" [cnn/cnn.cpp:58]   --->   Operation 172 'extractvalue' 'dense_1_out_13_0_loc' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 173 [1/1] (0.00ns)   --->   "store float %dense_1_out_13_0_loc, float* @dense_1_out_13_0, align 4" [cnn/cnn.cpp:58]   --->   Operation 173 'store' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 174 [1/1] (0.00ns)   --->   "%dense_1_out_13_1_loc = extractvalue { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float } %call_ret, 27" [cnn/cnn.cpp:58]   --->   Operation 174 'extractvalue' 'dense_1_out_13_1_loc' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 175 [1/1] (0.00ns)   --->   "store float %dense_1_out_13_1_loc, float* @dense_1_out_13_1, align 4" [cnn/cnn.cpp:58]   --->   Operation 175 'store' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 176 [1/1] (0.00ns)   --->   "%dense_1_out_14_0_loc = extractvalue { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float } %call_ret, 28" [cnn/cnn.cpp:58]   --->   Operation 176 'extractvalue' 'dense_1_out_14_0_loc' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 177 [1/1] (0.00ns)   --->   "store float %dense_1_out_14_0_loc, float* @dense_1_out_14_0, align 4" [cnn/cnn.cpp:58]   --->   Operation 177 'store' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 178 [1/1] (0.00ns)   --->   "%dense_1_out_14_1_loc = extractvalue { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float } %call_ret, 29" [cnn/cnn.cpp:58]   --->   Operation 178 'extractvalue' 'dense_1_out_14_1_loc' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 179 [1/1] (0.00ns)   --->   "store float %dense_1_out_14_1_loc, float* @dense_1_out_14_1, align 4" [cnn/cnn.cpp:58]   --->   Operation 179 'store' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 180 [1/1] (0.00ns)   --->   "%dense_1_out_15_0_loc = extractvalue { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float } %call_ret, 30" [cnn/cnn.cpp:58]   --->   Operation 180 'extractvalue' 'dense_1_out_15_0_loc' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 181 [1/1] (0.00ns)   --->   "store float %dense_1_out_15_0_loc, float* @dense_1_out_15_0, align 4" [cnn/cnn.cpp:58]   --->   Operation 181 'store' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 182 [1/1] (0.00ns)   --->   "%dense_1_out_15_1_loc = extractvalue { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float } %call_ret, 31" [cnn/cnn.cpp:58]   --->   Operation 182 'extractvalue' 'dense_1_out_15_1_loc' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 183 [1/1] (0.00ns)   --->   "store float %dense_1_out_15_1_loc, float* @dense_1_out_15_1, align 4" [cnn/cnn.cpp:58]   --->   Operation 183 'store' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 184 [1/1] (0.00ns)   --->   "%dense_1_out_16_0_loc = extractvalue { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float } %call_ret, 32" [cnn/cnn.cpp:58]   --->   Operation 184 'extractvalue' 'dense_1_out_16_0_loc' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 185 [1/1] (0.00ns)   --->   "store float %dense_1_out_16_0_loc, float* @dense_1_out_16_0, align 4" [cnn/cnn.cpp:58]   --->   Operation 185 'store' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 186 [1/1] (0.00ns)   --->   "%dense_1_out_16_1_loc = extractvalue { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float } %call_ret, 33" [cnn/cnn.cpp:58]   --->   Operation 186 'extractvalue' 'dense_1_out_16_1_loc' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 187 [1/1] (0.00ns)   --->   "store float %dense_1_out_16_1_loc, float* @dense_1_out_16_1, align 4" [cnn/cnn.cpp:58]   --->   Operation 187 'store' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 188 [1/1] (0.00ns)   --->   "%dense_1_out_17_0_loc = extractvalue { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float } %call_ret, 34" [cnn/cnn.cpp:58]   --->   Operation 188 'extractvalue' 'dense_1_out_17_0_loc' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 189 [1/1] (0.00ns)   --->   "store float %dense_1_out_17_0_loc, float* @dense_1_out_17_0, align 4" [cnn/cnn.cpp:58]   --->   Operation 189 'store' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 190 [1/1] (0.00ns)   --->   "%dense_1_out_17_1_loc = extractvalue { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float } %call_ret, 35" [cnn/cnn.cpp:58]   --->   Operation 190 'extractvalue' 'dense_1_out_17_1_loc' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 191 [1/1] (0.00ns)   --->   "store float %dense_1_out_17_1_loc, float* @dense_1_out_17_1, align 4" [cnn/cnn.cpp:58]   --->   Operation 191 'store' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 192 [1/1] (0.00ns)   --->   "%dense_1_out_18_0_loc = extractvalue { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float } %call_ret, 36" [cnn/cnn.cpp:58]   --->   Operation 192 'extractvalue' 'dense_1_out_18_0_loc' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 193 [1/1] (0.00ns)   --->   "store float %dense_1_out_18_0_loc, float* @dense_1_out_18_0, align 4" [cnn/cnn.cpp:58]   --->   Operation 193 'store' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 194 [1/1] (0.00ns)   --->   "%dense_1_out_18_1_loc = extractvalue { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float } %call_ret, 37" [cnn/cnn.cpp:58]   --->   Operation 194 'extractvalue' 'dense_1_out_18_1_loc' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 195 [1/1] (0.00ns)   --->   "store float %dense_1_out_18_1_loc, float* @dense_1_out_18_1, align 4" [cnn/cnn.cpp:58]   --->   Operation 195 'store' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 196 [1/1] (0.00ns)   --->   "%dense_1_out_19_0_loc = extractvalue { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float } %call_ret, 38" [cnn/cnn.cpp:58]   --->   Operation 196 'extractvalue' 'dense_1_out_19_0_loc' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 197 [1/1] (0.00ns)   --->   "store float %dense_1_out_19_0_loc, float* @dense_1_out_19_0, align 4" [cnn/cnn.cpp:58]   --->   Operation 197 'store' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 198 [1/1] (0.00ns)   --->   "%dense_1_out_19_1_loc = extractvalue { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float } %call_ret, 39" [cnn/cnn.cpp:58]   --->   Operation 198 'extractvalue' 'dense_1_out_19_1_loc' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 199 [1/1] (0.00ns)   --->   "store float %dense_1_out_19_1_loc, float* @dense_1_out_19_1, align 4" [cnn/cnn.cpp:58]   --->   Operation 199 'store' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 200 [1/1] (0.00ns)   --->   "%dense_1_out_20_0_loc = extractvalue { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float } %call_ret, 40" [cnn/cnn.cpp:58]   --->   Operation 200 'extractvalue' 'dense_1_out_20_0_loc' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 201 [1/1] (0.00ns)   --->   "store float %dense_1_out_20_0_loc, float* @dense_1_out_20_0, align 4" [cnn/cnn.cpp:58]   --->   Operation 201 'store' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 202 [1/1] (0.00ns)   --->   "%dense_1_out_20_1_loc = extractvalue { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float } %call_ret, 41" [cnn/cnn.cpp:58]   --->   Operation 202 'extractvalue' 'dense_1_out_20_1_loc' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 203 [1/1] (0.00ns)   --->   "store float %dense_1_out_20_1_loc, float* @dense_1_out_20_1, align 4" [cnn/cnn.cpp:58]   --->   Operation 203 'store' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 204 [1/1] (0.00ns)   --->   "%dense_1_out_21_0_loc = extractvalue { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float } %call_ret, 42" [cnn/cnn.cpp:58]   --->   Operation 204 'extractvalue' 'dense_1_out_21_0_loc' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 205 [1/1] (0.00ns)   --->   "store float %dense_1_out_21_0_loc, float* @dense_1_out_21_0, align 4" [cnn/cnn.cpp:58]   --->   Operation 205 'store' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 206 [1/1] (0.00ns)   --->   "%dense_1_out_21_1_loc = extractvalue { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float } %call_ret, 43" [cnn/cnn.cpp:58]   --->   Operation 206 'extractvalue' 'dense_1_out_21_1_loc' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 207 [1/1] (0.00ns)   --->   "store float %dense_1_out_21_1_loc, float* @dense_1_out_21_1, align 4" [cnn/cnn.cpp:58]   --->   Operation 207 'store' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 208 [1/1] (0.00ns)   --->   "%dense_1_out_22_0_loc = extractvalue { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float } %call_ret, 44" [cnn/cnn.cpp:58]   --->   Operation 208 'extractvalue' 'dense_1_out_22_0_loc' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 209 [1/1] (0.00ns)   --->   "store float %dense_1_out_22_0_loc, float* @dense_1_out_22_0, align 4" [cnn/cnn.cpp:58]   --->   Operation 209 'store' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 210 [1/1] (0.00ns)   --->   "%dense_1_out_22_1_loc = extractvalue { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float } %call_ret, 45" [cnn/cnn.cpp:58]   --->   Operation 210 'extractvalue' 'dense_1_out_22_1_loc' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 211 [1/1] (0.00ns)   --->   "store float %dense_1_out_22_1_loc, float* @dense_1_out_22_1, align 4" [cnn/cnn.cpp:58]   --->   Operation 211 'store' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 212 [1/1] (0.00ns)   --->   "%dense_1_out_23_0_loc = extractvalue { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float } %call_ret, 46" [cnn/cnn.cpp:58]   --->   Operation 212 'extractvalue' 'dense_1_out_23_0_loc' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 213 [1/1] (0.00ns)   --->   "store float %dense_1_out_23_0_loc, float* @dense_1_out_23_0, align 4" [cnn/cnn.cpp:58]   --->   Operation 213 'store' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 214 [1/1] (0.00ns)   --->   "%dense_1_out_23_1_loc = extractvalue { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float } %call_ret, 47" [cnn/cnn.cpp:58]   --->   Operation 214 'extractvalue' 'dense_1_out_23_1_loc' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 215 [1/1] (0.00ns)   --->   "store float %dense_1_out_23_1_loc, float* @dense_1_out_23_1, align 4" [cnn/cnn.cpp:58]   --->   Operation 215 'store' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 216 [1/1] (0.00ns)   --->   "%dense_1_out_24_0_loc = extractvalue { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float } %call_ret, 48" [cnn/cnn.cpp:58]   --->   Operation 216 'extractvalue' 'dense_1_out_24_0_loc' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 217 [1/1] (0.00ns)   --->   "store float %dense_1_out_24_0_loc, float* @dense_1_out_24_0, align 4" [cnn/cnn.cpp:58]   --->   Operation 217 'store' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 218 [1/1] (0.00ns)   --->   "%dense_1_out_24_1_loc = extractvalue { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float } %call_ret, 49" [cnn/cnn.cpp:58]   --->   Operation 218 'extractvalue' 'dense_1_out_24_1_loc' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 219 [1/1] (0.00ns)   --->   "store float %dense_1_out_24_1_loc, float* @dense_1_out_24_1, align 4" [cnn/cnn.cpp:58]   --->   Operation 219 'store' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 220 [2/2] (0.00ns)   --->   "call fastcc void @dense_2(float %dense_1_out_0_0_loc, float %dense_1_out_0_1_loc, float %dense_1_out_1_0_loc, float %dense_1_out_1_1_loc, float %dense_1_out_2_0_loc, float %dense_1_out_2_1_loc, float %dense_1_out_3_0_loc, float %dense_1_out_3_1_loc, float %dense_1_out_4_0_loc, float %dense_1_out_4_1_loc, float %dense_1_out_5_0_loc, float %dense_1_out_5_1_loc, float %dense_1_out_6_0_loc, float %dense_1_out_6_1_loc, float %dense_1_out_7_0_loc, float %dense_1_out_7_1_loc, float %dense_1_out_8_0_loc, float %dense_1_out_8_1_loc, float %dense_1_out_9_0_loc, float %dense_1_out_9_1_loc, float %dense_1_out_10_0_loc, float %dense_1_out_10_1_loc, float %dense_1_out_11_0_loc, float %dense_1_out_11_1_loc, float %dense_1_out_12_0_loc, float %dense_1_out_12_1_loc, float %dense_1_out_13_0_loc, float %dense_1_out_13_1_loc, float %dense_1_out_14_0_loc, float %dense_1_out_14_1_loc, float %dense_1_out_15_0_loc, float %dense_1_out_15_1_loc, float %dense_1_out_16_0_loc, float %dense_1_out_16_1_loc, float %dense_1_out_17_0_loc, float %dense_1_out_17_1_loc, float %dense_1_out_18_0_loc, float %dense_1_out_18_1_loc, float %dense_1_out_19_0_loc, float %dense_1_out_19_1_loc, float %dense_1_out_20_0_loc, float %dense_1_out_20_1_loc, float %dense_1_out_21_0_loc, float %dense_1_out_21_1_loc, float %dense_1_out_22_0_loc, float %dense_1_out_22_1_loc, float %dense_1_out_23_0_loc, float %dense_1_out_23_1_loc, float %dense_1_out_24_0_loc, float %dense_1_out_24_1_loc, [30 x float]* @dense_2_out) nounwind" [cnn/cnn.cpp:63]   --->   Operation 220 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 16 <SV = 13> <Delay = 0.00>
+ST_16 : Operation 221 [1/2] (0.00ns)   --->   "call fastcc void @dense_2(float %dense_1_out_0_0_loc, float %dense_1_out_0_1_loc, float %dense_1_out_1_0_loc, float %dense_1_out_1_1_loc, float %dense_1_out_2_0_loc, float %dense_1_out_2_1_loc, float %dense_1_out_3_0_loc, float %dense_1_out_3_1_loc, float %dense_1_out_4_0_loc, float %dense_1_out_4_1_loc, float %dense_1_out_5_0_loc, float %dense_1_out_5_1_loc, float %dense_1_out_6_0_loc, float %dense_1_out_6_1_loc, float %dense_1_out_7_0_loc, float %dense_1_out_7_1_loc, float %dense_1_out_8_0_loc, float %dense_1_out_8_1_loc, float %dense_1_out_9_0_loc, float %dense_1_out_9_1_loc, float %dense_1_out_10_0_loc, float %dense_1_out_10_1_loc, float %dense_1_out_11_0_loc, float %dense_1_out_11_1_loc, float %dense_1_out_12_0_loc, float %dense_1_out_12_1_loc, float %dense_1_out_13_0_loc, float %dense_1_out_13_1_loc, float %dense_1_out_14_0_loc, float %dense_1_out_14_1_loc, float %dense_1_out_15_0_loc, float %dense_1_out_15_1_loc, float %dense_1_out_16_0_loc, float %dense_1_out_16_1_loc, float %dense_1_out_17_0_loc, float %dense_1_out_17_1_loc, float %dense_1_out_18_0_loc, float %dense_1_out_18_1_loc, float %dense_1_out_19_0_loc, float %dense_1_out_19_1_loc, float %dense_1_out_20_0_loc, float %dense_1_out_20_1_loc, float %dense_1_out_21_0_loc, float %dense_1_out_21_1_loc, float %dense_1_out_22_0_loc, float %dense_1_out_22_1_loc, float %dense_1_out_23_0_loc, float %dense_1_out_23_1_loc, float %dense_1_out_24_0_loc, float %dense_1_out_24_1_loc, [30 x float]* @dense_2_out) nounwind" [cnn/cnn.cpp:63]   --->   Operation 221 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 17 <SV = 14> <Delay = 0.00>
+ST_17 : Operation 222 [2/2] (0.00ns)   --->   "call fastcc void @dense_out([10 x float]* %prediction) nounwind" [cnn/cnn.cpp:66]   --->   Operation 222 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 18 <SV = 15> <Delay = 0.00>
+ST_18 : Operation 223 [1/2] (0.00ns)   --->   "call fastcc void @dense_out([10 x float]* %prediction) nounwind" [cnn/cnn.cpp:66]   --->   Operation 223 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_18 : Operation 224 [1/1] (0.00ns)   --->   "ret void" [cnn/cnn.cpp:67]   --->   Operation 224 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 20ns, clock uncertainty: 2.5ns.
+
+ <State 1>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('ix_in') with incoming values : ('ix_in', cnn/cnn.cpp:28) [127]  (1.77 ns)
+
+ <State 2>: 1.78ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', cnn/cnn.cpp:23) [128]  (0 ns)
+	'add' operation ('i', cnn/cnn.cpp:23) [131]  (1.78 ns)
+
+ <State 3>: 3.25ns
+The critical path consists of the following:
+	'phi' operation ('ix_in_1', cnn/cnn.cpp:28) with incoming values : ('ix_in', cnn/cnn.cpp:28) ('add_ln28', cnn/cnn.cpp:28) [142]  (0 ns)
+	'getelementptr' operation ('cnn_input_addr', cnn/cnn.cpp:27) [150]  (0 ns)
+	'load' operation ('cnn_input_load', cnn/cnn.cpp:27) on array 'cnn_input' [151]  (3.25 ns)
+
+ <State 4>: 6.51ns
+The critical path consists of the following:
+	'load' operation ('cnn_input_load', cnn/cnn.cpp:27) on array 'cnn_input' [151]  (3.25 ns)
+	'store' operation ('store_ln27', cnn/cnn.cpp:27) of variable 'cnn_input_load', cnn/cnn.cpp:27 on array 'conv_1_input', cnn/cnn.cpp:19 [156]  (3.25 ns)
+
+ <State 5>: 0ns
+The critical path consists of the following:
+
+ <State 6>: 0ns
+The critical path consists of the following:
+
+ <State 7>: 0ns
+The critical path consists of the following:
+
+ <State 8>: 0ns
+The critical path consists of the following:
+
+ <State 9>: 0ns
+The critical path consists of the following:
+
+ <State 10>: 0ns
+The critical path consists of the following:
+
+ <State 11>: 0ns
+The critical path consists of the following:
+
+ <State 12>: 0ns
+The critical path consists of the following:
+
+ <State 13>: 0ns
+The critical path consists of the following:
+
+ <State 14>: 0ns
+The critical path consists of the following:
+
+ <State 15>: 0.698ns
+The critical path consists of the following:
+	'call' operation ('call_ret', cnn/cnn.cpp:58) to 'dense_1' [217]  (0.698 ns)
+
+ <State 16>: 0ns
+The critical path consists of the following:
+
+ <State 17>: 0ns
+The critical path consists of the following:
+
+ <State 18>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

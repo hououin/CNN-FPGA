@@ -1,0 +1,1057 @@
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'cnn/max_pool_2.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'cnn/max_pool_1.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'cnn/flat.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'cnn/dense_out.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'cnn/dense_2.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'cnn/dense_1.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'cnn/conv_2.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'cnn/conv_1.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'cnn/cnn.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:37 . Memory (MB): peak = 186.176 ; gain = 94.613
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:37 . Memory (MB): peak = 186.176 ; gain = 94.613
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:38 . Memory (MB): peak = 186.176 ; gain = 94.613
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'dense_1' into 'cnn' (cnn/cnn.cpp:58) automatically.
+INFO: [XFORM 203-602] Inlining function 'dense_2' into 'cnn' (cnn/cnn.cpp:63) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:38 . Memory (MB): peak = 186.176 ; gain = 94.613
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Col_Loop' (cnn/conv_1.cpp:12) in function 'conv_1' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'Filter1_Loop' (cnn/conv_1.cpp:15) in function 'conv_1' completely with a factor of 6.
+INFO: [HLS 200-489] Unrolling loop 'W_Row_Loop' (cnn/conv_1.cpp:19) in function 'conv_1' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'W_Col_Loop' (cnn/conv_1.cpp:22) in function 'conv_1' completely with a factor of 3.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input' (cnn/cnn.cpp:19) in dimension 1 with a cyclic factor 14.
+INFO: [XFORM 203-602] Inlining function 'dense_1' into 'cnn' (cnn/cnn.cpp:58) automatically.
+INFO: [XFORM 203-602] Inlining function 'dense_2' into 'cnn' (cnn/cnn.cpp:63) automatically.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:02 ; elapsed = 00:00:40 . Memory (MB): peak = 186.176 ; gain = 94.613
+INFO: [XFORM 203-541] Flattening a loop nest 'Row_Loop' (cnn/conv_1.cpp:9:6) in function 'conv_1'.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:09 ; elapsed = 00:00:46 . Memory (MB): peak = 241.562 ; gain = 150.000
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'cnn' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'conv_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Row_Loop_Col_Loop'.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('input_0_load_2', cnn/conv_1.cpp:23) on array 'input_0' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'input_0'.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('input_1_load_4', cnn/conv_1.cpp:23) on array 'input_1' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'input_1'.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('input_2_load_6', cnn/conv_1.cpp:23) on array 'input_2' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'input_2'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 5, Depth = 54.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 46.741 seconds; current allocated memory: 187.900 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.414 seconds; current allocated memory: 190.407 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'max_pool_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.471 seconds; current allocated memory: 190.710 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 5 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.095 seconds; current allocated memory: 190.998 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'conv_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.128 seconds; current allocated memory: 191.327 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.092 seconds; current allocated memory: 191.696 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'max_pool_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.175 seconds; current allocated memory: 191.943 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.077 seconds; current allocated memory: 192.218 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'flat' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.104 seconds; current allocated memory: 192.374 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.069 seconds; current allocated memory: 192.537 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'soft_max' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.082 seconds; current allocated memory: 192.656 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.069 seconds; current allocated memory: 192.811 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dense_out' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.089 seconds; current allocated memory: 192.955 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.073 seconds; current allocated memory: 193.130 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'cnn' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.14 seconds; current allocated memory: 193.678 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.625 seconds; current allocated memory: 194.840 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'conv_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'cnn_fadd_32ns_32ns_32_4_full_dsp_1' to 'cnn_fadd_32ns_32nbkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cnn_fmul_32ns_32ns_32_2_max_dsp_1' to 'cnn_fmul_32ns_32ncud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cnn_fcmp_32ns_32ns_1_2_1' to 'cnn_fcmp_32ns_32ndEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cnn_urem_5ns_5ns_5_9_1' to 'cnn_urem_5ns_5ns_eOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cnn_mac_muladd_6ns_5ns_5ns_10_1_1' to 'cnn_mac_muladd_6nfYi' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'cnn_fadd_32ns_32nbkb': 12 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cnn_fcmp_32ns_32ndEe': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cnn_fmul_32ns_32ncud': 11 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cnn_mac_muladd_6nfYi': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cnn_mux_1432_32_1_1': 7 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cnn_urem_5ns_5ns_eOg': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'conv_1'.
+INFO: [HLS 200-111]  Elapsed time: 0.584 seconds; current allocated memory: 198.389 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'max_pool_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'cnn_fcmp_32ns_32ndEe': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'max_pool_1'.
+INFO: [HLS 200-111]  Elapsed time: 1.647 seconds; current allocated memory: 199.731 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'conv_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'conv_2_conv_2_weights' to 'conv_2_conv_2_weig8j' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'cnn_fadd_32ns_32nbkb': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cnn_fcmp_32ns_32ndEe': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cnn_fmul_32ns_32ncud': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'conv_2'.
+INFO: [HLS 200-111]  Elapsed time: 0.376 seconds; current allocated memory: 200.512 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'max_pool_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'cnn_fcmp_32ns_32ndEe': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'max_pool_2'.
+INFO: [HLS 200-111]  Elapsed time: 0.373 seconds; current allocated memory: 201.188 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'flat' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'flat'.
+INFO: [HLS 200-111]  Elapsed time: 0.303 seconds; current allocated memory: 201.579 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'soft_max' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'cnn_fdiv_32ns_32ns_32_8_1' to 'cnn_fdiv_32ns_32nhbi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cnn_fexp_32ns_32ns_32_5_full_dsp_1' to 'cnn_fexp_32ns_32nibs' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'cnn_fadd_32ns_32nbkb': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cnn_fdiv_32ns_32nhbi': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cnn_fexp_32ns_32nibs': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'soft_max'.
+INFO: [HLS 200-111]  Elapsed time: 0.25 seconds; current allocated memory: 202.021 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dense_out' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'dense_out_dense_out_weights' to 'dense_out_dense_ojbC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'dense_out_dense_out_bias' to 'dense_out_dense_okbM' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'dense_out_dense_array' to 'dense_out_dense_albW' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'cnn_fadd_32ns_32nbkb': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cnn_fmul_32ns_32ncud': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dense_out'.
+INFO: [HLS 200-111]  Elapsed time: 0.222 seconds; current allocated memory: 202.452 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'cnn' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'cnn/cnn_input' to 'bram'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'cnn/prediction' to 'bram'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'cnn' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return' to AXI-Lite port CRTL_BUS.
+WARNING: [RTGEN 206-101] Setting dangling out port 'cnn/cnn_input_WEN_A' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'cnn/cnn_input_Din_A' to 0.
+INFO: [RTGEN 206-100] Generating core module 'cnn_fadd_32ns_32nbkb': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cnn_fcmp_32ns_32ndEe': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cnn_fmul_32ns_32ncud': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'cnn'.
+INFO: [HLS 200-111]  Elapsed time: 0.444 seconds; current allocated memory: 204.656 MB.
+INFO: [RTMG 210-282] Generating pipelined core: 'cnn_urem_5ns_5ns_eOg_div'
+INFO: [RTMG 210-279] Implementing memory 'conv_2_conv_2_weig8j_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_2_conv_2_bias_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dense_out_dense_ojbC_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dense_out_dense_okbM_rom' using distributed ROMs.
+INFO: [RTMG 210-278] Implementing memory 'dense_out_dense_albW_ram (RAM)' using distributed RAMs.
+INFO: [RTMG 210-278] Implementing memory 'cnn_conv_1_out_ram (RAM)' using block RAMs with power-on initialization.
+INFO: [RTMG 210-278] Implementing memory 'cnn_max_pool_1_out_ram (RAM)' using block RAMs with power-on initialization.
+INFO: [RTMG 210-278] Implementing memory 'cnn_conv_2_out_ram (RAM)' using block RAMs with power-on initialization.
+INFO: [RTMG 210-278] Implementing memory 'cnn_max_pool_2_out_ram (RAM)' using block RAMs with power-on initialization.
+INFO: [RTMG 210-279] Implementing memory 'cnn_dense_1_weights_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_dense_1_bias_rom' using auto ROMs.
+INFO: [RTMG 210-278] Implementing memory 'cnn_dense_1_out_ram (RAM)' using block RAMs with power-on initialization.
+INFO: [RTMG 210-279] Implementing memory 'cnn_dense_2_weights_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_dense_2_bias_rom' using distributed ROMs.
+INFO: [RTMG 210-278] Implementing memory 'cnn_dense_2_out_ram (RAM)' using distributed RAMs with power-on initialization.
+INFO: [RTMG 210-278] Implementing memory 'cnn_conv_1_input_0_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:15 ; elapsed = 00:00:59 . Memory (MB): peak = 301.164 ; gain = 209.602
+INFO: [VHDL 208-304] Generating VHDL RTL for cnn.
+INFO: [VLOG 209-307] Generating Verilog RTL for cnn.
+INFO: [HLS 200-112] Total elapsed time: 59.482 seconds; peak allocated memory: 204.656 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'cnn/max_pool_2.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'cnn/max_pool_1.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'cnn/flat.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'cnn/dense_out.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'cnn/dense_2.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'cnn/dense_1.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'cnn/conv_2.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'cnn/conv_1.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'cnn/cnn.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:38 . Memory (MB): peak = 185.926 ; gain = 94.438
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:38 . Memory (MB): peak = 185.926 ; gain = 94.438
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:40 . Memory (MB): peak = 185.926 ; gain = 94.438
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'dense_1' into 'cnn' (cnn/cnn.cpp:58) automatically.
+INFO: [XFORM 203-602] Inlining function 'dense_2' into 'cnn' (cnn/cnn.cpp:63) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:40 . Memory (MB): peak = 185.926 ; gain = 94.438
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Col_Loop' (cnn/conv_1.cpp:12) in function 'conv_1' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'Filter1_Loop' (cnn/conv_1.cpp:15) in function 'conv_1' completely with a factor of 6.
+INFO: [HLS 200-489] Unrolling loop 'W_Row_Loop' (cnn/conv_1.cpp:19) in function 'conv_1' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'W_Col_Loop' (cnn/conv_1.cpp:22) in function 'conv_1' completely with a factor of 3.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input' (cnn/cnn.cpp:19) in dimension 1 with a cyclic factor 14.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input' (cnn/cnn.cpp:19) in dimension 2 with a cyclic factor 14.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.0.0' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.0.1' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.0.2' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.0.3' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.0.4' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.0.5' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.0.6' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.0.7' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.0.8' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.0.9' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.0.10' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.0.11' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.0.12' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.0.13' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.1.0' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.1.1' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.1.2' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.1.3' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.1.4' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.1.5' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.1.6' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.1.7' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.1.8' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.1.9' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.1.10' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.1.11' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.1.12' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.1.13' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.2.0' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.2.1' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.2.2' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.2.3' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.2.4' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.2.5' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.2.6' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.2.7' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.2.8' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.2.9' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.2.10' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.2.11' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.2.12' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.2.13' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.3.0' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.3.1' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.3.2' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.3.3' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.3.4' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.3.5' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.3.6' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.3.7' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.3.8' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.3.9' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.3.10' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.3.11' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.3.12' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.3.13' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.4.0' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.4.1' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.4.2' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.4.3' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.4.4' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.4.5' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.4.6' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.4.7' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.4.8' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.4.9' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.4.10' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.4.11' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.4.12' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.4.13' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.5.0' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.5.1' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.5.2' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.5.3' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.5.4' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.5.5' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.5.6' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.5.7' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.5.8' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.5.9' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.5.10' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.5.11' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.5.12' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.5.13' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.6.0' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.6.1' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.6.2' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.6.3' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.6.4' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.6.5' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.6.6' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.6.7' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.6.8' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.6.9' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.6.10' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.6.11' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.6.12' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.6.13' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.7.0' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.7.1' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.7.2' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.7.3' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.7.4' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.7.5' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.7.6' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.7.7' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.7.8' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.7.9' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.7.10' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.7.11' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.7.12' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.7.13' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.8.0' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.8.1' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.8.2' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.8.3' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.8.4' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.8.5' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.8.6' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.8.7' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.8.8' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.8.9' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.8.10' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.8.11' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.8.12' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.8.13' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.9.0' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.9.1' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.9.2' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.9.3' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.9.4' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.9.5' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.9.6' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.9.7' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.9.8' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.9.9' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.9.10' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.9.11' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.9.12' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.9.13' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.10.0' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.10.1' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.10.2' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.10.3' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.10.4' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.10.5' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.10.6' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.10.7' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.10.8' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.10.9' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.10.10' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.10.11' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.10.12' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.10.13' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.11.0' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.11.1' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.11.2' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.11.3' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.11.4' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.11.5' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.11.6' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.11.7' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.11.8' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.11.9' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.11.10' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.11.11' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.11.12' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.11.13' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.12.0' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.12.1' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.12.2' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.12.3' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.12.4' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.12.5' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.12.6' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.12.7' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.12.8' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.12.9' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.12.10' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.12.11' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.12.12' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.12.13' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.13.0' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.13.1' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.13.2' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.13.3' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.13.4' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.13.5' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.13.6' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.13.7' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.13.8' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.13.9' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.13.10' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.13.11' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.13.12' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv_1_input.13.13' (cnn/cnn.cpp:19) completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.0.0' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.0.1' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.0.2' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.0.3' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.0.4' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.0.5' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.0.6' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.0.7' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.0.8' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.0.9' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.0.10' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.0.11' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.0.12' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.0.13' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.1.0' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.1.1' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.1.2' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.1.3' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.1.4' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.1.5' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.1.6' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.1.7' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.1.8' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.1.9' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.1.10' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.1.11' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.1.12' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.1.13' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.2.0' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.2.1' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.2.2' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.2.3' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.2.4' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.2.5' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.2.6' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.2.7' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.2.8' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.2.9' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.2.10' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.2.11' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.2.12' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.2.13' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.3.0' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.3.1' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.3.2' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.3.3' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.3.4' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.3.5' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.3.6' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.3.7' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.3.8' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.3.9' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.3.10' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.3.11' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.3.12' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.3.13' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.4.0' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.4.1' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.4.2' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.4.3' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.4.4' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.4.5' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.4.6' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.4.7' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.4.8' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.4.9' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.4.10' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.4.11' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.4.12' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.4.13' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.5.0' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.5.1' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.5.2' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.5.3' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.5.4' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.5.5' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.5.6' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.5.7' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.5.8' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.5.9' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.5.10' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.5.11' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.5.12' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.5.13' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.6.0' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.6.1' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.6.2' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.6.3' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.6.4' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.6.5' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.6.6' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.6.7' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.6.8' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.6.9' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.6.10' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.6.11' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.6.12' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.6.13' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.7.0' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.7.1' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.7.2' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.7.3' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.7.4' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.7.5' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.7.6' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.7.7' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.7.8' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.7.9' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.7.10' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.7.11' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.7.12' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.7.13' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.8.0' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.8.1' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.8.2' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.8.3' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.8.4' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.8.5' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.8.6' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.8.7' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.8.8' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.8.9' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.8.10' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.8.11' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.8.12' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.8.13' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.9.0' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.9.1' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.9.2' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.9.3' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.9.4' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.9.5' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.9.6' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.9.7' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.9.8' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.9.9' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.9.10' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.9.11' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.9.12' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.9.13' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.10.0' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.10.1' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.10.2' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.10.3' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.10.4' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.10.5' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.10.6' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.10.7' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.10.8' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.10.9' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.10.10' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.10.11' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.10.12' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.10.13' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.11.0' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.11.1' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.11.2' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.11.3' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.11.4' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.11.5' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.11.6' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.11.7' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.11.8' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.11.9' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.11.10' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.11.11' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.11.12' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.11.13' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.12.0' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.12.1' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.12.2' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.12.3' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.12.4' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.12.5' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.12.6' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.12.7' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.12.8' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.12.9' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.12.10' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.12.11' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.12.12' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.12.13' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.13.0' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.13.1' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.13.2' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.13.3' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.13.4' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.13.5' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.13.6' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.13.7' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.13.8' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.13.9' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.13.10' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.13.11' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.13.12' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.13.13' (cnn/cnn.cpp:19) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.0.0' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.0.1' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.0.2' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.0.3' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.0.4' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.0.5' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.0.6' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.0.7' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.0.8' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.0.9' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.0.10' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.0.11' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.0.12' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.0.13' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.1.0' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.1.1' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.1.2' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.1.3' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.1.4' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.1.5' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.1.6' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.1.7' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.1.8' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.1.9' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.1.10' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.1.11' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.1.12' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.1.13' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.2.0' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.2.1' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.2.2' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.2.3' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.2.4' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.2.5' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.2.6' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.2.7' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.2.8' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.2.9' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.2.10' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.2.11' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.2.12' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.2.13' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.3.0' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.3.1' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.3.2' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.3.3' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.3.4' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.3.5' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.3.6' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.3.7' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.3.8' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.3.9' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.3.10' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.3.11' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.3.12' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.3.13' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.4.0' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.4.1' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.4.2' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.4.3' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.4.4' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.4.5' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.4.6' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.4.7' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.4.8' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.4.9' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.4.10' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.4.11' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.4.12' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.4.13' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.5.0' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.5.1' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.5.2' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.5.3' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.5.4' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.5.5' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.5.6' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.5.7' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.5.8' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.5.9' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.5.10' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.5.11' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.5.12' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.5.13' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.6.0' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.6.1' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.6.2' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.6.3' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.6.4' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.6.5' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.6.6' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.6.7' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.6.8' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.6.9' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.6.10' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.6.11' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.6.12' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.6.13' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.7.0' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.7.1' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.7.2' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.7.3' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.7.4' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.7.5' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.7.6' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.7.7' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.7.8' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.7.9' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.7.10' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.7.11' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.7.12' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.7.13' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.8.0' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.8.1' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.8.2' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.8.3' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.8.4' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.8.5' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.8.6' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.8.7' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.8.8' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.8.9' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.8.10' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.8.11' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.8.12' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.8.13' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.9.0' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.9.1' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.9.2' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.9.3' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.9.4' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.9.5' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.9.6' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.9.7' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.9.8' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.9.9' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.9.10' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.9.11' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.9.12' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.9.13' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.10.0' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.10.1' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.10.2' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.10.3' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.10.4' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.10.5' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.10.6' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.10.7' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.10.8' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.10.9' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.10.10' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.10.11' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.10.12' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.10.13' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.11.0' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.11.1' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.11.2' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.11.3' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.11.4' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.11.5' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.11.6' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.11.7' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.11.8' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.11.9' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.11.10' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.11.11' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.11.12' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.11.13' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.12.0' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.12.1' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.12.2' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.12.3' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.12.4' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.12.5' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.12.6' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.12.7' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.12.8' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.12.9' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.12.10' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.12.11' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.12.12' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.12.13' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.13.0' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.13.1' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.13.2' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.13.3' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.13.4' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.13.5' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.13.6' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.13.7' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.13.8' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.13.9' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.13.10' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.13.11' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.13.12' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_1_input.13.13' (cnn/cnn.cpp:19) in dimension 2 completely.
+INFO: [XFORM 203-602] Inlining function 'dense_1' into 'cnn' (cnn/cnn.cpp:58) automatically.
+INFO: [XFORM 203-602] Inlining function 'dense_2' into 'cnn' (cnn/cnn.cpp:63) automatically.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:26 ; elapsed = 00:01:11 . Memory (MB): peak = 253.859 ; gain = 162.371
+INFO: [XFORM 203-541] Flattening a loop nest 'Row_Loop' (cnn/conv_1.cpp:9:6) in function 'conv_1'.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:41 ; elapsed = 00:01:26 . Memory (MB): peak = 327.441 ; gain = 235.953
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'cnn' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'conv_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Row_Loop_Col_Loop'.
+WARNING: [SCHED 204-69] Unable to schedule 'store' operation ('conv_out_addr_2_write_ln30', cnn/conv_1.cpp:30) of variable 'select_ln29_2', cnn/conv_1.cpp:29 on array 'conv_out' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'conv_out'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 3, Depth = 56.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 87.192 seconds; current allocated memory: 255.767 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 1.523 seconds; current allocated memory: 267.712 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'max_pool_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 1.024 seconds; current allocated memory: 268.030 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 5 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.168 seconds; current allocated memory: 268.355 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'conv_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.207 seconds; current allocated memory: 268.631 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.193 seconds; current allocated memory: 269.037 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'max_pool_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.237 seconds; current allocated memory: 269.248 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.16 seconds; current allocated memory: 269.559 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'flat' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.201 seconds; current allocated memory: 269.695 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.131 seconds; current allocated memory: 269.857 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'soft_max' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.151 seconds; current allocated memory: 269.977 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.133 seconds; current allocated memory: 270.131 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dense_out' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.154 seconds; current allocated memory: 270.296 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.139 seconds; current allocated memory: 270.471 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'cnn' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 3.896 seconds; current allocated memory: 279.774 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 4.455 seconds; current allocated memory: 296.043 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'conv_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'cnn_fadd_32ns_32ns_32_4_full_dsp_1' to 'cnn_fadd_32ns_32nbkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cnn_fmul_32ns_32ns_32_2_max_dsp_1' to 'cnn_fmul_32ns_32ncud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cnn_fcmp_32ns_32ns_1_2_1' to 'cnn_fcmp_32ns_32ndEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cnn_urem_5ns_5ns_5_9_1' to 'cnn_urem_5ns_5ns_eOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cnn_mux_78410_32_1_1' to 'cnn_mux_78410_32_fYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cnn_mac_muladd_6ns_5ns_5ns_10_1_1' to 'cnn_mac_muladd_6ng8j' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'cnn_fadd_32ns_32nbkb': 20 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cnn_fcmp_32ns_32ndEe': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cnn_fmul_32ns_32ncud': 18 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cnn_mac_muladd_6ng8j': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cnn_mux_78410_32_fYi': 9 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cnn_urem_5ns_5ns_eOg': 3 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'conv_1'.
+INFO: [HLS 200-111]  Elapsed time: 4.07 seconds; current allocated memory: 326.303 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'max_pool_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'cnn_fcmp_32ns_32ndEe': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'max_pool_1'.
+INFO: [HLS 200-111]  Elapsed time: 3.205 seconds; current allocated memory: 329.036 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'conv_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'conv_2_conv_2_weights' to 'conv_2_conv_2_weihbi' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'cnn_fadd_32ns_32nbkb': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cnn_fcmp_32ns_32ndEe': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cnn_fmul_32ns_32ncud': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'conv_2'.
+INFO: [HLS 200-111]  Elapsed time: 0.479 seconds; current allocated memory: 329.833 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'max_pool_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'cnn_fcmp_32ns_32ndEe': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'max_pool_2'.
+INFO: [HLS 200-111]  Elapsed time: 0.473 seconds; current allocated memory: 330.405 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'flat' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'flat'.
+INFO: [HLS 200-111]  Elapsed time: 0.392 seconds; current allocated memory: 330.816 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'soft_max' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'cnn_fdiv_32ns_32ns_32_8_1' to 'cnn_fdiv_32ns_32nibs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cnn_fexp_32ns_32ns_32_5_full_dsp_1' to 'cnn_fexp_32ns_32njbC' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'cnn_fadd_32ns_32nbkb': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cnn_fdiv_32ns_32nibs': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cnn_fexp_32ns_32njbC': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'soft_max'.
+INFO: [HLS 200-111]  Elapsed time: 0.403 seconds; current allocated memory: 331.259 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dense_out' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'dense_out_dense_out_weights' to 'dense_out_dense_okbM' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'dense_out_dense_out_bias' to 'dense_out_dense_olbW' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'dense_out_dense_array' to 'dense_out_dense_amb6' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'cnn_fadd_32ns_32nbkb': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cnn_fmul_32ns_32ncud': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dense_out'.
+INFO: [HLS 200-111]  Elapsed time: 0.366 seconds; current allocated memory: 331.706 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'cnn' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'cnn/cnn_input' to 'bram'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'cnn/prediction' to 'bram'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'cnn' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return' to AXI-Lite port CRTL_BUS.
+WARNING: [RTGEN 206-101] Setting dangling out port 'cnn/cnn_input_WEN_A' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'cnn/cnn_input_Din_A' to 0.
+INFO: [RTGEN 206-100] Generating core module 'cnn_fadd_32ns_32nbkb': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cnn_fcmp_32ns_32ndEe': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cnn_fmul_32ns_32ncud': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'cnn'.
+INFO: [HLS 200-111]  Elapsed time: 3.484 seconds; current allocated memory: 352.578 MB.
+INFO: [RTMG 210-282] Generating pipelined core: 'cnn_urem_5ns_5ns_eOg_div'
+INFO: [RTMG 210-279] Implementing memory 'conv_2_conv_2_weihbi_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_2_conv_2_bias_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dense_out_dense_okbM_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dense_out_dense_olbW_rom' using distributed ROMs.
+INFO: [RTMG 210-278] Implementing memory 'dense_out_dense_amb6_ram (RAM)' using distributed RAMs.
+INFO: [RTMG 210-278] Implementing memory 'cnn_conv_1_out_ram (RAM)' using block RAMs with power-on initialization.
+INFO: [RTMG 210-278] Implementing memory 'cnn_max_pool_1_out_ram (RAM)' using block RAMs with power-on initialization.
+INFO: [RTMG 210-278] Implementing memory 'cnn_conv_2_out_ram (RAM)' using block RAMs with power-on initialization.
+INFO: [RTMG 210-278] Implementing memory 'cnn_max_pool_2_out_ram (RAM)' using block RAMs with power-on initialization.
+INFO: [RTMG 210-279] Implementing memory 'cnn_dense_1_weights_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_dense_1_bias_rom' using auto ROMs.
+INFO: [RTMG 210-278] Implementing memory 'cnn_dense_1_out_ram (RAM)' using block RAMs with power-on initialization.
+INFO: [RTMG 210-279] Implementing memory 'cnn_dense_2_weights_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_dense_2_bias_rom' using distributed ROMs.
+INFO: [RTMG 210-278] Implementing memory 'cnn_dense_2_out_ram (RAM)' using distributed RAMs with power-on initialization.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:10 ; elapsed = 00:02:08 . Memory (MB): peak = 555.211 ; gain = 463.723
+INFO: [VHDL 208-304] Generating VHDL RTL for cnn.
+INFO: [VLOG 209-307] Generating Verilog RTL for cnn.
+INFO: [HLS 200-112] Total elapsed time: 128.563 seconds; peak allocated memory: 352.578 MB.

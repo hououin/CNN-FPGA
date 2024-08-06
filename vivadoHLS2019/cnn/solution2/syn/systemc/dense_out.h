@@ -12,8 +12,8 @@
 #include "AESL_pkg.h"
 
 #include "soft_max.h"
-#include "cnn_fadd_32ns_32ncud.h"
-#include "cnn_fmul_32ns_32ndEe.h"
+#include "cnn_fadd_32ns_32nbkb.h"
+#include "cnn_fmul_32ns_32ncud.h"
 #include "dense_out_dense_omb6.h"
 #include "dense_out_dense_oncg.h"
 #include "dense_out_dense_aocq.h"
@@ -52,8 +52,8 @@ struct dense_out : public sc_module {
     dense_out_dense_oncg* dense_out_bias_U;
     dense_out_dense_aocq* dense_array_U;
     soft_max* grp_soft_max_fu_149;
-    cnn_fadd_32ns_32ncud<1,4,32,32,32>* cnn_fadd_32ns_32ncud_U46;
-    cnn_fmul_32ns_32ndEe<1,2,32,32,32>* cnn_fmul_32ns_32ndEe_U47;
+    cnn_fadd_32ns_32nbkb<1,4,32,32,32>* cnn_fadd_32ns_32nbkb_U68;
+    cnn_fmul_32ns_32ncud<1,2,32,32,32>* cnn_fmul_32ns_32ncud_U69;
     sc_signal< sc_lv<14> > ap_CS_fsm;
     sc_signal< sc_logic > ap_CS_fsm_state1;
     sc_signal< sc_lv<9> > dense_out_weights_address0;

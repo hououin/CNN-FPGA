@@ -124,7 +124,7 @@ architecture behav of soft_max is
     attribute fsm_encoding of ap_CS_fsm_state18 : signal is "none";
     signal ap_NS_fsm : STD_LOGIC_VECTOR (25 downto 0);
 
-    component cnn_fadd_32ns_32ncud IS
+    component cnn_fadd_32ns_32nbkb IS
     generic (
         ID : INTEGER;
         NUM_STAGE : INTEGER;
@@ -177,7 +177,7 @@ architecture behav of soft_max is
 
 
 begin
-    cnn_fadd_32ns_32ncud_U40 : component cnn_fadd_32ns_32ncud
+    cnn_fadd_32ns_32nbkb_U62 : component cnn_fadd_32ns_32nbkb
     generic map (
         ID => 1,
         NUM_STAGE => 4,
@@ -192,7 +192,7 @@ begin
         ce => ap_const_logic_1,
         dout => grp_fu_102_p2);
 
-    cnn_fdiv_32ns_32nkbM_U41 : component cnn_fdiv_32ns_32nkbM
+    cnn_fdiv_32ns_32nkbM_U63 : component cnn_fdiv_32ns_32nkbM
     generic map (
         ID => 1,
         NUM_STAGE => 8,
@@ -207,7 +207,7 @@ begin
         ce => ap_const_logic_1,
         dout => grp_fu_107_p2);
 
-    cnn_fexp_32ns_32nlbW_U42 : component cnn_fexp_32ns_32nlbW
+    cnn_fexp_32ns_32nlbW_U64 : component cnn_fexp_32ns_32nlbW
     generic map (
         ID => 1,
         NUM_STAGE => 5,

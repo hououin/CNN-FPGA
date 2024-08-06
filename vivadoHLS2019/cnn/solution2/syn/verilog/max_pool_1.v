@@ -143,13 +143,13 @@ initial begin
 #0 ap_CS_fsm = 8'd1;
 end
 
-cnn_fcmp_32ns_32neOg #(
+cnn_fcmp_32ns_32ndEe #(
     .ID( 1 ),
     .NUM_STAGE( 2 ),
     .din0_WIDTH( 32 ),
     .din1_WIDTH( 32 ),
     .dout_WIDTH( 1 ))
-cnn_fcmp_32ns_32neOg_U11(
+cnn_fcmp_32ns_32ndEe_U33(
     .clk(ap_clk),
     .reset(ap_rst),
     .din0(conv_1_out_q0),

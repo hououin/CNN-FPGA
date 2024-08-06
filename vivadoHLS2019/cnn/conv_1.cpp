@@ -5,7 +5,7 @@
 void conv_1(float input[INPUT_ROWS][INPUT_COLS], float conv_out[CONV_1_ROWS][CONV_1_COLS][FILTERS_1]) {
 
 	Row_Loop:
-    for (int r = 0; r < CONV_1_ROWS; ++r)
+    for (int  r = 0; r < CONV_1_ROWS; ++r)
     {
     	Col_Loop:
         for (int c = 0; c < CONV_1_COLS; ++c)

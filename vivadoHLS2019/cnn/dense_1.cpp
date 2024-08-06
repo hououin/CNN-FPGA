@@ -5,11 +5,11 @@
 void dense_1(float flat_array[FLAT_SIZE], float dense_1_out[DENSE_SIZE_1]){
 
 	float sum = 0.0;
-	DENSE_LOOP:
+	DENSE_1_LOOP:
 	for (int i = 0; i < DENSE_SIZE_1; ++i){
 
 	    sum = 0.0;
-	    FLAT_LOOP:
+	    FLAT_1_LOOP:
 		for (int j = 0; j < FLAT_SIZE; ++j){
 			sum += flat_array[j] * dense_1_weights[j][i];
 		}

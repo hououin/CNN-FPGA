@@ -203,6 +203,9 @@ void conv_1(float input[28][28], float conv_out[26][26][6]) {_ssdm_SpecArrayDimS
      Col_Loop:
         for (int c = 0; c < 26; ++c)
         {
+#pragma HLS PIPELINE
+# 12 "cnn/conv_1.cpp"
+
          Filter1_Loop:
             for (int f = 0; f < 6; ++f)
             {

@@ -68,28 +68,28 @@ dense_1::dense_1(sc_module_name name) : sc_module(name), mVcdFile(0) {
     dense_1_bias_U->address0(dense_1_bias_address0);
     dense_1_bias_U->ce0(dense_1_bias_ce0);
     dense_1_bias_U->q0(dense_1_bias_q0);
-    cnn_fadd_32ns_32ncud_U26 = new cnn_fadd_32ns_32ncud<1,4,32,32,32>("cnn_fadd_32ns_32ncud_U26");
-    cnn_fadd_32ns_32ncud_U26->clk(ap_clk);
-    cnn_fadd_32ns_32ncud_U26->reset(ap_rst);
-    cnn_fadd_32ns_32ncud_U26->din0(sum_0_reg_117);
-    cnn_fadd_32ns_32ncud_U26->din1(grp_fu_151_p1);
-    cnn_fadd_32ns_32ncud_U26->ce(ap_var_for_const0);
-    cnn_fadd_32ns_32ncud_U26->dout(grp_fu_151_p2);
-    cnn_fmul_32ns_32ndEe_U27 = new cnn_fmul_32ns_32ndEe<1,2,32,32,32>("cnn_fmul_32ns_32ndEe_U27");
-    cnn_fmul_32ns_32ndEe_U27->clk(ap_clk);
-    cnn_fmul_32ns_32ndEe_U27->reset(ap_rst);
-    cnn_fmul_32ns_32ndEe_U27->din0(flat_array_q0);
-    cnn_fmul_32ns_32ndEe_U27->din1(dense_1_weights_q0);
-    cnn_fmul_32ns_32ndEe_U27->ce(ap_var_for_const0);
-    cnn_fmul_32ns_32ndEe_U27->dout(grp_fu_157_p2);
-    cnn_fcmp_32ns_32neOg_U28 = new cnn_fcmp_32ns_32neOg<1,2,32,32,1>("cnn_fcmp_32ns_32neOg_U28");
-    cnn_fcmp_32ns_32neOg_U28->clk(ap_clk);
-    cnn_fcmp_32ns_32neOg_U28->reset(ap_rst);
-    cnn_fcmp_32ns_32neOg_U28->din0(grp_fu_151_p2);
-    cnn_fcmp_32ns_32neOg_U28->din1(ap_var_for_const1);
-    cnn_fcmp_32ns_32neOg_U28->ce(ap_var_for_const0);
-    cnn_fcmp_32ns_32neOg_U28->opcode(ap_var_for_const2);
-    cnn_fcmp_32ns_32neOg_U28->dout(grp_fu_163_p2);
+    cnn_fadd_32ns_32nbkb_U48 = new cnn_fadd_32ns_32nbkb<1,4,32,32,32>("cnn_fadd_32ns_32nbkb_U48");
+    cnn_fadd_32ns_32nbkb_U48->clk(ap_clk);
+    cnn_fadd_32ns_32nbkb_U48->reset(ap_rst);
+    cnn_fadd_32ns_32nbkb_U48->din0(sum_0_reg_117);
+    cnn_fadd_32ns_32nbkb_U48->din1(grp_fu_151_p1);
+    cnn_fadd_32ns_32nbkb_U48->ce(ap_var_for_const0);
+    cnn_fadd_32ns_32nbkb_U48->dout(grp_fu_151_p2);
+    cnn_fmul_32ns_32ncud_U49 = new cnn_fmul_32ns_32ncud<1,2,32,32,32>("cnn_fmul_32ns_32ncud_U49");
+    cnn_fmul_32ns_32ncud_U49->clk(ap_clk);
+    cnn_fmul_32ns_32ncud_U49->reset(ap_rst);
+    cnn_fmul_32ns_32ncud_U49->din0(flat_array_q0);
+    cnn_fmul_32ns_32ncud_U49->din1(dense_1_weights_q0);
+    cnn_fmul_32ns_32ncud_U49->ce(ap_var_for_const0);
+    cnn_fmul_32ns_32ncud_U49->dout(grp_fu_157_p2);
+    cnn_fcmp_32ns_32ndEe_U50 = new cnn_fcmp_32ns_32ndEe<1,2,32,32,1>("cnn_fcmp_32ns_32ndEe_U50");
+    cnn_fcmp_32ns_32ndEe_U50->clk(ap_clk);
+    cnn_fcmp_32ns_32ndEe_U50->reset(ap_rst);
+    cnn_fcmp_32ns_32ndEe_U50->din0(grp_fu_151_p2);
+    cnn_fcmp_32ns_32ndEe_U50->din1(ap_var_for_const1);
+    cnn_fcmp_32ns_32ndEe_U50->ce(ap_var_for_const0);
+    cnn_fcmp_32ns_32ndEe_U50->opcode(ap_var_for_const2);
+    cnn_fcmp_32ns_32ndEe_U50->dout(grp_fu_163_p2);
 
     SC_METHOD(thread_ap_clk_no_reset_);
     dont_initialize();
@@ -339,9 +339,9 @@ dense_1::~dense_1() {
 
     delete dense_1_weights_U;
     delete dense_1_bias_U;
-    delete cnn_fadd_32ns_32ncud_U26;
-    delete cnn_fmul_32ns_32ndEe_U27;
-    delete cnn_fcmp_32ns_32neOg_U28;
+    delete cnn_fadd_32ns_32nbkb_U48;
+    delete cnn_fmul_32ns_32ncud_U49;
+    delete cnn_fcmp_32ns_32ndEe_U50;
 }
 
 void dense_1::thread_ap_var_for_const0() {

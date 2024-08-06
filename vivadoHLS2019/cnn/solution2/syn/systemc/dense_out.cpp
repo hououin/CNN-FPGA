@@ -85,20 +85,20 @@ dense_out::dense_out(sc_module_name name) : sc_module(name), mVcdFile(0) {
     grp_soft_max_fu_149->prediction_WEN_A(grp_soft_max_fu_149_prediction_WEN_A);
     grp_soft_max_fu_149->prediction_Din_A(grp_soft_max_fu_149_prediction_Din_A);
     grp_soft_max_fu_149->prediction_Dout_A(ap_var_for_const0);
-    cnn_fadd_32ns_32ncud_U46 = new cnn_fadd_32ns_32ncud<1,4,32,32,32>("cnn_fadd_32ns_32ncud_U46");
-    cnn_fadd_32ns_32ncud_U46->clk(ap_clk);
-    cnn_fadd_32ns_32ncud_U46->reset(ap_rst);
-    cnn_fadd_32ns_32ncud_U46->din0(w_sum_0_reg_126);
-    cnn_fadd_32ns_32ncud_U46->din1(grp_fu_156_p1);
-    cnn_fadd_32ns_32ncud_U46->ce(ap_var_for_const1);
-    cnn_fadd_32ns_32ncud_U46->dout(grp_fu_156_p2);
-    cnn_fmul_32ns_32ndEe_U47 = new cnn_fmul_32ns_32ndEe<1,2,32,32,32>("cnn_fmul_32ns_32ndEe_U47");
-    cnn_fmul_32ns_32ndEe_U47->clk(ap_clk);
-    cnn_fmul_32ns_32ndEe_U47->reset(ap_rst);
-    cnn_fmul_32ns_32ndEe_U47->din0(dense_out_weights_q0);
-    cnn_fmul_32ns_32ndEe_U47->din1(dense_2_out_q0);
-    cnn_fmul_32ns_32ndEe_U47->ce(ap_var_for_const1);
-    cnn_fmul_32ns_32ndEe_U47->dout(grp_fu_163_p2);
+    cnn_fadd_32ns_32nbkb_U68 = new cnn_fadd_32ns_32nbkb<1,4,32,32,32>("cnn_fadd_32ns_32nbkb_U68");
+    cnn_fadd_32ns_32nbkb_U68->clk(ap_clk);
+    cnn_fadd_32ns_32nbkb_U68->reset(ap_rst);
+    cnn_fadd_32ns_32nbkb_U68->din0(w_sum_0_reg_126);
+    cnn_fadd_32ns_32nbkb_U68->din1(grp_fu_156_p1);
+    cnn_fadd_32ns_32nbkb_U68->ce(ap_var_for_const1);
+    cnn_fadd_32ns_32nbkb_U68->dout(grp_fu_156_p2);
+    cnn_fmul_32ns_32ncud_U69 = new cnn_fmul_32ns_32ncud<1,2,32,32,32>("cnn_fmul_32ns_32ncud_U69");
+    cnn_fmul_32ns_32ncud_U69->clk(ap_clk);
+    cnn_fmul_32ns_32ncud_U69->reset(ap_rst);
+    cnn_fmul_32ns_32ncud_U69->din0(dense_out_weights_q0);
+    cnn_fmul_32ns_32ncud_U69->din1(dense_2_out_q0);
+    cnn_fmul_32ns_32ncud_U69->ce(ap_var_for_const1);
+    cnn_fmul_32ns_32ncud_U69->dout(grp_fu_163_p2);
 
     SC_METHOD(thread_ap_clk_no_reset_);
     dont_initialize();
@@ -366,8 +366,8 @@ dense_out::~dense_out() {
     delete dense_out_bias_U;
     delete dense_array_U;
     delete grp_soft_max_fu_149;
-    delete cnn_fadd_32ns_32ncud_U46;
-    delete cnn_fmul_32ns_32ndEe_U47;
+    delete cnn_fadd_32ns_32nbkb_U68;
+    delete cnn_fmul_32ns_32ncud_U69;
 }
 
 void dense_out::thread_ap_var_for_const1() {

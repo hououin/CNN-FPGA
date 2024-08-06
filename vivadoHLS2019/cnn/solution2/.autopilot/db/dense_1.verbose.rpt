@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'dense_1'
 ================================================================
-* Date:           Tue May 14 13:25:23 2024
+* Date:           Wed Jul 31 10:07:03 2024
 
 * Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
 * Project:        cnn
@@ -74,9 +74,9 @@
     +--------------------------+----------------------+---------+-------+-----+-----+-----+
     |         Instance         |        Module        | BRAM_18K| DSP48E|  FF | LUT | URAM|
     +--------------------------+----------------------+---------+-------+-----+-----+-----+
-    |cnn_fadd_32ns_32ncud_U26  |cnn_fadd_32ns_32ncud  |        0|      2|  227|  403|    0|
-    |cnn_fcmp_32ns_32neOg_U28  |cnn_fcmp_32ns_32neOg  |        0|      0|   66|  239|    0|
-    |cnn_fmul_32ns_32ndEe_U27  |cnn_fmul_32ns_32ndEe  |        0|      3|  128|  320|    0|
+    |cnn_fadd_32ns_32nbkb_U48  |cnn_fadd_32ns_32nbkb  |        0|      2|  227|  403|    0|
+    |cnn_fcmp_32ns_32ndEe_U50  |cnn_fcmp_32ns_32ndEe  |        0|      0|   66|  239|    0|
+    |cnn_fmul_32ns_32ncud_U49  |cnn_fmul_32ns_32ncud  |        0|      3|  128|  320|    0|
     +--------------------------+----------------------+---------+-------+-----+-----+-----+
     |Total                     |                      |        0|      5|  421|  962|    0|
     +--------------------------+----------------------+---------+-------+-----+-----+-----+
@@ -231,8 +231,8 @@ ST_2 : Operation 17 [1/1] (1.42ns)   --->   "%icmp_ln9 = icmp eq i6 %i_0, -14" [
 ST_2 : Operation 18 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 50, i64 50, i64 50)"   --->   Operation 18 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
 ST_2 : Operation 19 [1/1] (1.82ns)   --->   "%i = add i6 %i_0, 1" [cnn/dense_1.cpp:9]   --->   Operation 19 'add' 'i' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
 ST_2 : Operation 20 [1/1] (0.00ns)   --->   "br i1 %icmp_ln9, label %4, label %DENSE_LOOP_begin" [cnn/dense_1.cpp:9]   --->   Operation 20 'br' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 21 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([11 x i8]* @p_str121) nounwind" [cnn/dense_1.cpp:9]   --->   Operation 21 'specloopname' <Predicate = (!icmp_ln9)> <Delay = 0.00>
-ST_2 : Operation 22 [1/1] (0.00ns)   --->   "%tmp_1 = call i32 (...)* @_ssdm_op_SpecRegionBegin([11 x i8]* @p_str121)" [cnn/dense_1.cpp:9]   --->   Operation 22 'specregionbegin' 'tmp_1' <Predicate = (!icmp_ln9)> <Delay = 0.00>
+ST_2 : Operation 21 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([11 x i8]* @p_str120) nounwind" [cnn/dense_1.cpp:9]   --->   Operation 21 'specloopname' <Predicate = (!icmp_ln9)> <Delay = 0.00>
+ST_2 : Operation 22 [1/1] (0.00ns)   --->   "%tmp_1 = call i32 (...)* @_ssdm_op_SpecRegionBegin([11 x i8]* @p_str120)" [cnn/dense_1.cpp:9]   --->   Operation 22 'specregionbegin' 'tmp_1' <Predicate = (!icmp_ln9)> <Delay = 0.00>
 ST_2 : Operation 23 [1/1] (0.00ns)   --->   "%zext_ln14 = zext i6 %i_0 to i64" [cnn/dense_1.cpp:14]   --->   Operation 23 'zext' 'zext_ln14' <Predicate = (!icmp_ln9)> <Delay = 0.00>
 ST_2 : Operation 24 [1/1] (0.00ns)   --->   "%zext_ln13 = zext i6 %i_0 to i15" [cnn/dense_1.cpp:13]   --->   Operation 24 'zext' 'zext_ln13' <Predicate = (!icmp_ln9)> <Delay = 0.00>
 ST_2 : Operation 25 [1/1] (1.76ns)   --->   "br label %2" [cnn/dense_1.cpp:13]   --->   Operation 25 'br' <Predicate = (!icmp_ln9)> <Delay = 1.76>
@@ -275,7 +275,7 @@ State 8 <SV = 7> <Delay = 10.5>
 ST_8 : Operation 50 [2/4] (10.5ns)   --->   "%sum = fadd float %sum_0, %tmp_s" [cnn/dense_1.cpp:14]   --->   Operation 50 'fadd' 'sum' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 
 State 9 <SV = 8> <Delay = 10.5>
-ST_9 : Operation 51 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([10 x i8]* @p_str222) nounwind" [cnn/dense_1.cpp:13]   --->   Operation 51 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 51 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([10 x i8]* @p_str221) nounwind" [cnn/dense_1.cpp:13]   --->   Operation 51 'specloopname' <Predicate = true> <Delay = 0.00>
 ST_9 : Operation 52 [1/4] (10.5ns)   --->   "%sum = fadd float %sum_0, %tmp_s" [cnn/dense_1.cpp:14]   --->   Operation 52 'fadd' 'sum' <Predicate = true> <Delay = 10.5> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 ST_9 : Operation 53 [1/1] (0.00ns)   --->   "br label %2" [cnn/dense_1.cpp:13]   --->   Operation 53 'br' <Predicate = true> <Delay = 0.00>
 
@@ -305,7 +305,7 @@ ST_14 : Operation 67 [1/2] (5.43ns)   --->   "%tmp_4 = fcmp olt float %tmp, 0.00
 ST_14 : Operation 68 [1/1] (0.00ns) (grouped into LUT with out node select_ln19)   --->   "%and_ln19 = and i1 %or_ln19, %tmp_4" [cnn/dense_1.cpp:19]   --->   Operation 68 'and' 'and_ln19' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
 ST_14 : Operation 69 [1/1] (0.97ns) (out node of the LUT)   --->   "%select_ln19 = select i1 %and_ln19, float 0.000000e+00, float %tmp" [cnn/dense_1.cpp:19]   --->   Operation 69 'select' 'select_ln19' <Predicate = true> <Delay = 0.97> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
 ST_14 : Operation 70 [1/1] (3.25ns)   --->   "store float %select_ln19, float* %dense_1_out_addr, align 4" [cnn/dense_1.cpp:17]   --->   Operation 70 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 30> <RAM>
-ST_14 : Operation 71 [1/1] (0.00ns)   --->   "%empty_31 = call i32 (...)* @_ssdm_op_SpecRegionEnd([11 x i8]* @p_str121, i32 %tmp_1)" [cnn/dense_1.cpp:22]   --->   Operation 71 'specregionend' 'empty_31' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 71 [1/1] (0.00ns)   --->   "%empty_31 = call i32 (...)* @_ssdm_op_SpecRegionEnd([11 x i8]* @p_str120, i32 %tmp_1)" [cnn/dense_1.cpp:22]   --->   Operation 71 'specregionend' 'empty_31' <Predicate = true> <Delay = 0.00>
 ST_14 : Operation 72 [1/1] (0.00ns)   --->   "br label %1" [cnn/dense_1.cpp:9]   --->   Operation 72 'br' <Predicate = true> <Delay = 0.00>
 
 
@@ -481,7 +481,7 @@ br_ln9               (br               ) [ 011111111111111]
 <pin id="21" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="p_str121"/></StgValue>
+<StgValue><ssdm name="p_str120"/></StgValue>
 </bind>
 </comp>
 
@@ -571,7 +571,7 @@ br_ln9               (br               ) [ 011111111111111]
 <pin id="41" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="p_str222"/></StgValue>
+<StgValue><ssdm name="p_str221"/></StgValue>
 </bind>
 </comp>
 

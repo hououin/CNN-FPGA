@@ -11,9 +11,9 @@
 #include "systemc.h"
 #include "AESL_pkg.h"
 
-#include "cnn_fadd_32ns_32ncud.h"
-#include "cnn_fmul_32ns_32ndEe.h"
-#include "cnn_fcmp_32ns_32neOg.h"
+#include "cnn_fadd_32ns_32nbkb.h"
+#include "cnn_fmul_32ns_32ncud.h"
+#include "cnn_fcmp_32ns_32ndEe.h"
 #include "dense_1_dense_1_wg8j.h"
 #include "dense_1_dense_1_bhbi.h"
 
@@ -49,9 +49,9 @@ struct dense_1 : public sc_module {
 
     dense_1_dense_1_wg8j* dense_1_weights_U;
     dense_1_dense_1_bhbi* dense_1_bias_U;
-    cnn_fadd_32ns_32ncud<1,4,32,32,32>* cnn_fadd_32ns_32ncud_U26;
-    cnn_fmul_32ns_32ndEe<1,2,32,32,32>* cnn_fmul_32ns_32ndEe_U27;
-    cnn_fcmp_32ns_32neOg<1,2,32,32,1>* cnn_fcmp_32ns_32neOg_U28;
+    cnn_fadd_32ns_32nbkb<1,4,32,32,32>* cnn_fadd_32ns_32nbkb_U48;
+    cnn_fmul_32ns_32ncud<1,2,32,32,32>* cnn_fmul_32ns_32ncud_U49;
+    cnn_fcmp_32ns_32ndEe<1,2,32,32,1>* cnn_fcmp_32ns_32ndEe_U50;
     sc_signal< sc_lv<14> > ap_CS_fsm;
     sc_signal< sc_logic > ap_CS_fsm_state1;
     sc_signal< sc_lv<15> > dense_1_weights_address0;

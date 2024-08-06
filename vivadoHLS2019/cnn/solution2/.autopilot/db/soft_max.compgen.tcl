@@ -1,6 +1,6 @@
 # This script segment is generated automatically by AutoPilot
 
-set id 41
+set id 63
 set name cnn_fdiv_32ns_32nkbM
 set corename simcore_fdiv
 set op fdiv
@@ -88,7 +88,7 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_XILINX_FPV6::fpv6_gen, check your p
 }
 
 
-set id 42
+set id 64
 set name cnn_fexp_32ns_32nlbW
 set corename simcore_fexp
 set op fexp
@@ -190,7 +190,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 45 \
+    id 67 \
     name dense_array \
     reset_level 1 \
     sync_rst true \

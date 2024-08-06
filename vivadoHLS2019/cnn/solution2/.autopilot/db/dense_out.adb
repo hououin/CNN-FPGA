@@ -1332,7 +1332,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>cnn_fmul_32ns_32ndEe_U47</rtlName>
+              <rtlName>cnn_fmul_32ns_32ncud_U69</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>32</bitwidth>
@@ -1381,7 +1381,7 @@
                 </item>
               </inlineStackInfo>
               <originalName>w_sum</originalName>
-              <rtlName>cnn_fadd_32ns_32ncud_U46</rtlName>
+              <rtlName>cnn_fadd_32ns_32nbkb_U68</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>32</bitwidth>
@@ -1576,7 +1576,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>cnn_fadd_32ns_32ncud_U46</rtlName>
+              <rtlName>cnn_fadd_32ns_32nbkb_U68</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>32</bitwidth>
@@ -3679,7 +3679,7 @@
         <count>3</count>
         <item_version>0</item_version>
         <item class_id="38" tracking_level="0" version="0">
-          <first>cnn_fadd_32ns_32ncud_U46 (cnn_fadd_32ns_32ncud)</first>
+          <first>cnn_fadd_32ns_32nbkb_U68 (cnn_fadd_32ns_32nbkb)</first>
           <second class_id="39" tracking_level="0" version="0">
             <count>3</count>
             <item_version>0</item_version>
@@ -3698,7 +3698,7 @@
           </second>
         </item>
         <item>
-          <first>cnn_fmul_32ns_32ndEe_U47 (cnn_fmul_32ns_32ndEe)</first>
+          <first>cnn_fmul_32ns_32ncud_U69 (cnn_fmul_32ns_32ncud)</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -4358,14 +4358,14 @@
         <count>3</count>
         <item_version>0</item_version>
         <item>
-          <first>cnn_fadd_32ns_32ncud_U46</first>
+          <first>cnn_fadd_32ns_32nbkb_U68</first>
           <second>
             <count>0</count>
             <item_version>0</item_version>
           </second>
         </item>
         <item>
-          <first>cnn_fmul_32ns_32ndEe_U47</first>
+          <first>cnn_fmul_32ns_32ncud_U69</first>
           <second>
             <count>0</count>
             <item_version>0</item_version>
@@ -4383,7 +4383,7 @@
         <count>3</count>
         <item_version>0</item_version>
         <item class_id="42" tracking_level="0" version="0">
-          <first>cnn_fadd_32ns_32ncud_U46 (cnn_fadd_32ns_32ncud)</first>
+          <first>cnn_fadd_32ns_32nbkb_U68 (cnn_fadd_32ns_32nbkb)</first>
           <second>
             <count>2</count>
             <item_version>0</item_version>
@@ -4392,7 +4392,7 @@
           </second>
         </item>
         <item>
-          <first>cnn_fmul_32ns_32ndEe_U47 (cnn_fmul_32ns_32ndEe)</first>
+          <first>cnn_fmul_32ns_32ncud_U69 (cnn_fmul_32ns_32ncud)</first>
           <second>
             <count>1</count>
             <item_version>0</item_version>

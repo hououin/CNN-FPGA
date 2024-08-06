@@ -7,7 +7,7 @@
 
 module cnn_fdiv_32ns_32nkbM
 #(parameter
-    ID         = 41,
+    ID         = 63,
     NUM_STAGE  = 8,
     din0_WIDTH = 32,
     din1_WIDTH = 32,

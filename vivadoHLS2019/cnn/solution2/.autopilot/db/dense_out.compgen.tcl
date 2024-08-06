@@ -1,7 +1,7 @@
 # This script segment is generated automatically by AutoPilot
 
 # Memory (RAM/ROM)  definition:
-set ID 48
+set ID 70
 set hasByteEnable 0
 set MemName dense_out_dense_omb6
 set CoreName ap_simcore_mem
@@ -84,7 +84,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 49
+set ID 71
 set hasByteEnable 0
 set MemName dense_out_dense_oncg
 set CoreName ap_simcore_mem
@@ -167,7 +167,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 50
+set ID 72
 set hasByteEnable 0
 set MemName dense_out_dense_aocq
 set CoreName ap_simcore_mem
@@ -262,7 +262,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 51 \
+    id 73 \
     name dense_2_out \
     reset_level 1 \
     sync_rst true \

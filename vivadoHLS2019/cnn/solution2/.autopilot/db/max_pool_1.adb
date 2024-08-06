@@ -3065,7 +3065,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>cnn_fcmp_32ns_32neOg_U11</rtlName>
+              <rtlName>cnn_fcmp_32ns_32ndEe_U33</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>1</bitwidth>
@@ -7295,7 +7295,7 @@
         <count>1</count>
         <item_version>0</item_version>
         <item class_id="38" tracking_level="0" version="0">
-          <first>cnn_fcmp_32ns_32neOg_U11 (cnn_fcmp_32ns_32neOg)</first>
+          <first>cnn_fcmp_32ns_32ndEe_U33 (cnn_fcmp_32ns_32ndEe)</first>
           <second class_id="39" tracking_level="0" version="0">
             <count>3</count>
             <item_version>0</item_version>
@@ -8619,7 +8619,7 @@
         <count>1</count>
         <item_version>0</item_version>
         <item>
-          <first>cnn_fcmp_32ns_32neOg_U11</first>
+          <first>cnn_fcmp_32ns_32ndEe_U33</first>
           <second>
             <count>0</count>
             <item_version>0</item_version>
@@ -8630,7 +8630,7 @@
         <count>1</count>
         <item_version>0</item_version>
         <item class_id="42" tracking_level="0" version="0">
-          <first>cnn_fcmp_32ns_32neOg_U11 (cnn_fcmp_32ns_32neOg)</first>
+          <first>cnn_fcmp_32ns_32ndEe_U33 (cnn_fcmp_32ns_32ndEe)</first>
           <second>
             <count>1</count>
             <item_version>0</item_version>

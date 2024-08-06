@@ -112,13 +112,13 @@ initial begin
 #0 ap_CS_fsm = 26'd1;
 end
 
-cnn_fadd_32ns_32ncud #(
+cnn_fadd_32ns_32nbkb #(
     .ID( 1 ),
     .NUM_STAGE( 4 ),
     .din0_WIDTH( 32 ),
     .din1_WIDTH( 32 ),
     .dout_WIDTH( 32 ))
-cnn_fadd_32ns_32ncud_U40(
+cnn_fadd_32ns_32nbkb_U62(
     .clk(ap_clk),
     .reset(ap_rst),
     .din0(sum_0_reg_68),
@@ -133,7 +133,7 @@ cnn_fdiv_32ns_32nkbM #(
     .din0_WIDTH( 32 ),
     .din1_WIDTH( 32 ),
     .dout_WIDTH( 32 ))
-cnn_fdiv_32ns_32nkbM_U41(
+cnn_fdiv_32ns_32nkbM_U63(
     .clk(ap_clk),
     .reset(ap_rst),
     .din0(reg_123),
@@ -148,7 +148,7 @@ cnn_fexp_32ns_32nlbW #(
     .din0_WIDTH( 32 ),
     .din1_WIDTH( 32 ),
     .dout_WIDTH( 32 ))
-cnn_fexp_32ns_32nlbW_U42(
+cnn_fexp_32ns_32nlbW_U64(
     .clk(ap_clk),
     .reset(ap_rst),
     .din0(32'd0),

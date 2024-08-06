@@ -163,7 +163,7 @@ architecture behav of max_pool_1 is
     signal ap_NS_fsm : STD_LOGIC_VECTOR (7 downto 0);
     signal mul_ln29_fu_294_p00 : STD_LOGIC_VECTOR (9 downto 0);
 
-    component cnn_fcmp_32ns_32neOg IS
+    component cnn_fcmp_32ns_32ndEe IS
     generic (
         ID : INTEGER;
         NUM_STAGE : INTEGER;
@@ -183,7 +183,7 @@ architecture behav of max_pool_1 is
 
 
 begin
-    cnn_fcmp_32ns_32neOg_U11 : component cnn_fcmp_32ns_32neOg
+    cnn_fcmp_32ns_32ndEe_U33 : component cnn_fcmp_32ns_32ndEe
     generic map (
         ID => 1,
         NUM_STAGE => 2,

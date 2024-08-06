@@ -218,7 +218,7 @@ architecture behav of conv_2 is
     signal ap_NS_fsm : STD_LOGIC_VECTOR (17 downto 0);
     signal mul_ln26_fu_418_p00 : STD_LOGIC_VECTOR (7 downto 0);
 
-    component cnn_fadd_32ns_32ncud IS
+    component cnn_fadd_32ns_32nbkb IS
     generic (
         ID : INTEGER;
         NUM_STAGE : INTEGER;
@@ -235,7 +235,7 @@ architecture behav of conv_2 is
     end component;
 
 
-    component cnn_fmul_32ns_32ndEe IS
+    component cnn_fmul_32ns_32ncud IS
     generic (
         ID : INTEGER;
         NUM_STAGE : INTEGER;
@@ -252,7 +252,7 @@ architecture behav of conv_2 is
     end component;
 
 
-    component cnn_fcmp_32ns_32neOg IS
+    component cnn_fcmp_32ns_32ndEe IS
     generic (
         ID : INTEGER;
         NUM_STAGE : INTEGER;
@@ -324,7 +324,7 @@ begin
         ce0 => conv_2_bias_ce0,
         q0 => conv_2_bias_q0);
 
-    cnn_fadd_32ns_32ncud_U14 : component cnn_fadd_32ns_32ncud
+    cnn_fadd_32ns_32nbkb_U36 : component cnn_fadd_32ns_32nbkb
     generic map (
         ID => 1,
         NUM_STAGE => 4,
@@ -339,7 +339,7 @@ begin
         ce => ap_const_logic_1,
         dout => grp_fu_261_p2);
 
-    cnn_fmul_32ns_32ndEe_U15 : component cnn_fmul_32ns_32ndEe
+    cnn_fmul_32ns_32ncud_U37 : component cnn_fmul_32ns_32ncud
     generic map (
         ID => 1,
         NUM_STAGE => 2,
@@ -354,7 +354,7 @@ begin
         ce => ap_const_logic_1,
         dout => grp_fu_268_p2);
 
-    cnn_fcmp_32ns_32neOg_U16 : component cnn_fcmp_32ns_32neOg
+    cnn_fcmp_32ns_32ndEe_U38 : component cnn_fcmp_32ns_32ndEe
     generic map (
         ID => 1,
         NUM_STAGE => 2,

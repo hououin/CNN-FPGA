@@ -11,9 +11,9 @@
 #include "systemc.h"
 #include "AESL_pkg.h"
 
-#include "cnn_fadd_32ns_32ncud.h"
-#include "cnn_fmul_32ns_32ndEe.h"
-#include "cnn_fcmp_32ns_32neOg.h"
+#include "cnn_fadd_32ns_32nbkb.h"
+#include "cnn_fmul_32ns_32ncud.h"
+#include "cnn_fcmp_32ns_32ndEe.h"
 #include "conv_2_conv_2_weifYi.h"
 #include "conv_2_conv_2_bias.h"
 
@@ -49,9 +49,9 @@ struct conv_2 : public sc_module {
 
     conv_2_conv_2_weifYi* conv_2_weights_U;
     conv_2_conv_2_bias* conv_2_bias_U;
-    cnn_fadd_32ns_32ncud<1,4,32,32,32>* cnn_fadd_32ns_32ncud_U14;
-    cnn_fmul_32ns_32ndEe<1,2,32,32,32>* cnn_fmul_32ns_32ndEe_U15;
-    cnn_fcmp_32ns_32neOg<1,2,32,32,1>* cnn_fcmp_32ns_32neOg_U16;
+    cnn_fadd_32ns_32nbkb<1,4,32,32,32>* cnn_fadd_32ns_32nbkb_U36;
+    cnn_fmul_32ns_32ncud<1,2,32,32,32>* cnn_fmul_32ns_32ncud_U37;
+    cnn_fcmp_32ns_32ndEe<1,2,32,32,1>* cnn_fcmp_32ns_32ndEe_U38;
     sc_signal< sc_lv<18> > ap_CS_fsm;
     sc_signal< sc_logic > ap_CS_fsm_state1;
     sc_signal< sc_lv<10> > conv_2_weights_address0;

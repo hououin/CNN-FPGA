@@ -134,7 +134,7 @@ architecture behav of dense_1 is
     signal and_ln19_fu_257_p2 : STD_LOGIC_VECTOR (0 downto 0);
     signal ap_NS_fsm : STD_LOGIC_VECTOR (13 downto 0);
 
-    component cnn_fadd_32ns_32ncud IS
+    component cnn_fadd_32ns_32nbkb IS
     generic (
         ID : INTEGER;
         NUM_STAGE : INTEGER;
@@ -151,7 +151,7 @@ architecture behav of dense_1 is
     end component;
 
 
-    component cnn_fmul_32ns_32ndEe IS
+    component cnn_fmul_32ns_32ncud IS
     generic (
         ID : INTEGER;
         NUM_STAGE : INTEGER;
@@ -168,7 +168,7 @@ architecture behav of dense_1 is
     end component;
 
 
-    component cnn_fcmp_32ns_32neOg IS
+    component cnn_fcmp_32ns_32ndEe IS
     generic (
         ID : INTEGER;
         NUM_STAGE : INTEGER;
@@ -240,7 +240,7 @@ begin
         ce0 => dense_1_bias_ce0,
         q0 => dense_1_bias_q0);
 
-    cnn_fadd_32ns_32ncud_U26 : component cnn_fadd_32ns_32ncud
+    cnn_fadd_32ns_32nbkb_U48 : component cnn_fadd_32ns_32nbkb
     generic map (
         ID => 1,
         NUM_STAGE => 4,
@@ -255,7 +255,7 @@ begin
         ce => ap_const_logic_1,
         dout => grp_fu_151_p2);
 
-    cnn_fmul_32ns_32ndEe_U27 : component cnn_fmul_32ns_32ndEe
+    cnn_fmul_32ns_32ncud_U49 : component cnn_fmul_32ns_32ncud
     generic map (
         ID => 1,
         NUM_STAGE => 2,
@@ -270,7 +270,7 @@ begin
         ce => ap_const_logic_1,
         dout => grp_fu_157_p2);
 
-    cnn_fcmp_32ns_32neOg_U28 : component cnn_fcmp_32ns_32neOg
+    cnn_fcmp_32ns_32ndEe_U50 : component cnn_fcmp_32ns_32ndEe
     generic map (
         ID => 1,
         NUM_STAGE => 2,

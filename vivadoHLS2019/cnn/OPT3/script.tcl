@@ -40,5 +40,5 @@ config_export -format ip_catalog -rtl verilog
 source "./cnn/OPT3/directives.tcl"
 csim_design
 csynth_design
-cosim_design
+cosim_design -tool xsim
 export_design -rtl verilog -format ip_catalog

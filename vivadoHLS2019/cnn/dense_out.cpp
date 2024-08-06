@@ -27,12 +27,12 @@ void dense_out(float dense_2_out[DENSE_SIZE_2], float prediction[DIGITS])
     float w_sum = 0.0;
     float dense_array[DIGITS];
 
-    Dense_Loop:
+    Dense_3_Loop:
     for (int d = 0; d < DIGITS; ++d)
     {
     	w_sum = 0.0;
 
-        Flat_Loop:
+        Flat_3_Loop:
         for (int f = 0; f < DENSE_SIZE_2; ++f)
         {
             w_sum += dense_out_weights[f][d] * dense_2_out[f];

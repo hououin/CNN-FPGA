@@ -1,11 +1,11 @@
 # This script segment is generated automatically by AutoPilot
 
 # Memory (RAM/ROM)  definition:
-set ID 52
+set ID 74
 set hasByteEnable 0
 set MemName cnn_conv_1_out
 set CoreName ap_simcore_mem
-set PortList { 2 3 }
+set PortList { 2 0 }
 set DataWd 32
 set AddrRange 4056
 set AddrWd 12
@@ -87,7 +87,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 53
+set ID 75
 set hasByteEnable 0
 set MemName cnn_max_pool_1_out
 set CoreName ap_simcore_mem
@@ -173,7 +173,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 54
+set ID 76
 set hasByteEnable 0
 set MemName cnn_conv_2_out
 set CoreName ap_simcore_mem
@@ -259,7 +259,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 55
+set ID 77
 set hasByteEnable 0
 set MemName cnn_max_pool_2_out
 set CoreName ap_simcore_mem
@@ -345,7 +345,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 56
+set ID 78
 set hasByteEnable 0
 set MemName cnn_dense_1_out
 set CoreName ap_simcore_mem
@@ -431,7 +431,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 57
+set ID 79
 set hasByteEnable 0
 set MemName cnn_dense_2_out
 set CoreName ap_simcore_mem
@@ -517,11 +517,11 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 58
+set ID 80
 set hasByteEnable 0
 set MemName cnn_conv_1_input
 set CoreName ap_simcore_mem
-set PortList { 2 3 }
+set PortList { 2 1 }
 set DataWd 32
 set AddrRange 784
 set AddrWd 10
@@ -622,7 +622,7 @@ dict set axilite_register_dict CRTL_BUS $port_CRTL_BUS
 if {${::AESL::PGuard_simmodel_gen}} {
 	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
 		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
-			id 59 \
+			id 81 \
 			corename cnn_CRTL_BUS_axilite \
 			name cnn_CRTL_BUS_s_axi \
 			ports {$port_CRTL_BUS} \

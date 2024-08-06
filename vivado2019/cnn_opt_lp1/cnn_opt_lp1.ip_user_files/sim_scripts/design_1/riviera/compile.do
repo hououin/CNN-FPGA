@@ -1,0 +1,277 @@
+vlib work
+vlib riviera
+
+vlib riviera/xilinx_vip
+vlib riviera/xil_defaultlib
+vlib riviera/xpm
+vlib riviera/xbip_utils_v3_0_10
+vlib riviera/axi_utils_v2_0_6
+vlib riviera/xbip_pipe_v3_0_6
+vlib riviera/xbip_dsp48_wrapper_v3_0_4
+vlib riviera/xbip_dsp48_addsub_v3_0_6
+vlib riviera/xbip_dsp48_multadd_v3_0_6
+vlib riviera/xbip_bram18k_v3_0_6
+vlib riviera/mult_gen_v12_0_15
+vlib riviera/floating_point_v7_1_8
+vlib riviera/axi_infrastructure_v1_1_0
+vlib riviera/axi_vip_v1_1_5
+vlib riviera/processing_system7_vip_v1_0_7
+vlib riviera/generic_baseblocks_v2_1_0
+vlib riviera/axi_register_slice_v2_1_19
+vlib riviera/fifo_generator_v13_2_4
+vlib riviera/axi_data_fifo_v2_1_18
+vlib riviera/axi_crossbar_v2_1_20
+vlib riviera/axi_protocol_converter_v2_1_19
+vlib riviera/lib_cdc_v1_0_2
+vlib riviera/proc_sys_reset_v5_0_13
+vlib riviera/blk_mem_gen_v8_4_3
+vlib riviera/axi_bram_ctrl_v4_1_1
+
+vmap xilinx_vip riviera/xilinx_vip
+vmap xil_defaultlib riviera/xil_defaultlib
+vmap xpm riviera/xpm
+vmap xbip_utils_v3_0_10 riviera/xbip_utils_v3_0_10
+vmap axi_utils_v2_0_6 riviera/axi_utils_v2_0_6
+vmap xbip_pipe_v3_0_6 riviera/xbip_pipe_v3_0_6
+vmap xbip_dsp48_wrapper_v3_0_4 riviera/xbip_dsp48_wrapper_v3_0_4
+vmap xbip_dsp48_addsub_v3_0_6 riviera/xbip_dsp48_addsub_v3_0_6
+vmap xbip_dsp48_multadd_v3_0_6 riviera/xbip_dsp48_multadd_v3_0_6
+vmap xbip_bram18k_v3_0_6 riviera/xbip_bram18k_v3_0_6
+vmap mult_gen_v12_0_15 riviera/mult_gen_v12_0_15
+vmap floating_point_v7_1_8 riviera/floating_point_v7_1_8
+vmap axi_infrastructure_v1_1_0 riviera/axi_infrastructure_v1_1_0
+vmap axi_vip_v1_1_5 riviera/axi_vip_v1_1_5
+vmap processing_system7_vip_v1_0_7 riviera/processing_system7_vip_v1_0_7
+vmap generic_baseblocks_v2_1_0 riviera/generic_baseblocks_v2_1_0
+vmap axi_register_slice_v2_1_19 riviera/axi_register_slice_v2_1_19
+vmap fifo_generator_v13_2_4 riviera/fifo_generator_v13_2_4
+vmap axi_data_fifo_v2_1_18 riviera/axi_data_fifo_v2_1_18
+vmap axi_crossbar_v2_1_20 riviera/axi_crossbar_v2_1_20
+vmap axi_protocol_converter_v2_1_19 riviera/axi_protocol_converter_v2_1_19
+vmap lib_cdc_v1_0_2 riviera/lib_cdc_v1_0_2
+vmap proc_sys_reset_v5_0_13 riviera/proc_sys_reset_v5_0_13
+vmap blk_mem_gen_v8_4_3 riviera/blk_mem_gen_v8_4_3
+vmap axi_bram_ctrl_v4_1_1 riviera/axi_bram_ctrl_v4_1_1
+
+vlog -work xilinx_vip  -sv2k12 "+incdir+C:/Xilinx2019/Vivado/2019.1/data/xilinx_vip/include" \
+"C:/Xilinx2019/Vivado/2019.1/data/xilinx_vip/hdl/axi4stream_vip_axi4streampc.sv" \
+"C:/Xilinx2019/Vivado/2019.1/data/xilinx_vip/hdl/axi_vip_axi4pc.sv" \
+"C:/Xilinx2019/Vivado/2019.1/data/xilinx_vip/hdl/xil_common_vip_pkg.sv" \
+"C:/Xilinx2019/Vivado/2019.1/data/xilinx_vip/hdl/axi4stream_vip_pkg.sv" \
+"C:/Xilinx2019/Vivado/2019.1/data/xilinx_vip/hdl/axi_vip_pkg.sv" \
+"C:/Xilinx2019/Vivado/2019.1/data/xilinx_vip/hdl/axi4stream_vip_if.sv" \
+"C:/Xilinx2019/Vivado/2019.1/data/xilinx_vip/hdl/axi_vip_if.sv" \
+"C:/Xilinx2019/Vivado/2019.1/data/xilinx_vip/hdl/clk_vip_if.sv" \
+"C:/Xilinx2019/Vivado/2019.1/data/xilinx_vip/hdl/rst_vip_if.sv" \
+
+vlog -work xil_defaultlib  -sv2k12 "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/8c62/hdl" "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0" "+incdir+C:/Xilinx2019/Vivado/2019.1/data/xilinx_vip/include" \
+"C:/Xilinx2019/Vivado/2019.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
+"C:/Xilinx2019/Vivado/2019.1/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
+
+vcom -work xpm -93 \
+"C:/Xilinx2019/Vivado/2019.1/data/ip/xpm/xpm_VCOMP.vhd" \
+
+vcom -work xbip_utils_v3_0_10 -93 \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/1123/hdl/xbip_utils_v3_0_vh_rfs.vhd" \
+
+vcom -work axi_utils_v2_0_6 -93 \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/1971/hdl/axi_utils_v2_0_vh_rfs.vhd" \
+
+vcom -work xbip_pipe_v3_0_6 -93 \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/7468/hdl/xbip_pipe_v3_0_vh_rfs.vhd" \
+
+vcom -work xbip_dsp48_wrapper_v3_0_4 -93 \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/cdbf/hdl/xbip_dsp48_wrapper_v3_0_vh_rfs.vhd" \
+
+vcom -work xbip_dsp48_addsub_v3_0_6 -93 \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/910d/hdl/xbip_dsp48_addsub_v3_0_vh_rfs.vhd" \
+
+vcom -work xbip_dsp48_multadd_v3_0_6 -93 \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/b0ac/hdl/xbip_dsp48_multadd_v3_0_vh_rfs.vhd" \
+
+vcom -work xbip_bram18k_v3_0_6 -93 \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/d367/hdl/xbip_bram18k_v3_0_vh_rfs.vhd" \
+
+vcom -work mult_gen_v12_0_15 -93 \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/d4d2/hdl/mult_gen_v12_0_vh_rfs.vhd" \
+
+vcom -work floating_point_v7_1_8 -93 \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/83a3/hdl/floating_point_v7_1_vh_rfs.vhd" \
+
+vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/8c62/hdl" "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0" "+incdir+C:/Xilinx2019/Vivado/2019.1/data/xilinx_vip/include" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/cnn_conv_1_input.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/cnn_conv_1_out_0.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/cnn_conv_2_out_0.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/cnn_conv_2_out_1.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/cnn_CRTL_BUS_s_axi.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/cnn_dense_1_out.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/cnn_dense_2_bias.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/cnn_dense_2_out.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/cnn_dense_2_weights.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/cnn_fadd_32ns_32ncud.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/cnn_fcmp_32ns_32neOg.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/cnn_fdiv_32ns_32nbck.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/cnn_fexp_32ns_32nbdk.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/cnn_flat_array.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/cnn_fmul_32ns_32ndEe.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/cnn_mac_muladd_5n9j0.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/cnn_mac_muladd_5ng8j.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/cnn_mac_muladd_6nfYi.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/cnn_max_pool_1_oubhl.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/cnn_max_pool_2_out.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_1.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_1_conv_1_bias.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_1_conv_1_weibkb.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_bias.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_wei0iy.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_wei1iI.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_wei2iS.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_wei3i2.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_wei4jc.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_wei5jm.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_wei6jw.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_wei7jG.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_wei8jQ.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_weiAem.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_weiBew.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_weiCeG.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_weiDeQ.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_weiEe0.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_weiFfa.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_weiGfk.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_weihbi.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_weiHfu.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_weiibs.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_weiIfE.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_weijbC.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_weiJfO.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_weikbM.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_weiKfY.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_weilbW.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_weiLf8.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_weimb6.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_weiMgi.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_weincg.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_weiNgs.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_weiocq.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_weiOgC.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_weipcA.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_weiPgM.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_weiqcK.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_weiQgW.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_weircU.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_weiRg6.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_weisc4.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_weiShg.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_weitde.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_weiThq.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_weiudo.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_weiUhA.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_weivdy.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_weiVhK.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_weiwdI.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_weiWhU.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_weixdS.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_weiXh4.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_weiyd2.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_weiYie.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_weizec.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/conv_2_conv_2_weiZio.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/dense_1.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/dense_1_dense_1_bbbk.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/dense_1_dense_1_wbak.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/dense_out.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/dense_out_dense_abgk.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/dense_out_dense_obek.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/dense_out_dense_obfk.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/flat.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/max_pool_1.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/max_pool_2.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/soft_max.v" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/verilog/cnn.v" \
+
+vcom -work xil_defaultlib -93 \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/ip/cnn_ap_fadd_2_full_dsp_32.vhd" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/ip/cnn_ap_fcmp_0_no_dsp_32.vhd" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/ip/cnn_ap_fdiv_6_no_dsp_32.vhd" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/ip/cnn_ap_fexp_3_full_dsp_32.vhd" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/23a7/hdl/ip/cnn_ap_fmul_0_max_dsp_32.vhd" \
+"../../../bd/design_1/ip/design_1_cnn_0_0/sim/design_1_cnn_0_0.vhd" \
+
+vlog -work axi_infrastructure_v1_1_0  -v2k5 "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/8c62/hdl" "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0" "+incdir+C:/Xilinx2019/Vivado/2019.1/data/xilinx_vip/include" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v" \
+
+vlog -work axi_vip_v1_1_5  -sv2k12 "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/8c62/hdl" "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0" "+incdir+C:/Xilinx2019/Vivado/2019.1/data/xilinx_vip/include" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/d4a8/hdl/axi_vip_v1_1_vl_rfs.sv" \
+
+vlog -work processing_system7_vip_v1_0_7  -sv2k12 "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/8c62/hdl" "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0" "+incdir+C:/Xilinx2019/Vivado/2019.1/data/xilinx_vip/include" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/8c62/hdl/processing_system7_vip_v1_0_vl_rfs.sv" \
+
+vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/8c62/hdl" "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0" "+incdir+C:/Xilinx2019/Vivado/2019.1/data/xilinx_vip/include" \
+"../../../bd/design_1/ip/design_1_processing_system7_0_0/sim/design_1_processing_system7_0_0.v" \
+
+vlog -work generic_baseblocks_v2_1_0  -v2k5 "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/8c62/hdl" "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0" "+incdir+C:/Xilinx2019/Vivado/2019.1/data/xilinx_vip/include" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v" \
+
+vlog -work axi_register_slice_v2_1_19  -v2k5 "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/8c62/hdl" "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0" "+incdir+C:/Xilinx2019/Vivado/2019.1/data/xilinx_vip/include" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v" \
+
+vlog -work fifo_generator_v13_2_4  -v2k5 "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/8c62/hdl" "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0" "+incdir+C:/Xilinx2019/Vivado/2019.1/data/xilinx_vip/include" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/1f5a/simulation/fifo_generator_vlog_beh.v" \
+
+vcom -work fifo_generator_v13_2_4 -93 \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/1f5a/hdl/fifo_generator_v13_2_rfs.vhd" \
+
+vlog -work fifo_generator_v13_2_4  -v2k5 "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/8c62/hdl" "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0" "+incdir+C:/Xilinx2019/Vivado/2019.1/data/xilinx_vip/include" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/1f5a/hdl/fifo_generator_v13_2_rfs.v" \
+
+vlog -work axi_data_fifo_v2_1_18  -v2k5 "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/8c62/hdl" "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0" "+incdir+C:/Xilinx2019/Vivado/2019.1/data/xilinx_vip/include" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/5b9c/hdl/axi_data_fifo_v2_1_vl_rfs.v" \
+
+vlog -work axi_crossbar_v2_1_20  -v2k5 "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/8c62/hdl" "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0" "+incdir+C:/Xilinx2019/Vivado/2019.1/data/xilinx_vip/include" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v" \
+
+vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/8c62/hdl" "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0" "+incdir+C:/Xilinx2019/Vivado/2019.1/data/xilinx_vip/include" \
+"../../../bd/design_1/ip/design_1_xbar_0/sim/design_1_xbar_0.v" \
+
+vlog -work axi_protocol_converter_v2_1_19  -v2k5 "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/8c62/hdl" "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0" "+incdir+C:/Xilinx2019/Vivado/2019.1/data/xilinx_vip/include" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \
+
+vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/8c62/hdl" "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0" "+incdir+C:/Xilinx2019/Vivado/2019.1/data/xilinx_vip/include" \
+"../../../bd/design_1/ip/design_1_auto_pc_1/sim/design_1_auto_pc_1.v" \
+"../../../bd/design_1/ip/design_1_auto_pc_0/sim/design_1_auto_pc_0.v" \
+
+vcom -work lib_cdc_v1_0_2 -93 \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd" \
+
+vcom -work proc_sys_reset_v5_0_13 -93 \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd" \
+
+vcom -work xil_defaultlib -93 \
+"../../../bd/design_1/ip/design_1_rst_ps7_0_50M_0/sim/design_1_rst_ps7_0_50M_0.vhd" \
+
+vlog -work blk_mem_gen_v8_4_3  -v2k5 "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/8c62/hdl" "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0" "+incdir+C:/Xilinx2019/Vivado/2019.1/data/xilinx_vip/include" \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/c001/simulation/blk_mem_gen_v8_4.v" \
+
+vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/8c62/hdl" "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0" "+incdir+C:/Xilinx2019/Vivado/2019.1/data/xilinx_vip/include" \
+"../../../bd/design_1/ip/design_1_cnn_0_bram_0/sim/design_1_cnn_0_bram_0.v" \
+
+vcom -work axi_bram_ctrl_v4_1_1 -93 \
+"../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/70bf/hdl/axi_bram_ctrl_v4_1_rfs.vhd" \
+
+vcom -work xil_defaultlib -93 \
+"../../../bd/design_1/ip/design_1_axi_bram_ctrl_0_1/sim/design_1_axi_bram_ctrl_0_1.vhd" \
+
+vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/8c62/hdl" "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0" "+incdir+C:/Xilinx2019/Vivado/2019.1/data/xilinx_vip/include" \
+"../../../bd/design_1/ip/design_1_cnn_0_bram_0_0/sim/design_1_cnn_0_bram_0_0.v" \
+
+vcom -work xil_defaultlib -93 \
+"../../../bd/design_1/ip/design_1_axi_bram_ctrl_1_0/sim/design_1_axi_bram_ctrl_1_0.vhd" \
+
+vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ipshared/8c62/hdl" "+incdir+../../../../cnn_opt_lp1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0" "+incdir+C:/Xilinx2019/Vivado/2019.1/data/xilinx_vip/include" \
+"../../../bd/design_1/sim/design_1.v" \
+
+vlog -work xil_defaultlib \
+"glbl.v"
+

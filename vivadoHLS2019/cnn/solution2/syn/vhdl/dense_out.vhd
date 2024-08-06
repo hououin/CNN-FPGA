@@ -156,7 +156,7 @@ architecture behav of dense_out is
     end component;
 
 
-    component cnn_fadd_32ns_32ncud IS
+    component cnn_fadd_32ns_32nbkb IS
     generic (
         ID : INTEGER;
         NUM_STAGE : INTEGER;
@@ -173,7 +173,7 @@ architecture behav of dense_out is
     end component;
 
 
-    component cnn_fmul_32ns_32ndEe IS
+    component cnn_fmul_32ns_32ncud IS
     generic (
         ID : INTEGER;
         NUM_STAGE : INTEGER;
@@ -291,7 +291,7 @@ begin
         prediction_Din_A => grp_soft_max_fu_149_prediction_Din_A,
         prediction_Dout_A => ap_const_lv32_0);
 
-    cnn_fadd_32ns_32ncud_U46 : component cnn_fadd_32ns_32ncud
+    cnn_fadd_32ns_32nbkb_U68 : component cnn_fadd_32ns_32nbkb
     generic map (
         ID => 1,
         NUM_STAGE => 4,
@@ -306,7 +306,7 @@ begin
         ce => ap_const_logic_1,
         dout => grp_fu_156_p2);
 
-    cnn_fmul_32ns_32ndEe_U47 : component cnn_fmul_32ns_32ndEe
+    cnn_fmul_32ns_32ncud_U69 : component cnn_fmul_32ns_32ncud
     generic map (
         ID => 1,
         NUM_STAGE => 2,

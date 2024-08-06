@@ -45,7 +45,62 @@
         <solution name="OPT6" status="inactive"/>
         <solution name="OPT7" status="inactive"/>
         <solution name="OPT8" status="inactive"/>
-        <solution name="OPT9" status="active"/>
+        <solution name="OPT9" status="inactive"/>
+        <solution name="conv_1_fp2" status="inactive"/>
+        <solution name="conv_1_fp3" status="inactive"/>
+        <solution name="conv_1_fp4" status="inactive"/>
+        <solution name="conv_1_fp5" status="inactive"/>
+        <solution name="conv_1_fp1" status="inactive"/>
+        <solution name="conv_1_fp3_ap_d1_r2" status="inactive"/>
+        <solution name="conv_1_fp3_ap_d1_c" status="inactive"/>
+        <solution name="conv_1_fp3_ap_d1_r5" status="inactive"/>
+        <solution name="conv_1_fp2_ap_d1_r2" status="inactive"/>
+        <solution name="conv_1_fp2_ap_d1_c" status="inactive"/>
+        <solution name="conv_1_fp2_ap_r14" status="inactive"/>
+        <solution name="conv_1_fp2_ap_r3" status="inactive"/>
+        <solution name="conv_1_fp3_ap_r3" status="inactive"/>
+        <solution name="conv_1_fp3_u3" status="inactive"/>
+        <solution name="conv_1_fp3_u3_ap_r3" status="inactive"/>
+        <solution name="conv_1_fp3_u2" status="inactive"/>
+        <solution name="conv_1_fp3_u2_ap_r3" status="inactive"/>
+        <solution name="conv_1_fp2_u2" status="inactive"/>
+        <solution name="conv_2_fp6" status="inactive"/>
+        <solution name="conv_2_fp2" status="inactive"/>
+        <solution name="conv_2_fp3_ap_d3_c" status="inactive"/>
+        <solution name="conv_2_fp3_ap_r3_r3_c" status="inactive"/>
+        <solution name="conv_2_fp2_ap_d3_c" status="inactive"/>
+        <solution name="conv_2_fp3_u2_ap_d3_c" status="inactive"/>
+        <solution name="conv_2_fp3_u2_ap_r3_r3" status="inactive"/>
+        <solution name="conv_2_fp3_u2_ap_d3_r2" status="inactive"/>
+        <solution name="conv_2_fp3_u4_ap_d3_c" status="inactive"/>
+        <solution name="conv_2_fp3" status="inactive"/>
+        <solution name="mp_1_fp2" status="inactive"/>
+        <solution name="mp_1_fp3" status="inactive"/>
+        <solution name="mp_1_fp3_ap_d1_r2" status="inactive"/>
+        <solution name="mp_1_fp2_ap_d2_r3" status="inactive"/>
+        <solution name="mp_1_fp2_ap_d2_r4" status="inactive"/>
+        <solution name="mp_2_fp1" status="inactive"/>
+        <solution name="mp_2_fp2" status="inactive"/>
+        <solution name="mp_2_fp3" status="inactive"/>
+        <solution name="mp_2_fp4" status="inactive"/>
+        <solution name="mp_2_fp3_ap_d1_r2" status="inactive"/>
+        <solution name="mp_2_fp2_ap_d2r5_ap_d2r3" status="inactive"/>
+        <solution name="mp_2_fp2_ap_d2r5_ap_d2r2" status="inactive"/>
+        <solution name="mp_2_fp2_ap_d2c_ap_d2r3" status="inactive"/>
+        <solution name="d1_fp2" status="inactive"/>
+        <solution name="d1_fp1" status="inactive"/>
+        <solution name="d1_fp2_u100" status="inactive"/>
+        <solution name="d1_fp2_u80" status="inactive"/>
+        <solution name="d2_fp1" status="inactive"/>
+        <solution name="d2_fp2" status="inactive"/>
+        <solution name="d2_fp2_u10" status="inactive"/>
+        <solution name="d2_fp1_apr50" status="inactive"/>
+        <solution name="d3_fp1" status="inactive"/>
+        <solution name="d3_S2" status="inactive"/>
+        <solution name="d3_S3" status="inactive"/>
+        <solution name="d3_S1" status="inactive"/>
+        <solution name="OPT_LP" status="inactive"/>
+        <solution name="OPT_LP1" status="active"/>
     </solutions>
 </project>
 
