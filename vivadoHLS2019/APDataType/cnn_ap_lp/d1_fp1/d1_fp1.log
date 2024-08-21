@@ -1,0 +1,545 @@
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'cnn_ap_lp/max_pool_2.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'cnn_ap_lp/max_pool_1.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'cnn_ap_lp/flat.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'cnn_ap_lp/dense_out.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'cnn_ap_lp/dense_2.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'cnn_ap_lp/dense_1.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'cnn_ap_lp/conv_2.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'cnn_ap_lp/conv_1.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'cnn_ap_lp/cnn.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:01:55 . Memory (MB): peak = 186.621 ; gain = 95.066
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:01:55 . Memory (MB): peak = 186.621 ; gain = 95.066
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:16 ; elapsed = 00:02:11 . Memory (MB): peak = 435.105 ; gain = 343.551
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'hls::exp<15, 7>' into 'soft_max' (cnn_ap_lp/dense_out.cpp:22) automatically.
+INFO: [XFORM 203-602] Inlining function 'dense_1' into 'cnn' (cnn_ap_lp/cnn.cpp:58) automatically.
+INFO: [XFORM 203-602] Inlining function 'dense_2' into 'cnn' (cnn_ap_lp/cnn.cpp:63) automatically.
+INFO: [XFORM 203-602] Inlining function 'dense_out' into 'cnn' (cnn_ap_lp/cnn.cpp:67) automatically.
+WARNING: [SYNCHK 200-23] C:/Xilinx2019/Vivado/2019.1/common/technology/autopilot/hls_exp_apfixed.h:191: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:17 ; elapsed = 00:02:12 . Memory (MB): peak = 507.047 ; gain = 415.492
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'exp_reduce::exp<15, 7>' (C:/Xilinx2019/Vivado/2019.1/common/technology/autopilot/hls_exp_apfixed.h:41:29).
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'DENSE_LOOP' (cnn_ap_lp/dense_1.cpp:9) in function 'dense_1' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (C:/Xilinx2019/Vivado/2019.1/common/technology/autopilot/hls_exp_apfixed.h:190) in function 'exp_reduce::exp<15, 7>' completely with a factor of 8.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2' (C:/Xilinx2019/Vivado/2019.1/common/technology/autopilot/hls_exp_apfixed.h:197) in function 'exp_reduce::exp<15, 7>' completely with a factor of 22.
+INFO: [HLS 200-489] Unrolling loop 'Loop-3' (C:/Xilinx2019/Vivado/2019.1/common/technology/autopilot/hls_exp_apfixed.h:254) in function 'exp_reduce::exp<15, 7>' completely with a factor of 5.
+INFO: [HLS 200-489] Unrolling loop 'Loop-4' (C:/Xilinx2019/Vivado/2019.1/common/technology/autopilot/hls_exp_apfixed.h:260) in function 'exp_reduce::exp<15, 7>' completely with a factor of 5.
+INFO: [HLS 200-489] Unrolling loop 'Loop-5' (C:/Xilinx2019/Vivado/2019.1/common/technology/autopilot/hls_exp_apfixed.h:263) in function 'exp_reduce::exp<15, 7>' completely with a factor of 17.
+INFO: [HLS 200-489] Unrolling loop 'FLAT_LOOP' (cnn_ap_lp/dense_1.cpp:13) in function 'dense_1' completely with a factor of 400.
+INFO: [XFORM 203-602] Inlining function 'hls::exp<15, 7>' into 'soft_max' (cnn_ap_lp/dense_out.cpp:22) automatically.
+INFO: [XFORM 203-602] Inlining function 'dense_2' into 'cnn' (cnn_ap_lp/cnn.cpp:63) automatically.
+INFO: [XFORM 203-602] Inlining function 'dense_out' into 'cnn' (cnn_ap_lp/cnn.cpp:67) automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (C:/Xilinx2019/Vivado/2019.1/common/technology/autopilot/hls_exp_apfixed.h:867:1) in function 'exp_reduce::exp<15, 7>'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn_ap_lp/conv_2.cpp:34:21) to (cnn_ap_lp/conv_2.cpp:34:21) in function 'conv_2'... converting 8 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn_ap_lp/conv_1.cpp:29:9) to (cnn_ap_lp/conv_1.cpp:29:9) in function 'conv_1'... converting 8 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn_ap_lp/cnn.cpp:27:4) to (cnn_ap_lp/cnn.cpp:25:26) in function 'cnn'... converting 10 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn_ap_lp/cnn.cpp:70:33) to (cnn_ap_lp/cnn.cpp:69:25) in function 'cnn'... converting 10 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'exp_reduce::exp<15, 7>' (C:/Xilinx2019/Vivado/2019.1/common/technology/autopilot/hls_exp_apfixed.h:41:1)...11 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:27 ; elapsed = 00:02:23 . Memory (MB): peak = 667.281 ; gain = 575.727
+WARNING: [XFORM 203-631] Renaming function 'exp_reduce::exp<15, 7>' to 'exp<15, 7>' (C:/Xilinx2019/Vivado/2019.1/common/technology/autopilot/hls_exp_apfixed.h:41:1)
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:39 ; elapsed = 00:02:34 . Memory (MB): peak = 788.012 ; gain = 696.457
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'cnn' ...
+WARNING: [SYN 201-103] Legalizing function name 'exp<15, 7>' to 'exp_15_7_s'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'conv_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 154.755 seconds; current allocated memory: 703.711 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 5 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.266 seconds; current allocated memory: 704.260 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'max_pool_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.305 seconds; current allocated memory: 704.583 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.184 seconds; current allocated memory: 704.826 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'conv_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.26 seconds; current allocated memory: 705.264 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.283 seconds; current allocated memory: 705.791 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'max_pool_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.31 seconds; current allocated memory: 706.057 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.186 seconds; current allocated memory: 706.323 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'flat' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.205 seconds; current allocated memory: 706.447 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.158 seconds; current allocated memory: 706.610 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dense_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'DENSE_LOOP'.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('flat_array_V_load_2', cnn_ap_lp/dense_1.cpp:14) on array 'flat_array_V' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'flat_array_V'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 200, Depth = 201.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 19.045 seconds; current allocated memory: 718.112 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 6.187 seconds; current allocated memory: 732.590 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'exp_15_7_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'exp<15, 7>'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 5.377 seconds; current allocated memory: 733.219 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.201 seconds; current allocated memory: 733.494 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'soft_max' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.253 seconds; current allocated memory: 733.725 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.227 seconds; current allocated memory: 733.976 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'cnn' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.313 seconds; current allocated memory: 734.666 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 1.009 seconds; current allocated memory: 736.172 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'conv_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'conv_1_conv_1_weights_V' to 'conv_1_conv_1_weibkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_1_conv_1_bias_V' to 'conv_1_conv_1_biacud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cnn_dcmp_64ns_64ns_1_2_1' to 'cnn_dcmp_64ns_64ndEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cnn_mul_mul_14s_9s_24_1_1' to 'cnn_mul_mul_14s_9eOg' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'cnn_dcmp_64ns_64ndEe': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cnn_mul_mul_14s_9eOg': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'conv_1'.
+INFO: [HLS 200-111]  Elapsed time: 0.961 seconds; current allocated memory: 737.701 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'max_pool_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'max_pool_1'.
+INFO: [HLS 200-111]  Elapsed time: 0.681 seconds; current allocated memory: 738.379 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'conv_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'conv_2_conv_2_weights_V' to 'conv_2_conv_2_weifYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_2_conv_2_bias_V' to 'conv_2_conv_2_biag8j' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cnn_mul_mul_10s_14s_25_1_1' to 'cnn_mul_mul_10s_1hbi' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'cnn_dcmp_64ns_64ndEe': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cnn_mul_mul_10s_1hbi': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'conv_2'.
+INFO: [HLS 200-111]  Elapsed time: 0.469 seconds; current allocated memory: 739.427 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'max_pool_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'max_pool_2'.
+INFO: [HLS 200-111]  Elapsed time: 0.714 seconds; current allocated memory: 740.011 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'flat' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'flat'.
+INFO: [HLS 200-111]  Elapsed time: 0.395 seconds; current allocated memory: 740.383 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dense_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'dense_1_dense_1_weights_V' to 'dense_1_dense_1_wibs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'dense_1_dense_1_bias_V' to 'dense_1_dense_1_bjbC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cnn_mul_mul_14s_9s_22_1_1' to 'cnn_mul_mul_14s_9kbM' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cnn_mac_muladd_14s_9s_22ns_22_1_1' to 'cnn_mac_muladd_14lbW' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'cnn_mac_muladd_14lbW': 399 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cnn_mul_mul_14s_9kbM': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dense_1'.
+INFO: [HLS 200-111]  Elapsed time: 1.354 seconds; current allocated memory: 768.628 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'exp_15_7_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'exp_15_7_s_f_x_lsb_table_V' to 'exp_15_7_s_f_x_lsmb6' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'exp_15_7_s_exp_x_msb_2_m_1_tabl' to 'exp_15_7_s_exp_x_ncg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'exp_15_7_s_exp_x_msb_1_table_V' to 'exp_15_7_s_exp_x_ocq' due to the length limit 20
+INFO: [RTGEN 206-100] Finished creating RTL model for 'exp_15_7_s'.
+INFO: [HLS 200-111]  Elapsed time: 16.329 seconds; current allocated memory: 772.566 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'soft_max' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'cnn_sdiv_22ns_14s_14_26_seq_1' to 'cnn_sdiv_22ns_14spcA' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'cnn_sdiv_22ns_14spcA': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'soft_max'.
+INFO: [HLS 200-111]  Elapsed time: 0.634 seconds; current allocated memory: 773.201 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'cnn' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'cnn/cnn_input' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'cnn/prediction_output' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'cnn' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'cnn_dense_2_weights_V' to 'cnn_dense_2_weighqcK' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cnn_dense_out_weights_V' to 'cnn_dense_out_weircU' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cnn_dense_out_bias_V' to 'cnn_dense_out_biasc4' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cnn_max_pool_1_out_V' to 'cnn_max_pool_1_outde' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cnn_max_pool_2_out_V' to 'cnn_max_pool_2_ouudo' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cnn_fpext_32ns_64_2_1' to 'cnn_fpext_32ns_64vdy' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cnn_mac_muladd_9s_13ns_22ns_22_1_1' to 'cnn_mac_muladd_9swdI' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cnn_mac_muladd_13ns_9s_22ns_22_1_1' to 'cnn_mac_muladd_13xdS' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'cnn_fpext_32ns_64vdy': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cnn_mac_muladd_13xdS': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cnn_mac_muladd_9swdI': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'cnn'.
+INFO: [HLS 200-111]  Elapsed time: 0.738 seconds; current allocated memory: 775.231 MB.
+INFO: [RTMG 210-279] Implementing memory 'conv_1_conv_1_weibkb_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_1_conv_1_biacud_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_2_conv_2_weifYi_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_2_conv_2_biag8j_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dense_1_dense_1_wibs_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dense_1_dense_1_bjbC_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'exp_15_7_s_f_x_lsmb6_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'exp_15_7_s_exp_x_ncg_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'exp_15_7_s_exp_x_ocq_rom' using distributed ROMs.
+INFO: [RTMG 210-282] Generating pipelined core: 'cnn_sdiv_22ns_14spcA_div'
+INFO: [RTMG 210-279] Implementing memory 'cnn_dense_2_weighqcK_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_dense_2_bias_V_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_dense_out_weircU_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_dense_out_biasc4_rom' using distributed ROMs.
+INFO: [RTMG 210-278] Implementing memory 'cnn_dense_array_V_ram (RAM)' using distributed RAMs.
+INFO: [RTMG 210-278] Implementing memory 'cnn_conv_1_input_V_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'cnn_conv_1_out_V_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'cnn_max_pool_1_outde_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'cnn_conv_2_out_V_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'cnn_max_pool_2_ouudo_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'cnn_flat_array_V_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'cnn_dense_1_out_V_ram (RAM)' using distributed RAMs.
+INFO: [RTMG 210-278] Implementing memory 'cnn_dense_2_out_V_ram (RAM)' using distributed RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:26 ; elapsed = 00:03:39 . Memory (MB): peak = 963.000 ; gain = 871.445
+INFO: [VHDL 208-304] Generating VHDL RTL for cnn.
+INFO: [VLOG 209-307] Generating Verilog RTL for cnn.
+INFO: [HLS 200-112] Total elapsed time: 218.775 seconds; peak allocated memory: 775.231 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'cnn_ap_lp/max_pool_2.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'cnn_ap_lp/max_pool_1.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'cnn_ap_lp/flat.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'cnn_ap_lp/dense_out.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'cnn_ap_lp/dense_2.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'cnn_ap_lp/dense_1.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'cnn_ap_lp/conv_2.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'cnn_ap_lp/conv_1.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'cnn_ap_lp/cnn.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:02 ; elapsed = 00:01:54 . Memory (MB): peak = 187.289 ; gain = 95.781
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:02 ; elapsed = 00:01:54 . Memory (MB): peak = 187.289 ; gain = 95.781
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:16 ; elapsed = 00:02:11 . Memory (MB): peak = 435.109 ; gain = 343.602
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'hls::exp<15, 7>' into 'soft_max' (cnn_ap_lp/dense_out.cpp:22) automatically.
+INFO: [XFORM 203-602] Inlining function 'dense_2' into 'cnn' (cnn_ap_lp/cnn.cpp:63) automatically.
+INFO: [XFORM 203-602] Inlining function 'dense_out' into 'cnn' (cnn_ap_lp/cnn.cpp:67) automatically.
+WARNING: [SYNCHK 200-23] C:/Xilinx2019/Vivado/2019.1/common/technology/autopilot/hls_exp_apfixed.h:191: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:17 ; elapsed = 00:02:12 . Memory (MB): peak = 504.223 ; gain = 412.715
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'exp_reduce::exp<15, 7>' (C:/Xilinx2019/Vivado/2019.1/common/technology/autopilot/hls_exp_apfixed.h:41:29).
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'DENSE_LOOP' (cnn_ap_lp/dense_1.cpp:9) in function 'dense_1' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (C:/Xilinx2019/Vivado/2019.1/common/technology/autopilot/hls_exp_apfixed.h:190) in function 'exp_reduce::exp<15, 7>' completely with a factor of 8.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2' (C:/Xilinx2019/Vivado/2019.1/common/technology/autopilot/hls_exp_apfixed.h:197) in function 'exp_reduce::exp<15, 7>' completely with a factor of 22.
+INFO: [HLS 200-489] Unrolling loop 'Loop-3' (C:/Xilinx2019/Vivado/2019.1/common/technology/autopilot/hls_exp_apfixed.h:254) in function 'exp_reduce::exp<15, 7>' completely with a factor of 5.
+INFO: [HLS 200-489] Unrolling loop 'Loop-4' (C:/Xilinx2019/Vivado/2019.1/common/technology/autopilot/hls_exp_apfixed.h:260) in function 'exp_reduce::exp<15, 7>' completely with a factor of 5.
+INFO: [HLS 200-489] Unrolling loop 'Loop-5' (C:/Xilinx2019/Vivado/2019.1/common/technology/autopilot/hls_exp_apfixed.h:263) in function 'exp_reduce::exp<15, 7>' completely with a factor of 17.
+INFO: [HLS 200-489] Unrolling loop 'FLAT_LOOP' (cnn_ap_lp/dense_1.cpp:13) in function 'dense_1' completely with a factor of 400.
+INFO: [XFORM 203-602] Inlining function 'hls::exp<15, 7>' into 'soft_max' (cnn_ap_lp/dense_out.cpp:22) automatically.
+INFO: [XFORM 203-602] Inlining function 'dense_2' into 'cnn' (cnn_ap_lp/cnn.cpp:63) automatically.
+INFO: [XFORM 203-602] Inlining function 'dense_out' into 'cnn' (cnn_ap_lp/cnn.cpp:67) automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (C:/Xilinx2019/Vivado/2019.1/common/technology/autopilot/hls_exp_apfixed.h:867:1) in function 'exp_reduce::exp<15, 7>'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn_ap_lp/conv_2.cpp:34:21) to (cnn_ap_lp/conv_2.cpp:34:21) in function 'conv_2'... converting 8 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn_ap_lp/conv_1.cpp:29:9) to (cnn_ap_lp/conv_1.cpp:29:9) in function 'conv_1'... converting 8 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn_ap_lp/cnn.cpp:27:4) to (cnn_ap_lp/cnn.cpp:25:26) in function 'cnn'... converting 10 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn_ap_lp/cnn.cpp:70:33) to (cnn_ap_lp/cnn.cpp:69:25) in function 'cnn'... converting 10 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'exp_reduce::exp<15, 7>' (C:/Xilinx2019/Vivado/2019.1/common/technology/autopilot/hls_exp_apfixed.h:41:1)...11 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:27 ; elapsed = 00:02:23 . Memory (MB): peak = 662.402 ; gain = 570.895
+WARNING: [XFORM 203-631] Renaming function 'exp_reduce::exp<15, 7>' to 'exp<15, 7>' (C:/Xilinx2019/Vivado/2019.1/common/technology/autopilot/hls_exp_apfixed.h:41:1)
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:39 ; elapsed = 00:02:34 . Memory (MB): peak = 787.473 ; gain = 695.965
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'cnn' ...
+WARNING: [SYN 201-103] Legalizing function name 'exp<15, 7>' to 'exp_15_7_s'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'conv_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 154.434 seconds; current allocated memory: 703.730 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 5 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.274 seconds; current allocated memory: 704.279 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'max_pool_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.314 seconds; current allocated memory: 704.617 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.19 seconds; current allocated memory: 704.859 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'conv_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.251 seconds; current allocated memory: 705.298 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.281 seconds; current allocated memory: 705.825 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'max_pool_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.325 seconds; current allocated memory: 706.076 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.183 seconds; current allocated memory: 706.342 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'flat' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.211 seconds; current allocated memory: 706.465 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.162 seconds; current allocated memory: 706.628 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dense_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'DENSE_LOOP'.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('flat_array_V_load_2', cnn_ap_lp/dense_1.cpp:14) on array 'flat_array_V' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'flat_array_V'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 200, Depth = 201.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 19.052 seconds; current allocated memory: 718.146 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 6.489 seconds; current allocated memory: 732.639 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'exp_15_7_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'exp<15, 7>'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 5.713 seconds; current allocated memory: 733.300 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.217 seconds; current allocated memory: 733.611 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'soft_max' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.239 seconds; current allocated memory: 733.790 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.252 seconds; current allocated memory: 734.041 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'cnn' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.321 seconds; current allocated memory: 734.747 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.955 seconds; current allocated memory: 736.221 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'conv_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'conv_1_conv_1_weights_V' to 'conv_1_conv_1_weibkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_1_conv_1_bias_V' to 'conv_1_conv_1_biacud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cnn_dcmp_64ns_64ns_1_2_1' to 'cnn_dcmp_64ns_64ndEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cnn_mul_mul_14s_9s_24_1_1' to 'cnn_mul_mul_14s_9eOg' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'cnn_dcmp_64ns_64ndEe': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cnn_mul_mul_14s_9eOg': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'conv_1'.
+INFO: [HLS 200-111]  Elapsed time: 0.946 seconds; current allocated memory: 737.798 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'max_pool_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'max_pool_1'.
+INFO: [HLS 200-111]  Elapsed time: 0.676 seconds; current allocated memory: 738.460 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'conv_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'conv_2_conv_2_weights_V' to 'conv_2_conv_2_weifYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_2_conv_2_bias_V' to 'conv_2_conv_2_biag8j' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cnn_mul_mul_10s_14s_25_1_1' to 'cnn_mul_mul_10s_1hbi' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'cnn_dcmp_64ns_64ndEe': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cnn_mul_mul_10s_1hbi': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'conv_2'.
+INFO: [HLS 200-111]  Elapsed time: 0.473 seconds; current allocated memory: 739.507 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'max_pool_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'max_pool_2'.
+INFO: [HLS 200-111]  Elapsed time: 0.735 seconds; current allocated memory: 740.129 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'flat' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'flat'.
+INFO: [HLS 200-111]  Elapsed time: 0.405 seconds; current allocated memory: 740.448 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dense_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'dense_1_dense_1_weights_V' to 'dense_1_dense_1_wibs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'dense_1_dense_1_bias_V' to 'dense_1_dense_1_bjbC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cnn_mul_mul_14s_9s_22_1_1' to 'cnn_mul_mul_14s_9kbM' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cnn_mac_muladd_14s_9s_22ns_22_1_1' to 'cnn_mac_muladd_14lbW' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'cnn_mac_muladd_14lbW': 399 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cnn_mul_mul_14s_9kbM': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dense_1'.
+INFO: [HLS 200-111]  Elapsed time: 1.359 seconds; current allocated memory: 768.693 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'exp_15_7_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'exp_15_7_s_f_x_lsb_table_V' to 'exp_15_7_s_f_x_lsmb6' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'exp_15_7_s_exp_x_msb_2_m_1_tabl' to 'exp_15_7_s_exp_x_ncg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'exp_15_7_s_exp_x_msb_1_table_V' to 'exp_15_7_s_exp_x_ocq' due to the length limit 20
+INFO: [RTGEN 206-100] Finished creating RTL model for 'exp_15_7_s'.
+INFO: [HLS 200-111]  Elapsed time: 16.468 seconds; current allocated memory: 772.631 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'soft_max' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'cnn_sdiv_22ns_14s_14_26_seq_1' to 'cnn_sdiv_22ns_14spcA' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'cnn_sdiv_22ns_14spcA': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'soft_max'.
+INFO: [HLS 200-111]  Elapsed time: 0.65 seconds; current allocated memory: 773.251 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'cnn' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'cnn/cnn_input' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'cnn/prediction_output' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'cnn' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'cnn_dense_2_weights_V' to 'cnn_dense_2_weighqcK' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cnn_dense_out_weights_V' to 'cnn_dense_out_weircU' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cnn_dense_out_bias_V' to 'cnn_dense_out_biasc4' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cnn_max_pool_1_out_V' to 'cnn_max_pool_1_outde' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cnn_max_pool_2_out_V' to 'cnn_max_pool_2_ouudo' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cnn_fpext_32ns_64_2_1' to 'cnn_fpext_32ns_64vdy' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cnn_mac_muladd_9s_13ns_22ns_22_1_1' to 'cnn_mac_muladd_9swdI' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cnn_mac_muladd_13ns_9s_22ns_22_1_1' to 'cnn_mac_muladd_13xdS' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'cnn_fpext_32ns_64vdy': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cnn_mac_muladd_13xdS': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cnn_mac_muladd_9swdI': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'cnn'.
+INFO: [HLS 200-111]  Elapsed time: 0.767 seconds; current allocated memory: 775.296 MB.
+INFO: [RTMG 210-279] Implementing memory 'conv_1_conv_1_weibkb_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_1_conv_1_biacud_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_2_conv_2_weifYi_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_2_conv_2_biag8j_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dense_1_dense_1_wibs_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dense_1_dense_1_bjbC_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'exp_15_7_s_f_x_lsmb6_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'exp_15_7_s_exp_x_ncg_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'exp_15_7_s_exp_x_ocq_rom' using distributed ROMs.
+INFO: [RTMG 210-282] Generating pipelined core: 'cnn_sdiv_22ns_14spcA_div'
+INFO: [RTMG 210-279] Implementing memory 'cnn_dense_2_weighqcK_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_dense_2_bias_V_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_dense_out_weircU_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_dense_out_biasc4_rom' using distributed ROMs.
+INFO: [RTMG 210-278] Implementing memory 'cnn_dense_array_V_ram (RAM)' using distributed RAMs.
+INFO: [RTMG 210-278] Implementing memory 'cnn_conv_1_input_V_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'cnn_conv_1_out_V_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'cnn_max_pool_1_outde_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'cnn_conv_2_out_V_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'cnn_max_pool_2_ouudo_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'cnn_flat_array_V_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'cnn_dense_1_out_V_ram (RAM)' using distributed RAMs.
+INFO: [RTMG 210-278] Implementing memory 'cnn_dense_2_out_V_ram (RAM)' using distributed RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:27 ; elapsed = 00:03:39 . Memory (MB): peak = 959.422 ; gain = 867.914
+INFO: [VHDL 208-304] Generating VHDL RTL for cnn.
+INFO: [VLOG 209-307] Generating Verilog RTL for cnn.
+INFO: [HLS 200-112] Total elapsed time: 219.147 seconds; peak allocated memory: 775.296 MB.

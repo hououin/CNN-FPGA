@@ -1,0 +1,1491 @@
+{
+  "Top": "cnn",
+  "RtlTop": "cnn",
+  "RtlPrefix": "",
+  "SourceLanguage": "cpp",
+  "ResetStyle": "control",
+  "GenerateBdFiles": "0",
+  "HostMachineBits": "64",
+  "Target": {
+    "Family": "zynq",
+    "Device": "xc7z020",
+    "Package": "-clg400",
+    "Speed": "-1"
+  },
+  "HlsSolution": {
+    "Config": [
+      "config_export -format=ip_catalog",
+      "config_export -rtl=verilog"
+    ],
+    "DirectiveTcl": [
+      "set_directive_pipeline cnn\/Cov1L3 ",
+      "set_directive_pipeline cnn\/Mp1L3 ",
+      "set_directive_pipeline cnn\/Cov2L3 ",
+      "set_directive_pipeline cnn\/Mp2L3 ",
+      "set_directive_pipeline cnn\/F1 ",
+      "set_directive_pipeline cnn\/D1 ",
+      "set_directive_pipeline cnn\/D2 ",
+      "set_directive_pipeline cnn\/D3 ",
+      "set_directive_array_partition cnn ",
+      "set_directive_array_partition cnn ",
+      "set_directive_array_partition cnn ",
+      "set_directive_array_partition cnn ",
+      "set_directive_array_partition cnn ",
+      "set_directive_array_partition cnn ",
+      "set_directive_array_partition cnn ",
+      "set_directive_array_partition cnn ",
+      "set_directive_array_partition cnn ",
+      "set_directive_array_partition cnn ",
+      "set_directive_array_partition cnn ",
+      "set_directive_array_partition cnn ",
+      "set_directive_array_partition cnn ",
+      "set_directive_pipeline conv_1\/Filter1_Loop ",
+      "set_directive_unroll conv_1\/Filter1_Loop -factor 3",
+      "set_directive_pipeline max_pool_1\/Row_Loop ",
+      "set_directive_pipeline conv_2\/Filter2_Loop ",
+      "set_directive_pipeline max_pool_2\/Filter_Loop ",
+      "set_directive_pipeline dense_1\/FLAT_LOOP ",
+      "set_directive_unroll dense_1\/FLAT_LOOP -factor 50",
+      "set_directive_pipeline dense_out\/Flat_Loop ",
+      "set_directive_unroll dense_out\/Flat_Loop -factor 10",
+      "set_directive_pipeline soft_max\/Max_Loop ",
+      "set_directive_pipeline soft_max\/Sum_Loop ",
+      "set_directive_pipeline soft_max\/Prediction_Loop ",
+      "set_directive_pipeline dense_2\/FLAT_LOOP ",
+      "set_directive_unroll dense_2\/FLAT_LOOP -factor 10",
+      "set_directive_pipeline cnn\/INPUT_LOOP ",
+      "set_directive_pipeline flat\/Filter_Loop ",
+      "set_directive_pipeline cnn\/ConvL3 ",
+      "set_directive_interface cnn ",
+      "set_directive_interface cnn ",
+      "set_directive_interface cnn "
+    ],
+    "DirectiveInfo": [
+      "pipeline cnn\/Cov1L3 {} {}",
+      "pipeline cnn\/Mp1L3 {} {}",
+      "pipeline cnn\/Cov2L3 {} {}",
+      "pipeline cnn\/Mp2L3 {} {}",
+      "pipeline cnn\/F1 {} {}",
+      "pipeline cnn\/D1 {} {}",
+      "pipeline cnn\/D2 {} {}",
+      "pipeline cnn\/D3 {} {}",
+      "array_partition cnn {{partition positionBooleanCmd} {variable positionBooleanTextRequiredconv_1_input} {cyclic positionBoolean0type} {factor 3} {dim 1}} {}",
+      "array_partition cnn {{partition positionBooleanCmd} {variable positionBooleanTextRequiredconv_1_input} {cyclic positionBoolean0type} {factor 3} {dim 2}} {}",
+      "array_partition cnn {{partition positionBooleanCmd} {variable positionBooleanTextRequiredconv_1_out} {cyclic positionBoolean0type} {factor 3} {dim 3}} {}",
+      "array_partition cnn {{partition positionBooleanCmd} {variable positionBooleanTextRequiredconv_1_out_c} {complete positionBoolean0type} {dim 2}} {}",
+      "array_partition cnn {{partition positionBooleanCmd} {variable positionBooleanTextRequiredmax_pool_1_out} {complete positionBoolean0type} {dim 2}} {}",
+      "array_partition cnn {{partition positionBooleanCmd} {variable positionBooleanTextRequiredmax_pool_1_out_c} {cyclic positionBoolean0type} {factor 3} {dim 1}} {}",
+      "array_partition cnn {{partition positionBooleanCmd} {variable positionBooleanTextRequiredmax_pool_1_out_c} {cyclic positionBoolean0type} {factor 3} {dim 2}} {}",
+      "array_partition cnn {{partition positionBooleanCmd} {variable positionBooleanTextRequiredmax_pool_1_out_c} {complete positionBoolean0type} {dim 3}} {}",
+      "array_partition cnn {{partition positionBooleanCmd} {variable positionBooleanTextRequiredconv_2_out_c} {complete positionBoolean0type} {dim 1}} {}",
+      "array_partition cnn {{partition positionBooleanCmd} {variable positionBooleanTextRequiredconv_2_out_c} {complete positionBoolean0type} {dim 2}} {}",
+      "array_partition cnn {{partition positionBooleanCmd} {variable positionBooleanTextRequiredflat_array_c} {cyclic positionBoolean0type} {factor 25} {dim 1}} {}",
+      "array_partition cnn {{partition positionBooleanCmd} {variable positionBooleanTextRequireddense_1_out_c} {cyclic positionBoolean0type} {factor 5} {dim 1}} {}",
+      "array_partition cnn {{partition positionBooleanCmd} {variable positionBooleanTextRequireddense_2_out_c} {cyclic positionBoolean0type} {factor 5} {dim 1}} {}",
+      "pipeline conv_1\/Filter1_Loop {} {}",
+      "unroll conv_1\/Filter1_Loop {{factor 3}} {}",
+      "pipeline max_pool_1\/Row_Loop {} {}",
+      "pipeline conv_2\/Filter2_Loop {} {}",
+      "pipeline max_pool_2\/Filter_Loop {} {}",
+      "pipeline dense_1\/FLAT_LOOP {} {}",
+      "unroll dense_1\/FLAT_LOOP {{factor 50}} {}",
+      "pipeline dense_out\/Flat_Loop {} {}",
+      "unroll dense_out\/Flat_Loop {{factor 10}} {}",
+      "pipeline soft_max\/Max_Loop {} {}",
+      "pipeline soft_max\/Sum_Loop {} {}",
+      "pipeline soft_max\/Prediction_Loop {} {}",
+      "pipeline dense_2\/FLAT_LOOP {} {}",
+      "unroll dense_2\/FLAT_LOOP {{factor 10}} {}",
+      "pipeline cnn\/INPUT_LOOP {} {}",
+      "pipeline flat\/Filter_Loop {} {}",
+      "pipeline cnn\/ConvL3 {} {}",
+      "interface cnn {{s_axilite positionBoolean0mode} {port positionBooleanTextRequiredreturn} {bundle CRTL_BUS}} {}",
+      "interface cnn {{bram positionBoolean0mode} {port positionBooleanTextRequiredcnn_input}} {}",
+      "interface cnn {{bram positionBoolean0mode} {port positionBooleanTextRequiredprediction_output}} {}"
+    ]
+  },
+  "Args": {
+    "cnn_input": {
+      "index": "0",
+      "type": {
+        "kinds": ["array"],
+        "dataType": "float",
+        "dataWidth": "32",
+        "arraySizes": ["784"],
+        "interfaceRef": "cnn_input"
+      }
+    },
+    "prediction_output": {
+      "index": "1",
+      "type": {
+        "kinds": ["array"],
+        "dataType": "float",
+        "dataWidth": "32",
+        "arraySizes": ["10"],
+        "interfaceRef": "prediction_output"
+      }
+    }
+  },
+  "Return": {
+    
+  },
+  "ClockInfo": {
+    "ClockName": "ap_clk",
+    "ClockPeriod": "20",
+    "IsCombLogic": "0",
+    "II": "x",
+    "Latency": "17676",
+    "Uncertainty": "2.5"
+  },
+  "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 20.000 [get_ports ap_clk]"]},
+  "Ipx": {
+    "Vendor": "xilinx.com",
+    "Library": "hls",
+    "Name": "cnn",
+    "Version": "1.0",
+    "DisplayName": "Cnn",
+    "Revision": "",
+    "Description": "An IP generated by Vivado HLS",
+    "Taxonomy": "\/VIVADO_HLS_IP",
+    "AutoFamilySupport": ""
+  },
+  "Files": {
+    "CSource": [
+      "..\/cnn.cpp",
+      "..\/conv_1.cpp",
+      "..\/conv_2.cpp",
+      "..\/dense_1.cpp",
+      "..\/dense_2.cpp",
+      "..\/dense_out.cpp",
+      "..\/flat.cpp",
+      "..\/max_pool_1.cpp",
+      "..\/max_pool_2.cpp"
+    ],
+    "Vhdl": [
+      "impl\/vhdl\/cnn_conv_1_input_bBo.vhd",
+      "impl\/vhdl\/cnn_conv_1_input_bxn.vhd",
+      "impl\/vhdl\/cnn_conv_1_input_byn.vhd",
+      "impl\/vhdl\/cnn_conv_1_out_0_V.vhd",
+      "impl\/vhdl\/cnn_conv_1_out_c_bGp.vhd",
+      "impl\/vhdl\/cnn_conv_2_out_V.vhd",
+      "impl\/vhdl\/cnn_CRTL_BUS_s_axi.vhd",
+      "impl\/vhdl\/cnn_dcmp_64ns_64ndEe.vhd",
+      "impl\/vhdl\/cnn_dense_1_out_cfeY.vhd",
+      "impl\/vhdl\/cnn_dense_1_out_V.vhd",
+      "impl\/vhdl\/cnn_dense_2_out_V.vhd",
+      "impl\/vhdl\/cnn_flat_array_c_ePU.vhd",
+      "impl\/vhdl\/cnn_fpext_32ns_64fjZ.vhd",
+      "impl\/vhdl\/cnn_mac_muladd_4nfmZ.vhd",
+      "impl\/vhdl\/cnn_mac_muladd_5nbck.vhd",
+      "impl\/vhdl\/cnn_mac_muladd_5nflZ.vhd",
+      "impl\/vhdl\/cnn_mac_muladd_6nhbi.vhd",
+      "impl\/vhdl\/cnn_mac_muladd_7sbhl.vhd",
+      "impl\/vhdl\/cnn_mac_muladd_9nbkl.vhd",
+      "impl\/vhdl\/cnn_mac_muladd_9sbll.vhd",
+      "impl\/vhdl\/cnn_mac_muladd_9sbom.vhd",
+      "impl\/vhdl\/cnn_mac_muladd_13bwn.vhd",
+      "impl\/vhdl\/cnn_max_pool_1_oub6t.vhd",
+      "impl\/vhdl\/cnn_max_pool_1_oucHz.vhd",
+      "impl\/vhdl\/cnn_max_pool_1_oucjv.vhd",
+      "impl\/vhdl\/cnn_max_pool_1_oucpw.vhd",
+      "impl\/vhdl\/cnn_max_pool_2_oueNU.vhd",
+      "impl\/vhdl\/cnn_max_pool_2_oueOU.vhd",
+      "impl\/vhdl\/cnn_mul_mul_8s_14bfk.vhd",
+      "impl\/vhdl\/cnn_mul_mul_9s_14bek.vhd",
+      "impl\/vhdl\/cnn_mul_mul_9s_14g8j.vhd",
+      "impl\/vhdl\/cnn_mul_mul_10s_1bgk.vhd",
+      "impl\/vhdl\/cnn_mul_mul_14s_8bdk.vhd",
+      "impl\/vhdl\/cnn_mul_mul_14s_9fYi.vhd",
+      "impl\/vhdl\/cnn_mux_134_14_1_1.vhd",
+      "impl\/vhdl\/cnn_mux_332_14_1_1.vhd",
+      "impl\/vhdl\/cnn_prediction_V.vhd",
+      "impl\/vhdl\/cnn_sdiv_22ns_14sbsm.vhd",
+      "impl\/vhdl\/cnn_urem_3ns_3ns_fkZ.vhd",
+      "impl\/vhdl\/cnn_urem_4ns_3ns_bbk.vhd",
+      "impl\/vhdl\/cnn_urem_5ns_3ns_eOg.vhd",
+      "impl\/vhdl\/conv_1.vhd",
+      "impl\/vhdl\/conv_1_conv_1_biacud.vhd",
+      "impl\/vhdl\/conv_1_conv_1_weibkb.vhd",
+      "impl\/vhdl\/conv_2.vhd",
+      "impl\/vhdl\/conv_2_conv_2_bia9j0.vhd",
+      "impl\/vhdl\/conv_2_conv_2_wei0iy.vhd",
+      "impl\/vhdl\/conv_2_conv_2_wei1iI.vhd",
+      "impl\/vhdl\/conv_2_conv_2_wei2iS.vhd",
+      "impl\/vhdl\/conv_2_conv_2_wei3i2.vhd",
+      "impl\/vhdl\/conv_2_conv_2_wei4jc.vhd",
+      "impl\/vhdl\/conv_2_conv_2_wei5jm.vhd",
+      "impl\/vhdl\/conv_2_conv_2_wei6jw.vhd",
+      "impl\/vhdl\/conv_2_conv_2_wei7jG.vhd",
+      "impl\/vhdl\/conv_2_conv_2_wei8jQ.vhd",
+      "impl\/vhdl\/conv_2_conv_2_weiAem.vhd",
+      "impl\/vhdl\/conv_2_conv_2_weibak.vhd",
+      "impl\/vhdl\/conv_2_conv_2_weiBew.vhd",
+      "impl\/vhdl\/conv_2_conv_2_weiCeG.vhd",
+      "impl\/vhdl\/conv_2_conv_2_weiDeQ.vhd",
+      "impl\/vhdl\/conv_2_conv_2_weiEe0.vhd",
+      "impl\/vhdl\/conv_2_conv_2_weiFfa.vhd",
+      "impl\/vhdl\/conv_2_conv_2_weiGfk.vhd",
+      "impl\/vhdl\/conv_2_conv_2_weiHfu.vhd",
+      "impl\/vhdl\/conv_2_conv_2_weiibs.vhd",
+      "impl\/vhdl\/conv_2_conv_2_weiIfE.vhd",
+      "impl\/vhdl\/conv_2_conv_2_weijbC.vhd",
+      "impl\/vhdl\/conv_2_conv_2_weiJfO.vhd",
+      "impl\/vhdl\/conv_2_conv_2_weikbM.vhd",
+      "impl\/vhdl\/conv_2_conv_2_weiKfY.vhd",
+      "impl\/vhdl\/conv_2_conv_2_weilbW.vhd",
+      "impl\/vhdl\/conv_2_conv_2_weiLf8.vhd",
+      "impl\/vhdl\/conv_2_conv_2_weimb6.vhd",
+      "impl\/vhdl\/conv_2_conv_2_weiMgi.vhd",
+      "impl\/vhdl\/conv_2_conv_2_weincg.vhd",
+      "impl\/vhdl\/conv_2_conv_2_weiNgs.vhd",
+      "impl\/vhdl\/conv_2_conv_2_weiocq.vhd",
+      "impl\/vhdl\/conv_2_conv_2_weiOgC.vhd",
+      "impl\/vhdl\/conv_2_conv_2_weipcA.vhd",
+      "impl\/vhdl\/conv_2_conv_2_weiPgM.vhd",
+      "impl\/vhdl\/conv_2_conv_2_weiqcK.vhd",
+      "impl\/vhdl\/conv_2_conv_2_weiQgW.vhd",
+      "impl\/vhdl\/conv_2_conv_2_weircU.vhd",
+      "impl\/vhdl\/conv_2_conv_2_weiRg6.vhd",
+      "impl\/vhdl\/conv_2_conv_2_weisc4.vhd",
+      "impl\/vhdl\/conv_2_conv_2_weiShg.vhd",
+      "impl\/vhdl\/conv_2_conv_2_weitde.vhd",
+      "impl\/vhdl\/conv_2_conv_2_weiThq.vhd",
+      "impl\/vhdl\/conv_2_conv_2_weiudo.vhd",
+      "impl\/vhdl\/conv_2_conv_2_weiUhA.vhd",
+      "impl\/vhdl\/conv_2_conv_2_weivdy.vhd",
+      "impl\/vhdl\/conv_2_conv_2_weiVhK.vhd",
+      "impl\/vhdl\/conv_2_conv_2_weiwdI.vhd",
+      "impl\/vhdl\/conv_2_conv_2_weiWhU.vhd",
+      "impl\/vhdl\/conv_2_conv_2_weixdS.vhd",
+      "impl\/vhdl\/conv_2_conv_2_weiXh4.vhd",
+      "impl\/vhdl\/conv_2_conv_2_weiyd2.vhd",
+      "impl\/vhdl\/conv_2_conv_2_weiYie.vhd",
+      "impl\/vhdl\/conv_2_conv_2_weizec.vhd",
+      "impl\/vhdl\/conv_2_conv_2_weiZio.vhd",
+      "impl\/vhdl\/dense_1.vhd",
+      "impl\/vhdl\/dense_1_dense_1_bbjl.vhd",
+      "impl\/vhdl\/dense_1_dense_1_wbil.vhd",
+      "impl\/vhdl\/dense_2.vhd",
+      "impl\/vhdl\/dense_2_dense_2_bbnm.vhd",
+      "impl\/vhdl\/dense_2_dense_2_wbml.vhd",
+      "impl\/vhdl\/dense_out.vhd",
+      "impl\/vhdl\/dense_out_dense_abvn.vhd",
+      "impl\/vhdl\/dense_out_dense_obtn.vhd",
+      "impl\/vhdl\/dense_out_dense_obun.vhd",
+      "impl\/vhdl\/exp_15_7_s.vhd",
+      "impl\/vhdl\/exp_15_7_s_exp_x_bqm.vhd",
+      "impl\/vhdl\/exp_15_7_s_exp_x_brm.vhd",
+      "impl\/vhdl\/exp_15_7_s_f_x_lsbpm.vhd",
+      "impl\/vhdl\/flat.vhd",
+      "impl\/vhdl\/max_pool_1.vhd",
+      "impl\/vhdl\/max_pool_2.vhd",
+      "impl\/vhdl\/soft_max.vhd",
+      "impl\/vhdl\/cnn.vhd"
+    ],
+    "Verilog": [
+      "impl\/verilog\/cnn_conv_1_input_bBo.v",
+      "impl\/verilog\/cnn_conv_1_input_bxn.v",
+      "impl\/verilog\/cnn_conv_1_input_byn.v",
+      "impl\/verilog\/cnn_conv_1_out_0_V.v",
+      "impl\/verilog\/cnn_conv_1_out_c_bGp.v",
+      "impl\/verilog\/cnn_conv_2_out_V.v",
+      "impl\/verilog\/cnn_CRTL_BUS_s_axi.v",
+      "impl\/verilog\/cnn_dcmp_64ns_64ndEe.v",
+      "impl\/verilog\/cnn_dense_1_out_cfeY.v",
+      "impl\/verilog\/cnn_dense_1_out_V.v",
+      "impl\/verilog\/cnn_dense_2_out_V.v",
+      "impl\/verilog\/cnn_flat_array_c_ePU.v",
+      "impl\/verilog\/cnn_fpext_32ns_64fjZ.v",
+      "impl\/verilog\/cnn_mac_muladd_4nfmZ.v",
+      "impl\/verilog\/cnn_mac_muladd_5nbck.v",
+      "impl\/verilog\/cnn_mac_muladd_5nflZ.v",
+      "impl\/verilog\/cnn_mac_muladd_6nhbi.v",
+      "impl\/verilog\/cnn_mac_muladd_7sbhl.v",
+      "impl\/verilog\/cnn_mac_muladd_9nbkl.v",
+      "impl\/verilog\/cnn_mac_muladd_9sbll.v",
+      "impl\/verilog\/cnn_mac_muladd_9sbom.v",
+      "impl\/verilog\/cnn_mac_muladd_13bwn.v",
+      "impl\/verilog\/cnn_max_pool_1_oub6t.v",
+      "impl\/verilog\/cnn_max_pool_1_oucHz.v",
+      "impl\/verilog\/cnn_max_pool_1_oucjv.v",
+      "impl\/verilog\/cnn_max_pool_1_oucpw.v",
+      "impl\/verilog\/cnn_max_pool_2_oueNU.v",
+      "impl\/verilog\/cnn_max_pool_2_oueOU.v",
+      "impl\/verilog\/cnn_mul_mul_8s_14bfk.v",
+      "impl\/verilog\/cnn_mul_mul_9s_14bek.v",
+      "impl\/verilog\/cnn_mul_mul_9s_14g8j.v",
+      "impl\/verilog\/cnn_mul_mul_10s_1bgk.v",
+      "impl\/verilog\/cnn_mul_mul_14s_8bdk.v",
+      "impl\/verilog\/cnn_mul_mul_14s_9fYi.v",
+      "impl\/verilog\/cnn_mux_134_14_1_1.v",
+      "impl\/verilog\/cnn_mux_332_14_1_1.v",
+      "impl\/verilog\/cnn_prediction_V.v",
+      "impl\/verilog\/cnn_sdiv_22ns_14sbsm.v",
+      "impl\/verilog\/cnn_urem_3ns_3ns_fkZ.v",
+      "impl\/verilog\/cnn_urem_4ns_3ns_bbk.v",
+      "impl\/verilog\/cnn_urem_5ns_3ns_eOg.v",
+      "impl\/verilog\/conv_1.v",
+      "impl\/verilog\/conv_1_conv_1_biacud.v",
+      "impl\/verilog\/conv_1_conv_1_biacud_rom.dat",
+      "impl\/verilog\/conv_1_conv_1_weibkb.v",
+      "impl\/verilog\/conv_1_conv_1_weibkb_rom.dat",
+      "impl\/verilog\/conv_2.v",
+      "impl\/verilog\/conv_2_conv_2_bia9j0.v",
+      "impl\/verilog\/conv_2_conv_2_bia9j0_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_wei0iy.v",
+      "impl\/verilog\/conv_2_conv_2_wei0iy_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_wei1iI.v",
+      "impl\/verilog\/conv_2_conv_2_wei1iI_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_wei2iS.v",
+      "impl\/verilog\/conv_2_conv_2_wei2iS_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_wei3i2.v",
+      "impl\/verilog\/conv_2_conv_2_wei3i2_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_wei4jc.v",
+      "impl\/verilog\/conv_2_conv_2_wei4jc_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_wei5jm.v",
+      "impl\/verilog\/conv_2_conv_2_wei5jm_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_wei6jw.v",
+      "impl\/verilog\/conv_2_conv_2_wei6jw_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_wei7jG.v",
+      "impl\/verilog\/conv_2_conv_2_wei7jG_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_wei8jQ.v",
+      "impl\/verilog\/conv_2_conv_2_wei8jQ_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_weiAem.v",
+      "impl\/verilog\/conv_2_conv_2_weiAem_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_weibak.v",
+      "impl\/verilog\/conv_2_conv_2_weibak_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_weiBew.v",
+      "impl\/verilog\/conv_2_conv_2_weiBew_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_weiCeG.v",
+      "impl\/verilog\/conv_2_conv_2_weiCeG_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_weiDeQ.v",
+      "impl\/verilog\/conv_2_conv_2_weiDeQ_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_weiEe0.v",
+      "impl\/verilog\/conv_2_conv_2_weiEe0_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_weiFfa.v",
+      "impl\/verilog\/conv_2_conv_2_weiFfa_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_weiGfk.v",
+      "impl\/verilog\/conv_2_conv_2_weiGfk_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_weiHfu.v",
+      "impl\/verilog\/conv_2_conv_2_weiHfu_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_weiibs.v",
+      "impl\/verilog\/conv_2_conv_2_weiibs_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_weiIfE.v",
+      "impl\/verilog\/conv_2_conv_2_weiIfE_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_weijbC.v",
+      "impl\/verilog\/conv_2_conv_2_weijbC_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_weiJfO.v",
+      "impl\/verilog\/conv_2_conv_2_weiJfO_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_weikbM.v",
+      "impl\/verilog\/conv_2_conv_2_weikbM_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_weiKfY.v",
+      "impl\/verilog\/conv_2_conv_2_weiKfY_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_weilbW.v",
+      "impl\/verilog\/conv_2_conv_2_weilbW_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_weiLf8.v",
+      "impl\/verilog\/conv_2_conv_2_weiLf8_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_weimb6.v",
+      "impl\/verilog\/conv_2_conv_2_weimb6_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_weiMgi.v",
+      "impl\/verilog\/conv_2_conv_2_weiMgi_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_weincg.v",
+      "impl\/verilog\/conv_2_conv_2_weincg_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_weiNgs.v",
+      "impl\/verilog\/conv_2_conv_2_weiNgs_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_weiocq.v",
+      "impl\/verilog\/conv_2_conv_2_weiocq_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_weiOgC.v",
+      "impl\/verilog\/conv_2_conv_2_weiOgC_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_weipcA.v",
+      "impl\/verilog\/conv_2_conv_2_weipcA_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_weiPgM.v",
+      "impl\/verilog\/conv_2_conv_2_weiPgM_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_weiqcK.v",
+      "impl\/verilog\/conv_2_conv_2_weiqcK_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_weiQgW.v",
+      "impl\/verilog\/conv_2_conv_2_weiQgW_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_weircU.v",
+      "impl\/verilog\/conv_2_conv_2_weircU_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_weiRg6.v",
+      "impl\/verilog\/conv_2_conv_2_weiRg6_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_weisc4.v",
+      "impl\/verilog\/conv_2_conv_2_weisc4_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_weiShg.v",
+      "impl\/verilog\/conv_2_conv_2_weiShg_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_weitde.v",
+      "impl\/verilog\/conv_2_conv_2_weitde_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_weiThq.v",
+      "impl\/verilog\/conv_2_conv_2_weiThq_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_weiudo.v",
+      "impl\/verilog\/conv_2_conv_2_weiudo_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_weiUhA.v",
+      "impl\/verilog\/conv_2_conv_2_weiUhA_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_weivdy.v",
+      "impl\/verilog\/conv_2_conv_2_weivdy_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_weiVhK.v",
+      "impl\/verilog\/conv_2_conv_2_weiVhK_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_weiwdI.v",
+      "impl\/verilog\/conv_2_conv_2_weiwdI_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_weiWhU.v",
+      "impl\/verilog\/conv_2_conv_2_weiWhU_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_weixdS.v",
+      "impl\/verilog\/conv_2_conv_2_weixdS_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_weiXh4.v",
+      "impl\/verilog\/conv_2_conv_2_weiXh4_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_weiyd2.v",
+      "impl\/verilog\/conv_2_conv_2_weiyd2_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_weiYie.v",
+      "impl\/verilog\/conv_2_conv_2_weiYie_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_weizec.v",
+      "impl\/verilog\/conv_2_conv_2_weizec_rom.dat",
+      "impl\/verilog\/conv_2_conv_2_weiZio.v",
+      "impl\/verilog\/conv_2_conv_2_weiZio_rom.dat",
+      "impl\/verilog\/dense_1.v",
+      "impl\/verilog\/dense_1_dense_1_bbjl.v",
+      "impl\/verilog\/dense_1_dense_1_bbjl_rom.dat",
+      "impl\/verilog\/dense_1_dense_1_wbil.v",
+      "impl\/verilog\/dense_1_dense_1_wbil_rom.dat",
+      "impl\/verilog\/dense_2.v",
+      "impl\/verilog\/dense_2_dense_2_bbnm.v",
+      "impl\/verilog\/dense_2_dense_2_bbnm_rom.dat",
+      "impl\/verilog\/dense_2_dense_2_wbml.v",
+      "impl\/verilog\/dense_2_dense_2_wbml_rom.dat",
+      "impl\/verilog\/dense_out.v",
+      "impl\/verilog\/dense_out_dense_abvn.v",
+      "impl\/verilog\/dense_out_dense_obtn.v",
+      "impl\/verilog\/dense_out_dense_obtn_rom.dat",
+      "impl\/verilog\/dense_out_dense_obun.v",
+      "impl\/verilog\/dense_out_dense_obun_rom.dat",
+      "impl\/verilog\/exp_15_7_s.v",
+      "impl\/verilog\/exp_15_7_s_exp_x_bqm.v",
+      "impl\/verilog\/exp_15_7_s_exp_x_bqm_rom.dat",
+      "impl\/verilog\/exp_15_7_s_exp_x_brm.v",
+      "impl\/verilog\/exp_15_7_s_exp_x_brm_rom.dat",
+      "impl\/verilog\/exp_15_7_s_f_x_lsbpm.v",
+      "impl\/verilog\/exp_15_7_s_f_x_lsbpm_rom.dat",
+      "impl\/verilog\/flat.v",
+      "impl\/verilog\/max_pool_1.v",
+      "impl\/verilog\/max_pool_2.v",
+      "impl\/verilog\/soft_max.v",
+      "impl\/verilog\/cnn.v"
+    ],
+    "SwDriver": [
+      "impl\/misc\/drivers\/cnn_v1_0\/data\/cnn.mdd",
+      "impl\/misc\/drivers\/cnn_v1_0\/data\/cnn.tcl",
+      "impl\/misc\/drivers\/cnn_v1_0\/src\/Makefile",
+      "impl\/misc\/drivers\/cnn_v1_0\/src\/xcnn.c",
+      "impl\/misc\/drivers\/cnn_v1_0\/src\/xcnn.h",
+      "impl\/misc\/drivers\/cnn_v1_0\/src\/xcnn_hw.h",
+      "impl\/misc\/drivers\/cnn_v1_0\/src\/xcnn_linux.c",
+      "impl\/misc\/drivers\/cnn_v1_0\/src\/xcnn_sinit.c"
+    ],
+    "Misc": ["impl\/misc\/logo.png"],
+    "Subcore": [
+      "impl\/misc\/cnn_ap_dcmp_0_no_dsp_64_ip.tcl",
+      "impl\/misc\/cnn_ap_fpext_0_no_dsp_32_ip.tcl"
+    ],
+    "DesignXml": "C:\/Users\/chenq\/MAG\/code\/FFF\/HLS2019\/APDataType\/cnn\/cnn_ap_lp\/OPT_AP_LP1\/.autopilot\/db\/cnn.design.xml",
+    "DebugDir": "C:\/Users\/chenq\/MAG\/code\/FFF\/HLS2019\/APDataType\/cnn\/cnn_ap_lp\/OPT_AP_LP1\/.debug",
+    "ProtoInst": ["C:\/Users\/chenq\/MAG\/code\/FFF\/HLS2019\/APDataType\/cnn\/cnn_ap_lp\/OPT_AP_LP1\/.debug\/cnn.protoinst"]
+  },
+  "SubcoreInfo": {
+    "HasXpmMemory": false,
+    "HasClockedDsp": false,
+    "IP": [
+      {
+        "name": "cnn_ap_dcmp_0_no_dsp_64",
+        "vlnv": "xilinx.com:ip:floating_point:7.1",
+        "params": "CONFIG.a_precision_type Double CONFIG.a_tuser_width 1 CONFIG.add_sub_value Both CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 11 CONFIG.c_a_fraction_width 53 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 0 CONFIG.c_mult_usage No_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 1 CONFIG.c_result_fraction_width 0 CONFIG.component_name cnn_ap_dcmp_0_no_dsp_64 CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken false CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Compare CONFIG.result_precision_type Custom CONFIG.result_tlast_behv Null"
+      },
+      {
+        "name": "cnn_ap_fpext_0_no_dsp_32",
+        "vlnv": "xilinx.com:ip:floating_point:7.1",
+        "params": "CONFIG.a_precision_type Single CONFIG.a_tuser_width 1 CONFIG.add_sub_value Both CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 8 CONFIG.c_a_fraction_width 24 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 0 CONFIG.c_mult_usage No_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 11 CONFIG.c_result_fraction_width 53 CONFIG.component_name cnn_ap_fpext_0_no_dsp_32 CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken false CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Float_to_Float CONFIG.result_precision_type Double CONFIG.result_tlast_behv Null"
+      }
+    ]
+  },
+  "Interfaces": {
+    "ap_clk": {
+      "type": "clock",
+      "ctype": {"CLK": {"Type": "bool"}},
+      "bundle_name": "ap_clk",
+      "bundle_role": "default",
+      "buses": "s_axi_CRTL_BUS",
+      "reset": "ap_rst_n"
+    },
+    "ap_rst_n": {
+      "type": "reset",
+      "polarity": "ACTIVE_LOW",
+      "ctype": {"RST": {"Type": "bool"}},
+      "bundle_name": "ap_rst_n",
+      "bundle_role": "default"
+    },
+    "cnn_input": {
+      "type": "native_bram",
+      "is_adaptor": "true",
+      "mode": "master",
+      "port_prefix": "cnn_input",
+      "mem_width": "32",
+      "mem_depth": "1",
+      "mem_ports": "a",
+      "addr_width": "32",
+      "we_width": "4",
+      "master_type": "BRAM_CTRL",
+      "ctype": {
+        "EN": {"Type": "bool"},
+        "CLK": {"Type": "bool"},
+        "RST": {"Type": "bool"},
+        "ADDR": {
+          "Type": "integer unsigned",
+          "Width": "32"
+        },
+        "WE": {
+          "Type": "integer unsigned",
+          "Width": "4"
+        },
+        "DIN": {
+          "Type": "real float",
+          "Width": "32"
+        },
+        "DOUT": {
+          "Type": "real float",
+          "Width": "32"
+        }
+      }
+    },
+    "interrupt": {
+      "type": "interrupt",
+      "ctype": {"INTERRUPT": {"Type": "bool"}},
+      "bundle_name": "CRTL_BUS",
+      "bundle_role": "interrupt"
+    },
+    "prediction_output": {
+      "type": "native_bram",
+      "is_adaptor": "true",
+      "mode": "master",
+      "port_prefix": "prediction_output",
+      "mem_width": "32",
+      "mem_depth": "1",
+      "mem_ports": "a",
+      "addr_width": "32",
+      "we_width": "4",
+      "master_type": "BRAM_CTRL",
+      "ctype": {
+        "EN": {"Type": "bool"},
+        "CLK": {"Type": "bool"},
+        "RST": {"Type": "bool"},
+        "ADDR": {
+          "Type": "integer unsigned",
+          "Width": "32"
+        },
+        "WE": {
+          "Type": "integer unsigned",
+          "Width": "4"
+        },
+        "DIN": {
+          "Type": "real float",
+          "Width": "32"
+        },
+        "DOUT": {
+          "Type": "real float",
+          "Width": "32"
+        }
+      }
+    },
+    "s_axi_CRTL_BUS": {
+      "type": "axi4lite",
+      "is_adaptor": "true",
+      "mode": "slave",
+      "port_prefix": "s_axi_CRTL_BUS",
+      "param_prefix": "C_S_AXI_CRTL_BUS",
+      "addr_bits": "4",
+      "registers": [
+        {
+          "offset": "0x00",
+          "name": "CTRL",
+          "access": "RW",
+          "reset_value": "0x0",
+          "description": "Control signals",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "1",
+              "name": "AP_START",
+              "access": "RW",
+              "reset_value": "0",
+              "description": "Control signal Register for 'ap_start'."
+            },
+            {
+              "offset": "1",
+              "width": "1",
+              "name": "AP_DONE",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Control signal Register for 'ap_done'."
+            },
+            {
+              "offset": "2",
+              "width": "1",
+              "name": "AP_IDLE",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Control signal Register for 'ap_idle'."
+            },
+            {
+              "offset": "3",
+              "width": "1",
+              "name": "AP_READY",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Control signal Register for 'ap_ready'."
+            },
+            {
+              "offset": "4",
+              "width": "3",
+              "name": "RESERVED_1",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            },
+            {
+              "offset": "7",
+              "width": "1",
+              "name": "AUTO_RESTART",
+              "access": "RW",
+              "reset_value": "0",
+              "description": "Control signal Register for 'auto_restart'."
+            },
+            {
+              "offset": "8",
+              "width": "24",
+              "name": "RESERVED_2",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0x04",
+          "name": "GIER",
+          "access": "RW",
+          "reset_value": "0x0",
+          "description": "Global Interrupt Enable Register",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "1",
+              "name": "Enable",
+              "access": "RW",
+              "reset_value": "0",
+              "description": "Master enable for the device interrupt output to the system interrupt controller: 0 = Disabled, 1 = Enabled"
+            },
+            {
+              "offset": "1",
+              "width": "31",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0x08",
+          "name": "IP_IER",
+          "access": "RW",
+          "reset_value": "0x0",
+          "description": "IP Interrupt Enable Register",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "1",
+              "name": "CHAN0_INT_EN",
+              "access": "RW",
+              "reset_value": "0",
+              "description": "Enable Channel 0 (ap_done) Interrupt.  0 = Disabled, 1 = Enabled."
+            },
+            {
+              "offset": "1",
+              "width": "1",
+              "name": "CHAN1_INT_EN",
+              "access": "RW",
+              "reset_value": "0",
+              "description": "Enable Channel 1 (ap_ready) Interrupt.  0 = Disabled, 1 = Enabled."
+            },
+            {
+              "offset": "2",
+              "width": "30",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0x0c",
+          "name": "IP_ISR",
+          "access": "RW",
+          "reset_value": "0x0",
+          "description": "IP Interrupt Status Register",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "1",
+              "name": "CHAN0_INT_ST",
+              "access": "RTOW",
+              "reset_value": "0",
+              "description": "Channel 0 (ap_done) Interrupt Status. 0 = No Channel 0 input interrupt, 1 = Channel 0 input interrup"
+            },
+            {
+              "offset": "1",
+              "width": "1",
+              "name": "CHAN1_INT_ST",
+              "access": "RTOW",
+              "reset_value": "0",
+              "description": "Channel 1 (ap_ready) Interrupt Status. 0 = No Channel 1 input interrupt, 1 = Channel 1 input interrup"
+            },
+            {
+              "offset": "2",
+              "width": "30",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        }
+      ],
+      "ctype": {
+        "AWVALID": {"Type": "bool"},
+        "AWREADY": {"Type": "bool"},
+        "WVALID": {"Type": "bool"},
+        "WREADY": {"Type": "bool"},
+        "BVALID": {"Type": "bool"},
+        "BREADY": {"Type": "bool"},
+        "BRESP": {
+          "Type": "integer unsigned",
+          "Width": "2"
+        },
+        "ARVALID": {"Type": "bool"},
+        "ARREADY": {"Type": "bool"},
+        "RVALID": {"Type": "bool"},
+        "RREADY": {"Type": "bool"},
+        "RRESP": {
+          "Type": "integer unsigned",
+          "Width": "2"
+        },
+        "AWADDR": {
+          "Type": "integer unsigned",
+          "Width": "4"
+        },
+        "WDATA": {
+          "Type": "null",
+          "Width": "32"
+        },
+        "WSTRB": {
+          "Type": "integer unsigned",
+          "Width": "4"
+        },
+        "ARADDR": {
+          "Type": "integer unsigned",
+          "Width": "4"
+        },
+        "RDATA": {
+          "Type": "null",
+          "Width": "32"
+        }
+      },
+      "data_width": "32",
+      "port_width": {
+        "ARADDR": "4",
+        "AWADDR": "4",
+        "RDATA": "32",
+        "WDATA": "32",
+        "WSTRB": "4"
+      }
+    }
+  },
+  "RtlPorts": {
+    "s_axi_CRTL_BUS_AWVALID": {
+      "dir": "in",
+      "width": "1"
+    },
+    "s_axi_CRTL_BUS_AWREADY": {
+      "dir": "out",
+      "width": "1"
+    },
+    "s_axi_CRTL_BUS_AWADDR": {
+      "dir": "in",
+      "width": "4"
+    },
+    "s_axi_CRTL_BUS_WVALID": {
+      "dir": "in",
+      "width": "1"
+    },
+    "s_axi_CRTL_BUS_WREADY": {
+      "dir": "out",
+      "width": "1"
+    },
+    "s_axi_CRTL_BUS_WDATA": {
+      "dir": "in",
+      "width": "32"
+    },
+    "s_axi_CRTL_BUS_WSTRB": {
+      "dir": "in",
+      "width": "4"
+    },
+    "s_axi_CRTL_BUS_ARVALID": {
+      "dir": "in",
+      "width": "1"
+    },
+    "s_axi_CRTL_BUS_ARREADY": {
+      "dir": "out",
+      "width": "1"
+    },
+    "s_axi_CRTL_BUS_ARADDR": {
+      "dir": "in",
+      "width": "4"
+    },
+    "s_axi_CRTL_BUS_RVALID": {
+      "dir": "out",
+      "width": "1"
+    },
+    "s_axi_CRTL_BUS_RREADY": {
+      "dir": "in",
+      "width": "1"
+    },
+    "s_axi_CRTL_BUS_RDATA": {
+      "dir": "out",
+      "width": "32"
+    },
+    "s_axi_CRTL_BUS_RRESP": {
+      "dir": "out",
+      "width": "2"
+    },
+    "s_axi_CRTL_BUS_BVALID": {
+      "dir": "out",
+      "width": "1"
+    },
+    "s_axi_CRTL_BUS_BREADY": {
+      "dir": "in",
+      "width": "1"
+    },
+    "s_axi_CRTL_BUS_BRESP": {
+      "dir": "out",
+      "width": "2"
+    },
+    "ap_clk": {
+      "dir": "in",
+      "width": "1"
+    },
+    "ap_rst_n": {
+      "dir": "in",
+      "width": "1"
+    },
+    "interrupt": {
+      "dir": "out",
+      "width": "1",
+      "isVector": "true"
+    },
+    "cnn_input_Addr_A": {
+      "dir": "out",
+      "width": "32"
+    },
+    "cnn_input_EN_A": {
+      "dir": "out",
+      "width": "1"
+    },
+    "cnn_input_WEN_A": {
+      "dir": "out",
+      "width": "4"
+    },
+    "cnn_input_Din_A": {
+      "dir": "out",
+      "width": "32"
+    },
+    "cnn_input_Dout_A": {
+      "dir": "in",
+      "width": "32"
+    },
+    "cnn_input_Clk_A": {
+      "dir": "out",
+      "width": "1"
+    },
+    "cnn_input_Rst_A": {
+      "dir": "out",
+      "width": "1"
+    },
+    "prediction_output_Addr_A": {
+      "dir": "out",
+      "width": "32"
+    },
+    "prediction_output_EN_A": {
+      "dir": "out",
+      "width": "1"
+    },
+    "prediction_output_WEN_A": {
+      "dir": "out",
+      "width": "4"
+    },
+    "prediction_output_Din_A": {
+      "dir": "out",
+      "width": "32"
+    },
+    "prediction_output_Dout_A": {
+      "dir": "in",
+      "width": "32"
+    },
+    "prediction_output_Clk_A": {
+      "dir": "out",
+      "width": "1"
+    },
+    "prediction_output_Rst_A": {
+      "dir": "out",
+      "width": "1"
+    }
+  },
+  "ModuleInfo": {
+    "Hierarchy": {
+      "ModuleName": "cnn",
+      "Instances": [
+        {
+          "ModuleName": "conv_2",
+          "InstanceName": "grp_conv_2_fu_5065"
+        },
+        {
+          "ModuleName": "conv_1",
+          "InstanceName": "grp_conv_1_fu_5234"
+        },
+        {
+          "ModuleName": "dense_1",
+          "InstanceName": "grp_dense_1_fu_5254"
+        },
+        {
+          "ModuleName": "max_pool_2",
+          "InstanceName": "grp_max_pool_2_fu_5288"
+        },
+        {
+          "ModuleName": "dense_out",
+          "InstanceName": "grp_dense_out_fu_5393",
+          "Instances": [{
+              "ModuleName": "soft_max",
+              "InstanceName": "grp_soft_max_fu_342",
+              "Instances": [{
+                  "ModuleName": "exp_15_7_s",
+                  "InstanceName": "grp_exp_15_7_s_fu_155"
+                }]
+            }]
+        },
+        {
+          "ModuleName": "max_pool_1",
+          "InstanceName": "grp_max_pool_1_fu_5409"
+        },
+        {
+          "ModuleName": "dense_2",
+          "InstanceName": "grp_dense_2_fu_5452"
+        },
+        {
+          "ModuleName": "flat",
+          "InstanceName": "grp_flat_fu_5466"
+        }
+      ]
+    },
+    "Info": {
+      "conv_1": {
+        "FunctionProtocol": "ap_ctrl_hs",
+        "isTaskLevelControl": "1",
+        "isPipelined": "0",
+        "isCombinational": "0",
+        "isOneStateSeq": "0"
+      },
+      "max_pool_1": {
+        "FunctionProtocol": "ap_ctrl_hs",
+        "isTaskLevelControl": "1",
+        "isPipelined": "0",
+        "isCombinational": "0",
+        "isOneStateSeq": "0"
+      },
+      "conv_2": {
+        "FunctionProtocol": "ap_ctrl_hs",
+        "isTaskLevelControl": "1",
+        "isPipelined": "0",
+        "isCombinational": "0",
+        "isOneStateSeq": "0"
+      },
+      "max_pool_2": {
+        "FunctionProtocol": "ap_ctrl_hs",
+        "isTaskLevelControl": "1",
+        "isPipelined": "0",
+        "isCombinational": "0",
+        "isOneStateSeq": "0"
+      },
+      "flat": {
+        "FunctionProtocol": "ap_ctrl_hs",
+        "isTaskLevelControl": "1",
+        "isPipelined": "0",
+        "isCombinational": "0",
+        "isOneStateSeq": "0"
+      },
+      "dense_1": {
+        "FunctionProtocol": "ap_ctrl_hs",
+        "isTaskLevelControl": "1",
+        "isPipelined": "0",
+        "isCombinational": "0",
+        "isOneStateSeq": "0"
+      },
+      "dense_2": {
+        "FunctionProtocol": "ap_ctrl_hs",
+        "isTaskLevelControl": "1",
+        "isPipelined": "0",
+        "isCombinational": "0",
+        "isOneStateSeq": "0"
+      },
+      "exp_15_7_s": {
+        "FunctionProtocol": "ap_ctrl_hs",
+        "isTaskLevelControl": "1",
+        "isPipelined": "1",
+        "isCombinational": "0",
+        "isOneStateSeq": "0"
+      },
+      "soft_max": {
+        "FunctionProtocol": "ap_ctrl_hs",
+        "isTaskLevelControl": "1",
+        "isPipelined": "0",
+        "isCombinational": "0",
+        "isOneStateSeq": "0"
+      },
+      "dense_out": {
+        "FunctionProtocol": "ap_ctrl_hs",
+        "isTaskLevelControl": "1",
+        "isPipelined": "0",
+        "isCombinational": "0",
+        "isOneStateSeq": "0"
+      },
+      "cnn": {
+        "FunctionProtocol": "ap_ctrl_hs",
+        "isTaskLevelControl": "1",
+        "isPipelined": "0",
+        "isCombinational": "0",
+        "isOneStateSeq": "0"
+      }
+    },
+    "Metrics": {
+      "conv_1": {
+        "Latency": {
+          "LatencyBest": "1367",
+          "LatencyAvg": "1367",
+          "LatencyWorst": "1367",
+          "PipelineII": "1367",
+          "PipelineDepth": "",
+          "PipelineType": "none"
+        },
+        "Timing": {
+          "Target": "20.00",
+          "Uncertainty": "2.50",
+          "Estimate": "16.934"
+        },
+        "Loops": [{
+            "Name": "Row_Loop_Col_Loop_Filter1_Loop",
+            "TripCount": "1352",
+            "Latency": "1365",
+            "PipelineII": "1",
+            "PipelineDepth": "15"
+          }],
+        "Area": {
+          "BRAM_18K": "0",
+          "DSP48E": "28",
+          "FF": "3950",
+          "LUT": "9709",
+          "URAM": "0"
+        }
+      },
+      "max_pool_1": {
+        "Latency": {
+          "LatencyBest": "81",
+          "LatencyAvg": "81",
+          "LatencyWorst": "81",
+          "PipelineII": "81",
+          "PipelineDepth": "",
+          "PipelineType": "none"
+        },
+        "Timing": {
+          "Target": "20.00",
+          "Uncertainty": "2.50",
+          "Estimate": "15.242"
+        },
+        "Loops": [{
+            "Name": "Filter_Loop_Row_Loop",
+            "TripCount": "78",
+            "Latency": "79",
+            "PipelineII": "1",
+            "PipelineDepth": "3"
+          }],
+        "Area": {
+          "FF": "273",
+          "LUT": "1590",
+          "BRAM_18K": "0",
+          "DSP48E": "0",
+          "URAM": "0"
+        }
+      },
+      "conv_2": {
+        "Latency": {
+          "LatencyBest": "1956",
+          "LatencyAvg": "1956",
+          "LatencyWorst": "1956",
+          "PipelineII": "1956",
+          "PipelineDepth": "",
+          "PipelineType": "none"
+        },
+        "Timing": {
+          "Target": "20.00",
+          "Uncertainty": "2.50",
+          "Estimate": "16.881"
+        },
+        "Loops": [{
+            "Name": "Row_Loop_Col_Loop_Filter2_Loop",
+            "TripCount": "1936",
+            "Latency": "1954",
+            "PipelineII": "1",
+            "PipelineDepth": "20"
+          }],
+        "Area": {
+          "BRAM_18K": "0",
+          "DSP48E": "55",
+          "FF": "12171",
+          "LUT": "10630",
+          "URAM": "0"
+        }
+      },
+      "max_pool_2": {
+        "Latency": {
+          "LatencyBest": "210",
+          "LatencyAvg": "210",
+          "LatencyWorst": "210",
+          "PipelineII": "210",
+          "PipelineDepth": "",
+          "PipelineType": "none"
+        },
+        "Timing": {
+          "Target": "20.00",
+          "Uncertainty": "2.50",
+          "Estimate": "17.220"
+        },
+        "Loops": [{
+            "Name": "Filter_Loop",
+            "TripCount": "16",
+            "Latency": "208",
+            "PipelineII": "13",
+            "PipelineDepth": "14"
+          }],
+        "Area": {
+          "FF": "377",
+          "LUT": "3136",
+          "BRAM_18K": "0",
+          "DSP48E": "0",
+          "URAM": "0"
+        }
+      },
+      "flat": {
+        "Latency": {
+          "LatencyBest": "402",
+          "LatencyAvg": "402",
+          "LatencyWorst": "402",
+          "PipelineII": "402",
+          "PipelineDepth": "",
+          "PipelineType": "none"
+        },
+        "Timing": {
+          "Target": "20.00",
+          "Uncertainty": "2.50",
+          "Estimate": "13.638"
+        },
+        "Loops": [{
+            "Name": "Row_Loop_Col_Loop_Filter_Loop",
+            "TripCount": "400",
+            "Latency": "400",
+            "PipelineII": "1",
+            "PipelineDepth": "2"
+          }],
+        "Area": {
+          "FF": "76",
+          "LUT": "382",
+          "BRAM_18K": "0",
+          "DSP48E": "0",
+          "URAM": "0"
+        }
+      },
+      "dense_1": {
+        "Latency": {
+          "LatencyBest": "4251",
+          "LatencyAvg": "4251",
+          "LatencyWorst": "4251",
+          "PipelineII": "4251",
+          "PipelineDepth": "",
+          "PipelineType": "none"
+        },
+        "Timing": {
+          "Target": "20.00",
+          "Uncertainty": "2.50",
+          "Estimate": "18.460"
+        },
+        "Loops": [{
+            "Name": "DENSE_LOOP",
+            "TripCount": "50",
+            "Latency": "4250",
+            "PipelineII": "",
+            "PipelineDepth": "85",
+            "Loops": [{
+                "Name": "FLAT_LOOP",
+                "TripCount": "8",
+                "Latency": "81",
+                "PipelineII": "10",
+                "PipelineDepth": "12"
+              }]
+          }],
+        "Area": {
+          "BRAM_18K": "54",
+          "DSP48E": "100",
+          "FF": "1609",
+          "LUT": "1262",
+          "URAM": "0"
+        }
+      },
+      "dense_2": {
+        "Latency": {
+          "LatencyBest": "451",
+          "LatencyAvg": "451",
+          "LatencyWorst": "451",
+          "PipelineII": "451",
+          "PipelineDepth": "",
+          "PipelineType": "none"
+        },
+        "Timing": {
+          "Target": "20.00",
+          "Uncertainty": "2.50",
+          "Estimate": "18.460"
+        },
+        "Loops": [{
+            "Name": "DENSE_LOOP",
+            "TripCount": "30",
+            "Latency": "450",
+            "PipelineII": "",
+            "PipelineDepth": "15",
+            "Loops": [{
+                "Name": "FLAT_LOOP",
+                "TripCount": "5",
+                "Latency": "11",
+                "PipelineII": "2",
+                "PipelineDepth": "4"
+              }]
+          }],
+        "Area": {
+          "BRAM_18K": "3",
+          "DSP48E": "10",
+          "FF": "235",
+          "LUT": "614",
+          "URAM": "0"
+        }
+      },
+      "exp_15_7_s": {
+        "Latency": {
+          "LatencyBest": "2",
+          "LatencyAvg": "2",
+          "LatencyWorst": "2",
+          "PipelineII": "1",
+          "PipelineDepth": "3",
+          "PipelineType": "function"
+        },
+        "Timing": {
+          "Target": "20.00",
+          "Uncertainty": "2.50",
+          "Estimate": "15.178"
+        },
+        "Area": {
+          "BRAM_18K": "0",
+          "DSP48E": "2",
+          "FF": "99",
+          "LUT": "338",
+          "URAM": "0"
+        }
+      },
+      "soft_max": {
+        "Latency": {
+          "LatencyBest": "64",
+          "LatencyAvg": "64",
+          "LatencyWorst": "64",
+          "PipelineII": "64",
+          "PipelineDepth": "",
+          "PipelineType": "none"
+        },
+        "Timing": {
+          "Target": "20.00",
+          "Uncertainty": "2.50",
+          "Estimate": "16.990"
+        },
+        "Loops": [
+          {
+            "Name": "Max_Loop",
+            "TripCount": "10",
+            "Latency": "10",
+            "PipelineII": "1",
+            "PipelineDepth": "2"
+          },
+          {
+            "Name": "Sum_Loop",
+            "TripCount": "10",
+            "Latency": "13",
+            "PipelineII": "1",
+            "PipelineDepth": "5"
+          },
+          {
+            "Name": "Prediction_Loop",
+            "TripCount": "10",
+            "Latency": "35",
+            "PipelineII": "1",
+            "PipelineDepth": "27"
+          }
+        ],
+        "Area": {
+          "BRAM_18K": "0",
+          "DSP48E": "2",
+          "FF": "1766",
+          "LUT": "1745",
+          "URAM": "0"
+        }
+      },
+      "dense_out": {
+        "Latency": {
+          "LatencyBest": "256",
+          "LatencyAvg": "256",
+          "LatencyWorst": "256",
+          "PipelineII": "256",
+          "PipelineDepth": "",
+          "PipelineType": "none"
+        },
+        "Timing": {
+          "Target": "20.00",
+          "Uncertainty": "2.50",
+          "Estimate": "16.990"
+        },
+        "Loops": [{
+            "Name": "Dense_Loop",
+            "TripCount": "10",
+            "Latency": "190",
+            "PipelineII": "",
+            "PipelineDepth": "19",
+            "Loops": [{
+                "Name": "Flat_Loop",
+                "TripCount": "3",
+                "Latency": "15",
+                "PipelineII": "5",
+                "PipelineDepth": "6"
+              }]
+          }],
+        "Area": {
+          "BRAM_18K": "2",
+          "DSP48E": "12",
+          "FF": "1893",
+          "LUT": "2376",
+          "URAM": "0"
+        }
+      },
+      "cnn": {
+        "Latency": {
+          "LatencyBest": "17676",
+          "LatencyAvg": "17676",
+          "LatencyWorst": "17676",
+          "PipelineII": "17677",
+          "PipelineDepth": "",
+          "PipelineType": "none"
+        },
+        "Timing": {
+          "Target": "20.00",
+          "Uncertainty": "2.50",
+          "Estimate": "18.460"
+        },
+        "Loops": [
+          {
+            "Name": "L_INPUT_LOOP",
+            "TripCount": "784",
+            "Latency": "791",
+            "PipelineII": "1",
+            "PipelineDepth": "9"
+          },
+          {
+            "Name": "Cov1L1_Cov1L2_ConvL3",
+            "TripCount": "4056",
+            "Latency": "4061",
+            "PipelineII": "1",
+            "PipelineDepth": "7"
+          },
+          {
+            "Name": "Mp1L1_Mp1L2_Mp1L3",
+            "TripCount": "1014",
+            "Latency": "1021",
+            "PipelineII": "1",
+            "PipelineDepth": "8"
+          },
+          {
+            "Name": "Cov2L1_Cov2L2_Cov2L3",
+            "TripCount": "1936",
+            "Latency": "1936",
+            "PipelineII": "1",
+            "PipelineDepth": "2"
+          },
+          {
+            "Name": "Mp2L1_Mp2L2_Mp2L3",
+            "TripCount": "400",
+            "Latency": "400",
+            "PipelineII": "1",
+            "PipelineDepth": "2"
+          },
+          {
+            "Name": "F1",
+            "TripCount": "400",
+            "Latency": "400",
+            "PipelineII": "1",
+            "PipelineDepth": "2"
+          },
+          {
+            "Name": "D1",
+            "TripCount": "50",
+            "Latency": "50",
+            "PipelineII": "1",
+            "PipelineDepth": "2"
+          },
+          {
+            "Name": "D3",
+            "TripCount": "10",
+            "Latency": "11",
+            "PipelineII": "1",
+            "PipelineDepth": "3"
+          }
+        ],
+        "Area": {
+          "BRAM_18K": "118",
+          "DSP48E": "207",
+          "FF": "28003",
+          "LUT": "42945",
+          "URAM": "0"
+        }
+      }
+    }
+  },
+  "Sdx": {
+    "Target": "none",
+    "ProfileOption": "0",
+    "ProfileType": "none",
+    "XO": "",
+    "KernelName": "cnn",
+    "EnableXoSwEmu": "1"
+  },
+  "GenData": {
+    "DataVersion": "0.2",
+    "Time": "2024-08-13 18:22:49 +0200",
+    "ToolName": "vivado_hls",
+    "ToolVersion": "2019.1"
+  }
+}

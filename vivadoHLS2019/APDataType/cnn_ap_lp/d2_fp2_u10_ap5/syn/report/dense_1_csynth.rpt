@@ -1,0 +1,193 @@
+
+
+================================================================
+== Vivado HLS Report for 'dense_1'
+================================================================
+* Date:           Sat Aug 10 20:32:39 2024
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        cnn_ap_lp
+* Solution:       d2_fp2_u10_ap5
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  20.00|     9.634|        2.50|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-------+-------+-------+-------+---------+
+    |    Latency    |    Interval   | Pipeline|
+    |  min  |  max  |  min  |  max  |   Type  |
+    +-------+-------+-------+-------+---------+
+    |  40151|  40151|  40151|  40151|   none  |
+    +-------+-------+-------+-------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +--------------+-------+-------+----------+-----------+-----------+------+----------+
+        |              |    Latency    | Iteration|  Initiation Interval  | Trip |          |
+        |   Loop Name  |  min  |  max  |  Latency |  achieved |   target  | Count| Pipelined|
+        +--------------+-------+-------+----------+-----------+-----------+------+----------+
+        |- DENSE_LOOP  |  40150|  40150|       803|          -|          -|    50|    no    |
+        | + FLAT_LOOP  |    800|    800|         2|          -|          -|   400|    no    |
+        +--------------+-------+-------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  | URAM|
++-----------------+---------+-------+--------+-------+-----+
+|DSP              |        -|      1|       -|      -|    -|
+|Expression       |        -|      -|       0|    194|    -|
+|FIFO             |        -|      -|       -|      -|    -|
+|Instance         |        -|      -|       -|      -|    -|
+|Memory           |       18|      -|       6|      5|    -|
+|Multiplexer      |        -|      -|       -|     87|    -|
+|Register         |        -|      -|     127|      -|    -|
++-----------------+---------+-------+--------+-------+-----+
+|Total            |       18|      1|     133|    286|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Available        |      280|    220|  106400|  53200|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Utilization (%)  |        6|   ~0  |   ~0   |   ~0  |    0|
++-----------------+---------+-------+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48E: 
+    +--------------------------+----------------------+--------------+
+    |         Instance         |        Module        |  Expression  |
+    +--------------------------+----------------------+--------------+
+    |cnn_mac_muladd_9skbM_U22  |cnn_mac_muladd_9skbM  | i0 * i1 + i2 |
+    +--------------------------+----------------------+--------------+
+
+    * Memory: 
+    +---------------------+----------------------+---------+---+----+-----+-------+-----+------+-------------+
+    |        Memory       |        Module        | BRAM_18K| FF| LUT| URAM| Words | Bits| Banks| W*Bits*Banks|
+    +---------------------+----------------------+---------+---+----+-----+-------+-----+------+-------------+
+    |dense_1_bias_V_U     |dense_1_dense_1_bjbC  |        0|  6|   5|    0|     50|    6|     1|          300|
+    |dense_1_weights_V_U  |dense_1_dense_1_wibs  |       18|  0|   0|    0|  20000|    9|     1|       180000|
+    +---------------------+----------------------+---------+---+----+-----+-------+-----+------+-------------+
+    |Total                |                      |       18|  6|   5|    0|  20050|   15|     2|       180300|
+    +---------------------+----------------------+---------+---+----+-----+-------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-------------------------+----------+-------+---+----+------------+------------+
+    |      Variable Name      | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-------------------------+----------+-------+---+----+------------+------------+
+    |add_ln1117_10_fu_302_p2  |     +    |      0|  0|  21|          15|           6|
+    |add_ln1117_fu_308_p2     |     +    |      0|  0|  21|          15|          15|
+    |add_ln203_fu_371_p2      |     +    |      0|  0|  17|          13|          13|
+    |add_ln22_fu_410_p2       |     +    |      0|  0|  15|           6|           1|
+    |add_ln703_fu_365_p2      |     +    |      0|  0|  19|          14|          14|
+    |add_ln9_fu_259_p2        |     +    |      0|  0|  17|          13|           7|
+    |i_fu_271_p2              |     +    |      0|  0|  15|           6|           1|
+    |j_fu_291_p2              |     +    |      0|  0|  15|           9|           1|
+    |icmp_ln13_fu_285_p2      |   icmp   |      0|  0|  13|           9|           8|
+    |icmp_ln22_fu_416_p2      |   icmp   |      0|  0|  11|           6|           3|
+    |icmp_ln9_fu_265_p2       |   icmp   |      0|  0|  11|           6|           5|
+    |select_ln19_fu_397_p3    |  select  |      0|  0|  13|           1|           1|
+    |select_ln22_fu_422_p3    |  select  |      0|  0|   6|           1|           6|
+    +-------------------------+----------+-------+---+----+------------+------------+
+    |Total                    |          |      0|  0| 194|         114|          81|
+    +-------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +------------------+----+-----------+-----+-----------+
+    |       Name       | LUT| Input Size| Bits| Total Bits|
+    +------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm         |  33|          6|    1|          6|
+    |i_0_reg_190       |   9|          2|    6|         12|
+    |j_0_reg_237       |   9|          2|    9|         18|
+    |p_Val2_s_reg_225  |   9|          2|   14|         28|
+    |phi_mul1_reg_201  |   9|          2|   13|         26|
+    |phi_mul_reg_248   |   9|          2|   15|         30|
+    |phi_urem_reg_213  |   9|          2|    6|         12|
+    +------------------+----+-----------+-----+-----------+
+    |Total             |  87|         18|   64|        132|
+    +------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-----------------------+----+----+-----+-----------+
+    |          Name         | FF | LUT| Bits| Const Bits|
+    +-----------------------+----+----+-----+-----------+
+    |add_ln1117_10_reg_470  |  15|   0|   15|          0|
+    |add_ln9_reg_439        |  13|   0|   13|          0|
+    |ap_CS_fsm              |   5|   0|    5|          0|
+    |i_0_reg_190            |   6|   0|    6|          0|
+    |i_reg_447              |   6|   0|    6|          0|
+    |j_0_reg_237            |   9|   0|    9|          0|
+    |j_reg_465              |   9|   0|    9|          0|
+    |p_Val2_s_reg_225       |  14|   0|   14|          0|
+    |phi_mul1_reg_201       |  13|   0|   13|          0|
+    |phi_mul_reg_248        |  15|   0|   15|          0|
+    |phi_urem_reg_213       |   6|   0|    6|          0|
+    |tmp_7_reg_490          |   4|   0|    4|          0|
+    |zext_ln13_reg_457      |   6|   0|   15|          9|
+    |zext_ln14_reg_452      |   6|   0|   64|         58|
+    +-----------------------+----+----+-----+-----------+
+    |Total                  | 127|   0|  194|         67|
+    +-----------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++--------------------------+-----+-----+------------+-----------------+--------------+
+|         RTL Ports        | Dir | Bits|  Protocol  |  Source Object  |    C Type    |
++--------------------------+-----+-----+------------+-----------------+--------------+
+|ap_clk                    |  in |    1| ap_ctrl_hs |     dense_1     | return value |
+|ap_rst                    |  in |    1| ap_ctrl_hs |     dense_1     | return value |
+|ap_start                  |  in |    1| ap_ctrl_hs |     dense_1     | return value |
+|ap_done                   | out |    1| ap_ctrl_hs |     dense_1     | return value |
+|ap_idle                   | out |    1| ap_ctrl_hs |     dense_1     | return value |
+|ap_ready                  | out |    1| ap_ctrl_hs |     dense_1     | return value |
+|flat_array_V_address0     | out |    9|  ap_memory |   flat_array_V  |     array    |
+|flat_array_V_ce0          | out |    1|  ap_memory |   flat_array_V  |     array    |
+|flat_array_V_q0           |  in |   14|  ap_memory |   flat_array_V  |     array    |
+|dense_1_out_0_V_address0  | out |    4|  ap_memory | dense_1_out_0_V |     array    |
+|dense_1_out_0_V_ce0       | out |    1|  ap_memory | dense_1_out_0_V |     array    |
+|dense_1_out_0_V_we0       | out |    1|  ap_memory | dense_1_out_0_V |     array    |
+|dense_1_out_0_V_d0        | out |   13|  ap_memory | dense_1_out_0_V |     array    |
+|dense_1_out_1_V_address0  | out |    4|  ap_memory | dense_1_out_1_V |     array    |
+|dense_1_out_1_V_ce0       | out |    1|  ap_memory | dense_1_out_1_V |     array    |
+|dense_1_out_1_V_we0       | out |    1|  ap_memory | dense_1_out_1_V |     array    |
+|dense_1_out_1_V_d0        | out |   13|  ap_memory | dense_1_out_1_V |     array    |
+|dense_1_out_2_V_address0  | out |    4|  ap_memory | dense_1_out_2_V |     array    |
+|dense_1_out_2_V_ce0       | out |    1|  ap_memory | dense_1_out_2_V |     array    |
+|dense_1_out_2_V_we0       | out |    1|  ap_memory | dense_1_out_2_V |     array    |
+|dense_1_out_2_V_d0        | out |   13|  ap_memory | dense_1_out_2_V |     array    |
+|dense_1_out_3_V_address0  | out |    4|  ap_memory | dense_1_out_3_V |     array    |
+|dense_1_out_3_V_ce0       | out |    1|  ap_memory | dense_1_out_3_V |     array    |
+|dense_1_out_3_V_we0       | out |    1|  ap_memory | dense_1_out_3_V |     array    |
+|dense_1_out_3_V_d0        | out |   13|  ap_memory | dense_1_out_3_V |     array    |
+|dense_1_out_4_V_address0  | out |    4|  ap_memory | dense_1_out_4_V |     array    |
+|dense_1_out_4_V_ce0       | out |    1|  ap_memory | dense_1_out_4_V |     array    |
+|dense_1_out_4_V_we0       | out |    1|  ap_memory | dense_1_out_4_V |     array    |
+|dense_1_out_4_V_d0        | out |   13|  ap_memory | dense_1_out_4_V |     array    |
++--------------------------+-----+-----+------------+-----------------+--------------+
+

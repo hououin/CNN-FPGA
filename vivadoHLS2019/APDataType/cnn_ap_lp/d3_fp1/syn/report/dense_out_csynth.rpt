@@ -1,0 +1,319 @@
+
+
+================================================================
+== Vivado HLS Report for 'dense_out'
+================================================================
+* Date:           Sat Aug 10 20:45:22 2024
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        cnn_ap_lp
+* Solution:       d3_fp1
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  20.00|    19.574|        2.50|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |  377|  377|  377|  377|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        +---------------------+----------+-----+-----+-----+-----+---------+
+        |                     |          |  Latency  |  Interval | Pipeline|
+        |       Instance      |  Module  | min | max | min | max |   Type  |
+        +---------------------+----------+-----+-----+-----+-----+---------+
+        |grp_soft_max_fu_879  |soft_max  |  343|  343|  343|  343|   none  |
+        +---------------------+----------+-----+-----+-----+-----+---------+
+
+        * Loop: 
+        +--------------+-----+-----+----------+-----------+-----------+------+----------+
+        |              |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |   Loop Name  | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +--------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Dense_Loop  |   16|   16|         8|          1|          1|    10|    yes   |
+        +--------------+-----+-----+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  | URAM|
++-----------------+---------+-------+--------+-------+-----+
+|DSP              |        -|     30|       -|      -|    -|
+|Expression       |        -|      -|       0|     45|    -|
+|FIFO             |        -|      -|       -|      -|    -|
+|Instance         |        0|      3|     535|    871|    -|
+|Memory           |        0|      -|     294|     65|    0|
+|Multiplexer      |        -|      -|       -|    314|    -|
+|Register         |        0|      -|    1087|     64|    -|
++-----------------+---------+-------+--------+-------+-----+
+|Total            |        0|     33|    1916|   1359|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Available        |      280|    220|  106400|  53200|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Utilization (%)  |        0|     15|       1|      2|    0|
++-----------------+---------+-------+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +---------------------+----------+---------+-------+-----+-----+-----+
+    |       Instance      |  Module  | BRAM_18K| DSP48E|  FF | LUT | URAM|
+    +---------------------+----------+---------+-------+-----+-----+-----+
+    |grp_soft_max_fu_879  |soft_max  |        0|      3|  535|  871|    0|
+    +---------------------+----------+---------+-------+-----+-----+-----+
+    |Total                |          |        0|      3|  535|  871|    0|
+    +---------------------+----------+---------+-------+-----+-----+-----+
+
+    * DSP48E: 
+    +--------------------------+----------------------+--------------+
+    |         Instance         |        Module        |  Expression  |
+    +--------------------------+----------------------+--------------+
+    |cnn_mac_muladd_130iy_U44  |cnn_mac_muladd_130iy  | i0 * i1 + i2 |
+    |cnn_mac_muladd_130iy_U45  |cnn_mac_muladd_130iy  | i0 * i1 + i2 |
+    |cnn_mac_muladd_130iy_U49  |cnn_mac_muladd_130iy  | i0 * i1 + i2 |
+    |cnn_mac_muladd_130iy_U50  |cnn_mac_muladd_130iy  | i0 * i1 + i2 |
+    |cnn_mac_muladd_130iy_U53  |cnn_mac_muladd_130iy  | i0 * i1 + i2 |
+    |cnn_mac_muladd_130iy_U55  |cnn_mac_muladd_130iy  | i0 * i1 + i2 |
+    |cnn_mac_muladd_130iy_U57  |cnn_mac_muladd_130iy  | i0 * i1 + i2 |
+    |cnn_mac_muladd_130iy_U64  |cnn_mac_muladd_130iy  | i0 * i1 + i2 |
+    |cnn_mac_muladd_130iy_U68  |cnn_mac_muladd_130iy  | i0 * i1 + i2 |
+    |cnn_mac_muladd_130iy_U69  |cnn_mac_muladd_130iy  | i0 * i1 + i2 |
+    |cnn_mac_muladd_130iy_U70  |cnn_mac_muladd_130iy  | i0 * i1 + i2 |
+    |cnn_mac_muladd_130iy_U71  |cnn_mac_muladd_130iy  | i0 * i1 + i2 |
+    |cnn_mac_muladd_13Zio_U43  |cnn_mac_muladd_13Zio  | i0 * i1 + i2 |
+    |cnn_mac_muladd_13Zio_U46  |cnn_mac_muladd_13Zio  | i0 * i1 + i2 |
+    |cnn_mac_muladd_13Zio_U47  |cnn_mac_muladd_13Zio  | i0 * i1 + i2 |
+    |cnn_mac_muladd_13Zio_U48  |cnn_mac_muladd_13Zio  | i0 * i1 + i2 |
+    |cnn_mac_muladd_13Zio_U51  |cnn_mac_muladd_13Zio  | i0 * i1 + i2 |
+    |cnn_mac_muladd_13Zio_U52  |cnn_mac_muladd_13Zio  | i0 * i1 + i2 |
+    |cnn_mac_muladd_13Zio_U54  |cnn_mac_muladd_13Zio  | i0 * i1 + i2 |
+    |cnn_mac_muladd_13Zio_U56  |cnn_mac_muladd_13Zio  | i0 * i1 + i2 |
+    |cnn_mac_muladd_13Zio_U58  |cnn_mac_muladd_13Zio  | i0 * i1 + i2 |
+    |cnn_mac_muladd_13Zio_U59  |cnn_mac_muladd_13Zio  | i0 * i1 + i2 |
+    |cnn_mac_muladd_13Zio_U60  |cnn_mac_muladd_13Zio  | i0 * i1 + i2 |
+    |cnn_mac_muladd_13Zio_U61  |cnn_mac_muladd_13Zio  | i0 * i1 + i2 |
+    |cnn_mac_muladd_13Zio_U62  |cnn_mac_muladd_13Zio  | i0 * i1 + i2 |
+    |cnn_mac_muladd_13Zio_U63  |cnn_mac_muladd_13Zio  | i0 * i1 + i2 |
+    |cnn_mac_muladd_13Zio_U65  |cnn_mac_muladd_13Zio  | i0 * i1 + i2 |
+    |cnn_mac_muladd_13Zio_U66  |cnn_mac_muladd_13Zio  | i0 * i1 + i2 |
+    |cnn_mac_muladd_13Zio_U67  |cnn_mac_muladd_13Zio  | i0 * i1 + i2 |
+    |cnn_mul_mul_13ns_Yie_U42  |cnn_mul_mul_13ns_Yie  |    i0 * i1   |
+    +--------------------------+----------------------+--------------+
+
+    * Memory: 
+    +--------------------------+----------------------+---------+----+----+-----+------+-----+------+-------------+
+    |          Memory          |        Module        | BRAM_18K| FF | LUT| URAM| Words| Bits| Banks| W*Bits*Banks|
+    +--------------------------+----------------------+---------+----+----+-----+------+-----+------+-------------+
+    |dense_array_V_U           |dense_out_dense_aXh4  |        0|  28|   3|    0|    10|   14|     1|          140|
+    |dense_out_weights_V_8_U   |dense_out_dense_oAem  |        0|   8|   2|    0|    10|    8|     1|           80|
+    |dense_out_weights_V_9_U   |dense_out_dense_oBew  |        0|   9|   2|    0|    10|    9|     1|           90|
+    |dense_out_weights_V_10_U  |dense_out_dense_oCeG  |        0|   9|   2|    0|    10|    9|     1|           90|
+    |dense_out_weights_V_11_U  |dense_out_dense_oDeQ  |        0|   8|   2|    0|    10|    8|     1|           80|
+    |dense_out_weights_V_12_U  |dense_out_dense_oEe0  |        0|   9|   2|    0|    10|    9|     1|           90|
+    |dense_out_weights_V_13_U  |dense_out_dense_oFfa  |        0|   8|   2|    0|    10|    8|     1|           80|
+    |dense_out_weights_V_14_U  |dense_out_dense_oGfk  |        0|   9|   2|    0|    10|    9|     1|           90|
+    |dense_out_weights_V_15_U  |dense_out_dense_oHfu  |        0|   8|   2|    0|    10|    8|     1|           80|
+    |dense_out_weights_V_16_U  |dense_out_dense_oIfE  |        0|   9|   2|    0|    10|    9|     1|           90|
+    |dense_out_weights_V_17_U  |dense_out_dense_oJfO  |        0|   9|   2|    0|    10|    9|     1|           90|
+    |dense_out_weights_V_18_U  |dense_out_dense_oKfY  |        0|   9|   2|    0|    10|    9|     1|           90|
+    |dense_out_weights_V_19_U  |dense_out_dense_oLf8  |        0|   9|   2|    0|    10|    9|     1|           90|
+    |dense_out_weights_V_20_U  |dense_out_dense_oMgi  |        0|   9|   2|    0|    10|    9|     1|           90|
+    |dense_out_weights_V_21_U  |dense_out_dense_oNgs  |        0|   9|   2|    0|    10|    9|     1|           90|
+    |dense_out_weights_V_22_U  |dense_out_dense_oOgC  |        0|   8|   2|    0|    10|    8|     1|           80|
+    |dense_out_weights_V_23_U  |dense_out_dense_oPgM  |        0|   9|   2|    0|    10|    9|     1|           90|
+    |dense_out_weights_V_24_U  |dense_out_dense_oQgW  |        0|   9|   2|    0|    10|    9|     1|           90|
+    |dense_out_weights_V_25_U  |dense_out_dense_oRg6  |        0|   9|   2|    0|    10|    9|     1|           90|
+    |dense_out_weights_V_26_U  |dense_out_dense_oShg  |        0|   8|   2|    0|    10|    8|     1|           80|
+    |dense_out_weights_V_27_U  |dense_out_dense_oThq  |        0|   8|   2|    0|    10|    8|     1|           80|
+    |dense_out_weights_V_28_U  |dense_out_dense_oUhA  |        0|   8|   2|    0|    10|    8|     1|           80|
+    |dense_out_weights_V_29_U  |dense_out_dense_oVhK  |        0|   8|   2|    0|    10|    8|     1|           80|
+    |dense_out_bias_V_U        |dense_out_dense_oWhU  |        0|   8|   2|    0|    10|    8|     1|           80|
+    |dense_out_weights_V_s_U   |dense_out_dense_osc4  |        0|   9|   2|    0|    10|    9|     1|           90|
+    |dense_out_weights_V_1_U   |dense_out_dense_otde  |        0|   9|   2|    0|    10|    9|     1|           90|
+    |dense_out_weights_V_2_U   |dense_out_dense_oudo  |        0|   8|   2|    0|    10|    8|     1|           80|
+    |dense_out_weights_V_3_U   |dense_out_dense_ovdy  |        0|   8|   2|    0|    10|    8|     1|           80|
+    |dense_out_weights_V_4_U   |dense_out_dense_owdI  |        0|   9|   2|    0|    10|    9|     1|           90|
+    |dense_out_weights_V_5_U   |dense_out_dense_oxdS  |        0|   9|   2|    0|    10|    9|     1|           90|
+    |dense_out_weights_V_6_U   |dense_out_dense_oyd2  |        0|   9|   2|    0|    10|    9|     1|           90|
+    |dense_out_weights_V_7_U   |dense_out_dense_ozec  |        0|   8|   2|    0|    10|    8|     1|           80|
+    +--------------------------+----------------------+---------+----+----+-----+------+-----+------+-------------+
+    |Total                     |                      |        0| 294|  65|    0|   320|  280|    32|         2800|
+    +--------------------------+----------------------+---------+----+----+-----+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-------------------------+----------+-------+---+----+------------+------------+
+    |      Variable Name      | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-------------------------+----------+-------+---+----+------------+------------+
+    |add_ln703_fu_1615_p2     |     +    |      0|  0|  19|          14|          14|
+    |d_fu_990_p2              |     +    |      0|  0|  13|           4|           1|
+    |icmp_ln41_fu_984_p2      |   icmp   |      0|  0|   9|           4|           4|
+    |ap_enable_pp0            |    xor   |      0|  0|   2|           1|           2|
+    |ap_enable_reg_pp0_iter1  |    xor   |      0|  0|   2|           2|           1|
+    +-------------------------+----------+-------+---+----+------------+------------+
+    |Total                    |          |      0|  0|  45|          25|          22|
+    +-------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-------------------------+----+-----------+-----+-----------+
+    |           Name          | LUT| Input Size| Bits| Total Bits|
+    +-------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                |  97|         20|    1|         20|
+    |ap_enable_reg_pp0_iter1  |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter7  |   9|          2|    1|          2|
+    |d_0_reg_868              |   9|          2|    4|          8|
+    |dense_2_out_V_address0   |  65|         16|    5|         80|
+    |dense_2_out_V_address1   |  65|         16|    5|         80|
+    |dense_array_V_address0   |  15|          3|    4|         12|
+    |dense_array_V_ce0        |  15|          3|    1|          3|
+    |dense_array_V_d0         |  15|          3|   14|         42|
+    |dense_array_V_we0        |  15|          3|    1|          3|
+    +-------------------------+----+-----------+-----+-----------+
+    |Total                    | 314|         70|   37|        252|
+    +-------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------------------------+----+----+-----+-----------+
+    |               Name               | FF | LUT| Bits| Const Bits|
+    +----------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                         |  19|   0|   19|          0|
+    |ap_enable_reg_pp0_iter0           |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1           |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter2           |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter3           |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter4           |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter5           |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter6           |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter7           |   1|   0|    1|          0|
+    |d_0_reg_868                       |   4|   0|    4|          0|
+    |dense_2_out_V_load_10_reg_1970    |  13|   0|   13|          0|
+    |dense_2_out_V_load_11_reg_1975    |  13|   0|   13|          0|
+    |dense_2_out_V_load_12_reg_1990    |  13|   0|   13|          0|
+    |dense_2_out_V_load_13_reg_1995    |  13|   0|   13|          0|
+    |dense_2_out_V_load_14_reg_2010    |  13|   0|   13|          0|
+    |dense_2_out_V_load_15_reg_2015    |  13|   0|   13|          0|
+    |dense_2_out_V_load_16_reg_2030    |  13|   0|   13|          0|
+    |dense_2_out_V_load_17_reg_2035    |  13|   0|   13|          0|
+    |dense_2_out_V_load_18_reg_2050    |  13|   0|   13|          0|
+    |dense_2_out_V_load_19_reg_2055    |  13|   0|   13|          0|
+    |dense_2_out_V_load_1_reg_1875     |  13|   0|   13|          0|
+    |dense_2_out_V_load_20_reg_2070    |  13|   0|   13|          0|
+    |dense_2_out_V_load_21_reg_2075    |  13|   0|   13|          0|
+    |dense_2_out_V_load_22_reg_2090    |  13|   0|   13|          0|
+    |dense_2_out_V_load_23_reg_2095    |  13|   0|   13|          0|
+    |dense_2_out_V_load_24_reg_2110    |  13|   0|   13|          0|
+    |dense_2_out_V_load_25_reg_2115    |  13|   0|   13|          0|
+    |dense_2_out_V_load_26_reg_2130    |  13|   0|   13|          0|
+    |dense_2_out_V_load_27_reg_2135    |  13|   0|   13|          0|
+    |dense_2_out_V_load_2_reg_1890     |  13|   0|   13|          0|
+    |dense_2_out_V_load_3_reg_1895     |  13|   0|   13|          0|
+    |dense_2_out_V_load_4_reg_1910     |  13|   0|   13|          0|
+    |dense_2_out_V_load_5_reg_1915     |  13|   0|   13|          0|
+    |dense_2_out_V_load_6_reg_1930     |  13|   0|   13|          0|
+    |dense_2_out_V_load_7_reg_1935     |  13|   0|   13|          0|
+    |dense_2_out_V_load_8_reg_1950     |  13|   0|   13|          0|
+    |dense_2_out_V_load_9_reg_1955     |  13|   0|   13|          0|
+    |dense_2_out_V_load_reg_1870       |  13|   0|   13|          0|
+    |dense_out_weights_V_10_reg_2375   |   9|   0|    9|          0|
+    |dense_out_weights_V_18_reg_2405   |   8|   0|    8|          0|
+    |dense_out_weights_V_20_reg_2415   |   9|   0|    9|          0|
+    |dense_out_weights_V_28_reg_2445   |   8|   0|    8|          0|
+    |dense_out_weights_V_30_reg_2455   |   9|   0|    9|          0|
+    |dense_out_weights_V_38_reg_2480   |   9|   0|    9|          0|
+    |dense_out_weights_V_46_reg_2510   |   8|   0|    8|          0|
+    |dense_out_weights_V_54_reg_2545   |   8|   0|    8|          0|
+    |dense_out_weights_V_56_reg_2555   |   8|   0|    8|          0|
+    |dense_out_weights_V_8_reg_2365    |   8|   0|    8|          0|
+    |grp_soft_max_fu_879_ap_start_reg  |   1|   0|    1|          0|
+    |icmp_ln41_reg_2300                |   1|   0|    1|          0|
+    |tmp_12_reg_2450                   |  14|   0|   14|          0|
+    |tmp_17_reg_2485                   |  14|   0|   14|          0|
+    |tmp_21_reg_2515                   |  14|   0|   14|          0|
+    |tmp_25_reg_2550                   |  14|   0|   14|          0|
+    |tmp_2_reg_2370                    |  14|   0|   14|          0|
+    |tmp_7_reg_2410                    |  14|   0|   14|          0|
+    |zext_ln1117_10_reg_2285           |  13|   0|   21|          8|
+    |zext_ln1117_11_reg_2290           |  13|   0|   21|          8|
+    |zext_ln1117_1_reg_2160            |  13|   0|   21|          8|
+    |zext_ln1117_2_reg_2165            |  13|   0|   21|          8|
+    |zext_ln1117_3_reg_2185            |  13|   0|   21|          8|
+    |zext_ln1117_4_reg_2190            |  13|   0|   21|          8|
+    |zext_ln1117_5_reg_2205            |  13|   0|   21|          8|
+    |zext_ln1117_6_reg_2215            |  13|   0|   21|          8|
+    |zext_ln1117_7_reg_2225            |  13|   0|   21|          8|
+    |zext_ln1117_8_reg_2260            |  13|   0|   21|          8|
+    |zext_ln1117_9_reg_2280            |  13|   0|   21|          8|
+    |zext_ln1117_reg_2150              |  13|   0|   22|          9|
+    |zext_ln1192_10_reg_2240           |  13|   0|   22|          9|
+    |zext_ln1192_11_reg_2245           |  13|   0|   22|          9|
+    |zext_ln1192_12_reg_2250           |  13|   0|   22|          9|
+    |zext_ln1192_13_reg_2255           |  13|   0|   22|          9|
+    |zext_ln1192_14_reg_2265           |  13|   0|   22|          9|
+    |zext_ln1192_15_reg_2270           |  13|   0|   22|          9|
+    |zext_ln1192_16_reg_2275           |  13|   0|   22|          9|
+    |zext_ln1192_1_reg_2170            |  13|   0|   22|          9|
+    |zext_ln1192_2_reg_2175            |  13|   0|   22|          9|
+    |zext_ln1192_3_reg_2180            |  13|   0|   22|          9|
+    |zext_ln1192_4_reg_2195            |  13|   0|   22|          9|
+    |zext_ln1192_5_reg_2200            |  13|   0|   22|          9|
+    |zext_ln1192_6_reg_2210            |  13|   0|   22|          9|
+    |zext_ln1192_7_reg_2220            |  13|   0|   22|          9|
+    |zext_ln1192_8_reg_2230            |  13|   0|   22|          9|
+    |zext_ln1192_9_reg_2235            |  13|   0|   22|          9|
+    |zext_ln1192_reg_2155              |  13|   0|   22|          9|
+    |zext_ln41_reg_2295                |  13|   0|   21|          8|
+    |zext_ln48_reg_2309                |   4|   0|   64|         60|
+    |icmp_ln41_reg_2300                |  64|  32|    1|          0|
+    |zext_ln48_reg_2309                |  64|  32|   64|         60|
+    +----------------------------------+----+----+-----+-----------+
+    |Total                             |1087|  64| 1342|        378|
+    +----------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++------------------------+-----+-----+------------+---------------+--------------+
+|        RTL Ports       | Dir | Bits|  Protocol  | Source Object |    C Type    |
++------------------------+-----+-----+------------+---------------+--------------+
+|ap_clk                  |  in |    1| ap_ctrl_hs |   dense_out   | return value |
+|ap_rst                  |  in |    1| ap_ctrl_hs |   dense_out   | return value |
+|ap_start                |  in |    1| ap_ctrl_hs |   dense_out   | return value |
+|ap_done                 | out |    1| ap_ctrl_hs |   dense_out   | return value |
+|ap_idle                 | out |    1| ap_ctrl_hs |   dense_out   | return value |
+|ap_ready                | out |    1| ap_ctrl_hs |   dense_out   | return value |
+|dense_2_out_V_address0  | out |    5|  ap_memory | dense_2_out_V |     array    |
+|dense_2_out_V_ce0       | out |    1|  ap_memory | dense_2_out_V |     array    |
+|dense_2_out_V_q0        |  in |   13|  ap_memory | dense_2_out_V |     array    |
+|dense_2_out_V_address1  | out |    5|  ap_memory | dense_2_out_V |     array    |
+|dense_2_out_V_ce1       | out |    1|  ap_memory | dense_2_out_V |     array    |
+|dense_2_out_V_q1        |  in |   13|  ap_memory | dense_2_out_V |     array    |
+|prediction_V_address0   | out |    4|  ap_memory |  prediction_V |     array    |
+|prediction_V_ce0        | out |    1|  ap_memory |  prediction_V |     array    |
+|prediction_V_we0        | out |    1|  ap_memory |  prediction_V |     array    |
+|prediction_V_d0         | out |   14|  ap_memory |  prediction_V |     array    |
++------------------------+-----+-----+------------+---------------+--------------+
+
